@@ -1,0 +1,185 @@
+package eu.janschupke.buddy;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import eu.janschupke.buddy.content.ui.dialog.EventDialog;
+import eu.janschupke.buddy.content.ui.menu.AudioMenu;
+import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
+import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.util.Utility;
+
+import java.util.Map;
+
+/**
+ * Handler for all global events, such as the main menu actions.
+ */
+public class GlobalEventHandler {
+    private final App app;
+
+    public GlobalEventHandler(final App app) {
+        this.app = app;
+    }
+
+    /**
+     * Toggles debug rendering for all Scene2D tables.
+     * @param state Requested debug state.
+     */
+    public void toggleUiDebug(boolean state) {
+        for(Map.Entry<Config.Huds, UITable> entry : app.getHuds().entrySet()) {
+            entry.getValue().setDebug(state);
+        }
+    }
+
+    /**
+     * Triggers background music playback based on current configuration.
+     * @param state Attempts to play if true, stop otherwise.
+     */
+    public void triggerMusic(boolean state) {
+        Music backgroundMusic = ((BaseScreen)app.getScreen()).getBackgroundMusic();
+
+        if (backgroundMusic == null) {
+            return;
+        }
+
+        if (!app.getSettingsManager().getConfig().isEnableMusic()) {
+            backgroundMusic.stop();
+            return;
+        }
+
+        adjustMusicVolume();
+        backgroundMusic.setLooping(true);
+
+        if (state) {
+            if (!backgroundMusic.isPlaying()) {
+                backgroundMusic.play();
+            }
+        } else {
+            backgroundMusic.stop();
+        }
+    }
+
+    /**
+     * Adjusts the volume of currently playing background music
+     * based on the configuration volume value.
+     */
+    public void adjustMusicVolume() {
+        Gdx.app.debug("GlobalEventHandler#adjustMusicVolume", "Adjusting");
+        ((BaseScreen) app.getScreen()).getBackgroundMusic().setVolume(app.getSettingsManager().getConfig().getMasterVolume() *
+                app.getSettingsManager().getConfig().getMusicVolume());
+    }
+
+    /**
+     * Toggles current screen's background music.
+     */
+    public void toggleMusic() {
+        // Toggle the configuration value.
+        app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
+        // Toggle the playback itself.
+        triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
+        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.music"));
+        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
+                .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
+        app.getSettingsManager().persist();
+    }
+
+    /**
+     * Toggles all sounds on and off.
+     */
+    public void toggleSound() {
+        app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
+        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.sound"));
+        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
+                .setChecked(app.getSettingsManager().getConfig().isEnableSound());
+        app.getSettingsManager().persist();
+    }
+
+    /**
+     * Toggles various debug rendering modes.
+     */
+    public void toggleDebugRendering() {
+        if (!Config.DEBUG_MODE) return;
+        Gdx.app.debug("GlobalEventHandler#toggleDebugRendering", "Toggling debug");
+
+        switch (app.getSettingsManager().getConfig().getDebugRendering()) {
+            case DEBUG:
+                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.GRAPHICS);
+                app.getEventHandler().toggleUiDebug(false);
+                break;
+            case GRAPHICS:
+                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.ALL);
+                app.getEventHandler().toggleUiDebug(true);
+                break;
+            default:
+            case ALL:
+                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.DEBUG);
+                app.getEventHandler().toggleUiDebug(true);
+                break;
+        }
+    }
+
+    /**
+     * Displays main menu, or level menu, depending on the current game state.
+     */
+    public void showMainMenu() {
+        if (app.getScreen() == app.getScreenInstance(Config.Screens.MENU)) {
+            Utility.transitionHuds(app, app.getHud(Config.Huds.MAINMENU));
+        } else {
+            Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
+        }
+    }
+
+    public void showGameMenu() {
+        Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
+    }
+
+    public void startNewGame() {
+        Gdx.app.debug("GlobalEventHandler#startNewGame", "New Game");
+        Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.FOREST), app.getHud(Config.Huds.STANDARD));
+    }
+
+    public void continueGame() {
+        Gdx.app.debug("GlobalEventHandler#continueGame", "Continue Game");
+    }
+
+    public void showSettings() {
+        Gdx.app.debug("GlobalEventHandler#showSettings", "Show Settings");
+        Utility.transitionHuds(app, app.getHud(Config.Huds.SETTINGSMENU));
+    }
+
+    public void showGraphicsMenu() {
+        Utility.transitionHuds(app, app.getHud(Config.Huds.GRAPHICSMENU));
+    }
+
+    public void showAudioMenu() {
+        Utility.transitionHuds(app, app.getHud(Config.Huds.AUDIOMENU));
+    }
+
+    public void showGameplayMenu() {
+        Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEPLAYMENU));
+    }
+
+    public void showHotkeys() {
+        Gdx.app.debug("GlobalEventHandler#showHotkeys", "Show Hotkeys");
+        Utility.transitionHuds(app, app.getHud(Config.Huds.HOTKEYSMENU));
+    }
+
+    public void showCredits() {
+        Gdx.app.debug("GlobalEventHandler#showCredits", "Show Credits");
+        Utility.transitionHuds(app, app.getHud(Config.Huds.CREDITSMENU));
+    }
+
+    public void leaveLevel() {
+        Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.MENU), app.getHud(Config.Huds.MAINMENU));
+    }
+
+    /**
+     * Persists configuration to file and exits the game.
+     */
+    public void exitGame() {
+        app.getSettingsManager().persist();
+        Gdx.app.debug("GlobalEventHandler#exitGame", "Exit Game");
+        Gdx.app.exit();
+    }
+}
