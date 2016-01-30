@@ -29,8 +29,20 @@ public abstract class BaseScreen extends ScreenAdapter {
         inputMultiplexer.addProcessor(app.getInputProcessor(Config.Input.GLOBAL));
     }
 
+    /**
+     * Initiates view based on the world dimensions and screen resolution.
+     * @param width World width, in world units.
+     * @param height World height, in world units.
+     */
     protected void initView(float width, float height) {
-        view = new View(Config.VIEWPORT_WIDTH, Config.VIEWPORT_HEIGHT, width, height);
+        int viewportWidth = Config.VIEWPORT_WIDE_WIDTH;
+        int viewportHeight = Config.VIEWPORT_WIDE_HEIGHT;
+        // Resolution is set to 4:3 if this is true. 4:3 resolutions are on the latter half of the resolution list.
+        if (app.getSettingsManager().getConfig().getResolutionIndex() >= Config.NARROW_VIEW_THRESHOLD) {
+            viewportWidth = Config.VIEWPORT_WIDTH;
+            viewportHeight = Config.VIEWPORT_HEIGHT;
+        }
+        view = new View(viewportWidth, viewportHeight, width, height);
     }
 
     /**

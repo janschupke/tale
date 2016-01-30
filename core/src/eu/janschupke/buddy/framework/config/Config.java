@@ -23,10 +23,16 @@ public class Config {
     public static final int [] AVAILABLE_WIDTHS = {960, 1024, 1280, 1600, 1920, 800, 1152, 1400, 1600, 1920};
     public static final int [] AVAILABLE_HEIGHTS = {540, 576, 720, 900, 1080, 600, 864, 1050, 1200, 1440};
 
+    public static final int NARROW_VIEW_THRESHOLD = Config.AVAILABLE_RESOLUTIONS.length / 2;
+
     // Viewport configuration.
-    private static final int VIEWPORT_MULTIPLIER = 2;
-    public static final int VIEWPORT_WIDTH = 16 * VIEWPORT_MULTIPLIER;
-    public static final int VIEWPORT_HEIGHT = 9 * VIEWPORT_MULTIPLIER;
+    private static final int VIEWPORT_WIDE_MULTIPLIER = 2;
+    public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;
+    public static final int VIEWPORT_WIDE_HEIGHT = 9 * VIEWPORT_WIDE_MULTIPLIER;
+
+    private static final int VIEWPORT_MULTIPLIER = 6;
+    public static final int VIEWPORT_WIDTH = 4 * VIEWPORT_MULTIPLIER;
+    public static final int VIEWPORT_HEIGHT = 3 * VIEWPORT_MULTIPLIER;
 
     // Physics configuration.
     public static final Vector2 PLATFORM_GRAVITY = new Vector2(0, -5.0f);
@@ -54,9 +60,11 @@ public class Config {
     public static final String MAP_LAYER_BACKGROUND = "background";
     public static final String MAP_LAYER_FOLIAGE = "foliage";
     public static final String MAP_LAYER_OBJECT = "objects";
+    public static final String MAP_LAYER_META = "meta";
 
     // TMX attribute configuration.
     public static final String MAP_TILESET_MAIN = "default-tiles";
+    public static final String MAP_TILESET_UTUMNO = "utumno-tiles";
     public static final String MAP_PROPERTY_SPAWNPOINT = "spawn-point";
     public static final String MAP_PROPERTY_ANIMATION = "animation";
     public static final String MAP_PROPERTY_SPEED = "speed";

@@ -2,15 +2,23 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="4">
  <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
   <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
  </tileset>
  <layer name="background" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztwzENAAAMA6BOTf07rIw9kNBLqqqqqqqqqqqqqqqqqqqqqr4e4IeAHw==
+   eJzt10EKwjAQQNG4GrrRY/Qa3kfceQDP4xUEA649lIIUqrRGSzMzTv/i0V2aP00LbVcptQAAAAAAAAAAAAAAAACA8LKkdJXntXP+wHq/c7d/0xx1Br92d3KQGUzp758Z6/3PZcntpRnk4N0Ytt3Y7yFS/9h6B3ll3dxXY+1/6a+5vvd+zXt46a/97MdmsLT+92+Mt37Nds0zZ93vub12v/d2jed/kjIP/bVmsJeyyGdgJ2UWzbf18BmY+309Spl2+6V5/OM3Ovfy2A8glju1eNYv
   </data>
  </layer>
  <layer name="terrain" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt211ugkAUBWAKb62bgLfWLkRtF1JtV1K7rG7Gn0V4J5SETOYPhZ47ck5yoyaDOR84hBebh6JoZj5zDf30049ugQv99NOPboEL/fTTj26BC/30049ugQv99NOPboEL/fTTj26BC/30049ugQv99NOPboEL/fTTj26BC/30049ugQv99NOftva5aic19XWV/jUxvzF0btf4julGe8b218V9+UN225+b3STkN4ZDGZ7+2to6NofE/Pb19F1f15rCsU5bUv0mR7neJ5lz6V9rH6d9L/j8Xe+V7PF11b5/lNcnmUXCfS+XcxDzf4h1++d/kdelzOvA+77mc+Dy+/byRtxvMu8D7vvafwMhv917J+5Pma8Z+Pv7vuv9LZ/3Mj8Bvx3t9wGfv7/vY51jazSfA9s/Rc/fib53jKTs/zGSi9/1vHdrcvn9pzy3pDzn2MdptZuk+McajfH9H3xOcwFXCk/Y
+   eJzt28tNxDAQBuBN9kRY0QFImxuPQngVwutEC9yADiiFFmiERxGMZSIsyx7bAmnG9v9Lo2SlZDNfEnt92XlYrebOq9fADz/80l3IBX744ZfuQi7www+/dBdygR9++KW7kAv88MMv3YVc4Icffuku5AI//PBLdyEX+OGHX7oLucAPP/zSXcgF/jL/7NSSLVPa8xe/7+zJH8vLxm5b9Ife/VjMfWjRX5LW/C2mxH+4tpWbFp6/MSzuUMXOaWX+K/W39vvH2X1/bXYTzm8M7yNf7rFb79wakvJza7zQsaF9zcn1m3zQ8/6k+hrjx/rnaR8LMf/S9ymN8bO13Z9ou0u1yZj3arkHKf8VWa9//Ee0PaY6KZz3Nd+DkD82ls/JfUF1WTDva38HOL/f9w25b6nuOvC7437p+5E+P1E9M34/2ueBmN8d97GeD6bf4zmX5nvg+1N9Poy2TO530t8/DLZq8Ztwvbr+V/LvT+lr1OQPrffcuP63vbxr1PL+56xbctY5/nla7SY5/v8qjYn9H7yn+gaN4Vn5
   </data>
  </layer>
  <objectgroup name="objects">
@@ -18,4 +26,9 @@
    <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
   </object>
  </objectgroup>
+ <layer name="meta" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztzjEBAAAIA6D1z2UwC+z3EBKQAAAAAAAAAAAAAAAAAADwyVwHAKgWjrwAxQ==
+  </data>
+ </layer>
 </map>
