@@ -37,4 +37,9 @@ public class OutskirtsWorld extends TopDownWorld {
     protected void initEffects() {
 
     }
+
+    @Override
+    protected void initSensors() {
+
+    }
 }

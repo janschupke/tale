@@ -37,6 +37,7 @@ public abstract class BaseScreen extends ScreenAdapter {
     protected void initView(float width, float height) {
         int viewportWidth = Config.VIEWPORT_WIDE_WIDTH;
         int viewportHeight = Config.VIEWPORT_WIDE_HEIGHT;
+
         // Resolution is set to 4:3 if this is true. 4:3 resolutions are on the latter half of the resolution list.
         if (app.getSettingsManager().getConfig().getResolutionIndex() >= Config.NARROW_VIEW_THRESHOLD) {
             viewportWidth = Config.VIEWPORT_WIDTH;

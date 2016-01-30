@@ -68,6 +68,7 @@ public abstract class BaseWorld {
         initItems();
         initObstacles();
         initEffects();
+        initSensors();
     }
 
     protected abstract void initPlayer();
@@ -75,6 +76,7 @@ public abstract class BaseWorld {
     protected abstract void initItems();
     protected abstract void initObstacles();
     protected abstract void initEffects();
+    protected abstract void initSensors();
 
     /**
      * Effect initializer.
