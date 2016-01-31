@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.entity.obstacle;
+package eu.janschupke.buddy.content.stage.level.forest.obstacle;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;

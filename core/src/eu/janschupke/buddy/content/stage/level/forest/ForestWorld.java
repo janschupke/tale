@@ -1,11 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.buddy.content.entity.creature.Player;
-import eu.janschupke.buddy.content.entity.creature.Ukko;
-import eu.janschupke.buddy.content.entity.obstacle.Cave;
-import eu.janschupke.buddy.content.entity.sensor.CaveSensor;
-import eu.janschupke.buddy.content.entity.sensor.IntroSensor;
+import eu.janschupke.buddy.content.entity.Player;
+import eu.janschupke.buddy.content.stage.level.forest.obstacle.Cave;
+import eu.janschupke.buddy.content.stage.level.forest.sensor.CaveSensor;
+import eu.janschupke.buddy.content.stage.level.forest.sensor.IntroSensor;
+import eu.janschupke.buddy.content.stage.level.forest.unit.Ukko;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;

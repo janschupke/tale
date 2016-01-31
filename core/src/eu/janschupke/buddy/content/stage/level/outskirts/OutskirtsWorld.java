@@ -1,6 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.outskirts;
 
-import eu.janschupke.buddy.content.entity.creature.Player;
+import eu.janschupke.buddy.content.entity.Player;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**

@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.world;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
-import eu.janschupke.buddy.content.entity.creature.Player;
+import eu.janschupke.buddy.content.entity.Player;
 import eu.janschupke.buddy.framework.base.entity.Interactible;
 
 /**

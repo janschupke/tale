@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.entity.creature;
+package eu.janschupke.buddy.content.stage.level.forest.unit;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;

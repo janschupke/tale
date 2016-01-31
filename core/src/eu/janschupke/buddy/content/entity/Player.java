@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.entity.creature;
+package eu.janschupke.buddy.content.entity;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
