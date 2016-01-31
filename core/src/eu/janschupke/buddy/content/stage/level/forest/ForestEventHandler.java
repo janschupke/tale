@@ -15,6 +15,7 @@ public class ForestEventHandler extends LevelEventHandler {
     }
 
     public void triggerIntro() {
+        if (introTriggered) return;
         Gdx.app.debug("ForestEventHandler#triggerIntro", "Triggering intro event.");
         introTriggered = true;
         // TODO: only once, dialog, add to lore log.

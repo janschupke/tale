@@ -3,19 +3,12 @@ package eu.janschupke.buddy.framework.base.world;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
 import eu.janschupke.buddy.content.entity.creature.Player;
-import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Interactible;
 
 /**
  * Base contact listener for Box2D bodies.
  */
 public class BodyContactListener implements ContactListener {
-    protected final App app;
-
-    public BodyContactListener(final App app) {
-        this.app = app;
-    }
-
     @Override
     public void beginContact(Contact contact) {
         Gdx.app.debug("BodyContactListener#beginContact", "Contacting");
@@ -29,10 +22,8 @@ public class BodyContactListener implements ContactListener {
         Gdx.app.debug("BodyContactListener#beginContact", "Is viable");
 
         if (!isPlayerBody(fa)) {
-            Gdx.app.debug("BodyContactListener#beginContact", "Engaging a");
             getEntity(fa).engage();
         } else {
-            Gdx.app.debug("BodyContactListener#beginContact", "Engaging b");
             getEntity(fb).engage();
         }
     }

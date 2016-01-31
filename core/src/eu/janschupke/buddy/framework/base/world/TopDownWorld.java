@@ -14,9 +14,7 @@ public abstract class TopDownWorld extends BaseWorld {
 
         boxWorld = new World(Config.TOPDOWN_GRAVITY, false);
         WorldObjectFactory.parseMapObjects(boxWorld, map.getLayers().get(Config.MAP_LAYER_OBJECT).getObjects(), tileSize);
-
-        // TODO: pass screen instead of app?
-        boxWorld.setContactListener(new BodyContactListener(screen.getApp()));
+        boxWorld.setContactListener(new BodyContactListener());
 
         init();
     }

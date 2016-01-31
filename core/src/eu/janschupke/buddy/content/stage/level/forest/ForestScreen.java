@@ -19,15 +19,13 @@ public class ForestScreen extends TopDownScreen {
         levelEventHandler = new ForestEventHandler(this);
         backgroundMusic = app.getResourceHandler().getForestMusic();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
+        world = new ForestWorld(this);
+        initView(world.getWidth(), world.getHeight());
     }
 
     @Override
     public void show() {
         super.show();
-
-        // TODO: should not be in show - re-created every time.
-        world = new ForestWorld(this);
-        initView(world.getWidth(), world.getHeight());
     }
 
     @Override

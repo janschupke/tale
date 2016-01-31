@@ -14,9 +14,7 @@ public abstract class PlatformWorld extends BaseWorld {
 
         boxWorld = new World(Config.PLATFORM_GRAVITY, false);
         WorldObjectFactory.parseMapObjects(boxWorld, map.getLayers().get(Config.MAP_LAYER_OBJECT).getObjects(), tileSize);
-
-        // TODO: pass screen instead of app?
-        boxWorld.setContactListener(new BodyContactListener(screen.getApp()));
+        boxWorld.setContactListener(new BodyContactListener());
 
         init();
     }
