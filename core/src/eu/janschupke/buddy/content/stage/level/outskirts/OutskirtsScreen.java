@@ -21,7 +21,7 @@ public class OutskirtsScreen extends TopDownScreen {
     public void show() {
         super.show();
 
-        world = new OutskirtsWorld();
+        world = new OutskirtsWorld(this);
         initView(world.getWidth(), world.getHeight());
     }
 

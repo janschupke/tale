@@ -2,8 +2,10 @@ package eu.janschupke.buddy.content.entity.sensor;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.buddy.content.stage.level.forest.ForestEventHandler;
 import eu.janschupke.buddy.framework.base.entity.Interactible;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
@@ -18,6 +20,8 @@ public class CaveSensor extends Sensor implements Interactible {
     @Override
     public void engage() {
         Gdx.app.debug("CaveSensor#engage", "Engaged");
+        // TODO
+        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).triggerIntro();
     }
 
     @Override

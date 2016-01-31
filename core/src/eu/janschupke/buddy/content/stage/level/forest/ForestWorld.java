@@ -13,8 +13,8 @@ import eu.janschupke.buddy.framework.base.world.TopDownWorld;
  * Forest (Tutorial) world.
  */
 public class ForestWorld extends TopDownWorld {
-    public ForestWorld() {
-        super("maps/forest.tmx", 32f);
+    public ForestWorld(ForestScreen screen) {
+        super("maps/forest.tmx", 32f, screen);
     }
 
     @Override

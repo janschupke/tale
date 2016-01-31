@@ -14,6 +14,7 @@ import eu.janschupke.buddy.framework.base.ui.BaseDialog;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
+import eu.janschupke.buddy.framework.util.LevelEventHandler;
 
 /**
  * Base class for all in-game screens (levels).
@@ -23,6 +24,7 @@ public abstract class GameScreen extends BaseScreen {
     protected boolean inMenu;
     protected Config.Huds screenHud;
     protected BaseInputProcessor levelInputProcessor;
+    protected LevelEventHandler levelEventHandler;
 
     private boolean paused = false;
 
@@ -285,5 +287,9 @@ public abstract class GameScreen extends BaseScreen {
 
     public BaseWorld getWorld() {
         return world;
+    }
+
+    public LevelEventHandler getLevelEventHandler() {
+        return levelEventHandler;
     }
 }

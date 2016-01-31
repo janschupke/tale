@@ -7,8 +7,8 @@ import eu.janschupke.buddy.framework.base.world.TopDownWorld;
  * Outskirts (Level 1) world.
  */
 public class OutskirtsWorld extends TopDownWorld {
-    public OutskirtsWorld() {
-        super("maps/outskirts.tmx", 32f);
+    public OutskirtsWorld(OutskirtsScreen screen) {
+        super("maps/outskirts.tmx", 32f, screen);
     }
 
     @Override

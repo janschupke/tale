@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.Array;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.ParticleEffectContainer;
 
@@ -27,6 +28,7 @@ import java.util.*;
  * Base class for levels' world representations.
  */
 public abstract class BaseWorld {
+    protected BaseScreen screen;
     protected World boxWorld;
     protected Box2DDebugRenderer debugRenderer;
     protected TiledMap map;
@@ -43,7 +45,8 @@ public abstract class BaseWorld {
     private Map<String, ParticleEffectContainer> particleEffects;
     private Array<ParticleEffectPool.PooledEffect> pooledEffects;
 
-    public BaseWorld(String tiledMap, float tileSize) {
+    public BaseWorld(String tiledMap, float tileSize, BaseScreen screen) {
+        this.screen = screen;
         map = new TmxMapLoader().load(tiledMap);
         renderer = new OrthogonalTiledMapRenderer(map, 1 / tileSize);
 
@@ -256,5 +259,9 @@ public abstract class BaseWorld {
 
     public Box2DDebugRenderer getDebugRenderer() {
         return debugRenderer;
+    }
+
+    public BaseScreen getScreen() {
+        return screen;
     }
 }
