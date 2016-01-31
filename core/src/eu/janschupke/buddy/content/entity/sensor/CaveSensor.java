@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.stage.level.forest.sensor;
+package eu.janschupke.buddy.content.entity.sensor;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;

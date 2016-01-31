@@ -3,12 +3,17 @@ package eu.janschupke.buddy.content.stage.level.forest;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.Fixture;
+import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.world.BodyContactListener;
 
 /**
  * Contact listener for the forest level.
  */
 public class ForestContactListener extends BodyContactListener {
+    public ForestContactListener(final App app) {
+        super(app);
+    }
+
     @Override
     public void beginContact(Contact contact) {
         Gdx.app.debug("ForestContactListener#beginContact", "Contacting");
