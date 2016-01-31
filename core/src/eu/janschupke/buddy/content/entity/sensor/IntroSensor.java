@@ -8,19 +8,21 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
- * A sensor that triggers cave lore in the tutorial area.
+ * A sensor that is triggered right after the game starts,
+ * giving some introduction text through a dialog.
  */
-public class CaveSensor extends Sensor implements Interactible {
-    public CaveSensor(BaseWorld world, Vector2 size) {
+public class IntroSensor extends Sensor implements Interactible {
+    public IntroSensor(BaseWorld world, Vector2 size) {
         super(world, size);
     }
 
     @Override
     public void engage() {
-        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).triggerCaveLore();
+        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).triggerIntro();
     }
 
     @Override
     public void disengage() {
+
     }
 }

@@ -13,7 +13,6 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 public class Cave extends Obstacle implements Interactible {
     public Cave(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/terrain/cave_entrance.png")), new Vector2(3, 3));
-        body.setUserData(this);
     }
 
     @Override

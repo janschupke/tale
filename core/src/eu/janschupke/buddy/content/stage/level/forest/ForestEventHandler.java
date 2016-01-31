@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.util.LevelEventHandler;
  */
 public class ForestEventHandler extends LevelEventHandler {
     private boolean introTriggered;
+    private boolean caveLoreTriggered;
 
     public ForestEventHandler(BaseScreen screen) {
         super(screen);
@@ -19,5 +20,11 @@ public class ForestEventHandler extends LevelEventHandler {
         Gdx.app.debug("ForestEventHandler#triggerIntro", "Triggering intro event.");
         introTriggered = true;
         // TODO: only once, dialog, add to lore log.
+    }
+
+    public void triggerCaveLore() {
+        if (caveLoreTriggered) return;
+        Gdx.app.debug("ForestEventHandler#triggerCaveLore", "Triggering cave lore event.");
+        caveLoreTriggered = true;
     }
 }

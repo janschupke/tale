@@ -19,6 +19,7 @@ public abstract class WorldEntity {
         this.world = world;
         this.size = size;
         body = WorldObjectFactory.createBox(world.getBoxWorld(), size, defaultPosition, BodyDef.BodyType.DynamicBody, true);
+        body.setUserData(this);
     }
 
     public abstract void setPosition(float x, float y);

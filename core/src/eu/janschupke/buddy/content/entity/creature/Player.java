@@ -19,7 +19,6 @@ public class Player extends Unit {
         initIdleSprites();
 
         body.setType(BodyDef.BodyType.DynamicBody);
-        body.setUserData(this);
     }
 
     @Override

@@ -16,7 +16,6 @@ public class Ukko extends Unit {
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();
-        body.setUserData(this);
     }
 
     @Override

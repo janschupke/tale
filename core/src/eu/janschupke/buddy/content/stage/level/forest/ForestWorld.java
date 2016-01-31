@@ -5,6 +5,7 @@ import eu.janschupke.buddy.content.entity.creature.Player;
 import eu.janschupke.buddy.content.entity.creature.Ukko;
 import eu.janschupke.buddy.content.entity.obstacle.Cave;
 import eu.janschupke.buddy.content.entity.sensor.CaveSensor;
+import eu.janschupke.buddy.content.entity.sensor.IntroSensor;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
@@ -50,8 +51,11 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initSensors() {
-        Sensor caveSensor = new CaveSensor(this, new Vector2(1, 3));
-        caveSensor.setPosition(21, 3);
+        Sensor introSensor = new IntroSensor(this, new Vector2(1, 3));
+        introSensor.setPosition(16, 3);
+
+        Sensor caveSensor = new CaveSensor(this, new Vector2(3, 1));
+        caveSensor.setPosition(14, 13);
     }
 }
 

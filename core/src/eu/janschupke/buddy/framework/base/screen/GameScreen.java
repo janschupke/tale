@@ -37,7 +37,7 @@ public abstract class GameScreen extends BaseScreen {
     public void show() {
         Gdx.app.debug("GameScreen#show", "Showing");
         super.show();
-//        inputMultiplexer.addProcessor(levelInputProcessor);
+        inputMultiplexer.addProcessor(levelInputProcessor);
         inputMultiplexer.addProcessor(app.getInputProcessor(Config.Input.GAME));
         paused = false;
         inMenu = false;
@@ -47,7 +47,7 @@ public abstract class GameScreen extends BaseScreen {
     public void hide() {
         Gdx.app.debug("GameScreen#hide", "Hiding");
         super.hide();
-//        removeInputProcessor(levelInputProcessor);
+        removeInputProcessor(levelInputProcessor);
         removeInputProcessor(app.getInputProcessor(Config.Input.GAME));
         paused = true;
     }
