@@ -16,6 +16,7 @@ public class Ukko extends Unit {
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();
+        body.setUserData(this);
     }
 
     @Override
@@ -27,15 +28,5 @@ public class Ukko extends Unit {
         tr.flip(true, false);
         idleTextures.put(Direction.RIGHT, tr);
         idleTextures.put(Direction.LEFT, new TextureRegion(t, 0, 0, 100, 100));
-    }
-
-    @Override
-    public void engage() {
-
-    }
-
-    @Override
-    public void disengage() {
-
     }
 }

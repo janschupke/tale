@@ -18,6 +18,7 @@ public class ForestScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.FOREST);
         backgroundMusic = app.getResourceHandler().getForestMusic();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
+
     }
 
     @Override

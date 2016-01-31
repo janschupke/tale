@@ -22,6 +22,4 @@ public abstract class WorldEntity {
     }
 
     public abstract void setPosition(float x, float y);
-    public abstract void engage();
-    public abstract void disengage();
 }

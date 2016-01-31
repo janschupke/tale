@@ -19,6 +19,7 @@ public class Player extends Unit {
         initIdleSprites();
 
         body.setType(BodyDef.BodyType.DynamicBody);
+        body.setUserData(this);
     }
 
     @Override
@@ -30,15 +31,5 @@ public class Player extends Unit {
         tr.flip(true, false);
         idleTextures.put(Direction.RIGHT, tr);
         idleTextures.put(Direction.LEFT, new TextureRegion(t, 0, 0, 100, 100));
-    }
-
-    @Override
-    public void engage() {
-
-    }
-
-    @Override
-    public void disengage() {
-
     }
 }

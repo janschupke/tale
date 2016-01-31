@@ -9,7 +9,6 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
  * Base class for all in-game world sensors.
  */
 public abstract class Sensor extends WorldEntity {
-
     public Sensor(BaseWorld world, Vector2 size) {
         super(world, size);
         WorldObjectFactory.setCollisions(body, Config.BIT_OBSTACLE_ANY, Config.BIT_UNIT_PLAYER);
