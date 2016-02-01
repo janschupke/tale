@@ -1,11 +1,14 @@
 package eu.janschupke.buddy.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.buddy.content.entity.Player;
-import eu.janschupke.buddy.content.stage.level.forest.obstacle.Cave;
+import eu.janschupke.buddy.content.entity.PlayerUnit;
+import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
+import eu.janschupke.buddy.content.stage.level.forest.obstacle.CaveObstacle;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.CaveSensor;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.IntroSensor;
-import eu.janschupke.buddy.content.stage.level.forest.unit.Ukko;
+import eu.janschupke.buddy.content.stage.level.forest.unit.UkkoUnit;
+import eu.janschupke.buddy.framework.base.entity.Item;
+import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
@@ -21,27 +24,29 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initPlayer() {
         setSpawnPoint(24, 5);
-        setPlayerUnit(new Player(this));
+        setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
 
     @Override
     protected void initCreatures() {
-        Unit u = new Ukko(this);
+        Unit u = new UkkoUnit(this);
         u.setPosition(18, 18);
         getUnits().add(u);
     }
 
     @Override
     protected void initItems() {
-
+        Item goldCoinItem = new GoldCoinItem(this);
+        goldCoinItem.setPosition(23, 4);
+        getItems().add(goldCoinItem);
     }
 
     @Override
     protected void initObstacles() {
-        Cave cave = new Cave(this);
-        cave.setPosition(20, 18);
-        getObstacles().add(cave);
+        Obstacle caveObstacle = new CaveObstacle(this);
+        caveObstacle.setPosition(20, 18);
+        getObstacles().add(caveObstacle);
     }
 
     @Override

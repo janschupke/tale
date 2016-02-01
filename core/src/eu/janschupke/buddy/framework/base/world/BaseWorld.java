@@ -192,6 +192,7 @@ public abstract class BaseWorld {
     public void dispose() {
         units.forEach(Unit::dispose);
         items.forEach(Item::dispose);
+        obstacles.forEach(Obstacle::dispose);
 
         map.dispose();
         playerUnit.dispose();

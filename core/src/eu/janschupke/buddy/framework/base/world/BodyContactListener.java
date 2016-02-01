@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.world;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
-import eu.janschupke.buddy.content.entity.Player;
+import eu.janschupke.buddy.content.entity.PlayerUnit;
 import eu.janschupke.buddy.framework.base.entity.Interactible;
 
 /**
@@ -74,7 +74,7 @@ public class BodyContactListener implements ContactListener {
      * @return True if player, false otherwise.
      */
     protected boolean isPlayerBody(Fixture f) {
-        return (f.getBody().getUserData() instanceof Player);
+        return (f.getBody().getUserData() instanceof PlayerUnit);
     }
 
     /**

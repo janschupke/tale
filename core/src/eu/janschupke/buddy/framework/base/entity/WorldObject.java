@@ -43,7 +43,16 @@ public abstract class WorldObject extends WorldEntity {
 
     @Override
     public void setPosition(float x, float y) {
-        Vector2 position = new Vector2(x + getSprite().getWidth() / 2.0f, y + getSprite().getHeight() / 2.0f);
+        // Offset for small entities, so that they are centered to the middle of the tile.
+        float offset = (1.0f - getSprite().getWidth()) / 2.0f;
+        // Offset is disregarded for entities that span more than 1 tile.
+        if (getSprite().getWidth() > 1 && getSprite().getHeight() > 1) {
+            offset = 0;
+        }
+        // Positioning.
+        x = x + getSprite().getWidth() / 2.0f + offset;
+        y = y + getSprite().getHeight() / 2.0f + offset;
+        Vector2 position = new Vector2(x, y);
         body.setTransform(position, body.getAngle());
     }
 

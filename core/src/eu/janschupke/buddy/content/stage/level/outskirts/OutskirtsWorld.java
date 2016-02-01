@@ -1,6 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.outskirts;
 
-import eu.janschupke.buddy.content.entity.Player;
+import eu.janschupke.buddy.content.entity.PlayerUnit;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
@@ -14,7 +14,7 @@ public class OutskirtsWorld extends TopDownWorld {
     @Override
     protected void initPlayer() {
         setSpawnPoint(5, 5);
-        setPlayerUnit(new Player(this));
+        setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
 

@@ -27,7 +27,7 @@ public class Config {
 
     // Entity configuration
     public static final Vector2 DEFAULT_UNIT_SIZE = new Vector2(0.8f, 0.8f);
-    public static final Vector2 DEFAULT_ITEM_SIZE = new Vector2(0.5f, 0.5f);
+    public static final Vector2 DEFAULT_ITEM_SIZE = new Vector2(0.4f, 0.4f);
 
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
@@ -48,7 +48,7 @@ public class Config {
     public static final float RESTITUTION = 0.0f;
 
     public static final float OBJECT_ACCELERATION = 2.0f;
-    public static final float OBJECT_MAX_SPEED = 4.0f;
+    public static final float OBJECT_MAX_SPEED = 2.8f;
 
     // Collision class configuration.
     public static final short BIT_NOTHING = 0;

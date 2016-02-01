@@ -9,8 +9,8 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 /**
  * Ukko unit class.
  */
-public class Ukko extends Unit {
-    public Ukko(BaseWorld world) {
+public class UkkoUnit extends Unit {
+    public UkkoUnit(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png")));
         animationTexture = new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png"));
         animationFrames = TextureRegion.split(animationTexture, 100, 100);

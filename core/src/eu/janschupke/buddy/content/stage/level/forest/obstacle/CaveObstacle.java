@@ -10,8 +10,8 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 /**
  * Cave entrance world obstacle.
  */
-public class Cave extends Obstacle implements Interactible {
-    public Cave(BaseWorld world) {
+public class CaveObstacle extends Obstacle implements Interactible {
+    public CaveObstacle(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/terrain/cave_entrance.png")), new Vector2(3, 3));
     }
 
