@@ -6,7 +6,7 @@ import eu.janschupke.buddy.content.ui.dialog.EventDialog;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
 
@@ -27,7 +27,7 @@ public class GlobalEventHandler {
      * @param state Requested debug state.
      */
     public void toggleUiDebug(boolean state) {
-        for(Map.Entry<Config.Huds, UITable> entry : app.getHuds().entrySet()) {
+        for(Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
             entry.getValue().setDebug(state);
         }
     }

@@ -6,14 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
-import eu.janschupke.buddy.framework.base.ui.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Audio settings UI.
  */
-public class AudioMenu extends UITable implements PreferenceMenu {
+public class AudioMenu extends MenuTable implements PreferenceMenu {
     private Label titleLabel;
     private Label masterVolumeLabel;
     private Slider masterVolumeSlider;

@@ -6,14 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.content.ui.dialog.RestartDialog;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
-import eu.janschupke.buddy.framework.base.ui.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Graphics settings UI.
  */
-public class GraphicsMenu extends UITable implements PreferenceMenu {
+public class GraphicsMenu extends MenuTable implements PreferenceMenu {
     private Label titleLabel;
     private Label resolutionLabel;
     private SelectBox<String> resolutionCombo;

@@ -14,7 +14,7 @@ import eu.janschupke.buddy.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.BaseDialog;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
@@ -30,7 +30,7 @@ public abstract class App extends Game {
     private GlobalEventHandler eventHandler;
     private SpriteBatch batch;
     private BitmapFont font;
-    protected Map<Config.Huds, UITable> huds;
+    protected Map<Config.Huds, RootTable> huds;
     protected Map<Config.Screens, BaseScreen> screens;
     protected Map<Config.Input, BaseInputProcessor> inputProcessors;
     protected Map<Config.Dialog, BaseDialog> dialogs;
@@ -103,15 +103,15 @@ public abstract class App extends Game {
      */
     protected abstract void initDialogs();
 
-    public Map<Config.Huds, UITable> getHuds() {
+    public Map<Config.Huds, RootTable> getHuds() {
         return huds;
     }
 
-    public UITable getHud(Config.Huds name) {
+    public RootTable getHud(Config.Huds name) {
         return huds.get(name);
     }
 
-    public void swapHuds(UITable hud) {
+    public void swapHuds(RootTable hud) {
         ui.clear();
 
         // Update configurable widgets with the most current values.

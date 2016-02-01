@@ -6,19 +6,19 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 
 /**
  * Adjusted menu, accessible from within any level.
  */
-public class GameMenu extends UITable {
+public class GameMenu extends MenuTable {
     private Label titleLabel;;
     private TextButton resumeButton;
     private TextButton settingsButton;
     private TextButton hotkeysButton;
     private TextButton exitButton;
 
-    public GameMenu(App app) {
+    public GameMenu(final App app) {
         super(app);
 
         initWidgets();

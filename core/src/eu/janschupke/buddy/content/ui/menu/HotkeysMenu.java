@@ -5,13 +5,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
-import eu.janschupke.buddy.framework.base.ui.UITable;
 
 /**
  * Hotkey overview UI.
  */
-public class HotkeysMenu extends UITable implements PreferenceMenu {
+public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     private Label titleLabel;
     private Label invokeMenuLabel;
     private Label invokeMenuHotkey;

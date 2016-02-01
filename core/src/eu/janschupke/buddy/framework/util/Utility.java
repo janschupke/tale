@@ -4,7 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
@@ -17,7 +17,7 @@ public class Utility {
      * @param newScreen New screen reference.
      * @param newHud New hud reference.
      */
-    public static void transitionScreens(final App app, final BaseScreen newScreen, final UITable newHud) {
+    public static void transitionScreens(final App app, final BaseScreen newScreen, final RootTable newHud) {
 //        final float duration = Config.SCREEN_TRANSITION_DURATION;
 //        app.getUi().getRoot().getColor().a = 1;
 //        SequenceAction sequenceAction = new SequenceAction();
@@ -43,7 +43,7 @@ public class Utility {
      * @param app Application reference.
      * @param newHud New hud reference.
      */
-    public static void transitionHuds(final App app, final UITable newHud) {
+    public static void transitionHuds(final App app, final RootTable newHud) {
         final float duration = Config.SCREEN_TRANSITION_DURATION;
 
         app.getUi().getRoot().getColor().a = 1;

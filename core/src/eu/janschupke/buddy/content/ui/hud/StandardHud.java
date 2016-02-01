@@ -11,17 +11,19 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.RootTable;
 
 /**
  * Standard level HUD.
  */
-public class StandardHud extends UITable {
+public class StandardHud extends RootTable {
     private ImageButton menuButton;
     private ImageButton inventoryButton;
     private ImageButton characterButton;
     private ImageButton questLogButton;
     private ImageButton eventLogButton;
+
+    private Table inventoryTable;
 
     public StandardHud(final App app) {
         super(app);
@@ -43,6 +45,8 @@ public class StandardHud extends UITable {
                 new Texture(Gdx.files.internal("textures/gui/quest.png")))));
         eventLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
                 new Texture(Gdx.files.internal("textures/gui/event.png")))));
+
+//        Table inventoryTable = new Table();
     }
 
     @Override

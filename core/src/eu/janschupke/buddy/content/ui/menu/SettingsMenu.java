@@ -6,12 +6,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.content.ui.dialog.DefaultSettingDialog;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 
 /**
  * Main settings menu UI.
  */
-public class SettingsMenu extends UITable {
+public class SettingsMenu extends MenuTable {
     private Label titleLabel;
     private TextButton graphicsButton;
     private TextButton audioButton;

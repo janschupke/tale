@@ -16,12 +16,12 @@ public class Config {
     public static final float SCREEN_TRANSITION_DURATION = 0.1f;
 
     public static final String[] AVAILABLE_RESOLUTIONS = {
-        "960x540 (16:9)", "1024x576 (16:9)", "1280x720 (16:9)", "1600x900 (16:9)", "1920x1080 (16:9)",
-                "800x600 (4:3)", "1152x864 (4:3)", "1400x1050 (4:3)", "1600x1200 (4:3)", "1920x1440 (4:3)"
+        "1024x576 (16:9)", "1280x720 (16:9)", "1600x900 (16:9)", "1920x1080 (16:9)",
+                "1152x864 (4:3)", "1400x1050 (4:3)", "1600x1200 (4:3)", "1920x1440 (4:3)"
     };
 
-    public static final int [] AVAILABLE_WIDTHS = {960, 1024, 1280, 1600, 1920, 800, 1152, 1400, 1600, 1920};
-    public static final int [] AVAILABLE_HEIGHTS = {540, 576, 720, 900, 1080, 600, 864, 1050, 1200, 1440};
+    public static final int [] AVAILABLE_WIDTHS = {1024, 1280, 1600, 1920, 1152, 1400, 1600, 1920};
+    public static final int [] AVAILABLE_HEIGHTS = {576, 720, 900, 1080, 864, 1050, 1200, 1440};
 
     public static final int NARROW_VIEW_THRESHOLD = Config.AVAILABLE_RESOLUTIONS.length / 2;
 

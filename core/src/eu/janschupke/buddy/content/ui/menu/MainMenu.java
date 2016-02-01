@@ -6,12 +6,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 
 /**
  * Main menu UI layout.
  */
-public class MainMenu extends UITable {
+public class MainMenu extends MenuTable {
     private Label titleLabel;
     private TextButton newGameButton;
     private TextButton continueGameButton;

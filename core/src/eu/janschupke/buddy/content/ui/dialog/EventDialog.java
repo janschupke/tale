@@ -20,6 +20,7 @@ public class EventDialog extends BaseDialog {
         setListeners();
         setMovable(true);
         setModal(false);
+        pack();
     }
 
     @Override

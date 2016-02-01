@@ -5,12 +5,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.UITable;
+import eu.janschupke.buddy.framework.base.ui.MenuTable;
 
 /**
  * Credits table UI.
  */
-public class CreditsMenu extends UITable {
+public class CreditsMenu extends MenuTable {
     private Label titleLabel;
     private Label creditsLabel;
     private TextButton backButton;
