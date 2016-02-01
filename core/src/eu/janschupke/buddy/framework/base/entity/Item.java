@@ -17,6 +17,10 @@ public abstract class Item extends WorldObject {
         WorldObjectFactory.setCollisions(body, Config.BIT_OBSTACLE_ANY, (short) (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY));
     }
 
+    public Item(BaseWorld world, Texture texture) {
+        this(world, texture, Config.DEFAULT_ITEM_SIZE);
+    }
+
     @Override
     public void draw(Batch batch) {
         sprite.draw(batch, body);

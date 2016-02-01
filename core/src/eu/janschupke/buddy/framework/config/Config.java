@@ -25,12 +25,16 @@ public class Config {
 
     public static final int NARROW_VIEW_THRESHOLD = Config.AVAILABLE_RESOLUTIONS.length / 2;
 
+    // Entity configuration
+    public static final Vector2 DEFAULT_UNIT_SIZE = new Vector2(0.8f, 0.8f);
+    public static final Vector2 DEFAULT_ITEM_SIZE = new Vector2(0.5f, 0.5f);
+
     // Viewport configuration.
-    private static final int VIEWPORT_WIDE_MULTIPLIER = 2;
+    private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;
     public static final int VIEWPORT_WIDE_HEIGHT = 9 * VIEWPORT_WIDE_MULTIPLIER;
 
-    private static final int VIEWPORT_MULTIPLIER = 6;
+    private static final int VIEWPORT_MULTIPLIER = 3;
     public static final int VIEWPORT_WIDTH = 4 * VIEWPORT_MULTIPLIER;
     public static final int VIEWPORT_HEIGHT = 3 * VIEWPORT_MULTIPLIER;
 

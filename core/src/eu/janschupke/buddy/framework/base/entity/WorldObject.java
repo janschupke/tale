@@ -21,10 +21,6 @@ public abstract class WorldObject extends WorldEntity {
         setTexture(texture);
     }
 
-    public WorldObject(BaseWorld world, Texture texture) {
-        this(world, texture, new Vector2(1, 1));
-    }
-
     /**
      * Changes the object's texture.
      * @param texture New texture.

@@ -1,27 +1,65 @@
 package eu.janschupke.buddy;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
-import org.junit.Assert;
-import org.junit.Test;
+import junit.framework.TestCase;
 
 /**
  * Global event handler test class.
  */
-public class GlobalEventHandlerTest {
-    @Test
-    public void thisAlwaysPasses()
-    {
-        Assert.assertTrue(true);
-    }
+public class GlobalEventHandlerTest extends TestCase {
+//    private static App app;
 
-    @Test
-    @Ignore
-    public void thisIsIgnored()
-    {
-    }
-//    @org.junit.Test
-//    public void testToggleUiDebug() throws Exception {
+//    @BeforeClass
+//    public static void init() {
+//        final HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
+//        config.renderInterval = 1f/60;
+//        app = new Buddy();
+//        HeadlessApplication h = new HeadlessApplication(app, config);
+//    }
+
+//    private boolean waitForThread = true;
+//    public void testToggleUiDebugTrue() throws Exception {
+//    @Test
+//    public void testToggleUiDebugTrue() {
+////        fail();
+//        final HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
+//        config.renderInterval = 1f/60;
+//        app = new Buddy();
+//        HeadlessApplication h = new HeadlessApplication(app, config);
 //
+//        if (app == null) {
+//            Assert.assertEquals("a", "b");
+//        }
+//
+//        Gdx.app.postRunnable(new Runnable() {
+//            @Override
+//            public void run() {
+//                app.getEventHandler().toggleUiDebug(true);
+//                waitForThread = false;
+//            }
+//        });
+//
+////        while(waitForThread) {
+////            try {
+////                Thread.sleep(10);
+////            } catch(Exception e ) {
+////            }
+////        }
+//
+////        app = new Buddy();
+//
+//        for(Map.Entry<Config.Huds, UITable> entry : app.getHuds().entrySet()) {
+//            if (entry.getValue().getDebug() != true) {
+//                fail();
+//            }
+//        }
+//
+//        Assert.assertTrue(true);
+//    }
+
+//    @Test
+//    public void testToggleUiDebugFalse() {
+////        GlobalEventHandler e = new GlobalEventHandler();
+//        Assert.assertTrue(true);
 //    }
 //
 //    @org.junit.Test

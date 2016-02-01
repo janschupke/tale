@@ -48,13 +48,17 @@ public abstract class Unit extends WorldObject {
     protected int frameAmount = 6;
     protected float loopDuration = 2.0f;
 
-    public Unit(BaseWorld world, Texture texture) {
-        super(world, texture);
+    public Unit(BaseWorld world, Texture texture, Vector2 size) {
+        super(world, texture, size);
 
         lastDirection = Direction.DOWN;
         idleTextures = new HashMap<>();
         WorldObjectFactory.setCollisions(body, Config.BIT_UNIT_ANY, (short) (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY));
         body.setType(BodyDef.BodyType.KinematicBody);
+    }
+
+    public Unit(BaseWorld world, Texture texture) {
+        this(world, texture, Config.DEFAULT_UNIT_SIZE);
     }
 
     /**
