@@ -18,14 +18,13 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
 public class HudMenuTable extends UITable {
     private ImageButton menuButton;
     private ImageButton inventoryButton;
-    private ImageButton characterButton;
     private ImageButton questLogButton;
     private ImageButton eventLogButton;
 
     public HudMenuTable(final App app) {
         super(app);
 
-        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-bar.png"));
+        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);
 
@@ -38,26 +37,22 @@ public class HudMenuTable extends UITable {
 
     @Override
     public void initWidgets() {
-
         menuButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/menu.png")))));
+                new Texture(Gdx.files.internal("textures/gui/menu-icon.png")))));
         inventoryButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/inventory.png")))));
-        characterButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/character.png")))));
+                new Texture(Gdx.files.internal("textures/gui/inventory-button-icon.png")))));
         questLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/quest.png")))));
+                new Texture(Gdx.files.internal("textures/gui/quest-log-button-icon.png")))));
         eventLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/event.png")))));
+                new Texture(Gdx.files.internal("textures/gui/event-log-button-icon.png")))));
     }
 
     @Override
     public void addWidgets() {
-        add(menuButton);
-        add(inventoryButton);
-        add(characterButton);
-        add(questLogButton);
-        add(eventLogButton);
+        add(menuButton).pad(buttonPadding);
+        add(inventoryButton).pad(buttonPadding);
+        add(questLogButton).pad(buttonPadding);
+        add(eventLogButton).pad(buttonPadding);
     }
 
     @Override
@@ -72,12 +67,6 @@ public class HudMenuTable extends UITable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 ((GameScreen)app.getScreen()).toggleInventory();
-            }
-        });
-        characterButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleCharacter();
             }
         });
         questLogButton.addListener(new ClickListener() {

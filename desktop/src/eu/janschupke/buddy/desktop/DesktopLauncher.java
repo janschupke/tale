@@ -49,7 +49,7 @@ public class DesktopLauncher {
 		config.foregroundFPS = DefaultSettings.FOREGROUND_FPS;
 		config.backgroundFPS = DefaultSettings.BACKGROUND_FPS;
 		config.title = Config.GAME_TITLE;
-		config.addIcon("textures/gui/icon.png", Files.FileType.Internal);
+		config.addIcon("textures/gui/application-icon.png", Files.FileType.Internal);
 		new LwjglApplication(buddy, config);
 	}
 }

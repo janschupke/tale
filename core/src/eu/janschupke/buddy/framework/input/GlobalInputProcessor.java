@@ -29,9 +29,14 @@ public class GlobalInputProcessor extends BaseInputProcessor {
             app.getEventHandler().toggleSound();
         }
 
-        if (keycode == Hotkeys.DEBUG) {
-            Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling debug");
-            app.getEventHandler().toggleDebugRendering();
+        if (keycode == Hotkeys.DEBUG_UI) {
+            Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling UI debug rendering");
+            app.getEventHandler().toggleUiDebugRendering();
+        }
+
+        if (keycode == Hotkeys.DEBUG_RENDER) {
+            Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling world debug rendering");
+            app.getEventHandler().toggleWorldDebugRendering();
         }
 
         return false;

@@ -157,7 +157,6 @@ public abstract class GameScreen extends BaseScreen {
             inMenu = false;
             app.swapHuds(app.getHud(screenHud));
             resume();
-            app.reopenDialogs();
         } else {
             inMenu = true;
             pause();
@@ -174,25 +173,29 @@ public abstract class GameScreen extends BaseScreen {
     public void toggleInventory() {
         Gdx.app.debug("GameScreen#toggleInventory", "Toggling inventory");
         app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        toggleDialog(app.getDialog(Config.Dialog.INVENTORY));
+        // TODO
+//        toggleDialog(app.getDialog(Config.Dialog.INVENTORY));
     }
 
     public void toggleCharacter() {
         Gdx.app.debug("GameScreen#toggleCharacter", "Toggling character");
         app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        toggleDialog(app.getDialog(Config.Dialog.CHARACTER));
+        // TODO
+//        toggleDialog(app.getDialog(Config.Dialog.CHARACTER));
     }
 
     public void toggleQuestLog() {
         Gdx.app.debug("GameScreen#toggleQuestLog", "Toggling quests");
         app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        toggleDialog(app.getDialog(Config.Dialog.QUEST));
+        // TODO
+//        toggleDialog(app.getDialog(Config.Dialog.QUEST));
     }
 
     public void toggleEventLog() {
         Gdx.app.debug("GameScreen#toggleEventLog", "Toggling events");
         app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        toggleDialog(app.getDialog(Config.Dialog.EVENT));
+        // TODO
+//        toggleDialog(app.getDialog(Config.Dialog.EVENT));
     }
 
     // For world step calculations.
@@ -233,15 +236,15 @@ public abstract class GameScreen extends BaseScreen {
 
         updateUnits(delta);
         updateObjects(delta);
-        if (app.getSettingsManager().getConfig().getDebugRendering() == Config.DebugRendering.ALL ||
-                app.getSettingsManager().getConfig().getDebugRendering() == Config.DebugRendering.GRAPHICS) {
+        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.ALL ||
+                app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.GRAPHICS) {
             renderLevel(delta);
         }
         if (paused) {
             dimScreen();
         }
-        if (app.getSettingsManager().getConfig().getDebugRendering() == Config.DebugRendering.ALL ||
-                app.getSettingsManager().getConfig().getDebugRendering() == Config.DebugRendering.DEBUG) {
+        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.ALL ||
+                app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.DEBUG) {
             world.getDebugRenderer().render(world.getBoxWorld(), view.getCamera().combined);
         }
     }

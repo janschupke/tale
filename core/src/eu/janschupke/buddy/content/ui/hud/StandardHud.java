@@ -3,6 +3,7 @@ package eu.janschupke.buddy.content.ui.hud;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.HudTable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Standard level HUD.
@@ -34,20 +35,18 @@ public class StandardHud extends HudTable {
     @Override
     public void addWidgets() {
         Table middleTable = new Table();
-        // TODO: debug
-        middleTable.setDebug(true);
         middleTable.add(interactionTable).expand().fill().row();
         middleTable.add(inventoryTable);
 
         // TODO: mock data
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 35; i++) {
             eventLogTable.addEvent("Dummy event from Standard Hud");
         }
 
         topHudTable.add(topMenuTable);
-        bottomHudTable.add(eventLogTable).expandY().fill().bottom();
+        bottomHudTable.add(eventLogTable).expandY().fill().bottom().width(Config.HUD_SIDE_PANE_WIDTH);
         bottomHudTable.add(middleTable).expand().fill();
-        bottomHudTable.add(questLogTable).expandY().fill().bottom();
+        bottomHudTable.add(questLogTable).expandY().fill().bottom().width(Config.HUD_SIDE_PANE_WIDTH);
     }
 
     @Override

@@ -7,10 +7,6 @@ import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsInputProcessor;
 import eu.janschupke.buddy.content.stage.menu.MenuScreen;
 import eu.janschupke.buddy.content.stage.splash.SplashScreen;
-import eu.janschupke.buddy.content.ui.dialog.CharacterDialog;
-import eu.janschupke.buddy.content.ui.dialog.EventDialog;
-import eu.janschupke.buddy.content.ui.dialog.InventoryDialog;
-import eu.janschupke.buddy.content.ui.dialog.QuestDialog;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.content.ui.menu.*;
 import eu.janschupke.buddy.framework.App;
@@ -30,7 +26,7 @@ public class Buddy extends App {
 		Gdx.app.debug("Buddy#create", "Creating");
 
 		// Cursor.
-		Pixmap pm = new Pixmap(Gdx.files.internal("textures/gui/cursor.png"));
+		Pixmap pm = new Pixmap(Gdx.files.internal("textures/gui/application-cursor.png"));
 		Gdx.input.setCursorImage(pm, 0, 0);
 
 		this.setScreen(getScreenInstance(Config.Screens.SPLASH));
@@ -110,20 +106,5 @@ public class Buddy extends App {
 
 //		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
 //		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
-	}
-
-	@Override
-	protected void initDialogs() {
-		InventoryDialog inventory = new InventoryDialog(this);
-		dialogs.put(Config.Dialog.INVENTORY, inventory);
-
-		CharacterDialog character = new CharacterDialog(this);
-		dialogs.put(Config.Dialog.CHARACTER, character);
-
-		QuestDialog quest = new QuestDialog(this);
-		dialogs.put(Config.Dialog.QUEST, quest);
-
-		EventDialog event = new EventDialog(this);
-		dialogs.put(Config.Dialog.EVENT, event);
 	}
 }

@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
 import eu.janschupke.buddy.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.base.ui.BaseDialog;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
@@ -33,7 +32,6 @@ public abstract class App extends Game {
     protected Map<Config.Huds, RootTable> huds;
     protected Map<Config.Screens, BaseScreen> screens;
     protected Map<Config.Input, BaseInputProcessor> inputProcessors;
-    protected Map<Config.Dialog, BaseDialog> dialogs;
     protected Skin skin;
     protected Stage ui;
     private I18NBundle lang;
@@ -49,7 +47,6 @@ public abstract class App extends Game {
         huds = new HashMap<>();
         screens = new HashMap<>();
         inputProcessors = new HashMap<>();
-        dialogs = new HashMap<>();
 
         // Logging configuration.
         Gdx.app.setLogLevel(com.badlogic.gdx.Application.LOG_ERROR);
@@ -74,7 +71,6 @@ public abstract class App extends Game {
         initHuds();
         initInputProcessors();
         initScreens();
-        initDialogs();
     }
 
     @Override
@@ -97,11 +93,6 @@ public abstract class App extends Game {
      * Initiates the instances of all available screens.
      */
     protected abstract void initScreens();
-
-    /**
-     * Various dialog instances, not exclusive to specific screens.
-     */
-    protected abstract void initDialogs();
 
     public Map<Config.Huds, RootTable> getHuds() {
         return huds;
@@ -128,23 +119,6 @@ public abstract class App extends Game {
 
     public BaseInputProcessor getInputProcessor(Config.Input name) {
         return inputProcessors.get(name);
-    }
-
-    public BaseDialog getDialog(Config.Dialog name) {
-        return dialogs.get(name);
-    }
-
-    /**
-     * Re-opens all in-game dialogs that were supressed by the menu
-     * and need to be shown again.
-     */
-    public void reopenDialogs() {
-        for (Map.Entry<Config.Dialog, BaseDialog> entry : dialogs.entrySet()) {
-            BaseDialog d = entry.getValue();
-            if (d.isOpen()) {
-                d.show(ui);
-            }
-        }
     }
 
     @Override

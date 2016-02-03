@@ -21,8 +21,8 @@ public class MenuScreen extends UIScreen {
 
         backgroundMusic = app.getResourceHandler().getMenuMusic();
         titleLayout = new GlyphLayout(app.getFont(), Config.GAME_TITLE);
-        backgroundTexture = new Texture(Gdx.files.internal("textures/gui/menuBackground.png"));
-        menuBackgroundTexture = new Texture(Gdx.files.internal("textures/gui/menuUiBackground.png"));
+        backgroundTexture = new Texture(Gdx.files.internal("textures/gui/menu-screen-background.png"));
+        menuBackgroundTexture = new Texture(Gdx.files.internal("textures/gui/menu-table-background.png"));
     }
 
     @Override

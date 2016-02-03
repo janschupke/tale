@@ -75,8 +75,15 @@ public class Config {
     public static final float MAP_DEFAULT_SPEED = 1.0f;
 
     // Development variables.
-    public static final boolean DEBUG_MODE = true;
-    public static final DebugRendering DEFAULT_DEBUG_RENDERING = DebugRendering.ALL;
+    public static final boolean DEBUG_MODE = false;
+    public static final boolean DEFAULT_UI_DEBUG_RENDERING = DEBUG_MODE;
+    public static WorldDebugRendering DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.GRAPHICS;
+
+    static {
+        if (Config.DEBUG_MODE) {
+            DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.ALL;
+        }
+    }
 
     // UI values:
     public static final int SLIDER_MIN = 0;
@@ -93,12 +100,14 @@ public class Config {
 
     public static final int HUD_INNER_PADDING = 10;
     public static final int HUD_BUTTON_PADDING = 5;
+    public static final int HUD_BOTTOM_PANE_HEIGHT = 160;
+    public static final int HUD_SIDE_PANE_WIDTH = 250;
 
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
 
-    public enum DebugRendering {
-        DEBUG, GRAPHICS, ALL
+    public enum WorldDebugRendering {
+        ALL, DEBUG, GRAPHICS
     }
 
     public enum Huds {

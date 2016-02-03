@@ -6,7 +6,8 @@ import com.badlogic.gdx.Input;
  * All hotkey values.
  */
 public class Hotkeys {
-    public static final int DEBUG = Input.Keys.F1;
+    public static final int DEBUG_UI = Input.Keys.F1;
+    public static final int DEBUG_RENDER = Input.Keys.F2;
 
     public static final int MENU = Input.Keys.ESCAPE;
     public static final int MENU_ALTERNATIVE = Input.Keys.F10;

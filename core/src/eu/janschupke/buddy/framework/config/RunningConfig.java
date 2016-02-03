@@ -5,7 +5,8 @@ package eu.janschupke.buddy.framework.config;
  */
 public class RunningConfig {
     private boolean ctrlDown;
-    private Config.DebugRendering debugRendering = Config.DEFAULT_DEBUG_RENDERING;
+    private boolean uiDebugRendering = Config.DEFAULT_UI_DEBUG_RENDERING;
+    private Config.WorldDebugRendering worldDebugRendering = Config.DEFAULT_WORLD_DEBUG_RENDERING;
 
     private int resolutionIndex;
     private int screenWidth;
@@ -31,12 +32,20 @@ public class RunningConfig {
         this.ctrlDown = ctrlDown;
     }
 
-    public Config.DebugRendering getDebugRendering() {
-        return debugRendering;
+    public boolean isUiDebugRendering() {
+        return uiDebugRendering;
     }
 
-    public void setDebugRendering(Config.DebugRendering debugRendering) {
-        this.debugRendering = debugRendering;
+    public void setUiDebugRendering(boolean uiDebugRendering) {
+        this.uiDebugRendering = uiDebugRendering;
+    }
+
+    public Config.WorldDebugRendering getWorldDebugRendering() {
+        return worldDebugRendering;
+    }
+
+    public void setWorldDebugRendering(Config.WorldDebugRendering worldDebugRendering) {
+        this.worldDebugRendering = worldDebugRendering;
     }
 
     public int getResolutionIndex() {

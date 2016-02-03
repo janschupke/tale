@@ -2,7 +2,7 @@ package eu.janschupke.buddy;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
-import eu.janschupke.buddy.content.ui.dialog.EventDialog;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
@@ -23,12 +23,30 @@ public class GlobalEventHandler {
     }
 
     /**
-     * Toggles debug rendering for all Scene2D tables.
+     * Toggles debug rendering for all Scene2D tables in the game.
      * @param state Requested debug state.
      */
     public void toggleUiDebug(boolean state) {
+        Gdx.app.debug("GlobalEventHandler#toggleUiDebug", "Calling on parent");
         for(Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
-            entry.getValue().setDebug(state);
+            toggleTableDebug(entry.getValue(), state);
+        }
+    }
+
+    /**
+     * Toggles debug mode for the provided UI table
+     * and all inner tables it contains.
+     * @param table Target table.
+     * @param state New debug state.
+     */
+    private void toggleTableDebug(RootTable table, boolean state) {
+        Gdx.app.debug("GlobalEventHandler#toggleTableDebug", "Calling recursion");
+        table.setDebug(state);
+
+        for (Actor actor : table.getChildren()) {
+            if (actor instanceof RootTable) {
+                toggleTableDebug((RootTable) actor, state);
+            }
         }
     }
 
@@ -91,31 +109,42 @@ public class GlobalEventHandler {
     public void toggleSound() {
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
         // TODO: send info to hud
-        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.sound"));
+//        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.sound"));
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();
     }
 
     /**
-     * Toggles various debug rendering modes.
+     * Toggles the UI table debug rendering.
      */
-    public void toggleDebugRendering() {
+    public void toggleUiDebugRendering() {
         if (!Config.DEBUG_MODE) return;
-        Gdx.app.debug("GlobalEventHandler#toggleDebugRendering", "Toggling debug");
+        Gdx.app.debug("GlobalEventHandler#toggleUiDebugRendering", "Toggling UI debug");
+        boolean current = app.getSettingsManager().getConfig().isUiDebugRendering();
+        app.getSettingsManager().getConfig().setUiDebugRendering(!current);
+        toggleUiDebug(!current);
+    }
 
-        switch (app.getSettingsManager().getConfig().getDebugRendering()) {
+    /**
+     * Toggles world's texture and physics debug rendering.
+     */
+    public void toggleWorldDebugRendering() {
+        if (!Config.DEBUG_MODE) return;
+        Gdx.app.debug("GlobalEventHandler#toggleWorldDebugRendering", "Toggling world debug");
+
+        switch (app.getSettingsManager().getConfig().getWorldDebugRendering()) {
             case DEBUG:
-                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.GRAPHICS);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.GRAPHICS);
                 app.getEventHandler().toggleUiDebug(false);
                 break;
             case GRAPHICS:
-                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.ALL);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.ALL);
                 app.getEventHandler().toggleUiDebug(true);
                 break;
             default:
             case ALL:
-                app.getSettingsManager().getConfig().setDebugRendering(Config.DebugRendering.DEBUG);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.DEBUG);
                 app.getEventHandler().toggleUiDebug(true);
                 break;
         }

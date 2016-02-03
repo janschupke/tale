@@ -19,7 +19,7 @@ public class QuestLogTable extends UITable {
     public QuestLogTable(final App app) {
         super(app);
 
-        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-bar.png"));
+        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);
 
