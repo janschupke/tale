@@ -104,6 +104,11 @@ public class Config {
     public static final int HUD_SIDE_PANE_WIDTH = 250;
     public static final int HUD_SIDE_TEXT_LENGTH = 20;
 
+    public static final int DIALOG_TOP_PADDING = 35;
+    public static final int DIALOG_BOTTOM_PADDING = 10;
+    public static final int DIALOG_SIDE_PADDING = 10;
+    public static final int DIALOG_BUTTON_TOP_PADDING = 10;
+
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
 

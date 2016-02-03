@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.base.ui;
+package eu.janschupke.buddy.framework.base.ui.dialog;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -6,10 +6,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.ui.UserInterface;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
@@ -19,6 +22,7 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;
     private boolean shown;
     protected Table widgetTable;
+    protected Label label;
 
     protected int dialogWidth = Config.UI_DIALOG_WIDTH;
     protected int dialogHeight = Config.UI_DIALOG_HEIGHT;
@@ -27,20 +31,49 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         super(title, app.getSkin());
         this.app = app;
 
+        init();
+        initWidgets();
+        addWidgets();
+        setListeners();
+    }
+
+    private void init() {
         key(Input.Keys.ENTER, true);
         key(Input.Keys.ESCAPE, false);
+
+        padTop(Config.DIALOG_TOP_PADDING);
+        padBottom(Config.DIALOG_BOTTOM_PADDING);
+        padRight(Config.DIALOG_SIDE_PADDING);
+        padLeft(Config.DIALOG_SIDE_PADDING);
+
+        getButtonTable().padTop(Config.DIALOG_BUTTON_TOP_PADDING);
+
         getBackground().setMinWidth(dialogWidth);
         getBackground().setMinHeight(dialogHeight);
-        setMovable(false);
-
-        widgetTable = new Table();
-        widgetTable.setFillParent(true);
-        getContentTable().add(widgetTable);
 
         Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);
         setBackground(drawable);
+
+        setMovable(false);
+        setModal(true);
+    }
+
+    @Override
+    public void initWidgets() {
+        widgetTable = new Table();
+        widgetTable.align(Align.topLeft);
+
+        label = new Label("", app.getSkin());
+        label.setAlignment(Align.center);
+
+    }
+
+    @Override
+    public void addWidgets() {
+        getContentTable().add(widgetTable).expand().fill();
+        widgetTable.add(label).top().left();
     }
 
     public boolean isShown() {
@@ -63,9 +96,24 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
     }
 
     @Override
+    public void cancel() {
+        super.cancel();
+    }
+
+    @Override
     public void hide() {
         Gdx.app.debug("BaseDialog#hide", "Hiding a dialog");
         shown = false;
         super.hide();
+    }
+
+    /**
+     * Adds a button to the dialog.
+     * @param label Button text label.
+     * @param object Result object passed to the button.
+     */
+    protected void addButton(String label, Object object) {
+        // TODO: align?
+        button(label, object);
     }
 }

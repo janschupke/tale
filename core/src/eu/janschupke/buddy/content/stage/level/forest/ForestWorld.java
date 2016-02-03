@@ -6,6 +6,7 @@ import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.CaveObstacle;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.CaveSensor;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.IntroSensor;
+import eu.janschupke.buddy.content.stage.level.forest.sensor.ItemHintSensor;
 import eu.janschupke.buddy.content.stage.level.forest.unit.UkkoUnit;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
@@ -38,7 +39,7 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initItems() {
         Item goldCoinItem = new GoldCoinItem(this);
-        goldCoinItem.setPosition(15, 4);
+        goldCoinItem.setPosition(14, 5);
         getItems().add(goldCoinItem);
     }
 
@@ -58,6 +59,9 @@ public class ForestWorld extends TopDownWorld {
     protected void initSensors() {
         Sensor introSensor = new IntroSensor(this, new Vector2(0.5f, 3));
         introSensor.setPosition(23, 3);
+
+        Sensor itemHintSensor = new ItemHintSensor(this, new Vector2(0.5f, 3));
+        itemHintSensor.setPosition(18, 3);
 
         Sensor caveSensor = new CaveSensor(this, new Vector2(3, 1));
         caveSensor.setPosition(14, 13);

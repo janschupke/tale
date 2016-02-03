@@ -13,7 +13,7 @@ public class OutskirtsScreen extends TopDownScreen {
 
         screenHud = Config.Huds.STANDARD;
         levelInputProcessor = app.getInputProcessor(Config.Input.OUTSKIRTS);
-        levelEventHandler = new OutskirtsEventHandler(this);
+        levelEventHandler = new OutskirtsEventHandler(app);
         backgroundMusic = app.getResourceHandler().getOutskirtsMusic();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new OutskirtsWorld(this);

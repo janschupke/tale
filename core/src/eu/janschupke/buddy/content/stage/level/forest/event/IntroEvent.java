@@ -14,7 +14,7 @@ public class IntroEvent extends BaseEvent {
 
     public IntroEvent(final App app) {
         super(app);
-        repeatable = true;
+        repeatable = false;
 
         introDialog = new IntroDialog(app);
     }

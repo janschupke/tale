@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
+import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
@@ -17,7 +18,7 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class EventLogTable extends UITable {
     private Label titleLabel;
-    private Label eventArea;
+    private TextArea eventArea;
     private ScrollPane eventScrollPane;
 
     private int lineLength = Config.HUD_SIDE_TEXT_LENGTH;
@@ -41,7 +42,8 @@ public class EventLogTable extends UITable {
     @Override
     public void initWidgets() {
         titleLabel = new Label(app.getLang().get("hud.event.label.title"), app.getSkin());
-        eventArea = new Label("", app.getSkin());
+        eventArea = new TextArea("", app.getSkin());
+        eventArea.setDisabled(true);
         eventScrollPane = new ScrollPane(eventArea, app.getSkin());
     }
 

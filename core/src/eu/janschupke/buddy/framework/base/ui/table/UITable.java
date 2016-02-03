@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.config.Config;
 public abstract class UITable extends Table implements UserInterface {
     protected final App app;
 
+    // TODO: need to be members?
     protected int percentWidth = Config.UI_PERCENT_WIDTH;
     protected int buttonWidth = Config.UI_BUTTON_WIDTH;
     protected int smallButtonWidth = Config.UI_SMALL_BUTTON_WIDTH;
