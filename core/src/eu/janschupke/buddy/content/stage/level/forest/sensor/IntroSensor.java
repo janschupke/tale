@@ -18,7 +18,7 @@ public class IntroSensor extends Sensor implements Interactible {
 
     @Override
     public void engage() {
-        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).triggerIntro();
+        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getIntroEvent().trigger();
     }
 
     @Override

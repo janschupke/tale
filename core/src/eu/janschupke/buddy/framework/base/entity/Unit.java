@@ -193,4 +193,11 @@ public abstract class Unit extends WorldObject {
         climbingDown = false;
         movingDown = false;
     }
+
+    public void stop() {
+        stopUp();
+        stopDown();
+        stopRight();
+        stopLeft();
+    }
 }

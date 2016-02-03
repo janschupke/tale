@@ -56,7 +56,7 @@ public class EventLogTable extends UITable {
 
     }
 
-    public void addEvent(String event) {
+    public void addMessage(String event) {
 //        if (event.length() > lineLength) {
 //            event = parseEvent(event);
 //        }

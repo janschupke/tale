@@ -38,7 +38,7 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initItems() {
         Item goldCoinItem = new GoldCoinItem(this);
-        goldCoinItem.setPosition(23, 4);
+        goldCoinItem.setPosition(15, 4);
         getItems().add(goldCoinItem);
     }
 
@@ -57,7 +57,7 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initSensors() {
         Sensor introSensor = new IntroSensor(this, new Vector2(0.5f, 3));
-        introSensor.setPosition(16, 3);
+        introSensor.setPosition(23, 3);
 
         Sensor caveSensor = new CaveSensor(this, new Vector2(3, 1));
         caveSensor.setPosition(14, 13);

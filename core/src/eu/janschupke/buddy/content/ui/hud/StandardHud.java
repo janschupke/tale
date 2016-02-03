@@ -39,8 +39,8 @@ public class StandardHud extends HudTable {
         middleTable.add(inventoryTable);
 
         // TODO: mock data
-        eventLogTable.addEvent("Dummy event");
-        eventLogTable.addEvent("asdfghjkuytrew vfgtuy sdfgt");
+        eventLogTable.addMessage("Dummy event");
+        eventLogTable.addMessage("asdfghjkuytrew vfgtuy sdfgt");
 
         topHudTable.add(topMenuTable);
         bottomHudTable.add(eventLogTable).expandY().fill().bottom().width(Config.HUD_SIDE_PANE_WIDTH);
