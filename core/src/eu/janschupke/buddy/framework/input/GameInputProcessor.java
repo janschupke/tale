@@ -24,27 +24,6 @@ public class GameInputProcessor extends BaseInputProcessor {
             Gdx.app.debug("GameInputProcessor#keyDown", "Firing interact");
             // TODO
         }
-        // CTRL + M = music toggle, needs to be excluded.
-        if (keycode == Hotkeys.MAP  && !app.getSettingsManager().getConfig().isCtrlDown()) {
-            Gdx.app.debug("GameInputProcessor#keyDown", "Toggling map");
-            ((GameScreen)app.getScreen()).toggleMap();
-        }
-        if (keycode == Hotkeys.INVENTORY) {
-            Gdx.app.debug("GameInputProcessor#keyDown", "Toggling inventory");
-            ((GameScreen)app.getScreen()).toggleInventory();
-        }
-        if (keycode == Hotkeys.CHARACTER) {
-            Gdx.app.debug("GameInputProcessor#keyDown", "Toggling character");
-            ((GameScreen)app.getScreen()).toggleCharacter();
-        }
-        if (keycode == Hotkeys.EVENT_LOG) {
-            Gdx.app.debug("GameInputProcessor#keyDown", "Toggling event log");
-            ((GameScreen)app.getScreen()).toggleEventLog();
-        }
-        if (keycode == Hotkeys.QUEST_LOG) {
-            Gdx.app.debug("GameInputProcessor#keyDown", "Toggling quest log");
-            ((GameScreen)app.getScreen()).toggleQuestLog();
-        }
 
         return false;
     }

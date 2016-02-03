@@ -164,40 +164,6 @@ public abstract class GameScreen extends BaseScreen {
         }
     }
 
-    public void toggleMap() {
-        Gdx.app.debug("GameScreen#toggleMap", "Toggling map");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        // TODO
-    }
-
-    public void toggleInventory() {
-        Gdx.app.debug("GameScreen#toggleInventory", "Toggling inventory");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        // TODO
-//        toggleDialog(app.getDialog(Config.Dialog.INVENTORY));
-    }
-
-    public void toggleCharacter() {
-        Gdx.app.debug("GameScreen#toggleCharacter", "Toggling character");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        // TODO
-//        toggleDialog(app.getDialog(Config.Dialog.CHARACTER));
-    }
-
-    public void toggleQuestLog() {
-        Gdx.app.debug("GameScreen#toggleQuestLog", "Toggling quests");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        // TODO
-//        toggleDialog(app.getDialog(Config.Dialog.QUEST));
-    }
-
-    public void toggleEventLog() {
-        Gdx.app.debug("GameScreen#toggleEventLog", "Toggling events");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-        // TODO
-//        toggleDialog(app.getDialog(Config.Dialog.EVENT));
-    }
-
     // For world step calculations.
     private float step = 1.0f / 60.0f;
     private double accumulator;

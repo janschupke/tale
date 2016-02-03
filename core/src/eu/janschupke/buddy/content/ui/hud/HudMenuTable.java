@@ -17,9 +17,6 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
  */
 public class HudMenuTable extends UITable {
     private ImageButton menuButton;
-    private ImageButton inventoryButton;
-    private ImageButton questLogButton;
-    private ImageButton eventLogButton;
 
     public HudMenuTable(final App app) {
         super(app);
@@ -38,21 +35,12 @@ public class HudMenuTable extends UITable {
     @Override
     public void initWidgets() {
         menuButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/menu-icon.png")))));
-        inventoryButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/inventory-button-icon.png")))));
-        questLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/quest-log-button-icon.png")))));
-        eventLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/event-log-button-icon.png")))));
+                new Texture(Gdx.files.internal("textures/gui/menu-button-icon.png")))));
     }
 
     @Override
     public void addWidgets() {
         add(menuButton).pad(buttonPadding);
-        add(inventoryButton).pad(buttonPadding);
-        add(questLogButton).pad(buttonPadding);
-        add(eventLogButton).pad(buttonPadding);
     }
 
     @Override
@@ -61,24 +49,6 @@ public class HudMenuTable extends UITable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 ((GameScreen)app.getScreen()).toggleMenu();
-            }
-        });
-        inventoryButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleInventory();
-            }
-        });
-        questLogButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleQuestLog();
-            }
-        });
-        eventLogButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen) app.getScreen()).toggleEventLog();
             }
         });
     }

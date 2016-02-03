@@ -56,7 +56,7 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initSensors() {
-        Sensor introSensor = new IntroSensor(this, new Vector2(1, 3));
+        Sensor introSensor = new IntroSensor(this, new Vector2(0.5f, 3));
         introSensor.setPosition(16, 3);
 
         Sensor caveSensor = new CaveSensor(this, new Vector2(3, 1));

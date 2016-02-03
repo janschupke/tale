@@ -1,7 +1,9 @@
 package eu.janschupke.buddy.framework.util;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
+import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
@@ -57,5 +59,18 @@ public class Utility {
             }
         }));
         app.getUi().getRoot().addAction(sequenceAction);
+    }
+
+    /**
+     * TODO
+     * @param app
+     * @return
+     */
+    public static StandardHud getHud(final App app) throws IllegalArgumentException {
+        Actor actor = app.getUi().getActors().get(0);
+        if (!(actor instanceof StandardHud)) {
+            throw new IllegalArgumentException();
+        }
+        return ((StandardHud)app.getUi().getActors().get(0));
     }
 }

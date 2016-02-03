@@ -23,16 +23,6 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     private Label movementHotkey;
     private Label interactLabel;
     private Label interactHotkey;
-    private Label mapLabel;
-    private Label mapHotkey;
-    private Label inventoryLabel;
-    private Label inventoryHotkey;
-    private Label characterLabel;
-    private Label characterHotkey;
-    private Label eventLogLabel;
-    private Label eventLogHotkey;
-    private Label questLogLabel;
-    private Label questLogHotkey;
     private TextButton backButton;
 
     public HotkeysMenu(final App app) {
@@ -57,16 +47,6 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         movementHotkey = new Label(app.getLang().get("menu.hotkeys.label.movement.hotkey"), app.getSkin());
         interactLabel = new Label(app.getLang().get("menu.hotkeys.label.interact.label"), app.getSkin());
         interactHotkey = new Label(app.getLang().get("menu.hotkeys.label.interact.hotkey"), app.getSkin());
-        mapLabel = new Label(app.getLang().get("menu.hotkeys.label.map.label"), app.getSkin());
-        mapHotkey = new Label(app.getLang().get("menu.hotkeys.label.map.hotkey"), app.getSkin());
-        inventoryLabel = new Label(app.getLang().get("menu.hotkeys.label.inventory.label"), app.getSkin());
-        inventoryHotkey = new Label(app.getLang().get("menu.hotkeys.label.inventory.hotkey"), app.getSkin());
-        characterLabel = new Label(app.getLang().get("menu.hotkeys.label.character.label"), app.getSkin());
-        characterHotkey = new Label(app.getLang().get("menu.hotkeys.label.character.hotkey"), app.getSkin());
-        eventLogLabel = new Label(app.getLang().get("menu.hotkeys.label.event-log.label"), app.getSkin());
-        eventLogHotkey = new Label(app.getLang().get("menu.hotkeys.label.event-log.hotkey"), app.getSkin());
-        questLogLabel = new Label(app.getLang().get("menu.hotkeys.label.quest-log.label"), app.getSkin());
-        questLogHotkey = new Label(app.getLang().get("menu.hotkeys.label.quest-log.hotkey"), app.getSkin());
         backButton = new TextButton(app.getLang().get("menu.global.button.back"), app.getSkin());
     }
 
@@ -84,16 +64,6 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         add(movementHotkey).left().padBottom(menuItemPadding).row();
         add(interactLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
         add(interactHotkey).left().padBottom(menuItemPadding).row();
-        add(mapLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(mapHotkey).left().padBottom(menuItemPadding).row();
-        add(inventoryLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(inventoryHotkey).left().padBottom(menuItemPadding).row();
-        add(characterLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(characterHotkey).left().padBottom(menuItemPadding).row();
-        add(eventLogLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(eventLogHotkey).left().padBottom(menuItemPadding).row();
-        add(questLogLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(questLogHotkey).left().padBottom(menuItemPadding).row();
         add(backButton).colspan(2).width(buttonWidth).padTop(separatorSpace).padBottom(menuItemPadding).row();
     }
 

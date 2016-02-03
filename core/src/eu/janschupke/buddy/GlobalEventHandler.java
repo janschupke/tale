@@ -96,8 +96,7 @@ public class GlobalEventHandler {
         app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
         // Toggle the playback itself.
         triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
-        // TODO: send info to hud
-//        app.getUi().get.addEvent(app.getLang().get("event.global.toggle.music"));
+        Utility.getHud(app).getEventLogTable().addEvent(app.getLang().get("event.global.toggle.music"));
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
         app.getSettingsManager().persist();
@@ -108,8 +107,7 @@ public class GlobalEventHandler {
      */
     public void toggleSound() {
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
-        // TODO: send info to hud
-//        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.sound"));
+        Utility.getHud(app).getEventLogTable().addEvent(app.getLang().get("event.global.toggle.sound"));
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();

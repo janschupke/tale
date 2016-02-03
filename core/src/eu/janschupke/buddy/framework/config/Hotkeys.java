@@ -23,9 +23,4 @@ public class Hotkeys {
     public static final int RIGHT_ALTERNATIVE = Input.Keys.D;
     public static final int LEFT_ALTERNATIVE = Input.Keys.A;
     public static final int INTERACT = Input.Keys.SPACE;
-    public static final int MAP = Input.Keys.M;
-    public static final int INVENTORY = Input.Keys.I;
-    public static final int CHARACTER = Input.Keys.C;
-    public static final int EVENT_LOG = Input.Keys.E;
-    public static final int QUEST_LOG = Input.Keys.Q;
 }

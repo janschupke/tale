@@ -20,6 +20,8 @@ public class EventLogTable extends UITable {
     private Label eventArea;
     private ScrollPane eventScrollPane;
 
+    private int lineLength = Config.HUD_SIDE_TEXT_LENGTH;
+
     public EventLogTable(final App app) {
         super(app);
 
@@ -46,7 +48,7 @@ public class EventLogTable extends UITable {
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        add(eventScrollPane).height(Config.HUD_BOTTOM_PANE_HEIGHT).pad(innerPadding);
+        add(eventScrollPane).height(Config.HUD_BOTTOM_PANE_HEIGHT).expand().fill().pad(innerPadding);
     }
 
     @Override
@@ -55,6 +57,34 @@ public class EventLogTable extends UITable {
     }
 
     public void addEvent(String event) {
-        eventArea.setText(eventArea.getText() + "\n" + event);
+//        if (event.length() > lineLength) {
+//            event = parseEvent(event);
+//        }
+        event = parseEvent(event);
+        eventArea.setText(eventArea.getText() + event);
+    }
+
+    /**
+     * TODO: does not work
+     * @param event
+     * @return
+     */
+    private String parseEvent(String event) {
+        Gdx.app.debug("EventLogTable#parseEvent", "Parsing");
+        int start = 0;
+        int end = lineLength;
+        StringBuilder builder = new StringBuilder();
+
+        do {
+            if (end + lineLength > event.length()) {
+                end = event.length();
+            }
+            builder.append(event.substring(start, end));
+            builder.append("\n");
+            start = end + 1;
+            end += lineLength;
+        } while (end < event.length());
+
+        return builder.toString();
     }
 }

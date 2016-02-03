@@ -37,7 +37,7 @@ public class InventoryTable extends UITable {
         for (int i = 0; i < 10; i++) {
             ImageButton itemButton;
             itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                    new Texture(Gdx.files.internal("textures/gui/menu-icon.png")))));
+                    new Texture(Gdx.files.internal("textures/gui/application-icon.png")))));
             add(itemButton).pad(buttonPadding);
         }
     }

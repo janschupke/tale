@@ -2,9 +2,13 @@ package eu.janschupke.buddy.framework.base.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.config.Config;
 
@@ -14,7 +18,6 @@ import eu.janschupke.buddy.framework.config.Config;
 public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;
     private boolean shown;
-    private boolean open;
     protected Table widgetTable;
 
     protected int dialogWidth = Config.UI_DIALOG_WIDTH;
@@ -34,18 +37,14 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         widgetTable.setFillParent(true);
         getContentTable().add(widgetTable);
 
-//        Texture texture = new Texture(Gdx.files.internal("textures/gui/dialog-background.png"));
-//        TextureRegion region = new TextureRegion(texture);
-//        Drawable drawable = new TextureRegionDrawable(region);
-//        setBackground(drawable);
+        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
+        TextureRegion region = new TextureRegion(texture);
+        Drawable drawable = new TextureRegionDrawable(region);
+        setBackground(drawable);
     }
 
     public boolean isShown() {
         return shown;
-    }
-
-    public boolean isOpen() {
-        return open;
     }
 
     @Override
@@ -53,7 +52,6 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         boolean result = (Boolean) object;
         if (result) {
             Gdx.app.debug("BaseDialog#result", "Closing a dialog");
-            open = false;
             hide();
         }
     }
@@ -61,7 +59,6 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
     @Override
     public Dialog show(Stage stage) {
         shown = true;
-        open = true;
         return super.show(stage);
     }
 

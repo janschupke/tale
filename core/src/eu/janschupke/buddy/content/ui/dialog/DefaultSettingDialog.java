@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.BaseDialog;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Default settings reset dialog.
@@ -22,7 +23,8 @@ public class DefaultSettingDialog extends BaseDialog {
 
         button(app.getLang().get("menu.global.button.no"), false);
         button(app.getLang().get("menu.global.button.yes"), true);
-        getContentTable().add(label);
+        // TODO: padding, universally in all dialogs.
+        getContentTable().add(label).pad(Config.HUD_INNER_PADDING);
     }
 
     @Override
