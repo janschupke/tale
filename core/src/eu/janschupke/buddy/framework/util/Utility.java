@@ -73,4 +73,33 @@ public class Utility {
         }
         return ((StandardHud)app.getUi().getActors().get(0));
     }
+
+    /**
+     * TODO
+     * @param input
+     * @param lineLength
+     * @return
+     */
+    public static String optimizeNewLines(String input, int lineLength) {
+        String newline = System.getProperty("line.separator");
+        StringBuilder output = new StringBuilder();
+
+        // TODO:
+        output.append(input);
+//        int start = 0;
+//        int end = lineLength;
+//        StringBuilder builder = new StringBuilder();
+//
+//        do {
+//            if (end + lineLength > event.length()) {
+//                end = event.length();
+//            }
+//            builder.append(event.substring(start, end));
+//            builder.append("\n");
+//            start = end + 1;
+//            end += lineLength;
+//        } while (end < event.length());
+
+        return output.toString();
+    }
 }

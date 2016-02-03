@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for event log.
@@ -59,34 +60,10 @@ public class EventLogTable extends UITable {
     }
 
     public void addMessage(String event) {
-//        if (event.length() > lineLength) {
-//            event = parseEvent(event);
-//        }
-        event = parseEvent(event);
-        eventArea.setText(eventArea.getText() + event);
-    }
-
-    /**
-     * TODO: does not work
-     * @param event
-     * @return
-     */
-    private String parseEvent(String event) {
-        Gdx.app.debug("EventLogTable#parseEvent", "Parsing");
-        int start = 0;
-        int end = lineLength;
-        StringBuilder builder = new StringBuilder();
-
-        do {
-            if (end + lineLength > event.length()) {
-                end = event.length();
-            }
-            builder.append(event.substring(start, end));
-            builder.append("\n");
-            start = end + 1;
-            end += lineLength;
-        } while (end < event.length());
-
-        return builder.toString();
+        StringBuilder result = new StringBuilder();
+        result.append(eventArea.getText());
+        result.append(System.getProperty("line.separator"));
+        result.append(Utility.optimizeNewLines(event, lineLength));
+        eventArea.setText(result.toString());
     }
 }
