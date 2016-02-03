@@ -1,14 +1,14 @@
-package eu.janschupke.buddy.framework.base.ui;
+package eu.janschupke.buddy.framework.base.ui.table;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.ui.UserInterface;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
- * Generic Table extension, serving as a base for all HUDs and UIs.
+ * Base class for all Scene2d tables used in the application.
  */
-public abstract class RootTable extends Table implements UserInterface {
+public abstract class UITable extends Table implements UserInterface {
     protected final App app;
 
     protected int percentWidth = Config.UI_PERCENT_WIDTH;
@@ -18,12 +18,12 @@ public abstract class RootTable extends Table implements UserInterface {
     protected int separatorSpace = Config.UI_SEPARATOR_SPACE;
     protected int indentTop = Config.UI_INDENT_TOP;
 
-    public RootTable(final App app) {
+    protected int innerPadding = Config.HUD_INNER_PADDING;
+    protected int buttonPadding = Config.HUD_BUTTON_PADDING;
+
+    public UITable(final App app) {
         this.app = app;
 
-        setFillParent(true);
-        setPosition(0, 0);
-        align(Align.topLeft);
         setDebug(Config.DEBUG_MODE);
     }
 }

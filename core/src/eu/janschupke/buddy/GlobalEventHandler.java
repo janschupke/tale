@@ -6,7 +6,7 @@ import eu.janschupke.buddy.content.ui.dialog.EventDialog;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.base.ui.RootTable;
+import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
 
@@ -78,7 +78,8 @@ public class GlobalEventHandler {
         app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
         // Toggle the playback itself.
         triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
-        ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.music"));
+        // TODO: send info to hud
+//        app.getUi().get.addEvent(app.getLang().get("event.global.toggle.music"));
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
         app.getSettingsManager().persist();
@@ -89,6 +90,7 @@ public class GlobalEventHandler {
      */
     public void toggleSound() {
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
+        // TODO: send info to hud
         ((EventDialog)app.getDialog(Config.Dialog.EVENT)).addEvent(app.getLang().get("event.global.toggle.sound"));
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());

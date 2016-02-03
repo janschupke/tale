@@ -41,7 +41,7 @@ public class Config {
     // Physics configuration.
     public static final Vector2 PLATFORM_GRAVITY = new Vector2(0, -5.0f);
     public static final Vector2 TOPDOWN_GRAVITY = new Vector2(0f, 0f);
-    public static final float LINEAR_DAMPING = 5.0f;
+    public static final float LINEAR_DAMPING = 8.0f;
     public static final float ANGULAR_DAMPING = 0.05f;
     public static final float DENSITY = 10.0f;
     public static final float FRICTION = 0.5f;
@@ -90,6 +90,9 @@ public class Config {
     public static final int UI_MENU_ITEM_PADDING = 5;
     public static final int UI_SEPARATOR_SPACE = 20;
     public static final int UI_INDENT_TOP = 50;
+
+    public static final int HUD_INNER_PADDING = 10;
+    public static final int HUD_BUTTON_PADDING = 5;
 
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;

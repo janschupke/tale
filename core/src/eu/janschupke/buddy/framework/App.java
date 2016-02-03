@@ -14,7 +14,7 @@ import eu.janschupke.buddy.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.BaseDialog;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
-import eu.janschupke.buddy.framework.base.ui.RootTable;
+import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;

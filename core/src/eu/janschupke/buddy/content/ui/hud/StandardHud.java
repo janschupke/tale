@@ -1,29 +1,18 @@
 package eu.janschupke.buddy.content.ui.hud;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.ui.RootTable;
+import eu.janschupke.buddy.framework.base.ui.table.HudTable;
 
 /**
  * Standard level HUD.
  */
-public class StandardHud extends RootTable {
-    private ImageButton menuButton;
-    private ImageButton inventoryButton;
-    private ImageButton characterButton;
-    private ImageButton questLogButton;
-    private ImageButton eventLogButton;
-
-    private Table inventoryTable;
+public class StandardHud extends HudTable {
+    private HudMenuTable topMenuTable;
+    private InventoryTable inventoryTable;
+    private EventLogTable eventLogTable;
+    private QuestLogTable questLogTable;
+    private InteractionTable interactionTable;
 
     public StandardHud(final App app) {
         super(app);
@@ -35,71 +24,53 @@ public class StandardHud extends RootTable {
 
     @Override
     public void initWidgets() {
-        menuButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/menu.png")))));
-        inventoryButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/inventory.png")))));
-        characterButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/character.png")))));
-        questLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/quest.png")))));
-        eventLogButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/event.png")))));
-
-//        Table inventoryTable = new Table();
+        topMenuTable = new HudMenuTable(app);
+        inventoryTable = new InventoryTable(app);
+        eventLogTable = new EventLogTable(app);
+        questLogTable = new QuestLogTable(app);
+        interactionTable = new InteractionTable(app);
     }
 
     @Override
     public void addWidgets() {
-        add(menuButton);
+        Table middleTable = new Table();
+        // TODO: debug
+        middleTable.setDebug(true);
+        middleTable.add(interactionTable).expand().fill().row();
+        middleTable.add(inventoryTable);
 
-        padTop(0).top().left();
+        // TODO: mock data
+        for (int i = 0; i < 15; i++) {
+            eventLogTable.addEvent("Dummy event from Standard Hud");
+        }
 
-        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-bar.png"));
-        TextureRegion region = new TextureRegion(texture);
-        Drawable drawable = new TextureRegionDrawable(region);
-
-        Table buttons = new Table();
-        buttons.setBackground(drawable);
-        buttons.add(menuButton).left();
-        buttons.add(inventoryButton);
-        buttons.add(characterButton);
-        buttons.add(questLogButton);
-        buttons.add(eventLogButton);
-        add(buttons);
+        topHudTable.add(topMenuTable);
+        bottomHudTable.add(eventLogTable).expandY().fill().bottom();
+        bottomHudTable.add(middleTable).expand().fill();
+        bottomHudTable.add(questLogTable).expandY().fill().bottom();
     }
 
     @Override
     public void setListeners() {
-        menuButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleMenu();
-            }
-        });
-        inventoryButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleInventory();
-            }
-        });
-        characterButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleCharacter();
-            }
-        });
-        questLogButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleQuestLog();
-            }
-        });
-        eventLogButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen) app.getScreen()).toggleEventLog();
-            }
-        });
+    }
+
+    public HudMenuTable getTopMenuTable() {
+        return topMenuTable;
+    }
+
+    public InventoryTable getInventoryTable() {
+        return inventoryTable;
+    }
+
+    public EventLogTable getEventLogTable() {
+        return eventLogTable;
+    }
+
+    public QuestLogTable getQuestLogTable() {
+        return questLogTable;
+    }
+
+    public InteractionTable getInteractionTable() {
+        return interactionTable;
     }
 }

@@ -6,8 +6,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.MenuTable;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
+import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**

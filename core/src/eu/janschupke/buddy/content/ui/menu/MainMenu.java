@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.MenuTable;
+import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
 
 /**
  * Main menu UI layout.

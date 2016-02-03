@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.base.ui;
+package eu.janschupke.buddy.framework.base.ui.table;
 
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
