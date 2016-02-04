@@ -113,6 +113,9 @@ public class Config {
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
 
+    // Gameplay configuration.
+    public static final int INVENTORY_CAPACITY = 8;
+
     public enum WorldDebugRendering {
         ALL, DEBUG, GRAPHICS
     }

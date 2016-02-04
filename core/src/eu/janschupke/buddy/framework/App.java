@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
 import eu.janschupke.buddy.GlobalEventHandler;
+import eu.janschupke.buddy.framework.base.entity.container.CharacterContainer;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
@@ -37,9 +38,15 @@ public abstract class App extends Game {
     private I18NBundle lang;
     private SettingsManager settingsManager;
     private ResourceHandler resourceHandler;
+    private CharacterContainer character;
 
     @Override
     public void create() {
+        // Language bundle initialization.
+        FileHandle baseFileHandle = Gdx.files.internal("languages/language");
+        Locale locale = new Locale("en", "GB");
+        lang = I18NBundle.createBundle(baseFileHandle, locale);
+
         eventHandler = new GlobalEventHandler(this);
 
         batch = new SpriteBatch();
@@ -54,11 +61,6 @@ public abstract class App extends Game {
             Gdx.app.setLogLevel(com.badlogic.gdx.Application.LOG_DEBUG);
         }
 
-        // Language bundle initialization.
-        FileHandle baseFileHandle = Gdx.files.internal("languages/language");
-        Locale locale = new Locale("en", "GB");
-        lang = I18NBundle.createBundle(baseFileHandle, locale);
-
         // Preference configuration.
         settingsManager = new SettingsManager();
         resourceHandler = new ResourceHandler(this);
@@ -68,6 +70,9 @@ public abstract class App extends Game {
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
         skin.addRegions(atlas);
         ui = new Stage();
+
+        character = new CharacterContainer(this);
+
         initHuds();
         initInputProcessors();
         initScreens();
@@ -165,5 +170,9 @@ public abstract class App extends Game {
 
     public ResourceHandler getResourceHandler() {
         return resourceHandler;
+    }
+
+    public CharacterContainer getCharacter() {
+        return character;
     }
 }

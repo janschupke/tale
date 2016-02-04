@@ -12,7 +12,6 @@ import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for event log.
@@ -59,11 +58,7 @@ public class EventLogTable extends UITable {
 
     }
 
-    public void addMessage(String event) {
-        StringBuilder result = new StringBuilder();
-        result.append(eventArea.getText());
-        result.append(System.getProperty("line.separator"));
-        result.append(Utility.optimizeNewLines(event, lineLength));
-        eventArea.setText(result.toString());
+    public void updateMessages(String log) {
+        eventArea.setText(log);
     }
 }

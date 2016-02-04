@@ -5,6 +5,8 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
+import eu.janschupke.buddy.framework.base.event.global.ToggleSoundEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
@@ -18,8 +20,14 @@ import java.util.Map;
 public class GlobalEventHandler {
     private final App app;
 
+    private ToggleMusicEvent toggleMusicEvent;
+    private ToggleSoundEvent toggleSoundEvent;
+
     public GlobalEventHandler(final App app) {
         this.app = app;
+
+        toggleMusicEvent = new ToggleMusicEvent(app);
+        toggleSoundEvent = new ToggleSoundEvent(app);
     }
 
     /**
@@ -92,11 +100,12 @@ public class GlobalEventHandler {
      * Toggles current screen's background music.
      */
     public void toggleMusic() {
+        // TODO: this all could be inside the event?
         // Toggle the configuration value.
         app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
         // Toggle the playback itself.
         triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
-        Utility.getHud(app).getEventLogTable().addMessage(app.getLang().get("event.global.toggle.music"));
+        toggleMusicEvent.trigger();
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
         app.getSettingsManager().persist();
@@ -106,8 +115,9 @@ public class GlobalEventHandler {
      * Toggles all sounds on and off.
      */
     public void toggleSound() {
+        // TODO: this all could be inside the event?
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
-        Utility.getHud(app).getEventLogTable().addMessage(app.getLang().get("event.global.toggle.sound"));
+        toggleSoundEvent.trigger();
         ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();

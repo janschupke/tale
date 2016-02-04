@@ -2,17 +2,16 @@ package eu.janschupke.buddy.content.stage.level.forest.event;
 
 import eu.janschupke.buddy.content.stage.level.forest.dialog.ItemHintDialog;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.util.Utility;
+import eu.janschupke.buddy.framework.base.event.MessageEvent;
 
 /**
  * Item introduction event.
  */
-public class ItemHintEvent extends BaseEvent {
+public class ItemHintEvent extends MessageEvent {
     private ItemHintDialog itemHintDialog;
 
     public ItemHintEvent(final App app) {
-        super(app);
+        super(app, app.getLang().get("level.forest.event.item.text"));
         repeatable = false;
 
         itemHintDialog = new ItemHintDialog(app);
@@ -21,7 +20,6 @@ public class ItemHintEvent extends BaseEvent {
     @Override
     public void trigger() {
         super.trigger();
-        Utility.getHud(app).getEventLogTable().addMessage(app.getLang().get("level.forest.event.item.text"));
         itemHintDialog.show(app.getUi());
     }
 }
