@@ -76,14 +76,6 @@ public class Config {
 
     // Development variables.
     public static final boolean DEBUG_MODE = true;
-//    public static final boolean DEFAULT_UI_DEBUG_RENDERING = DEBUG_MODE;
-//    public static WorldDebugRendering DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.GRAPHICS;
-//
-//    static {
-//        if (Config.DEBUG_MODE) {
-//            DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.ALL;
-//        }
-//    }
 
     // UI values.
     public static final int SLIDER_MIN = 0;
@@ -111,7 +103,6 @@ public class Config {
     public static final int DIALOG_BOTTOM_PADDING = 10;
     public static final int DIALOG_SIDE_PADDING = 10;
     public static final int DIALOG_BUTTON_TOP_PADDING = 10;
-    public static final int DIALOG_TEXT_WIDTH = 10;
 
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
@@ -125,7 +116,7 @@ public class Config {
 
     public enum Huds {
         STANDARD, MAINMENU, GAMEMENU, HOTKEYSMENU, SETTINGSMENU,
-        GRAPHICSMENU, AUDIOMENU, GAMEPLAYMENU, CREDITSMENU
+        GRAPHICSMENU, AUDIOMENU, CREDITSMENU
     }
 
     public enum Screens {

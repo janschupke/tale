@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Adjusted menu, accessible from within any level.
@@ -37,11 +38,11 @@ public class GameMenu extends MenuTable {
 
     @Override
     public void addWidgets() {
-        add(titleLabel).padBottom(separatorSpace).row();
-        add(resumeButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(settingsButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(hotkeysButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(exitButton).width(buttonWidth).padBottom(menuItemPadding).row();
+        add(titleLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        add(resumeButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(settingsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(hotkeysButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(exitButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 
     @Override

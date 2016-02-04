@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for the quest log.
@@ -25,7 +26,7 @@ public class QuestLogTable extends UITable {
 
         setBackground(drawable);
         align(Align.top);
-        pad(innerPadding);
+        pad(Config.HUD_INNER_PADDING);
 
         initWidgets();
         addWidgets();

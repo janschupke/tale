@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Hotkey overview UI.
@@ -56,21 +57,21 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
 
     @Override
     public void addWidgets() {
-        add(titleLabel).colspan(2).padBottom(separatorSpace).row();
-        add(invokeMenuLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(invokeMenuHotkey).left().padBottom(menuItemPadding).row();
-        add(toggleMusicLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(toggleMusicHotkey).left().padBottom(menuItemPadding).row();
+        add(titleLabel).colspan(2).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        add(invokeMenuLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(invokeMenuHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(toggleMusicLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(toggleMusicHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
 
-        add(toggleSoundLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(toggleSoundHotkey).left().padBottom(menuItemPadding).row();
-        add(movementLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(movementHotkey).left().padBottom(menuItemPadding).row();
-        add(interactLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(interactHotkey).left().padBottom(menuItemPadding).row();
-        add(dialogLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
-        add(dialogsHotkey).left().padBottom(menuItemPadding).row();
-        add(backButton).colspan(2).width(buttonWidth).padTop(separatorSpace).padBottom(menuItemPadding).row();
+        add(toggleSoundLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(toggleSoundHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(movementLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(movementHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(interactLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(interactHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(dialogLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(dialogsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(backButton).colspan(2).width(Config.UI_BUTTON_WIDTH).padTop(Config.UI_SEPARATOR_SPACE).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 
     @Override

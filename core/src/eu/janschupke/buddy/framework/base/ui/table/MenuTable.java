@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.ui.table;
 
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Formatted menu UI base class.
@@ -11,6 +12,6 @@ public abstract class MenuTable extends RootTable {
         super(app);
 
         align(Align.top | Align.center);
-        padTop(indentTop);
+        padTop(Config.UI_INDENT_TOP);
     }
 }

@@ -60,9 +60,6 @@ public class Buddy extends App {
 		AudioMenu audioMenu = new AudioMenu(this);
 		huds.put(Config.Huds.AUDIOMENU, audioMenu);
 
-		GameplayMenu gameplayMenu = new GameplayMenu(this);
-		huds.put(Config.Huds.GAMEPLAYMENU, gameplayMenu);
-
 		HotkeysMenu hotkeysMenu = new HotkeysMenu(this);
 		huds.put(Config.Huds.HOTKEYSMENU, hotkeysMenu);
 

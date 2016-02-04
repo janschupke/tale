@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Main menu UI layout.
@@ -43,13 +44,13 @@ public class MainMenu extends MenuTable {
 
     @Override
     public void addWidgets() {
-        add(titleLabel).padBottom(separatorSpace).row();
-        add(newGameButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(continueGameButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(settingsButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(hotkeysButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(creditsButton).width(buttonWidth).padBottom(menuItemPadding).row();
-        add(exitButton).width(buttonWidth).padBottom(menuItemPadding).row();
+        add(titleLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        add(newGameButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(continueGameButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(settingsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(hotkeysButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(creditsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(exitButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 
     @Override

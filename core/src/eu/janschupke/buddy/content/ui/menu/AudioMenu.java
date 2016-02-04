@@ -64,26 +64,26 @@ public class AudioMenu extends MenuTable implements PreferenceMenu {
 
     @Override
     public void addWidgets() {
-        add(titleLabel).colspan(3).padBottom(separatorSpace).row();
-        add(masterVolumeLabel).right().padRight(menuItemPadding);
-        add(masterVolumeSlider).left().padBottom(menuItemPadding);
-        add(masterVolumeValueLabel).left().padBottom(menuItemPadding).width(percentWidth).row();
-        add(musicVolumeLabel).right().padRight(menuItemPadding);
-        add(musicVolumeSlider).left().padBottom(menuItemPadding);
-        add(musicVolumeValueLabel).left().padBottom(menuItemPadding).width(percentWidth).row();
-        add(sfxVolumeLabel).right().padRight(menuItemPadding);
-        add(sfxVolumeSlider).left().padBottom(menuItemPadding);
-        add(sfxVolumeValueLabel).left().padBottom(menuItemPadding).width(percentWidth).row();
-        add(speechVolumeLabel).right().padRight(menuItemPadding);
-        add(speechVolumeSlider).left().padBottom(menuItemPadding);
-        add(speechVolumeValueLabel).left().padBottom(menuItemPadding).width(percentWidth).row();
-        add(enableMusicCheckbox).colspan(3).padBottom(menuItemPadding).row();
-        add(enableSoundCheckbox).colspan(3).padBottom(menuItemPadding).row();
+        add(titleLabel).colspan(3).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        add(masterVolumeLabel).right().padRight(Config.UI_MENU_ITEM_PADDING);
+        add(masterVolumeSlider).left().padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(masterVolumeValueLabel).left().padBottom(Config.UI_MENU_ITEM_PADDING).width(Config.UI_PERCENT_WIDTH).row();
+        add(musicVolumeLabel).right().padRight(Config.UI_MENU_ITEM_PADDING);
+        add(musicVolumeSlider).left().padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(musicVolumeValueLabel).left().padBottom(Config.UI_MENU_ITEM_PADDING).width(Config.UI_PERCENT_WIDTH).row();
+        add(sfxVolumeLabel).right().padRight(Config.UI_MENU_ITEM_PADDING);
+        add(sfxVolumeSlider).left().padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(sfxVolumeValueLabel).left().padBottom(Config.UI_MENU_ITEM_PADDING).width(Config.UI_PERCENT_WIDTH).row();
+        add(speechVolumeLabel).right().padRight(Config.UI_MENU_ITEM_PADDING);
+        add(speechVolumeSlider).left().padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(speechVolumeValueLabel).left().padBottom(Config.UI_MENU_ITEM_PADDING).width(Config.UI_PERCENT_WIDTH).row();
+        add(enableMusicCheckbox).colspan(3).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(enableSoundCheckbox).colspan(3).padBottom(Config.UI_MENU_ITEM_PADDING).row();
 
         Table buttons = new Table();
-        buttons.add(cancelButton).width(smallButtonWidth).left();
-        buttons.add(applyButton).width(smallButtonWidth).right();
-        add(buttons).colspan(3).padTop(separatorSpace).row();
+        buttons.add(cancelButton).width(Config.UI_SMALL_BUTTON_WIDTH).left();
+        buttons.add(applyButton).width(Config.UI_SMALL_BUTTON_WIDTH).right();
+        add(buttons).colspan(3).padTop(Config.UI_SEPARATOR_SPACE).row();
     }
 
     @Override

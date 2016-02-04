@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Credits table UI.
@@ -32,9 +33,9 @@ public class CreditsMenu extends MenuTable {
 
     @Override
     public void addWidgets() {
-        add(titleLabel).padBottom(separatorSpace).row();
-        add(creditsLabel).padBottom(menuItemPadding).row();
-        add(backButton).width(buttonWidth).padBottom(menuItemPadding).row();
+        add(titleLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        add(creditsLabel).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(backButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 
     @Override

@@ -21,8 +21,6 @@ public class EventLogTable extends UITable {
     private TextArea eventArea;
     private ScrollPane eventScrollPane;
 
-    private int lineLength = Config.HUD_SIDE_TEXT_LENGTH;
-
     public EventLogTable(final App app) {
         super(app);
 
@@ -32,7 +30,7 @@ public class EventLogTable extends UITable {
 
         setBackground(drawable);
         align(Align.top);
-        pad(innerPadding);
+        pad(Config.HUD_INNER_PADDING);
 
         initWidgets();
         addWidgets();
@@ -50,7 +48,7 @@ public class EventLogTable extends UITable {
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        add(eventScrollPane).height(Config.HUD_BOTTOM_PANE_HEIGHT).expand().fill().pad(innerPadding);
+        add(eventScrollPane).height(Config.HUD_BOTTOM_PANE_HEIGHT).expand().fill().pad(Config.HUD_INNER_PADDING);
     }
 
     @Override

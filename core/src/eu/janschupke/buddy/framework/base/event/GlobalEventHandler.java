@@ -206,10 +206,6 @@ public class GlobalEventHandler {
         Utility.transitionHuds(app, app.getHud(Config.Huds.AUDIOMENU));
     }
 
-    public void showGameplayMenu() {
-        Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEPLAYMENU));
-    }
-
     public void showHotkeys() {
         Gdx.app.debug("GlobalEventHandler#showHotkeys", "Show Hotkeys");
         Utility.transitionHuds(app, app.getHud(Config.Huds.HOTKEYSMENU));

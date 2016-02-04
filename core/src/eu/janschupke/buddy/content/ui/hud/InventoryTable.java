@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.Inventory;
 import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for the in-game character inventory.
@@ -42,7 +43,7 @@ public class InventoryTable extends UITable {
             InventoryItem inventoryItem = inventory.getItem(i);
             ImageButton itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
                     inventoryItem.getItem().getSprite().getTexture())));
-            add(itemButton).pad(buttonPadding);
+            add(itemButton).pad(Config.HUD_BUTTON_PADDING);
         }
 
         // TODO: add empty slot graphics?

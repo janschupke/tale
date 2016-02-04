@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for on-screen level menu.
@@ -40,7 +41,7 @@ public class HudMenuTable extends UITable {
 
     @Override
     public void addWidgets() {
-        add(menuButton).pad(buttonPadding);
+        add(menuButton).pad(Config.HUD_BUTTON_PADDING);
     }
 
     @Override
