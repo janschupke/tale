@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 public class Config {
     // Global untranslated strings.
     public static final String GAME_PREFIX = "buddy";
-    public static final String GAME_TITLE = "Buddy the Bachelor";
+    public static final String GAME_TITLE = "Buddy the Yellow Geezer";
     public static final String PREFERENCES_SETTINGS = "settings";
 
     // Screen configuration.
@@ -103,6 +103,8 @@ public class Config {
     public static final int HUD_BOTTOM_PANE_HEIGHT = 160;
     public static final int HUD_SIDE_PANE_WIDTH = 250;
     public static final int HUD_SIDE_TEXT_LENGTH = 20;
+
+    public static final int HUD_HINT_BOTTOM_PADDING = 80;
 
     public static final int DIALOG_TOP_PADDING = 35;
     public static final int DIALOG_BOTTOM_PADDING = 10;

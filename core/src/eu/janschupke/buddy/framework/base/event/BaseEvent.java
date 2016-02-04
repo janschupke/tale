@@ -16,8 +16,11 @@ public abstract class BaseEvent {
     }
 
     public void trigger() {
-        if (triggered && !repeatable) return;
         triggered = true;
         ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stop();
+    }
+
+    public boolean canTrigger() {
+        return (!triggered || repeatable);
     }
 }

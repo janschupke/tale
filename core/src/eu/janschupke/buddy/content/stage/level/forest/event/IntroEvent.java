@@ -13,13 +13,12 @@ public class IntroEvent extends MessageEvent {
 
     public IntroEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.intro.text"));
-        repeatable = false;
-
         introDialog = new IntroDialog(app);
     }
 
     @Override
     public void trigger() {
+        if (!canTrigger()) return;
         super.trigger();
         Gdx.app.debug("IntroEvent#trigger", "Triggering intro event.");
 

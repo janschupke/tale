@@ -1,8 +1,10 @@
 package eu.janschupke.buddy.content.ui.hud;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Transparent table in the middle of the screen,
@@ -13,6 +15,8 @@ public class HintTable extends UITable {
 
     public HintTable(final App app) {
         super(app);
+
+        align(Align.bottom);
 
         initWidgets();
         addWidgets();
@@ -26,7 +30,7 @@ public class HintTable extends UITable {
 
     @Override
     public void addWidgets() {
-        add(hintLabel).bottom();
+        add(hintLabel).padBottom(Config.HUD_HINT_BOTTOM_PADDING);
     }
 
     @Override

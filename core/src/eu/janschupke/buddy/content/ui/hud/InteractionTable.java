@@ -24,12 +24,13 @@ public class InteractionTable extends UITable {
 
     @Override
     public void initWidgets() {
+        // TODO: dummy widget
         titleLabel = new Label(app.getLang().get("hud.interaction.label.title"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
-        add(titleLabel);
+//        add(titleLabel);
     }
 
     @Override

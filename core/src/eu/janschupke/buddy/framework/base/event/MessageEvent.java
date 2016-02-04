@@ -11,7 +11,6 @@ public class MessageEvent extends BaseEvent {
     public MessageEvent(App app, String eventMessage) {
         super(app);
         this.eventMessage = eventMessage;
-        repeatable = true;
     }
 
     public String getEventMessage() {

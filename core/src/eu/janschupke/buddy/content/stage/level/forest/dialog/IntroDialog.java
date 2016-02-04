@@ -9,7 +9,6 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 public class IntroDialog extends InfoDialog {
     public IntroDialog(final App app) {
         super(app, app.getLang().get("level.forest.dialog.intro.title"));
-
         label.setText(app.getLang().get("level.forest.event.intro.text"));
     }
 }

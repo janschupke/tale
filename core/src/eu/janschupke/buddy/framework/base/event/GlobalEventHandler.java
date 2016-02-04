@@ -3,6 +3,7 @@ package eu.janschupke.buddy.framework.base.event;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
@@ -35,7 +36,7 @@ public class GlobalEventHandler {
      * @param state Requested debug state.
      */
     public void toggleUiDebug(boolean state) {
-        Gdx.app.debug("GlobalEventHandler#toggleUiDebug", "Calling on parent");
+        Gdx.app.debug("GlobalEventHandler#toggleUiDebug", "Calling debug toggle");
         for(Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
             toggleTableDebug(entry.getValue(), state);
         }
@@ -47,13 +48,13 @@ public class GlobalEventHandler {
      * @param table Target table.
      * @param state New debug state.
      */
-    private void toggleTableDebug(RootTable table, boolean state) {
-        Gdx.app.debug("GlobalEventHandler#toggleTableDebug", "Calling recursion");
+    private void toggleTableDebug(Table table, boolean state) {
         table.setDebug(state);
 
         for (Actor actor : table.getChildren()) {
-            if (actor instanceof RootTable) {
-                toggleTableDebug((RootTable) actor, state);
+            actor.setDebug(state);
+            if (actor instanceof Table) {
+                toggleTableDebug((Table) actor, state);
             }
         }
     }
@@ -144,16 +145,13 @@ public class GlobalEventHandler {
         switch (app.getSettingsManager().getConfig().getWorldDebugRendering()) {
             case DEBUG:
                 app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.GRAPHICS);
-                app.getEventHandler().toggleUiDebug(false);
                 break;
             case GRAPHICS:
                 app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.ALL);
-                app.getEventHandler().toggleUiDebug(true);
                 break;
             default:
             case ALL:
                 app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.DEBUG);
-                app.getEventHandler().toggleUiDebug(true);
                 break;
         }
     }

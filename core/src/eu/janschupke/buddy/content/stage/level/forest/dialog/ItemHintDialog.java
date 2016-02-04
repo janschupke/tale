@@ -11,7 +11,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 public class ItemHintDialog extends InfoDialog {
     public ItemHintDialog(final App app) {
         super(app, app.getLang().get("level.forest.dialog.item.title"));
-
+        // TODO: set text utility
         label.setText(Utility.optimizeNewLines(app.getLang().get("level.forest.event.item.text"), Config.DIALOG_TEXT_WIDTH));
     }
 }

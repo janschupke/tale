@@ -19,7 +19,7 @@ public abstract class HudTable extends RootTable {
         topHudTable = new Table();
         bottomHudTable = new Table();
 
-        add(topHudTable).expandX().expandY().top().row();
+        add(topHudTable).expandX().expandY().fillY().top().row();
         add(bottomHudTable).fillX();
     }
 }

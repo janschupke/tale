@@ -12,13 +12,12 @@ public class ItemHintEvent extends MessageEvent {
 
     public ItemHintEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.item.text"));
-        repeatable = false;
-
         itemHintDialog = new ItemHintDialog(app);
     }
 
     @Override
     public void trigger() {
+        if (!canTrigger()) return;
         super.trigger();
         itemHintDialog.show(app.getUi());
     }
