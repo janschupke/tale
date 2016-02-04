@@ -23,4 +23,5 @@ public class Hotkeys {
     public static final int RIGHT_ALTERNATIVE = Input.Keys.D;
     public static final int LEFT_ALTERNATIVE = Input.Keys.A;
     public static final int INTERACT = Input.Keys.SPACE;
+    public static final int DIALOGS = Input.Keys.H;
 }

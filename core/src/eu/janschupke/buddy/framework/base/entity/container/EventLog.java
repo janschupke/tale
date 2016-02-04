@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.MessageEvent;
+import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class EventLog extends DataContainer {
         return result.toString();
     }
 
-    public void addEvent(MessageEvent event) {
+    public void addEvent(BaseEvent event) {
         EventLogEntry entry = new EventLogEntry(app, event.getEventMessage());
         events.add(entry);
     }

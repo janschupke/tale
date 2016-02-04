@@ -25,6 +25,6 @@ public abstract class UITable extends Table implements UserInterface {
     public UITable(final App app) {
         this.app = app;
 
-        setDebug(Config.DEBUG_MODE);
+        setDebug(app.getSettingsManager().getConfig().isUiDebugRendering());
     }
 }

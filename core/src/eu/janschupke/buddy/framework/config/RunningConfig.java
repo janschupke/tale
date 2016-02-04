@@ -5,8 +5,9 @@ package eu.janschupke.buddy.framework.config;
  */
 public class RunningConfig {
     private boolean ctrlDown;
-    private boolean uiDebugRendering = Config.DEFAULT_UI_DEBUG_RENDERING;
-    private Config.WorldDebugRendering worldDebugRendering = Config.DEFAULT_WORLD_DEBUG_RENDERING;
+
+    private boolean uiDebugRendering = DefaultSettings.DEBUG_UI;
+    private Config.WorldDebugRendering worldDebugRendering = DefaultSettings.DEBUG_WORLD;
 
     private int resolutionIndex;
     private int screenWidth;
@@ -20,7 +21,7 @@ public class RunningConfig {
     private boolean enableMusic;
     private boolean enableSound;
 
-    private boolean showHints;
+    private boolean enableDialogs;
     private int foregroundFps;
     private int backgroundFps;
 
@@ -128,12 +129,12 @@ public class RunningConfig {
         this.enableSound = enableSound;
     }
 
-    public boolean isShowHints() {
-        return showHints;
+    public boolean isEnableDialogs() {
+        return enableDialogs;
     }
 
-    public void setShowHints(boolean showHints) {
-        this.showHints = showHints;
+    public void setEnableDialogs(boolean enableDialogs) {
+        this.enableDialogs = enableDialogs;
     }
 
     public int getForegroundFps() {

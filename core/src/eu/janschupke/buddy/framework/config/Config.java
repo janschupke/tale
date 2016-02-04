@@ -76,16 +76,16 @@ public class Config {
 
     // Development variables.
     public static final boolean DEBUG_MODE = true;
-    public static final boolean DEFAULT_UI_DEBUG_RENDERING = DEBUG_MODE;
-    public static WorldDebugRendering DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.GRAPHICS;
+//    public static final boolean DEFAULT_UI_DEBUG_RENDERING = DEBUG_MODE;
+//    public static WorldDebugRendering DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.GRAPHICS;
+//
+//    static {
+//        if (Config.DEBUG_MODE) {
+//            DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.ALL;
+//        }
+//    }
 
-    static {
-        if (Config.DEBUG_MODE) {
-            DEFAULT_WORLD_DEBUG_RENDERING = WorldDebugRendering.ALL;
-        }
-    }
-
-    // UI values:
+    // UI values.
     public static final int SLIDER_MIN = 0;
     public static final int SLIDER_MAX = 100;
     public static final int SLIDER_STEP  = 10;
@@ -104,7 +104,8 @@ public class Config {
     public static final int HUD_SIDE_PANE_WIDTH = 250;
     public static final int HUD_SIDE_TEXT_LENGTH = 20;
 
-    public static final int HUD_HINT_BOTTOM_PADDING = 80;
+    public static final int HUD_HINT_LEFT_PADDING = 80;
+    public static final int HUD_HINT_BOTTOM_PADDING = 40;
 
     public static final int DIALOG_TOP_PADDING = 35;
     public static final int DIALOG_BOTTOM_PADDING = 10;

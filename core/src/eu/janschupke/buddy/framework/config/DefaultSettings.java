@@ -15,8 +15,11 @@ public class DefaultSettings {
     public static final float SPEECH_VOLUME = 0.4f;
     public static final boolean ENABLE_MUSIC = true;
     public static final boolean ENABLE_SOUND = true;
+    public static final boolean ENABLE_DIALOGS = true;
 
-    public static final boolean SHOW_HINTS = true;
     public static final int FOREGROUND_FPS = 120;
     public static final int BACKGROUND_FPS = 30;
+
+    public static final boolean DEBUG_UI = false;
+    public static final Config.WorldDebugRendering DEBUG_WORLD = Config.WorldDebugRendering.GRAPHICS;
 }

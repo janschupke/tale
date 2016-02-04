@@ -20,11 +20,6 @@ public class GoldCoinItem extends Item implements Interactible {
     }
 
     @Override
-    public void update(float delta) {
-
-    }
-
-    @Override
     public void engage() {
         InteractionSwitch.enable(this,
                 ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getCoinPickupEvent(),

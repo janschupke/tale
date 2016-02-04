@@ -36,8 +36,10 @@ public class SettingsManager implements ConfigManager {
 
         settingsPrefs.putInteger(SettingsKeys.GAMEPLAY_FG_FPS, config.getForegroundFps());
         settingsPrefs.putInteger(SettingsKeys.GAMEPLAY_BG_FPS, config.getBackgroundFps());
-        settingsPrefs.putBoolean(SettingsKeys.GAMEPLAY_SHOW_HINTS, config.isShowHints());
+        settingsPrefs.putBoolean(SettingsKeys.GAMEPLAY_ENABLE_DIALOGS, config.isEnableDialogs());
 
+        settingsPrefs.putBoolean(SettingsKeys.DEBUG_UI, config.isUiDebugRendering());
+        // TODO: put custon var
         settingsPrefs.flush();
     }
 
@@ -60,7 +62,9 @@ public class SettingsManager implements ConfigManager {
 
         config.setForegroundFps(settingsPrefs.getInteger(SettingsKeys.GAMEPLAY_FG_FPS, DefaultSettings.FOREGROUND_FPS));
         config.setBackgroundFps(settingsPrefs.getInteger(SettingsKeys.GAMEPLAY_BG_FPS, DefaultSettings.BACKGROUND_FPS));
-        config.setShowHints(settingsPrefs.getBoolean(SettingsKeys.GAMEPLAY_SHOW_HINTS, DefaultSettings.SHOW_HINTS));
+        config.setEnableDialogs(settingsPrefs.getBoolean(SettingsKeys.GAMEPLAY_ENABLE_DIALOGS, DefaultSettings.ENABLE_DIALOGS));
+
+        config.setUiDebugRendering(settingsPrefs.getBoolean(SettingsKeys.DEBUG_UI, DefaultSettings.DEBUG_UI));
     }
 
     /**
@@ -82,7 +86,9 @@ public class SettingsManager implements ConfigManager {
 
         config.setForegroundFps(DefaultSettings.FOREGROUND_FPS);
         config.setBackgroundFps(DefaultSettings.BACKGROUND_FPS);
-        config.setShowHints(DefaultSettings.SHOW_HINTS);
+        config.setEnableDialogs(DefaultSettings.ENABLE_DIALOGS);
+
+        config.setUiDebugRendering(DefaultSettings.DEBUG_UI);
 
         persist();
     }

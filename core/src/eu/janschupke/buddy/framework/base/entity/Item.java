@@ -24,6 +24,9 @@ public abstract class Item extends WorldObject {
     }
 
     @Override
+    public void update(float delta) {}
+
+    @Override
     public void draw(Batch batch) {
         sprite.draw(batch, body);
     }

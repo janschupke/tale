@@ -30,7 +30,7 @@ public class HintTable extends UITable {
 
     @Override
     public void addWidgets() {
-        add(hintLabel).padBottom(Config.HUD_HINT_BOTTOM_PADDING);
+        add(hintLabel).padBottom(Config.HUD_HINT_BOTTOM_PADDING).padLeft(Config.HUD_HINT_LEFT_PADDING);
     }
 
     @Override

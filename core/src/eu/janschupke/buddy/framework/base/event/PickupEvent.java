@@ -15,8 +15,12 @@ public class PickupEvent extends BaseEvent {
     protected Item item;
 
     public PickupEvent(final App app) {
+        this(app, "");
+    }
+
+    public PickupEvent(final App app, String eventMessage) {
         super(app);
-        repeatable = false;
+        this.eventMessage = eventMessage;
     }
 
     @Override

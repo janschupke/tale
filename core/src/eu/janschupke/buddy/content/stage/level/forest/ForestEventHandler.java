@@ -3,6 +3,7 @@ package eu.janschupke.buddy.content.stage.level.forest;
 import eu.janschupke.buddy.content.stage.level.forest.event.CoinPickupEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.IntroEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.ItemHintEvent;
+import eu.janschupke.buddy.content.stage.level.forest.event.UkkoTalkEvent;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 
@@ -13,6 +14,7 @@ public class ForestEventHandler extends LevelEventHandler {
     private IntroEvent introEvent;
     private ItemHintEvent itemHintEvent;
     private CoinPickupEvent coinPickupEvent;
+    private UkkoTalkEvent ukkoTalkEvent;
 
     public ForestEventHandler(final App app) {
         super(app);
@@ -20,6 +22,7 @@ public class ForestEventHandler extends LevelEventHandler {
         introEvent = new IntroEvent(app);
         itemHintEvent = new ItemHintEvent(app);
         coinPickupEvent = new CoinPickupEvent(app);
+        ukkoTalkEvent = new UkkoTalkEvent(app);
     }
 
     public IntroEvent getIntroEvent() {
@@ -32,5 +35,9 @@ public class ForestEventHandler extends LevelEventHandler {
 
     public CoinPickupEvent getCoinPickupEvent() {
         return coinPickupEvent;
+    }
+
+    public UkkoTalkEvent getUkkoTalkEvent() {
+        return ukkoTalkEvent;
     }
 }

@@ -61,6 +61,8 @@ public abstract class App extends Game {
             Gdx.app.setLogLevel(com.badlogic.gdx.Application.LOG_DEBUG);
         }
 
+        toggleStartupDebugRendering();
+
         // Preference configuration.
         settingsManager = new SettingsManager();
         resourceHandler = new ResourceHandler(this);
@@ -76,6 +78,17 @@ public abstract class App extends Game {
         initHuds();
         initInputProcessors();
         initScreens();
+    }
+
+    /**
+     * Disables debug rendering in case of enabled values in configuration,
+     * but disabled on the application level.
+     */
+    private void toggleStartupDebugRendering() {
+        if (!Config.DEBUG_MODE) {
+            settingsManager.getConfig().setUiDebugRendering(false);
+            settingsManager.getConfig().setWorldDebugRendering(Config.WorldDebugRendering.GRAPHICS);
+        }
     }
 
     @Override

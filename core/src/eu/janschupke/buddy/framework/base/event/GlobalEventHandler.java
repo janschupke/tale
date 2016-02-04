@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.event.global.ToggleDialogsEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleSoundEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
@@ -23,12 +24,14 @@ public class GlobalEventHandler {
 
     private ToggleMusicEvent toggleMusicEvent;
     private ToggleSoundEvent toggleSoundEvent;
+    private ToggleDialogsEvent toggleDialogsEvent;
 
     public GlobalEventHandler(final App app) {
         this.app = app;
 
         toggleMusicEvent = new ToggleMusicEvent(app);
         toggleSoundEvent = new ToggleSoundEvent(app);
+        toggleDialogsEvent = new ToggleDialogsEvent(app);
     }
 
     /**
@@ -154,6 +157,16 @@ public class GlobalEventHandler {
                 app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.DEBUG);
                 break;
         }
+    }
+
+    /**
+     * Toggles the modal dialog-showing state.
+     * Event log entries will appear regardless of this toggle.
+     */
+    public void toggleDialogs() {
+        boolean current = app.getSettingsManager().getConfig().isEnableDialogs();
+        app.getSettingsManager().getConfig().setEnableDialogs(!current);
+        toggleDialogsEvent.trigger();
     }
 
     /**

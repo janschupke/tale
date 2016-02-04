@@ -21,6 +21,10 @@ public class GameInputProcessor extends BaseInputProcessor {
             Gdx.app.debug("GameInputProcessor#keyDown", "Toggling menu");
             ((GameScreen)app.getScreen()).toggleMenu();
         }
+        if (keycode == Hotkeys.DIALOGS) {
+            Gdx.app.debug("GameInputProcessor#keyDown", "Firing dialog toggle");
+            app.getEventHandler().toggleDialogs();
+        }
         if (keycode == Hotkeys.INTERACT) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Firing interact");
             if (InteractionSwitch.isInteractionPossible()) {

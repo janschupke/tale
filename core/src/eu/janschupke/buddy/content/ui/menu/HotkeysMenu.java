@@ -23,6 +23,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     private Label movementHotkey;
     private Label interactLabel;
     private Label interactHotkey;
+    private Label dialogLabel;
+    private Label dialogsHotkey;
     private TextButton backButton;
 
     public HotkeysMenu(final App app) {
@@ -47,6 +49,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         movementHotkey = new Label(app.getLang().get("menu.hotkeys.label.movement.hotkey"), app.getSkin());
         interactLabel = new Label(app.getLang().get("menu.hotkeys.label.interact.label"), app.getSkin());
         interactHotkey = new Label(app.getLang().get("menu.hotkeys.label.interact.hotkey"), app.getSkin());
+        dialogLabel = new Label(app.getLang().get("menu.hotkeys.label.dialog.label"), app.getSkin());
+        dialogsHotkey = new Label(app.getLang().get("menu.hotkeys.label.dialog.hotkey"), app.getSkin());
         backButton = new TextButton(app.getLang().get("menu.global.button.back"), app.getSkin());
     }
 
@@ -64,6 +68,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         add(movementHotkey).left().padBottom(menuItemPadding).row();
         add(interactLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
         add(interactHotkey).left().padBottom(menuItemPadding).row();
+        add(dialogLabel).right().padRight(menuItemPadding).padBottom(menuItemPadding);
+        add(dialogsHotkey).left().padBottom(menuItemPadding).row();
         add(backButton).colspan(2).width(buttonWidth).padTop(separatorSpace).padBottom(menuItemPadding).row();
     }
 

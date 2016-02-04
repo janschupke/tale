@@ -16,7 +16,10 @@ public class SettingsKeys {
     public static final String AUDIO_ENABLE_MUSIC = "EnableMusic";
     public static final String AUDIO_ENABLE_SOUND = "EnableSound";
 
-    public static final String GAMEPLAY_FG_FPS = "fgFps";
-    public static final String GAMEPLAY_BG_FPS = "bgFps";
-    public static final String GAMEPLAY_SHOW_HINTS = "ShowHints";
+    public static final String GAMEPLAY_FG_FPS = "FgFps";
+    public static final String GAMEPLAY_BG_FPS = "BgFps";
+    public static final String GAMEPLAY_ENABLE_DIALOGS = "EnableDialogs";
+
+    public static final String DEBUG_UI = "DebugUi";
+    public static final String DEBUG_WORLD = "DebugWorld";
 }

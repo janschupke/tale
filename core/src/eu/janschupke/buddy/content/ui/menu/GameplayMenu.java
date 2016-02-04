@@ -70,12 +70,12 @@ public class GameplayMenu extends MenuTable implements PreferenceMenu {
 
     @Override
     public void configureWidgets() {
-        showHintsCheckbox.setChecked(app.getSettingsManager().getConfig().isShowHints());
+        showHintsCheckbox.setChecked(app.getSettingsManager().getConfig().isEnableDialogs());
     }
 
     @Override
     public void updateRunningConfig() {
-        app.getSettingsManager().getConfig().setShowHints(showHintsCheckbox.isChecked());
+        app.getSettingsManager().getConfig().setEnableDialogs(showHintsCheckbox.isChecked());
     }
 
     @Override
