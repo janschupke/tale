@@ -3,17 +3,19 @@ package eu.janschupke.buddy.content.ui.hud;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.container.Inventory;
+import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 
 /**
  * GUI table structure for the in-game character inventory.
  */
 public class InventoryTable extends UITable {
-
     public InventoryTable(final App app) {
         super(app);
 
@@ -28,22 +30,30 @@ public class InventoryTable extends UITable {
         setListeners();
     }
 
-    @Override
-    public void initWidgets() {
-    }
+    /**
+     * Update inventory view according to the current
+     * model state.
+     */
+    public void update() {
+        getChildren().forEach(Actor::remove);
 
-    @Override
-    public void addWidgets() {
-        for (int i = 0; i < 10; i++) {
-            ImageButton itemButton;
-            itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                    new Texture(Gdx.files.internal("textures/gui/application-icon.png")))));
+        Inventory inventory = app.getCharacter().getInventory();
+        for (int i = 0; i < inventory.getUsedSlots(); i++) {
+            InventoryItem inventoryItem = inventory.getItem(i);
+            ImageButton itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
+                    inventoryItem.getItem().getSprite().getTexture())));
             add(itemButton).pad(buttonPadding);
         }
+
+        // TODO: add empty slot graphics?
     }
 
     @Override
-    public void setListeners() {
+    public void initWidgets() {}
 
-    }
+    @Override
+    public void addWidgets() {}
+
+    @Override
+    public void setListeners() {}
 }

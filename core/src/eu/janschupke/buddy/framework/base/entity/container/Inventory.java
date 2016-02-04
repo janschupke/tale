@@ -37,4 +37,8 @@ public class Inventory extends DataContainer {
         items.remove(index);
         usedSlots--;
     }
+
+    public int getUsedSlots() {
+        return usedSlots;
+    }
 }

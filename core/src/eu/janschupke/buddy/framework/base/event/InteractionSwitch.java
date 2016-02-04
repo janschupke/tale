@@ -6,7 +6,6 @@ import eu.janschupke.buddy.framework.base.entity.Interactible;
 /**
  * A switch class that toggles possible interaction based on Interactible contact.
  */
-// TODO: refactor, blasphemy.
 public class InteractionSwitch {
     private static Interactible interactible;
     private static BaseEvent interactionEvent;
