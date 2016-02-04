@@ -199,8 +199,5 @@ public abstract class Unit extends WorldObject {
         stopDown();
         stopRight();
         stopLeft();
-        // TODO: test, buggy.
-//        Vector2 velocity = new Vector2(0, 0);
-//        body.setLinearVelocity(velocity);
     }
 }

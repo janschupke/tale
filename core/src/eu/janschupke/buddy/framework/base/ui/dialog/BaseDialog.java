@@ -106,14 +106,4 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         shown = false;
         super.hide();
     }
-
-    /**
-     * Adds a button to the dialog.
-     * @param label Button text label.
-     * @param object Result object passed to the button.
-     */
-    protected void addButton(String label, Object object) {
-        // TODO: align?
-        button(label, object);
-    }
 }

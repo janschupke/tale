@@ -24,8 +24,8 @@ public class ResourceHandler {
         forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.wav"));
         outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.wav"));
 
-        menuButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/BUTTON_Deep_Smooth_Click_mono.wav"));
-        menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/CLASP_Plastic_Open_stereo.wav"));
+        menuButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-heavy.wav"));
+        menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/checkbox.wav"));
     }
 
     public void playSound(Sound sound) {

@@ -9,13 +9,11 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 public class UkkoTalkEvent extends BaseEvent {
     public UkkoTalkEvent(final App app) {
         super(app);
-        // TODO
     }
 
     @Override
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        // TODO
     }
 }

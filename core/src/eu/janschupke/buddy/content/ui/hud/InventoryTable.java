@@ -45,8 +45,6 @@ public class InventoryTable extends UITable {
                     inventoryItem.getItem().getSprite().getTexture())));
             add(itemButton).pad(Config.HUD_BUTTON_PADDING);
         }
-
-        // TODO: add empty slot graphics?
     }
 
     @Override

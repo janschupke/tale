@@ -82,8 +82,6 @@ public class GraphicsMenu extends MenuTable implements PreferenceMenu {
                 app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
                 restartDialog.show(app.getUi());
                 applyChanges();
-                // TODO: dialog is not blocking.
-//                app.getEventHandler().showSettings();
             }
         });
     }
