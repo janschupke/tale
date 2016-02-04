@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.global.ToggleDialogsEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
@@ -104,27 +103,16 @@ public class GlobalEventHandler {
      * Toggles current screen's background music.
      */
     public void toggleMusic() {
-        // TODO: this all could be inside the event?
-        // Toggle the configuration value.
-        app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
+        toggleMusicEvent.trigger();
         // Toggle the playback itself.
         triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
-        toggleMusicEvent.trigger();
-        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
-                .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
-        app.getSettingsManager().persist();
     }
 
     /**
      * Toggles all sounds on and off.
      */
     public void toggleSound() {
-        // TODO: this all could be inside the event?
-        app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
         toggleSoundEvent.trigger();
-        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
-                .setChecked(app.getSettingsManager().getConfig().isEnableSound());
-        app.getSettingsManager().persist();
     }
 
     /**

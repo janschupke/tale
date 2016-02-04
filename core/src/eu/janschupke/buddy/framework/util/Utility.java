@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
@@ -66,10 +67,10 @@ public class Utility {
      * @param app Current app.
      * @return In-game hud instance.
      */
-    public static StandardHud getHud(final App app) throws IllegalArgumentException {
+    public static StandardHud getHud(final App app) throws NoHudException {
         Actor actor = app.getUi().getActors().get(0);
         if (!(actor instanceof StandardHud)) {
-            throw new IllegalArgumentException();
+            throw new NoHudException();
         }
         return ((StandardHud)app.getUi().getActors().get(0));
     }

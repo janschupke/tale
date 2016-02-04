@@ -20,9 +20,9 @@ public class ResourceHandler {
     public ResourceHandler(final App app) {
         this.app = app;
 
-        menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-002.wav"));
+        menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.wav"));
         forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.wav"));
-        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.wav"));
+        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.wav"));
 
         menuButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/BUTTON_Deep_Smooth_Click_mono.wav"));
         menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/CLASP_Plastic_Open_stereo.wav"));

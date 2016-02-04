@@ -21,5 +21,4 @@ public class SettingsKeys {
     public static final String GAMEPLAY_ENABLE_DIALOGS = "EnableDialogs";
 
     public static final String DEBUG_UI = "DebugUi";
-    public static final String DEBUG_WORLD = "DebugWorld";
 }

@@ -1,11 +1,10 @@
 package eu.janschupke.buddy.framework.base.event;
 
-        import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.App;
 
 /**
  * Base class for event handlers that are instantiated per game level.
  */
-// TODO: move somewhere else?
 public abstract class LevelEventHandler {
     protected App app;
 

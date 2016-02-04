@@ -39,7 +39,6 @@ public class SettingsManager implements ConfigManager {
         settingsPrefs.putBoolean(SettingsKeys.GAMEPLAY_ENABLE_DIALOGS, config.isEnableDialogs());
 
         settingsPrefs.putBoolean(SettingsKeys.DEBUG_UI, config.isUiDebugRendering());
-        // TODO: put custon var
         settingsPrefs.flush();
     }
 

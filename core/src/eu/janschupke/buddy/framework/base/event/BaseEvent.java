@@ -1,6 +1,8 @@
 package eu.janschupke.buddy.framework.base.event;
 
+import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 import eu.janschupke.buddy.framework.util.Utility;
@@ -55,6 +57,11 @@ public abstract class BaseEvent {
     protected void addEventMessage() {
         if (eventMessage.isEmpty()) return;
         app.getCharacter().getEventLog().addEvent(this);
-        Utility.getHud(app).getEventLogTable().updateMessages(app.getCharacter().getEventLog().toString());
+
+        try {
+            Utility.getHud(app).getEventLogTable().updateMessages(app.getCharacter().getEventLog().toString());
+        } catch (NoHudException e) {
+            Gdx.app.log("BaseEvent#addEventMessage", "No HUD problem.");
+        }
     }
 }
