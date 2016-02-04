@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class StandardHud extends HudTable {
     private HudMenuTable topMenuTable;
+    private HintTable hintTable;
     private InventoryTable inventoryTable;
     private EventLogTable eventLogTable;
     private QuestLogTable questLogTable;
@@ -26,6 +27,7 @@ public class StandardHud extends HudTable {
     @Override
     public void initWidgets() {
         topMenuTable = new HudMenuTable(app);
+        hintTable = new HintTable(app);
         inventoryTable = new InventoryTable(app);
         eventLogTable = new EventLogTable(app);
         questLogTable = new QuestLogTable(app);
@@ -38,11 +40,8 @@ public class StandardHud extends HudTable {
         middleTable.add(interactionTable).expand().fill().row();
         middleTable.add(inventoryTable);
 
-        // TODO: mock data
-//        eventLogTable.addMessage("Dummy event");
-//        eventLogTable.addMessage("asdfghjkuytrew vfgtuy sdfgt");
-
-        topHudTable.add(topMenuTable);
+        topHudTable.add(topMenuTable).row();
+        topHudTable.add(hintTable).expandY().fillY();
         bottomHudTable.add(eventLogTable).expandY().fill().bottom().width(Config.HUD_SIDE_PANE_WIDTH);
         bottomHudTable.add(middleTable).expand().fill();
         bottomHudTable.add(questLogTable).expandY().fill().bottom().width(Config.HUD_SIDE_PANE_WIDTH);
@@ -50,10 +49,6 @@ public class StandardHud extends HudTable {
 
     @Override
     public void setListeners() {
-    }
-
-    public HudMenuTable getTopMenuTable() {
-        return topMenuTable;
     }
 
     public InventoryTable getInventoryTable() {
@@ -70,5 +65,9 @@ public class StandardHud extends HudTable {
 
     public InteractionTable getInteractionTable() {
         return interactionTable;
+    }
+
+    public HintTable getHintTable() {
+        return hintTable;
     }
 }

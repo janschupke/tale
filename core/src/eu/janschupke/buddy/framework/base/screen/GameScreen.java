@@ -10,11 +10,11 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.ui.dialog.BaseDialog;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
-import eu.janschupke.buddy.framework.util.LevelEventHandler;
 
 /**
  * Base class for all in-game screens (levels).

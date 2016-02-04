@@ -1,4 +1,4 @@
-package eu.janschupke.buddy;
+package eu.janschupke.buddy.framework.base.event;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;

@@ -1,6 +1,6 @@
-package eu.janschupke.buddy.framework.util;
+package eu.janschupke.buddy.framework.base.event;
 
-import eu.janschupke.buddy.framework.App;
+        import eu.janschupke.buddy.framework.App;
 
 /**
  * Base class for event handlers that are instantiated per game level.

@@ -13,4 +13,10 @@ public interface Interactible {
      * Called when the body contact ends.
      */
     void disengage();
+
+    /**
+     * Returns a hint that is displayed to the player.
+     * @return Text interaction hint.
+     */
+    String getInteractionHint();
 }

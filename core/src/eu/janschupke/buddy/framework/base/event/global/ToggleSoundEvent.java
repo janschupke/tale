@@ -4,7 +4,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.MessageEvent;
 
 /**
- * Created by uzivatel on 04/02/2016.
+ * Message event for sound toggle.
  */
 public class ToggleSoundEvent extends MessageEvent {
     public ToggleSoundEvent(final App app) {

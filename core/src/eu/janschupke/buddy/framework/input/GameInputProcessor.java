@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.input;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.Hotkeys;
 
@@ -22,7 +23,9 @@ public class GameInputProcessor extends BaseInputProcessor {
         }
         if (keycode == Hotkeys.INTERACT) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Firing interact");
-            // TODO
+            if (InteractionSwitch.isInteractionPossible()) {
+                InteractionSwitch.getInteractionEvent().trigger();
+            }
         }
 
         return false;

@@ -242,6 +242,11 @@ public abstract class BaseWorld {
         playerUnit.setPosition(spawnPoint.x, spawnPoint.y);
     }
 
+    public void removeItem(Item item) {
+        boxWorld.destroyBody(item.getBody());
+        items.remove(item);
+    }
+
     public List<Unit> getUnits() {
         return units;
     }

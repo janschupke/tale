@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
  * Basic world entity, encapsulating everything that is represented through any sort of Box2D body.
  */
 public abstract class WorldEntity {
+    protected String interactionHint;
     protected BaseWorld world;
     protected Body body;
     protected Vector2 defaultPosition = new Vector2(0, 0);
@@ -23,4 +24,12 @@ public abstract class WorldEntity {
     }
 
     public abstract void setPosition(float x, float y);
+
+    public String getInteractionHint() {
+        return interactionHint;
+    }
+
+    public Body getBody() {
+        return body;
+    }
 }

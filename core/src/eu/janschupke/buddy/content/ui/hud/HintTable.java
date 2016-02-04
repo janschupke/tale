@@ -1,21 +1,18 @@
 package eu.janschupke.buddy.content.ui.hud;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 
 /**
- * GUI table structure for the interaction pane.
+ * Transparent table in the middle of the screen,
+ * showing context hints.
  */
-public class InteractionTable extends UITable {
-    private Label titleLabel;
+public class HintTable extends UITable {
+    private Label hintLabel;
 
-    public InteractionTable(final App app) {
+    public HintTable(final App app) {
         super(app);
-
-        align(Align.topLeft);
-        pad(innerPadding);
 
         initWidgets();
         addWidgets();
@@ -24,16 +21,24 @@ public class InteractionTable extends UITable {
 
     @Override
     public void initWidgets() {
-        titleLabel = new Label(app.getLang().get("hud.interaction.label.title"), app.getSkin());
+        hintLabel = new Label("", app.getSkin());
     }
 
     @Override
     public void addWidgets() {
-        add(titleLabel);
+        add(hintLabel).bottom();
     }
 
     @Override
     public void setListeners() {
 
+    }
+
+    public void update(String hint) {
+        hintLabel.setText(hint);
+    }
+
+    public void clear() {
+        hintLabel.setText("");
     }
 }
