@@ -13,7 +13,6 @@ public class CharacterContainer extends DataContainer {
 
     public CharacterContainer(final App app) {
         super(app);
-
         inventory = new Inventory(app, Config.INVENTORY_CAPACITY);
         questLog = new QuestLog(app);
         eventLog = new EventLog(app);

@@ -30,7 +30,7 @@ public class IntroEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        Gdx.app.debug("IntroEvent#trigger", "Triggering intro event.");
+        Gdx.app.debug("IntroEvent#trigger", "Triggering intro event");
         showDialog(introDialog);
         addEventMessage();
     }

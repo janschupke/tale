@@ -33,6 +33,14 @@ public class QuestLogTable extends UITable {
         setListeners();
     }
 
+    /**
+     * Redraws quest entries in the table
+     * according to the current model state.
+     */
+    public void update() {
+        // TODO
+    }
+
     @Override
     public void initWidgets() {
         titleLabel = new Label(app.getLang().get("hud.quest.label.title"), app.getSkin());

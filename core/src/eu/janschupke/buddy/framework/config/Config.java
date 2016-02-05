@@ -114,6 +114,10 @@ public class Config {
         ALL, DEBUG, GRAPHICS
     }
 
+    public enum TaskStatus {
+        NEW, PROGRESS, DONE
+    }
+
     public enum Huds {
         STANDARD, MAINMENU, GAMEMENU, HOTKEYSMENU, SETTINGSMENU,
         GRAPHICSMENU, AUDIOMENU, CREDITSMENU

@@ -19,4 +19,8 @@ public class QuestLog extends DataContainer {
     public List<QuestChain> getQuestChains() {
         return questChains;
     }
+
+    public void addQuestChain(QuestChain chain) {
+        questChains.add(chain);
+    }
 }

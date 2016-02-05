@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.content.stage.level.forest;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -18,6 +19,7 @@ public class ForestScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.FOREST);
         levelEventHandler = new ForestEventHandler(app);
         backgroundMusic = app.getResourceHandler().getForestMusic();
+        questManager = new ForestQuestManager(app);
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new ForestWorld(this);
         initView(world.getWidth(), world.getHeight());

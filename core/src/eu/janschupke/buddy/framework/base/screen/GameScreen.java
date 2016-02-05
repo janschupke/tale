@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
+import eu.janschupke.buddy.framework.base.quest.QuestManager;
 import eu.janschupke.buddy.framework.base.ui.dialog.BaseDialog;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
@@ -27,6 +28,7 @@ public abstract class GameScreen extends BaseScreen {
     protected Config.Huds screenHud;
     protected BaseInputProcessor levelInputProcessor;
     protected LevelEventHandler levelEventHandler;
+    protected QuestManager questManager;
 
     private boolean paused = false;
     private String hintCache;
@@ -275,5 +277,9 @@ public abstract class GameScreen extends BaseScreen {
 
     public LevelEventHandler getLevelEventHandler() {
         return levelEventHandler;
+    }
+
+    public QuestManager getQuestManager() {
+        return questManager;
     }
 }
