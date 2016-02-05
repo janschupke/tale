@@ -9,8 +9,8 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
  * Part of the intro quest chain.
  */
 public class CoinDeliveryQuest extends Quest {
-    public CoinDeliveryQuest(final App app, String description) {
-        super(app, description);
+    public CoinDeliveryQuest(final App app) {
+        super(app, app.getLang().get("level.forest.quest.coin-delivery.description"));
         tasks.add(new CoinPickupTask(app));
         tasks.add(new CoinDeliveryTask(app));
     }

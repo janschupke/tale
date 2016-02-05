@@ -26,8 +26,4 @@ public abstract class QuestManager {
             Gdx.app.log("QuestManager#initQuestChain", "No HUD problem.");
         }
     }
-
-    public void initQuest() {
-        // TODO: how, or at all?
-    }
 }

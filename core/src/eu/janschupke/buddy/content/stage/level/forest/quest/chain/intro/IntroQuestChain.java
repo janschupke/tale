@@ -11,7 +11,7 @@ import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 public class IntroQuestChain extends QuestChain {
     public IntroQuestChain(final App app) {
         super(app);
-        quests.add(new CoinDeliveryQuest(app, "coin delivery quest"));
-        quests.add(new NoteDeliveryQuest(app, "note delivery quest"));
+        quests.add(new CoinDeliveryQuest(app));
+        quests.add(new NoteDeliveryQuest(app));
     }
 }

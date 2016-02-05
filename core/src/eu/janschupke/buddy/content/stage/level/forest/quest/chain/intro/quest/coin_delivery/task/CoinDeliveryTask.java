@@ -8,6 +8,6 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
  */
 public class CoinDeliveryTask extends Task {
     public CoinDeliveryTask(final App app) {
-        super(app, "coin delivery");
+        super(app, app.getLang().get("level.forest.quest.coin-delivery.task.delivery"));
     }
 }

@@ -9,8 +9,8 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
  * Part of the intro quest chain.
  */
 public class NoteDeliveryQuest extends Quest {
-    public NoteDeliveryQuest(final App app, String description) {
-        super(app, description);
+    public NoteDeliveryQuest(final App app) {
+        super(app, app.getLang().get("level.forest.quest.note-delivery.description"));
         tasks.add(new NotePickupTask(app));
         tasks.add(new NoteDeliveryTask(app));
     }

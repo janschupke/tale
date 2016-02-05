@@ -8,6 +8,6 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
  */
 public class NotePickupTask extends Task {
     public NotePickupTask(final App app) {
-        super(app, "note pickup");
+        super(app, app.getLang().get("level.forest.quest.note-delivery.task.pickup"));
     }
 }
