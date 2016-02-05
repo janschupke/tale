@@ -11,10 +11,12 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.dialog.BaseDialog;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Base class for all in-game screens (levels).
@@ -27,6 +29,7 @@ public abstract class GameScreen extends BaseScreen {
     protected LevelEventHandler levelEventHandler;
 
     private boolean paused = false;
+    private String hintCache;
 
     public GameScreen(final App app) {
         super(app);
@@ -57,6 +60,13 @@ public abstract class GameScreen extends BaseScreen {
         Gdx.app.debug("GameScreen#pause", "Pausing");
         super.pause();
         removeInputProcessor(levelInputProcessor);
+        try {
+            // Some hint may already be set.
+            hintCache = Utility.getHud(app).getHintTable().getHint();
+            Utility.getHud(app).getHintTable().update(app.getLang().get("hint.global.paused"));
+        } catch (NoHudException e) {
+            Gdx.app.log("GameScreen#pause", "No HUD problem.");
+        }
         paused = true;
     }
 
@@ -65,6 +75,11 @@ public abstract class GameScreen extends BaseScreen {
         Gdx.app.debug("GameScreen#resume", "Resuming");
         super.resume();
         inputMultiplexer.addProcessor(levelInputProcessor);
+        try {
+            Utility.getHud(app).getHintTable().update(hintCache);
+        } catch (NoHudException e) {
+            Gdx.app.log("GameScreen#pause", "No HUD problem.");
+        }
         if (!inMenu) paused = false;
     }
 

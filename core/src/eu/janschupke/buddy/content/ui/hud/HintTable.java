@@ -15,9 +15,7 @@ public class HintTable extends UITable {
 
     public HintTable(final App app) {
         super(app);
-
         align(Align.bottom);
-
         initWidgets();
         addWidgets();
         setListeners();
@@ -44,5 +42,9 @@ public class HintTable extends UITable {
 
     public void clear() {
         hintLabel.setText("");
+    }
+
+    public String getHint() {
+        return hintLabel.getText().toString();
     }
 }

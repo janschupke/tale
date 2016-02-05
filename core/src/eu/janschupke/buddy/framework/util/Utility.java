@@ -21,22 +21,6 @@ public class Utility {
      * @param newHud New hud reference.
      */
     public static void transitionScreens(final App app, final BaseScreen newScreen, final RootTable newHud) {
-//        final float duration = Config.SCREEN_TRANSITION_DURATION;
-//        app.getUi().getRoot().getColor().a = 1;
-//        SequenceAction sequenceAction = new SequenceAction();
-//        sequenceAction.addAction(Actions.fadeOut(duration));
-//        sequenceAction.addAction(Actions.run(new Runnable() {
-//            @Override
-//            public void run() {
-//                app.setScreen(newScreen);
-//                app.swapHuds(newHud);
-//                app.getUi().getRoot().addAction(Actions.fadeIn(duration));
-//            }
-//        }));
-//        app.getUi().getRoot().addAction(sequenceAction);
-
-        // TODO: asynchronous transition causes current screen to still be previous screen
-        // TODO: when accessed after this method call.
         app.setScreen(newScreen);
         app.swapHuds(newHud);
     }
