@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;
@@ -116,8 +117,10 @@ public abstract class GameScreen extends BaseScreen {
             i.draw(app.getBatch());
         }
 
-        for (Obstacle o : world.getObstacles()) {
-            o.draw(app.getBatch());
+        for (WorldEntity o : world.getObstacles()) {
+            if (o instanceof Obstacle) {
+                ((Obstacle)o).draw(app.getBatch());
+            }
         }
     }
 
@@ -130,8 +133,10 @@ public abstract class GameScreen extends BaseScreen {
             i.update(delta);
         }
 
-        for (Obstacle o : world.getObstacles()) {
-            o.update(delta);
+        for (WorldEntity o : world.getObstacles()) {
+            if (o instanceof Obstacle) {
+                ((Obstacle)o).update(delta);
+            }
         }
     }
 

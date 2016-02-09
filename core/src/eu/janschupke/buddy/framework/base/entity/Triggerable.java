@@ -1,9 +1,9 @@
 package eu.janschupke.buddy.framework.base.entity;
 
 /**
- * Interface for all world entities that can be interacted with upon contact.
+ * Interface for all world entities that trigger an event upon contact.
  */
-public interface Interactible {
+public interface Triggerable {
     /**
      * Called when the body contact begins.
      */
@@ -16,7 +16,7 @@ public interface Interactible {
 
     /**
      * Returns a hint that is displayed to the player.
-     * @return Text interaction hint.
+     * @return Text interaction hint, if available. Null otherwise.
      */
     String getInteractionHint();
 }

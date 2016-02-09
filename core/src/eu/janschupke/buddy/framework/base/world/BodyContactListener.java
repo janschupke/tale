@@ -3,7 +3,7 @@ package eu.janschupke.buddy.framework.base.world;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.*;
 import eu.janschupke.buddy.content.entity.PlayerUnit;
-import eu.janschupke.buddy.framework.base.entity.Interactible;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
  * Base contact listener for Box2D bodies.
@@ -64,8 +64,8 @@ public class BodyContactListener implements ContactListener {
 
         // At least one must be interactible - player is not.
         // The engage method will be called on the interactible object.
-        return ((fa.getBody().getUserData() instanceof Interactible)
-                || (fb.getBody().getUserData() instanceof Interactible));
+        return ((fa.getBody().getUserData() instanceof Triggerable)
+                || (fb.getBody().getUserData() instanceof Triggerable));
     }
 
     /**
@@ -82,7 +82,7 @@ public class BodyContactListener implements ContactListener {
      * @param f Provided fixture.
      * @return Attached Interactible object.
      */
-    protected Interactible getEntity(Fixture f) {
-        return (Interactible) (f.getBody().getUserData());
+    protected Triggerable getEntity(Fixture f) {
+        return (Triggerable) (f.getBody().getUserData());
     }
 }

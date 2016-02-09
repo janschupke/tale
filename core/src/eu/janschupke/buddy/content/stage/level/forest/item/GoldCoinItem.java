@@ -3,8 +3,8 @@ package eu.janschupke.buddy.content.stage.level.forest.item;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.buddy.content.stage.level.forest.ForestEventHandler;
-import eu.janschupke.buddy.framework.base.entity.Interactible;
 import eu.janschupke.buddy.framework.base.entity.Item;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
@@ -14,7 +14,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 /**
  * Gold coin item entity.
  */
-public class GoldCoinItem extends Item implements Interactible {
+public class GoldCoinItem extends Item implements Triggerable {
     public GoldCoinItem(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/sprites/items/coin-gold.png")));
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.pickup");

@@ -32,4 +32,6 @@ public abstract class WorldEntity {
     public Body getBody() {
         return body;
     }
+
+    public void dispose() {}
 }

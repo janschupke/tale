@@ -1,33 +1,33 @@
 package eu.janschupke.buddy.framework.base.event;
 
 import eu.janschupke.buddy.content.ui.hud.HintTable;
-import eu.janschupke.buddy.framework.base.entity.Interactible;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
  * A switch class that toggles possible interaction based on Interactible contact.
  */
 public class InteractionSwitch {
-    private static Interactible interactible;
+    private static Triggerable triggerable;
     private static BaseEvent interactionEvent;
 
-    public static void enable(Interactible interactible, BaseEvent interactionEvent, HintTable hintTable) {
-        InteractionSwitch.interactible = interactible;
+    public static void enable(Triggerable triggerable, BaseEvent interactionEvent, HintTable hintTable) {
+        InteractionSwitch.triggerable = triggerable;
         InteractionSwitch.interactionEvent = interactionEvent;
-        hintTable.update(interactible.getInteractionHint());
+        hintTable.update(triggerable.getInteractionHint());
     }
 
     public static void disable(HintTable hintTable) {
-        interactible = null;
+        triggerable = null;
         interactionEvent = null;
         hintTable.clear();
     }
 
     public static boolean isInteractionPossible() {
-        return (interactible != null);
+        return (triggerable != null);
     }
 
-    public static Interactible getInteractible() {
-        return interactible;
+    public static Triggerable getTriggerable() {
+        return triggerable;
     }
 
     public static BaseEvent getInteractionEvent() {

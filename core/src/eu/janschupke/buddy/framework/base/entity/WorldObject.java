@@ -64,7 +64,9 @@ public abstract class WorldObject extends WorldEntity {
         return sprite.getHeight();
     }
 
+    @Override
     public void dispose() {
+        super.dispose();
         sprite.getTexture().dispose();
     }
 

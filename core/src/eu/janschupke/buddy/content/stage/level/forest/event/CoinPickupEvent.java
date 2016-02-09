@@ -3,8 +3,11 @@ package eu.janschupke.buddy.content.stage.level.forest.event;
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
+import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.Wall;
+import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.event.PickupEvent;
@@ -35,12 +38,24 @@ public class CoinPickupEvent extends PickupEvent {
     @Override
     public void trigger() {
         if (!canTrigger()) return;
-        item = ((GoldCoinItem)InteractionSwitch.getInteractible());
+        item = ((GoldCoinItem)InteractionSwitch.getTriggerable());
         Gdx.app.debug("CoinPickupEvent#trigger", "Picking up the coin");
         super.trigger();
         showDialog(pickupDialog);
         addEventMessage();
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
+        removeInitialWall();
+    }
+
+    // TODO: class passing
+    private void removeInitialWall() {
+        for (WorldEntity obstacle : ((ForestScreen) app.getScreen()).getWorld().getObstacles()) {
+            if (obstacle instanceof InitialWall) {
+                Gdx.app.debug("CoinPickupEvent#removeInitialWall", "Removing wall");
+                ((ForestScreen) app.getScreen()).getWorld().removeWall((Wall) obstacle);
+                break;
+            }
+        }
     }
 }

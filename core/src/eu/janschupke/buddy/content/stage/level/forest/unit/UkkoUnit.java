@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.buddy.content.stage.level.forest.ForestEventHandler;
-import eu.janschupke.buddy.framework.base.entity.Interactible;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
@@ -15,7 +15,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 /**
  * Ukko unit class.
  */
-public class UkkoUnit extends Unit implements Interactible {
+public class UkkoUnit extends Unit implements Triggerable {
     public UkkoUnit(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png")));
         animationTexture = new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png"));

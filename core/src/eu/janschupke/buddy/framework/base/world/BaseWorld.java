@@ -16,8 +16,9 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import eu.janschupke.buddy.framework.base.entity.Item;
-import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.entity.Wall;
+import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.ParticleEffectContainer;
@@ -40,7 +41,8 @@ public abstract class BaseWorld {
     private Unit playerUnit;
     private List<Unit> units;
     private List<Item> items;
-    private List<Obstacle> obstacles;
+    // Contains Obstacles and (invisible) Walls, must be superclass type.
+    private List<WorldEntity> obstacles;
 
     private Map<String, ParticleEffectContainer> particleEffects;
     private Array<ParticleEffectPool.PooledEffect> pooledEffects;
@@ -192,7 +194,7 @@ public abstract class BaseWorld {
     public void dispose() {
         units.forEach(Unit::dispose);
         items.forEach(Item::dispose);
-        obstacles.forEach(Obstacle::dispose);
+        obstacles.forEach(WorldEntity::dispose);
 
         map.dispose();
         playerUnit.dispose();
@@ -242,9 +244,22 @@ public abstract class BaseWorld {
         playerUnit.setPosition(spawnPoint.x, spawnPoint.y);
     }
 
+    /**
+     * Removes an item from the world.
+     * @param item Item to be removed.
+     */
     public void removeItem(Item item) {
         boxWorld.destroyBody(item.getBody());
         items.remove(item);
+    }
+
+    /**
+     * Removes invisible wall from the world.
+     * @param wall Wall to be removed.
+     */
+    public void removeWall(Wall wall) {
+        boxWorld.destroyBody(wall.getBody());
+        obstacles.remove(wall);
     }
 
     public List<Unit> getUnits() {
@@ -255,7 +270,7 @@ public abstract class BaseWorld {
         return items;
     }
 
-    public List<Obstacle> getObstacles() {
+    public List<WorldEntity> getObstacles() {
         return obstacles;
     }
 

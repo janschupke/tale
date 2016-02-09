@@ -4,14 +4,12 @@ import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.buddy.content.entity.PlayerUnit;
 import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.CaveObstacle;
+import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.CaveSensor;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.IntroSensor;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.ItemHintSensor;
 import eu.janschupke.buddy.content.stage.level.forest.unit.UkkoUnit;
-import eu.janschupke.buddy.framework.base.entity.Item;
-import eu.janschupke.buddy.framework.base.entity.Obstacle;
-import eu.janschupke.buddy.framework.base.entity.Sensor;
-import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.entity.*;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
@@ -45,9 +43,13 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        Obstacle caveObstacle = new CaveObstacle(this);
+        Obstacle caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
         caveObstacle.setPosition(20, 18);
         getObstacles().add(caveObstacle);
+
+        Wall initialWall = new InitialWall(this, new Vector2(3, 0.5f));
+        initialWall.setPosition(14, 13);
+        getObstacles().add(initialWall);
     }
 
     @Override
@@ -63,8 +65,8 @@ public class ForestWorld extends TopDownWorld {
         Sensor itemHintSensor = new ItemHintSensor(this, new Vector2(0.5f, 3));
         itemHintSensor.setPosition(18, 3);
 
-        Sensor caveSensor = new CaveSensor(this, new Vector2(3, 1));
-        caveSensor.setPosition(14, 13);
+        Sensor caveSensor = new CaveSensor(this, new Vector2(3, 0.5f));
+        caveSensor.setPosition(14, 18);
     }
 }
 
