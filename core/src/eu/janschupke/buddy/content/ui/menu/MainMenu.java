@@ -14,8 +14,8 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class MainMenu extends MenuTable {
     private Label titleLabel;
-    private TextButton newGameButton;
     private TextButton continueGameButton;
+    private TextButton newGameButton;
     private TextButton settingsButton;
     private TextButton hotkeysButton;
     private TextButton creditsButton;
@@ -34,8 +34,8 @@ public class MainMenu extends MenuTable {
     @Override
     public void initWidgets() {
         titleLabel = new Label(app.getLang().get("menu.main.label.title"), app.getSkin());
-        newGameButton = new TextButton(app.getLang().get("menu.main.button.new-game"), app.getSkin());
         continueGameButton = new TextButton(app.getLang().get("menu.main.button.continue-game"), app.getSkin());
+        newGameButton = new TextButton(app.getLang().get("menu.main.button.new-game"), app.getSkin());
         settingsButton = new TextButton(app.getLang().get("menu.main.button.settings"), app.getSkin());
         hotkeysButton = new TextButton(app.getLang().get("menu.main.button.hotkeys"), app.getSkin());
         creditsButton = new TextButton(app.getLang().get("menu.main.button.credits"), app.getSkin());
@@ -44,9 +44,17 @@ public class MainMenu extends MenuTable {
 
     @Override
     public void addWidgets() {
+        boolean canContinue = (app.getGameState().getCurrentLevel() != null);
+        setupWidgets(canContinue);
+    }
+
+    public void setupWidgets(boolean canContinue) {
+        clear();
         add(titleLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
+        if (canContinue) {
+            add(continueGameButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        }
         add(newGameButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(continueGameButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(settingsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(hotkeysButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(creditsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
@@ -55,19 +63,19 @@ public class MainMenu extends MenuTable {
 
     @Override
     public void setListeners() {
-        newGameButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
-                app.getEventHandler().startNewGame();
-            }
-        });
-
         continueGameButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
                 app.getEventHandler().continueGame();
+            }
+        });
+
+        newGameButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getEventHandler().startNewGame();
             }
         });
 

@@ -11,6 +11,13 @@ public class Config {
     public static final String GAME_TITLE = "Buddy the Yellow Geezer";
     public static final String PREFERENCES_SETTINGS = "settings";
 
+    // Filesystem values.
+    public static final String FILE_PATH = System.getProperty("user.home") +
+            System.getProperty("file.separator") +
+            ".prefs" +
+            System.getProperty("file.separator");
+    public static final String APP_STATE_PREFIX = FILE_PATH + GAME_PREFIX + "-";
+
     // Screen configuration.
     public static final boolean SCREEN_RESIZABLE = false;
     public static final float SCREEN_TRANSITION_DURATION = 0.1f;

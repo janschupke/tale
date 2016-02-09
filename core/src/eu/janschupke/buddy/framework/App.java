@@ -82,6 +82,31 @@ public abstract class App extends Game {
     }
 
     /**
+     * Resets the current game state in order to start a new one.
+     */
+    public void resetState() {
+        // TODO: reset measuring model state.
+        gameState = new GameState(this);
+        huds = new HashMap<>();
+        ui = new Stage();
+        initHuds();
+        screens = new HashMap<>();
+        initScreens();
+    }
+
+    /**
+     * Loads the persisted game state that has been previously serialized.
+     * @param app Deserialized game state from which to load.
+     */
+    public void loadState(App app) {
+        // TODO: load measuring model state.
+        gameState = app.getGameState();
+        ui = app.getUi();
+        screens = app.getScreens();
+        huds = app.getHuds();
+    }
+
+    /**
      * Disables debug rendering in case of enabled values in configuration,
      * but disabled on the application level.
      */
@@ -146,30 +171,6 @@ public abstract class App extends Game {
 
     public BaseInputProcessor getInputProcessor(Config.Input name) {
         return inputProcessors.get(name);
-    }
-
-    /**
-     * Resets the current game state in order to start a new one.
-     */
-    public void resetState() {
-        // TODO: reset measuring model state.
-        gameState = new GameState(this);
-        huds = new HashMap<>();
-        ui = new Stage();
-        initHuds();
-        screens = new HashMap<>();
-        initScreens();
-    }
-
-    /**
-     * Loads the persisted game state that has been previously serialized.
-     * @param app Deserialized game state from which to load.
-     */
-    public void loadState(App app) {
-        // TODO: load measuring model state.
-        gameState = app.getGameState();
-        ui = app.getUi();
-        screens = app.getScreens();
     }
 
     @Override

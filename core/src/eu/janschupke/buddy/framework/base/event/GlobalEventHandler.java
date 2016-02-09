@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import eu.janschupke.buddy.content.ui.menu.MainMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.global.ToggleDialogsEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
@@ -176,11 +177,14 @@ public class GlobalEventHandler {
         Gdx.app.debug("GlobalEventHandler#startNewGame", "New Game");
         app.resetState();
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
+        // Add continue game button.
+        ((MainMenu)app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
     }
 
     public void continueGame() {
         Gdx.app.debug("GlobalEventHandler#continueGame", "Continue Game");
         Utility.transitionScreens(app, app.getGameState().getCurrentLevel(), app.getHud(Config.Huds.STANDARD));
+        app.getScreen().resume();
     }
 
     public void showSettings() {

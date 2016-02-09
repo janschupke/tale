@@ -12,8 +12,6 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class MenuScreen extends UIScreen {
     private GlyphLayout titleLayout;
-    private Texture beckgroundTexture;
-    private Texture menuBackgroundTexture;
 
     public MenuScreen(final App app) {
         super(app);
@@ -22,7 +20,6 @@ public class MenuScreen extends UIScreen {
         backgroundMusic = app.getResourceHandler().getMenuMusic();
         titleLayout = new GlyphLayout(app.getFont(), Config.GAME_TITLE);
         backgroundTexture = new Texture(Gdx.files.internal("textures/gui/menu-screen-background.png"));
-        menuBackgroundTexture = new Texture(Gdx.files.internal("textures/gui/menu-table-background.png"));
     }
 
     @Override
@@ -32,15 +29,8 @@ public class MenuScreen extends UIScreen {
     public void render(float delta) {
         super.render(delta);
 
-        int menuWidth = 360;
-        int menuHeight = 530;
-
         app.getBatch().begin();
         app.getBatch().draw(backgroundTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        app.getBatch().draw(menuBackgroundTexture,
-                app.getUi().getWidth() / 2 - menuWidth / 2 + 5,
-                app.getUi().getHeight() - menuHeight + 40,
-                menuWidth, menuHeight);
         app.getFont().draw(app.getBatch(), titleLayout,
                 app.getUi().getWidth() / 2 - titleLayout.width / 2,
                 app.getUi().getHeight() - 10);
