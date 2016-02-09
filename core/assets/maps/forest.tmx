@@ -13,22 +13,17 @@
  </tileset>
  <layer name="background" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztlzEOwjAQBANNSp7BN/gnNa+gsEQ+hhBEsqLEnJ2789rZYhpQCLN7J9nTOAwTIYQQQgghhBBCCPnL4/zF+j2viNrOWxmsoeFbAloOObnsdffKIMdXmoOWu0UGGr6pDLTdW8jBw13LX7t3a2eL/i3m/3o6tr/HXKD7t7ADLfa+199j3pH79/L3yAHZnf3j9d/b/ksz8O6c/jjuPc8/6rnnc/5v8Q6g9QzS7m8Rfr8RIp4JSt6B6i913pMBcv+53jMBLANP/3hmEHZhz+7PaLnfI9Y+W4Lin8ogjPLOU65SavnnIu24FOm+WPndLvZdSzOIc/DqN+Xv4b6Vg7VzjGQHevBe86/tXiMDqbv3DqB1T//+9gDV3aP7Uv+eMkD2R53/Hv1zMvByR58ByywsfZd3iuX5d41e5l/7DtmSuzVHdpfksfV97f9J2ucNzUsEOA==
+   eJztwzENAAAMA6B+8y+pzipjDyT0kqqqqqqqqqqqqqqqqqqqqqqvB0LQgLU=
   </data>
  </layer>
  <layer name="terrain" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJztm1lywyAMhu3krc0lmrcuB+l2kG4naXuDnrDLISLqMuMyEkjYsRDmn9HEmQhHnwwCm2Tfd91+5bZWNf7G3/i1o9BT42/8jV87Cj01/sbf+LWj0FPjt8W/Jyz7fEb4Ke6puaiRX5IHC/w57LXwSxmlObDIP9YZYh3hi56/YH6Mm+LtkM9Z31Ewv1fO/MbNgQX+HNXIj/V9irGm/u8kGdNcP6fa+GM1EZMVfifJdeW2XRM/1t4Sv1MsB5y1QSiL/NyaH/piba3xe+XOBbXwc2Wdf0rNw85RC79kHWiVX3J/R+XAcv/nzmEx/5RPyfxOEv6cc1rgn4OZkpQfew5F3ZfOFfcx+oDXFP6Q81j8mGI5l8SQy0/pY/c/vtIl4Zc8V3Z5qJFfIi1+0X5B4fVfKvF+iYD/fDsYVxrXX7ofluJ3DJ4bM6qNRv3L2Q+cm3+p+S9U7l5oij/GHvJrsXvNze8YPjdxG/vG7jOXUM4+eIo/tsbDfLHjpZTzGwAuv9MXXO9vsJ8N7Ru206wDLH+C38d9DWP8Zjscn8DrKdiOUfe0ciBh//VP8D8A6+Mf/wW8XoJdCeu+Zk1MCeOnxvItcN+B3QvqvvackFKMP4z7CbifwV5WwD8e9z7uV3j/BvYe4Q+lWQs5ovjH4z4Vc8qn5ByE/HPH2feDWeF3OkYOrPBj672pstL/OesWzjonbFcquxOHfy4rUdT/wddkB6qJctw=
+   eJzt21uOwyAMBdDMCmYN6Upm/6uaX0QN+HFtQ2JLSJXaYs5NmpfUz891fV4+7uudo/zlR/n7yrZF+keV7Yvc/ifm4PX7PyUHz+PfU/1cz+52jX9V2qxO8Fsq22n1WyvbmeXP9mX7d8/gdL+1z+7Hv9EcqH5RfsmaJL3+fr+HpCfSv/oM0k65NTmgrn84n0PYZ05NDpbr/5UL6adcs+9xM/B+/iPxc93cuTjfjbz/i3BzctjFz3Fz8uOMaD9V1HucYxbC3+4LWf6Zd+ZG2EfDwy/xcuwn+fviWj33+yy/ZPvOMjjFP7Jz95WMDDz8lnN2dAZov/XcPcrQKwekH7HmtiIy8PBb1tqX9/nR26+ZR5uBpt8JfkkGWf52jRb7yM/NINpPrc/qt+wHu/it9lEf9L2x5/bvC+lHzHmS/76+tz1ivyo/xu99rUblu6MfubZZD9TciOf/nHvdXfNF+pHraueX9JCu4Sn+tp7ml9iz/cgM+vlHGTzdv8pgF7/Htc8qg/59aT/E+Z/7nNvqpzIY9Y/0e2ZAVd+L6hvtX63Lcn3EzUCTr8fzH48MqCzu7rVm1P9/yl/+/HWUv/zlL3+W/83jH/8i7Zw=
   </data>
  </layer>
- <objectgroup name="objects">
+ <objectgroup name="objects" visible="0">
   <object id="1" x="32" y="32">
    <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
   </object>
  </objectgroup>
- <layer name="meta" width="64" height="64" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJztzjEBAAAIA6D1z2UwC+z3EBKQAAAAAAAAAAAAAAAAAADwyVwHAKgWjrwAxQ==
-  </data>
- </layer>
 </map>

@@ -1,8 +1,10 @@
 package eu.janschupke.buddy.framework.input;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector3;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.Hotkeys;
 
@@ -31,6 +33,15 @@ public class GameInputProcessor extends BaseInputProcessor {
                 InteractionSwitch.getInteractionEvent().trigger();
             }
         }
+
+        return false;
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        // This streamlines entity positioning within the world.
+        Vector3 position = ((BaseScreen)app.getScreen()).getView().getCamera().unproject(new Vector3(screenX, screenY, 0));
+        Gdx.app.debug("GameInputProcessor#touchDown", String.format("Position: [%.0f, %.0f]", position.x, position.y));
 
         return false;
     }

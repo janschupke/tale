@@ -22,7 +22,7 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initPlayer() {
-        setSpawnPoint(24, 5);
+        setSpawnPoint(27, 9);
         setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
@@ -30,42 +30,40 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initCreatures() {
         Unit u = new UkkoUnit(this);
-        u.setPosition(18, 18);
+        u.setPosition(20, 33);
         getUnits().add(u);
     }
 
     @Override
     protected void initItems() {
         Item goldCoinItem = new GoldCoinItem(this);
-        goldCoinItem.setPosition(14, 5);
+        goldCoinItem.setPosition(13, 10);
         getItems().add(goldCoinItem);
     }
 
     @Override
     protected void initObstacles() {
         Obstacle caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
-        caveObstacle.setPosition(20, 18);
+        caveObstacle.setPosition(23, 22);
         getObstacles().add(caveObstacle);
 
-        Wall initialWall = new InitialWall(this, new Vector2(3, 0.5f));
-        initialWall.setPosition(14, 13);
+        Wall initialWall = new InitialWall(this, new Vector2(5, 0.5f));
+        initialWall.setPosition(14, 16);
         getObstacles().add(initialWall);
     }
 
     @Override
-    protected void initEffects() {
-
-    }
+    protected void initEffects() {}
 
     @Override
     protected void initSensors() {
         Sensor introSensor = new IntroSensor(this, new Vector2(0.5f, 3));
-        introSensor.setPosition(23, 3);
+        introSensor.setPosition(26, 9);
 
-        Sensor itemHintSensor = new ItemHintSensor(this, new Vector2(0.5f, 3));
-        itemHintSensor.setPosition(18, 3);
+        Sensor itemHintSensor = new ItemHintSensor(this, new Vector2(0.5f, 5));
+        itemHintSensor.setPosition(22, 9);
 
-        Sensor caveSensor = new CaveSensor(this, new Vector2(3, 0.5f));
+        Sensor caveSensor = new CaveSensor(this, new Vector2(5, 0.5f));
         caveSensor.setPosition(14, 18);
     }
 }

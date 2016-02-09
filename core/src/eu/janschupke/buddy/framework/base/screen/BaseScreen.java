@@ -108,4 +108,8 @@ public abstract class BaseScreen extends ScreenAdapter {
     public App getApp() {
         return app;
     }
+
+    public View getView() {
+        return view;
+    }
 }

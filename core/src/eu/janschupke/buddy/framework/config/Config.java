@@ -61,15 +61,11 @@ public class Config {
 
     // TMX layer configuration.
     public static final String MAP_LAYER_TERRAIN = "terrain";
-    public static final String MAP_LAYER_BACKGROUND = "background";
-    public static final String MAP_LAYER_FOLIAGE = "foliage";
     public static final String MAP_LAYER_OBJECT = "objects";
-    public static final String MAP_LAYER_META = "meta";
 
     // TMX attribute configuration.
     public static final String MAP_TILESET_MAIN = "default-tiles";
     public static final String MAP_TILESET_UTUMNO = "utumno-tiles";
-    public static final String MAP_PROPERTY_SPAWNPOINT = "spawn-point";
     public static final String MAP_PROPERTY_ANIMATION = "animation";
     public static final String MAP_PROPERTY_SPEED = "speed";
     public static final float MAP_DEFAULT_SPEED = 1.0f;
@@ -94,7 +90,6 @@ public class Config {
     public static final int HUD_BUTTON_PADDING = 5;
     public static final int HUD_BOTTOM_PANE_HEIGHT = 160;
     public static final int HUD_SIDE_PANE_WIDTH = 250;
-    public static final int HUD_SIDE_TEXT_LENGTH = 20;
 
     public static final int HUD_HINT_LEFT_PADDING = 80;
     public static final int HUD_HINT_BOTTOM_PADDING = 40;
