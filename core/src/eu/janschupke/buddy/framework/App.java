@@ -10,9 +10,10 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
-import eu.janschupke.buddy.framework.base.entity.container.CharacterContainer;
+import eu.janschupke.buddy.framework.base.entity.container.GameState;
 import eu.janschupke.buddy.framework.base.event.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
@@ -38,7 +39,7 @@ public abstract class App extends Game {
     private I18NBundle lang;
     private SettingsManager settingsManager;
     private ResourceHandler resourceHandler;
-    private CharacterContainer character;
+    private GameState gameState;
 
     @Override
     public void create() {
@@ -73,7 +74,7 @@ public abstract class App extends Game {
         skin.addRegions(atlas);
         ui = new Stage();
 
-        character = new CharacterContainer(this);
+        gameState = new GameState(this);
 
         initHuds();
         initInputProcessors();
@@ -95,6 +96,10 @@ public abstract class App extends Game {
     public void setScreen(Screen screen) {
         Gdx.app.debug("App#setScreen", "Settings");
         super.setScreen(screen);
+        // For game state saving purposes.
+        if (screen instanceof GameScreen) {
+            gameState.setCurrentLevel((GameScreen)screen);
+        }
     }
 
     /**
@@ -131,12 +136,40 @@ public abstract class App extends Game {
         ui.addActor(hud);
     }
 
+    public Map<Config.Screens, BaseScreen> getScreens() {
+        return screens;
+    }
+
     public BaseScreen getScreenInstance(Config.Screens name) {
         return screens.get(name);
     }
 
     public BaseInputProcessor getInputProcessor(Config.Input name) {
         return inputProcessors.get(name);
+    }
+
+    /**
+     * Resets the current game state in order to start a new one.
+     */
+    public void resetState() {
+        // TODO: reset measuring model state.
+        gameState = new GameState(this);
+        huds = new HashMap<>();
+        ui = new Stage();
+        initHuds();
+        screens = new HashMap<>();
+        initScreens();
+    }
+
+    /**
+     * Loads the persisted game state that has been previously serialized.
+     * @param app Deserialized game state from which to load.
+     */
+    public void loadState(App app) {
+        // TODO: load measuring model state.
+        gameState = app.getGameState();
+        ui = app.getUi();
+        screens = app.getScreens();
     }
 
     @Override
@@ -185,7 +218,7 @@ public abstract class App extends Game {
         return resourceHandler;
     }
 
-    public CharacterContainer getCharacter() {
-        return character;
+    public GameState getGameState() {
+        return gameState;
     }
 }

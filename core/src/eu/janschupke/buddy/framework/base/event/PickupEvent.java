@@ -30,7 +30,7 @@ public class PickupEvent extends BaseEvent {
         super.trigger();
 
         try {
-            app.getCharacter().getInventory().addItem(new InventoryItem(app, item));
+            app.getGameState().getInventory().addItem(new InventoryItem(app, item));
             ((ForestScreen) app.getScreen()).getWorld().removeItem(item);
             Utility.getHud(app).getInventoryTable().update();
         } catch (InventoryFullException e) {

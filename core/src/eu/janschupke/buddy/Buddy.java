@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import eu.janschupke.buddy.content.stage.level.forest.ForestInputProcessor;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsInputProcessor;
+import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.buddy.content.stage.menu.MenuScreen;
 import eu.janschupke.buddy.content.stage.splash.SplashScreen;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
@@ -101,7 +102,7 @@ public class Buddy extends App {
 		ForestScreen forestScreen = new ForestScreen(this);
 		screens.put(Config.Screens.FOREST, forestScreen);
 
-//		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
-//		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
+		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
+		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
 	}
 }

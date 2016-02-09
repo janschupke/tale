@@ -16,6 +16,7 @@ public class TopDownInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        Gdx.app.debug("TopDownInputProcessor#keyDown", "Key Down");
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveUp();
         }

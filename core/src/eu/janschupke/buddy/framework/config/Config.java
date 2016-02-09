@@ -118,6 +118,8 @@ public class Config {
         GRAPHICSMENU, AUDIOMENU, CREDITSMENU
     }
 
+    public static final Screens FIRST_LEVEL = Screens.FOREST;
+
     public enum Screens {
         SPLASH, MENU, FOREST, OUTSKIRTS
     }

@@ -37,7 +37,7 @@ public class ForestWorld extends TopDownWorld {
     @Override
     protected void initItems() {
         Item goldCoinItem = new GoldCoinItem(this);
-        goldCoinItem.setPosition(13, 10);
+        goldCoinItem.setPosition(16, 10);
         getItems().add(goldCoinItem);
     }
 

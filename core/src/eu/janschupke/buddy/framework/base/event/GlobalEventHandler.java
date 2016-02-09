@@ -174,11 +174,13 @@ public class GlobalEventHandler {
 
     public void startNewGame() {
         Gdx.app.debug("GlobalEventHandler#startNewGame", "New Game");
-        Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.FOREST), app.getHud(Config.Huds.STANDARD));
+        app.resetState();
+        Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
     }
 
     public void continueGame() {
         Gdx.app.debug("GlobalEventHandler#continueGame", "Continue Game");
+        Utility.transitionScreens(app, app.getGameState().getCurrentLevel(), app.getHud(Config.Huds.STANDARD));
     }
 
     public void showSettings() {

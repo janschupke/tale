@@ -38,7 +38,7 @@ public class InventoryTable extends UITable {
     public void update() {
         getChildren().forEach(Actor::remove);
 
-        Inventory inventory = app.getCharacter().getInventory();
+        Inventory inventory = app.getGameState().getInventory();
         for (int i = 0; i < inventory.getUsedSlots(); i++) {
             InventoryItem inventoryItem = inventory.getItem(i);
             ImageButton itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(

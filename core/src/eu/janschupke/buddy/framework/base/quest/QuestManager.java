@@ -18,7 +18,7 @@ public abstract class QuestManager {
 
     public void initQuestChain(QuestChain chain) {
         Gdx.app.debug("QuestManager#initQuestChain", "Initiating quest");
-        app.getCharacter().getQuestLog().addQuestChain(chain);
+        app.getGameState().getQuestLog().addQuestChain(chain);
 
         try {
             Utility.getHud(app).getQuestLogTable().update();

@@ -48,7 +48,7 @@ public class QuestLogTable extends UITable {
     public void update() {
         // TODO
         StringBuilder result = new StringBuilder();
-        QuestLog questLog = app.getCharacter().getQuestLog();
+        QuestLog questLog = app.getGameState().getQuestLog();
 
         for (QuestChain chain : questLog.getQuestChains()) {
             for (Quest quest : chain.getQuests()) {
