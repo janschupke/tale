@@ -175,6 +175,7 @@ public class GlobalEventHandler {
 
     public void startNewGame() {
         Gdx.app.debug("GlobalEventHandler#startNewGame", "New Game");
+        // TODO: only reset if needed, also add confirm dialog.
         app.resetState();
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
         // Add continue game button.

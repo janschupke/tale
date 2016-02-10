@@ -1,14 +1,11 @@
 package eu.janschupke.buddy.framework.util;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * General utility class.
@@ -31,19 +28,22 @@ public class Utility {
      * @param newHud New hud reference.
      */
     public static void transitionHuds(final App app, final RootTable newHud) {
-        final float duration = Config.SCREEN_TRANSITION_DURATION;
+        // TODO
+//        final float duration = Config.SCREEN_TRANSITION_DURATION;
+//
+//        app.getUi().getRoot().getColor().a = 1;
+//        SequenceAction sequenceAction = new SequenceAction();
+//        sequenceAction.addAction(Actions.fadeOut(duration));
+//        sequenceAction.addAction(Actions.run(new Runnable() {
+//            @Override
+//            public void run() {
+//                app.swapHuds(newHud);
+//                app.getUi().getRoot().addAction(Actions.fadeIn(duration));
+//            }
+//        }));
+//        app.getUi().getRoot().addAction(sequenceAction);
 
-        app.getUi().getRoot().getColor().a = 1;
-        SequenceAction sequenceAction = new SequenceAction();
-        sequenceAction.addAction(Actions.fadeOut(duration));
-        sequenceAction.addAction(Actions.run(new Runnable() {
-            @Override
-            public void run() {
-                app.swapHuds(newHud);
-                app.getUi().getRoot().addAction(Actions.fadeIn(duration));
-            }
-        }));
-        app.getUi().getRoot().addAction(sequenceAction);
+        app.swapHuds(newHud);
     }
 
     /**

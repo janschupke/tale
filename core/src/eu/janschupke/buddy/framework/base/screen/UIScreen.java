@@ -14,4 +14,12 @@ public abstract class UIScreen extends BaseScreen {
     public UIScreen(final App app) {
         super(app);
     }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        if (backgroundTexture != null) {
+            backgroundTexture.dispose();
+        }
+    }
 }
