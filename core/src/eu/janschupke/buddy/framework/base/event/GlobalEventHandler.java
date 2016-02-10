@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import eu.janschupke.buddy.content.ui.dialog.NewGameConfirmDialog;
 import eu.janschupke.buddy.content.ui.menu.MainMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.global.ToggleDialogsEvent;
@@ -173,10 +174,25 @@ public class GlobalEventHandler {
         Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
     }
 
+    /**
+     * Starts a new game, discards old state
+     * if exists and the action is confirmed by the user.
+     */
     public void startNewGame() {
         Gdx.app.debug("GlobalEventHandler#startNewGame", "New Game");
-        // TODO: only reset if needed, also add confirm dialog.
-        app.resetState();
+        // Reset confirmation dialog and the reset itself, but only when needed.
+        if (app.getGameState().getCurrentLevel() != null) {
+            Gdx.app.debug("GlobalEventHandler#startNewGame", "Reset confirm");
+            new NewGameConfirmDialog(app).show(app.getUi());
+        } else {
+            fireNewGame();
+        }
+    }
+
+    /**
+     * Transitions to the beginning screen.
+     */
+    public void fireNewGame() {
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
         // Add continue game button.
         ((MainMenu)app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
