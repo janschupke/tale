@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.framework.base.entity;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -205,33 +206,14 @@ public abstract class Unit extends WorldObject {
     public void dispose() {
         super.dispose();
 
-        animationTexture.dispose();
-
-        for (TextureRegion[] regions : animationFrames) {
-            for (TextureRegion region : regions) {
-                if (region.getTexture() != null) {
-                    region.getTexture().dispose();
-                }
-            }
-        }
-
-        if (animatedBoxSpriteUp.getTexture() != null) {
+        try {
+            animationTexture.dispose();
             animatedBoxSpriteUp.getTexture().dispose();
-        }
-        if (animatedBoxSpriteDown.getTexture() != null) {
             animatedBoxSpriteDown.getTexture().dispose();
-        }
-        if (animatedBoxSpriteRight.getTexture() != null) {
             animatedBoxSpriteRight.getTexture().dispose();
-        }
-        if (animatedBoxSpriteLeft.getTexture() != null) {
             animatedBoxSpriteLeft.getTexture().dispose();
-        }
-
-        for (Map.Entry<Direction, TextureRegion> entry : idleTextures.entrySet()) {
-            if (entry.getValue().getTexture() != null) {
-                entry.getValue().getTexture().dispose();
-            }
+        } catch (NullPointerException e) {
+            Gdx.app.log("Unit#dispose", "Null texture");
         }
     }
 }

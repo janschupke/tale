@@ -10,8 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.Inventory;
 import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for the in-game character inventory.
@@ -44,6 +46,17 @@ public class InventoryTable extends UITable {
             ImageButton itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
                     inventoryItem.getItem().getSprite().getTexture())));
             add(itemButton).pad(Config.HUD_BUTTON_PADDING);
+        }
+
+        updateIndicator();
+    }
+
+    private void updateIndicator() {
+        try {
+            Utility.getHud(app).getIndicatorTable().activateItem();
+        } catch (NoHudException e) {}
+        catch (IndexOutOfBoundsException e) {
+            // TODO
         }
     }
 

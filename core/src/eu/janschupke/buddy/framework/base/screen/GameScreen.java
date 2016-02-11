@@ -55,6 +55,10 @@ public abstract class GameScreen extends BaseScreen {
 
     @Override
     public void pause() {
+        if (paused) {
+            return;
+        }
+
         Gdx.app.debug("GameScreen#pause", "Pausing");
         super.pause();
         try {
@@ -69,6 +73,10 @@ public abstract class GameScreen extends BaseScreen {
 
     @Override
     public void resume() {
+        if (!paused) {
+            return;
+        }
+
         Gdx.app.debug("GameScreen#resume", "Resuming");
         super.resume();
         try {
@@ -165,6 +173,27 @@ public abstract class GameScreen extends BaseScreen {
             pause();
             app.getEventHandler().showGameMenu();
         }
+    }
+
+    public void toggleEventLog() {
+        try {
+            Utility.getHud(app).toggleEventLog();
+            Utility.getHud(app).getIndicatorTable().deactivateEvent();
+        } catch (NoHudException e) {}
+    }
+
+    public void toggleQuestLog() {
+        try {
+            Utility.getHud(app).toggleQuestLog();
+            Utility.getHud(app).getIndicatorTable().deactivateQuest();
+        } catch (NoHudException e) {}
+    }
+
+    public void toggleInventory() {
+        try {
+            Utility.getHud(app).toggleInventory();
+            Utility.getHud(app).getIndicatorTable().deactivateItem();
+        } catch (NoHudException e) {}
     }
 
     // For world step calculations.
@@ -267,5 +296,9 @@ public abstract class GameScreen extends BaseScreen {
 
     public QuestManager getQuestManager() {
         return questManager;
+    }
+
+    public boolean isPaused() {
+        return paused;
     }
 }

@@ -94,11 +94,11 @@ public class Config {
 
     public static final int HUD_INNER_PADDING = 10;
     public static final int HUD_BUTTON_PADDING = 5;
-    public static final int HUD_BOTTOM_PANE_HEIGHT = 160;
-    public static final int HUD_SIDE_PANE_WIDTH = 250;
-
-    public static final int HUD_HINT_LEFT_PADDING = 80;
-    public static final int HUD_HINT_BOTTOM_PADDING = 40;
+    public static final int HUD_LOG_WIDTH = 600;
+    public static final int HUD_LOG_HEIGHT = 300;
+    public static final int HUD_HINT_TOP_PADDING = 200;
+    public static final int HUD_INDICATOR_WIDTH = 200;
+    public static final int HUD_TOP_BUTTON_WIDTH = 80;
 
     public static final int DIALOG_TOP_PADDING = 35;
     public static final int DIALOG_BOTTOM_PADDING = 10;

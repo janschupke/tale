@@ -26,6 +26,12 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     private Label interactHotkey;
     private Label dialogLabel;
     private Label dialogsHotkey;
+    private Label eventsLabel;
+    private Label eventsHotkey;
+    private Label questsLabel;
+    private Label questsHotkey;
+    private Label inventoryLabel;
+    private Label inventoryHotkey;
     private TextButton backButton;
 
     public HotkeysMenu(final App app) {
@@ -52,6 +58,12 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         interactHotkey = new Label(app.getLang().get("menu.hotkeys.label.interact.hotkey"), app.getSkin());
         dialogLabel = new Label(app.getLang().get("menu.hotkeys.label.dialog.label"), app.getSkin());
         dialogsHotkey = new Label(app.getLang().get("menu.hotkeys.label.dialog.hotkey"), app.getSkin());
+        eventsLabel = new Label(app.getLang().get("menu.hotkeys.label.events.label"), app.getSkin());
+        eventsHotkey = new Label(app.getLang().get("menu.hotkeys.label.events.hotkey"), app.getSkin());
+        questsLabel = new Label(app.getLang().get("menu.hotkeys.label.quests.label"), app.getSkin());
+        questsHotkey = new Label(app.getLang().get("menu.hotkeys.label.quests.hotkey"), app.getSkin());
+        inventoryLabel = new Label(app.getLang().get("menu.hotkeys.label.inventory.label"), app.getSkin());
+        inventoryHotkey = new Label(app.getLang().get("menu.hotkeys.label.inventory.hotkey"), app.getSkin());
         backButton = new TextButton(app.getLang().get("menu.global.button.back"), app.getSkin());
     }
 
@@ -71,6 +83,12 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         add(interactHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(dialogLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
         add(dialogsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(eventsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(eventsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(questsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(questsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(inventoryLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(inventoryHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(backButton).colspan(2).width(Config.UI_BUTTON_WIDTH).padTop(Config.UI_SEPARATOR_SPACE).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 

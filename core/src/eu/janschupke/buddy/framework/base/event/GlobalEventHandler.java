@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.event.global.ToggleDialogsEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleMusicEvent;
 import eu.janschupke.buddy.framework.base.event.global.ToggleSoundEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
@@ -172,6 +173,15 @@ public class GlobalEventHandler {
 
     public void showGameMenu() {
         Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
+    }
+
+    public void togglePause() {
+        if (((GameScreen)app.getScreen()).isPaused()) {
+            app.getScreen().resume();
+            return;
+        }
+
+        app.getScreen().pause();
     }
 
     /**

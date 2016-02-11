@@ -11,6 +11,7 @@ public class Hotkeys {
 
     public static final int MENU = Input.Keys.ESCAPE;
     public static final int MENU_ALTERNATIVE = Input.Keys.F10;
+    public static final int PAUSE = Input.Keys.P;
 
     public static final int MUSIC = Input.Keys.M;
     public static final int SOUND = Input.Keys.S;
@@ -24,4 +25,7 @@ public class Hotkeys {
     public static final int LEFT_ALTERNATIVE = Input.Keys.A;
     public static final int INTERACT = Input.Keys.SPACE;
     public static final int DIALOGS = Input.Keys.H;
+    public static final int EVENTS = Input.Keys.E;
+    public static final int QUESTS = Input.Keys.Q;
+    public static final int INVENTORY = Input.Keys.I;
 }

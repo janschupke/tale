@@ -3,9 +3,12 @@ package eu.janschupke.buddy.content.ui.hud;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
@@ -14,8 +17,10 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.entity.container.QuestLog;
 import eu.janschupke.buddy.framework.base.entity.container.Task;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for the quest log.
@@ -24,6 +29,7 @@ public class QuestLogTable extends UITable {
     private Label titleLabel;
     private TextArea questArea;
     private ScrollPane questScrollPane;
+    private TextButton closeButton;
 
     public QuestLogTable(final App app) {
         super(app);
@@ -63,6 +69,16 @@ public class QuestLogTable extends UITable {
         }
 
         questArea.setText(result.toString());
+        updateIndicator();
+    }
+
+    private void updateIndicator() {
+        try {
+            Utility.getHud(app).getIndicatorTable().activateQuest();
+        } catch (NoHudException e) {}
+        catch (IndexOutOfBoundsException e) {
+            // TODO
+        }
     }
 
     @Override
@@ -71,16 +87,26 @@ public class QuestLogTable extends UITable {
         questArea = new TextArea("", app.getSkin());
         questArea.setDisabled(true);
         questScrollPane = new ScrollPane(questArea, app.getSkin());
+        closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        add(questScrollPane).height(Config.HUD_BOTTOM_PANE_HEIGHT).expand().fill().pad(Config.HUD_INNER_PADDING);
+        add(questScrollPane).width(Config.HUD_LOG_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        add(closeButton);
     }
 
     @Override
     public void setListeners() {
-
+        closeButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                try {
+                    Utility.getHud(app).toggleQuestLog();
+                } catch (NoHudException e) {
+                }
+            }
+        });
     }
 }

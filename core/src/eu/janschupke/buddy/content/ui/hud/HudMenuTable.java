@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -17,7 +17,10 @@ import eu.janschupke.buddy.framework.config.Config;
  * GUI table structure for on-screen level menu.
  */
 public class HudMenuTable extends UITable {
-    private ImageButton menuButton;
+    private TextButton menuButton;
+    private TextButton eventLogButton;
+    private TextButton questLogButton;
+    private TextButton inventoryButton;
 
     public HudMenuTable(final App app) {
         super(app);
@@ -35,13 +38,18 @@ public class HudMenuTable extends UITable {
 
     @Override
     public void initWidgets() {
-        menuButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
-                new Texture(Gdx.files.internal("textures/gui/menu-button-icon.png")))));
+        menuButton = new TextButton(app.getLang().get("hud.menu.menu"), app.getSkin());
+        eventLogButton = new TextButton(app.getLang().get("hud.menu.events"), app.getSkin());
+        questLogButton = new TextButton(app.getLang().get("hud.menu.quests"), app.getSkin());
+        inventoryButton = new TextButton(app.getLang().get("hud.menu.inventory"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
-        add(menuButton).pad(Config.HUD_BUTTON_PADDING);
+        add(menuButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_TOP_BUTTON_WIDTH);
+        add(eventLogButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_TOP_BUTTON_WIDTH);
+        add(questLogButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_TOP_BUTTON_WIDTH);
+        add(inventoryButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_TOP_BUTTON_WIDTH);
     }
 
     @Override
@@ -50,6 +58,24 @@ public class HudMenuTable extends UITable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 ((GameScreen)app.getScreen()).toggleMenu();
+            }
+        });
+        eventLogButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                ((GameScreen)app.getScreen()).toggleEventLog();
+            }
+        });
+        questLogButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                ((GameScreen)app.getScreen()).toggleQuestLog();
+            }
+        });
+        inventoryButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                ((GameScreen)app.getScreen()).toggleInventory();
             }
         });
     }
