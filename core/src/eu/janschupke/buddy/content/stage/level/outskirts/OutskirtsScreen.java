@@ -18,6 +18,7 @@ public class OutskirtsScreen extends TopDownScreen {
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new OutskirtsWorld(this);
         initView(world.getWidth(), world.getHeight());
+        inputMultiplexer.addProcessor(levelInputProcessor);
     }
 
     @Override

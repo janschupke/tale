@@ -19,6 +19,8 @@ public class GameInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        super.keyDown(keycode);
+
         if (keycode == Hotkeys.MENU || keycode == Hotkeys.MENU_ALTERNATIVE) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Toggling menu");
             ((GameScreen)app.getScreen()).toggleMenu();
@@ -39,6 +41,8 @@ public class GameInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        super.touchDown(screenX, screenY, pointer, button);
+
         // This streamlines entity positioning within the world.
         Vector3 position = ((BaseScreen)app.getScreen()).getView().getCamera().unproject(new Vector3(screenX, screenY, 0));
         Gdx.app.debug("GameInputProcessor#touchDown", String.format("Position: [%.0f, %.0f]", position.x, position.y));

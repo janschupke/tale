@@ -14,7 +14,6 @@ import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;
-import eu.janschupke.buddy.framework.base.ui.dialog.BaseDialog;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
@@ -43,8 +42,6 @@ public abstract class GameScreen extends BaseScreen {
     public void show() {
         Gdx.app.debug("GameScreen#show", "Showing");
         super.show();
-        inputMultiplexer.addProcessor(levelInputProcessor);
-        inputMultiplexer.addProcessor(app.getInputProcessor(Config.Input.GAME));
         paused = false;
         inMenu = false;
     }
@@ -53,8 +50,6 @@ public abstract class GameScreen extends BaseScreen {
     public void hide() {
         Gdx.app.debug("GameScreen#hide", "Hiding");
         super.hide();
-        removeInputProcessor(levelInputProcessor);
-        removeInputProcessor(app.getInputProcessor(Config.Input.GAME));
         paused = true;
     }
 
@@ -62,7 +57,6 @@ public abstract class GameScreen extends BaseScreen {
     public void pause() {
         Gdx.app.debug("GameScreen#pause", "Pausing");
         super.pause();
-        removeInputProcessor(levelInputProcessor);
         try {
             // Some hint may already be set.
             hintCache = Utility.getHud(app).getHintTable().getHint();
@@ -77,7 +71,6 @@ public abstract class GameScreen extends BaseScreen {
     public void resume() {
         Gdx.app.debug("GameScreen#resume", "Resuming");
         super.resume();
-        inputMultiplexer.addProcessor(levelInputProcessor);
         try {
             Utility.getHud(app).getHintTable().update(hintCache);
         } catch (NoHudException e) {
@@ -154,18 +147,6 @@ public abstract class GameScreen extends BaseScreen {
                 world.getPooledEffects().removeIndex(i);
             }
         }
-    }
-
-    /**
-     * Shows/hides provided dialog instance.
-     * @param dialog Dialog to be toggled.
-     */
-    private void toggleDialog(BaseDialog dialog) {
-        if (dialog.isShown()) {
-            dialog.hide();
-            return;
-        }
-        dialog.show(app.getUi());
     }
 
     /**

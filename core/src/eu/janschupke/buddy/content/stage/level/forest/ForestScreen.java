@@ -23,6 +23,7 @@ public class ForestScreen extends TopDownScreen {
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new ForestWorld(this);
         initView(world.getWidth(), world.getHeight());
+        inputMultiplexer.addProcessor(levelInputProcessor);
     }
 
     @Override

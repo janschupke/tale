@@ -8,7 +8,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 /**
  * Base input processor for all top-down levels
  */
-public class TopDownInputProcessor extends BaseInputProcessor {
+public class TopDownInputProcessor extends GameInputProcessor {
     public TopDownInputProcessor(final App app) {
         super(app);
         Gdx.app.debug("TopDownInputProcessor#<init>", "Constructing");
@@ -16,7 +16,8 @@ public class TopDownInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        Gdx.app.debug("TopDownInputProcessor#keyDown", "Key Down");
+        super.keyDown(keycode);
+
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveUp();
         }
@@ -36,6 +37,8 @@ public class TopDownInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
+        super.keyUp(keycode);
+
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopUp();
         }

@@ -7,13 +7,15 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 /**
  * Base input processor for all platform levels.
  */
-public class PlatformInputProcessor extends BaseInputProcessor {
+public class PlatformInputProcessor extends GameInputProcessor {
     public PlatformInputProcessor(final App app) {
         super(app);
     }
 
     @Override
     public boolean keyDown(int keycode) {
+        super.keyDown(keycode);
+
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().jump();
         }
@@ -29,6 +31,8 @@ public class PlatformInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
+        super.keyUp(keycode);
+
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopRight();
         }

@@ -15,6 +15,8 @@ public class GlobalInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        super.keyDown(keycode);
+
         if (keycode == Input.Keys.CONTROL_LEFT || keycode == Input.Keys.CONTROL_RIGHT) {
             app.getSettingsManager().getConfig().setCtrlDown(true);
         }
@@ -44,6 +46,8 @@ public class GlobalInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
+        super.keyUp(keycode);
+
         if (keycode == Input.Keys.CONTROL_LEFT || keycode == Input.Keys.CONTROL_RIGHT) {
             app.getSettingsManager().getConfig().setCtrlDown(false);
         }

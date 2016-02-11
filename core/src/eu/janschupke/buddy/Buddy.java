@@ -5,16 +5,14 @@ import com.badlogic.gdx.graphics.Pixmap;
 import eu.janschupke.buddy.content.stage.level.forest.ForestInputProcessor;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsInputProcessor;
+import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.buddy.content.stage.menu.MenuScreen;
 import eu.janschupke.buddy.content.stage.splash.SplashScreen;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.content.ui.menu.*;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.input.GameInputProcessor;
 import eu.janschupke.buddy.framework.input.GlobalInputProcessor;
-import eu.janschupke.buddy.framework.input.PlatformInputProcessor;
-import eu.janschupke.buddy.framework.input.TopDownInputProcessor;
 
 /**
  * Main game entry point.
@@ -72,15 +70,6 @@ public class Buddy extends App {
 		GlobalInputProcessor globalInputProcessor = new GlobalInputProcessor(this);
 		inputProcessors.put(Config.Input.GLOBAL, globalInputProcessor);
 
-		GameInputProcessor gameInputProcessor = new GameInputProcessor(this);
-		inputProcessors.put(Config.Input.GAME, gameInputProcessor);
-
-		PlatformInputProcessor platformInputProcessor = new PlatformInputProcessor(this);
-		inputProcessors.put(Config.Input.PLATFORM, platformInputProcessor);
-
-		TopDownInputProcessor topDownInputProcessor = new TopDownInputProcessor(this);
-		inputProcessors.put(Config.Input.TOPDOWN, topDownInputProcessor);
-
 		ForestInputProcessor forestInputProcessor = new ForestInputProcessor(this);
 		inputProcessors.put(Config.Input.FOREST, forestInputProcessor);
 
@@ -101,7 +90,7 @@ public class Buddy extends App {
 		ForestScreen forestScreen = new ForestScreen(this);
 		screens.put(Config.Screens.FOREST, forestScreen);
 
-//		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
-//		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
+		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
+		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
 	}
 }
