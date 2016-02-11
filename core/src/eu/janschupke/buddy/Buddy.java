@@ -2,9 +2,7 @@ package eu.janschupke.buddy;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
-import eu.janschupke.buddy.content.stage.level.forest.ForestInputProcessor;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
-import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsInputProcessor;
 import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.buddy.content.stage.menu.MenuScreen;
 import eu.janschupke.buddy.content.stage.splash.SplashScreen;
@@ -13,6 +11,8 @@ import eu.janschupke.buddy.content.ui.menu.*;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.GlobalInputProcessor;
+import eu.janschupke.buddy.framework.input.PlatformInputProcessor;
+import eu.janschupke.buddy.framework.input.TopDownInputProcessor;
 
 /**
  * Main game entry point.
@@ -70,11 +70,11 @@ public class Buddy extends App {
 		GlobalInputProcessor globalInputProcessor = new GlobalInputProcessor(this);
 		inputProcessors.put(Config.Input.GLOBAL, globalInputProcessor);
 
-		ForestInputProcessor forestInputProcessor = new ForestInputProcessor(this);
-		inputProcessors.put(Config.Input.FOREST, forestInputProcessor);
+		PlatformInputProcessor platformInputProcessor = new PlatformInputProcessor(this);
+		inputProcessors.put(Config.Input.PLATFORM, platformInputProcessor);
 
-		OutskirtsInputProcessor outskirtsInputProcessor = new OutskirtsInputProcessor(this);
-		inputProcessors.put(Config.Input.OUTSKIRTS, outskirtsInputProcessor);
+		TopDownInputProcessor topDownInputProcessor = new TopDownInputProcessor(this);
+		inputProcessors.put(Config.Input.TOPDOWN, topDownInputProcessor);
 	}
 
 	@Override

@@ -16,7 +16,7 @@ public class ForestScreen extends TopDownScreen {
         Gdx.app.debug("ForestScreen#<init>", "Constructing");
 
         screenHud = Config.Huds.STANDARD;
-        levelInputProcessor = app.getInputProcessor(Config.Input.FOREST);
+        levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new ForestEventHandler(app);
         backgroundMusic = app.getResourceHandler().getForestMusic();
         questManager = new ForestQuestManager(app);

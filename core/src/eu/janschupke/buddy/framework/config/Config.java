@@ -16,7 +16,6 @@ public class Config {
             System.getProperty("file.separator") +
             ".prefs" +
             System.getProperty("file.separator");
-    public static final String APP_STATE_PREFIX = FILE_PATH + GAME_PREFIX + "-";
 
     // Screen configuration.
     public static final boolean SCREEN_RESIZABLE = false;
@@ -132,7 +131,6 @@ public class Config {
     }
 
     public enum Input {
-        GLOBAL, GAME, PLATFORM, TOPDOWN,
-        FOREST, OUTSKIRTS
+        GLOBAL, PLATFORM, TOPDOWN,
     }
 }
