@@ -10,7 +10,8 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
  */
 public class NoteDeliveryQuest extends Quest {
     public NoteDeliveryQuest(final App app) {
-        super(app, app.getLang().get("level.forest.quest.note-delivery.description"));
+        super(app, app.getLang().get("level.forest.quest.note-delivery.name"),
+                app.getLang().get("level.forest.quest.note-delivery.description"));
         tasks.add(new NotePickupTask(app));
         tasks.add(new NoteDeliveryTask(app));
     }

@@ -11,14 +11,18 @@ import java.util.List;
  */
 public class Quest extends DataContainer {
     private Config.TaskStatus status;
+    private String name;
     private String description;
     protected List<Task> tasks;
+    protected List<Quest> transitions;
 
-    public Quest(final App app, String description) {
+    public Quest(final App app, String name, String description) {
         super(app);
-        status = Config.TaskStatus.NEW;
+        status = Config.TaskStatus.INIT;
+        this.name = name;
         this.description = description;
         tasks = new ArrayList<>();
+        transitions = new ArrayList<>();
     }
 
     public Config.TaskStatus getStatus() {
@@ -33,8 +37,32 @@ public class Quest extends DataContainer {
         return tasks;
     }
 
+    public void addTransition(Quest quest) {
+        transitions.add(quest);
+    }
+
+    public boolean hasTransition() {
+        return !transitions.isEmpty();
+    }
+
+    public Quest getTransition() {
+        return transitions.get(0);
+    }
+
+    public Quest getTransition(int index) {
+        return transitions.get(index);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
-        return description;
+        return name;
     }
 }

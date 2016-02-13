@@ -83,8 +83,7 @@ public class InventoryTable extends UITable {
     private void setDefaultActiveItem() {
         Inventory inventory = app.getGameState().getInventory();
 
-        // Default state so that the description are is not empty.
-//        if (itemNameLabel.getText().equals("")) {
+        // Default state so that the description area is not empty.
         if (inventory.getUsedSlots() > 0 && itemNameLabel.getText().toString().equals("")) {
             Gdx.app.debug("InventoryTable#setDefaultActiveItem", "Setting default selection");
             setActiveItem(inventory.getItem(0));

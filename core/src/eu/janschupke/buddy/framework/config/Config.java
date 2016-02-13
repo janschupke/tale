@@ -117,7 +117,7 @@ public class Config {
     }
 
     public enum TaskStatus {
-        NEW, PROGRESS, DONE
+        INIT, ACTIVE, DONE, FAILED, EXCLUDED
     }
 
     public enum Huds {

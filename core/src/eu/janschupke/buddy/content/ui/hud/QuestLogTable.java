@@ -16,12 +16,11 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.Quest;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.entity.container.QuestLog;
+import eu.janschupke.buddy.framework.base.entity.container.Task;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
-
-import java.util.ArrayList;
 
 /**
  * GUI table structure for the quest log.
@@ -40,7 +39,7 @@ public class QuestLogTable extends UITable {
     private Table descriptionTable;
     private Label descriptionTitleLabel;
     private Label questDescriptionLabel;
-    private java.util.List<Label> taskDescriptionLabels;
+    private Label taskDescriptionLabel;
 
     private TextButton closeButton;
 
@@ -65,8 +64,6 @@ public class QuestLogTable extends UITable {
      * according to the current model state.
      */
     public void update() {
-        // TODO: status values
-        // TODO: quest titles
         QuestLog questLog = app.getGameState().getQuestLog();
         Array<String> activeQuests = new Array<>();
         Array<String> finishedQuests = new Array<>();
@@ -74,13 +71,14 @@ public class QuestLogTable extends UITable {
         for (QuestChain chain : questLog.getQuestChains()) {
             for (Quest quest : chain.getQuests()) {
                 Config.TaskStatus status = quest.getStatus();
-                if (status == Config.TaskStatus.DONE) {
-                    finishedQuests.add(quest.toString());
+
+                if (status == Config.TaskStatus.ACTIVE) {
+                    activeQuests.add(quest.toString());
                     continue;
                 }
 
-                if (status == Config.TaskStatus.NEW) {
-                    activeQuests.add(quest.toString());
+                if (status == Config.TaskStatus.DONE) {
+                    finishedQuests.add(quest.toString());
                     continue;
                 }
             }
@@ -94,11 +92,25 @@ public class QuestLogTable extends UITable {
     }
 
     private void setActiveQuest(Quest quest) {
-        //
+        descriptionTitleLabel.setText(quest.getName());
+        questDescriptionLabel.setText(quest.getDescription());
+
+        StringBuilder taskDescriptions = new StringBuilder();
+        for (Task task : quest.getTasks()) {
+            taskDescriptions.append(task.getDescription() + "\n");
+        }
+
+        taskDescriptionLabel.setText(taskDescriptions.toString());
     }
 
     private void setDefaultActiveQuest() {
-        //
+        QuestLog questLog = app.getGameState().getQuestLog();
+
+        // Default state so that the description area is not empty.
+        if (!questLog.isEmpty() && descriptionTitleLabel.getText().toString().equals("")) {
+            Gdx.app.debug("QuestLogTable#setDefaultActiveItem", "Setting default selection");
+            setActiveQuest(questLog.getQuestChains().get(0).getActiveQuest());
+        }
     }
 
     private void updateIndicator() {
@@ -121,11 +133,6 @@ public class QuestLogTable extends UITable {
         activeQuestsLabel = new Label(app.getLang().get("hud.quest.list.label.active"), app.getSkin());
         activeQuestsList = new List(app.getSkin());
 
-        Array tmp = new Array();
-        tmp.add("czx");
-        tmp.add("czxvxc");
-        activeQuestsList.setItems(tmp);
-
         finishedQuestsLabel = new Label(app.getLang().get("hud.quest.list.label.finished"), app.getSkin());
         finishedQuestsList = new List(app.getSkin());
 
@@ -135,7 +142,7 @@ public class QuestLogTable extends UITable {
 
         descriptionTitleLabel = new Label("", app.getSkin());
         questDescriptionLabel = new Label("", app.getSkin());
-        taskDescriptionLabels = new ArrayList<>();
+        taskDescriptionLabel = new Label("", app.getSkin());
 
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
@@ -149,9 +156,7 @@ public class QuestLogTable extends UITable {
 
         descriptionTable.add(descriptionTitleLabel).pad(Config.HUD_INNER_PADDING).row();
         descriptionTable.add(questDescriptionLabel).pad(Config.HUD_INNER_PADDING).row();
-        for (Label l : taskDescriptionLabels) {
-            descriptionTable.add(l).row();
-        }
+        descriptionTable.add(taskDescriptionLabel).pad(Config.HUD_INNER_PADDING);
 
         add(titleLabel).row();
         add(questScrollPane).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING);
@@ -170,14 +175,14 @@ public class QuestLogTable extends UITable {
                 }
             }
         });
+
         activeQuestsList.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.app.debug("QuestLogTable#changed", "List changed");
-                // TODO
-//                int index = activeQuestsList.getSelectedIndex();
-//                Quest quest = app.getGameState().getQuestLog().getQuestChains().get(index).getActiveQuest();
-//                setActiveQuest(quest);
+                int index = activeQuestsList.getSelectedIndex();
+                Quest quest = app.getGameState().getQuestLog().getQuestChains().get(index).getActiveQuest();
+                setActiveQuest(quest);
             }
         });
     }

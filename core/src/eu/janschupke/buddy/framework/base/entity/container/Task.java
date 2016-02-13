@@ -12,7 +12,7 @@ public class Task extends DataContainer {
 
     public Task(final App app, String description) {
         super(app);
-        status = Config.TaskStatus.NEW;
+        status = Config.TaskStatus.ACTIVE;
         this.description = description;
     }
 
@@ -22,6 +22,10 @@ public class Task extends DataContainer {
 
     public void setStatus(Config.TaskStatus status) {
         this.status = status;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     @Override

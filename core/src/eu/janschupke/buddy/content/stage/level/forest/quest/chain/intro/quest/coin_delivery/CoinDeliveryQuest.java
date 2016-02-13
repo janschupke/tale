@@ -10,7 +10,8 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
  */
 public class CoinDeliveryQuest extends Quest {
     public CoinDeliveryQuest(final App app) {
-        super(app, app.getLang().get("level.forest.quest.coin-delivery.description"));
+        super(app, app.getLang().get("level.forest.quest.coin-delivery.name"),
+                app.getLang().get("level.forest.quest.coin-delivery.description"));
         tasks.add(new CoinPickupTask(app));
         tasks.add(new CoinDeliveryTask(app));
     }
