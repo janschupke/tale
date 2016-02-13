@@ -10,6 +10,8 @@ import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
  * Base class for every object in the world, including units.
  */
 public abstract class WorldObject extends WorldEntity {
+    protected String description;
+    protected String name;
     protected Box2DSprite sprite;
 
     public WorldObject(BaseWorld world, Texture texture, Vector2 size) {
@@ -72,5 +74,13 @@ public abstract class WorldObject extends WorldEntity {
 
     public Box2DSprite getSprite() {
         return sprite;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -96,6 +96,7 @@ public class Config {
     public static final int HUD_BUTTON_PADDING = 5;
     public static final int HUD_LOG_WIDTH = 600;
     public static final int HUD_LOG_HEIGHT = 300;
+    public static final int HUD_LOG_DIMINISHED_WIDTH = 550;
     public static final int HUD_HINT_TOP_PADDING = 200;
     public static final int HUD_INDICATOR_WIDTH = 200;
     public static final int HUD_TOP_BUTTON_WIDTH = 80;
@@ -109,7 +110,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
 
     // Gameplay configuration.
-    public static final int INVENTORY_CAPACITY = 8;
+    public static final int INVENTORY_CAPACITY = 6;
 
     public enum WorldDebugRendering {
         ALL, DEBUG, GRAPHICS

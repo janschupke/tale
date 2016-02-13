@@ -18,6 +18,8 @@ public class GoldCoinItem extends Item implements Triggerable {
     public GoldCoinItem(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/sprites/items/coin-gold.png")));
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.pickup");
+        name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
+        description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");
     }
 
     @Override

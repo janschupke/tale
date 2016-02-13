@@ -30,5 +30,10 @@ public abstract class Item extends WorldObject {
     public void draw(Batch batch) {
         sprite.draw(batch, body);
     }
+
+    @Override
+    public String toString() {
+        return description;
+    }
 }
 
