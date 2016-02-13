@@ -42,10 +42,6 @@ public class EventLogTable extends UITable {
         initWidgets();
         addWidgets();
         setListeners();
-
-        for (int i = 0; i < 30; i++) {
-            updateMessages(eventArea.getText() + "\nNiky!");
-        }
     }
 
     @Override
@@ -91,8 +87,9 @@ public class EventLogTable extends UITable {
             if (!app.getSettingsManager().getConfig().isEnableDialogs()) {
                 Utility.getHud(app).getIndicatorTable().activateEvent();
             }
-        } catch (NoHudException e) {}
-        catch (IndexOutOfBoundsException e) {
+        } catch (NoHudException e) {
+            // TODO
+        } catch (IndexOutOfBoundsException e) {
             // TODO
         }
     }

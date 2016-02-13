@@ -107,7 +107,8 @@ public class QuestLogTable extends UITable {
         QuestLog questLog = app.getGameState().getQuestLog();
 
         // Default state so that the description area is not empty.
-        if (!questLog.isEmpty() && descriptionTitleLabel.getText().toString().equals("")) {
+        if (!questLog.isEmpty() && descriptionTitleLabel.getText().toString()
+                .equals(app.getLang().get("hud.quest.label.empty"))) {
             Gdx.app.debug("QuestLogTable#setDefaultActiveItem", "Setting default selection");
             setActiveQuest(questLog.getQuestChains().get(0).getActiveQuest());
         }
@@ -140,7 +141,7 @@ public class QuestLogTable extends UITable {
         descriptionTable.align(Align.top);
         descriptionScrollPane = new ScrollPane(descriptionTable, app.getSkin());
 
-        descriptionTitleLabel = new Label("", app.getSkin());
+        descriptionTitleLabel = new Label(app.getLang().get("hud.quest.label.empty"), app.getSkin());
         questDescriptionLabel = new Label("", app.getSkin());
         taskDescriptionLabel = new Label("", app.getSkin());
 

@@ -84,7 +84,8 @@ public class InventoryTable extends UITable {
         Inventory inventory = app.getGameState().getInventory();
 
         // Default state so that the description area is not empty.
-        if (inventory.getUsedSlots() > 0 && itemNameLabel.getText().toString().equals("")) {
+        if (inventory.getUsedSlots() > 0 && itemNameLabel.getText().toString()
+                .equals(app.getLang().get("hud.inventory.label.empty"))) {
             Gdx.app.debug("InventoryTable#setDefaultActiveItem", "Setting default selection");
             setActiveItem(inventory.getItem(0));
         }
@@ -110,7 +111,7 @@ public class InventoryTable extends UITable {
         descriptionTable.align(Align.top);
         descriptionTable.padTop(Config.HUD_INNER_PADDING);
         descriptionScrollPane = new ScrollPane(descriptionTable, app.getSkin());
-        itemNameLabel = new Label("", app.getSkin());
+        itemNameLabel = new Label(app.getLang().get("hud.inventory.label.empty"), app.getSkin());
         itemDescriptionLabel = new Label("", app.getSkin());
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
