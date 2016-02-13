@@ -2,11 +2,14 @@ package eu.janschupke.buddy.framework.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
+import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.Hotkeys;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Generic processor for all level type game states.
@@ -19,14 +22,31 @@ public class GameInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        if (!(app.getScreen() instanceof GameScreen)) {
+            return false;
+        }
+
         super.keyDown(keycode);
 
         if (keycode == Hotkeys.PAUSE) {
             app.getEventHandler().togglePause();
         }
+        // Close tabs, if any are open. Toggle menu if no tabs are active.
         if (keycode == Hotkeys.MENU || keycode == Hotkeys.MENU_ALTERNATIVE) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Toggling menu");
-            ((GameScreen)app.getScreen()).toggleMenu();
+            try {
+                if (Utility.getHud(app).getState() != StandardHud.State.HUD) {
+                    Utility.getHud(app).closeTabs();
+                } else {
+                    ((GameScreen) app.getScreen()).toggleMenu();
+                }
+            } catch (NoHudException e) {
+                try {
+                    ((GameScreen) app.getScreen()).toggleMenu();
+                } catch (ClassCastException e2) {
+                    Gdx.app.debug("GameInputProcessor#keyDown", "Not in game, cannot toggle menu");
+                }
+            }
         }
         if (keycode == Hotkeys.EVENTS) {
             ((GameScreen)app.getScreen()).toggleEventLog();
@@ -52,6 +72,15 @@ public class GameInputProcessor extends BaseInputProcessor {
     }
 
     @Override
+    public boolean keyUp(int keycode) {
+        if (!(app.getScreen() instanceof GameScreen)) {
+            return false;
+        }
+
+        return super.keyUp(keycode);
+    }
+
+    @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         super.touchDown(screenX, screenY, pointer, button);
 
@@ -59,7 +88,9 @@ public class GameInputProcessor extends BaseInputProcessor {
             // This streamlines entity positioning within the world.
             Vector3 position = ((BaseScreen)app.getScreen()).getView().getCamera().unproject(new Vector3(screenX, screenY, 0));
             Gdx.app.debug("GameInputProcessor#touchDown", String.format("Position: [%.0f, %.0f]", position.x, position.y));
-        } catch (NullPointerException e) {}
+        } catch (NullPointerException e) {
+            Gdx.app.debug("GameInputProcessor#touchDown", "Coordinates are not available");
+        }
 
         return false;
     }

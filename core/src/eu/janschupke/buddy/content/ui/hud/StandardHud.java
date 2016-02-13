@@ -101,6 +101,17 @@ public class StandardHud extends HudTable {
         }
     }
 
+    public State getState() {
+        return state;
+    }
+
+    public void closeTabs() {
+        topHudTable.clear();
+        bottomHudTable.clear();
+        addHud();
+        state = State.HUD;
+    }
+
     public InventoryTable getInventoryTable() {
         return inventoryTable;
     }

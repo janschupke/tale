@@ -16,6 +16,10 @@ public class TopDownInputProcessor extends GameInputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
+        if (!(app.getScreen() instanceof GameScreen)) {
+            return false;
+        }
+
         super.keyDown(keycode);
 
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
@@ -37,12 +41,17 @@ public class TopDownInputProcessor extends GameInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
+        if (!(app.getScreen() instanceof GameScreen)) {
+            return false;
+        }
+
         super.keyUp(keycode);
 
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopUp();
         }
-        if (keycode == Hotkeys.DOWN || keycode == Hotkeys.DOWN_ALTERNATIVE) {
+        // CTRL + S = sound toggle, needs to be excluded.
+        if (keycode == Hotkeys.DOWN || (keycode == Hotkeys.DOWN_ALTERNATIVE && !app.getSettingsManager().getConfig().isCtrlDown())) {
             ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopDown();
         }
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {

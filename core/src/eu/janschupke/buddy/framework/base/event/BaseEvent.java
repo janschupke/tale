@@ -61,7 +61,9 @@ public abstract class BaseEvent {
         try {
             Utility.getHud(app).getEventLogTable().updateMessages(app.getGameState().getEventLog().toString());
         } catch (NoHudException e) {
-            Gdx.app.log("BaseEvent#addEventMessage", "No HUD problem.");
+            Gdx.app.debug("BaseEvent#addEventMessage", "No HUD problem");
+        } catch (ClassCastException e) {
+            Gdx.app.debug("BaseEvent#addEventMessage", "Not in game, cannot add event message");
         }
     }
 }
