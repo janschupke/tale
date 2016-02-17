@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
+import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
@@ -28,5 +29,10 @@ public class CaveObstacle extends Obstacle implements Triggerable {
     @Override
     public void disengage() {
 
+    }
+
+    @Override
+    public Interaction getInteraction() {
+        return null;
     }
 }

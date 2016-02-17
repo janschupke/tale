@@ -29,6 +29,7 @@ public abstract class GameScreen extends BaseScreen {
     protected BaseInputProcessor levelInputProcessor;
     protected LevelEventHandler levelEventHandler;
     protected QuestManager questManager;
+    protected LevelState levelState;
 
     private boolean paused = false;
     private String hintCache;
@@ -300,5 +301,9 @@ public abstract class GameScreen extends BaseScreen {
 
     public boolean isPaused() {
         return paused;
+    }
+
+    public LevelState getLevelState() {
+        return levelState;
     }
 }

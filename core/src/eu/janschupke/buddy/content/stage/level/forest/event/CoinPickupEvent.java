@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.content.stage.level.forest.event;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.stage.level.forest.ForestLevelState;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
@@ -45,6 +46,7 @@ public class CoinPickupEvent extends PickupEvent {
         addEventMessage();
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
+        ((ForestLevelState)((ForestScreen) app.getScreen()).getLevelState()).setConPickedUp(true);
         removeInitialWall();
     }
 

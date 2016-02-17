@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 public class ForestEventHandler extends LevelEventHandler {
     private IntroEvent introEvent;
     private ItemHintEvent itemHintEvent;
+    private CoinInteractEvent coinInteractEvent;
     private CoinPickupEvent coinPickupEvent;
     private InitialWallEvent initialWallEvent;
     private UkkoTalkEvent ukkoTalkEvent;
@@ -19,6 +20,7 @@ public class ForestEventHandler extends LevelEventHandler {
 
         introEvent = new IntroEvent(app);
         itemHintEvent = new ItemHintEvent(app);
+        coinInteractEvent = new CoinInteractEvent(app);
         coinPickupEvent = new CoinPickupEvent(app);
         initialWallEvent = new InitialWallEvent(app);
         ukkoTalkEvent = new UkkoTalkEvent(app);
@@ -30,6 +32,10 @@ public class ForestEventHandler extends LevelEventHandler {
 
     public ItemHintEvent getItemHintEvent() {
         return itemHintEvent;
+    }
+
+    public CoinInteractEvent getCoinInteractEvent() {
+        return coinInteractEvent;
     }
 
     public CoinPickupEvent getCoinPickupEvent() {

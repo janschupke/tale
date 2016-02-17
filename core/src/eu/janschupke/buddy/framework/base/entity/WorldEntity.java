@@ -19,6 +19,7 @@ public abstract class WorldEntity {
     public WorldEntity(BaseWorld world, Vector2 size) {
         this.world = world;
         this.size = size;
+        this.interactionHint = world.getScreen().getApp().getLang().get("hint.global.interact");
         body = WorldObjectFactory.createBox(world.getBoxWorld(), size, defaultPosition, BodyDef.BodyType.DynamicBody, true);
         body.setUserData(this);
     }

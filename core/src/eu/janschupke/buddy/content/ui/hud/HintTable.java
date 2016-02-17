@@ -3,12 +3,16 @@ package eu.janschupke.buddy.content.ui.hud;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 
 /**
@@ -46,7 +50,18 @@ public class HintTable extends UITable {
     }
 
     @Override
-    public void setListeners() {}
+    public void setListeners() {
+        hintLabel.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                if (!hintLabel.getText().toString().isEmpty() && !((GameScreen)app.getScreen()).isPaused()) {
+                    if (InteractionSwitch.isInteractionPossible()) {
+                        InteractionSwitch.getInteractionEvent().trigger();
+                    }
+                }
+            }
+        });
+    }
 
     public void update(String hint) {
         if (hint == null || hint.isEmpty()) {

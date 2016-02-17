@@ -16,6 +16,10 @@ public class InteractionSwitch {
         hintTable.update(triggerable.getInteractionHint());
     }
 
+    /**
+     * TODO: documentation
+     * @param hintTable
+     */
     public static void disable(HintTable hintTable) {
         triggerable = null;
         interactionEvent = null;

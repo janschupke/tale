@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
+import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.util.Utility;
@@ -54,5 +55,10 @@ public class UkkoUnit extends Unit implements Triggerable {
         } catch (NoHudException e) {
             Gdx.app.log("UkkoUnit#disengage", "No HUD problem.");
         }
+    }
+
+    @Override
+    public Interaction getInteraction() {
+        return null;
     }
 }
