@@ -30,7 +30,6 @@ public class InteractionTable extends UITable {
         super(app);
 
         align(Align.topLeft);
-        pad(Config.HUD_INNER_PADDING);
 
         initWidgets();
         addWidgets();
@@ -56,7 +55,7 @@ public class InteractionTable extends UITable {
                 }
             });
 
-            optionTable.add(button).row();
+            optionTable.add(button).pad(Config.HUD_BUTTON_PADDING).row();
         }
 
         contentTable.add(titleLabel).row();
@@ -85,6 +84,7 @@ public class InteractionTable extends UITable {
         Drawable drawable = new TextureRegionDrawable(region);
 
         contentTable = new Table();
+        contentTable.pad(Config.HUD_INNER_PADDING);
         contentTable.setBackground(drawable);
         titleLabel = new Label("", app.getSkin());
         descriptionLabel = new Label("", app.getSkin());

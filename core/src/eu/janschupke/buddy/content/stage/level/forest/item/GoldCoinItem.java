@@ -22,18 +22,18 @@ public class GoldCoinItem extends Item implements Triggerable {
     private class PickupSituation extends Situation {
         private class PickupDecision extends Decision {
             public PickupDecision() {
-                super("Decision: pickup");
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"));
             }
         }
 
         private class IgnoreDecision extends Decision {
             public IgnoreDecision() {
-                super("Decision: ignore");
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"));
             }
         }
 
         public PickupSituation() {
-            super("TODO: description");
+            super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
             decisions.add(new PickupDecision());
             decisions.add(new IgnoreDecision());
         }
@@ -49,7 +49,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     private Interaction interaction = new Interaction() {
         @Override
         protected void configure() {
-            title = "TODO: interaction title";
+            title = world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.title");
             Situation pickupSituation = new PickupSituation();
             situations.add(pickupSituation);
             currentSituation = pickupSituation;
@@ -60,7 +60,6 @@ public class GoldCoinItem extends Item implements Triggerable {
         public void handle(Decision decision) {
             Gdx.app.debug("Interaction#handle", "Handling gold coin pickup");
             if (decision instanceof PickupSituation.PickupDecision) {
-                // TODO: do pickup
                  ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getCoinPickupEvent().trigger();
             } else {
                 endInteraction(world.getScreen().getApp());

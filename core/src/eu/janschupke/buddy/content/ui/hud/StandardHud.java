@@ -58,7 +58,7 @@ public class StandardHud extends HudTable {
     private void addHud() {
         topHudTable.add(topMenuTable).row();
         topHudTable.add(hintTable).expandY().fillY().padTop(Config.HUD_HINT_TOP_PADDING);
-        bottomHudTable.add(indicatorTable).bottom().padRight(Config.HUD_INNER_PADDING);
+        bottomHudTable.add(indicatorTable).bottom();
         bottomHudTable.add(interactionTable).expandX().fillX();
     }
 
