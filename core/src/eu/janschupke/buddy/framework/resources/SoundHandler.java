@@ -1,30 +1,19 @@
-package eu.janschupke.buddy.framework;
+package eu.janschupke.buddy.framework.resources;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import eu.janschupke.buddy.framework.App;
 
 /**
- * Resource handler/provider for sounds and textures.
+ * Resource handler for all sound files.
  * @author jan.schupke@gmail.com
  */
-public class ResourceHandler {
-    private final App app;
-
-    private Music menuMusic;
-    private Music forestMusic;
-    private Music outskirtsMusic;
-
+public class SoundHandler extends BaseResourceContainer {
     private Sound menuButtonSound;
     private Sound menuCheckboxSounds;
 
-    public ResourceHandler(final App app) {
-        this.app = app;
-
-        menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.wav"));
-        forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.wav"));
-        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.wav"));
-
+    public SoundHandler(final App app) {
+        super(app);
         menuButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-heavy.wav"));
         menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/checkbox.wav"));
     }
@@ -34,18 +23,6 @@ public class ResourceHandler {
             return;
         }
         sound.play(app.getSettingsManager().getConfig().getMasterVolume() * app.getSettingsManager().getConfig().getSoundVolume());
-    }
-
-    public Music getMenuMusic() {
-        return menuMusic;
-    }
-
-    public Music getForestMusic() {
-        return forestMusic;
-    }
-
-    public Music getOutskirtsMusic() {
-        return outskirtsMusic;
     }
 
     public Sound getMenuButtonSound() {
@@ -58,5 +35,6 @@ public class ResourceHandler {
 
     public void dispose() {
         menuButtonSound.dispose();
+        menuCheckboxSounds.dispose();
     }
 }

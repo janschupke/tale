@@ -43,7 +43,8 @@ public class CreditsMenu extends MenuTable {
         backButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showMainMenu();
             }
         });

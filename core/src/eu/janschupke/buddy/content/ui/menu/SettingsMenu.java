@@ -54,28 +54,32 @@ public class SettingsMenu extends MenuTable {
         graphicsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showGraphicsMenu();
             }
         });
         audioButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showAudioMenu();
             }
         });
         restoreDefaults.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 defaultSettingsDialog.show(app.getUi());
             }
         });
         backButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showMainMenu();
             }
         });

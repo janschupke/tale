@@ -165,7 +165,8 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleMenu() {
         Gdx.app.debug("GameScreen#toggleMenu", "Toggling menu");
-        app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+        app.getResourceManager().getSoundHandler()
+                .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
         if (inMenu) {
             inMenu = false;
             app.swapHuds(app.getHud(screenHud));

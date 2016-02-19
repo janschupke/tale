@@ -9,7 +9,6 @@ import eu.janschupke.buddy.framework.App;
 public abstract class ConfirmDialog extends BaseDialog {
     public ConfirmDialog(final App app, String title) {
         super(app, title);
-
         button(app.getLang().get("menu.global.button.no"), false);
         button(app.getLang().get("menu.global.button.yes"), true);
     }

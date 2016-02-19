@@ -2,14 +2,10 @@ package eu.janschupke.buddy.framework.base.ui.dialog;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.UserInterface;
@@ -52,11 +48,7 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         getBackground().setMinWidth(dialogWidth);
         getBackground().setMinHeight(dialogHeight);
 
-        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
-        TextureRegion region = new TextureRegion(texture);
-        Drawable drawable = new TextureRegionDrawable(region);
-        setBackground(drawable);
-
+        setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         setMovable(false);
         setModal(true);
     }

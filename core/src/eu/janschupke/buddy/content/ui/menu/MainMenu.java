@@ -65,7 +65,8 @@ public class MainMenu extends MenuTable {
         continueGameButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().continueGame();
             }
         });
@@ -73,7 +74,8 @@ public class MainMenu extends MenuTable {
         newGameButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().startNewGame();
             }
         });
@@ -81,7 +83,8 @@ public class MainMenu extends MenuTable {
         settingsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showSettings();
             }
         });
@@ -89,7 +92,8 @@ public class MainMenu extends MenuTable {
         hotkeysButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showHotkeys();
             }
         });
@@ -97,7 +101,8 @@ public class MainMenu extends MenuTable {
         creditsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showCredits();
             }
         });
@@ -105,7 +110,8 @@ public class MainMenu extends MenuTable {
         exitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().exitGame();
             }
         });

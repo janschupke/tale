@@ -115,28 +115,32 @@ public class AudioMenu extends MenuTable implements PreferenceMenu {
         enableMusicCheckbox.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuCheckboxSounds());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuCheckboxSounds());
                 app.getEventHandler().toggleMusic();
             }
         });
         enableSoundCheckbox.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuCheckboxSounds());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuCheckboxSounds());
                 app.getEventHandler().toggleSound();
             }
         });
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 app.getEventHandler().showSettings();
             }
         });
         applyButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                app.getResourceHandler().playSound(app.getResourceHandler().getMenuButtonSound());
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
                 applyChanges();
                 app.getEventHandler().showSettings();
             }

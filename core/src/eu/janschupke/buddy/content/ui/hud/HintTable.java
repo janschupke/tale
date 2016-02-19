@@ -1,14 +1,9 @@
 package eu.janschupke.buddy.content.ui.hud;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
@@ -35,14 +30,8 @@ public class HintTable extends UITable {
 
     @Override
     public void initWidgets() {
-        // TODO: texture
-        Texture hintTexture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
-        TextureRegion region = new TextureRegion(hintTexture);
-        Drawable drawable = new TextureRegionDrawable(region);
-
         messageTable = new Table();
-        messageTable.setBackground(drawable);
-
+        messageTable.setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         hintLabel = new Label("", app.getSkin());
     }
 

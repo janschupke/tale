@@ -10,7 +10,6 @@ import eu.janschupke.buddy.framework.App;
 public abstract class RootTable extends UITable {
     public RootTable(final App app) {
         super(app);
-
         setFillParent(true);
         setPosition(0, 0);
         align(Align.topLeft);

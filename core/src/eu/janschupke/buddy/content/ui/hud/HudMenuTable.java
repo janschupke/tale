@@ -1,13 +1,8 @@
 package eu.janschupke.buddy.content.ui.hud;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
@@ -25,14 +20,7 @@ public class HudMenuTable extends UITable {
 
     public HudMenuTable(final App app) {
         super(app);
-
-        // TODO: texture
-        Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
-        TextureRegion region = new TextureRegion(texture);
-        Drawable drawable = new TextureRegionDrawable(region);
-
-        setBackground(drawable);
-
+        setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         initWidgets();
         addWidgets();
         setListeners();

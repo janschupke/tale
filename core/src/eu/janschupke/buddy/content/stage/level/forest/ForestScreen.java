@@ -19,7 +19,7 @@ public class ForestScreen extends TopDownScreen {
         screenHud = Config.Huds.STANDARD;
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new ForestEventHandler(app);
-        backgroundMusic = app.getResourceHandler().getForestMusic();
+        backgroundMusic = app.getResourceManager().getMusicHandler().getForestMusic();
         questManager = new ForestQuestManager(app);
         levelState = new ForestLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));

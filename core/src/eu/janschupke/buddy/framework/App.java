@@ -19,6 +19,7 @@ import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
+import eu.janschupke.buddy.framework.resources.ResourceManager;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -39,7 +40,7 @@ public abstract class App extends Game {
     protected Stage ui;
     private I18NBundle lang;
     private SettingsManager settingsManager;
-    private ResourceHandler resourceHandler;
+    private ResourceManager resourceManager;
     private GameState gameState;
 
     @Override
@@ -67,7 +68,7 @@ public abstract class App extends Game {
 
         // Preference configuration.
         settingsManager = new SettingsManager();
-        resourceHandler = new ResourceHandler(this);
+        resourceManager = new ResourceManager(this);
 
         // UI initialization.
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas"));
@@ -185,7 +186,7 @@ public abstract class App extends Game {
         font.dispose();
         skin.dispose();
         ui.dispose();
-        resourceHandler.dispose();
+        resourceManager.dispose();
     }
 
     public SpriteBatch getBatch() {
@@ -216,8 +217,8 @@ public abstract class App extends Game {
         return settingsManager;
     }
 
-    public ResourceHandler getResourceHandler() {
-        return resourceHandler;
+    public ResourceManager getResourceManager() {
+        return resourceManager;
     }
 
     public GameState getGameState() {
