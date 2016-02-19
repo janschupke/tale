@@ -19,6 +19,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for the interaction pane.
+ * @author jan.schupke@gmail.com
  */
 public class InteractionTable extends UITable {
     private Table contentTable;

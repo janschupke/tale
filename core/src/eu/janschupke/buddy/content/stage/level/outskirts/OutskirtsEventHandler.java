@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 
 /**
  * Event handler for the outskirts level.
+ * @author jan.schupke@gmail.com
  */
 public class OutskirtsEventHandler extends LevelEventHandler {
     public OutskirtsEventHandler(final App app) {

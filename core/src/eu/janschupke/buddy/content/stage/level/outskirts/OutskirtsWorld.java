@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
  * Outskirts (Level 1) world.
+ * @author jan.schupke@gmail.com
  */
 public class OutskirtsWorld extends TopDownWorld {
     public OutskirtsWorld(OutskirtsScreen screen) {

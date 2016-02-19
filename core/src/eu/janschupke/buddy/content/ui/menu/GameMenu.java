@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Adjusted menu, accessible from within any level.
+ * @author jan.schupke@gmail.com
  */
 public class GameMenu extends MenuTable {
     private Label titleLabel;;

@@ -24,6 +24,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for the quest log.
+ * @author jan.schupke@gmail.com
  */
 public class QuestLogTable extends UITable {
     private Label titleLabel;

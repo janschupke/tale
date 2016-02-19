@@ -17,6 +17,7 @@ import eu.janschupke.buddy.framework.config.Config;
 /**
  * Part of the standard HUD that displays indicators
  * about new events/quests/inventory items.
+ * @author jan.schupke@gmail.com
  */
 public class IndicatorTable extends UITable {
     private TextButton newEventButton;

@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.entity.container.Quest;
 
 /**
  * Part of the intro quest chain.
+ * @author jan.schupke@gmail.com
  */
 public class CoinDeliveryQuest extends Quest {
     public CoinDeliveryQuest(final App app) {

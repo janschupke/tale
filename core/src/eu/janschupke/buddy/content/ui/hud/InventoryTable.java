@@ -20,6 +20,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for the in-game character inventory.
+ * @author jan.schupke@gmail.com
  */
 public class InventoryTable extends UITable {
     private Label titleLabel;

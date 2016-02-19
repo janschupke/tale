@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.quest.QuestManager;
 
 /**
  * Quest manager for the forest level.
+ * @author jan.schupke@gmail.com
  */
 public class ForestQuestManager extends QuestManager {
     private IntroQuestChain introQuestChain;

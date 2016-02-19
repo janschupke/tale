@@ -16,6 +16,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * Event that picks up the coin from the ground.
+ * @author jan.schupke@gmail.com
  */
 public class CoinPickupEvent extends PickupEvent {
     /**

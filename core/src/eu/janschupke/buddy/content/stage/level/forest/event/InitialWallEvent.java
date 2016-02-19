@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 /**
  * An event triggered by trying to proceed to the next part of the world
  * before picking up the coin.
+ * @author jan.schupke@gmail.com
  */
 public class InitialWallEvent extends BaseEvent {
     /**

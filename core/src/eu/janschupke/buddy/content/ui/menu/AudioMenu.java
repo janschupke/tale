@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Audio settings UI.
+ * @author jan.schupke@gmail.com
  */
 public class AudioMenu extends MenuTable implements PreferenceMenu {
     private Label titleLabel;

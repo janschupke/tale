@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.ConfirmDialog;
 
 /**
  * Default settings reset dialog.
+ * @author jan.schupke@gmail.com
  */
 public class DefaultSettingDialog extends ConfirmDialog {
     public DefaultSettingDialog(final App app) {

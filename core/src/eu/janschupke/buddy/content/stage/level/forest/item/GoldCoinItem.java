@@ -17,6 +17,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Gold coin item entity.
+ * @author jan.schupke@gmail.com
  */
 public class GoldCoinItem extends Item implements Triggerable {
     private class PickupSituation extends Situation {

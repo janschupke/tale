@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * Notification dialog that indicated that an application restart is required.
+ * @author jan.schupke@gmail.com
  */
 public class RestartDialog extends InfoDialog {
     public RestartDialog(final App app) {

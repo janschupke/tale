@@ -18,6 +18,7 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
 /**
  * Transparent table in the middle of the screen,
  * showing context hints.
+ * @author jan.schupke@gmail.com
  */
 public class HintTable extends UITable {
     private Label hintLabel;

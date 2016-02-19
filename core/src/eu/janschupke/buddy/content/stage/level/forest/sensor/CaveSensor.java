@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
  * A sensor that triggers cave lore in the tutorial area.
+ * @author jan.schupke@gmail.com
  */
 public class CaveSensor extends Sensor implements Triggerable {
     public CaveSensor(BaseWorld world, Vector2 size) {

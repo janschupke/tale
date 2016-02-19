@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Graphics settings UI.
+ * @author jan.schupke@gmail.com
  */
 public class GraphicsMenu extends MenuTable implements PreferenceMenu {
     private Label titleLabel;

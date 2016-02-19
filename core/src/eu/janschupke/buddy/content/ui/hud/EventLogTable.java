@@ -20,6 +20,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * GUI table structure for event log.
+ * @author jan.schupke@gmail.com
  */
 public class EventLogTable extends UITable {
     private Label titleLabel;

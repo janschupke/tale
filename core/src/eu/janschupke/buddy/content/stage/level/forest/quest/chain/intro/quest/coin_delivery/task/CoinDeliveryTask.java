@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
 
 /**
  * Part of the coin delivery quest.
+ * @author jan.schupke@gmail.com
  */
 public class CoinDeliveryTask extends Task {
     public CoinDeliveryTask(final App app) {

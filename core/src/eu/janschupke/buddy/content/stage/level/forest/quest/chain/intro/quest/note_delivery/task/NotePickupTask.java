@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
 
 /**
  * Part of the note delivery quest.
+ * @author jan.schupke@gmail.com
  */
 public class NotePickupTask extends Task {
     public NotePickupTask(final App app) {

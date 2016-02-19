@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
  * Sensor that triggers item introduction event.
+ * @author jan.schupke@gmail.com
  */
 public class ItemHintSensor extends Sensor implements Triggerable {
     public ItemHintSensor(BaseWorld world, Vector2 size) {

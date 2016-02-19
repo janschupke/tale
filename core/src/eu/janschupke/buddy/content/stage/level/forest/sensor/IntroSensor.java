@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 /**
  * A sensor that is triggered right after the game starts,
  * giving some introduction text through a dialog.
+ * @author jan.schupke@gmail.com
  */
 public class IntroSensor extends Sensor implements Triggerable {
     public IntroSensor(BaseWorld world, Vector2 size) {

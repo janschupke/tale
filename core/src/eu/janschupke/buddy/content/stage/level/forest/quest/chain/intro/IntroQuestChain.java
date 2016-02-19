@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 
 /**
  * First tutorial quest chain.
+ * @author jan.schupke@gmail.com
  */
 public class IntroQuestChain extends QuestChain {
     public IntroQuestChain(final App app) {

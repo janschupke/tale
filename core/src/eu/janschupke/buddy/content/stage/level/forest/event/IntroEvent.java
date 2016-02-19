@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * An event that is triggered shortly after the game starts.
+ * @author jan.schupke@gmail.com
  */
 public class IntroEvent extends BaseEvent {
     /**

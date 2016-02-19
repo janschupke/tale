@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Standard level HUD.
+ * @author jan.schupke@gmail.com
  */
 public class StandardHud extends HudTable {
     public enum State {

@@ -15,6 +15,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for on-screen level menu.
+ * @author jan.schupke@gmail.com
  */
 public class HudMenuTable extends UITable {
     private TextButton menuButton;

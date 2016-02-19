@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Main menu UI layout.
+ * @author jan.schupke@gmail.com
  */
 public class MainMenu extends MenuTable {
     private Label titleLabel;

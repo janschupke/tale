@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.ConfirmDialog;
 /**
  * A confirmation dialog for deleting an existing game state
  * and starting a new game.
+ * @author jan.schupke@gmail.com
  */
 public class NewGameConfirmDialog extends ConfirmDialog {
     public NewGameConfirmDialog(final App app) {

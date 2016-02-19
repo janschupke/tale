@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Main menu screen.
+ * @author jan.schupke@gmail.com
  */
 public class MenuScreen extends UIScreen {
     private GlyphLayout titleLayout;
