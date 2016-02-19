@@ -47,6 +47,8 @@ public abstract class QuestChain extends DataContainer {
             activeQuest = activeQuest.getTransition(index);
             activeQuest.setStatus(Config.TaskStatus.ACTIVE);
         }
+        setChanged();
+        notifyObservers();
     }
 
     public List<Quest> getQuests() {

@@ -32,6 +32,8 @@ public class Quest extends DataContainer {
 
     public void setStatus(Config.TaskStatus status) {
         this.status = status;
+        setChanged();
+        notifyObservers();
     }
 
     public List<Task> getTasks() {

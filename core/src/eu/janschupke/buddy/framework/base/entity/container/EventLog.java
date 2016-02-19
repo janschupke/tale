@@ -36,5 +36,7 @@ public class EventLog extends DataContainer {
     public void addEvent(BaseEvent event) {
         EventLogEntry entry = new EventLogEntry(app, event.getEventMessage());
         events.add(entry);
+        setChanged();
+        notifyObservers();
     }
 }

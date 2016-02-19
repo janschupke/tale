@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
 import eu.janschupke.buddy.framework.base.entity.container.GameState;
 import eu.janschupke.buddy.framework.base.event.GlobalEventHandler;
+import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
@@ -20,6 +21,7 @@ import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 import eu.janschupke.buddy.framework.resources.ResourceManager;
+import eu.janschupke.buddy.framework.util.Utility;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -54,8 +56,6 @@ public abstract class App extends Game {
 
         batch = new SpriteBatch();
         font = new BitmapFont(Gdx.files.internal("default.fnt"));
-        huds = new HashMap<>();
-        screens = new HashMap<>();
         inputProcessors = new HashMap<>();
 
         // Logging configuration.
@@ -74,13 +74,22 @@ public abstract class App extends Game {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas"));
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
         skin.addRegions(atlas);
-        ui = new Stage();
 
-        gameState = new GameState(this);
-
-        initHuds();
         initInputProcessors();
-        initScreens();
+        resetState();
+    }
+
+    /**
+     * Ties together all observable objects and their observers.
+     */
+    private void configureObservers() {
+        try {
+            gameState.getEventLog().addObserver(Utility.getHud(this).getEventLogTable());
+            gameState.getInventory().addObserver(Utility.getHud(this).getInventoryTable());
+            gameState.getQuestLog().addObserver(Utility.getHud(this).getQuestLogTable());
+        } catch (NoHudException e) {
+            Gdx.app.debug("EventLogTable#setListeners", "No HUD is available");
+        }
     }
 
     /**
@@ -94,6 +103,7 @@ public abstract class App extends Game {
         initHuds();
         screens = new HashMap<>();
         initScreens();
+        configureObservers();
     }
 
     /**

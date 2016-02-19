@@ -14,11 +14,14 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * GUI table structure for event log.
  * @author jan.schupke@gmail.com
  */
-public class EventLogTable extends UITable {
+public class EventLogTable extends UITable implements Observer {
     private Label titleLabel;
     private Table eventTable;
     private Label eventArea;
@@ -68,7 +71,10 @@ public class EventLogTable extends UITable {
         });
     }
 
-    public void updateMessages(String log) {
+
+    @Override
+    public void update(Observable o, Object arg) {
+        String log = o.toString();
         eventArea.setText(log);
         eventScrollPane.layout();
         updateIndicator();

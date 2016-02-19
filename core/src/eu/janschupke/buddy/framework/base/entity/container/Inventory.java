@@ -31,12 +31,16 @@ public class Inventory extends DataContainer {
         if (usedSlots == capacity) throw new InventoryFullException("Inventory is full.");
         items.add(item);
         usedSlots++;
+        setChanged();
+        notifyObservers();
     }
 
     public void removeItem(int index) throws IllegalArgumentException {
         if (index >= capacity || index < 0) throw new IllegalArgumentException("Requesting inventory item removal out of bounds.");
         items.remove(index);
         usedSlots--;
+        setChanged();
+        notifyObservers();
     }
 
     public int getUsedSlots() {

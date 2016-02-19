@@ -18,11 +18,14 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * GUI table structure for the quest log.
  * @author jan.schupke@gmail.com
  */
-public class QuestLogTable extends UITable {
+public class QuestLogTable extends UITable implements Observer {
     private Label titleLabel;
 
     private ScrollPane questScrollPane;
@@ -55,7 +58,8 @@ public class QuestLogTable extends UITable {
      * Redraws quest entries in the table
      * according to the current model state.
      */
-    public void update() {
+    @Override
+    public void update(Observable o, Object arg) {
         QuestLog questLog = app.getGameState().getQuestLog();
         Array<String> activeQuests = new Array<>();
         Array<String> finishedQuests = new Array<>();

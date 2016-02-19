@@ -16,11 +16,14 @@ import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * GUI table structure for the in-game character inventory.
  * @author jan.schupke@gmail.com
  */
-public class InventoryTable extends UITable {
+public class InventoryTable extends UITable implements Observer {
     private Label titleLabel;
     private Table itemTable;
     private ScrollPane itemScrollPane;
@@ -42,7 +45,8 @@ public class InventoryTable extends UITable {
     /**
      * Update inventory view according to the current model state.
      */
-    public void update() {
+    @Override
+    public void update(Observable o, Object arg) {
         itemTable.getChildren().forEach(Actor::remove);
 
         Inventory inventory = app.getGameState().getInventory();
