@@ -24,7 +24,6 @@ public class SettingsMenu extends MenuTable {
 
     public SettingsMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();

@@ -57,10 +57,19 @@ public class IndicatorTable extends UITable {
         // Nothing by default.
     }
 
+    /**
+     * Returns information about the empty state of the indicator table.
+     * @return True if no new quests, events or items are available. False otherwise.
+     */
     private boolean isEmpty() {
         return (!newEvent && !newQuest && !newItem);
     }
 
+    /**
+     * Sets the indicator to the requested state. Add widgets if indication is requested,
+     * removes widgets if indication is not requested.
+     * @param state Requested new indicator state.
+     */
     private void indicate(boolean state) {
         if (state && indicating) return;
         if (!state && !indicating) return;
@@ -75,36 +84,54 @@ public class IndicatorTable extends UITable {
         }
     }
 
+    /**
+     * Activates indication of a new event.
+     */
     public void activateEvent() {
         contentTable.add(newEventButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
         newEvent = true;
         indicate(true);
     }
 
+    /**
+     * Deactivates indication of a new event.
+     */
     public void deactivateEvent() {
         contentTable.removeActor(newEventButton);
         newEvent = false;
         indicate(false);
     }
 
+    /**
+     * Activates indication of a new quest.
+     */
     public void activateQuest() {
         contentTable.add(newQuestButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
         newQuest = true;
         indicate(true);
     }
 
+    /**
+     * Deactivates indication of a new quest.
+     */
     public void deactivateQuest() {
         contentTable.removeActor(newQuestButton);
         newQuest = false;
         indicate(false);
     }
 
+    /**
+     * Activates indication of a new inventory item.
+     */
     public void activateItem() {
         contentTable.add(newItemButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
         newItem = true;
         indicate(true);
     }
 
+    /**
+     * Deactivates indication of a new inventory item.
+     */
     public void deactivateItem() {
         contentTable.removeActor(newItemButton);
         newItem = false;

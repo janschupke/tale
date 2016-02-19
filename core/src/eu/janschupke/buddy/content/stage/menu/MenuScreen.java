@@ -16,7 +16,6 @@ public class MenuScreen extends UIScreen {
     public MenuScreen(final App app) {
         super(app);
         Gdx.app.debug("MenuScreen", "Constructing");
-
         backgroundMusic = app.getResourceHandler().getMenuMusic();
         titleLayout = new GlyphLayout(app.getFont(), Config.GAME_TITLE);
     }

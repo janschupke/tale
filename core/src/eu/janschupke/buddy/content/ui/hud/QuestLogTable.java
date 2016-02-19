@@ -73,19 +73,18 @@ public class QuestLogTable extends UITable {
             for (Quest quest : chain.getQuests()) {
                 Config.TaskStatus status = quest.getStatus();
 
+                // The one active quest from the chain goes to the list of active quests.
                 if (status == Config.TaskStatus.ACTIVE) {
                     activeQuests.add(quest.toString());
                     continue;
                 }
 
+                // All finished quests go to the finished list.
                 if (status == Config.TaskStatus.DONE) {
                     finishedQuests.add(quest.toString());
-                    continue;
                 }
             }
         }
-
-        // TODO: show all done quests, even within single chain.
 
         activeQuestsList.setItems(activeQuests);
         finishedQuestsList.setItems(finishedQuests);
@@ -105,7 +104,8 @@ public class QuestLogTable extends UITable {
         // Tasks are printed out as text.
         StringBuilder taskDescriptions = new StringBuilder();
         for (Task task : quest.getTasks()) {
-            taskDescriptions.append(task.getDescription() + "\n");
+            taskDescriptions.append(task.getDescription());
+            taskDescriptions.append("\n");
         }
 
         taskDescriptionLabel.setText(taskDescriptions.toString());
@@ -132,9 +132,10 @@ public class QuestLogTable extends UITable {
     private void updateIndicator() {
         try {
             Utility.getHud(app).getIndicatorTable().activateQuest();
-        } catch (NoHudException e) {}
-        catch (IndexOutOfBoundsException e) {
-            Gdx.app.log("QuestLogTable#updateIndicator", "Out of bounds exception.");
+        } catch (NoHudException e) {
+            Gdx.app.debug("QuestLogTable#updateIndicator", "No HUD is available");
+        } catch (IndexOutOfBoundsException e) {
+            Gdx.app.log("QuestLogTable#updateIndicator", "Out of bounds exception");
         }
     }
 
@@ -176,7 +177,8 @@ public class QuestLogTable extends UITable {
 
         add(titleLabel).row();
         add(questScrollPane).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING);
-        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH)
+                .height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton).colspan(2);
     }
 
@@ -188,6 +190,7 @@ public class QuestLogTable extends UITable {
                 try {
                     Utility.getHud(app).toggleQuestLog();
                 } catch (NoHudException e) {
+                    Gdx.app.debug("QuestLogTable#closeButton#clicked", "No HUD is available");
                 }
             }
         });

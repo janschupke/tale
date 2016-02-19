@@ -32,6 +32,7 @@ public class EventLogTable extends UITable {
     public EventLogTable(final App app) {
         super(app);
 
+        // TODO: texture
         Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);
@@ -71,6 +72,7 @@ public class EventLogTable extends UITable {
                 try {
                     Utility.getHud(app).toggleEventLog();
                 } catch (NoHudException e) {
+                    Gdx.app.debug("EventLogTable#setListeners", "No HUD is available");
                 }
             }
         });
@@ -89,9 +91,9 @@ public class EventLogTable extends UITable {
                 Utility.getHud(app).getIndicatorTable().activateEvent();
             }
         } catch (NoHudException e) {
-            // TODO
+            Gdx.app.debug("EventLogTable#updateIndicator", "No HUD is available");
         } catch (IndexOutOfBoundsException e) {
-            // TODO
+            Gdx.app.debug("EventLogTable#updateIndicator", "Out of bounds exception");
         }
     }
 }

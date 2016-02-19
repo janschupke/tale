@@ -11,7 +11,6 @@ import eu.janschupke.buddy.framework.base.ui.dialog.ConfirmDialog;
 public class DefaultSettingDialog extends ConfirmDialog {
     public DefaultSettingDialog(final App app) {
         super(app, app.getLang().get("menu.dialog.default-settings.title"));
-
         label.setText(app.getLang().get("menu.dialog.default-settings.text"));
     }
 

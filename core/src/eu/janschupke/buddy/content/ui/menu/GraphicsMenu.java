@@ -29,7 +29,6 @@ public class GraphicsMenu extends MenuTable implements PreferenceMenu {
 
     public GraphicsMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();
@@ -103,9 +102,7 @@ public class GraphicsMenu extends MenuTable implements PreferenceMenu {
     }
 
     @Override
-    public void updateGameState() {
-        //
-    }
+    public void updateGameState() {}
 
     @Override
     public void applyChanges() {

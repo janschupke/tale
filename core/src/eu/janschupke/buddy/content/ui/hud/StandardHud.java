@@ -9,16 +9,38 @@ import eu.janschupke.buddy.framework.config.Config;
  * @author jan.schupke@gmail.com
  */
 public class StandardHud extends HudTable {
+    /**
+     * States in which the HUD can be.
+     */
     public enum State {
-        HUD, INVENTORY, EVENTS, QUESTS
+        /**
+         * Standard control GUI is visible.
+         */
+        HUD,
+
+        /**
+         * Inventory tab is visible.
+         */
+        INVENTORY,
+
+        /**
+         * Event log is visible.
+         */
+        EVENTS,
+
+        /**
+         * Quest log is visible.
+         */
+        QUESTS
     }
 
+    // Gameplay HUD tables.
     private HudMenuTable topMenuTable;
     private HintTable hintTable;
     private InteractionTable interactionTable;
     private IndicatorTable indicatorTable;
 
-    // Fullscreen tables
+    // Fullscreen tables.
     private InventoryTable inventoryTable;
     private EventLogTable eventLogTable;
     private QuestLogTable questLogTable;
@@ -27,11 +49,9 @@ public class StandardHud extends HudTable {
 
     public StandardHud(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();
-
         state = State.HUD;
     }
 
@@ -53,9 +73,11 @@ public class StandardHud extends HudTable {
     }
 
     @Override
-    public void setListeners() {
-    }
+    public void setListeners() {}
 
+    /**
+     * Adds gameplay widgets to the HUD.
+     */
     private void addHud() {
         topHudTable.add(topMenuTable).row();
         topHudTable.add(hintTable).expandY().fillY().padTop(Config.HUD_HINT_TOP_PADDING);
@@ -63,6 +85,9 @@ public class StandardHud extends HudTable {
         bottomHudTable.add(interactionTable).expandX().fillX();
     }
 
+    /**
+     * Toggle between event log table and gameplay HUD.
+     */
     public void toggleEventLog() {
         topHudTable.clear();
         bottomHudTable.clear();
@@ -76,6 +101,9 @@ public class StandardHud extends HudTable {
         }
     }
 
+    /**
+     * Toggle between quest log table and gameplay HUD.
+     */
     public void toggleQuestLog() {
         topHudTable.clear();
         bottomHudTable.clear();
@@ -89,6 +117,9 @@ public class StandardHud extends HudTable {
         }
     }
 
+    /**
+     * Toggle between inventory table and gameplay HUD.
+     */
     public void toggleInventory() {
         topHudTable.clear();
         bottomHudTable.clear();
@@ -102,10 +133,18 @@ public class StandardHud extends HudTable {
         }
     }
 
+    /**
+     * Returns current rendering state of the HUD.
+     * @return current visible HUD state.
+     */
     public State getState() {
         return state;
     }
 
+    /**
+     * Closes any fullscreen tab that might be open,
+     * and renders the gameplay HUD.
+     */
     public void closeTabs() {
         topHudTable.clear();
         bottomHudTable.clear();

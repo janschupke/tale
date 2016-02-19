@@ -35,6 +35,7 @@ public class HintTable extends UITable {
 
     @Override
     public void initWidgets() {
+        // TODO: texture
         Texture hintTexture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(hintTexture);
         Drawable drawable = new TextureRegionDrawable(region);
@@ -55,6 +56,7 @@ public class HintTable extends UITable {
         hintLabel.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                // Clicking the hint will trigger an interaction, is any is available.
                 if (!hintLabel.getText().toString().isEmpty() && !((GameScreen)app.getScreen()).isPaused()) {
                     if (InteractionSwitch.isInteractionPossible()) {
                         InteractionSwitch.getInteractionEvent().trigger();
@@ -64,6 +66,10 @@ public class HintTable extends UITable {
         });
     }
 
+    /**
+     * Updates the hint table with the requested message.
+     * @param hint New hint message.
+     */
     public void update(String hint) {
         if (hint == null || hint.isEmpty()) {
             clear();
@@ -74,6 +80,9 @@ public class HintTable extends UITable {
         add(messageTable);
     }
 
+    /**
+     * Removes any message from the hint table.
+     */
     public void clear() {
         hintLabel.setText("");
         removeActor(messageTable);

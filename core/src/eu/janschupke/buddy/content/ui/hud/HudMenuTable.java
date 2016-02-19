@@ -26,6 +26,7 @@ public class HudMenuTable extends UITable {
     public HudMenuTable(final App app) {
         super(app);
 
+        // TODO: texture
         Texture texture = new Texture(Gdx.files.internal("textures/gui/hud-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);

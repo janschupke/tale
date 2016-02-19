@@ -24,9 +24,7 @@ public class MainMenu extends MenuTable {
 
     public MainMenu(final App app) {
         super(app);
-
         Gdx.app.debug("MainMenu#<init>", "Constructing");
-
         initWidgets();
         addWidgets();
         setListeners();

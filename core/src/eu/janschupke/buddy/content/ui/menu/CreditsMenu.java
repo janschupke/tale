@@ -19,7 +19,6 @@ public class CreditsMenu extends MenuTable {
 
     public CreditsMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();

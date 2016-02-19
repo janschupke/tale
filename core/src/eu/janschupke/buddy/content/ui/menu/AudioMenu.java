@@ -35,7 +35,6 @@ public class AudioMenu extends MenuTable implements PreferenceMenu {
 
     public AudioMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();

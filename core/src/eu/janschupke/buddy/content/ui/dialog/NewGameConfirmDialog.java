@@ -12,7 +12,6 @@ import eu.janschupke.buddy.framework.base.ui.dialog.ConfirmDialog;
 public class NewGameConfirmDialog extends ConfirmDialog {
     public NewGameConfirmDialog(final App app) {
     super(app, app.getLang().get("menu.dialog.new-game.title"));
-
     label.setText(app.getLang().get("menu.dialog.new-game.text"));
 }
 

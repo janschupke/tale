@@ -46,7 +46,6 @@ public class GoldCoinItem extends Item implements Triggerable {
         }
     }
 
-    // TODO
     private Interaction interaction = new Interaction() {
         @Override
         protected void configure() {

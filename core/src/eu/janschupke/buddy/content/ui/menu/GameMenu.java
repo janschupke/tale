@@ -22,7 +22,6 @@ public class GameMenu extends MenuTable {
 
     public GameMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();

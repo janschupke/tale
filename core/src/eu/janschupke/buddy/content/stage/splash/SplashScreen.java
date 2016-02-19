@@ -16,13 +16,10 @@ public class SplashScreen extends CinematicScreen {
     @Override
     public void show() {
         super.show();
-
         app.setScreen(app.getScreenInstance(Config.Screens.MENU));
         app.swapHuds(app.getHud(Config.Huds.MAINMENU));
     }
 
     @Override
-    public void update(float delta) {
-        //
-    }
+    public void update(float delta) {}
 }

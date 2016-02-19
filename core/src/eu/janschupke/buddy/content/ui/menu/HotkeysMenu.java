@@ -37,7 +37,6 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
 
     public HotkeysMenu(final App app) {
         super(app);
-
         initWidgets();
         addWidgets();
         setListeners();
@@ -105,19 +104,13 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     }
 
     @Override
-    public void configureWidgets() {
-        //
-    }
+    public void configureWidgets() {}
 
     @Override
-    public void updateRunningConfig() {
-        //
-    }
+    public void updateRunningConfig() {}
 
     @Override
-    public void updateGameState() {
-        //
-    }
+    public void updateGameState() {}
 
     @Override
     public void applyChanges() {

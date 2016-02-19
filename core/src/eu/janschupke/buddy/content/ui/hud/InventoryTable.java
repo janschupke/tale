@@ -48,8 +48,7 @@ public class InventoryTable extends UITable {
     }
 
     /**
-     * Update inventory view according to the current
-     * model state.
+     * Update inventory view according to the current model state.
      */
     public void update() {
         itemTable.getChildren().forEach(Actor::remove);
@@ -57,9 +56,13 @@ public class InventoryTable extends UITable {
         Inventory inventory = app.getGameState().getInventory();
         for (int i = 0; i < inventory.getUsedSlots(); i++) {
             InventoryItem inventoryItem = inventory.getItem(i);
+
+            // Items are represented as clickable image buttons.
             ImageButton itemButton = new ImageButton(new TextureRegionDrawable(new TextureRegion(
                     inventoryItem.getItem().getSprite().getTexture())));
             itemTable.add(itemButton).pad(Config.HUD_BUTTON_PADDING).row();
+
+            // Item description is displayed after the item button is clicked.
             itemButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
@@ -81,6 +84,10 @@ public class InventoryTable extends UITable {
         itemDescriptionLabel.setText(item.getItem().getDescription());
     }
 
+    /**
+     * Sets the first item from the list as active, to prevent empty content table
+     * when some items are in the inventory. If the inventory is empty, does nothing.
+     */
     private void setDefaultActiveItem() {
         Inventory inventory = app.getGameState().getInventory();
 
@@ -95,9 +102,10 @@ public class InventoryTable extends UITable {
     private void updateIndicator() {
         try {
             Utility.getHud(app).getIndicatorTable().activateItem();
-        } catch (NoHudException e) {}
-        catch (IndexOutOfBoundsException e) {
-            // TODO
+        } catch (NoHudException e) {
+            Gdx.app.debug("InventoryTable#updateIndicator", "No HUD is available");
+        } catch (IndexOutOfBoundsException e) {
+            Gdx.app.debug("InventoryTable#updateIndicator", "Out of bounds exception");
         }
     }
 
@@ -123,7 +131,8 @@ public class InventoryTable extends UITable {
         descriptionTable.add(itemNameLabel).row();
         descriptionTable.add(itemDescriptionLabel).row();
         add(itemScrollPane).height(Config.HUD_LOG_HEIGHT).padLeft(Config.HUD_INNER_PADDING).fill();
-        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH)
+                .height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton).colspan(2);
     }
 
@@ -135,6 +144,7 @@ public class InventoryTable extends UITable {
                 try {
                     Utility.getHud(app).toggleInventory();
                 } catch (NoHudException e) {
+                    Gdx.app.debug("InventoryTable#closeButton#clicked", "No HUD is available");
                 }
             }
         });
