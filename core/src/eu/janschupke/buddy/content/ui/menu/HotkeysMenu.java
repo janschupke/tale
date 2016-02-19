@@ -33,6 +33,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     private Label questsHotkey;
     private Label inventoryLabel;
     private Label inventoryHotkey;
+    private Label pauseLabel;
+    private Label pauseHotkey;
     private TextButton backButton;
 
     public HotkeysMenu(final App app) {
@@ -64,6 +66,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         questsHotkey = new Label(app.getLang().get("menu.hotkeys.label.quests.hotkey"), app.getSkin());
         inventoryLabel = new Label(app.getLang().get("menu.hotkeys.label.inventory.label"), app.getSkin());
         inventoryHotkey = new Label(app.getLang().get("menu.hotkeys.label.inventory.hotkey"), app.getSkin());
+        pauseLabel = new Label(app.getLang().get("menu.hotkeys.label.pause.label"), app.getSkin());
+        pauseHotkey = new Label(app.getLang().get("menu.hotkeys.label.pause.hotkey"), app.getSkin());
         backButton = new TextButton(app.getLang().get("menu.global.button.back"), app.getSkin());
     }
 
@@ -89,6 +93,8 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         add(questsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(inventoryLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
         add(inventoryHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(pauseLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(pauseHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(backButton).colspan(2).width(Config.UI_BUTTON_WIDTH).padTop(Config.UI_SEPARATOR_SPACE).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 
