@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Generic Table extension, serving as a base for all HUDs and UIs.
+ * @author jan.schupke@gmail.com
  */
 public abstract class RootTable extends UITable {
     public RootTable(final App app) {

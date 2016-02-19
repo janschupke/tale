@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for all top-down type worlds.
+ * @author jan.schupke@gmail.com
  */
 public abstract class TopDownWorld extends BaseWorld {
     public TopDownWorld(String tiledMap, float tileSize, TopDownScreen screen) {

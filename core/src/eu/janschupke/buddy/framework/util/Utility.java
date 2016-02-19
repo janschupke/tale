@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 
 /**
  * General utility class.
+ * @author jan.schupke@gmail.com
  */
 public class Utility {
     /**
@@ -34,12 +35,9 @@ public class Utility {
 //        app.getUi().getRoot().getColor().a = 1;
 //        SequenceAction sequenceAction = new SequenceAction();
 //        sequenceAction.addAction(Actions.fadeOut(duration));
-//        sequenceAction.addAction(Actions.run(new Runnable() {
-//            @Override
-//            public void run() {
-//                app.swapHuds(newHud);
-//                app.getUi().getRoot().addAction(Actions.fadeIn(duration));
-//            }
+//        sequenceAction.addAction(Actions.run(() -> {
+//            app.swapHuds(newHud);
+//            app.getUi().getRoot().addAction(Actions.fadeIn(duration));
 //        }));
 //        app.getUi().getRoot().addAction(sequenceAction);
 

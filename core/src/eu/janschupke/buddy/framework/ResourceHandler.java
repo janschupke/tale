@@ -6,6 +6,7 @@ import com.badlogic.gdx.audio.Sound;
 
 /**
  * Resource handler/provider for sounds and textures.
+ * @author jan.schupke@gmail.com
  */
 public class ResourceHandler {
     private final App app;

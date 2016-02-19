@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Container of inventory items.
+ * @author jan.schupke@gmail.com
  */
 public class Inventory extends DataContainer {
     private List<InventoryItem> items;

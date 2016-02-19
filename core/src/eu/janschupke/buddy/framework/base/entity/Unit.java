@@ -18,6 +18,7 @@ import java.util.Map;
 
 /**
  * Base class for all in-game units.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Unit extends WorldObject {
     protected enum Direction {
@@ -31,22 +32,57 @@ public abstract class Unit extends WorldObject {
     protected boolean climbingUp;
     protected boolean climbingDown;
 
+    /**
+     * Last issued movement direction.
+     */
     protected Direction lastDirection;
 
     protected final float defaultAcceleration = Config.OBJECT_ACCELERATION;
     protected final float maxSpeed = Config.OBJECT_MAX_SPEED;
 
+    /**
+     * Texture that contains all animation frames.
+     */
     protected Texture animationTexture;
+
+    /**
+     * 2D array of animation frames
+     */
     protected TextureRegion[][] animationFrames;
 
+    /**
+     * Sprite used for upward movement.
+     */
     protected AnimatedBox2DSprite animatedBoxSpriteUp;
+
+    /**
+     * Sprite used for downward movement.
+     */
     protected AnimatedBox2DSprite animatedBoxSpriteDown;
+
+    /**
+     * Sprite used for right movement.
+     */
     protected AnimatedBox2DSprite animatedBoxSpriteRight;
+
+    /**
+     * Sprite used for left movement.
+     */
     protected AnimatedBox2DSprite animatedBoxSpriteLeft;
 
+    /**
+     * Directional textures used for idle sprite (not moving).
+     */
     protected Map<Direction, TextureRegion> idleTextures;
 
+    /**
+     * Amount of frames per animation cycle.
+     */
     protected int frameAmount = 6;
+
+    /**
+     * Duration of one animation cycle.
+     */
     protected float loopDuration = 2.0f;
 
     public Unit(BaseWorld world, Texture texture, Vector2 size) {
@@ -97,6 +133,10 @@ public abstract class Unit extends WorldObject {
         return new AnimatedBox2DSprite(animatedSprite);
     }
 
+    /**
+     * Updates unit's position based on its movement state.
+     * @param delta Elapsed time since last render.
+     */
     @Override
     public void update(float delta) {
         if (movingLeft)  moveLeft();
@@ -118,13 +158,21 @@ public abstract class Unit extends WorldObject {
         } else if (movingLeft && animatedBoxSpriteLeft != null) {
             animatedBoxSpriteLeft.draw(batch, body);
         } else {
+            // Not moving, drawing idle sprite facing the last movement direction.
             sprite.setRegion(idleTextures.get(lastDirection));
             sprite.draw(batch, body);
         }
     }
 
+    /**
+     * Not implemented for the purpose of this game.
+     * Platforming is not utilized.
+     */
     public void jump() {}
 
+    /**
+     * Calculates unit's upward movement.
+     */
     public void moveUp() {
         movingUp = true;
         lastDirection = Direction.UP;
@@ -136,6 +184,9 @@ public abstract class Unit extends WorldObject {
         body.setLinearVelocity(velocity);
     }
 
+    /**
+     * Calculates unit's downward movement.
+     */
     public void moveDown() {
         movingDown = true;
         lastDirection = Direction.DOWN;
@@ -147,6 +198,9 @@ public abstract class Unit extends WorldObject {
         body.setLinearVelocity(velocity);
     }
 
+    /**
+     * Calculates unit's right movement.
+     */
     public void moveRight() {
         movingRight = true;
         lastDirection = Direction.RIGHT;
@@ -158,6 +212,9 @@ public abstract class Unit extends WorldObject {
         body.setLinearVelocity(velocity);
     }
 
+    /**
+     * Calculates unit's left movement.
+     */
     public void moveLeft() {
         movingLeft = true;
         lastDirection = Direction.LEFT;
@@ -195,6 +252,9 @@ public abstract class Unit extends WorldObject {
         movingDown = false;
     }
 
+    /**
+     * Stops all movements of this unit.
+     */
     public void stop() {
         stopUp();
         stopDown();

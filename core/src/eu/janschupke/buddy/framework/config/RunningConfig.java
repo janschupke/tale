@@ -2,18 +2,23 @@ package eu.janschupke.buddy.framework.config;
 
 /**
  * All global configuration values loaded from the preferences.
+ * @author jan.schupke@gmail.com
  */
 public class RunningConfig {
+    // Meta variables.
     private boolean ctrlDown;
 
+    // Development variables.
     private boolean uiDebugRendering = DefaultSettings.DEBUG_UI;
     private Config.WorldDebugRendering worldDebugRendering = DefaultSettings.DEBUG_WORLD;
 
+    // Graphics variables.
     private int resolutionIndex;
     private int screenWidth;
     private int screenHeight;
     private boolean fullscreen;
 
+    // Audio variables.
     private float masterVolume;
     private float musicVolume;
     private float soundVolume;
@@ -21,6 +26,7 @@ public class RunningConfig {
     private boolean enableMusic;
     private boolean enableSound;
 
+    // Gameplay variables.
     private boolean enableDialogs;
     private int foregroundFps;
     private int backgroundFps;

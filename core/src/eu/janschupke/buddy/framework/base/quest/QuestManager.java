@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Base quest manager for quest handling.
+ * @author jan.schupke@gmail.com
  */
 public abstract class QuestManager {
     protected App app;

@@ -26,6 +26,7 @@ import java.util.Map;
 
 /**
  * Extension of the base Game class, with some additional boilerplate.
+ * @author jan.schupke@gmail.com
  */
 public abstract class App extends Game {
     private GlobalEventHandler eventHandler;

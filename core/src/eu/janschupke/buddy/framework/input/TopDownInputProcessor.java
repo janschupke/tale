@@ -6,7 +6,8 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
- * Base input processor for all top-down levels
+ * Base input processor for all top-down levels.
+ * @author jan.schupke@gmail.com
  */
 public class TopDownInputProcessor extends GameInputProcessor {
     public TopDownInputProcessor(final App app) {

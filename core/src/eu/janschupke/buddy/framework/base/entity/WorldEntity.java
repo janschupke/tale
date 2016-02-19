@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Basic world entity, encapsulating everything that is represented through any sort of Box2D body.
+ * @author jan.schupke@gmail.com
  */
 public abstract class WorldEntity {
     protected String interactionHint;
@@ -24,8 +25,20 @@ public abstract class WorldEntity {
         body.setUserData(this);
     }
 
+    /**
+     * Sets the entity's position within the world.
+     * Implementation varies and is specified in subclasses.
+     * @param x Position x coordinate within the world.
+     * @param y Position y coordinate within the world.
+     */
     public abstract void setPosition(float x, float y);
 
+    /**
+     * Retrieves interaction hint that is shown on the screen,
+     * after player comes to contact with this entity.
+     * Only used if the entity is triggerable.
+     * @return Interaction hint message.
+     */
     public String getInteractionHint() {
         return interactionHint;
     }

@@ -7,12 +7,16 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Message event for music toggle.
+ * @author jan.schupke@gmail.com
  */
 public class ToggleMusicEvent extends BaseEvent {
     public ToggleMusicEvent(final App app) {
         super(app, app.getLang().get("event.global.toggle.music"));
     }
 
+    /**
+     * Toggles music playback and updates configuration.
+     */
     @Override
     public void trigger() {
         // Toggle the configuration value.

@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Represents one conversational state within the interaction.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Situation {
     protected String description;
@@ -16,10 +17,10 @@ public abstract class Situation {
     }
 
     /**
-     * TODO: progression graph.
-     * @param decision
+     * Progresses to the next appropriate situation based on the decision the player has chosen.
+     * @param decision Selected decision, based on which the next situation should be presented.
      * @return Following situation based on selected decision. Used for interaction progression.
-     * @throws NoMoreSituationsException TODO
+     * @throws NoMoreSituationsException Thrown when no more situations to progress to are available.
      */
     public abstract Situation getFollowing(Decision decision) throws NoMoreSituationsException;
 

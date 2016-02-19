@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Base class for all in-game events.
+ * @author jan.schupke@gmail.com
  */
 public abstract class BaseEvent {
     protected App app;
@@ -25,6 +26,10 @@ public abstract class BaseEvent {
         this.eventMessage = eventMessage;
     }
 
+    /**
+     * Sets the event as triggered and stops player movement.
+     * Specific logic is specified in subclasses.
+     */
     public void trigger() {
         triggered = true;
         if (app.getSettingsManager().getConfig().isEnableDialogs()) {
@@ -32,6 +37,10 @@ public abstract class BaseEvent {
         }
     }
 
+    /**
+     * Returns information about the triggerability of given event.
+     * @return True is the event is repeatable or has not been triggered yet. False otherwise.
+     */
     public boolean canTrigger() {
         return (!triggered || repeatable);
     }
@@ -58,6 +67,7 @@ public abstract class BaseEvent {
         if (eventMessage.isEmpty()) return;
         app.getGameState().getEventLog().addEvent(this);
 
+        // TODO: observer
         try {
             Utility.getHud(app).getEventLogTable().updateMessages(app.getGameState().getEventLog().toString());
         } catch (NoHudException e) {

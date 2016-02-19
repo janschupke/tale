@@ -20,12 +20,24 @@ import java.util.Map;
 
 /**
  * Handler for all global events, such as the main menu actions.
+ * @author jan.schupke@gmail.com
  */
 public class GlobalEventHandler {
     private final App app;
 
+    /**
+     * Global event that toggles music playback on/off.
+     */
     private ToggleMusicEvent toggleMusicEvent;
+
+    /**
+     * Global event that toggles all sound effects on/off.
+     */
     private ToggleSoundEvent toggleSoundEvent;
+
+    /**
+     * Global event that toggles event dialog display.
+     */
     private ToggleDialogsEvent toggleDialogsEvent;
 
     public GlobalEventHandler(final App app) {
@@ -71,10 +83,12 @@ public class GlobalEventHandler {
     public void triggerMusic(boolean state) {
         Music backgroundMusic = ((BaseScreen)app.getScreen()).getBackgroundMusic();
 
+        // Music might not be set at all.
         if (backgroundMusic == null) {
             return;
         }
 
+        // Relevant only if music is enabled in configuration.
         if (!app.getSettingsManager().getConfig().isEnableMusic()) {
             backgroundMusic.stop();
             return;
@@ -83,6 +97,7 @@ public class GlobalEventHandler {
         adjustMusicVolume();
         backgroundMusic.setLooping(true);
 
+        // Toggle based on the current playback state.
         if (state) {
             if (!backgroundMusic.isPlaying()) {
                 backgroundMusic.play();
@@ -155,8 +170,6 @@ public class GlobalEventHandler {
      * Event log entries will appear regardless of this toggle.
      */
     public void toggleDialogs() {
-        boolean current = app.getSettingsManager().getConfig().isEnableDialogs();
-        app.getSettingsManager().getConfig().setEnableDialogs(!current);
         toggleDialogsEvent.trigger();
     }
 
@@ -175,6 +188,9 @@ public class GlobalEventHandler {
         Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
     }
 
+    /**
+     * Toggles between game screen's pause states.
+     */
     public void togglePause() {
         if (((GameScreen)app.getScreen()).isPaused()) {
             app.getScreen().resume();
@@ -208,35 +224,56 @@ public class GlobalEventHandler {
         ((MainMenu)app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
     }
 
+    /**
+     * Returns to the currently ongoing game.
+     */
     public void continueGame() {
         Gdx.app.debug("GlobalEventHandler#continueGame", "Continue Game");
         Utility.transitionScreens(app, app.getGameState().getCurrentLevel(), app.getHud(Config.Huds.STANDARD));
         app.getScreen().resume();
     }
 
+    /**
+     * Displays settings GUI table.
+     */
     public void showSettings() {
         Gdx.app.debug("GlobalEventHandler#showSettings", "Show Settings");
         Utility.transitionHuds(app, app.getHud(Config.Huds.SETTINGSMENU));
     }
 
+    /**
+     * Displays graphics settings table.
+     */
     public void showGraphicsMenu() {
         Utility.transitionHuds(app, app.getHud(Config.Huds.GRAPHICSMENU));
     }
 
+    /**
+     * Display audio settings table.
+     */
     public void showAudioMenu() {
         Utility.transitionHuds(app, app.getHud(Config.Huds.AUDIOMENU));
     }
 
+    /**
+     * Displays hotkeys list GUI.
+     */
     public void showHotkeys() {
         Gdx.app.debug("GlobalEventHandler#showHotkeys", "Show Hotkeys");
         Utility.transitionHuds(app, app.getHud(Config.Huds.HOTKEYSMENU));
     }
 
+    /**
+     * Displays game's credits table.
+     */
     public void showCredits() {
         Gdx.app.debug("GlobalEventHandler#showCredits", "Show Credits");
         Utility.transitionHuds(app, app.getHud(Config.Huds.CREDITSMENU));
     }
 
+    /**
+     * Leaves the current level and enters the main menu screen.
+     */
     public void leaveLevel() {
         Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.MENU), app.getHud(Config.Huds.MAINMENU));
     }

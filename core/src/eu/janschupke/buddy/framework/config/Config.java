@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 
 /**
  * Default configuration and global constants.
+ * @author jan.schupke@gmail.com
  */
 public class Config {
     // Global untranslated strings.

@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Quest entry.
+ * @author jan.schupke@gmail.com
  */
 public class Quest extends DataContainer {
     private Config.TaskStatus status;

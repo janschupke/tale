@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.ui.UserInterface;
 
 /**
  * Base class for all Scene2d tables used in the application.
+ * @author jan.schupke@gmail.com
  */
 public abstract class UITable extends Table implements UserInterface {
     protected final App app;

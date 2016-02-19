@@ -84,6 +84,8 @@ public class QuestLogTable extends UITable {
             }
         }
 
+        // TODO: show all done quests, even within single chain.
+
         activeQuestsList.setItems(activeQuests);
         finishedQuestsList.setItems(finishedQuests);
 
@@ -91,10 +93,15 @@ public class QuestLogTable extends UITable {
         updateIndicator();
     }
 
+    /**
+     * Sets the provided quest as currently active in the quest log.
+     * @param quest Quest to be displayed.
+     */
     private void setActiveQuest(Quest quest) {
         descriptionTitleLabel.setText(quest.getName());
         questDescriptionLabel.setText(quest.getDescription());
 
+        // Tasks are printed out as text.
         StringBuilder taskDescriptions = new StringBuilder();
         for (Task task : quest.getTasks()) {
             taskDescriptions.append(task.getDescription() + "\n");
@@ -103,6 +110,10 @@ public class QuestLogTable extends UITable {
         taskDescriptionLabel.setText(taskDescriptions.toString());
     }
 
+    /**
+     * Sets the first available quest as active,
+     * so that there is not an empty content table displayed.
+     */
     private void setDefaultActiveQuest() {
         QuestLog questLog = app.getGameState().getQuestLog();
 
@@ -114,12 +125,15 @@ public class QuestLogTable extends UITable {
         }
     }
 
+    /**
+     * Updates the bottomLeft HUD indicator
+     */
     private void updateIndicator() {
         try {
             Utility.getHud(app).getIndicatorTable().activateQuest();
         } catch (NoHudException e) {}
         catch (IndexOutOfBoundsException e) {
-            // TODO
+            Gdx.app.log("QuestLogTable#updateIndicator", "Out of bounds exception.");
         }
     }
 

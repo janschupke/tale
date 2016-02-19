@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
  * Base contact listener for Box2D bodies.
+ * @author jan.schupke@gmail.com
  */
 public class BodyContactListener implements ContactListener {
     @Override

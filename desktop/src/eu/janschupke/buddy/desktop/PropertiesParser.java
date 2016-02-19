@@ -27,6 +27,14 @@ public class PropertiesParser {
     private final String TAG_NAME = "entry";
     private final String ATTRIBUTE_NAME = "key";
 
+    /**
+     * Parses the configuration file in order to read the window configuration.
+     * @param filename Name of the configuration file.
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     * @throws NumberFormatException Thrown if some of the read values cannot be cast to integers.
+     */
     public void parse(String filename) throws ParserConfigurationException,
             IOException, SAXException, NumberFormatException {
         File fXmlFile = new File(filename);
@@ -47,18 +55,32 @@ public class PropertiesParser {
         }
     }
 
+    /**
+     * Fullscreen flag reading.
+     * @param element XML element from the configuration.
+     */
     private void readFullscreen(Element element) {
         if (element.getAttribute(ATTRIBUTE_NAME).equals(SettingsKeys.GRAPHICS_FULLSCREEN)) {
             fullscreen = Boolean.parseBoolean(element.getTextContent());
         }
     }
 
+    /**
+     * Window width reading.
+     * @param element XML element from the configuration.
+     * @throws NumberFormatException Thrown if the value cannot be cast to an integer.
+     */
     private void readWidth(Element element) throws NumberFormatException {
         if (element.getAttribute(ATTRIBUTE_NAME).equals(SettingsKeys.GRAPHICS_SCREEN_WIDTH)) {
             width = Integer.parseInt(element.getTextContent());
         }
     }
 
+    /**
+     * Window height reading.
+     * @param element XML element from the configuration.
+     * @throws NumberFormatException Thrown if the value cannot be cast to an integer.
+     */
     private void readHeight(Element element) throws NumberFormatException {
         if (element.getAttribute(ATTRIBUTE_NAME).equals(SettingsKeys.GRAPHICS_SCREEN_HEIGHT)) {
             height = Integer.parseInt(element.getTextContent());

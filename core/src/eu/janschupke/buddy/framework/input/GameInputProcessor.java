@@ -13,6 +13,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Generic processor for all level type game states.
+ * @author jan.schupke@gmail.com
  */
 public class GameInputProcessor extends BaseInputProcessor {
     public GameInputProcessor(final App app) {
@@ -73,11 +74,8 @@ public class GameInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        if (!(app.getScreen() instanceof GameScreen)) {
-            return false;
-        }
-
-        return super.keyUp(keycode);
+        // FIXME: black magic of unknown origin...
+        return (!(app.getScreen() instanceof GameScreen)) ? false : super.keyUp(keycode);
     }
 
     @Override

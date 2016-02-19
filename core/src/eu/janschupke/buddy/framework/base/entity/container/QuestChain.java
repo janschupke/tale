@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Sequence of quests that come up after each other
  * and make up a logical quest line.
+ * @author jan.schupke@gmail.com
  */
 public abstract class QuestChain extends DataContainer {
     protected List<Quest> quests;
@@ -43,7 +44,7 @@ public abstract class QuestChain extends DataContainer {
     protected void transition(int index) {
         activeQuest.setStatus(Config.TaskStatus.DONE);
         if (activeQuest.hasTransition()) {
-            activeQuest = activeQuest.getTransition();
+            activeQuest = activeQuest.getTransition(index);
             activeQuest.setStatus(Config.TaskStatus.ACTIVE);
         }
     }
@@ -56,7 +57,11 @@ public abstract class QuestChain extends DataContainer {
         return activeQuest;
     }
 
-    // TODO: ?
+    /**
+     * Retrieves the status of given quest chain based on the status
+     * of its quests.
+     * @return Current quest chain status.
+     */
     public Config.TaskStatus getStatus() {
         Config.TaskStatus status = Config.TaskStatus.INIT;
 

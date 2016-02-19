@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.entity.WorldObject;
 
 /**
  * Encapsulation of a camera, a viewport, and some helper methods.
+ * @author jan.schupke@gmail.com
  */
 public class View {
     private float borderTop;

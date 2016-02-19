@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Encapsulation of all player-relevant data containers.
+ * @author jan.schupke@gmail.com
  */
 public class GameState extends DataContainer {
     private GameScreen currentLevel;

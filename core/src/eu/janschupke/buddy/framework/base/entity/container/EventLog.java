@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Container of all occurred events.
+ * Container of all occurred events' messages.
+ * @author jan.schupke@gmail.com
  */
 public class EventLog extends DataContainer {
     private List<EventLogEntry> events;
@@ -28,6 +29,10 @@ public class EventLog extends DataContainer {
         return result.toString();
     }
 
+    /**
+     * Adds description of the provided event into the log.
+     * @param event Provided event.
+     */
     public void addEvent(BaseEvent event) {
         EventLogEntry entry = new EventLogEntry(app, event.getEventMessage());
         events.add(entry);

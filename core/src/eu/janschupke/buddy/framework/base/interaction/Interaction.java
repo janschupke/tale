@@ -7,18 +7,21 @@ import java.util.List;
 
 /**
  * Contains interaction logic, decisions etc.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Interaction {
     protected String title;
     protected List<Situation> situations;
 
     /**
-     * TODO: describe
+     * The situation that is currently active,
+     * and therefore visible in the interaction GUI during the interaction.
      */
     protected Situation currentSituation;
 
     /**
-     * TODO: describe
+     * Configured situation that is to become current in a case of sudden interaction interruption,
+     * e.g. moving away from the triggerable object.
      */
     protected Situation fallbackSituation;
 
@@ -27,15 +30,22 @@ public abstract class Interaction {
         configure();
     }
 
+    /**
+     * Configures the interaction, its situations, current and fallback situations, etc.
+     */
     protected abstract void configure();
 
     /**
-     * TODO: describe
+     * All logic that happens when a decision is chosen.
+     * Contains logic for each possible decision.
+     * @param decision Selected decision.
      */
     public abstract void handle(Decision decision);
 
     /**
-     * TODO: describe
+     * Transitions to the next situation,
+     * based on the current situation and selected decision.
+     * @param decision Selected decision.
      */
     protected void transition(Decision decision) {
         try {
@@ -51,11 +61,6 @@ public abstract class Interaction {
 
     public Situation getCurrentSituation() {
         return currentSituation;
-    }
-
-    // TODO: needed?
-    public Situation getFallbackSituation() {
-        return fallbackSituation;
     }
 
     public String getTitle() {

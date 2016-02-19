@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Log of all currently active or completed quests.
+ * @author jan.schupke@gmail.com
  */
 public class QuestLog extends DataContainer {
     private List<QuestChain> questChains;

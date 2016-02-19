@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Interface for all world entities that trigger an event upon contact.
+ * @author jan.schupke@gmail.com
  */
 public interface Triggerable {
     /**
@@ -22,18 +23,23 @@ public interface Triggerable {
      */
     void disengage();
 
+    /**
+     * Takes care of the HUD change during the interaction start.
+     * @param app Current application.
+     */
     default void startInteraction(App app) {
         try {
             ((GameScreen) app.getScreen()).getLevelState().setHintCache(Utility.getHud(app).getHintTable().getHint());
             Utility.getHud(app).getHintTable().clear();
             Utility.getHud(app).getInteractionTable().update(InteractionSwitch.getTriggerable().getInteraction());
         } catch (NoHudException e) {
-            // TODO
+            Gdx.app.log("Triggerable#startInteraction", "No HUD problem.");
         }
     }
 
     /**
-     * TODO: describe
+     * Takes care of the HUD change during the interaction end.
+     * @param app Current application.
      */
     default void endInteraction(App app) {
         try {
@@ -41,7 +47,7 @@ public interface Triggerable {
             Utility.getHud(app).getInteractionTable().free();
             Utility.getHud(app).getHintTable().update(((GameScreen) app.getScreen()).getLevelState().getHintCache());
         } catch (NoHudException e) {
-            Gdx.app.log("GoldCoinItem#disengage", "No HUD problem.");
+            Gdx.app.log("Triggerable#endInteraction", "No HUD problem.");
         }
     }
 

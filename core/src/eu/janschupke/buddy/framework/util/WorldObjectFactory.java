@@ -15,6 +15,7 @@ import eu.janschupke.buddy.framework.config.Config;
 /**
  * Factory class for the Box2D body manual creation
  * as well as parsing from maps.
+ * @author jan.schupke@gmail.com
  */
 public final class WorldObjectFactory {
     /**

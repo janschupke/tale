@@ -5,6 +5,7 @@ import com.badlogic.gdx.Preferences;
 
 /**
  * Configuration manager class that handles loading, saving and resetting the configuration.
+ * @author jan.schupke@gmail.com
  */
 public class SettingsManager implements ConfigManager {
     protected Preferences settingsPrefs;
@@ -17,9 +18,6 @@ public class SettingsManager implements ConfigManager {
         load();
     }
 
-    /**
-     * Persists running configuration into the preference files.
-     */
     @Override
     public void persist() {
         settingsPrefs.putInteger(SettingsKeys.GRAPHICS_RESOLUTION_INDEX, config.getResolutionIndex());
@@ -42,9 +40,6 @@ public class SettingsManager implements ConfigManager {
         settingsPrefs.flush();
     }
 
-    /**
-     * Loads settings from the preference files.
-     */
     @Override
     public void load() {
         config.setResolutionIndex(settingsPrefs.getInteger(SettingsKeys.GRAPHICS_RESOLUTION_INDEX, DefaultSettings.RESOLUTION_INDEX));
@@ -66,9 +61,6 @@ public class SettingsManager implements ConfigManager {
         config.setUiDebugRendering(settingsPrefs.getBoolean(SettingsKeys.DEBUG_UI, DefaultSettings.DEBUG_UI));
     }
 
-    /**
-     * Returns all settings to default values.
-     */
     @Override
     public void reset() {
         config.setResolutionIndex(DefaultSettings.RESOLUTION_INDEX);

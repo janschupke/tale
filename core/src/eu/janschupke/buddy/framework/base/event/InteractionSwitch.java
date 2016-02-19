@@ -4,12 +4,19 @@ import eu.janschupke.buddy.content.ui.hud.HintTable;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
- * A switch class that toggles possible interaction based on Interactible contact.
+ * A switch class that toggles possible interaction based on Triggerable contact.
+ * @author jan.schupke@gmail.com
  */
 public class InteractionSwitch {
     private static Triggerable triggerable;
     private static BaseEvent interactionEvent;
 
+    /**
+     * Enables triggerable interaction.
+     * @param triggerable Object that can be triggered.
+     * @param interactionEvent Event that should take place after that object is triggered.
+     * @param hintTable GUI table that shows hints.
+     */
     public static void enable(Triggerable triggerable, BaseEvent interactionEvent, HintTable hintTable) {
         InteractionSwitch.triggerable = triggerable;
         InteractionSwitch.interactionEvent = interactionEvent;
@@ -17,8 +24,8 @@ public class InteractionSwitch {
     }
 
     /**
-     * TODO: documentation
-     * @param hintTable
+     * Disables triggerable interaction.
+     * @param hintTable GUI table that shows hints.
      */
     public static void disable(HintTable hintTable) {
         triggerable = null;

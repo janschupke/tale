@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for all in-game items.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Item extends WorldObject {
     public Item(BaseWorld world, Texture texture, Vector2 size) {

@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Input processor for application-wide input processing.
+ * @author jan.schupke@gmail.com
  */
 public class GlobalInputProcessor extends BaseInputProcessor {
     public GlobalInputProcessor(final App app) {

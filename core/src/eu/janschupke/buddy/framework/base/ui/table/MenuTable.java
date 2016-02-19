@@ -11,11 +11,13 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Formatted menu UI base class.
+ * @author jan.schupke@gmail.com
  */
 public abstract class MenuTable extends RootTable {
     public MenuTable(final App app) {
         super(app);
 
+        // TODO: texture
         Texture texture = new Texture(Gdx.files.internal("textures/gui/menu-background.png"));
         TextureRegion region = new TextureRegion(texture);
         Drawable drawable = new TextureRegionDrawable(region);

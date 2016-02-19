@@ -7,12 +7,16 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Message event for sound toggle.
+ * @author jan.schupke@gmail.com
  */
 public class ToggleSoundEvent extends BaseEvent {
     public ToggleSoundEvent(final App app) {
         super(app, app.getLang().get("event.global.toggle.sound"));
     }
 
+    /**
+     * Toggles sound playback and updates configuration.
+     */
     @Override
     public void trigger() {
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());

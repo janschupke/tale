@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
  * Base class for all game states / screens.
+ * @author jan.schupke@gmail.com
  */
 public abstract class BaseScreen extends ScreenAdapter {
     protected final App app;
@@ -51,11 +52,8 @@ public abstract class BaseScreen extends ScreenAdapter {
      * @param processor Processor to be removed.
      */
     public void removeInputProcessor(BaseInputProcessor processor) {
-        Gdx.app.postRunnable(new Runnable() {
-            @Override
-            public void run() {
-                inputMultiplexer.removeProcessor(processor);
-            }
+        Gdx.app.postRunnable(() -> {
+            inputMultiplexer.removeProcessor(processor);
         });
     }
 

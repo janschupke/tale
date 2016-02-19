@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.App;
  * Non-interactive, no UI.
  * Transitions to the next screen when the animation completes,
  * can be skipped by a button press.
+ * @author jan.schupke@gmail.com
  */
 public abstract class CinematicScreen extends BaseScreen {
     public CinematicScreen(final App app) {

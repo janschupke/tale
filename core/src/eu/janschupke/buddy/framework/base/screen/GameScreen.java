@@ -21,6 +21,7 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Base class for all in-game screens (levels).
+ * @author jan.schupke@gmail.com
  */
 public abstract class GameScreen extends BaseScreen {
     protected BaseWorld world;
@@ -176,25 +177,40 @@ public abstract class GameScreen extends BaseScreen {
         }
     }
 
+    /**
+     * Toggles event log visibility.
+     */
     public void toggleEventLog() {
         try {
             Utility.getHud(app).toggleEventLog();
             Utility.getHud(app).getIndicatorTable().deactivateEvent();
-        } catch (NoHudException e) {}
+        } catch (NoHudException e) {
+            Gdx.app.log("GameScreen#toggleEventLog", "No HUD problem.");
+        }
     }
 
+    /**
+     * Toggles quest log visibility.
+     */
     public void toggleQuestLog() {
         try {
             Utility.getHud(app).toggleQuestLog();
             Utility.getHud(app).getIndicatorTable().deactivateQuest();
-        } catch (NoHudException e) {}
+        } catch (NoHudException e) {
+            Gdx.app.log("GameScreen#toggleQuestLog", "No HUD problem.");
+        }
     }
 
+    /**
+     * Toggles inventory visibility.
+     */
     public void toggleInventory() {
         try {
             Utility.getHud(app).toggleInventory();
             Utility.getHud(app).getIndicatorTable().deactivateItem();
-        } catch (NoHudException e) {}
+        } catch (NoHudException e) {
+            Gdx.app.log("GameScreen#toggleInventory", "No HUD problem.");
+        }
     }
 
     // For world step calculations.
@@ -226,6 +242,11 @@ public abstract class GameScreen extends BaseScreen {
         updateCamera();
     }
 
+    /**
+     * Renders level content, like world, units etc.,
+     * according to the current debug mode.
+     * @param delta Elapsed time since last render.
+     */
     private void renderContent(float delta) {
         // Render the world.
         world.getRenderer().setView(view.getCamera());
@@ -248,6 +269,10 @@ public abstract class GameScreen extends BaseScreen {
         }
     }
 
+    /**
+     * Renders all user-relevant parts of the screen - world, units, objects, effects.
+     * @param delta Elapsed time since last render.
+     */
     private void renderLevel(float delta) {
         world.getRenderer().render();
         app.getBatch().begin();
@@ -257,6 +282,10 @@ public abstract class GameScreen extends BaseScreen {
         app.getBatch().end();
     }
 
+    /**
+     * Draws partially transparent grey rectangle across the screen,
+     * in order to make a dim effect.
+     */
     private void dimScreen() {
         ShapeRenderer shapeRenderer = new ShapeRenderer();
         Gdx.gl.glEnable(GL20.GL_BLEND);

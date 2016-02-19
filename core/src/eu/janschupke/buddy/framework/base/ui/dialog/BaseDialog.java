@@ -17,6 +17,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Base class for all GUI dialogs.
+ * @author jan.schupke@gmail.com
  */
 public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;

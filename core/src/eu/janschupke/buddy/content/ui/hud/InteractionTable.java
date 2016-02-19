@@ -28,16 +28,15 @@ public class InteractionTable extends UITable {
 
     public InteractionTable(final App app) {
         super(app);
-
         align(Align.topLeft);
-
         initWidgets();
         addWidgets();
         setListeners();
     }
 
     /**
-     * TODO: documentation
+     * Updates the table based on the current interaction.
+     * @param interaction Provided interaction object.
      */
     public void update(Interaction interaction) {
         Gdx.app.debug("InteractionTable#update", "Updating");
@@ -46,7 +45,12 @@ public class InteractionTable extends UITable {
         titleLabel.setText(interaction.getTitle());
         descriptionLabel.setText(interaction.getDescription());
 
+        // All available decisions get a button.
         for (Decision decision : interaction.getCurrentSituation().getDecisions()) {
+            // Some decisions may be disabled due to the level/story flow.
+            if (!decision.isAvailable()) {
+                continue;
+            }
             TextButton button = new TextButton(decision.getDescription(), app.getSkin());
             button.addListener(new ClickListener() {
                 @Override
@@ -66,7 +70,7 @@ public class InteractionTable extends UITable {
     }
 
     /**
-     * TODO: documentation
+     * Removes content of the interaction table and hides it from the HUD.
      */
     public void free() {
         Gdx.app.debug("InteractionTable#free", "Freeing");
@@ -92,11 +96,8 @@ public class InteractionTable extends UITable {
     }
 
     @Override
-    public void addWidgets() {
-    }
+    public void addWidgets() {}
 
     @Override
-    public void setListeners() {
-
-    }
+    public void setListeners() {}
 }

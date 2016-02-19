@@ -3,6 +3,7 @@ package eu.janschupke.buddy.framework.base.interaction;
 /**
  * Thrown when attempting to transition forward from the last
  * possible situation within an interaction.
+ * @author jan.schupke@gmail.com
  */
 public class NoMoreSituationsException extends Exception {
     public NoMoreSituationsException() {

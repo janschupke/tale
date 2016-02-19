@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.interaction;
 
 /**
  * One decision within a set of decisions for each situation.
+ * @author jan.schupke@gmail.com
  */
 public class Decision {
     protected String description;

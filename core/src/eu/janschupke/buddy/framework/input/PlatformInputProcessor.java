@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Base input processor for all platform levels.
+ * @author jan.schupke@gmail.com
  */
 public class PlatformInputProcessor extends GameInputProcessor {
     public PlatformInputProcessor(final App app) {

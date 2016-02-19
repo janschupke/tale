@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for invisible walls.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Wall extends WorldEntity {
     public Wall(BaseWorld world, Vector2 size) {
@@ -16,6 +17,11 @@ public abstract class Wall extends WorldEntity {
         body.setType(BodyDef.BodyType.StaticBody);
     }
 
+    /**
+     * Moves the body to the exact position.
+     * @param x Position x coordinate within the world.
+     * @param y Position y coordinate within the world.
+     */
     @Override
     public void setPosition(float x, float y) {
         Vector2 position = new Vector2(x + size.x / 2.0f, y + size.y / 2.0f);

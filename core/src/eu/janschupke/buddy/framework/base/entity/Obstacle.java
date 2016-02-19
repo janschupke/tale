@@ -9,7 +9,8 @@ import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
- * Non-movable world object.
+ * Non-movable colliding world object.
+ * @author jan.schupke@gmail.com
  */
 public abstract class Obstacle extends WorldObject {
     public Obstacle(BaseWorld world, Texture texture, Vector2 size) {

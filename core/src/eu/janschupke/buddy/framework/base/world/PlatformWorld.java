@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for all platform type worlds.
+ * @author jan.schupke@gmail.com
  */
 public abstract class PlatformWorld extends BaseWorld {
     public PlatformWorld(String tiledMap, float tileSize, PlatformScreen screen) {

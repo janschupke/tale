@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.exception;
 
 /**
  * Thrown when trying to add an item to a full inventory.
+ * @author jan.schupke@gmail.com
  */
 public class InventoryFullException extends Exception {
     public InventoryFullException() {

@@ -21,9 +21,12 @@ import java.util.logging.Logger;
 public class DesktopLauncher {
 	private final static Logger logger = Logger.getLogger(DesktopLauncher.class.getName());
 
-	public static void main (String[] arg) {
-		// Platform specific parsing for window resolution.
-		PropertiesParser propertiesParser = new PropertiesParser();
+	/**
+	 * Attempts to parse window dimensions from configuration
+	 * before the window itself is created.
+	 * @param propertiesParser XML parses instance responsible for the configuration reading.
+	 */
+	private static void parseWindowConfig(PropertiesParser propertiesParser) {
 		try {
 			String path = System.getProperty("user.home") + System.getProperty("file.separator") + ".prefs";
 			String filename = Config.GAME_PREFIX + "-" + Config.PREFERENCES_SETTINGS;
@@ -37,6 +40,12 @@ public class DesktopLauncher {
 		} catch (NumberFormatException e) {
 			logger.log(Level.WARNING, "DesktopLauncher#main - NumberFormatException: " + e.getMessage());
 		}
+	}
+
+	public static void main (String[] arg) {
+		// Platform specific parsing for window resolution.
+		PropertiesParser propertiesParser = new PropertiesParser();
+		parseWindowConfig(propertiesParser);
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		Buddy buddy = new Buddy();

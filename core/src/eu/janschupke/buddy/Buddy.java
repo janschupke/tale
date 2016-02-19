@@ -16,6 +16,7 @@ import eu.janschupke.buddy.framework.input.TopDownInputProcessor;
 
 /**
  * Main game entry point.
+ * @author jan.schupke@gmail.com
  */
 public class Buddy extends App {
 	@Override
@@ -23,10 +24,11 @@ public class Buddy extends App {
 		super.create();
 		Gdx.app.debug("Buddy#create", "Creating");
 
-		// Cursor.
+		// Cursor setup.
 		Pixmap pm = new Pixmap(Gdx.files.internal("textures/gui/application-cursor.png"));
 		Gdx.input.setCursorImage(pm, 0, 0);
 
+		// Entry screen - splash.
 		this.setScreen(getScreenInstance(Config.Screens.SPLASH));
 	}
 

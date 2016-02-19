@@ -27,6 +27,7 @@ import java.util.*;
 
 /**
  * Base class for levels' world representations.
+ * @author jan.schupke@gmail.com
  */
 public abstract class BaseWorld {
     protected BaseScreen screen;
@@ -63,7 +64,7 @@ public abstract class BaseWorld {
         items = new ArrayList<>();
         obstacles = new ArrayList<>();
         particleEffects = new HashMap<>();
-        pooledEffects = new Array();
+        pooledEffects = new Array<>();
         debugRenderer = new Box2DDebugRenderer();
     }
 
@@ -164,7 +165,7 @@ public abstract class BaseWorld {
                         try {
                             speed = Integer.parseInt(tile.getProperties().get(Config.MAP_PROPERTY_SPEED, String.class));
                         } catch (NumberFormatException e) {
-                            Gdx.app.error("Log", "Bas cast: String to int.");
+                            Gdx.app.error("BaseWorld#handleAnimatedTiles", "Bad cast: String to int.");
                         }
                     }
                 }

@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.ui;
 
 /**
  * Interface for all menu tables that contain configurable widgets.
+ * @author jan.schupke@gmail.com
  */
 public interface PreferenceMenu {
     /**
@@ -16,7 +17,8 @@ public interface PreferenceMenu {
     void updateRunningConfig();
 
     /**
-     * Updates any currently active objects that could have been affected by the configuration change.
+     * Updates any currently active objects that could
+     * have been affected by the configuration change.
      */
     void updateGameState();
 

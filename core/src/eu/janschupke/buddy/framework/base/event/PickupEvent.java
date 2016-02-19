@@ -12,13 +12,10 @@ import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Event for item pickups.
+ * @author jan.schupke@gmail.com
  */
 public class PickupEvent extends BaseEvent {
     protected Item item;
-
-    public PickupEvent(final App app) {
-        this(app, "");
-    }
 
     public PickupEvent(final App app, String eventMessage) {
         super(app);
