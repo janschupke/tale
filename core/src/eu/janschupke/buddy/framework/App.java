@@ -7,9 +7,11 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
+import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.base.entity.container.GameState;
 import eu.janschupke.buddy.framework.base.event.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
@@ -21,7 +23,6 @@ import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 import eu.janschupke.buddy.framework.resources.ResourceManager;
-import eu.janschupke.buddy.framework.util.Utility;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -80,17 +81,29 @@ public abstract class App extends Game {
     }
 
     /**
+     * Retrieves the in-game hud instance.
+     * @return In-game hud instance.
+     */
+    public StandardHud getHud() throws NoHudException {
+        Actor actor = ui.getActors().get(0);
+        if (!(actor instanceof StandardHud)) {
+            throw new NoHudException();
+        }
+        return ((StandardHud)actor);
+    }
+
+    /**
      * Ties together all observable objects and their observers.
      */
     private void configureObservers() {
         try {
-            gameState.getEventLog().addObserver(Utility.getHud(this).getEventLogTable());
-            gameState.getInventory().addObserver(Utility.getHud(this).getInventoryTable());
-            gameState.getQuestLog().addObserver(Utility.getHud(this).getQuestLogTable());
-            gameState.getGlobalLevelState().addObserver(Utility.getHud(this).getIndicatorTable());
-            gameState.getGlobalLevelState().addObserver(Utility.getHud(this).getHintTable());
+            gameState.getEventLog().addObserver(getHud().getEventLogTable());
+            gameState.getInventory().addObserver(getHud().getInventoryTable());
+            gameState.getQuestLog().addObserver(getHud().getQuestLogTable());
+            gameState.getGlobalLevelState().addObserver(getHud().getIndicatorTable());
+            gameState.getGlobalLevelState().addObserver(getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.debug("EventLogTable#setListeners", "No HUD is available");
+            Gdx.app.debug("EventLogTable#setListeners", "No HUD problem");
         }
     }
 

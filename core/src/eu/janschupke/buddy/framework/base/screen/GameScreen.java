@@ -17,7 +17,6 @@ import eu.janschupke.buddy.framework.base.quest.QuestManager;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
-import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Base class for all in-game screens (levels).
@@ -173,9 +172,9 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleEventLog() {
         try {
-            Utility.getHud(app).toggleEventLog();
+            app.getHud().toggleEventLog();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleEventLog", "No HUD problem.");
+            Gdx.app.log("GameScreen#toggleEventLog", "No HUD problem");
         }
     }
 
@@ -184,9 +183,9 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleQuestLog() {
         try {
-            Utility.getHud(app).toggleQuestLog();
+            app.getHud().toggleQuestLog();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleQuestLog", "No HUD problem.");
+            Gdx.app.log("GameScreen#toggleQuestLog", "No HUD problem");
         }
     }
 
@@ -195,9 +194,9 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleInventory() {
         try {
-            Utility.getHud(app).toggleInventory();
+            app.getHud().toggleInventory();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleInventory", "No HUD problem.");
+            Gdx.app.log("GameScreen#toggleInventory", "No HUD problem");
         }
     }
 

@@ -1,5 +1,7 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
+import eu.janschupke.buddy.framework.base.exception.NoMoreSituationsException;
+
 import java.util.ArrayList;
 import java.util.List;
 

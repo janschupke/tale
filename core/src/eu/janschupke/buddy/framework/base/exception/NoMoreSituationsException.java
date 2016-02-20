@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.base.interaction;
+package eu.janschupke.buddy.framework.base.exception;
 
 /**
  * Thrown when attempting to transition forward from the last

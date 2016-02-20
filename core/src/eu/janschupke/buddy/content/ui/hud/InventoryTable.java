@@ -14,7 +14,6 @@ import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.util.Utility;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -128,9 +127,9 @@ public class InventoryTable extends UITable implements Observer {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 try {
-                    Utility.getHud(app).toggleInventory();
+                    app.getHud().toggleInventory();
                 } catch (NoHudException e) {
-                    Gdx.app.debug("InventoryTable#closeButton#clicked", "No HUD is available");
+                    Gdx.app.debug("InventoryTable#closeButton#clicked", "No HUD problem");
                 }
             }
         });

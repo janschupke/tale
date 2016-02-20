@@ -7,13 +7,12 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
+import eu.janschupke.buddy.framework.base.exception.NoMoreSituationsException;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
-import eu.janschupke.buddy.framework.base.interaction.NoMoreSituationsException;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Gold coin item entity.
@@ -85,9 +84,9 @@ public class GoldCoinItem extends Item implements Triggerable {
     public void disengage() {
         try {
             endInteraction(world.getScreen().getApp());
-            InteractionSwitch.disable(Utility.getHud(world.getScreen().getApp()).getHintTable());
+            InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("GoldCoinItem#disengage", "No HUD problem.");
+            Gdx.app.log("GoldCoinItem#disengage", "No HUD problem");
         }
     }
 

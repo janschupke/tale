@@ -9,7 +9,6 @@ import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.Hotkeys;
-import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Generic processor for all level type game states.
@@ -36,8 +35,8 @@ public class GameInputProcessor extends BaseInputProcessor {
         if (keycode == Hotkeys.MENU || keycode == Hotkeys.MENU_ALTERNATIVE) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Toggling menu");
             try {
-                if (Utility.getHud(app).getState() != StandardHud.State.HUD) {
-                    Utility.getHud(app).closeTabs();
+                if (app.getHud().getState() != StandardHud.State.HUD) {
+                    app.getHud().closeTabs();
                 } else {
                     ((GameScreen) app.getScreen()).toggleMenu();
                 }
