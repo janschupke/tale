@@ -87,6 +87,8 @@ public abstract class App extends Game {
             gameState.getEventLog().addObserver(Utility.getHud(this).getEventLogTable());
             gameState.getInventory().addObserver(Utility.getHud(this).getInventoryTable());
             gameState.getQuestLog().addObserver(Utility.getHud(this).getQuestLogTable());
+            gameState.getGlobalLevelState().addObserver(Utility.getHud(this).getIndicatorTable());
+            gameState.getGlobalLevelState().addObserver(Utility.getHud(this).getHintTable());
         } catch (NoHudException e) {
             Gdx.app.debug("EventLogTable#setListeners", "No HUD is available");
         }

@@ -84,8 +84,8 @@ public class QuestLogTable extends UITable implements Observer {
         activeQuestsList.setItems(activeQuests);
         finishedQuestsList.setItems(finishedQuests);
 
+        app.getGameState().getGlobalLevelState().setNewQuest(true);
         setDefaultActiveQuest();
-        updateIndicator();
     }
 
     /**
@@ -118,19 +118,6 @@ public class QuestLogTable extends UITable implements Observer {
                 .equals(app.getLang().get("hud.quest.label.empty"))) {
             Gdx.app.debug("QuestLogTable#setDefaultActiveItem", "Setting default selection");
             setActiveQuest(questLog.getQuestChains().get(0).getActiveQuest());
-        }
-    }
-
-    /**
-     * Updates the bottomLeft HUD indicator
-     */
-    private void updateIndicator() {
-        try {
-            Utility.getHud(app).getIndicatorTable().activateQuest();
-        } catch (NoHudException e) {
-            Gdx.app.debug("QuestLogTable#updateIndicator", "No HUD is available");
-        } catch (IndexOutOfBoundsException e) {
-            Gdx.app.log("QuestLogTable#updateIndicator", "Out of bounds exception");
         }
     }
 

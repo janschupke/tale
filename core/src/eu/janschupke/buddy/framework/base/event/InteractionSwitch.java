@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.framework.base.event;
 
 import eu.janschupke.buddy.content.ui.hud.HintTable;
+import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
@@ -15,12 +16,12 @@ public class InteractionSwitch {
      * Enables triggerable interaction.
      * @param triggerable Object that can be triggered.
      * @param interactionEvent Event that should take place after that object is triggered.
-     * @param hintTable GUI table that shows hints.
+     * @param app Application instance
      */
-    public static void enable(Triggerable triggerable, BaseEvent interactionEvent, HintTable hintTable) {
+    public static void enable(Triggerable triggerable, BaseEvent interactionEvent, App app) {
         InteractionSwitch.triggerable = triggerable;
         InteractionSwitch.interactionEvent = interactionEvent;
-        hintTable.update(triggerable.getInteractionHint());
+        app.getGameState().getGlobalLevelState().setCurrentHint(triggerable.getInteractionHint());
     }
 
     /**

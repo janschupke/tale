@@ -40,13 +40,9 @@ public class UkkoUnit extends Unit implements Triggerable {
 
     @Override
     public void engage() {
-        try {
-            InteractionSwitch.enable(this,
-                    ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUkkoTalkEvent(),
-                    Utility.getHud(world.getScreen().getApp()).getHintTable());
-        } catch (NoHudException e) {
-            Gdx.app.log("UkkoUnit#engage", "No HUD problem.");
-        }
+        InteractionSwitch.enable(this,
+                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUkkoTalkEvent(),
+                world.getScreen().getApp());
     }
 
     @Override

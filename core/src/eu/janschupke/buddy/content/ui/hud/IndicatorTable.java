@@ -6,25 +6,24 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
+import eu.janschupke.buddy.framework.base.screen.GlobalLevelState;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
+
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Part of the standard HUD that displays indicators
  * about new events/quests/inventory items.
  * @author jan.schupke@gmail.com
  */
-public class IndicatorTable extends UITable {
+public class IndicatorTable extends UITable implements Observer {
     private TextButton newEventButton;
     private TextButton newQuestButton;
     private TextButton newItemButton;
 
     private Table contentTable;
-
-    private boolean newEvent;
-    private boolean newQuest;
-    private boolean newItem;
-    private boolean indicating;
 
     public IndicatorTable(final App app) {
         super(app);
@@ -47,85 +46,32 @@ public class IndicatorTable extends UITable {
         // Nothing by default.
     }
 
-    /**
-     * Returns information about the empty state of the indicator table.
-     * @return True if no new quests, events or items are available. False otherwise.
-     */
-    private boolean isEmpty() {
-        return (!newEvent && !newQuest && !newItem);
-    }
+    @Override
+    public void update(Observable o, Object arg) {
+        GlobalLevelState state = app.getGameState().getGlobalLevelState();
 
-    /**
-     * Sets the indicator to the requested state. Add widgets if indication is requested,
-     * removes widgets if indication is not requested.
-     * @param state Requested new indicator state.
-     */
-    private void indicate(boolean state) {
-        if (state && indicating) return;
-        if (!state && !indicating) return;
+        // To clear all redundant padding.
+        contentTable.clear();
 
-        if (state) {
-            add(contentTable);
-            indicating = true;
-        } else if (isEmpty()) {
-            contentTable.clear();
+        if (state.isIndicatorEmpty()) {
             contentTable.remove();
-            indicating = false;
+            return;
         }
-    }
 
-    /**
-     * Activates indication of a new event.
-     */
-    public void activateEvent() {
-        contentTable.add(newEventButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
-        newEvent = true;
-        indicate(true);
-    }
+        add(contentTable);
 
-    /**
-     * Deactivates indication of a new event.
-     */
-    public void deactivateEvent() {
-        contentTable.removeActor(newEventButton);
-        newEvent = false;
-        indicate(false);
-    }
-
-    /**
-     * Activates indication of a new quest.
-     */
-    public void activateQuest() {
-        contentTable.add(newQuestButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
-        newQuest = true;
-        indicate(true);
-    }
-
-    /**
-     * Deactivates indication of a new quest.
-     */
-    public void deactivateQuest() {
-        contentTable.removeActor(newQuestButton);
-        newQuest = false;
-        indicate(false);
-    }
-
-    /**
-     * Activates indication of a new inventory item.
-     */
-    public void activateItem() {
-        contentTable.add(newItemButton).pad(Config.HUD_BUTTON_PADDING).width(Config.HUD_INDICATOR_WIDTH).row();
-        newItem = true;
-        indicate(true);
-    }
-
-    /**
-     * Deactivates indication of a new inventory item.
-     */
-    public void deactivateItem() {
-        contentTable.removeActor(newItemButton);
-        newItem = false;
-        indicate(false);
+        if (state.isNewEvent()) {
+            contentTable.add(newEventButton).pad(Config.HUD_BUTTON_PADDING)
+                    .width(Config.HUD_INDICATOR_WIDTH).row();
+        }
+        if (state.isNewQuest()) {
+            contentTable.add(newQuestButton).pad(Config.HUD_BUTTON_PADDING)
+                    .width(Config.HUD_INDICATOR_WIDTH).row();
+        }
+        if (state.isNewItem()) {
+            contentTable.add(newItemButton).pad(Config.HUD_BUTTON_PADDING)
+                    .width(Config.HUD_INDICATOR_WIDTH).row();
+        }
     }
 
     @Override

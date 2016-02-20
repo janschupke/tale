@@ -67,7 +67,7 @@ public class InventoryTable extends UITable implements Observer {
             });
         }
 
-        updateIndicator();
+        app.getGameState().getGlobalLevelState().setNewItem(true);
         setDefaultActiveItem();
     }
 
@@ -92,16 +92,6 @@ public class InventoryTable extends UITable implements Observer {
                 .equals(app.getLang().get("hud.inventory.label.empty"))) {
             Gdx.app.debug("InventoryTable#setDefaultActiveItem", "Setting default selection");
             setActiveItem(inventory.getItem(0));
-        }
-    }
-
-    private void updateIndicator() {
-        try {
-            Utility.getHud(app).getIndicatorTable().activateItem();
-        } catch (NoHudException e) {
-            Gdx.app.debug("InventoryTable#updateIndicator", "No HUD is available");
-        } catch (IndexOutOfBoundsException e) {
-            Gdx.app.debug("InventoryTable#updateIndicator", "Out of bounds exception");
         }
     }
 

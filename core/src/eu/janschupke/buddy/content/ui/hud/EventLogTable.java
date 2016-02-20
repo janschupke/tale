@@ -77,19 +77,10 @@ public class EventLogTable extends UITable implements Observer {
         String log = o.toString();
         eventArea.setText(log);
         eventScrollPane.layout();
-        updateIndicator();
-    }
 
-    private void updateIndicator() {
-        try {
-            // If dialogs are disabled, indicator about the new event is displayed on the screen.
-            if (!app.getSettingsManager().getConfig().isEnableDialogs()) {
-                Utility.getHud(app).getIndicatorTable().activateEvent();
-            }
-        } catch (NoHudException e) {
-            Gdx.app.debug("EventLogTable#updateIndicator", "No HUD is available");
-        } catch (IndexOutOfBoundsException e) {
-            Gdx.app.debug("EventLogTable#updateIndicator", "Out of bounds exception");
+        // If dialogs are disabled, indicator about the new event is displayed on the screen.
+        if (!app.getSettingsManager().getConfig().isEnableDialogs()) {
+            app.getGameState().getGlobalLevelState().setNewEvent(true);
         }
     }
 }

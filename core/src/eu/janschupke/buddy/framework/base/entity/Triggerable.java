@@ -5,7 +5,6 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
-import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.util.Utility;
 
 /**
@@ -29,8 +28,8 @@ public interface Triggerable {
      */
     default void startInteraction(App app) {
         try {
-            ((GameScreen) app.getScreen()).getLevelState().setHintCache(Utility.getHud(app).getHintTable().getHint());
-            Utility.getHud(app).getHintTable().clear();
+            app.getGameState().getGlobalLevelState().cacheCurrentHint();
+            app.getGameState().getGlobalLevelState().setCurrentHint("");
             Utility.getHud(app).getInteractionTable().update(InteractionSwitch.getTriggerable().getInteraction());
         } catch (NoHudException e) {
             Gdx.app.log("Triggerable#startInteraction", "No HUD problem.");
@@ -45,7 +44,7 @@ public interface Triggerable {
         try {
             InteractionSwitch.getTriggerable().getInteraction().fallback();
             Utility.getHud(app).getInteractionTable().free();
-            Utility.getHud(app).getHintTable().update(((GameScreen) app.getScreen()).getLevelState().getHintCache());
+            app.getGameState().getGlobalLevelState().activateCachedHint();
         } catch (NoHudException e) {
             Gdx.app.log("Triggerable#endInteraction", "No HUD problem.");
         }

@@ -95,6 +95,7 @@ public class StandardHud extends HudTable {
         if (state != State.EVENTS) {
             topHudTable.add(eventLogTable);
             state = State.EVENTS;
+            app.getGameState().getGlobalLevelState().setNewEvent(false);
         } else {
             addHud();
             state = State.HUD;
@@ -111,6 +112,7 @@ public class StandardHud extends HudTable {
         if (state != State.QUESTS) {
             topHudTable.add(questLogTable);
             state = State.QUESTS;
+            app.getGameState().getGlobalLevelState().setNewQuest(false);
         } else {
             addHud();
             state = State.HUD;
@@ -127,6 +129,7 @@ public class StandardHud extends HudTable {
         if (state != State.INVENTORY) {
             topHudTable.add(inventoryTable);
             state = State.INVENTORY;
+            app.getGameState().getGlobalLevelState().setNewItem(false);
         } else {
             addHud();
             state = State.HUD;

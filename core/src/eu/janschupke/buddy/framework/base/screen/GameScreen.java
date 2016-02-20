@@ -33,7 +33,6 @@ public abstract class GameScreen extends BaseScreen {
     protected LevelState levelState;
 
     private boolean paused = false;
-    private String hintCache;
 
     public GameScreen(final App app) {
         super(app);
@@ -63,13 +62,8 @@ public abstract class GameScreen extends BaseScreen {
 
         Gdx.app.debug("GameScreen#pause", "Pausing");
         super.pause();
-        try {
-            // Some hint may already be set.
-            hintCache = Utility.getHud(app).getHintTable().getHint();
-            Utility.getHud(app).getHintTable().update(app.getLang().get("hint.global.paused"));
-        } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#pause", "No HUD problem.");
-        }
+        app.getGameState().getGlobalLevelState().cacheCurrentHint();
+        app.getGameState().getGlobalLevelState().setCurrentHint(app.getLang().get("hint.global.paused"));
         paused = true;
     }
 
@@ -81,11 +75,7 @@ public abstract class GameScreen extends BaseScreen {
 
         Gdx.app.debug("GameScreen#resume", "Resuming");
         super.resume();
-        try {
-            Utility.getHud(app).getHintTable().update(hintCache);
-        } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#pause", "No HUD problem.");
-        }
+        app.getGameState().getGlobalLevelState().activateCachedHint();
         if (!inMenu) paused = false;
     }
 
@@ -184,7 +174,6 @@ public abstract class GameScreen extends BaseScreen {
     public void toggleEventLog() {
         try {
             Utility.getHud(app).toggleEventLog();
-            Utility.getHud(app).getIndicatorTable().deactivateEvent();
         } catch (NoHudException e) {
             Gdx.app.log("GameScreen#toggleEventLog", "No HUD problem.");
         }
@@ -196,7 +185,6 @@ public abstract class GameScreen extends BaseScreen {
     public void toggleQuestLog() {
         try {
             Utility.getHud(app).toggleQuestLog();
-            Utility.getHud(app).getIndicatorTable().deactivateQuest();
         } catch (NoHudException e) {
             Gdx.app.log("GameScreen#toggleQuestLog", "No HUD problem.");
         }
@@ -208,7 +196,6 @@ public abstract class GameScreen extends BaseScreen {
     public void toggleInventory() {
         try {
             Utility.getHud(app).toggleInventory();
-            Utility.getHud(app).getIndicatorTable().deactivateItem();
         } catch (NoHudException e) {
             Gdx.app.log("GameScreen#toggleInventory", "No HUD problem.");
         }
