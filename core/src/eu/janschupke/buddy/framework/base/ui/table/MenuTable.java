@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Formatted menu UI base class.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class MenuTable extends RootTable {

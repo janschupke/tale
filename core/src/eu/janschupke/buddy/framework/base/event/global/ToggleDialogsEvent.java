@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
  * Message event for hint dialog toggle.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ToggleDialogsEvent extends BaseEvent {

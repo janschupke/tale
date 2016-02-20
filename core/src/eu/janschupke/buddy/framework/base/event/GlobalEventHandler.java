@@ -20,6 +20,7 @@ import java.util.Map;
 
 /**
  * Handler for all global events, such as the main menu actions.
+ *
  * @author jan.schupke@gmail.com
  */
 public class GlobalEventHandler {
@@ -50,11 +51,12 @@ public class GlobalEventHandler {
 
     /**
      * Toggles debug rendering for all Scene2D tables in the game.
+     *
      * @param state Requested debug state.
      */
     public void toggleUiDebug(boolean state) {
         Gdx.app.debug("GlobalEventHandler#toggleUiDebug", "Calling debug toggle");
-        for(Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
+        for (Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
             toggleTableDebug(entry.getValue(), state);
         }
     }
@@ -62,6 +64,7 @@ public class GlobalEventHandler {
     /**
      * Toggles debug mode for the provided UI table
      * and all inner tables it contains.
+     *
      * @param table Target table.
      * @param state New debug state.
      */
@@ -78,10 +81,11 @@ public class GlobalEventHandler {
 
     /**
      * Triggers background music playback based on current configuration.
+     *
      * @param state Attempts to play if true, stop otherwise.
      */
     public void triggerMusic(boolean state) {
-        Music backgroundMusic = ((BaseScreen)app.getScreen()).getBackgroundMusic();
+        Music backgroundMusic = ((BaseScreen) app.getScreen()).getBackgroundMusic();
 
         // Music might not be set at all.
         if (backgroundMusic == null) {
@@ -192,7 +196,7 @@ public class GlobalEventHandler {
      * Toggles between game screen's pause states.
      */
     public void togglePause() {
-        if (((GameScreen)app.getScreen()).isPaused()) {
+        if (((GameScreen) app.getScreen()).isPaused()) {
             app.getScreen().resume();
             return;
         }
@@ -221,7 +225,7 @@ public class GlobalEventHandler {
     public void fireNewGame() {
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
         // Add continue game button.
-        ((MainMenu)app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
+        ((MainMenu) app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
     }
 
     /**

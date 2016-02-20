@@ -7,19 +7,10 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * An event that is triggered shortly after the game starts.
+ *
  * @author jan.schupke@gmail.com
  */
 public class IntroEvent extends BaseEvent {
-    /**
-     * Introduction dialog.
-     */
-    class IntroDialog extends InfoDialog {
-        public IntroDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.intro.title"));
-            label.setText(app.getLang().get("level.forest.event.intro.text"));
-        }
-    }
-
     private IntroDialog introDialog;
 
     public IntroEvent(final App app) {
@@ -34,5 +25,15 @@ public class IntroEvent extends BaseEvent {
         Gdx.app.debug("IntroEvent#trigger", "Triggering intro event");
         showDialog(introDialog);
         addEventMessage();
+    }
+
+    /**
+     * Introduction dialog.
+     */
+    class IntroDialog extends InfoDialog {
+        public IntroDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.intro.title"));
+            label.setText(app.getLang().get("level.forest.event.intro.text"));
+        }
     }
 }

@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.base.interaction.Interaction;
 
 /**
  * Interface for all world entities that trigger an event upon contact.
+ *
  * @author jan.schupke@gmail.com
  */
 public interface Triggerable {
@@ -23,6 +24,7 @@ public interface Triggerable {
 
     /**
      * Takes care of the HUD change during the interaction start.
+     *
      * @param app Current application.
      */
     default void startInteraction(App app) {
@@ -37,6 +39,7 @@ public interface Triggerable {
 
     /**
      * Takes care of the HUD change during the interaction end.
+     *
      * @param app Current application.
      */
     default void endInteraction(App app) {
@@ -51,12 +54,14 @@ public interface Triggerable {
 
     /**
      * Returns a hint that is displayed to the player.
+     *
      * @return Text interaction hint, if available. Null otherwise.
      */
     String getInteractionHint();
 
     /**
      * Retrieves entity's interaction object.
+     *
      * @return Specific interaction object.
      */
     Interaction getInteraction();

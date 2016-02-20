@@ -7,19 +7,10 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 /**
  * An event triggered by trying to proceed to the next part of the world
  * before picking up the coin.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InitialWallEvent extends BaseEvent {
-    /**
-     * Introduction dialog.
-     */
-    class InitialWallDialog extends InfoDialog {
-        public InitialWallDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.wall.init.title"));
-            label.setText(app.getLang().get("level.forest.event.wall.init.text"));
-        }
-    }
-
     private InitialWallDialog initialWallDialog;
 
     public InitialWallEvent(final App app) {
@@ -34,5 +25,15 @@ public class InitialWallEvent extends BaseEvent {
         super.trigger();
         showDialog(initialWallDialog);
         addEventMessage();
+    }
+
+    /**
+     * Introduction dialog.
+     */
+    class InitialWallDialog extends InfoDialog {
+        public InitialWallDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.wall.init.title"));
+            label.setText(app.getLang().get("level.forest.event.wall.init.text"));
+        }
     }
 }

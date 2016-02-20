@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Splash screen class.
+ *
  * @author jan.schupke@gmail.com
  */
 public class SplashScreen extends CinematicScreen {
@@ -21,5 +22,6 @@ public class SplashScreen extends CinematicScreen {
     }
 
     @Override
-    public void update(float delta) {}
+    public void update(float delta) {
+    }
 }

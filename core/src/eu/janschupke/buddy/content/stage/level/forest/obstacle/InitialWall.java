@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 /**
  * A wall obstacle that doesn't let the player continue
  * until he picks up the initial item.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InitialWall extends Wall implements Triggerable {
@@ -20,7 +21,7 @@ public class InitialWall extends Wall implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getInitialWallEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getInitialWallEvent().trigger();
     }
 
     @Override

@@ -6,45 +6,19 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Standard level HUD.
+ *
  * @author jan.schupke@gmail.com
  */
 public class StandardHud extends HudTable {
-    /**
-     * States in which the HUD can be.
-     */
-    public enum State {
-        /**
-         * Standard control GUI is visible.
-         */
-        HUD,
-
-        /**
-         * Inventory tab is visible.
-         */
-        INVENTORY,
-
-        /**
-         * Event log is visible.
-         */
-        EVENTS,
-
-        /**
-         * Quest log is visible.
-         */
-        QUESTS
-    }
-
     // Gameplay HUD tables.
     private HudMenuTable topMenuTable;
     private HintTable hintTable;
     private InteractionTable interactionTable;
     private IndicatorTable indicatorTable;
-
     // Fullscreen tables.
     private InventoryTable inventoryTable;
     private EventLogTable eventLogTable;
     private QuestLogTable questLogTable;
-
     private State state;
 
     public StandardHud(final App app) {
@@ -73,7 +47,8 @@ public class StandardHud extends HudTable {
     }
 
     @Override
-    public void setListeners() {}
+    public void setListeners() {
+    }
 
     /**
      * Adds gameplay widgets to the HUD.
@@ -138,6 +113,7 @@ public class StandardHud extends HudTable {
 
     /**
      * Returns current rendering state of the HUD.
+     *
      * @return current visible HUD state.
      */
     public State getState() {
@@ -177,5 +153,30 @@ public class StandardHud extends HudTable {
 
     public HintTable getHintTable() {
         return hintTable;
+    }
+
+    /**
+     * States in which the HUD can be.
+     */
+    public enum State {
+        /**
+         * Standard control GUI is visible.
+         */
+        HUD,
+
+        /**
+         * Inventory tab is visible.
+         */
+        INVENTORY,
+
+        /**
+         * Event log is visible.
+         */
+        EVENTS,
+
+        /**
+         * Quest log is visible.
+         */
+        QUESTS
     }
 }

@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.config;
 
 /**
  * Preference item names as they appear in the preference file.
+ *
  * @author jan.schupke@gmail.com
  */
 public class SettingsKeys {

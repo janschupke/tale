@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
  * Cave entrance world obstacle.
+ *
  * @author jan.schupke@gmail.com
  */
 public class CaveObstacle extends Obstacle implements Triggerable {

@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 
 /**
  * Base quest manager for quest handling.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class QuestManager {

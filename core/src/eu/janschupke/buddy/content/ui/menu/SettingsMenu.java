@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Main settings menu UI.
+ *
  * @author jan.schupke@gmail.com
  */
 public class SettingsMenu extends MenuTable {

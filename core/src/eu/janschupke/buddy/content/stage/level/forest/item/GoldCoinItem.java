@@ -16,35 +16,10 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
  * Gold coin item entity.
+ *
  * @author jan.schupke@gmail.com
  */
 public class GoldCoinItem extends Item implements Triggerable {
-    private class PickupSituation extends Situation {
-        private class PickupDecision extends Decision {
-            public PickupDecision() {
-                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"));
-            }
-        }
-
-        private class IgnoreDecision extends Decision {
-            public IgnoreDecision() {
-                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"));
-            }
-        }
-
-        public PickupSituation() {
-            super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
-            decisions.add(new PickupDecision());
-            decisions.add(new IgnoreDecision());
-        }
-
-        @Override
-        public Situation getFollowing(Decision decision) throws NoMoreSituationsException {
-            // Nothing follows.
-            throw new NoMoreSituationsException();
-        }
-    }
-
     private Interaction interaction = new Interaction() {
         @Override
         protected void configure() {
@@ -59,7 +34,7 @@ public class GoldCoinItem extends Item implements Triggerable {
         public void handle(Decision decision) {
             Gdx.app.debug("Interaction#handle", "Handling gold coin pickup");
             if (decision instanceof PickupSituation.PickupDecision) {
-                 ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getCoinPickupEvent().trigger();
+                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getCoinPickupEvent().trigger();
             } else {
                 endInteraction(world.getScreen().getApp());
             }
@@ -76,7 +51,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     @Override
     public void engage() {
         InteractionSwitch.enable(this,
-                ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getCoinInteractEvent(),
+                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getCoinInteractEvent(),
                 world.getScreen().getApp());
     }
 
@@ -93,5 +68,31 @@ public class GoldCoinItem extends Item implements Triggerable {
     @Override
     public Interaction getInteraction() {
         return interaction;
+    }
+
+    private class PickupSituation extends Situation {
+        public PickupSituation() {
+            super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
+            decisions.add(new PickupDecision());
+            decisions.add(new IgnoreDecision());
+        }
+
+        @Override
+        public Situation getFollowing(Decision decision) throws NoMoreSituationsException {
+            // Nothing follows.
+            throw new NoMoreSituationsException();
+        }
+
+        private class PickupDecision extends Decision {
+            public PickupDecision() {
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"));
+            }
+        }
+
+        private class IgnoreDecision extends Decision {
+            public IgnoreDecision() {
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"));
+            }
+        }
     }
 }

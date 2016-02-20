@@ -8,6 +8,7 @@ import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
 /**
  * Base class for every object in the world, including units.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class WorldObject extends WorldEntity {
@@ -26,6 +27,7 @@ public abstract class WorldObject extends WorldEntity {
 
     /**
      * Changes the object's texture.
+     *
      * @param texture New texture.
      */
     public void setTexture(Texture texture) {
@@ -35,12 +37,14 @@ public abstract class WorldObject extends WorldEntity {
 
     /**
      * Updates various specific values of the object before its rendering.
+     *
      * @param delta Elapsed time since last render.
      */
     public abstract void update(float delta);
 
     /**
      * Draws the object (its sprite) to the screen.
+     *
      * @param batch Provided sprite batch.
      */
     public abstract void draw(Batch batch);
@@ -56,6 +60,7 @@ public abstract class WorldObject extends WorldEntity {
     /**
      * Sets the position of the object based on the provided tile coordinates within the world.
      * If the object is smaller than the size of one tile, it is centered within the tile.
+     *
      * @param x Position x coordinate.
      * @param y Position y coordinate.
      */

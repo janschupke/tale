@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Outskirts (Level 1) screen.
+ *
  * @author jan.schupke@gmail.com
  */
 public class OutskirtsScreen extends TopDownScreen {

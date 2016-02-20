@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Contains interaction logic, decisions etc.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Interaction {
@@ -39,6 +40,7 @@ public abstract class Interaction {
     /**
      * All logic that happens when a decision is chosen.
      * Contains logic for each possible decision.
+     *
      * @param decision Selected decision.
      */
     public abstract void handle(Decision decision);
@@ -46,6 +48,7 @@ public abstract class Interaction {
     /**
      * Transitions to the next situation,
      * based on the current situation and selected decision.
+     *
      * @param decision Selected decision.
      */
     protected void transition(Decision decision) {

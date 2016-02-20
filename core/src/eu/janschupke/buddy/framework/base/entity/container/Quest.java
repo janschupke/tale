@@ -8,14 +8,15 @@ import java.util.List;
 
 /**
  * Quest entry.
+ *
  * @author jan.schupke@gmail.com
  */
 public class Quest extends DataContainer {
+    protected List<Task> tasks;
+    protected List<Quest> transitions;
     private Config.TaskStatus status;
     private String name;
     private String description;
-    protected List<Task> tasks;
-    protected List<Quest> transitions;
 
     public Quest(final App app, String name, String description) {
         super(app);

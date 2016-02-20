@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Represents one conversational state within the interaction.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Situation {
@@ -20,6 +21,7 @@ public abstract class Situation {
 
     /**
      * Progresses to the next appropriate situation based on the decision the player has chosen.
+     *
      * @param decision Selected decision, based on which the next situation should be presented.
      * @return Following situation based on selected decision. Used for interaction progression.
      * @throws NoMoreSituationsException Thrown when no more situations to progress to are available.

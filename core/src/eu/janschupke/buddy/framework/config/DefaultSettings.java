@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.config;
 
 /**
  * Default settings values.
+ *
  * @author jan.schupke@gmail.com
  */
 public class DefaultSettings {

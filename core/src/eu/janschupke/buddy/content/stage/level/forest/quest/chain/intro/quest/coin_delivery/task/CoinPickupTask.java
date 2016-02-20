@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
 
 /**
  * Part of the coin delivary quest.
+ *
  * @author jan.schupke@gmail.com
  */
 public class CoinPickupTask extends Task {

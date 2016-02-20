@@ -27,6 +27,7 @@ import java.util.*;
 
 /**
  * Base class for levels' world representations.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseWorld {
@@ -78,18 +79,24 @@ public abstract class BaseWorld {
     }
 
     protected abstract void initPlayer();
+
     protected abstract void initCreatures();
+
     protected abstract void initItems();
+
     protected abstract void initObstacles();
+
     protected abstract void initEffects();
+
     protected abstract void initSensors();
 
     /**
      * Effect initializer.
-     * @param effectName Name of the effect.
-     * @param filename Name of the effect file.
+     *
+     * @param effectName     Name of the effect.
+     * @param filename       Name of the effect file.
      * @param particleFolder Folder location of the particle.
-     * @param scale Scale of the final effect.
+     * @param scale          Scale of the final effect.
      */
     public void initEffect(String effectName, String filename, String particleFolder, float scale) {
         ParticleEffectContainer effectContainer = new ParticleEffectContainer();
@@ -104,8 +111,9 @@ public abstract class BaseWorld {
 
     /**
      * Fires an effect specified by it's name on a certain position on the screen.
-     * @param x Horizontal position within the game world, in world units.
-     * @param y Vertical position within the game world, in world units.
+     *
+     * @param x    Horizontal position within the game world, in world units.
+     * @param y    Vertical position within the game world, in world units.
      * @param name Name with which the effect was initialized.
      */
     public void fireEffect(float x, float y, String name) {
@@ -144,7 +152,7 @@ public abstract class BaseWorld {
         }
 
         // Swap tiles for each animation name.
-        for(Map.Entry<String, Integer> entry : animations.entrySet()) {
+        for (Map.Entry<String, Integer> entry : animations.entrySet()) {
             String name = entry.getKey();
             int frames = entry.getValue();
 
@@ -175,7 +183,7 @@ public abstract class BaseWorld {
             TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(Config.MAP_LAYER_TERRAIN);
 
             // Spawn found tiles with animations.
-            for (int x  = 0; x < layer.getWidth(); x++) {
+            for (int x = 0; x < layer.getWidth(); x++) {
                 for (int y = 0; y < layer.getHeight(); y++) {
                     TiledMapTileLayer.Cell cell = layer.getCell(x, y);
 
@@ -214,6 +222,7 @@ public abstract class BaseWorld {
 
     /**
      * Sets a point to which the camera should be focused upon start.
+     *
      * @param x Horizontal position within the game world, in world units.
      * @param y Vertical position within the game world, in world units.
      */
@@ -247,6 +256,7 @@ public abstract class BaseWorld {
 
     /**
      * Removes an item from the world.
+     *
      * @param item Item to be removed.
      */
     public void removeItem(Item item) {
@@ -256,6 +266,7 @@ public abstract class BaseWorld {
 
     /**
      * Removes invisible wall from the world.
+     *
      * @param wall Wall to be removed.
      */
     public void removeWall(Wall wall) {

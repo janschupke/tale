@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Sequence of quests that come up after each other
  * and make up a logical quest line.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class QuestChain extends DataContainer {
@@ -39,6 +40,7 @@ public abstract class QuestChain extends DataContainer {
 
     /**
      * Transitions to the specific next quest from the list of options.
+     *
      * @param index Quest index within the list of possibilities.
      */
     protected void transition(int index) {
@@ -62,6 +64,7 @@ public abstract class QuestChain extends DataContainer {
     /**
      * Retrieves the status of given quest chain based on the status
      * of its quests.
+     *
      * @return Current quest chain status.
      */
     public Config.TaskStatus getStatus() {

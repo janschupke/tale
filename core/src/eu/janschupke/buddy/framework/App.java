@@ -30,17 +30,18 @@ import java.util.Map;
 
 /**
  * Extension of the base Game class, with some additional boilerplate.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class App extends Game {
-    private GlobalEventHandler eventHandler;
-    private SpriteBatch batch;
-    private BitmapFont font;
     protected Map<Config.Huds, RootTable> huds;
     protected Map<Config.Screens, BaseScreen> screens;
     protected Map<Config.Input, BaseInputProcessor> inputProcessors;
     protected Skin skin;
     protected Stage ui;
+    private GlobalEventHandler eventHandler;
+    private SpriteBatch batch;
+    private BitmapFont font;
     private I18NBundle lang;
     private SettingsManager settingsManager;
     private ResourceManager resourceManager;
@@ -82,6 +83,7 @@ public abstract class App extends Game {
 
     /**
      * Retrieves the in-game hud instance.
+     *
      * @return In-game hud instance.
      */
     public StandardHud getHud() throws NoHudException {
@@ -89,7 +91,7 @@ public abstract class App extends Game {
         if (!(actor instanceof StandardHud)) {
             throw new NoHudException();
         }
-        return ((StandardHud)actor);
+        return ((StandardHud) actor);
     }
 
     /**
@@ -123,6 +125,7 @@ public abstract class App extends Game {
 
     /**
      * Loads the persisted game state that has been previously serialized.
+     *
      * @param app Deserialized game state from which to load.
      */
     public void loadState(App app) {
@@ -150,7 +153,7 @@ public abstract class App extends Game {
         super.setScreen(screen);
         // For game state saving purposes.
         if (screen instanceof GameScreen) {
-            gameState.setCurrentLevel((GameScreen)screen);
+            gameState.setCurrentLevel((GameScreen) screen);
         }
     }
 

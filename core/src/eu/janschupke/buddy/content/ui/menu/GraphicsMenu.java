@@ -12,15 +12,16 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Graphics settings UI.
+ *
  * @author jan.schupke@gmail.com
  */
 public class GraphicsMenu extends MenuTable implements PreferenceMenu {
+    private final String[] resolutions = Config.AVAILABLE_RESOLUTIONS;
+    private final int[] screenWidths = Config.AVAILABLE_WIDTHS;
+    private final int[] screenHeights = Config.AVAILABLE_HEIGHTS;
     private Label titleLabel;
     private Label resolutionLabel;
     private SelectBox<String> resolutionCombo;
-    private final String[] resolutions = Config.AVAILABLE_RESOLUTIONS;
-    private final int [] screenWidths = Config.AVAILABLE_WIDTHS;
-    private final int [] screenHeights = Config.AVAILABLE_HEIGHTS;
     private CheckBox fullscreenCheckbox;
     private TextButton cancelButton;
     private TextButton applyButton;
@@ -105,7 +106,8 @@ public class GraphicsMenu extends MenuTable implements PreferenceMenu {
     }
 
     @Override
-    public void updateGameState() {}
+    public void updateGameState() {
+    }
 
     @Override
     public void applyChanges() {

@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.base.exception.InventoryFullException;
 
 /**
  * Event for item pickups.
+ *
  * @author jan.schupke@gmail.com
  */
 public class PickupEvent extends BaseEvent {

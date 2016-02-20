@@ -5,6 +5,7 @@ import com.badlogic.gdx.Preferences;
 
 /**
  * Configuration manager class that handles loading, saving and resetting the configuration.
+ *
  * @author jan.schupke@gmail.com
  */
 public class SettingsManager implements ConfigManager {

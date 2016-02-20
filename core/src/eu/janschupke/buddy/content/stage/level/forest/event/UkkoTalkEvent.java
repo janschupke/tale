@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
  * Interaction event for the Ukko unit in the forest.
+ *
  * @author jan.schupke@gmail.com
  */
 public class UkkoTalkEvent extends BaseEvent {

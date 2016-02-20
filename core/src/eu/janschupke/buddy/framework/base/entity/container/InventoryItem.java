@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 
 /**
  * Single inventory item.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InventoryItem extends DataContainer {

@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 
 /**
  * Event handler for the forest level.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ForestEventHandler extends LevelEventHandler {

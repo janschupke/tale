@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Main menu screen.
+ *
  * @author jan.schupke@gmail.com
  */
 public class MenuScreen extends UIScreen {
@@ -21,7 +22,8 @@ public class MenuScreen extends UIScreen {
     }
 
     @Override
-    public void update(float delta) {}
+    public void update(float delta) {
+    }
 
     @Override
     public void render(float delta) {

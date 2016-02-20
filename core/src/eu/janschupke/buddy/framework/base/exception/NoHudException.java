@@ -3,6 +3,7 @@ package eu.janschupke.buddy.framework.base.exception;
 /**
  * Thrown when trying to access the in-game hud
  * while being outside any level.
+ *
  * @author jan.schupke@gmail.com
  */
 public class NoHudException extends Exception {

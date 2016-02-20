@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.App;
  * Base class for all pure UI screens.
  * These screens do not feature any game logic
  * and only display menus.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class UIScreen extends BaseScreen {

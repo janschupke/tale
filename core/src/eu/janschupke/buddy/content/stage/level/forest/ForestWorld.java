@@ -14,6 +14,7 @@ import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
  * Forest (Tutorial) world.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ForestWorld extends TopDownWorld {
@@ -54,7 +55,8 @@ public class ForestWorld extends TopDownWorld {
     }
 
     @Override
-    protected void initEffects() {}
+    protected void initEffects() {
+    }
 
     @Override
     protected void initSensors() {

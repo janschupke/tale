@@ -6,6 +6,7 @@ import java.util.Observable;
 
 /**
  * Base superclass for all data containers.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class DataContainer extends Observable {

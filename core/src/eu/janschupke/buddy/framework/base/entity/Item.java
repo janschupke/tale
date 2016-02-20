@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for all in-game items.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Item extends WorldObject {
@@ -25,7 +26,8 @@ public abstract class Item extends WorldObject {
     }
 
     @Override
-    public void update(float delta) {}
+    public void update(float delta) {
+    }
 
     @Override
     public void draw(Batch batch) {

@@ -3,6 +3,7 @@ package eu.janschupke.buddy.framework.base.ui;
 /**
  * Defines general methods that all interaction-capable user interface
  * classes must implement.
+ *
  * @author jan.schupke@gmail.com
  */
 public interface UserInterface {

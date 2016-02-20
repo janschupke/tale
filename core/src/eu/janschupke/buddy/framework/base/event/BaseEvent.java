@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * Base class for all in-game events.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseEvent {
@@ -30,12 +31,13 @@ public abstract class BaseEvent {
     public void trigger() {
         triggered = true;
         if (app.getSettingsManager().getConfig().isEnableDialogs()) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stop();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stop();
         }
     }
 
     /**
      * Returns information about the triggerability of given event.
+     *
      * @return True is the event is repeatable or has not been triggered yet. False otherwise.
      */
     public boolean canTrigger() {
@@ -44,6 +46,7 @@ public abstract class BaseEvent {
 
     /**
      * Handles the dialog display according to the current settings.
+     *
      * @param dialog Dialog to be shown.
      */
     protected void showDialog(InfoDialog dialog) {

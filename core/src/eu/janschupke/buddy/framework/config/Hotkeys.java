@@ -4,6 +4,7 @@ import com.badlogic.gdx.Input;
 
 /**
  * All hotkey values.
+ *
  * @author jan.schupke@gmail.com
  */
 public class Hotkeys {

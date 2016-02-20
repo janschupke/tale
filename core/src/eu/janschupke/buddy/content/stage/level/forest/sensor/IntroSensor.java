@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 /**
  * A sensor that is triggered right after the game starts,
  * giving some introduction text through a dialog.
+ *
  * @author jan.schupke@gmail.com
  */
 public class IntroSensor extends Sensor implements Triggerable {
@@ -20,7 +21,7 @@ public class IntroSensor extends Sensor implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler)((GameScreen)world.getScreen()).getLevelEventHandler()).getIntroEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getIntroEvent().trigger();
     }
 
     @Override

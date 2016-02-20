@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Confirmation dialog, containing buttons for accepting or declining.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class ConfirmDialog extends BaseDialog {
@@ -24,5 +25,6 @@ public abstract class ConfirmDialog extends BaseDialog {
     }
 
     @Override
-    public void setListeners() {}
+    public void setListeners() {
+    }
 }

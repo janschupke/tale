@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.base.screen.LevelState;
 
 /**
  * Level state for the forest level.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ForestLevelState extends LevelState {

@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Base class for all resource containers.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseResourceContainer {

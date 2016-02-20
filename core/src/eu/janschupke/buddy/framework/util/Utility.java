@@ -6,14 +6,16 @@ import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 
 /**
  * General utility class.
+ *
  * @author jan.schupke@gmail.com
  */
 public class Utility {
     /**
      * Transitions to a new screen and a new HUD.
-     * @param app Application reference.
+     *
+     * @param app       Application reference.
      * @param newScreen New screen reference.
-     * @param newHud New hud reference.
+     * @param newHud    New hud reference.
      */
     public static void transitionScreens(final App app, final BaseScreen newScreen, final RootTable newHud) {
         app.setScreen(newScreen);
@@ -22,7 +24,8 @@ public class Utility {
 
     /**
      * Transitions to a new HUD.
-     * @param app Application reference.
+     *
+     * @param app    Application reference.
      * @param newHud New hud reference.
      */
     public static void transitionHuds(final App app, final RootTable newHud) {

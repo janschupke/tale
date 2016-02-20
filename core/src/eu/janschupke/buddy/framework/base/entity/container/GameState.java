@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Encapsulation of all player-relevant data containers.
+ *
  * @author jan.schupke@gmail.com
  */
 public class GameState extends DataContainer {
@@ -24,12 +25,12 @@ public class GameState extends DataContainer {
         eventLog = new EventLog(app);
     }
 
-    public void setCurrentLevel(GameScreen currentLevel) {
-        this.currentLevel = currentLevel;
-    }
-
     public GameScreen getCurrentLevel() {
         return currentLevel;
+    }
+
+    public void setCurrentLevel(GameScreen currentLevel) {
+        this.currentLevel = currentLevel;
     }
 
     public GlobalLevelState getGlobalLevelState() {

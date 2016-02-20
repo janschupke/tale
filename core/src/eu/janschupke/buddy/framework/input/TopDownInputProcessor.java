@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Base input processor for all top-down levels.
+ *
  * @author jan.schupke@gmail.com
  */
 public class TopDownInputProcessor extends GameInputProcessor {
@@ -24,17 +25,17 @@ public class TopDownInputProcessor extends GameInputProcessor {
         super.keyDown(keycode);
 
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveUp();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveUp();
         }
         // CTRL + S = sound toggle, needs to be excluded.
         if (keycode == Hotkeys.DOWN || (keycode == Hotkeys.DOWN_ALTERNATIVE && !app.getSettingsManager().getConfig().isCtrlDown())) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveDown();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveDown();
         }
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveRight();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveRight();
         }
         if (keycode == Hotkeys.LEFT || keycode == Hotkeys.LEFT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveLeft();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveLeft();
         }
 
         return false;
@@ -49,17 +50,17 @@ public class TopDownInputProcessor extends GameInputProcessor {
         super.keyUp(keycode);
 
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopUp();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopUp();
         }
         // CTRL + S = sound toggle, needs to be excluded.
         if (keycode == Hotkeys.DOWN || (keycode == Hotkeys.DOWN_ALTERNATIVE && !app.getSettingsManager().getConfig().isCtrlDown())) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopDown();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopDown();
         }
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopRight();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopRight();
         }
         if (keycode == Hotkeys.LEFT || keycode == Hotkeys.LEFT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopLeft();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopLeft();
         }
 
         return false;

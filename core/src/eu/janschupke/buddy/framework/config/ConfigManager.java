@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.config;
 
 /**
  * Common interface for configuration manager classes.
+ *
  * @author jan.schupke@gmail.com
  */
 public interface ConfigManager {

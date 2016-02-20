@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Resource handler for all texture.
+ *
  * @author jan.schupke@gmail.com
  */
 public class TextureHandler extends BaseResourceContainer {

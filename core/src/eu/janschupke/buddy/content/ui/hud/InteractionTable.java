@@ -19,6 +19,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for the interaction pane.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InteractionTable extends UITable {
@@ -37,6 +38,7 @@ public class InteractionTable extends UITable {
 
     /**
      * Updates the table based on the current interaction.
+     *
      * @param interaction Provided interaction object.
      */
     public void update(Interaction interaction) {
@@ -97,8 +99,10 @@ public class InteractionTable extends UITable {
     }
 
     @Override
-    public void addWidgets() {}
+    public void addWidgets() {
+    }
 
     @Override
-    public void setListeners() {}
+    public void setListeners() {
+    }
 }

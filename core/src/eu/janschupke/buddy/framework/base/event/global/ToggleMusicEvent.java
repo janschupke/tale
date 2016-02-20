@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Message event for music toggle.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ToggleMusicEvent extends BaseEvent {
@@ -21,7 +22,7 @@ public class ToggleMusicEvent extends BaseEvent {
     public void trigger() {
         // Toggle the configuration value.
         app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
-        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
+        ((AudioMenu) app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
         app.getSettingsManager().persist();
         addEventMessage();

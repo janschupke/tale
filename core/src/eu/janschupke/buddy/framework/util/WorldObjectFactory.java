@@ -15,15 +15,17 @@ import eu.janschupke.buddy.framework.config.Config;
 /**
  * Factory class for the Box2D body manual creation
  * as well as parsing from maps.
+ *
  * @author jan.schupke@gmail.com
  */
 public final class WorldObjectFactory {
     /**
      * Creates a box-shaped body.
-     * @param world Box2D world.
-     * @param size Size of a side of the box.
-     * @param position Initial position.
-     * @param bodyType Type of the body.
+     *
+     * @param world         Box2D world.
+     * @param size          Size of a side of the box.
+     * @param position      Initial position.
+     * @param bodyType      Type of the body.
      * @param fixedRotation True if fixed, false if rotating.
      * @return The body reference.
      */
@@ -56,10 +58,11 @@ public final class WorldObjectFactory {
 
     /**
      * Creates a circle-shaped body/
-     * @param world Box2D world.
-     * @param radius Body radius.
-     * @param position Initial position.
-     * @param bodyType Type of the body.
+     *
+     * @param world         Box2D world.
+     * @param radius        Body radius.
+     * @param position      Initial position.
+     * @param bodyType      Type of the body.
      * @param fixedRotation True if fixed, false if rotating.
      * @return The body reference.
      */
@@ -92,9 +95,10 @@ public final class WorldObjectFactory {
 
     /**
      * Sets the collision category.
-     * @param body The body that is being configured.
+     *
+     * @param body         The body that is being configured.
      * @param categoryBits Collision category of the body.
-     * @param maskBits What categories does it collide with.
+     * @param maskBits     What categories does it collide with.
      */
     public static void setCollisions(Body body, short categoryBits, short maskBits) {
         for (Fixture f : body.getFixtureList()) {
@@ -105,7 +109,8 @@ public final class WorldObjectFactory {
 
     /**
      * Configures the sensor flag of a body.
-     * @param body The body that is being configured.
+     *
+     * @param body     The body that is being configured.
      * @param isSensor True if sensor, false otherwise.
      */
     public static void setSensor(Body body, boolean isSensor) {
@@ -116,7 +121,8 @@ public final class WorldObjectFactory {
 
     /**
      * Sets the density of a body.
-     * @param body The body that is being configured.
+     *
+     * @param body    The body that is being configured.
      * @param density New density.
      */
     public static void setDensity(Body body, float density) {
@@ -127,7 +133,8 @@ public final class WorldObjectFactory {
 
     /**
      * Sets the friction of a body.
-     * @param body The body that is being configured.
+     *
+     * @param body     The body that is being configured.
      * @param friction New friction.
      */
     public static void setFriction(Body body, float friction) {
@@ -138,7 +145,8 @@ public final class WorldObjectFactory {
 
     /**
      * Sets the restitution value for a body.
-     * @param body The body that is being configured.
+     *
+     * @param body        The body that is being configured.
      * @param restitution New restitution.
      */
     public static void setRestitution(Body body, float restitution) {
@@ -149,8 +157,9 @@ public final class WorldObjectFactory {
 
     /**
      * Parses TMX object layer objects into static Box2D bodies.
-     * @param world Target world.
-     * @param objects All map objects.
+     *
+     * @param world    Target world.
+     * @param objects  All map objects.
      * @param tileSize Size of one tile.
      */
     public static void parseMapObjects(World world, MapObjects objects, float tileSize) {
@@ -159,11 +168,11 @@ public final class WorldObjectFactory {
 
             if (object instanceof PolylineMapObject) {
                 shape = createPolylineObject((PolylineMapObject) object, tileSize);
-            }  else if (object instanceof EllipseMapObject) {
+            } else if (object instanceof EllipseMapObject) {
                 shape = createEllipseObject((EllipseMapObject) object, tileSize);
-            }  else if (object instanceof PolygonMapObject) {
+            } else if (object instanceof PolygonMapObject) {
                 shape = createPolygonObject((PolygonMapObject) object, tileSize);
-            }  else if (object instanceof RectangleMapObject) {
+            } else if (object instanceof RectangleMapObject) {
                 shape = createRectangleObject((RectangleMapObject) object, tileSize);
             } else {
                 continue;
@@ -181,7 +190,8 @@ public final class WorldObjectFactory {
 
     /**
      * Parses an ellipse map object into a circle Box2D body.
-     * @param object Map object.
+     *
+     * @param object   Map object.
      * @param tileSize Size of one tile.
      * @return Parsed shape.
      */
@@ -195,7 +205,8 @@ public final class WorldObjectFactory {
 
     /**
      * Parses a chain map object into a polyline Box2D body.
-     * @param object Map object.
+     *
+     * @param object   Map object.
      * @param tileSize Size of one tile.
      * @return Parsed shape.
      */
@@ -215,7 +226,8 @@ public final class WorldObjectFactory {
 
     /**
      * Parses a rectangle map object into a polygon Box2D body.
-     * @param object Map object.
+     *
+     * @param object   Map object.
      * @param tileSize Size of one tile.
      * @return Parsed shape.
      */
@@ -223,7 +235,7 @@ public final class WorldObjectFactory {
         Rectangle rectangle = object.getRectangle();
         PolygonShape polygon = new PolygonShape();
         Vector2 size = new Vector2((rectangle.x + rectangle.width * 0.5f) / tileSize,
-                (rectangle.y + rectangle.height * 0.5f ) / tileSize);
+                (rectangle.y + rectangle.height * 0.5f) / tileSize);
         polygon.setAsBox(rectangle.width * 0.5f / tileSize,
                 rectangle.height * 0.5f / tileSize,
                 size, 0.0f);
@@ -232,7 +244,8 @@ public final class WorldObjectFactory {
 
     /**
      * Parses a polygon map object into a polygon Box2D body.
-     * @param object Map object.
+     *
+     * @param object   Map object.
      * @param tileSize Size of one tile.
      * @return Parsed shape.
      */

@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Resource manager that provides access to all resource handlers.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ResourceManager extends BaseResourceContainer {

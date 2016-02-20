@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
  * Base class for all game states / screens.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseScreen extends ScreenAdapter {
@@ -32,7 +33,8 @@ public abstract class BaseScreen extends ScreenAdapter {
 
     /**
      * Initiates view based on the world dimensions and screen resolution.
-     * @param width World width, in world units.
+     *
+     * @param width  World width, in world units.
      * @param height World height, in world units.
      */
     protected void initView(float width, float height) {
@@ -49,6 +51,7 @@ public abstract class BaseScreen extends ScreenAdapter {
 
     /**
      * Safely removes an input processor from the multiplexer.
+     *
      * @param processor Processor to be removed.
      */
     public void removeInputProcessor(BaseInputProcessor processor) {
@@ -70,12 +73,14 @@ public abstract class BaseScreen extends ScreenAdapter {
 
     /**
      * All per-iteration logic goes here.
+     *
      * @param delta Elapsed time since last update.
      */
     public abstract void update(float delta);
 
     /**
      * All rendering and no logic goes here.
+     *
      * @param delta Elapsed time since last update.
      */
     @Override

@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
  * Base contact listener for Box2D bodies.
+ *
  * @author jan.schupke@gmail.com
  */
 public class BodyContactListener implements ContactListener {
@@ -47,13 +48,16 @@ public class BodyContactListener implements ContactListener {
     }
 
     @Override
-    public void preSolve(Contact contact, Manifold oldManifold) {}
+    public void preSolve(Contact contact, Manifold oldManifold) {
+    }
 
     @Override
-    public void postSolve(Contact contact, ContactImpulse impulse) {}
+    public void postSolve(Contact contact, ContactImpulse impulse) {
+    }
 
     /**
      * Verifies that a viable contact logic can occur between these two provided fixtures.
+     *
      * @param fa First fixture.
      * @param fb Second fixture.
      * @return True if both fixtures are not null, have user data set,
@@ -71,6 +75,7 @@ public class BodyContactListener implements ContactListener {
 
     /**
      * Returns information about whether the fixture belongs to the player body.
+     *
      * @param f Provided fixture.
      * @return True if player, false otherwise.
      */
@@ -80,6 +85,7 @@ public class BodyContactListener implements ContactListener {
 
     /**
      * Retrieves the Interactible to which the provided fixture is attached to.
+     *
      * @param f Provided fixture.
      * @return Attached Interactible object.
      */

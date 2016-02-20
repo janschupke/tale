@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for on-screen level menu.
+ *
  * @author jan.schupke@gmail.com
  */
 public class HudMenuTable extends UITable {
@@ -47,25 +48,25 @@ public class HudMenuTable extends UITable {
         menuButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleMenu();
+                ((GameScreen) app.getScreen()).toggleMenu();
             }
         });
         eventLogButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleEventLog();
+                ((GameScreen) app.getScreen()).toggleEventLog();
             }
         });
         questLogButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleQuestLog();
+                ((GameScreen) app.getScreen()).toggleQuestLog();
             }
         });
         inventoryButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleInventory();
+                ((GameScreen) app.getScreen()).toggleInventory();
             }
         });
     }

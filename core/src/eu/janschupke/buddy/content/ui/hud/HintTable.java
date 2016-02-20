@@ -16,6 +16,7 @@ import java.util.Observer;
 /**
  * Transparent table in the middle of the screen,
  * showing context hints.
+ *
  * @author jan.schupke@gmail.com
  */
 public class HintTable extends UITable implements Observer {

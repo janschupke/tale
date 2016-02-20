@@ -20,6 +20,7 @@ import java.util.Observer;
 
 /**
  * GUI table structure for the in-game character inventory.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InventoryTable extends UITable implements Observer {

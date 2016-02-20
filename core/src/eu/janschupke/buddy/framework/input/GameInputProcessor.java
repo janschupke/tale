@@ -12,6 +12,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Generic processor for all level type game states.
+ *
  * @author jan.schupke@gmail.com
  */
 public class GameInputProcessor extends BaseInputProcessor {
@@ -49,13 +50,13 @@ public class GameInputProcessor extends BaseInputProcessor {
             }
         }
         if (keycode == Hotkeys.EVENTS) {
-            ((GameScreen)app.getScreen()).toggleEventLog();
+            ((GameScreen) app.getScreen()).toggleEventLog();
         }
         if (keycode == Hotkeys.QUESTS) {
-            ((GameScreen)app.getScreen()).toggleQuestLog();
+            ((GameScreen) app.getScreen()).toggleQuestLog();
         }
         if (keycode == Hotkeys.INVENTORY) {
-            ((GameScreen)app.getScreen()).toggleInventory();
+            ((GameScreen) app.getScreen()).toggleInventory();
         }
         if (keycode == Hotkeys.DIALOGS) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Firing dialog toggle");
@@ -83,7 +84,7 @@ public class GameInputProcessor extends BaseInputProcessor {
 
         try {
             // This streamlines entity positioning within the world.
-            Vector3 position = ((BaseScreen)app.getScreen()).getView().getCamera().unproject(new Vector3(screenX, screenY, 0));
+            Vector3 position = ((BaseScreen) app.getScreen()).getView().getCamera().unproject(new Vector3(screenX, screenY, 0));
             Gdx.app.debug("GameInputProcessor#touchDown", String.format("Position: [%.0f, %.0f]", position.x, position.y));
         } catch (NullPointerException e) {
             Gdx.app.debug("GameInputProcessor#touchDown", "Coordinates are not available");

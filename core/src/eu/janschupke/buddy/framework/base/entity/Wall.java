@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Base class for invisible walls.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Wall extends WorldEntity {
@@ -19,6 +20,7 @@ public abstract class Wall extends WorldEntity {
 
     /**
      * Moves the body to the exact position.
+     *
      * @param x Position x coordinate within the world.
      * @param y Position y coordinate within the world.
      */

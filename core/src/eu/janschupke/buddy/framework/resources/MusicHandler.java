@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Resource handler for all music files.
+ *
  * @author jan.schupke@gmail.com
  */
 public class MusicHandler extends BaseResourceContainer {

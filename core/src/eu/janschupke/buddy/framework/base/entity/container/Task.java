@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Specific task within a quest.
+ *
  * @author jan.schupke@gmail.com
  */
 public class Task extends DataContainer {

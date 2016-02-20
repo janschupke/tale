@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 /**
  * Base class for all in-game world sensors.
  * Detects contacts, but does not collide.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Sensor extends WorldEntity {

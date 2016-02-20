@@ -13,16 +13,16 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Base class for all GUI dialogs.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;
-    private boolean shown;
     protected Table widgetTable;
     protected Label label;
-
     protected int dialogWidth = Config.UI_DIALOG_WIDTH;
     protected int dialogHeight = Config.UI_DIALOG_HEIGHT;
+    private boolean shown;
 
     public BaseDialog(final App app, String title) {
         super(title, app.getSkin());

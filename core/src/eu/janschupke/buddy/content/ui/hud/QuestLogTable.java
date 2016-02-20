@@ -22,6 +22,7 @@ import java.util.Observer;
 
 /**
  * GUI table structure for the quest log.
+ *
  * @author jan.schupke@gmail.com
  */
 public class QuestLogTable extends UITable implements Observer {
@@ -89,6 +90,7 @@ public class QuestLogTable extends UITable implements Observer {
 
     /**
      * Sets the provided quest as currently active in the quest log.
+     *
      * @param quest Quest to be displayed.
      */
     private void setActiveQuest(Quest quest) {

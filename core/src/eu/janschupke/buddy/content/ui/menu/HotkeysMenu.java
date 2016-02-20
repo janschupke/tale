@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Hotkey overview UI.
+ *
  * @author jan.schupke@gmail.com
  */
 public class HotkeysMenu extends MenuTable implements PreferenceMenu {
@@ -111,13 +112,16 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
     }
 
     @Override
-    public void configureWidgets() {}
+    public void configureWidgets() {
+    }
 
     @Override
-    public void updateRunningConfig() {}
+    public void updateRunningConfig() {
+    }
 
     @Override
-    public void updateGameState() {}
+    public void updateGameState() {
+    }
 
     @Override
     public void applyChanges() {

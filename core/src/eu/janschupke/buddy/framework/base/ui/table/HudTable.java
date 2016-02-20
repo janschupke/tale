@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Base class for level HUDs.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class HudTable extends RootTable {

@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Base input processor for all platform levels.
+ *
  * @author jan.schupke@gmail.com
  */
 public class PlatformInputProcessor extends GameInputProcessor {
@@ -18,13 +19,13 @@ public class PlatformInputProcessor extends GameInputProcessor {
         super.keyDown(keycode);
 
         if (keycode == Hotkeys.UP || keycode == Hotkeys.UP_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().jump();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().jump();
         }
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveRight();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveRight();
         }
         if (keycode == Hotkeys.LEFT || keycode == Hotkeys.LEFT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().moveLeft();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().moveLeft();
         }
 
         return false;
@@ -35,10 +36,10 @@ public class PlatformInputProcessor extends GameInputProcessor {
         super.keyUp(keycode);
 
         if (keycode == Hotkeys.RIGHT || keycode == Hotkeys.RIGHT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopRight();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopRight();
         }
         if (keycode == Hotkeys.LEFT || keycode == Hotkeys.LEFT_ALTERNATIVE) {
-            ((GameScreen)app.getScreen()).getWorld().getPlayerUnit().stopLeft();
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stopLeft();
         }
 
         return false;

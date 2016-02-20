@@ -6,19 +6,10 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * Item introduction event.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ItemHintEvent extends BaseEvent {
-    /**
-     * Item introduction dialog.
-     */
-    private class ItemHintDialog extends InfoDialog {
-        public ItemHintDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.item.title"));
-            label.setText(app.getLang().get("level.forest.event.item.text"));
-        }
-    }
-
     private ItemHintDialog itemHintDialog;
 
     public ItemHintEvent(final App app) {
@@ -32,5 +23,15 @@ public class ItemHintEvent extends BaseEvent {
         super.trigger();
         showDialog(itemHintDialog);
         addEventMessage();
+    }
+
+    /**
+     * Item introduction dialog.
+     */
+    private class ItemHintDialog extends InfoDialog {
+        public ItemHintDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.item.title"));
+            label.setText(app.getLang().get("level.forest.event.item.text"));
+        }
     }
 }

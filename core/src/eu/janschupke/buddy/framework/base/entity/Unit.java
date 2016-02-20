@@ -18,68 +18,54 @@ import java.util.Map;
 
 /**
  * Base class for all in-game units.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class Unit extends WorldObject {
-    protected enum Direction {
-        UP, DOWN, RIGHT, LEFT
-    }
-
+    protected final float defaultAcceleration = Config.OBJECT_ACCELERATION;
+    protected final float maxSpeed = Config.OBJECT_MAX_SPEED;
     protected boolean movingRight;
     protected boolean movingLeft;
     protected boolean movingUp;
     protected boolean movingDown;
     protected boolean climbingUp;
     protected boolean climbingDown;
-
     /**
      * Last issued movement direction.
      */
     protected Direction lastDirection;
-
-    protected final float defaultAcceleration = Config.OBJECT_ACCELERATION;
-    protected final float maxSpeed = Config.OBJECT_MAX_SPEED;
-
     /**
      * Texture that contains all animation frames.
      */
     protected Texture animationTexture;
-
     /**
      * 2D array of animation frames
      */
     protected TextureRegion[][] animationFrames;
-
     /**
      * Sprite used for upward movement.
      */
     protected AnimatedBox2DSprite animatedBoxSpriteUp;
-
     /**
      * Sprite used for downward movement.
      */
     protected AnimatedBox2DSprite animatedBoxSpriteDown;
-
     /**
      * Sprite used for right movement.
      */
     protected AnimatedBox2DSprite animatedBoxSpriteRight;
-
     /**
      * Sprite used for left movement.
      */
     protected AnimatedBox2DSprite animatedBoxSpriteLeft;
-
     /**
      * Directional textures used for idle sprite (not moving).
      */
     protected Map<Direction, TextureRegion> idleTextures;
-
     /**
      * Amount of frames per animation cycle.
      */
     protected int frameAmount = 6;
-
     /**
      * Duration of one animation cycle.
      */
@@ -123,6 +109,7 @@ public abstract class Unit extends WorldObject {
 
     /**
      * Generic animation initialization.
+     *
      * @param frames Array of frames.
      * @return Resulting animated Box2D sprite.
      */
@@ -135,11 +122,12 @@ public abstract class Unit extends WorldObject {
 
     /**
      * Updates unit's position based on its movement state.
+     *
      * @param delta Elapsed time since last render.
      */
     @Override
     public void update(float delta) {
-        if (movingLeft)  moveLeft();
+        if (movingLeft) moveLeft();
         if (movingRight) moveRight();
         if (movingUp) moveUp();
         if (movingDown) moveDown();
@@ -149,7 +137,7 @@ public abstract class Unit extends WorldObject {
 
     @Override
     public void draw(Batch batch) {
-        if(movingUp && animatedBoxSpriteUp != null) {
+        if (movingUp && animatedBoxSpriteUp != null) {
             animatedBoxSpriteUp.draw(batch, body);
         } else if (movingDown && animatedBoxSpriteDown != null) {
             animatedBoxSpriteDown.draw(batch, body);
@@ -168,7 +156,8 @@ public abstract class Unit extends WorldObject {
      * Not implemented for the purpose of this game.
      * Platforming is not utilized.
      */
-    public void jump() {}
+    public void jump() {
+    }
 
     /**
      * Calculates unit's upward movement.
@@ -275,5 +264,9 @@ public abstract class Unit extends WorldObject {
         } catch (NullPointerException e) {
             Gdx.app.log("Unit#dispose", "Null texture");
         }
+    }
+
+    protected enum Direction {
+        UP, DOWN, RIGHT, LEFT
     }
 }

@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Container of inventory items.
+ *
  * @author jan.schupke@gmail.com
  */
 public class Inventory extends DataContainer {
@@ -23,7 +24,8 @@ public class Inventory extends DataContainer {
     }
 
     public InventoryItem getItem(int index) throws IllegalArgumentException {
-        if (index >= capacity || index < 0) throw new IllegalArgumentException("Requesting inventory item out of bounds.");
+        if (index >= capacity || index < 0)
+            throw new IllegalArgumentException("Requesting inventory item out of bounds.");
         return items.get(index);
     }
 
@@ -36,7 +38,8 @@ public class Inventory extends DataContainer {
     }
 
     public void removeItem(int index) throws IllegalArgumentException {
-        if (index >= capacity || index < 0) throw new IllegalArgumentException("Requesting inventory item removal out of bounds.");
+        if (index >= capacity || index < 0)
+            throw new IllegalArgumentException("Requesting inventory item removal out of bounds.");
         items.remove(index);
         usedSlots--;
         setChanged();

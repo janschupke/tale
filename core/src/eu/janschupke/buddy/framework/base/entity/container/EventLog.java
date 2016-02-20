@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Container of all occurred events' messages.
+ *
  * @author jan.schupke@gmail.com
  */
 public class EventLog extends DataContainer {
@@ -31,6 +32,7 @@ public class EventLog extends DataContainer {
 
     /**
      * Adds description of the provided event into the log.
+     *
      * @param event Provided event.
      */
     public void addEvent(BaseEvent event) {

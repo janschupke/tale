@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Message event for sound toggle.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ToggleSoundEvent extends BaseEvent {
@@ -20,7 +21,7 @@ public class ToggleSoundEvent extends BaseEvent {
     @Override
     public void trigger() {
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
-        ((AudioMenu)app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
+        ((AudioMenu) app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();
         addEventMessage();

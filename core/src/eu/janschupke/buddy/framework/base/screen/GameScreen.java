@@ -20,6 +20,7 @@ import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
  * Base class for all in-game screens (levels).
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class GameScreen extends BaseScreen {
@@ -32,6 +33,9 @@ public abstract class GameScreen extends BaseScreen {
     protected LevelState levelState;
 
     private boolean paused = false;
+    // For world step calculations.
+    private float step = 1.0f / 60.0f;
+    private double accumulator;
 
     public GameScreen(final App app) {
         super(app);
@@ -91,6 +95,7 @@ public abstract class GameScreen extends BaseScreen {
 
     /**
      * Explicitly updates the state of all units without rendering their sprites.
+     *
      * @param delta Elapsed time since last update.
      */
     protected void updateUnits(float delta) {
@@ -111,13 +116,14 @@ public abstract class GameScreen extends BaseScreen {
 
         for (WorldEntity o : world.getObstacles()) {
             if (o instanceof Obstacle) {
-                ((Obstacle)o).draw(app.getBatch());
+                ((Obstacle) o).draw(app.getBatch());
             }
         }
     }
 
     /**
      * Explicitly updates the state of all items without rendering their sprites.
+     *
      * @param delta Elapsed time since last update.
      */
     protected void updateObjects(float delta) {
@@ -127,13 +133,14 @@ public abstract class GameScreen extends BaseScreen {
 
         for (WorldEntity o : world.getObstacles()) {
             if (o instanceof Obstacle) {
-                ((Obstacle)o).update(delta);
+                ((Obstacle) o).update(delta);
             }
         }
     }
 
     /**
      * Renders all currently occurring particle effects.
+     *
      * @param delta Delta time.
      */
     protected void renderParticleEffects(float delta) {
@@ -200,12 +207,9 @@ public abstract class GameScreen extends BaseScreen {
         }
     }
 
-    // For world step calculations.
-    private float step = 1.0f / 60.0f;
-    private double accumulator;
-
     /**
      * Performs the Box2D world step.
+     *
      * @param delta Elapsed time since last update.
      */
     @Override
@@ -232,6 +236,7 @@ public abstract class GameScreen extends BaseScreen {
     /**
      * Renders level content, like world, units etc.,
      * according to the current debug mode.
+     *
      * @param delta Elapsed time since last render.
      */
     private void renderContent(float delta) {
@@ -258,6 +263,7 @@ public abstract class GameScreen extends BaseScreen {
 
     /**
      * Renders all user-relevant parts of the screen - world, units, objects, effects.
+     *
      * @param delta Elapsed time since last render.
      */
     private void renderLevel(float delta) {

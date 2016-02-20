@@ -6,6 +6,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 
 /**
  * A switch class that toggles possible interaction based on Triggerable contact.
+ *
  * @author jan.schupke@gmail.com
  */
 public class InteractionSwitch {
@@ -14,9 +15,10 @@ public class InteractionSwitch {
 
     /**
      * Enables triggerable interaction.
-     * @param triggerable Object that can be triggered.
+     *
+     * @param triggerable      Object that can be triggered.
      * @param interactionEvent Event that should take place after that object is triggered.
-     * @param app Application instance
+     * @param app              Application instance
      */
     public static void enable(Triggerable triggerable, BaseEvent interactionEvent, App app) {
         InteractionSwitch.triggerable = triggerable;
@@ -26,6 +28,7 @@ public class InteractionSwitch {
 
     /**
      * Disables triggerable interaction.
+     *
      * @param hintTable GUI table that shows hints.
      */
     public static void disable(HintTable hintTable) {

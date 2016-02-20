@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Entry of each event that has occurred.
+ *
  * @author jan.schupke@gmail.com
  */
 public class EventLogEntry extends DataContainer {

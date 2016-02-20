@@ -14,6 +14,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
  * Ukko unit class.
+ *
  * @author jan.schupke@gmail.com
  */
 public class UkkoUnit extends Unit implements Triggerable {

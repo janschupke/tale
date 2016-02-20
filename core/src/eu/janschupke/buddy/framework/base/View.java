@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.entity.WorldObject;
 
 /**
  * Encapsulation of a camera, a viewport, and some helper methods.
+ *
  * @author jan.schupke@gmail.com
  */
 public class View {
@@ -61,6 +62,7 @@ public class View {
 
     /**
      * Centers the camera on the requested object.
+     *
      * @param o Target object.
      */
     public void updateCameraPosition(WorldObject o) {

@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 
 /**
  * Simple dialog with one button to dismiss it.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class InfoDialog extends BaseDialog {
@@ -23,5 +24,6 @@ public abstract class InfoDialog extends BaseDialog {
     }
 
     @Override
-    public void setListeners() {}
+    public void setListeners() {
+    }
 }

@@ -7,6 +7,7 @@ import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 
 /**
  * Event that is triggered by interacting with the coin.
+ *
  * @author jan.schupke@gmail.com
  */
 public class CoinInteractEvent extends BaseEvent {

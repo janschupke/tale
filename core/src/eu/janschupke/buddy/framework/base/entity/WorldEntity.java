@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
  * Basic world entity, encapsulating everything that is represented through any sort of Box2D body.
+ *
  * @author jan.schupke@gmail.com
  */
 public abstract class WorldEntity {
@@ -28,6 +29,7 @@ public abstract class WorldEntity {
     /**
      * Sets the entity's position within the world.
      * Implementation varies and is specified in subclasses.
+     *
      * @param x Position x coordinate within the world.
      * @param y Position y coordinate within the world.
      */
@@ -37,6 +39,7 @@ public abstract class WorldEntity {
      * Retrieves interaction hint that is shown on the screen,
      * after player comes to contact with this entity.
      * Only used if the entity is triggerable.
+     *
      * @return Interaction hint message.
      */
     public String getInteractionHint() {
@@ -47,5 +50,6 @@ public abstract class WorldEntity {
         return body;
     }
 
-    public void dispose() {}
+    public void dispose() {
+    }
 }

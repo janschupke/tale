@@ -16,20 +16,10 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
 
 /**
  * Event that picks up the coin from the ground.
+ *
  * @author jan.schupke@gmail.com
  */
 public class CoinPickupEvent extends PickupEvent {
-    /**
-     * Shows after player's first item pickup.
-     * Contains additional intro text.
-     */
-    private class PickupDialog extends InfoDialog {
-        public PickupDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.pickup.title"));
-            label.setText(app.getLang().get("level.forest.event.pickup.text"));
-        }
-    }
-
     private PickupDialog pickupDialog;
 
     public CoinPickupEvent(final App app) {
@@ -40,14 +30,14 @@ public class CoinPickupEvent extends PickupEvent {
     @Override
     public void trigger() {
         if (!canTrigger()) return;
-        item = ((GoldCoinItem)InteractionSwitch.getTriggerable());
+        item = ((GoldCoinItem) InteractionSwitch.getTriggerable());
         Gdx.app.debug("CoinPickupEvent#trigger", "Picking up the coin");
         super.trigger();
         showDialog(pickupDialog);
         addEventMessage();
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
-        ((ForestLevelState)((ForestScreen) app.getScreen()).getLevelState()).setConPickedUp(true);
+        ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setConPickedUp(true);
         removeInitialWall();
     }
 
@@ -59,6 +49,17 @@ public class CoinPickupEvent extends PickupEvent {
                 ((ForestScreen) app.getScreen()).getWorld().removeWall((Wall) obstacle);
                 break;
             }
+        }
+    }
+
+    /**
+     * Shows after player's first item pickup.
+     * Contains additional intro text.
+     */
+    private class PickupDialog extends InfoDialog {
+        public PickupDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.pickup.title"));
+            label.setText(app.getLang().get("level.forest.event.pickup.text"));
         }
     }
 }

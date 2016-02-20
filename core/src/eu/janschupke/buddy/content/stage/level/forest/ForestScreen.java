@@ -8,6 +8,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Forest (Tutorial) screen.
+ *
  * @author jan.schupke@gmail.com
  */
 public class ForestScreen extends TopDownScreen {

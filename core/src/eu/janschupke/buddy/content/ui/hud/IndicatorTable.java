@@ -16,6 +16,7 @@ import java.util.Observer;
 /**
  * Part of the standard HUD that displays indicators
  * about new events/quests/inventory items.
+ *
  * @author jan.schupke@gmail.com
  */
 public class IndicatorTable extends UITable implements Observer {
@@ -79,19 +80,19 @@ public class IndicatorTable extends UITable implements Observer {
         newEventButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleEventLog();
+                ((GameScreen) app.getScreen()).toggleEventLog();
             }
         });
         newQuestButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleQuestLog();
+                ((GameScreen) app.getScreen()).toggleQuestLog();
             }
         });
         newItemButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((GameScreen)app.getScreen()).toggleInventory();
+                ((GameScreen) app.getScreen()).toggleInventory();
             }
         });
     }

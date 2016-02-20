@@ -10,6 +10,7 @@ import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Credits table UI.
+ *
  * @author jan.schupke@gmail.com
  */
 public class CreditsMenu extends MenuTable {
