@@ -131,7 +131,7 @@ public abstract class BaseWorld {
      * Configures all animated tiles so that they animate.
      */
     private void handleAnimatedTiles() {
-        // name : amount of animationFrames
+        // name : amount of animationFrames.
         Map<String, Integer> animations = new HashMap<>();
         Iterator<TiledMapTile> tiles;
 
