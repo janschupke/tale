@@ -133,7 +133,7 @@ public class AudioMenu extends MenuTable implements PreferenceMenu {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 app.getEventHandler().showSettings();
             }
         });
@@ -141,7 +141,7 @@ public class AudioMenu extends MenuTable implements PreferenceMenu {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 applyChanges();
                 app.getEventHandler().showSettings();
             }

@@ -10,12 +10,14 @@ import eu.janschupke.buddy.framework.App;
  * @author jan.schupke@gmail.com
  */
 public class SoundHandler extends BaseResourceContainer {
-    private Sound menuButtonSound;
+    private Sound heavyButtonSound;
+    private Sound lightButtonSound;
     private Sound menuCheckboxSounds;
 
     public SoundHandler(final App app) {
         super(app);
-        menuButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-heavy.wav"));
+        heavyButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-heavy.wav"));
+        lightButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-light.wav"));
         menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/checkbox.wav"));
     }
 
@@ -26,8 +28,12 @@ public class SoundHandler extends BaseResourceContainer {
         sound.play(app.getSettingsManager().getConfig().getMasterVolume() * app.getSettingsManager().getConfig().getSoundVolume());
     }
 
-    public Sound getMenuButtonSound() {
-        return menuButtonSound;
+    public Sound getHeavyButtonSound() {
+        return heavyButtonSound;
+    }
+
+    public Sound getLightButtonSound() {
+        return lightButtonSound;
     }
 
     public Sound getMenuCheckboxSounds() {
@@ -35,7 +41,8 @@ public class SoundHandler extends BaseResourceContainer {
     }
 
     public void dispose() {
-        menuButtonSound.dispose();
+        heavyButtonSound.dispose();
+        lightButtonSound.dispose();
         menuCheckboxSounds.dispose();
     }
 }

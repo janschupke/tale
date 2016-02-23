@@ -56,7 +56,7 @@ public class SettingsMenu extends MenuTable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 app.getEventHandler().showGraphicsMenu();
             }
         });
@@ -64,7 +64,7 @@ public class SettingsMenu extends MenuTable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 app.getEventHandler().showAudioMenu();
             }
         });
@@ -72,7 +72,7 @@ public class SettingsMenu extends MenuTable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 defaultSettingsDialog.show(app.getUi());
             }
         });
@@ -80,7 +80,7 @@ public class SettingsMenu extends MenuTable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getResourceManager().getSoundHandler()
-                        .playSound(app.getResourceManager().getSoundHandler().getMenuButtonSound());
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 app.getEventHandler().showMainMenu();
             }
         });
