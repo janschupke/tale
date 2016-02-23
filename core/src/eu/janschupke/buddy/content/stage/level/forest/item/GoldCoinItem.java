@@ -70,6 +70,8 @@ public class GoldCoinItem extends Item implements Triggerable {
         return interaction;
     }
 
+    // ~ Situations.
+
     private class PickupSituation extends Situation {
         public PickupSituation() {
             super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
@@ -87,11 +89,21 @@ public class GoldCoinItem extends Item implements Triggerable {
             public PickupDecision() {
                 super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"));
             }
+
+            @Override
+            protected void configureMetrics() {
+                // Does not influence personality.
+            }
         }
 
         private class IgnoreDecision extends Decision {
             public IgnoreDecision() {
                 super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"));
+            }
+
+            @Override
+            protected void configureMetrics() {
+                // Does not influence personality.
             }
         }
     }
