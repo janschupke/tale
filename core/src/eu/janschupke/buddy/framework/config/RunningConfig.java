@@ -12,6 +12,7 @@ public class RunningConfig {
     // Development variables.
     private boolean uiDebugRendering = DefaultSettings.DEBUG_UI;
     private Config.WorldDebugRendering worldDebugRendering = DefaultSettings.DEBUG_WORLD;
+    private boolean collisionBypass;
 
     // Graphics variables.
     private int resolutionIndex;
@@ -54,6 +55,14 @@ public class RunningConfig {
 
     public void setWorldDebugRendering(Config.WorldDebugRendering worldDebugRendering) {
         this.worldDebugRendering = worldDebugRendering;
+    }
+
+    public boolean isCollisionBypass() {
+        return collisionBypass;
+    }
+
+    public void setCollisionBypass(boolean collisionBypass) {
+        this.collisionBypass = collisionBypass;
     }
 
     public int getResolutionIndex() {

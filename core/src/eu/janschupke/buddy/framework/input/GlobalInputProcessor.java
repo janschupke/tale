@@ -3,6 +3,7 @@ package eu.janschupke.buddy.framework.input;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
@@ -31,6 +32,14 @@ public class GlobalInputProcessor extends BaseInputProcessor {
         if (keycode == Hotkeys.SOUND && app.getSettingsManager().getConfig().isCtrlDown()) {
             Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling sound");
             app.getEventHandler().toggleSound();
+        }
+
+        if (keycode == Hotkeys.DEBUG_DATA_DUMP) {
+            // Manual dump is only available in debug mode.
+            // Dump gets called automatically upon the game completion.
+            if (Config.DEBUG_MODE) {
+                app.getEventHandler().dumpData();
+            }
         }
 
         if (keycode == Hotkeys.DEBUG_UI) {

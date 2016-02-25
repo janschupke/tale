@@ -2,8 +2,10 @@ package eu.janschupke.buddy.framework.base.event;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import eu.janschupke.buddy.content.entity.PlayerUnit;
 import eu.janschupke.buddy.content.ui.dialog.NewGameConfirmDialog;
 import eu.janschupke.buddy.content.ui.menu.MainMenu;
 import eu.janschupke.buddy.framework.App;
@@ -15,6 +17,7 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.Utility;
+import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 import java.util.Map;
 
@@ -47,6 +50,55 @@ public class GlobalEventHandler {
         toggleMusicEvent = new ToggleMusicEvent(app);
         toggleSoundEvent = new ToggleSoundEvent(app);
         toggleDialogsEvent = new ToggleDialogsEvent(app);
+    }
+
+    /**
+     * TODO: NYI.
+     */
+    public void dumpData() {
+        //
+    }
+
+    /**
+     * TODO: not working.
+     */
+    public void toggleCollisionBypass() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
+
+        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Toggling collision bypass");
+
+        Body playerBody = app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody();
+        short collisionMask = (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY);
+        short playerMask = playerBody.getFixtureList().get(0).getFilterData().maskBits;
+
+        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", String.format("mask: %d", collisionMask));
+        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", String.format("player: %d", playerMask));
+
+        if (((GameScreen)app.getScreen()).getWorld().getPlayerUnit() instanceof PlayerUnit) {
+            System.out.println("sdffds");
+        }
+        WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
+//        if (playerMask != collisionMask) {
+//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Enabling collisions");
+//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_UNIT_ANY, collisionMask);
+//        } else {
+//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Disabling collisions");
+//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
+//        }
+
+//        if (app.getSettingsManager().getConfig().isCollisionBypass()) {
+//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Enabling collisions");
+//            app.getSettingsManager().getConfig().setCollisionBypass(false);
+//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_UNIT_ANY, collisionMask);
+//            playerBody.getFixtureList().get(0).getFilterData().groupIndex = 0;
+//        } else {
+//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Disabling collisions");
+//            app.getSettingsManager().getConfig().setCollisionBypass(true);
+//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
+//            playerBody.getFixtureList().get(0).getFilterData().groupIndex = 2;
+//        }
     }
 
     /**
