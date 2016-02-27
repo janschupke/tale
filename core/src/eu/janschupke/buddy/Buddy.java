@@ -2,8 +2,12 @@ package eu.janschupke.buddy;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
+import eu.janschupke.buddy.content.stage.level.cave.CaveScreen;
+import eu.janschupke.buddy.content.stage.level.dungeon.DungeonScreen;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
+import eu.janschupke.buddy.content.stage.level.house.HouseScreen;
 import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsScreen;
+import eu.janschupke.buddy.content.stage.level.settlement.SettlementScreen;
 import eu.janschupke.buddy.content.stage.menu.MenuScreen;
 import eu.janschupke.buddy.content.stage.splash.SplashScreen;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
@@ -24,6 +28,7 @@ public class Buddy extends App {
 		super.create();
 		Gdx.app.debug("Buddy#create", "Creating");
 
+		// TODO: texture manager
 		// Cursor setup.
 		Pixmap pm = new Pixmap(Gdx.files.internal("textures/gui/application-cursor.png"));
 		Gdx.input.setCursorImage(pm, 0, 0);
@@ -94,5 +99,17 @@ public class Buddy extends App {
 
 		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
 		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
+
+		CaveScreen caveScreen = new CaveScreen(this);
+		screens.put(Config.Screens.CAVE, caveScreen);
+
+		SettlementScreen settlementScreen = new SettlementScreen(this);
+		screens.put(Config.Screens.SETTLEMENT, settlementScreen);
+
+		HouseScreen houseScreen = new HouseScreen(this);
+		screens.put(Config.Screens.HOUSE, houseScreen);
+
+		DungeonScreen dungeonScreen = new DungeonScreen(this);
+		screens.put(Config.Screens.DUNGEON, dungeonScreen);
 	}
 }

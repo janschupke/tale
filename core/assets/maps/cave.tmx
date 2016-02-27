@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="19">
+ <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
+  <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
+ </tileset>
+ <layer name="background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmFEKxCAQQ8v+7Hl66x5zvxaKaKuOMeOYQlgoWvKi7Y5zfo/jlCRJkiRpCV2fvNi+ZjK/jWH7Hc3cMw+VvVWWNW71zcjfkiVi/8ye60ke3h+2WnkisfcwiZ/vl8UfkV384hd/3ZiI/LVcO7NH5N+57uut+9m+GdyWeV5k9T+KfWYPynOvBJkDqi9j9YPINeVFZjqavffZjL428pvZUn+wvsPIHtkK9ReyVojGj6orV+JHZBWVH+UjIj8jAw/fvsj83t8Bbzye65/d+dE8K9S/KH5mDwZ5Rqk5H7J7T61nuda67mksm73Fx33MiD3wz+Z+sflL65Xet/Ln2Jn8pQzS3x7+pwxyF5M/p9TTqDrA6x6oUe9z3/YAk31GtuJ/zoDtkcXP9jaLv+a/NbK0B8Sfu7c7P9sXi3+ntS/xsz2JX/y76QcjGvmg
+  </data>
+ </layer>
+ <layer name="terrain" width="64" height="64" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztmluqwzAMRH2X0u5/kferUIQeI1sP00hgSFN7NEdWSEL7/lvr/fDxWs8cwz/8w9/vY/iHf/iHf/iHf/iH/1b+T3T77uCn0e09Yk9Qfim62av4M2uAxA38nX2g5ank76yBxHri4eT+t8uPhqUR0QMR93/Oc2Qg9ZbOV/Br3jSv6H4ibN380p57enQBx7fyryX7sD5bDDfzc2xSLyBh9QXSc5pWJD/NERkWv7WW04nk93rKCCmn57qJ4q8Kz/5n9T/V3vFfVbMKfoungpde8zR3Jz/1RNdr8zxB9bL6X6qB5onbH2s9Wgupjpn8XJ01bxyzhxENL0P0+4/mh/NH531/9sSu98zn/+i9lTil85X8qE9pnnRsXT9WdPU/Mp/jRtei6yy9qPcfD79VN42FfmflvJkf1dC0f4Gf84lq3srvrQE3fy0sj5QT8ZB5/z/VeZFjT+3R/JXPPzt6u3VH82fzI8Fpneh6roGs55+TOPWBnLuNH92vX+T39Gskewb/qd9ILUQjY/9P+T110OZU8ntqsFMnOt/SQPUrf//b8bcbqOfo/795/ERy7I6s//918dzCr9Wim7ma/+Yx/MM//P0+hn/4h7+P/8njH+ymrRk=
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="32" y="32">
+   <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
+  </object>
+ </objectgroup>
+</map>

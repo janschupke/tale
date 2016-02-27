@@ -18,7 +18,7 @@
  </layer>
  <layer name="terrain" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2UtuwjAQAFB3xTng/mfoGpqWXKl4YdWynPl/QtKRvCiqnXnjTxK4fZRyO3m7lnO2fz/sn0V2zhF+SlhcP+IaXD8nPO1W1/H0S3KTxhH8msjyL5dSHq/2ddHlpY0s//Plvr/ap8KvCQ83d/2vCr8mPO0cf1sDsz3g4fd2Q37OGrC2R7m1fur4e3Vj/lnu/R44gp3rr0FdA3t3c/z93+M5yPFnWyX+2WfjOYj5s42W/tpm90Jo3ey5Sfw1tu6FGfbZNdszO9Y4+x9bA5F2zHcnNqm/NsnzkJUZc30Tm2T9b60BbzfV+IOczf3cYs9/UF6lyJ4JNe7euJUzJxfIT+n/NPSPe3p0z8zSvCl+Tg3a9yN9f+oZDO1pqtvaz6lBKX9nwejBzh/o/KLsY08/Z7xWg9k5BPVbN/b2GNQcPPyUMWeB9Vk6+zjX3LEkdkv/mDPlf9eJXWKQ9rP2c3Nu905oHXnaMb+XHfJDtRhzscgvy790a59Ts614J38NbO4l9Tibf1YHK7+X3cOvyTfaX0Oy973WQIbf651RUoMj+SV5Z/qtx5bkTvn9yzIvj73/Lv4IO7cG1N+/rexe+15agwh/jTVw7meOLH+Nft1ra2m9Bjz9LTzvdxF+q7mPto+WSP9o19Tx3fwtvJ9zvfyUftj1vN9xqLlJ/VegT8bcQ+Hll+ZoPfeUkNi9/JFzDxkj/S0y5n5mxGrj5c+aeyig8S39/TuOhd3Cj41v6fd6x9m7v0XU9zpWdkt/xncbGre133vuKTWQjGPhz37H0zStv0bm+/2e/NkWjf/M7RdHjXHe
+   eJzt2lEOwjAMA9BxlO3+h+QLCSE6oja2E+pI/UNLnlcxxnY9juPafJ3Hnst+++3Xz2G//fbbb7/99ttf1f8q9dwK/2epZ884J1H/qNR2lh+ZQaQq+JX74K4P06/MYGRdmWHl+qfwv/fO2AMZ139WBnd5z86Q9fsHncGvY6v9zH1Q1R+dA5FRFf+3eSKV2Uvtz6iVXko/onb3j1yRzzD90blRWc3MrPRnZjI7M8M/Ox/azvBnHBd5/E7+Ub+qfqQ9K4Pu/nOxF+L+j2lf3QPZ9/+7+UfFtttvfyU/I4OMfqjvP4V/pifSj84goyfaH6nu51+ZweqyX+9X2RF+paWCv1sG//L8q5q/Sw6s///VTpa/Ww6M9x8rZ+D3P+23Xz+H/fbbb7/Kv/N6AmMl2Eg=
   </data>
  </layer>
  <objectgroup name="objects">

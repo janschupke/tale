@@ -115,7 +115,7 @@ public class Config {
     }
 
     public enum Screens {
-        SPLASH, MENU, FOREST, OUTSKIRTS
+        SPLASH, MENU, FOREST, OUTSKIRTS, CAVE, SETTLEMENT, HOUSE, DUNGEON
     }
 
     public enum Input {
