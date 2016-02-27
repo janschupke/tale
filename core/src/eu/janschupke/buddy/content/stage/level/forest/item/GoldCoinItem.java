@@ -42,7 +42,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     };
 
     public GoldCoinItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/sprites/items/coin-gold.png")));
+        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin-gold.png")));
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
         description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");
@@ -51,7 +51,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     @Override
     public void engage() {
         InteractionSwitch.enable(this,
-                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getCoinInteractEvent(),
+                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getCoinInteractionEvent(),
                 world.getScreen().getApp());
     }
 

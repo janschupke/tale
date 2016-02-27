@@ -1,16 +1,16 @@
-package eu.janschupke.buddy.content.stage.level.forest.event;
+package eu.janschupke.buddy.content.stage.level.outskirts.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
- * Interaction event for the Ukko unit in the forest.
+ * Event for the lumber item pickup.
  *
  * @author jan.schupke@gmail.com
  */
-public class UkkoTalkEvent extends BaseEvent {
-    public UkkoTalkEvent(final App app) {
-        super(app);
+public class LumberPickupEvent extends BaseEvent {
+    public LumberPickupEvent(final App app) {
+        super(app, "");
     }
 
     @Override

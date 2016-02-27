@@ -10,8 +10,8 @@ import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
  *
  * @author jan.schupke@gmail.com
  */
-public class CoinInteractEvent extends BaseEvent {
-    public CoinInteractEvent(final App app) {
+public class CoinInteractionEvent extends BaseEvent {
+    public CoinInteractionEvent(final App app) {
         super(app);
         repeatable = true;
     }

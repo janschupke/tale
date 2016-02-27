@@ -1,6 +1,9 @@
 package eu.janschupke.buddy.content.stage.level.outskirts;
 
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.buddy.content.entity.PlayerUnit;
+import eu.janschupke.buddy.content.stage.level.outskirts.obstacle.CaveObstacle;
+import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
@@ -32,7 +35,9 @@ public class OutskirtsWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-
+        Obstacle caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
+        caveObstacle.setPosition(23, 22);
+        getObstacles().add(caveObstacle);
     }
 
     @Override

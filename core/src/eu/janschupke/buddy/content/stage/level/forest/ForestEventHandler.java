@@ -10,34 +10,28 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class ForestEventHandler extends LevelEventHandler {
-    private IntroEvent introEvent;
-    private ItemHintEvent itemHintEvent;
-    private CoinInteractEvent coinInteractEvent;
+    private CoinInteractionEvent coinInteractionEvent;
     private CoinPickupEvent coinPickupEvent;
     private InitialWallEvent initialWallEvent;
-    private UkkoTalkEvent ukkoTalkEvent;
+    private IntroEvent introEvent;
+    private ItemHintEvent itemHintEvent;
+    private UkkoInteractionEvent ukkoInteractionEvent;
+    private OutskirtsTransitionEvent outskirtsTransitionEvent;
 
     public ForestEventHandler(final App app) {
         super(app);
 
-        introEvent = new IntroEvent(app);
-        itemHintEvent = new ItemHintEvent(app);
-        coinInteractEvent = new CoinInteractEvent(app);
+        coinInteractionEvent = new CoinInteractionEvent(app);
         coinPickupEvent = new CoinPickupEvent(app);
         initialWallEvent = new InitialWallEvent(app);
-        ukkoTalkEvent = new UkkoTalkEvent(app);
+        introEvent = new IntroEvent(app);
+        itemHintEvent = new ItemHintEvent(app);
+        ukkoInteractionEvent = new UkkoInteractionEvent(app);
+        outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
     }
 
-    public IntroEvent getIntroEvent() {
-        return introEvent;
-    }
-
-    public ItemHintEvent getItemHintEvent() {
-        return itemHintEvent;
-    }
-
-    public CoinInteractEvent getCoinInteractEvent() {
-        return coinInteractEvent;
+    public CoinInteractionEvent getCoinInteractionEvent() {
+        return coinInteractionEvent;
     }
 
     public CoinPickupEvent getCoinPickupEvent() {
@@ -48,7 +42,19 @@ public class ForestEventHandler extends LevelEventHandler {
         return initialWallEvent;
     }
 
-    public UkkoTalkEvent getUkkoTalkEvent() {
-        return ukkoTalkEvent;
+    public IntroEvent getIntroEvent() {
+        return introEvent;
+    }
+
+    public ItemHintEvent getItemHintEvent() {
+        return itemHintEvent;
+    }
+
+    public UkkoInteractionEvent getUkkoInteractionEvent() {
+        return ukkoInteractionEvent;
+    }
+
+    public OutskirtsTransitionEvent getOutskirtsTransitionEvent() {
+        return outskirtsTransitionEvent;
     }
 }

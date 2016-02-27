@@ -12,8 +12,8 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
  */
 public class PlayerUnit extends Unit {
     public PlayerUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Archor.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Archor.png"));
+        super(world, new Texture(Gdx.files.internal("textures/sprites/player.png")));
+        animationTexture = new Texture(Gdx.files.internal("textures/sprites/player.png"));
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

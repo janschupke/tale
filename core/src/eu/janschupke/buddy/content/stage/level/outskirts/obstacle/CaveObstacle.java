@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.stage.level.forest.obstacle;
+package eu.janschupke.buddy.content.stage.level.outskirts.obstacle;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,7 +15,7 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
  */
 public class CaveObstacle extends Obstacle implements Triggerable {
     public CaveObstacle(BaseWorld world, Vector2 size) {
-        super(world, new Texture(Gdx.files.internal("textures/terrain/cave_entrance.png")), size);
+        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/terrain/cave-entrance.png")), size);
     }
 
     @Override

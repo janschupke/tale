@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.house;
 
+import eu.janschupke.buddy.content.stage.level.house.quest.HouseQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -17,6 +18,8 @@ public class HouseScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new HouseEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getHouseMusic();
+        questManager = new HouseQuestManager(app);
+        levelState = new HouseLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new HouseWorld(this);
         initView(world.getWidth(), world.getHeight());

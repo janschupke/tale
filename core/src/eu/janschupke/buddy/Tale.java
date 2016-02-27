@@ -22,7 +22,7 @@ import eu.janschupke.buddy.framework.input.TopDownInputProcessor;
  * Main game entry point.
  * @author jan.schupke@gmail.com
  */
-public class Buddy extends App {
+public class Tale extends App {
 	@Override
 	public void create () {
 		super.create();

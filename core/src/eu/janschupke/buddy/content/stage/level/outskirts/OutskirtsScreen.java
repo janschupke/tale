@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.outskirts;
 
+import eu.janschupke.buddy.content.stage.level.outskirts.quest.OutskirtsQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -17,6 +18,8 @@ public class OutskirtsScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new OutskirtsEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getOutskirtsMusic();
+        questManager = new OutskirtsQuestManager(app);
+        levelState = new OutskirtsLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new OutskirtsWorld(this);
         initView(world.getWidth(), world.getHeight());

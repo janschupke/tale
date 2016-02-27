@@ -3,7 +3,7 @@ package eu.janschupke.buddy.desktop;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import eu.janschupke.buddy.Buddy;
+import eu.janschupke.buddy.Tale;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.DefaultSettings;
 import org.xml.sax.SAXException;
@@ -48,7 +48,7 @@ public class DesktopLauncher {
 		parseWindowConfig(propertiesParser);
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		Buddy buddy = new Buddy();
+		Tale tale = new Tale();
 		config.fullscreen = propertiesParser.isFullscreen();
 		if (!propertiesParser.isFullscreen()) {
 			config.width = propertiesParser.getWidth();
@@ -59,6 +59,6 @@ public class DesktopLauncher {
 		config.backgroundFPS = DefaultSettings.BACKGROUND_FPS;
 		config.title = Config.GAME_TITLE;
 		config.addIcon("textures/gui/application-icon.png", Files.FileType.Internal);
-		new LwjglApplication(buddy, config);
+		new LwjglApplication(tale, config);
 	}
 }

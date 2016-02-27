@@ -19,8 +19,8 @@ import eu.janschupke.buddy.framework.base.world.BaseWorld;
  */
 public class UkkoUnit extends Unit implements Triggerable {
     public UkkoUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/sprites/units/Character_Hero_Priest.png"));
+        super(world, new Texture(Gdx.files.internal("textures/levels/forest/units/ukko.png")));
+        animationTexture = new Texture(Gdx.files.internal("textures/levels/forest/units/ukko.png"));
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();
@@ -41,7 +41,7 @@ public class UkkoUnit extends Unit implements Triggerable {
     @Override
     public void engage() {
         InteractionSwitch.enable(this,
-                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUkkoTalkEvent(),
+                ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUkkoInteractionEvent(),
                 world.getScreen().getApp());
     }
 

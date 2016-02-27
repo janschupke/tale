@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.cave;
 
+import eu.janschupke.buddy.content.stage.level.cave.quest.CaveQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -17,6 +18,8 @@ public class CaveScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new CaveEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getCaveMusic();
+        questManager = new CaveQuestManager(app);
+        levelState = new CaveLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new CaveWorld(this);
         initView(world.getWidth(), world.getHeight());

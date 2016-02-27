@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.dungeon;
 
+import eu.janschupke.buddy.content.stage.level.dungeon.quest.DungeonQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -17,6 +18,8 @@ public class DungeonScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new DungeonEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getDungeonMusic();
+        questManager = new DungeonQuestManager(app);
+        levelState = new DungeonLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new DungeonWorld(this);
         initView(world.getWidth(), world.getHeight());

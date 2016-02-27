@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.content.stage.level.settlement;
 
+import eu.janschupke.buddy.content.stage.level.settlement.quest.SettlementQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.Config;
@@ -17,6 +18,8 @@ public class SettlementScreen extends TopDownScreen {
         levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
         levelEventHandler = new SettlementEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getSettlementMusic();
+        questManager = new SettlementQuestManager(app);
+        levelState = new SettlementLevelState();
         app.swapHuds(app.getHud(Config.Huds.STANDARD));
         world = new SettlementWorld(this);
         initView(world.getWidth(), world.getHeight());
