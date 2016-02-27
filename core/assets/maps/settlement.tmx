@@ -18,7 +18,7 @@
  </layer>
  <layer name="terrain" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2cttBCEQBNDxyXF48w/EYVl7QFohA/2pamigJG6G4dXg2d/r63leh4+f58xx/dd//fP3cf3Xf6K/l5392uzg9yazH5WMfkay+KOyon9G2H7p9WaG4Y/I7/d4aKLxR8Vj0/Zg9Uvug2d4o11H4kfuEe1tXUMa1Pm3PAuYPSA6kPgRz0VGD4hngddvPQ+oRPhHa1jPAiIov9Sx2jlg+K09sPbuXUPy/NfeU8QZkO6/N3eWv7Uuy2CdN3pmSd7/a9dmWeo5kjD9vfW10XQg+duRW+OPOAMlkvdJKDvT7+ngHc9nKIa/5bH2xojGHeWP6sBi38VvtWv9q3aQwb9qB9n95bUgyv+fwzPXm8/Xwgx+bwf1Op/vB2b5ozporZPRr+2gt0ZWv7SH0XzP/wDK7+2gXlc7bwe/p7dT/SX150Kmf+UOtHvZwV/2c/36Dnbylw5m+qM7qHOCv5XWd4O7+HvpfS/K8Pf2s5I9m18bj53hZ95ntB3tj7rnKDvSz77nK/z+wxjIWK4/24/owHPtFfwzx/Vf/+njDxJdwMM=
+   eJzt2U1OwzAQBWCzypIz0JNwctaFQnqlEgmLUTDxzJsZ/8VP8gol8fdiu2q5PIVwOfl4Cecc0z/9019/HtM//Wf0H2VkvzQj+LXp2W+VHv0e6cVfKi360bw+/w5pvP3c5yGh7tTgxsPvmZwb7ULiLxXEinYg8VvOq9TgZlS/xT6QrH/kLGjBT+eO+C3OxdodSP23JYSPJe9voQMP//ptv5IOrHqo1YHk8x/tgJvW/dST6uC/+0lS0s85/4/e6V2wDmp14OmPa+Ct4TWA2Dl+ugY4/hodHMXKLzkHSnaAuiV+73MA7UJrl/pT50DuGs8OSvqj57pbA5xrtOHaJW7Uv18D3Ou8g9gR/5Z7Y37ULvVHy/4crN1BaT+yB1rtAP39V7oHPPyS7+hWfroHpH7rDpB9aOmPz5Y+UxN6n7gP0Xlo/OgZoOkgdR86j5L+LegeQDrIrcUe/dwectdr5mHl13aw70Fy3Sh+dKyKM1Dr137+WK0ZdC7o//9DkH8f9uwAnYvGH3uv7Y/zQeYysp8zn+m39ZfugOYs/lRuP+ff1/L3b57+NfHMku6c3ct/NJ+W7L35JdHaPfxe79nDbu33NG/edzIs7JZ+73e+nbOfZFjYtX6LYRnk+bX9Fh1ont2Cv+aY/uk/+3gAk2Q1Bw==
   </data>
  </layer>
  <objectgroup name="objects">

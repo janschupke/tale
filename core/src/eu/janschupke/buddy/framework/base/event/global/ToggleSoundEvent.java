@@ -12,18 +12,18 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class ToggleSoundEvent extends BaseEvent {
     public ToggleSoundEvent(final App app) {
-        super(app, app.getLang().get("event.global.toggle.music"));
+        super(app, app.getLang().get("event.global.toggle.sound"));
     }
 
     /**
-     * Toggles music playback and updates configuration.
+     * Toggles sound playback and updates configuration.
      */
     @Override
     public void trigger() {
         // Toggle the configuration value.
-        app.getSettingsManager().getConfig().setEnableMusic(!app.getSettingsManager().getConfig().isEnableMusic());
-        ((AudioMenu) app.getHud(Config.Huds.AUDIOMENU)).getEnableMusicCheckbox()
-                .setChecked(app.getSettingsManager().getConfig().isEnableMusic());
+        app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
+        ((AudioMenu) app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
+                .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();
         addEventMessage();
     }
