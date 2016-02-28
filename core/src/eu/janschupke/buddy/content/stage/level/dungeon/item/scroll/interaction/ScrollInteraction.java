@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.stage.level.dungeon.item.scroll_one.interaction;
+package eu.janschupke.buddy.content.stage.level.dungeon.item.scroll.interaction;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;

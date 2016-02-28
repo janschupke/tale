@@ -25,6 +25,7 @@ public class PickupEvent extends BaseEvent {
         super.trigger();
 
         try {
+            item = ((Item) InteractionSwitch.getTriggerable());
             app.getGameState().getInventory().addItem(new InventoryItem(app, item));
             ((ForestScreen) app.getScreen()).getWorld().removeItem(item);
         } catch (InventoryFullException e) {
