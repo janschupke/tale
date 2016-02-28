@@ -48,22 +48,8 @@ public class Inventory extends DataContainer {
     }
 
     /**
-     * TODO
-     * @param item
-     */
-    public void removeItem(InventoryItem item) {
-        if (items.isEmpty()) {
-            throw new IllegalArgumentException("Inventory is empty.");
-        }
-        items.remove(item);
-        usedSlots--;
-        setChanged();
-        notifyObservers();
-    }
-
-    /**
-     * TODO
-     * @param tag
+     * Removes an inventory item based on the provided tag.
+     * @param tag Identification tag of the item to be removed.
      */
     public void removeItem(ItemTags tag) {
         for (InventoryItem item : items) {
