@@ -41,6 +41,8 @@ public class GameInputProcessor extends BaseInputProcessor {
             try {
                 if (app.getHud().getState() != StandardHud.State.HUD) {
                     app.getHud().closeTabs();
+                } else if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
+                    InteractionSwitch.getTriggerable().endInteraction(app);
                 } else {
                     ((GameScreen) app.getScreen()).toggleMenu();
                 }

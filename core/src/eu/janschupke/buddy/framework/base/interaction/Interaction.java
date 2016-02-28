@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import java.util.List;
  * @author jan.schupke@gmail.com
  */
 public abstract class Interaction {
+    protected App app;
+    protected Triggerable triggerable;
     protected String title;
     protected List<Situation> situations;
 
@@ -27,7 +30,9 @@ public abstract class Interaction {
      */
     protected Situation fallbackSituation;
 
-    public Interaction() {
+    public Interaction(final App app, final Triggerable triggerable) {
+        this.app = app;
+        this.triggerable = triggerable;
         situations = new ArrayList<>();
         configure();
     }

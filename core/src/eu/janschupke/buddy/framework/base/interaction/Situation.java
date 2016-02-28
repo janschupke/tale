@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
+import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.ArrayList;
@@ -11,10 +12,12 @@ import java.util.List;
  * @author jan.schupke@gmail.com
  */
 public abstract class Situation {
+    protected App app;
     protected String description;
     protected List<Decision> decisions;
 
-    public Situation(String description) {
+    public Situation(final App app, String description) {
+        this.app = app;
         this.description = description;
         decisions = new ArrayList<>();
     }

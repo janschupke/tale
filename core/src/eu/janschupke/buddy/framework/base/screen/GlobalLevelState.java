@@ -7,6 +7,8 @@ public class GlobalLevelState extends LevelState {
     protected String currentHint;
     protected String hintCache;
 
+    protected boolean interactionActive;
+
     protected boolean newEvent;
     protected boolean newQuest;
     protected boolean newItem;
@@ -17,6 +19,12 @@ public class GlobalLevelState extends LevelState {
 
     public void setCurrentHint(String currentHint) {
         this.currentHint = currentHint;
+        setChanged();
+        notifyObservers();
+    }
+
+    public void clearCurrentHint() {
+        currentHint = "";
         setChanged();
         notifyObservers();
     }
@@ -34,6 +42,14 @@ public class GlobalLevelState extends LevelState {
         hintCache = "";
         setChanged();
         notifyObservers();
+    }
+
+    public boolean isInteractionActive() {
+        return interactionActive;
+    }
+
+    public void setInteractionActive(boolean interactionActive) {
+        this.interactionActive = interactionActive;
     }
 
     public boolean isNewEvent() {

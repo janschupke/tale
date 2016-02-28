@@ -2,11 +2,11 @@ package eu.janschupke.buddy.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.buddy.content.entity.PlayerUnit;
-import eu.janschupke.buddy.content.stage.level.forest.item.GoldCoinItem;
+import eu.janschupke.buddy.content.stage.level.forest.item.coin.GoldCoinItem;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.*;
-import eu.janschupke.buddy.content.stage.level.forest.unit.UkkoUnit;
+import eu.janschupke.buddy.content.stage.level.forest.unit.ukko.UkkoUnit;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Unit;
