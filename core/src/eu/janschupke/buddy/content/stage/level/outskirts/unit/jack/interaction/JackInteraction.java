@@ -4,6 +4,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
+import eu.janschupke.buddy.framework.base.interaction.Situation;
 
 /**
  * Jack unit interaction class.
@@ -17,11 +18,15 @@ public class JackInteraction extends Interaction {
 
     @Override
     protected void configure() {
-
+        title = app.getLang().get("level.outskirts.interaction.jack.title");
+        Situation talkSituation = new TalkSituation(app);
+        situations.add(talkSituation);
+        currentSituation = talkSituation;
+        fallbackSituation = talkSituation;
     }
 
     @Override
     public void handle(Decision decision) {
-
+        triggerable.endInteraction(app);
     }
 }
