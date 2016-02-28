@@ -7,5 +7,6 @@ package eu.janschupke.buddy.framework.config.enumeration;
  */
 public enum ItemTags {
     FOREST_GOLD_COIN,
-    OUTSKIRTS_LUMBER, OUTSKIRTS_VARPUNEN_NOTE
+    OUTSKIRTS_LUMBER, OUTSKIRTS_VARPUNEN_NOTE,
+    CAVE_JOURNAL
 }

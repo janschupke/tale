@@ -20,6 +20,7 @@ public class CoinInteractionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         Gdx.app.debug("CoinInteractEvent#trigger", "Triggering coin interaction");
+        super.trigger();
         InteractionSwitch.getTriggerable().startInteraction(app);
     }
 }
