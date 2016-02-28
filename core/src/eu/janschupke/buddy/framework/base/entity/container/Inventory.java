@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.exception.InventoryFullException;
+import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,36 @@ public class Inventory extends DataContainer {
         usedSlots--;
         setChanged();
         notifyObservers();
+    }
+
+    /**
+     * TODO
+     * @param item
+     */
+    public void removeItem(InventoryItem item) {
+        if (items.isEmpty()) {
+            throw new IllegalArgumentException("Inventory is empty.");
+        }
+        items.remove(item);
+        usedSlots--;
+        setChanged();
+        notifyObservers();
+    }
+
+    /**
+     * TODO
+     * @param tag
+     */
+    public void removeItem(Config.Items tag) {
+        for (InventoryItem item : items) {
+            if (item.getItem().getTag() == tag) {
+                items.remove(item);
+                usedSlots--;
+                setChanged();
+                notifyObservers();
+                return;
+            }
+        }
     }
 
     public int getUsedSlots() {

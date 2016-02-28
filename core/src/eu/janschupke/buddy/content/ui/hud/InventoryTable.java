@@ -87,12 +87,25 @@ public class InventoryTable extends UITable implements Observer {
     private void setDefaultActiveItem() {
         Inventory inventory = app.getGameState().getInventory();
 
+        if (inventory.getUsedSlots() == 0) {
+            clearActiveItem();
+            return;
+        }
+
         // Default state so that the description area is not empty.
         if (inventory.getUsedSlots() > 0 && itemNameLabel.getText().toString()
                 .equals(app.getLang().get("hud.inventory.label.empty"))) {
             Gdx.app.debug("InventoryTable#setDefaultActiveItem", "Setting default selection");
             setActiveItem(inventory.getItem(0));
         }
+    }
+
+    /**
+     * TODO
+     */
+    private void clearActiveItem() {
+        itemNameLabel.setText(app.getLang().get("hud.inventory.label.empty"));
+        itemDescriptionLabel.setText("");
     }
 
     @Override

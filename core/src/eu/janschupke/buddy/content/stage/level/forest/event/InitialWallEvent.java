@@ -28,7 +28,7 @@ public class InitialWallEvent extends BaseEvent {
     }
 
     /**
-     * Introduction dialog.
+     * Initial wall message dialog.
      */
     class InitialWallDialog extends InfoDialog {
         public InitialWallDialog(final App app) {

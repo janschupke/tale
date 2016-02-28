@@ -9,10 +9,10 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
  *
  * @author jan.schupke@gmail.com
  */
-public class ItemHintEvent extends BaseEvent {
+public class ItemIntroEvent extends BaseEvent {
     private ItemHintDialog itemHintDialog;
 
-    public ItemHintEvent(final App app) {
+    public ItemIntroEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.item.text"));
         itemHintDialog = new ItemHintDialog(app);
     }

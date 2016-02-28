@@ -8,13 +8,22 @@ import eu.janschupke.buddy.framework.base.screen.LevelState;
  * @author jan.schupke@gmail.com
  */
 public class ForestLevelState extends LevelState {
-    private boolean conPickedUp;
+    private boolean coinPickedUp;
+    private boolean coinDelivered;
 
-    public boolean isConPickedUp() {
-        return conPickedUp;
+    public boolean isCoinPickedUp() {
+        return coinPickedUp;
     }
 
-    public void setConPickedUp(boolean conPickedUp) {
-        this.conPickedUp = conPickedUp;
+    public void setCoinPickedUp(boolean coinPickedUp) {
+        this.coinPickedUp = coinPickedUp;
+    }
+
+    public boolean isCoinDelivered() {
+        return coinDelivered;
+    }
+
+    public void setCoinDelivered(boolean coinDelivered) {
+        this.coinDelivered = coinDelivered;
     }
 }

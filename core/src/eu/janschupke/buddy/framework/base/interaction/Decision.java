@@ -1,5 +1,6 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
+import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.personality.Metric;
 
 import java.util.ArrayList;
@@ -29,9 +30,15 @@ public abstract class Decision {
      */
     protected boolean available;
 
-    public Decision(String description) {
+    /**
+     * TODO
+     */
+    protected Config.Decisions tag;
+
+    public Decision(String description, Config.Decisions tag) {
         metrics = new ArrayList<>();
         this.description = description;
+        this.tag = tag;
         available = true;
     }
 
@@ -60,5 +67,9 @@ public abstract class Decision {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public Config.Decisions getTag() {
+        return tag;
     }
 }

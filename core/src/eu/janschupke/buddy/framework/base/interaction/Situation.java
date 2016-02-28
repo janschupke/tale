@@ -1,6 +1,6 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
-import eu.janschupke.buddy.framework.base.exception.NoMoreSituationsException;
+import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +19,21 @@ public abstract class Situation {
         decisions = new ArrayList<>();
     }
 
-    /**
-     * Progresses to the next appropriate situation based on the decision the player has chosen.
-     *
-     * @param decision Selected decision, based on which the next situation should be presented.
-     * @return Following situation based on selected decision. Used for interaction progression.
-     * @throws NoMoreSituationsException Thrown when no more situations to progress to are available.
-     */
-    public abstract Situation getFollowing(Decision decision) throws NoMoreSituationsException;
-
     public String getDescription() {
         return description;
     }
 
     public List<Decision> getDecisions() {
         return decisions;
+    }
+
+    public Decision getDecision(Config.Decisions tag) {
+        for (Decision decision : decisions) {
+            if (decision.getTag() == tag) {
+                return decision;
+            }
+        }
+
+        return null;
     }
 }

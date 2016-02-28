@@ -7,12 +7,12 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
-import eu.janschupke.buddy.framework.base.exception.NoMoreSituationsException;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
+import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Gold coin item entity.
@@ -23,7 +23,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     private Interaction interaction = new Interaction() {
         @Override
         protected void configure() {
-            title = world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.title");
+            title = world.getScreen().getApp().getLang().get("level.forest.interaction.coin.title");
             Situation pickupSituation = new PickupSituation();
             situations.add(pickupSituation);
             currentSituation = pickupSituation;
@@ -41,8 +41,44 @@ public class GoldCoinItem extends Item implements Triggerable {
         }
     };
 
+    // ~ Situations.
+
+    private class PickupSituation extends Situation {
+        public PickupSituation() {
+            super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
+            decisions.add(new PickupDecision());
+            decisions.add(new IgnoreDecision());
+        }
+
+        private class PickupDecision extends Decision {
+            public PickupDecision() {
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"),
+                        Config.Decisions.FOREST_COIN_PICKUP);
+            }
+
+            @Override
+            protected void configureMetrics() {
+                // Does not influence personality.
+            }
+        }
+
+        private class IgnoreDecision extends Decision {
+            public IgnoreDecision() {
+                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"),
+                        Config.Decisions.FOREST_COIN_IGNORE);
+            }
+
+            @Override
+            protected void configureMetrics() {
+                // Does not influence personality.
+            }
+        }
+    }
+
+    // ~ Gold Coin Item.
+
     public GoldCoinItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin-gold.png")));
+        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin-gold.png")), Config.Items.FOREST_GOLD_COIN);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
         description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");
@@ -68,43 +104,5 @@ public class GoldCoinItem extends Item implements Triggerable {
     @Override
     public Interaction getInteraction() {
         return interaction;
-    }
-
-    // ~ Situations.
-
-    private class PickupSituation extends Situation {
-        public PickupSituation() {
-            super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.description"));
-            decisions.add(new PickupDecision());
-            decisions.add(new IgnoreDecision());
-        }
-
-        @Override
-        public Situation getFollowing(Decision decision) throws NoMoreSituationsException {
-            // Nothing follows.
-            throw new NoMoreSituationsException();
-        }
-
-        private class PickupDecision extends Decision {
-            public PickupDecision() {
-                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.pickup"));
-            }
-
-            @Override
-            protected void configureMetrics() {
-                // Does not influence personality.
-            }
-        }
-
-        private class IgnoreDecision extends Decision {
-            public IgnoreDecision() {
-                super(world.getScreen().getApp().getLang().get("level.forest.interaction.coin.pickup.decision.ignore"));
-            }
-
-            @Override
-            protected void configureMetrics() {
-                // Does not influence personality.
-            }
-        }
     }
 }

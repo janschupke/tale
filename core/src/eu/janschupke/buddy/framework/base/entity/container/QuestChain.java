@@ -34,7 +34,7 @@ public abstract class QuestChain extends DataContainer {
     /**
      * Transitions to the next quest. Goes to the first one, if multiple are available.
      */
-    protected void transition() {
+    public void transition() {
         transition(0);
     }
 
@@ -43,7 +43,7 @@ public abstract class QuestChain extends DataContainer {
      *
      * @param index Quest index within the list of possibilities.
      */
-    protected void transition(int index) {
+    public void transition(int index) {
         activeQuest.setStatus(Config.TaskStatus.DONE);
         if (activeQuest.hasTransition()) {
             activeQuest = activeQuest.getTransition(index);

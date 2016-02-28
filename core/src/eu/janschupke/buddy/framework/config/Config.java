@@ -94,7 +94,7 @@ public class Config {
     public static final int INVENTORY_CAPACITY = 6;
     public static final Screens FIRST_LEVEL = Screens.FOREST;
     // Viewport configuration.
-    private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
+    private static final int VIEWPORT_WIDE_MULTIPLIER = 1; // 5
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;
     public static final int VIEWPORT_WIDE_HEIGHT = 9 * VIEWPORT_WIDE_MULTIPLIER;
     private static final int VIEWPORT_MULTIPLIER = 3;
@@ -120,5 +120,18 @@ public class Config {
 
     public enum Input {
         GLOBAL, PLATFORM, TOPDOWN,
+    }
+
+    // TODO: move somewhere else
+    public enum Items {
+        FOREST_GOLD_COIN,
+        OUTSKIRTS_LUMBER, OUTSKIRTS_VARPUNEN_NOTE
+    }
+
+    // TODO: move somewhere else
+    public enum Decisions {
+        GLOBAL_END,
+        FOREST_COIN_PICKUP, FOREST_COIN_IGNORE,
+        FOREST_UKKO_DELIVERY, FOREST_UKKO_END
     }
 }

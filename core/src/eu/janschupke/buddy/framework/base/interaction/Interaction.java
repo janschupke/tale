@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
-import com.badlogic.gdx.Gdx;
-import eu.janschupke.buddy.framework.base.exception.NoMoreSituationsException;
+import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,26 +38,22 @@ public abstract class Interaction {
     protected abstract void configure();
 
     /**
+     * Transitions to the provided situation.
+     * @param situation New situation to be displayed.
+     * @param app Application instance.
+     */
+    protected void transition(Situation situation, App app) {
+        currentSituation = situation;
+        InteractionSwitch.getTriggerable().startInteraction(app);
+    }
+
+    /**
      * All logic that happens when a decision is chosen.
      * Contains logic for each possible decision.
      *
      * @param decision Selected decision.
      */
     public abstract void handle(Decision decision);
-
-    /**
-     * Transitions to the next situation,
-     * based on the current situation and selected decision.
-     *
-     * @param decision Selected decision.
-     */
-    protected void transition(Decision decision) {
-        try {
-            currentSituation = currentSituation.getFollowing(decision);
-        } catch (NoMoreSituationsException e) {
-            Gdx.app.debug("Interaction#transition", "No more situations to transition to");
-        }
-    }
 
     public void fallback() {
         currentSituation = fallbackSituation;

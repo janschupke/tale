@@ -37,7 +37,7 @@ public class CoinPickupEvent extends PickupEvent {
         addEventMessage();
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
-        ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setConPickedUp(true);
+        ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinPickedUp(true);
         removeInitialWall();
     }
 

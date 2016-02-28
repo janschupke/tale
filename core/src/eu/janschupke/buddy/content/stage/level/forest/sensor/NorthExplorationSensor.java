@@ -9,18 +9,18 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
- * Sensor that triggers item introduction event.
+ * Exploration sensor for the north optional area.
  *
  * @author jan.schupke@gmail.com
  */
-public class ItemHintSensor extends Sensor implements Triggerable {
-    public ItemHintSensor(BaseWorld world, Vector2 size) {
+public class NorthExplorationSensor extends Sensor implements Triggerable {
+    public NorthExplorationSensor(BaseWorld world, Vector2 size) {
         super(world, size);
     }
 
     @Override
     public void engage() {
-        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getItemHintEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getNorthExplorationEvent().trigger();
     }
 
     @Override

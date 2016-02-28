@@ -14,15 +14,18 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
  * @author jan.schupke@gmail.com
  */
 public abstract class Item extends WorldObject {
-    public Item(BaseWorld world, Texture texture, Vector2 size) {
+    private Config.Items tag;
+
+    public Item(BaseWorld world, Texture texture, Vector2 size, Config.Items tag) {
         super(world, texture, size);
+        this.tag = tag;
 
         WorldObjectFactory.setCollisions(body, Config.BIT_OBSTACLE_ANY, (short) (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY));
         body.setType(BodyDef.BodyType.KinematicBody);
     }
 
-    public Item(BaseWorld world, Texture texture) {
-        this(world, texture, Config.DEFAULT_ITEM_SIZE);
+    public Item(BaseWorld world, Texture texture, Config.Items tag) {
+        this(world, texture, Config.DEFAULT_ITEM_SIZE, tag);
     }
 
     @Override
@@ -37,6 +40,10 @@ public abstract class Item extends WorldObject {
     @Override
     public String toString() {
         return description;
+    }
+
+    public Config.Items getTag() {
+        return tag;
     }
 }
 
