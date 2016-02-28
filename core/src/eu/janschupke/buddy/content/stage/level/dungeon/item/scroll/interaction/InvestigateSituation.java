@@ -21,8 +21,8 @@ public class InvestigateSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.dungeon.interaction.scroll.investigate.decision.leave"),
-                    DecisionTags.DUNGEON_SCROLL_LEAVE);
+            super(app.getLang().get("global.interaction.decision.end"),
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override

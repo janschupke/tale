@@ -21,7 +21,7 @@ public class InvestigateSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.settlement.interaction.fountain.investigate.decision.leave"),
+            super(app.getLang().get("global.interaction.decision.end"),
                     DecisionTags.GLOBAL_END);
         }
 

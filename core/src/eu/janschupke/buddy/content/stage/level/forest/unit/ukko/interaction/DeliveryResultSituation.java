@@ -21,7 +21,7 @@ public class DeliveryResultSituation extends Situation {
      */
     private class EndDecision extends Decision {
         public EndDecision() {
-            super(app.getLang().get("level.forest.interaction.ukko.delivery-result.decision.end"),
+            super(app.getLang().get("global.interaction.decision.end"),
                     DecisionTags.GLOBAL_END);
         }
 

@@ -12,7 +12,7 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
  */
 public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
-        super(app, app.getLang().get("level.house.interaction.spring.investigate.description"));
+        super(app, app.getLang().get("level.house.interaction.book.investigate.description"));
         decisions.add(new LeaveDecision());
     }
 
@@ -21,8 +21,8 @@ public class InvestigateSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.house.interaction.spring.investigate.decision.leave"),
-                    DecisionTags.HOUSE_BOOK_LEAVE);
+            super(app.getLang().get("global.interaction.decision.end"),
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override

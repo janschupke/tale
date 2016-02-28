@@ -21,8 +21,8 @@ public class InvestigateSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.outskirts.interaction.road-sign.investigate.decision.leave"),
-                    DecisionTags.OUTSKIRTS_ROAD_SIGN_LEAVE);
+            super(app.getLang().get("global.interaction.decision.end"),
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override

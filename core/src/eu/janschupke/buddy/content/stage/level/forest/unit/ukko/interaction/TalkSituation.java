@@ -37,7 +37,7 @@ public class TalkSituation extends Situation {
      */
     class EndDecision extends Decision {
         public EndDecision() {
-            super(app.getLang().get("level.forest.interaction.ukko.talk.decision.end"),
+            super(app.getLang().get("global.interaction.decision.end"),
                     DecisionTags.GLOBAL_END);
         }
 

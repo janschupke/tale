@@ -21,8 +21,8 @@ public class TalkSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.dungeon.interaction.slave.talk.decision.leave"),
-                    DecisionTags.DUNGEON_SLAVE_LEAVE);
+            super(app.getLang().get("global.interaction.decision.end"),
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override

@@ -21,8 +21,8 @@ public class TalkSituation extends Situation {
      */
     class LeaveDecision extends Decision {
         public LeaveDecision() {
-            super(app.getLang().get("level.outskirts.interaction.crone.talk.decision.leave"),
-                    DecisionTags.OUTSKIRTS_CRONE_LEAVE);
+            super(app.getLang().get("global.interaction.decision.end"),
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override
