@@ -55,7 +55,7 @@ public class CroneUnit extends Unit implements Triggerable {
             endInteraction(world.getScreen().getApp());
             InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("UkkoUnit#disengage", "No HUD problem");
+            Gdx.app.log("CroneUnit#disengage", "No HUD problem");
         }
     }
 
