@@ -9,18 +9,18 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
- * Sensor for transition from Outskirts to Forest.
+ * Exploration sensor for the cave area.
  *
  * @author jan.schupke@gmail.com
  */
-public class ForestTransitionSensor extends Sensor implements Triggerable {
-    public ForestTransitionSensor(BaseWorld world, Vector2 size) {
+public class CaveExplorationSensor extends Sensor implements Triggerable {
+    public CaveExplorationSensor(BaseWorld world, Vector2 size) {
         super(world, size);
     }
 
     @Override
     public void engage() {
-        ((OutskirtsEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getForestTransitionEvent().trigger();
+        ((OutskirtsEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getCaveExplorationEvent().trigger();
     }
 
     @Override

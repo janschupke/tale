@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.stage.level.forest.event;
+package eu.janschupke.buddy.content.stage.level.outskirts.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
@@ -7,12 +7,12 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.util.Utility;
 
 /**
- * Event for screen transition from Forest to Outskirts.
+ * Event for transition from Outskirts to Settlement.
  *
  * @author jan.schupke@gmail.com
  */
-public class OutskirtsTransitionEvent extends BaseEvent {
-    public OutskirtsTransitionEvent(final App app) {
+public class SettlementTransitionEvent extends BaseEvent {
+    public SettlementTransitionEvent(final App app) {
         super(app);
         repeatable = true;
     }
@@ -21,6 +21,6 @@ public class OutskirtsTransitionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTSKIRTS), app.getHud(Huds.STANDARD));
+        Utility.transitionScreens(app, app.getScreenInstance(Screens.SETTLEMENT), app.getHud(Huds.STANDARD));
     }
 }

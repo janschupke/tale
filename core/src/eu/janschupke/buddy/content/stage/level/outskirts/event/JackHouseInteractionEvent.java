@@ -2,14 +2,15 @@ package eu.janschupke.buddy.content.stage.level.outskirts.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
+import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
 
 /**
- * Event for the Varpunen note pickup.
+ * Event for the interaction with Jack's house.
  *
  * @author jan.schupke@gmail.com
  */
-public class VarpunenPickupEvent extends BaseEvent {
-    public VarpunenPickupEvent(final App app) {
+public class JackHouseInteractionEvent extends BaseEvent {
+    public JackHouseInteractionEvent(final App app) {
         super(app);
     }
 
@@ -17,6 +18,6 @@ public class VarpunenPickupEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        // TODO
+        InteractionSwitch.getTriggerable().startInteraction(app);
     }
 }

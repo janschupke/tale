@@ -11,7 +11,7 @@ import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
  */
 public class UkkoInteractionEvent extends BaseEvent {
     public UkkoInteractionEvent(final App app) {
-        super(app, "");
+        super(app);
         repeatable = true;
     }
 

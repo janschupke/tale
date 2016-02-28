@@ -1,15 +1,15 @@
-package eu.janschupke.buddy.content.stage.level.forest.event;
+package eu.janschupke.buddy.content.stage.level.outskirts.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
- * Exploration event for the east optional area.
+ * Event for the Jack area exploration.
  *
  * @author jan.schupke@gmail.com
  */
-public class EastExplorationEvent extends BaseEvent {
-    public EastExplorationEvent(final App app) {
+public class JackExplorationEvent extends BaseEvent {
+    public JackExplorationEvent(final App app) {
         super(app);
     }
 

@@ -1,9 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.outskirts.sensor;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.buddy.content.stage.level.outskirts.OutskirtsEventHandler;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
@@ -18,7 +20,7 @@ public class VarpunenExplorationSensor extends Sensor implements Triggerable {
 
     @Override
     public void engage() {
-
+        ((OutskirtsEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getVarpunenExplorationEvent().trigger();
     }
 
     @Override

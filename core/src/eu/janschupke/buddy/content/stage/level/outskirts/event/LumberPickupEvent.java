@@ -10,12 +10,13 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
  */
 public class LumberPickupEvent extends BaseEvent {
     public LumberPickupEvent(final App app) {
-        super(app, "");
+        super(app);
     }
 
     @Override
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
+        // TODO
     }
 }

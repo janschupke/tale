@@ -10,7 +10,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
  */
 public class SouthExplorationEvent extends BaseEvent {
     public SouthExplorationEvent(final App app) {
-        super(app, "");
+        super(app);
     }
 
     @Override

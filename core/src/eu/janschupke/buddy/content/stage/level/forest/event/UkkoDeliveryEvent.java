@@ -19,7 +19,7 @@ import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
  */
 public class UkkoDeliveryEvent extends BaseEvent {
     public UkkoDeliveryEvent(final App app) {
-        super(app, "");
+        super(app);
     }
 
     @Override
@@ -28,10 +28,24 @@ public class UkkoDeliveryEvent extends BaseEvent {
         super.trigger();
         Gdx.app.debug("UkkoDeliveryEvent#trigger", "Delivering the coin");
 
-        app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
+        updateQuest();
+        updateGameState();
+    }
+
+    /**
+     * Updates quest status accordingly to the actions.
+     */
+    private void updateQuest() {
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         chain.transition();
+    }
+
+    /**
+     * Updates game state to conform actions that occurred during this event.
+     */
+    private void updateGameState() {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);
+        app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
         removeQuestlWall();
     }
 
