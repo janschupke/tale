@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.content.stage.level.cave.item.journal;
+package eu.janschupke.buddy.content.stage.level.cave.item;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
