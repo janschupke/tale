@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 public class CorpsecInteractionEvent extends BaseEvent {
     public CorpsecInteractionEvent(final App app) {
         super(app);
+        repeatable = true;
     }
 
     @Override

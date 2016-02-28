@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 public class VilleInteractionEvent extends BaseEvent {
     public VilleInteractionEvent(final App app) {
         super(app);
+        repeatable = true;
     }
 
     @Override

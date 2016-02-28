@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.event.BaseEvent;
 public class SpringInteractionEvent extends BaseEvent {
     public SpringInteractionEvent(final App app) {
         super(app);
+        repeatable = true;
     }
 
     @Override

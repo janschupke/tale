@@ -1,15 +1,15 @@
-package eu.janschupke.buddy.content.stage.level.cave.event;
+package eu.janschupke.buddy.content.stage.level.dungeon.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
- * Event for the transition from Cave to Outskirts.
+ * Interaction event for the Rudolf unit.
  *
  * @author jan.schupke@gmail.com
  */
-public class OutskirtsTransitionEvent extends BaseEvent {
-    public OutskirtsTransitionEvent(final App app) {
+public class RudolfInteractionEvent extends BaseEvent {
+    public RudolfInteractionEvent(final App app) {
         super(app);
         repeatable = true;
     }

@@ -1,17 +1,16 @@
-package eu.janschupke.buddy.content.stage.level.cave.event;
+package eu.janschupke.buddy.content.stage.level.dungeon.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
- * Event for the transition from Cave to Outskirts.
+ * Transition event that ends the game.
  *
  * @author jan.schupke@gmail.com
  */
-public class OutskirtsTransitionEvent extends BaseEvent {
-    public OutskirtsTransitionEvent(final App app) {
+public class ExitTransitionEvent extends BaseEvent {
+    public ExitTransitionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override
