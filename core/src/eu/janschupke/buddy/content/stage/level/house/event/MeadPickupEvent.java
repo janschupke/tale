@@ -1,15 +1,15 @@
-package eu.janschupke.buddy.content.stage.level.outskirts.event;
+package eu.janschupke.buddy.content.stage.level.house.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.PickupEvent;
 
 /**
- * Event for the lumber item pickup.
+ * Pickup event for the mead item.
  *
  * @author jan.schupke@gmail.com
  */
-public class LumberPickupEvent extends PickupEvent {
-    public LumberPickupEvent(final App app) {
+public class MeadPickupEvent extends PickupEvent {
+    public MeadPickupEvent(final App app) {
         // TODO
         super(app, "TODO");
     }
@@ -18,6 +18,5 @@ public class LumberPickupEvent extends PickupEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        // TODO
     }
 }
