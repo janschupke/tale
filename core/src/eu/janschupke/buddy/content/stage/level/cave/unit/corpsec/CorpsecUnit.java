@@ -55,7 +55,7 @@ public class CorpsecUnit extends Unit implements Triggerable {
             endInteraction(world.getScreen().getApp());
             InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("CorpsecUnit#disengage", "No HUD problem");
+            Gdx.app.log("CorpsecUnit#disengage", "Could not get HUD instance");
         }
     }
 

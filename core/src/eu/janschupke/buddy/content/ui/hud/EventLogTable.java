@@ -65,7 +65,7 @@ public class EventLogTable extends UITable implements Observer {
                 try {
                     app.getHud().toggleEventLog();
                 } catch (NoHudException e) {
-                    Gdx.app.debug("EventLogTable#setListeners", "No HUD problem");
+                    Gdx.app.debug("EventLogTable#setListeners", "Could not get HUD instance");
                 }
             }
         });

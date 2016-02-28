@@ -182,7 +182,7 @@ public abstract class GameScreen extends BaseScreen {
         try {
             app.getHud().toggleEventLog();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleEventLog", "No HUD problem");
+            Gdx.app.log("GameScreen#toggleEventLog", "Could not get HUD instance");
         }
     }
 
@@ -193,7 +193,7 @@ public abstract class GameScreen extends BaseScreen {
         try {
             app.getHud().toggleQuestLog();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleQuestLog", "No HUD problem");
+            Gdx.app.log("GameScreen#toggleQuestLog", "Could not get HUD instance");
         }
     }
 
@@ -204,7 +204,7 @@ public abstract class GameScreen extends BaseScreen {
         try {
             app.getHud().toggleInventory();
         } catch (NoHudException e) {
-            Gdx.app.log("GameScreen#toggleInventory", "No HUD problem");
+            Gdx.app.log("GameScreen#toggleInventory", "Could not get HUD instance");
         }
     }
 

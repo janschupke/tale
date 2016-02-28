@@ -45,7 +45,7 @@ public class CauldronObstacle extends Obstacle implements Triggerable {
             endInteraction(world.getScreen().getApp());
             InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("CauldronObstacle#disengage", "No HUD problem");
+            Gdx.app.log("CauldronObstacle#disengage", "Could not get HUD instance");
         }
     }
 

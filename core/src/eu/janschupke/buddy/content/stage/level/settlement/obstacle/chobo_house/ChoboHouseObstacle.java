@@ -45,7 +45,7 @@ public class ChoboHouseObstacle extends Obstacle implements Triggerable {
             endInteraction(world.getScreen().getApp());
             InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("ChoboHouseObstacle#disengage", "No HUD problem");
+            Gdx.app.log("ChoboHouseObstacle#disengage", "Could not get HUD instance");
         }
     }
 

@@ -109,7 +109,7 @@ public abstract class App extends Game {
             gameState.getGlobalLevelState().addObserver(getHud().getIndicatorTable());
             gameState.getGlobalLevelState().addObserver(getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.debug("EventLogTable#setListeners", "No HUD problem");
+            Gdx.app.debug("EventLogTable#setListeners", "Could not get HUD instance");
         }
     }
 

@@ -42,7 +42,7 @@ public class VarpunenNoteItem extends Item implements Triggerable {
             endInteraction(world.getScreen().getApp());
             InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
         } catch (NoHudException e) {
-            Gdx.app.log("VarpunenNoteItem#disengage", "No HUD problem");
+            Gdx.app.log("VarpunenNoteItem#disengage", "Could not get HUD instance");
         }
     }
 

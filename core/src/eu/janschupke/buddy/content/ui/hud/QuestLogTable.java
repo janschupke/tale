@@ -174,7 +174,7 @@ public class QuestLogTable extends UITable implements Observer {
                 try {
                     app.getHud().toggleQuestLog();
                 } catch (NoHudException e) {
-                    Gdx.app.debug("QuestLogTable#closeButton#clicked", "No HUD problem");
+                    Gdx.app.debug("QuestLogTable#closeButton#clicked", "Could not get HUD instance");
                 }
             }
         });

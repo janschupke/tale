@@ -143,7 +143,7 @@ public class InventoryTable extends UITable implements Observer {
                 try {
                     app.getHud().toggleInventory();
                 } catch (NoHudException e) {
-                    Gdx.app.debug("InventoryTable#closeButton#clicked", "No HUD problem");
+                    Gdx.app.debug("InventoryTable#closeButton#clicked", "Could not get HUD instance");
                 }
             }
         });

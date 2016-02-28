@@ -34,7 +34,7 @@ public interface Triggerable {
             app.getHud().getInteractionTable().update(InteractionSwitch.getTriggerable().getInteraction());
             app.getGameState().getGlobalLevelState().setInteractionActive(true);
         } catch (NoHudException e) {
-            Gdx.app.log("Triggerable#startInteraction", "No HUD problem");
+            Gdx.app.log("Triggerable#startInteraction", "Could not get HUD instance");
         }
     }
 
@@ -50,7 +50,7 @@ public interface Triggerable {
             app.getGameState().getGlobalLevelState().activateCachedHint();
             app.getGameState().getGlobalLevelState().setInteractionActive(false);
         } catch (NoHudException e) {
-            Gdx.app.log("Triggerable#endInteraction", "No HUD problem");
+            Gdx.app.log("Triggerable#endInteraction", "Could not get HUD instance");
         }
     }
 
