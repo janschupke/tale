@@ -8,5 +8,6 @@ package eu.janschupke.buddy.framework.config.enumeration;
 public enum DecisionTags {
     GLOBAL_END,
     FOREST_COIN_PICKUP, FOREST_COIN_IGNORE,
-    FOREST_UKKO_DELIVERY, FOREST_UKKO_END
+    FOREST_UKKO_DELIVERY, FOREST_UKKO_END,
+    CAVE_VILLE_LEAVE, CAVE_CORPSEC_LEAVE, CAVE_SPRING_LEAVE
 }

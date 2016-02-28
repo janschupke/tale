@@ -7,6 +7,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Initial interaction situation.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class TalkSituation extends Situation {
     public TalkSituation(final App app) {

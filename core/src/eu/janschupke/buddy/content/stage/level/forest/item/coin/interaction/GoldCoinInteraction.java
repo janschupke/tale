@@ -11,6 +11,8 @@ import eu.janschupke.buddy.framework.base.screen.GameScreen;
 
 /**
  * Gold coin interaction object.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class GoldCoinInteraction extends Interaction {
     public GoldCoinInteraction(final App app, final Triggerable triggerable) {

@@ -11,6 +11,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Ukko interaction object.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class UkkoInteraction extends Interaction {
     Situation talkSituation;

@@ -7,6 +7,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Initial situation for the coin interaction.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class PickupSituation extends Situation {
     public PickupSituation(final App app) {

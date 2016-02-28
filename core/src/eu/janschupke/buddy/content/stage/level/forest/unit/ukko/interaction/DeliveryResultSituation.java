@@ -7,6 +7,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Situation that occurs right after the coin delivery.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class DeliveryResultSituation extends Situation {
     public DeliveryResultSituation(final App app) {
