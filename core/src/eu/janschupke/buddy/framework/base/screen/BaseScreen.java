@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.View;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
@@ -28,7 +29,7 @@ public abstract class BaseScreen extends ScreenAdapter {
         Gdx.input.setInputProcessor(inputMultiplexer);
 
         inputMultiplexer.addProcessor(app.getUi());
-        inputMultiplexer.addProcessor(app.getInputProcessor(Config.Input.GLOBAL));
+        inputMultiplexer.addProcessor(app.getInputProcessor(InputProcessors.GLOBAL));
     }
 
     /**

@@ -21,6 +21,10 @@ import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.SettingsManager;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 import eu.janschupke.buddy.framework.resources.ResourceManager;
 
@@ -34,9 +38,9 @@ import java.util.Map;
  * @author jan.schupke@gmail.com
  */
 public abstract class App extends Game {
-    protected Map<Config.Huds, RootTable> huds;
-    protected Map<Config.Screens, BaseScreen> screens;
-    protected Map<Config.Input, BaseInputProcessor> inputProcessors;
+    protected Map<Huds, RootTable> huds;
+    protected Map<Screens, BaseScreen> screens;
+    protected Map<InputProcessors, BaseInputProcessor> inputProcessors;
     protected Skin skin;
     protected Stage ui;
     private GlobalEventHandler eventHandler;
@@ -143,7 +147,7 @@ public abstract class App extends Game {
     private void toggleStartupDebugRendering() {
         if (!Config.DEBUG_MODE) {
             settingsManager.getConfig().setUiDebugRendering(false);
-            settingsManager.getConfig().setWorldDebugRendering(Config.WorldDebugRendering.GRAPHICS);
+            settingsManager.getConfig().setWorldDebugRendering(WorldDebugRendering.GRAPHICS);
         }
     }
 
@@ -172,11 +176,11 @@ public abstract class App extends Game {
      */
     protected abstract void initScreens();
 
-    public Map<Config.Huds, RootTable> getHuds() {
+    public Map<Huds, RootTable> getHuds() {
         return huds;
     }
 
-    public RootTable getHud(Config.Huds name) {
+    public RootTable getHud(Huds name) {
         return huds.get(name);
     }
 
@@ -191,15 +195,15 @@ public abstract class App extends Game {
         ui.addActor(hud);
     }
 
-    public Map<Config.Screens, BaseScreen> getScreens() {
+    public Map<Screens, BaseScreen> getScreens() {
         return screens;
     }
 
-    public BaseScreen getScreenInstance(Config.Screens name) {
+    public BaseScreen getScreenInstance(Screens name) {
         return screens.get(name);
     }
 
-    public BaseInputProcessor getInputProcessor(Config.Input name) {
+    public BaseInputProcessor getInputProcessor(InputProcessors name) {
         return inputProcessors.get(name);
     }
 

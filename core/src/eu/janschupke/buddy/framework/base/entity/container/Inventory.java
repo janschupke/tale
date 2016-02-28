@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.exception.InventoryFullException;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +65,7 @@ public class Inventory extends DataContainer {
      * TODO
      * @param tag
      */
-    public void removeItem(Config.Items tag) {
+    public void removeItem(ItemTags tag) {
         for (InventoryItem item : items) {
             if (item.getItem().getTag() == tag) {
                 items.remove(item);

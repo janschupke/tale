@@ -15,7 +15,8 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
@@ -26,7 +27,7 @@ import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 public abstract class GameScreen extends BaseScreen {
     protected BaseWorld world;
     protected boolean inMenu;
-    protected Config.Huds screenHud;
+    protected Huds screenHud;
     protected BaseInputProcessor levelInputProcessor;
     protected LevelEventHandler levelEventHandler;
     protected QuestManager questManager;
@@ -248,15 +249,15 @@ public abstract class GameScreen extends BaseScreen {
 
         updateUnits(delta);
         updateObjects(delta);
-        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.ALL ||
-                app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.GRAPHICS) {
+        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == WorldDebugRendering.ALL ||
+                app.getSettingsManager().getConfig().getWorldDebugRendering() == WorldDebugRendering.GRAPHICS) {
             renderLevel(delta);
         }
         if (paused) {
             dimScreen();
         }
-        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.ALL ||
-                app.getSettingsManager().getConfig().getWorldDebugRendering() == Config.WorldDebugRendering.DEBUG) {
+        if (app.getSettingsManager().getConfig().getWorldDebugRendering() == WorldDebugRendering.ALL ||
+                app.getSettingsManager().getConfig().getWorldDebugRendering() == WorldDebugRendering.DEBUG) {
             world.getDebugRenderer().render(world.getBoxWorld(), view.getCamera().combined);
         }
     }

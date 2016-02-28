@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.framework.config;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Default configuration and global constants.
@@ -100,38 +101,4 @@ public class Config {
     private static final int VIEWPORT_MULTIPLIER = 3;
     public static final int VIEWPORT_WIDTH = 4 * VIEWPORT_MULTIPLIER;
     public static final int VIEWPORT_HEIGHT = 3 * VIEWPORT_MULTIPLIER;
-
-    public enum WorldDebugRendering {
-        ALL, DEBUG, GRAPHICS
-    }
-
-    public enum TaskStatus {
-        INIT, ACTIVE, DONE, FAILED, EXCLUDED
-    }
-
-    public enum Huds {
-        STANDARD, MAINMENU, GAMEMENU, HOTKEYSMENU, SETTINGSMENU,
-        GRAPHICSMENU, AUDIOMENU, CREDITSMENU
-    }
-
-    public enum Screens {
-        SPLASH, MENU, FOREST, OUTSKIRTS, CAVE, SETTLEMENT, HOUSE, DUNGEON
-    }
-
-    public enum Input {
-        GLOBAL, PLATFORM, TOPDOWN,
-    }
-
-    // TODO: move somewhere else
-    public enum Items {
-        FOREST_GOLD_COIN,
-        OUTSKIRTS_LUMBER, OUTSKIRTS_VARPUNEN_NOTE
-    }
-
-    // TODO: move somewhere else
-    public enum Decisions {
-        GLOBAL_END,
-        FOREST_COIN_PICKUP, FOREST_COIN_IGNORE,
-        FOREST_UKKO_DELIVERY, FOREST_UKKO_END
-    }
 }

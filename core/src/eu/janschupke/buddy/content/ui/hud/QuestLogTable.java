@@ -16,6 +16,7 @@ import eu.janschupke.buddy.framework.base.entity.container.Task;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UITable;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -66,16 +67,16 @@ public class QuestLogTable extends UITable implements Observer {
 
         for (QuestChain chain : questLog.getQuestChains()) {
             for (Quest quest : chain.getQuests()) {
-                Config.TaskStatus status = quest.getStatus();
+                TaskStatus status = quest.getStatus();
 
                 // The one active quest from the chain goes to the list of active quests.
-                if (status == Config.TaskStatus.ACTIVE) {
+                if (status == TaskStatus.ACTIVE) {
                     activeQuests.add(quest.toString());
                     continue;
                 }
 
                 // All finished quests go to the finished list.
-                if (status == Config.TaskStatus.DONE) {
+                if (status == TaskStatus.DONE) {
                     finishedQuests.add(quest.toString());
                 }
             }

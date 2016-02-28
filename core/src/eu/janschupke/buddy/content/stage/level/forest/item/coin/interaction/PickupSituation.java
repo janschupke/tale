@@ -3,7 +3,7 @@ package eu.janschupke.buddy.content.stage.level.forest.item.coin.interaction;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Initial situation for the coin interaction.
@@ -21,7 +21,7 @@ public class PickupSituation extends Situation {
     class PickupDecision extends Decision {
         public PickupDecision() {
             super(app.getLang().get("level.forest.interaction.coin.pickup.decision.pickup"),
-                    Config.Decisions.FOREST_COIN_PICKUP);
+                    DecisionTags.FOREST_COIN_PICKUP);
         }
 
         @Override
@@ -36,7 +36,7 @@ public class PickupSituation extends Situation {
     class IgnoreDecision extends Decision {
         public IgnoreDecision() {
             super(app.getLang().get("level.forest.interaction.coin.pickup.decision.ignore"),
-                    Config.Decisions.FOREST_COIN_IGNORE);
+                    DecisionTags.FOREST_COIN_IGNORE);
         }
 
         @Override

@@ -11,7 +11,7 @@ import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 /**
  * Gold coin item entity.
@@ -22,7 +22,7 @@ public class GoldCoinItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public GoldCoinItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin-gold.png")), Config.Items.FOREST_GOLD_COIN);
+        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin-gold.png")), ItemTags.FOREST_GOLD_COIN);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
         description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");

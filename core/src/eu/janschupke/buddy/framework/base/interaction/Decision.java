@@ -1,6 +1,6 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 import eu.janschupke.buddy.personality.Metric;
 
 import java.util.ArrayList;
@@ -31,11 +31,11 @@ public abstract class Decision {
     protected boolean available;
 
     /**
-     * TODO
+     * Tags that uniquely identifies the decision across the entire game.
      */
-    protected Config.Decisions tag;
+    protected DecisionTags tag;
 
-    public Decision(String description, Config.Decisions tag) {
+    public Decision(String description, DecisionTags tag) {
         metrics = new ArrayList<>();
         this.description = description;
         this.tag = tag;
@@ -69,7 +69,7 @@ public abstract class Decision {
         this.available = available;
     }
 
-    public Config.Decisions getTag() {
+    public DecisionTags getTag() {
         return tag;
     }
 }

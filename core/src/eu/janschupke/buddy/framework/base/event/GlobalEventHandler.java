@@ -16,6 +16,9 @@ import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.util.Utility;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
@@ -108,7 +111,7 @@ public class GlobalEventHandler {
      */
     public void toggleUiDebug(boolean state) {
         Gdx.app.debug("GlobalEventHandler#toggleUiDebug", "Calling debug toggle");
-        for (Map.Entry<Config.Huds, RootTable> entry : app.getHuds().entrySet()) {
+        for (Map.Entry<Huds, RootTable> entry : app.getHuds().entrySet()) {
             toggleTableDebug(entry.getValue(), state);
         }
     }
@@ -209,14 +212,14 @@ public class GlobalEventHandler {
 
         switch (app.getSettingsManager().getConfig().getWorldDebugRendering()) {
             case DEBUG:
-                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.GRAPHICS);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(WorldDebugRendering.GRAPHICS);
                 break;
             case GRAPHICS:
-                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.ALL);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(WorldDebugRendering.ALL);
                 break;
             default:
             case ALL:
-                app.getSettingsManager().getConfig().setWorldDebugRendering(Config.WorldDebugRendering.DEBUG);
+                app.getSettingsManager().getConfig().setWorldDebugRendering(WorldDebugRendering.DEBUG);
                 break;
         }
     }
@@ -233,15 +236,15 @@ public class GlobalEventHandler {
      * Displays main menu, or level menu, depending on the current game state.
      */
     public void showMainMenu() {
-        if (app.getScreen() == app.getScreenInstance(Config.Screens.MENU)) {
-            Utility.transitionHuds(app, app.getHud(Config.Huds.MAINMENU));
+        if (app.getScreen() == app.getScreenInstance(Screens.MENU)) {
+            Utility.transitionHuds(app, app.getHud(Huds.MAINMENU));
         } else {
-            Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
+            Utility.transitionHuds(app, app.getHud(Huds.GAMEMENU));
         }
     }
 
     public void showGameMenu() {
-        Utility.transitionHuds(app, app.getHud(Config.Huds.GAMEMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.GAMEMENU));
     }
 
     /**
@@ -275,9 +278,9 @@ public class GlobalEventHandler {
      * Transitions to the beginning screen.
      */
     public void fireNewGame() {
-        Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Config.Huds.STANDARD));
+        Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Huds.STANDARD));
         // Add continue game button.
-        ((MainMenu) app.getHud(Config.Huds.MAINMENU)).setupWidgets(true);
+        ((MainMenu) app.getHud(Huds.MAINMENU)).setupWidgets(true);
     }
 
     /**
@@ -285,7 +288,7 @@ public class GlobalEventHandler {
      */
     public void continueGame() {
         Gdx.app.debug("GlobalEventHandler#continueGame", "Continue Game");
-        Utility.transitionScreens(app, app.getGameState().getCurrentLevel(), app.getHud(Config.Huds.STANDARD));
+        Utility.transitionScreens(app, app.getGameState().getCurrentLevel(), app.getHud(Huds.STANDARD));
         app.getScreen().resume();
     }
 
@@ -294,21 +297,21 @@ public class GlobalEventHandler {
      */
     public void showSettings() {
         Gdx.app.debug("GlobalEventHandler#showSettings", "Show Settings");
-        Utility.transitionHuds(app, app.getHud(Config.Huds.SETTINGSMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.SETTINGSMENU));
     }
 
     /**
      * Displays graphics settings table.
      */
     public void showGraphicsMenu() {
-        Utility.transitionHuds(app, app.getHud(Config.Huds.GRAPHICSMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.GRAPHICSMENU));
     }
 
     /**
      * Display audio settings table.
      */
     public void showAudioMenu() {
-        Utility.transitionHuds(app, app.getHud(Config.Huds.AUDIOMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.AUDIOMENU));
     }
 
     /**
@@ -316,7 +319,7 @@ public class GlobalEventHandler {
      */
     public void showHotkeys() {
         Gdx.app.debug("GlobalEventHandler#showHotkeys", "Show Hotkeys");
-        Utility.transitionHuds(app, app.getHud(Config.Huds.HOTKEYSMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.HOTKEYSMENU));
     }
 
     /**
@@ -324,14 +327,14 @@ public class GlobalEventHandler {
      */
     public void showCredits() {
         Gdx.app.debug("GlobalEventHandler#showCredits", "Show Credits");
-        Utility.transitionHuds(app, app.getHud(Config.Huds.CREDITSMENU));
+        Utility.transitionHuds(app, app.getHud(Huds.CREDITSMENU));
     }
 
     /**
      * Leaves the current level and enters the main menu screen.
      */
     public void leaveLevel() {
-        Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.MENU), app.getHud(Config.Huds.MAINMENU));
+        Utility.transitionScreens(app, app.getScreenInstance(Screens.MENU), app.getHud(Huds.MAINMENU));
     }
 
     /**

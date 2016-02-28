@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,24 +14,24 @@ import java.util.List;
 public class Quest extends DataContainer {
     protected List<Task> tasks;
     protected List<Quest> transitions;
-    private Config.TaskStatus status;
+    private TaskStatus status;
     private String name;
     private String description;
 
     public Quest(final App app, String name, String description) {
         super(app);
-        status = Config.TaskStatus.INIT;
+        status = TaskStatus.INIT;
         this.name = name;
         this.description = description;
         tasks = new ArrayList<>();
         transitions = new ArrayList<>();
     }
 
-    public Config.TaskStatus getStatus() {
+    public TaskStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Config.TaskStatus status) {
+    public void setStatus(TaskStatus status) {
         this.status = status;
         setChanged();
         notifyObservers();

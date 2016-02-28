@@ -2,7 +2,8 @@ package eu.janschupke.buddy.content.stage.level.forest.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.util.Utility;
 
 /**
@@ -20,6 +21,6 @@ public class OutskirtsTransitionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        Utility.transitionScreens(app, app.getScreenInstance(Config.Screens.OUTSKIRTS), app.getHud(Config.Huds.STANDARD));
+        Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTSKIRTS), app.getHud(Huds.STANDARD));
     }
 }

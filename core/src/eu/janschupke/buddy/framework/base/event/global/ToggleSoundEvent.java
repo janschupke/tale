@@ -3,7 +3,7 @@ package eu.janschupke.buddy.framework.base.event.global;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
 
 /**
  * Message event for music toggle.
@@ -22,7 +22,7 @@ public class ToggleSoundEvent extends BaseEvent {
     public void trigger() {
         // Toggle the configuration value.
         app.getSettingsManager().getConfig().setEnableSound(!app.getSettingsManager().getConfig().isEnableSound());
-        ((AudioMenu) app.getHud(Config.Huds.AUDIOMENU)).getEnableSoundCheckbox()
+        ((AudioMenu) app.getHud(Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();
         addEventMessage();

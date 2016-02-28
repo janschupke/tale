@@ -1,5 +1,7 @@
 package eu.janschupke.buddy.framework.config;
 
+import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
+
 /**
  * Default settings values.
  *
@@ -23,5 +25,5 @@ public class DefaultSettings {
     public static final int BACKGROUND_FPS = 30;
 
     public static final boolean DEBUG_UI = false;
-    public static final Config.WorldDebugRendering DEBUG_WORLD = Config.WorldDebugRendering.GRAPHICS;
+    public static final WorldDebugRendering DEBUG_WORLD = WorldDebugRendering.GRAPHICS;
 }

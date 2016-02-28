@@ -2,7 +2,8 @@ package eu.janschupke.buddy.content.stage.splash;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.CinematicScreen;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Splash screen class.
@@ -17,8 +18,8 @@ public class SplashScreen extends CinematicScreen {
     @Override
     public void show() {
         super.show();
-        app.setScreen(app.getScreenInstance(Config.Screens.MENU));
-        app.swapHuds(app.getHud(Config.Huds.MAINMENU));
+        app.setScreen(app.getScreenInstance(Screens.MENU));
+        app.swapHuds(app.getHud(Huds.MAINMENU));
     }
 
     @Override

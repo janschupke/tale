@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 /**
  * Specific task within a quest.
@@ -9,20 +9,20 @@ import eu.janschupke.buddy.framework.config.Config;
  * @author jan.schupke@gmail.com
  */
 public class Task extends DataContainer {
-    private Config.TaskStatus status;
+    private TaskStatus status;
     private String description;
 
     public Task(final App app, String description) {
         super(app);
-        status = Config.TaskStatus.ACTIVE;
+        status = TaskStatus.ACTIVE;
         this.description = description;
     }
 
-    public Config.TaskStatus getStatus() {
+    public TaskStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Config.TaskStatus status) {
+    public void setStatus(TaskStatus status) {
         this.status = status;
     }
 

@@ -4,7 +4,8 @@ import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
 
 /**
  * Forest (Tutorial) screen.
@@ -17,13 +18,13 @@ public class ForestScreen extends TopDownScreen {
 
         Gdx.app.debug("ForestScreen#<init>", "Constructing");
 
-        screenHud = Config.Huds.STANDARD;
-        levelInputProcessor = app.getInputProcessor(Config.Input.TOPDOWN);
+        screenHud = Huds.STANDARD;
+        levelInputProcessor = app.getInputProcessor(InputProcessors.TOPDOWN);
         levelEventHandler = new ForestEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getForestMusic();
         questManager = new ForestQuestManager(app);
         levelState = new ForestLevelState();
-        app.swapHuds(app.getHud(Config.Huds.STANDARD));
+        app.swapHuds(app.getHud(Huds.STANDARD));
         world = new ForestWorld(this);
         initView(world.getWidth(), world.getHeight());
         inputMultiplexer.addProcessor(levelInputProcessor);

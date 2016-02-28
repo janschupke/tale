@@ -7,7 +7,7 @@ import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Ukko interaction object.
@@ -36,7 +36,7 @@ public class UkkoInteraction extends Interaction {
         if (decision instanceof TalkSituation.DeliveryDecision) {
             ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getUkkoDeliveryEvent().trigger();
             transition(deliveryResultSituation, app);
-            talkSituation.getDecision(Config.Decisions.FOREST_UKKO_DELIVERY).setAvailable(false);
+            talkSituation.getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(false);
         } else {
             triggerable.endInteraction(app);
         }

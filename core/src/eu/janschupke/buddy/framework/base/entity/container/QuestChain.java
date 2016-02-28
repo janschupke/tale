@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.entity.container;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public abstract class QuestChain extends DataContainer {
      */
     protected void configure() {
         activeQuest = quests.get(0);
-        activeQuest.setStatus(Config.TaskStatus.ACTIVE);
+        activeQuest.setStatus(TaskStatus.ACTIVE);
     }
 
     /**
@@ -44,10 +44,10 @@ public abstract class QuestChain extends DataContainer {
      * @param index Quest index within the list of possibilities.
      */
     public void transition(int index) {
-        activeQuest.setStatus(Config.TaskStatus.DONE);
+        activeQuest.setStatus(TaskStatus.DONE);
         if (activeQuest.hasTransition()) {
             activeQuest = activeQuest.getTransition(index);
-            activeQuest.setStatus(Config.TaskStatus.ACTIVE);
+            activeQuest.setStatus(TaskStatus.ACTIVE);
         }
         setChanged();
         notifyObservers();
@@ -67,14 +67,14 @@ public abstract class QuestChain extends DataContainer {
      *
      * @return Current quest chain status.
      */
-    public Config.TaskStatus getStatus() {
-        Config.TaskStatus status = Config.TaskStatus.INIT;
+    public TaskStatus getStatus() {
+        TaskStatus status = TaskStatus.INIT;
 
         boolean allNew = true;
         boolean allDone = true;
 
         for (Quest quest : quests) {
-            if (quest.getStatus() == Config.TaskStatus.DONE) {
+            if (quest.getStatus() == TaskStatus.DONE) {
                 allNew = false;
             } else {
                 allDone = false;
@@ -82,9 +82,9 @@ public abstract class QuestChain extends DataContainer {
         }
 
         if (allDone) {
-            status = Config.TaskStatus.DONE;
+            status = TaskStatus.DONE;
         } else if (!allNew) {
-            status = Config.TaskStatus.ACTIVE;
+            status = TaskStatus.ACTIVE;
         }
 
         return status;

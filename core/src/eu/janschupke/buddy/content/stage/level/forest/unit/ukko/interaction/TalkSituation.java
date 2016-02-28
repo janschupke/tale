@@ -3,7 +3,7 @@ package eu.janschupke.buddy.content.stage.level.forest.unit.ukko.interaction;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 /**
  * Initial interaction situation.
@@ -21,7 +21,7 @@ public class TalkSituation extends Situation {
     class DeliveryDecision extends Decision {
         public DeliveryDecision() {
             super(app.getLang().get("level.forest.interaction.ukko.talk.decision.delivery"),
-                    Config.Decisions.FOREST_UKKO_DELIVERY);
+                    DecisionTags.FOREST_UKKO_DELIVERY);
         }
 
         @Override
@@ -36,7 +36,7 @@ public class TalkSituation extends Situation {
     class EndDecision extends Decision {
         public EndDecision() {
             super(app.getLang().get("level.forest.interaction.ukko.talk.decision.end"),
-                    Config.Decisions.GLOBAL_END);
+                    DecisionTags.GLOBAL_END);
         }
 
         @Override

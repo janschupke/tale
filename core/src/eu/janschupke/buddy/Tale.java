@@ -13,7 +13,9 @@ import eu.janschupke.buddy.content.stage.splash.SplashScreen;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.content.ui.menu.*;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.input.GlobalInputProcessor;
 import eu.janschupke.buddy.framework.input.PlatformInputProcessor;
 import eu.janschupke.buddy.framework.input.TopDownInputProcessor;
@@ -34,7 +36,7 @@ public class Tale extends App {
 		Gdx.input.setCursorImage(pm, 0, 0);
 
 		// Entry screen - splash.
-		this.setScreen(getScreenInstance(Config.Screens.SPLASH));
+		this.setScreen(getScreenInstance(Screens.SPLASH));
 	}
 
 	/**
@@ -46,42 +48,42 @@ public class Tale extends App {
 
 		// Standard in-game overlay.
 		StandardHud standardHud = new StandardHud(this);
-		huds.put(Config.Huds.STANDARD, standardHud);
+		huds.put(Huds.STANDARD, standardHud);
 
 		// Main menu UI.
 		MainMenu mainMenu = new MainMenu(this);
-		huds.put(Config.Huds.MAINMENU, mainMenu);
+		huds.put(Huds.MAINMENU, mainMenu);
 
 		// In-game menu UI.
 		GameMenu gameMenu = new GameMenu(this);
-		huds.put(Config.Huds.GAMEMENU, gameMenu);
+		huds.put(Huds.GAMEMENU, gameMenu);
 
 		SettingsMenu settingsMenu = new SettingsMenu(this);
-		huds.put(Config.Huds.SETTINGSMENU, settingsMenu);
+		huds.put(Huds.SETTINGSMENU, settingsMenu);
 
 		GraphicsMenu graphicsMenu = new GraphicsMenu(this);
-		huds.put(Config.Huds.GRAPHICSMENU, graphicsMenu);
+		huds.put(Huds.GRAPHICSMENU, graphicsMenu);
 
 		AudioMenu audioMenu = new AudioMenu(this);
-		huds.put(Config.Huds.AUDIOMENU, audioMenu);
+		huds.put(Huds.AUDIOMENU, audioMenu);
 
 		HotkeysMenu hotkeysMenu = new HotkeysMenu(this);
-		huds.put(Config.Huds.HOTKEYSMENU, hotkeysMenu);
+		huds.put(Huds.HOTKEYSMENU, hotkeysMenu);
 
 		CreditsMenu creditsMenu = new CreditsMenu(this);
-		huds.put(Config.Huds.CREDITSMENU, creditsMenu);
+		huds.put(Huds.CREDITSMENU, creditsMenu);
 	}
 
 	@Override
 	protected void initInputProcessors() {
 		GlobalInputProcessor globalInputProcessor = new GlobalInputProcessor(this);
-		inputProcessors.put(Config.Input.GLOBAL, globalInputProcessor);
+		inputProcessors.put(InputProcessors.GLOBAL, globalInputProcessor);
 
 		PlatformInputProcessor platformInputProcessor = new PlatformInputProcessor(this);
-		inputProcessors.put(Config.Input.PLATFORM, platformInputProcessor);
+		inputProcessors.put(InputProcessors.PLATFORM, platformInputProcessor);
 
 		TopDownInputProcessor topDownInputProcessor = new TopDownInputProcessor(this);
-		inputProcessors.put(Config.Input.TOPDOWN, topDownInputProcessor);
+		inputProcessors.put(InputProcessors.TOPDOWN, topDownInputProcessor);
 	}
 
 	@Override
@@ -89,27 +91,27 @@ public class Tale extends App {
 		Gdx.app.debug("Buddy#initScreens", "Screens");
 
 		SplashScreen splashScreen = new SplashScreen(this);
-		screens.put(Config.Screens.SPLASH, splashScreen);
+		screens.put(Screens.SPLASH, splashScreen);
 
 		MenuScreen menuScreen = new MenuScreen(this);
-		screens.put(Config.Screens.MENU, menuScreen);
+		screens.put(Screens.MENU, menuScreen);
 
 		ForestScreen forestScreen = new ForestScreen(this);
-		screens.put(Config.Screens.FOREST, forestScreen);
+		screens.put(Screens.FOREST, forestScreen);
 
 		OutskirtsScreen outskirtsScreen = new OutskirtsScreen(this);
-		screens.put(Config.Screens.OUTSKIRTS, outskirtsScreen);
+		screens.put(Screens.OUTSKIRTS, outskirtsScreen);
 
 		CaveScreen caveScreen = new CaveScreen(this);
-		screens.put(Config.Screens.CAVE, caveScreen);
+		screens.put(Screens.CAVE, caveScreen);
 
 		SettlementScreen settlementScreen = new SettlementScreen(this);
-		screens.put(Config.Screens.SETTLEMENT, settlementScreen);
+		screens.put(Screens.SETTLEMENT, settlementScreen);
 
 		HouseScreen houseScreen = new HouseScreen(this);
-		screens.put(Config.Screens.HOUSE, houseScreen);
+		screens.put(Screens.HOUSE, houseScreen);
 
 		DungeonScreen dungeonScreen = new DungeonScreen(this);
-		screens.put(Config.Screens.DUNGEON, dungeonScreen);
+		screens.put(Screens.DUNGEON, dungeonScreen);
 	}
 }

@@ -10,7 +10,7 @@ import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 /**
  * Event for the coin delivery to the Ukko unit.
@@ -28,7 +28,7 @@ public class UkkoDeliveryEvent extends BaseEvent {
         super.trigger();
         Gdx.app.debug("UkkoDeliveryEvent#trigger", "Delivering the coin");
 
-        app.getGameState().getInventory().removeItem(Config.Items.FOREST_GOLD_COIN);
+        app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         chain.transition();
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);

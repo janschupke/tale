@@ -1,5 +1,7 @@
 package eu.janschupke.buddy.framework.config;
 
+import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
+
 /**
  * All global configuration values loaded from the preferences.
  *
@@ -11,7 +13,7 @@ public class RunningConfig {
 
     // Development variables.
     private boolean uiDebugRendering = DefaultSettings.DEBUG_UI;
-    private Config.WorldDebugRendering worldDebugRendering = DefaultSettings.DEBUG_WORLD;
+    private WorldDebugRendering worldDebugRendering = DefaultSettings.DEBUG_WORLD;
     private boolean collisionBypass;
 
     // Graphics variables.
@@ -49,11 +51,11 @@ public class RunningConfig {
         this.uiDebugRendering = uiDebugRendering;
     }
 
-    public Config.WorldDebugRendering getWorldDebugRendering() {
+    public WorldDebugRendering getWorldDebugRendering() {
         return worldDebugRendering;
     }
 
-    public void setWorldDebugRendering(Config.WorldDebugRendering worldDebugRendering) {
+    public void setWorldDebugRendering(WorldDebugRendering worldDebugRendering) {
         this.worldDebugRendering = worldDebugRendering;
     }
 

@@ -4,7 +4,7 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 /**
  * Lumber quest item.
@@ -13,7 +13,7 @@ import eu.janschupke.buddy.framework.config.Config;
  */
 public class LumberItem extends Item implements Triggerable {
     public LumberItem(BaseWorld world) {
-        super(world, null, Config.Items.OUTSKIRTS_LUMBER);
+        super(world, null, ItemTags.OUTSKIRTS_LUMBER);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public abstract class Situation {
         return decisions;
     }
 
-    public Decision getDecision(Config.Decisions tag) {
+    public Decision getDecision(DecisionTags tag) {
         for (Decision decision : decisions) {
             if (decision.getTag() == tag) {
                 return decision;

@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**
@@ -14,9 +15,9 @@ import eu.janschupke.buddy.framework.util.WorldObjectFactory;
  * @author jan.schupke@gmail.com
  */
 public abstract class Item extends WorldObject {
-    private Config.Items tag;
+    private ItemTags tag;
 
-    public Item(BaseWorld world, Texture texture, Vector2 size, Config.Items tag) {
+    public Item(BaseWorld world, Texture texture, Vector2 size, ItemTags tag) {
         super(world, texture, size);
         this.tag = tag;
 
@@ -24,7 +25,7 @@ public abstract class Item extends WorldObject {
         body.setType(BodyDef.BodyType.KinematicBody);
     }
 
-    public Item(BaseWorld world, Texture texture, Config.Items tag) {
+    public Item(BaseWorld world, Texture texture, ItemTags tag) {
         this(world, texture, Config.DEFAULT_ITEM_SIZE, tag);
     }
 
@@ -42,7 +43,7 @@ public abstract class Item extends WorldObject {
         return description;
     }
 
-    public Config.Items getTag() {
+    public ItemTags getTag() {
         return tag;
     }
 }
