@@ -25,6 +25,7 @@ public class HouseScreen extends TopDownScreen {
         world = new HouseWorld(this);
         initView(world.getWidth(), world.getHeight());
         inputMultiplexer.addProcessor(levelInputProcessor);
+        view.setCameraPosition(world.getPlayerUnit());
     }
 
     @Override

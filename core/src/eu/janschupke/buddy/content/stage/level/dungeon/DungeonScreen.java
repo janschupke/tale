@@ -25,6 +25,7 @@ public class DungeonScreen extends TopDownScreen {
         world = new DungeonWorld(this);
         initView(world.getWidth(), world.getHeight());
         inputMultiplexer.addProcessor(levelInputProcessor);
+        view.setCameraPosition(world.getPlayerUnit());
     }
 
     @Override

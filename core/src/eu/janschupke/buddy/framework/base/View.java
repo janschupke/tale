@@ -61,7 +61,7 @@ public class View {
     }
 
     /**
-     * Centers the camera on the requested object.
+     * Centers the camera on the requested object with interpolation active.
      *
      * @param o Target object.
      */
@@ -72,6 +72,16 @@ public class View {
         position.x = position.x + (target.x - position.x) * factor;
         position.y = position.y + (target.y - position.y) * factor;
         camera.position.set(position);
+    }
+
+    /**
+     * Centers the camera on the requested object without interpolating.
+     *
+     * @param o Target object.
+     */
+    public void setCameraPosition(WorldObject o) {
+        Vector3 target = new Vector3(o.getX() + o.getWidth() / 2.0f, o.getY() + o.getHeight() / 2.0f, 0);
+        camera.position.set(target);
     }
 
     public OrthographicCamera getCamera() {

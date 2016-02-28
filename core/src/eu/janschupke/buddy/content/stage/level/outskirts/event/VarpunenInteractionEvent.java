@@ -1,23 +1,21 @@
 package eu.janschupke.buddy.content.stage.level.outskirts.event;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.PickupEvent;
+import eu.janschupke.buddy.framework.base.event.BaseEvent;
 
 /**
- * Event for the Varpunen note pickup.
+ * Event for the Varpunen note interaction.
  *
  * @author jan.schupke@gmail.com
  */
-public class VarpunenPickupEvent extends PickupEvent {
-    public VarpunenPickupEvent(final App app) {
-        // TODO
-        super(app, "TODO");
+public class VarpunenInteractionEvent extends BaseEvent {
+    public VarpunenInteractionEvent(final App app) {
+        super(app);
     }
 
     @Override
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
-        // TODO
     }
 }

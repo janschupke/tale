@@ -28,6 +28,7 @@ public class ForestScreen extends TopDownScreen {
         world = new ForestWorld(this);
         initView(world.getWidth(), world.getHeight());
         inputMultiplexer.addProcessor(levelInputProcessor);
+        view.setCameraPosition(world.getPlayerUnit());
     }
 
     @Override

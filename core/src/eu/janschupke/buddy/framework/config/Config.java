@@ -47,6 +47,7 @@ public class Config {
     public static final float RESTITUTION = 0.0f;
     public static final float OBJECT_ACCELERATION = 2.0f;
     public static final float OBJECT_MAX_SPEED = 2.8f;
+    public static final float PLAYER_SCREEN_TRANSITION_VELOCITY = 10.0f;
     // Collision class configuration.
     public static final short BIT_NOTHING = 0;
     public static final short BIT_UNIT_ANY = 3;

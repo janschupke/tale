@@ -25,7 +25,8 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initPlayer() {
-        setSpawnPoint(30, 17);
+//        setSpawnPoint(30, 17);
+        setSpawnPoint(50, 40);
         setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
