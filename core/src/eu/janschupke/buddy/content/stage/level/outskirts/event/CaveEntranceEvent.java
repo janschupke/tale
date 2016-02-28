@@ -21,6 +21,7 @@ public class CaveEntranceEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
+        Utility.preservePlayerMovement(app, Screens.CAVE);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.CAVE), app.getHud(Huds.STANDARD));
     }
 }

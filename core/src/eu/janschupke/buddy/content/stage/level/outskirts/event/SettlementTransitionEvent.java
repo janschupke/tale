@@ -21,6 +21,7 @@ public class SettlementTransitionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
+        Utility.preservePlayerMovement(app, Screens.SETTLEMENT);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.SETTLEMENT), app.getHud(Huds.STANDARD));
     }
 }

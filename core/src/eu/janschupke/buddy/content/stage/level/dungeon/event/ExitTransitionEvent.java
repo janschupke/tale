@@ -17,5 +17,6 @@ public class ExitTransitionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
+        // TODO: exit
     }
 }

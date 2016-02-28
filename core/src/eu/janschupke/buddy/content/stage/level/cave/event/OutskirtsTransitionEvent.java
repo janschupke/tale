@@ -2,6 +2,9 @@ package eu.janschupke.buddy.content.stage.level.cave.event;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
+import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.framework.util.Utility;
 
 /**
  * Event for the transition from Cave to Outskirts.
@@ -18,5 +21,7 @@ public class OutskirtsTransitionEvent extends BaseEvent {
     public void trigger() {
         if (!canTrigger()) return;
         super.trigger();
+        Utility.preservePlayerMovement(app, Screens.OUTSKIRTS);
+        Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTSKIRTS), app.getHud(Huds.STANDARD));
     }
 }
