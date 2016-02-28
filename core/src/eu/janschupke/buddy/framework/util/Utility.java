@@ -1,8 +1,11 @@
 package eu.janschupke.buddy.framework.util;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * General utility class.
@@ -20,6 +23,17 @@ public class Utility {
     public static void transitionScreens(final App app, final BaseScreen newScreen, final RootTable newHud) {
         app.setScreen(newScreen);
         app.swapHuds(newHud);
+    }
+
+    /**
+     * Preserves player unit movement flags during screen transitions.
+     * @param app Application instance.
+     * @param newScreen New screen tag.
+     */
+    public static void preservePlayerMovement(final App app, Screens newScreen) {
+        Unit previousScreenUnit = app.getGameState().getCurrentLevel().getWorld().getPlayerUnit();
+        Unit nextScreenUnit = ((GameScreen)app.getScreenInstance(newScreen)).getWorld().getPlayerUnit();
+        nextScreenUnit.preserveMovement(previousScreenUnit);
     }
 
     /**

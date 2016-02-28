@@ -25,6 +25,7 @@ public class OutskirtsScreen extends TopDownScreen {
         world = new OutskirtsWorld(this);
         initView(world.getWidth(), world.getHeight());
         inputMultiplexer.addProcessor(levelInputProcessor);
+        view.setCameraPosition(world.getPlayerUnit());
     }
 
     @Override

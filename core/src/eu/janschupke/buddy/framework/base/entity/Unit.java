@@ -108,6 +108,19 @@ public abstract class Unit extends WorldObject {
     }
 
     /**
+     * Preserves required unit movement during screen transitions.
+     *
+     * @param previousScreenUnit Unit instance from the previous screen.
+     */
+    public void preserveMovement(Unit previousScreenUnit) {
+        stop();
+        if (previousScreenUnit.isMovingUp()) moveUp();
+        if (previousScreenUnit.isMovingDown()) moveDown();
+        if (previousScreenUnit.isMovingRight()) moveRight();
+        if (previousScreenUnit.isMovingLeft()) moveLeft();
+    }
+
+    /**
      * Generic animation initialization.
      *
      * @param frames Array of frames.
@@ -268,5 +281,21 @@ public abstract class Unit extends WorldObject {
 
     protected enum Direction {
         UP, DOWN, RIGHT, LEFT
+    }
+
+    public boolean isMovingUp() {
+        return movingUp;
+    }
+
+    public boolean isMovingDown() {
+        return movingDown;
+    }
+
+    public boolean isMovingRight() {
+        return movingRight;
+    }
+
+    public boolean isMovingLeft() {
+        return movingLeft;
     }
 }
