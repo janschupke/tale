@@ -10,8 +10,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
  *
  * @author jan.schupke@gmail.com
  */
-public class PickupSituation extends Situation {
-    public PickupSituation(final App app) {
+public class InvestigateSituation extends Situation {
+    public InvestigateSituation(final App app) {
         super(app, app.getLang().get("level.forest.interaction.coin.pickup.description"));
         decisions.add(new PickupDecision());
         decisions.add(new IgnoreDecision());
