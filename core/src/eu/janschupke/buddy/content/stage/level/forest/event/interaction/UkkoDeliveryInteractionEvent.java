@@ -29,18 +29,12 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
 
     }
 
-    /**
-     * Updates quest status accordingly to the actions.
-     */
     @Override
     protected void updateQuests() {
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         chain.transition();
     }
 
-    /**
-     * Updates game state to conform actions that occurred during this event.
-     */
     @Override
     protected void updateGameState() {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);
@@ -48,9 +42,6 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
         removeQuestWall();
     }
 
-    /**
-     * Updates the availability of interaction decisions.
-     */
     @Override
     protected void updateInteractions() {
         app.getInteraction(InteractionTags.FOREST_UKKO).getSituation(SituationTags.FOREST_UKKO_TALK)

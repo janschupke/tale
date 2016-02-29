@@ -96,9 +96,10 @@ public abstract class App extends Game {
     }
 
     /**
-     * TODO
-     * @param tag
-     * @return
+     * Searches through all game's instantiated interactions for the one
+     * with provided tag.
+     * @param tag Tag of the requested interaction.
+     * @return Interaction with provided tag, or null, if not found.
      */
     public Interaction getInteraction(InteractionTags tag) {
         for (Map.Entry entry : screens.entrySet()) {
@@ -127,7 +128,7 @@ public abstract class App extends Game {
             }
         }
 
-        throw null;
+        return null;
     }
 
     /**

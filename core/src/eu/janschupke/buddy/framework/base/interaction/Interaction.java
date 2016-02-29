@@ -77,13 +77,13 @@ public abstract class Interaction {
     }
 
     /**
-     * TODO
-     * @param tag
-     * @return
+     * Retrieves specific situation based on the provided tag.
+     * @param tag Requested situation's tag.
+     * @return Situation with the provided tag.
      */
     public Situation getSituation(SituationTags tag) {
         for (Situation situation : situations) {
-            if (situation.getTag() == tag) {
+            if (situation.getTag().equals(tag)) {
                 return situation;
             }
         }

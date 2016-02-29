@@ -101,7 +101,7 @@ public class InventoryTable extends UITable implements Observer {
     }
 
     /**
-     * TODO
+     * Clears the inventory content table texts.
      */
     private void clearActiveItem() {
         itemNameLabel.setText(app.getLang().get("hud.inventory.label.empty"));

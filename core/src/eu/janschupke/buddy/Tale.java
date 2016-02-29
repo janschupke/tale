@@ -1,7 +1,6 @@
 package eu.janschupke.buddy;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Pixmap;
 import eu.janschupke.buddy.content.stage.level.cave.CaveScreen;
 import eu.janschupke.buddy.content.stage.level.dungeon.DungeonScreen;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
@@ -30,10 +29,8 @@ public class Tale extends App {
 		super.create();
 		Gdx.app.debug("Buddy#create", "Creating");
 
-		// TODO: texture manager
 		// Cursor setup.
-		Pixmap pm = new Pixmap(Gdx.files.internal("textures/gui/application-cursor.png"));
-		Gdx.input.setCursorImage(pm, 0, 0);
+		Gdx.input.setCursorImage(getResourceManager().getTextureHandler().getGameCursorPixmap(), 0, 0);
 
 		// Entry screen - splash.
 		this.setScreen(getScreenInstance(Screens.SPLASH));

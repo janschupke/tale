@@ -35,7 +35,7 @@ public abstract class Situation {
 
     public Decision getDecision(DecisionTags tag) {
         for (Decision decision : decisions) {
-            if (decision.getTag() == tag) {
+            if (decision.getTag().equals(tag)) {
                 return decision;
             }
         }
