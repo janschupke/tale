@@ -1,23 +1,13 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
-import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
-import eu.janschupke.buddy.personality.Metric;
-
-import java.util.ArrayList;
-import java.util.List;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
 
 /**
  * One decision within a set of decisions for each situation.
  *
  * @author jan.schupke@gmail.com
  */
-public abstract class Decision {
-    /**
-     * List of personality metrics that are applied to the overall personality
-     * if this decision is chosen.
-     */
-    protected List<Metric> metrics;
-
+public class Decision {
     /**
      * Description of the decision, as shown in the HUD.
      */
@@ -36,25 +26,9 @@ public abstract class Decision {
     protected DecisionTags tag;
 
     public Decision(String description, DecisionTags tag) {
-        metrics = new ArrayList<>();
         this.description = description;
         this.tag = tag;
         available = true;
-    }
-
-    /**
-     * Sets all personality metrics this decision influences.
-     * May be empty if a decision is not related to personality measurements.
-     */
-    protected abstract void configureMetrics();
-
-    /**
-     * Indicates whether this decision influences personality measurement.
-     *
-     * @return True is any personality metrics are found, false otherwise.
-     */
-    public boolean hasMetrics() {
-        return !metrics.isEmpty();
     }
 
     public String getDescription() {

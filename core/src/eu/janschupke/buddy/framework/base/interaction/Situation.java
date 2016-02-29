@@ -1,7 +1,8 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +15,13 @@ import java.util.List;
 public abstract class Situation {
     protected App app;
     protected String description;
+    protected SituationTags tag;
     protected List<Decision> decisions;
 
-    public Situation(final App app, String description) {
+    public Situation(final App app, String description, SituationTags tag) {
         this.app = app;
         this.description = description;
+        this.tag = tag;
         decisions = new ArrayList<>();
     }
 
@@ -38,5 +41,9 @@ public abstract class Situation {
         }
 
         return null;
+    }
+
+    public SituationTags getTag() {
+        return tag;
     }
 }

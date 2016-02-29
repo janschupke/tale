@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config.enumeration;
+package eu.janschupke.buddy.framework.config.enumeration.interaction;
 
 /**
  * Enumeration of tags for all interaction decisions in the game.

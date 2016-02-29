@@ -3,7 +3,8 @@ package eu.janschupke.buddy.content.stage.level.settlement.obstacle.chobo_house.
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 /**
  * Initial Chobo's house interaction situation.
@@ -12,22 +13,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
  */
 public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
-        super(app, app.getLang().get("level.settlement.interaction.chobo-house.investigate.description"));
-        decisions.add(new LeaveDecision());
-    }
-
-    /**
-     * Decision to leave the interaction.
-     */
-    class LeaveDecision extends Decision {
-        public LeaveDecision() {
-            super(app.getLang().get("global.interaction.decision.end"),
-                    DecisionTags.GLOBAL_END);
-        }
-
-        @Override
-        protected void configureMetrics() {
-            // Does not influence personality.
-        }
+        super(app, app.getLang().get("level.settlement.interaction.chobo-house.investigate.description"),
+                SituationTags.SETTLEMENT_CHOBO_HOUSE_INVESTIGATE);
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
     }
 }

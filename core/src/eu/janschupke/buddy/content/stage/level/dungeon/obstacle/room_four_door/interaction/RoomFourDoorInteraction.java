@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
 
 /**
  * Interaction class for the fourth room door.
@@ -13,7 +14,7 @@ import eu.janschupke.buddy.framework.base.interaction.Situation;
  */
 public class RoomFourDoorInteraction extends Interaction {
     public RoomFourDoorInteraction(final App app, final Triggerable triggerable) {
-        super(app, triggerable);
+        super(app, triggerable, InteractionTags.DUNGEON_ROOM_FOUR_DOOR);
     }
 
     @Override

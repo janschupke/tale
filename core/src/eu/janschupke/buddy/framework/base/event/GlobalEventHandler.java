@@ -21,6 +21,7 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.util.Utility;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
+import eu.janschupke.buddy.logging.tools.GameLogParser;
 
 import java.util.Map;
 
@@ -56,10 +57,10 @@ public class GlobalEventHandler {
     }
 
     /**
-     * TODO: NYI.
+     * Dumps the current state of the game action log into XML file.
      */
     public void dumpData() {
-        //
+        GameLogParser.parseToXml(app.getGameLog());
     }
 
     /**

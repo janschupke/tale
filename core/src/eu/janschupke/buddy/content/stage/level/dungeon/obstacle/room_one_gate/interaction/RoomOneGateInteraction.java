@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
 
 /**
  * Interaction class for the first room gate.
@@ -13,7 +14,7 @@ import eu.janschupke.buddy.framework.base.interaction.Situation;
  */
 public class RoomOneGateInteraction extends Interaction {
     public RoomOneGateInteraction(final App app, final Triggerable triggerable) {
-        super(app, triggerable);
+        super(app, triggerable, InteractionTags.DUNGEON_ROOM_ONE_GATE);
     }
 
     @Override

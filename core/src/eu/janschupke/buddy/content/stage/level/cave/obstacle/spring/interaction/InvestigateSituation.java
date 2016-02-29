@@ -3,7 +3,8 @@ package eu.janschupke.buddy.content.stage.level.cave.obstacle.spring.interaction
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 /**
  * Initial cave spring interaction situation.
@@ -12,22 +13,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
  */
 public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
-        super(app, app.getLang().get("level.cave.interaction.spring.investigate.description"));
-        decisions.add(new LeaveDecision());
-    }
-
-    /**
-     * Decision to leave the interaction.
-     */
-    class LeaveDecision extends Decision {
-        public LeaveDecision() {
-            super(app.getLang().get("global.interaction.decision.end"),
-                    DecisionTags.GLOBAL_END);
-        }
-
-        @Override
-        protected void configureMetrics() {
-            // Does not influence personality.
-        }
+        super(app, app.getLang().get("level.cave.interaction.spring.investigate.description"),
+                SituationTags.CAVE_SPRING_INVESTIGATE);
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
     }
 }

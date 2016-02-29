@@ -11,7 +11,7 @@ public class Hotkeys {
     public static final int DEBUG_UI = Input.Keys.F1;
     public static final int DEBUG_RENDER = Input.Keys.F2;
     public static final int DEBUG_COLLISION_BYPASS = Input.Keys.F3;
-    public static final int DEBUG_DATA_DUMP = Input.Keys.F5;
+    public static final int DEBUG_LOG_DUMP = Input.Keys.F5;
 
     public static final int MENU = Input.Keys.ESCAPE;
     public static final int MENU_ALTERNATIVE = Input.Keys.F10;

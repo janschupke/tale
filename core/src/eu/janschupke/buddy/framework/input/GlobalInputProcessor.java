@@ -34,7 +34,7 @@ public class GlobalInputProcessor extends BaseInputProcessor {
             app.getEventHandler().toggleSound();
         }
 
-        if (keycode == Hotkeys.DEBUG_DATA_DUMP) {
+        if (keycode == Hotkeys.DEBUG_LOG_DUMP) {
             // Manual dump is only available in debug mode.
             // Dump gets called automatically upon the game completion.
             if (Config.DEBUG_MODE) {

@@ -12,9 +12,14 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
+import eu.janschupke.buddy.framework.base.entity.Item;
+import eu.janschupke.buddy.framework.base.entity.Triggerable;
+import eu.janschupke.buddy.framework.base.entity.Unit;
+import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.GameState;
 import eu.janschupke.buddy.framework.base.event.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
+import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
@@ -25,8 +30,10 @@ import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
 import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 import eu.janschupke.buddy.framework.resources.ResourceManager;
+import eu.janschupke.buddy.logging.GameLog;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -50,6 +57,7 @@ public abstract class App extends Game {
     private SettingsManager settingsManager;
     private ResourceManager resourceManager;
     private GameState gameState;
+    private GameLog gameLog;
 
     @Override
     public void create() {
@@ -83,6 +91,43 @@ public abstract class App extends Game {
 
         initInputProcessors();
         resetState();
+
+        gameLog = new GameLog();
+    }
+
+    /**
+     * TODO
+     * @param tag
+     * @return
+     */
+    public Interaction getInteraction(InteractionTags tag) {
+        for (Map.Entry entry : screens.entrySet()) {
+            if (!(entry.getValue() instanceof GameScreen)) {
+                continue;
+            }
+
+            GameScreen screen = (GameScreen) entry.getValue();
+
+            for (Item item : screen.getWorld().getItems()) {
+                if (item instanceof Triggerable && ((Triggerable) item).getInteraction().getTag().equals(tag)) {
+                    return ((Triggerable) item).getInteraction();
+                }
+            }
+
+            for (Unit unit : screen.getWorld().getUnits()) {
+                if (unit instanceof Triggerable && ((Triggerable) unit).getInteraction().getTag().equals(tag)) {
+                    return ((Triggerable) unit).getInteraction();
+                }
+            }
+
+            for (WorldEntity obstacle : screen.getWorld().getObstacles()) {
+                if (obstacle instanceof Triggerable && ((Triggerable) obstacle).getInteraction().getTag().equals(tag)) {
+                    return ((Triggerable) obstacle).getInteraction();
+                }
+            }
+        }
+
+        throw null;
     }
 
     /**
@@ -255,5 +300,9 @@ public abstract class App extends Game {
 
     public GameState getGameState() {
         return gameState;
+    }
+
+    public GameLog getGameLog() {
+        return gameLog;
     }
 }

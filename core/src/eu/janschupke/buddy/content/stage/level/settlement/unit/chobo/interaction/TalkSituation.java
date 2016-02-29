@@ -3,7 +3,8 @@ package eu.janschupke.buddy.content.stage.level.settlement.unit.chobo.interactio
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 /**
  * Initial Chobo interaction situation.
@@ -12,22 +13,8 @@ import eu.janschupke.buddy.framework.config.enumeration.DecisionTags;
  */
 public class TalkSituation extends Situation {
     public TalkSituation(final App app) {
-        super(app, app.getLang().get("level.settlement.interaction.chobo.talk.description"));
-        decisions.add(new LeaveDecision());
-    }
-
-    /**
-     * Decision to leave the interaction.
-     */
-    class LeaveDecision extends Decision {
-        public LeaveDecision() {
-            super(app.getLang().get("global.interaction.decision.end"),
-                    DecisionTags.GLOBAL_END);
-        }
-
-        @Override
-        protected void configureMetrics() {
-            // Does not influence personality.
-        }
+        super(app, app.getLang().get("level.settlement.interaction.chobo.talk.description"),
+                SituationTags.SETTLEMENT_CHOBO_TALK);
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
     }
 }

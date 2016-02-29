@@ -3,6 +3,8 @@ package eu.janschupke.buddy.framework.base.interaction;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,9 +32,15 @@ public abstract class Interaction {
      */
     protected Situation fallbackSituation;
 
-    public Interaction(final App app, final Triggerable triggerable) {
+    /**
+     * Tag that identifies the interaction across the game.
+     */
+    protected InteractionTags tag;
+
+    public Interaction(final App app, final Triggerable triggerable, InteractionTags tag) {
         this.app = app;
         this.triggerable = triggerable;
+        this.tag = tag;
         situations = new ArrayList<>();
         configure();
     }
@@ -68,11 +76,30 @@ public abstract class Interaction {
         return currentSituation;
     }
 
+    /**
+     * TODO
+     * @param tag
+     * @return
+     */
+    public Situation getSituation(SituationTags tag) {
+        for (Situation situation : situations) {
+            if (situation.getTag() == tag) {
+                return situation;
+            }
+        }
+
+        return null;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public String getDescription() {
         return currentSituation.getDescription();
+    }
+
+    public InteractionTags getTag() {
+        return tag;
     }
 }

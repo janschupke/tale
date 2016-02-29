@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.personality;
+package eu.janschupke.buddy.logging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,19 +9,23 @@ import java.util.List;
  *
  * @author jan.schupke@gmail.com
  */
-public class Personality {
-    private List<PersonalityEntry> entries;
+public class GameLog {
+    private List<GameLogEntry> entries;
 
-    public Personality() {
+    public GameLog() {
         entries = new ArrayList<>();
     }
 
-    public void addEntry(PersonalityEntry entry) {
+    public void addEntry(GameLogEntry entry) {
         entries.add(entry);
     }
 
-    public void addEntry(String description, List<Metric> metrics) {
-        entries.add(new PersonalityEntry(description, metrics));
+    public void addEntry(String description) {
+        entries.add(new GameLogEntry(description));
+    }
+
+    public List<GameLogEntry> getEntries() {
+        return entries;
     }
 
     public void clear() {

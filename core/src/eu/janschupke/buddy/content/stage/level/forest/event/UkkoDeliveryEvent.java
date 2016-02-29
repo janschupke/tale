@@ -11,6 +11,9 @@ import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.BaseEvent;
 import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
+import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 
 /**
  * Event for the coin delivery to the Ukko unit.
@@ -30,6 +33,7 @@ public class UkkoDeliveryEvent extends BaseEvent {
 
         updateQuest();
         updateGameState();
+        updateInteractions();
     }
 
     /**
@@ -46,11 +50,19 @@ public class UkkoDeliveryEvent extends BaseEvent {
     private void updateGameState() {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);
         app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
-        removeQuestlWall();
+        removeQuestWall();
+    }
+
+    /**
+     * Updates the availability of interaction decisions.
+     */
+    private void updateInteractions() {
+        app.getInteraction(InteractionTags.FOREST_UKKO).getSituation(SituationTags.FOREST_UKKO_TALK)
+                .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(false);
     }
 
     // TODO: class passing
-    private void removeQuestlWall() {
+    private void removeQuestWall() {
         for (WorldEntity obstacle : ((ForestScreen) app.getScreen()).getWorld().getObstacles()) {
             if (obstacle instanceof QuestWall) {
                 ((ForestScreen) app.getScreen()).getWorld().removeWall((Wall) obstacle);
