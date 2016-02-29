@@ -1,26 +1,37 @@
 package eu.janschupke.buddy.content.stage.level.forest.event;
 
-import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.InteractionEvent;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 
 /**
  * Event that is triggered by interacting with the coin.
  *
  * @author jan.schupke@gmail.com
  */
-public class CoinInteractionEvent extends BaseEvent {
+public class CoinInteractionEvent extends InteractionEvent {
     public CoinInteractionEvent(final App app) {
         super(app);
         repeatable = true;
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        Gdx.app.debug("CoinInteractEvent#trigger", "Triggering coin interaction");
-        super.trigger();
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+
+    }
+
+    @Override
+    protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 }

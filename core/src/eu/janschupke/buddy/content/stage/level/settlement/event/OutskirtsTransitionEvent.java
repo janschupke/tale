@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.content.stage.level.settlement.event;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.BaseEvent;
+import eu.janschupke.buddy.framework.base.event.TransitionEvent;
 import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.util.Utility;
@@ -11,17 +11,30 @@ import eu.janschupke.buddy.framework.util.Utility;
  *
  * @author jan.schupke@gmail.com
  */
-public class OutskirtsTransitionEvent extends BaseEvent {
+public class OutskirtsTransitionEvent extends TransitionEvent {
     public OutskirtsTransitionEvent(final App app) {
         super(app);
         repeatable = true;
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        super.trigger();
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+
+    }
+
+    @Override
+    protected void updateGameState() {
         Utility.preservePlayerMovement(app, Screens.OUTSKIRTS);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTSKIRTS), app.getHud(Huds.STANDARD));
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 }

@@ -15,8 +15,22 @@ public class MeadPickupEvent extends PickupEvent {
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        super.trigger();
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+
+    }
+
+    @Override
+    protected void updateGameState() {
+
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 }

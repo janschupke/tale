@@ -20,7 +20,7 @@ public class ItemIntroSensor extends Sensor implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getItemIntroEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getItemIntroGeneralEvent().trigger();
     }
 
     @Override

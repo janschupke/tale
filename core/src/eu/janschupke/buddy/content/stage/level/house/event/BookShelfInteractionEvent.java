@@ -1,24 +1,37 @@
 package eu.janschupke.buddy.content.stage.level.house.event;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.BaseEvent;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.InteractionEvent;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 
 /**
  * Interaction event for the book shelf.
  *
  * @author jan.schupke@gmail.com
  */
-public class BookShelfInteractionEvent extends BaseEvent {
+public class BookShelfInteractionEvent extends InteractionEvent {
     public BookShelfInteractionEvent(final App app) {
         super(app);
         repeatable = true;
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        super.trigger();
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+
+    }
+
+    @Override
+    protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 }

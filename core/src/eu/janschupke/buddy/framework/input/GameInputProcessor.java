@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;

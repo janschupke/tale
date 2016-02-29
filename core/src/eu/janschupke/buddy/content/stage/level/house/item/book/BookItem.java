@@ -6,7 +6,7 @@ import eu.janschupke.buddy.content.stage.level.house.HouseEventHandler;
 import eu.janschupke.buddy.content.stage.level.house.item.book.interaction.BookInteraction;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;

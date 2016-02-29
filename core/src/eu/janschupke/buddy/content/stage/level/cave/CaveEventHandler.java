@@ -1,12 +1,12 @@
 package eu.janschupke.buddy.content.stage.level.cave;
 
-import eu.janschupke.buddy.content.stage.level.cave.event.CorpsecExplorationEvent;
-import eu.janschupke.buddy.content.stage.level.cave.event.CorpsecInteractionEvent;
-import eu.janschupke.buddy.content.stage.level.cave.event.SpringInteractionEvent;
-import eu.janschupke.buddy.content.stage.level.cave.event.VilleInteractionEvent;
-import eu.janschupke.buddy.content.stage.level.forest.event.OutskirtsTransitionEvent;
+import eu.janschupke.buddy.content.stage.level.cave.event.exploration.CorpsecExplorationEvent;
+import eu.janschupke.buddy.content.stage.level.cave.event.interaction.CorpsecInteractionEvent;
+import eu.janschupke.buddy.content.stage.level.cave.event.interaction.SpringInteractionEvent;
+import eu.janschupke.buddy.content.stage.level.cave.event.interaction.VilleInteractionEvent;
+import eu.janschupke.buddy.content.stage.level.cave.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the cave level.

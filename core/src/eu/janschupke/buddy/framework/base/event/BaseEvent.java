@@ -15,10 +15,6 @@ public abstract class BaseEvent {
     protected boolean repeatable;
     protected String eventMessage;
 
-    public BaseEvent(final App app) {
-        this(app, "");
-    }
-
     public BaseEvent(final App app, String eventMessage) {
         this.app = app;
         this.eventMessage = eventMessage;
@@ -34,6 +30,26 @@ public abstract class BaseEvent {
             ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stop();
         }
     }
+
+    /**
+     * All logic for updating event messages (adding to the event log) associated to the event.
+     */
+    protected abstract void updateMessages();
+
+    /**
+     * All logic associated with quest handling during the event.
+     */
+    protected abstract void updateQuests();
+
+    /**
+     * Any other logic that might need to be coded for the event.
+     */
+    protected abstract void updateGameState();
+
+    /**
+     * All interaction adjustments that take place during the event.
+     */
+    protected abstract void updateInteractions();
 
     /**
      * Returns information about the triggerability of given event.

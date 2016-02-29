@@ -26,39 +26,27 @@ public class CoinPickupEvent extends PickupEvent {
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        Gdx.app.debug("CoinPickupEvent#trigger", "Picking up the coin");
-        super.trigger();
-
-        addMessage();
-        updateQuest();
-        updateGameState();
-    }
-
-    /**
-     * Adds a message to the event log.
-     */
-    private void addMessage() {
+    protected void updateMessages() {
         showDialog(pickupDialog);
         addEventMessage();
     }
 
-    /**
-     * Updates quest status accordingly to the actions.
-     */
-    private void updateQuest() {
+    @Override
+    protected void updateQuests() {
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
     }
 
-    /**
-     * Updates game state to conform actions that occurred during this event.
-     */
-    private void updateGameState() {
+    @Override
+    protected void updateGameState() {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinPickedUp(true);
         removeInitialWall();
         app.getGameState().getGlobalLevelState().clearCurrentHint();
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 
     // TODO: class passing

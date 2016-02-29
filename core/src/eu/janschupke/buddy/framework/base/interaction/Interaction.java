@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.interaction;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
 

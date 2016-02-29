@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.entity;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 

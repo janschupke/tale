@@ -20,7 +20,7 @@ public class UnitIntroSensor extends Sensor implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUnitIntroEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getUnitIntroGeneralEvent().trigger();
     }
 
     @Override

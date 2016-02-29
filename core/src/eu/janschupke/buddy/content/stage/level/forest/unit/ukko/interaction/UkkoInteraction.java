@@ -37,7 +37,7 @@ public class UkkoInteraction extends Interaction {
     @Override
     public void handle(Decision decision) {
         if (decision.getTag().equals(DecisionTags.FOREST_UKKO_DELIVERY)) {
-            ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getUkkoDeliveryEvent().trigger();
+            ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getUkkoDeliveryGeneralEvent().trigger();
             transition(deliveryResultSituation, app);
         } else {
             triggerable.endInteraction(app);

@@ -17,7 +17,7 @@ import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.GameState;
-import eu.janschupke.buddy.framework.base.event.GlobalEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.GlobalEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;

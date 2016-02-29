@@ -7,7 +7,7 @@ import eu.janschupke.buddy.content.stage.level.cave.CaveEventHandler;
 import eu.janschupke.buddy.content.stage.level.cave.unit.ville.interaction.VilleInteraction;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.entity.Unit;
-import eu.janschupke.buddy.framework.base.event.InteractionSwitch;
+import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;

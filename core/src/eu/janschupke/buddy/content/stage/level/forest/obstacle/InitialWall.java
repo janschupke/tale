@@ -21,7 +21,7 @@ public class InitialWall extends Wall implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getInitialWallEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getInitialWallGeneralEvent().trigger();
     }
 
     @Override

@@ -2,7 +2,7 @@ package eu.janschupke.buddy.content.stage.level.forest;
 
 import eu.janschupke.buddy.content.stage.level.forest.event.*;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the forest level.
@@ -13,16 +13,16 @@ public class ForestEventHandler extends LevelEventHandler {
     private CoinInteractionEvent coinInteractionEvent;
     private CoinPickupEvent coinPickupEvent;
     private EastExplorationEvent eastExplorationEvent;
-    private InitialWallEvent initialWallEvent;
-    private IntroEvent introEvent;
-    private ItemIntroEvent itemIntroEvent;
+    private InitialWallGeneralEvent initialWallGeneralEvent;
+    private IntroGeneralEvent introGeneralEvent;
+    private ItemIntroGeneralEvent itemIntroGeneralEvent;
     private NorthExplorationEvent northExplorationEvent;
     private OutskirtsTransitionEvent outskirtsTransitionEvent;
-    private QuestWallEvent questWallEvent;
+    private QuestWallGeneralEvent questWallGeneralEvent;
     private SouthExplorationEvent southExplorationEvent;
-    private UkkoDeliveryEvent ukkoDeliveryEvent;
+    private UkkoDeliveryGeneralEvent ukkoDeliveryGeneralEvent;
     private UkkoInteractionEvent ukkoInteractionEvent;
-    private UnitIntroEvent unitIntroEvent;
+    private UnitIntroGeneralEvent unitIntroGeneralEvent;
 
     public ForestEventHandler(final App app) {
         super(app);
@@ -30,16 +30,16 @@ public class ForestEventHandler extends LevelEventHandler {
         coinInteractionEvent = new CoinInteractionEvent(app);
         coinPickupEvent = new CoinPickupEvent(app);
         eastExplorationEvent = new EastExplorationEvent(app);
-        initialWallEvent = new InitialWallEvent(app);
-        introEvent = new IntroEvent(app);
-        itemIntroEvent = new ItemIntroEvent(app);
+        initialWallGeneralEvent = new InitialWallGeneralEvent(app);
+        introGeneralEvent = new IntroGeneralEvent(app);
+        itemIntroGeneralEvent = new ItemIntroGeneralEvent(app);
         northExplorationEvent = new NorthExplorationEvent(app);
         outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
-        questWallEvent = new QuestWallEvent(app);
+        questWallGeneralEvent = new QuestWallGeneralEvent(app);
         southExplorationEvent = new SouthExplorationEvent(app);
-        ukkoDeliveryEvent = new UkkoDeliveryEvent(app);
+        ukkoDeliveryGeneralEvent = new UkkoDeliveryGeneralEvent(app);
         ukkoInteractionEvent = new UkkoInteractionEvent(app);
-        unitIntroEvent = new UnitIntroEvent(app);
+        unitIntroGeneralEvent = new UnitIntroGeneralEvent(app);
     }
 
     public CoinInteractionEvent getCoinInteractionEvent() {
@@ -54,16 +54,16 @@ public class ForestEventHandler extends LevelEventHandler {
         return eastExplorationEvent;
     }
 
-    public InitialWallEvent getInitialWallEvent() {
-        return initialWallEvent;
+    public InitialWallGeneralEvent getInitialWallGeneralEvent() {
+        return initialWallGeneralEvent;
     }
 
-    public IntroEvent getIntroEvent() {
-        return introEvent;
+    public IntroGeneralEvent getIntroGeneralEvent() {
+        return introGeneralEvent;
     }
 
-    public ItemIntroEvent getItemIntroEvent() {
-        return itemIntroEvent;
+    public ItemIntroGeneralEvent getItemIntroGeneralEvent() {
+        return itemIntroGeneralEvent;
     }
 
     public NorthExplorationEvent getNorthExplorationEvent() {
@@ -74,23 +74,23 @@ public class ForestEventHandler extends LevelEventHandler {
         return outskirtsTransitionEvent;
     }
 
-    public QuestWallEvent getQuestWallEvent() {
-        return questWallEvent;
+    public QuestWallGeneralEvent getQuestWallGeneralEvent() {
+        return questWallGeneralEvent;
     }
 
     public SouthExplorationEvent getSouthExplorationEvent() {
         return southExplorationEvent;
     }
 
-    public UkkoDeliveryEvent getUkkoDeliveryEvent() {
-        return ukkoDeliveryEvent;
+    public UkkoDeliveryGeneralEvent getUkkoDeliveryGeneralEvent() {
+        return ukkoDeliveryGeneralEvent;
     }
 
     public UkkoInteractionEvent getUkkoInteractionEvent() {
         return ukkoInteractionEvent;
     }
 
-    public UnitIntroEvent getUnitIntroEvent() {
-        return unitIntroEvent;
+    public UnitIntroGeneralEvent getUnitIntroGeneralEvent() {
+        return unitIntroGeneralEvent;
     }
 }

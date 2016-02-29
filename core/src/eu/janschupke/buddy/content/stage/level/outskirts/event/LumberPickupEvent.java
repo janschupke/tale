@@ -15,9 +15,22 @@ public class LumberPickupEvent extends PickupEvent {
     }
 
     @Override
-    public void trigger() {
-        if (!canTrigger()) return;
-        super.trigger();
-        // TODO
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+
+    }
+
+    @Override
+    protected void updateGameState() {
+
+    }
+
+    @Override
+    protected void updateInteractions() {
+
     }
 }

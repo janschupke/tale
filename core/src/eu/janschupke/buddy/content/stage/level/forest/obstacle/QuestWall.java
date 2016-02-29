@@ -21,7 +21,7 @@ public class QuestWall extends Wall implements Triggerable {
 
     @Override
     public void engage() {
-        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getQuestWallEvent().trigger();
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getQuestWallGeneralEvent().trigger();
     }
 
     @Override

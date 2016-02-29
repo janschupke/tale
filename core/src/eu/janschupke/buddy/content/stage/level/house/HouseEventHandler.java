@@ -2,7 +2,7 @@ package eu.janschupke.buddy.content.stage.level.house;
 
 import eu.janschupke.buddy.content.stage.level.house.event.*;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the house level.

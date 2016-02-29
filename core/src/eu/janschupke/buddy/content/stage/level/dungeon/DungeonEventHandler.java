@@ -1,8 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.dungeon;
 
-import eu.janschupke.buddy.content.stage.level.dungeon.event.*;
+import eu.janschupke.buddy.content.stage.level.dungeon.event.exploration.StudyExplorationEvent;
+import eu.janschupke.buddy.content.stage.level.dungeon.event.interaction.*;
+import eu.janschupke.buddy.content.stage.level.dungeon.event.transition.ExitTransitionEvent;
+import eu.janschupke.buddy.content.stage.level.dungeon.event.transition.SettlementTransitionEvent;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the dungeon level.

@@ -2,7 +2,7 @@ package eu.janschupke.buddy.content.stage.level.outskirts;
 
 import eu.janschupke.buddy.content.stage.level.outskirts.event.*;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
+import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the outskirts level.
@@ -10,7 +10,7 @@ import eu.janschupke.buddy.framework.base.event.LevelEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class OutskirtsEventHandler extends LevelEventHandler {
-    private CaveEntranceEvent caveEntranceEvent;
+    private CaveTransitionEvent caveTransitionEvent;
     private CaveExplorationEvent caveExplorationEvent;
     private CaveInteractionEvent caveInteractionEvent;
     private CroneInteractionEvent croneInteractionEvent;
@@ -30,7 +30,7 @@ public class OutskirtsEventHandler extends LevelEventHandler {
     public OutskirtsEventHandler(final App app) {
         super(app);
 
-        caveEntranceEvent = new CaveEntranceEvent(app);
+        caveTransitionEvent = new CaveTransitionEvent(app);
         caveExplorationEvent = new CaveExplorationEvent(app);
         caveInteractionEvent = new CaveInteractionEvent(app);
         croneInteractionEvent = new CroneInteractionEvent(app);
@@ -48,8 +48,8 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         varpunenPickupEvent = new VarpunenPickupEvent(app);
     }
 
-    public CaveEntranceEvent getCaveEntranceEvent() {
-        return caveEntranceEvent;
+    public CaveTransitionEvent getCaveTransitionEvent() {
+        return caveTransitionEvent;
     }
 
     public CaveExplorationEvent getCaveExplorationEvent() {
