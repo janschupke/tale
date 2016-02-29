@@ -13,9 +13,12 @@ import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class DungeonEventHandler extends LevelEventHandler {
+    // Exploration.
+    private StudyExplorationEvent studyExplorationEvent;
+
+    // Interaction.
     private BookOneInteractionEvent bookOneInteractionEvent;
     private ChestInteractionEvent chestInteractionEvent;
-    private ExitTransitionEvent exitTransitionEvent;
     private HarpsichordInteractionEvent harpsichordInteractionEvent;
     private RoomFourDoorInteractionEvent roomFourDoorInteractionEvent;
     private RoomOneGateInteractionEvent roomOneGateInteractionEvent;
@@ -23,15 +26,21 @@ public class DungeonEventHandler extends LevelEventHandler {
     private RudolfInteractionEvent rudolfInteractionEvent;
     private RuneInteractionEvent runeInteractionEvent;
     private ScrollInteractionEvent scrollInteractionEvent;
-    private SettlementTransitionEvent settlementTransitionEvent;
     private SlaveInteractionEvent slaveInteractionEvent;
-    private StudyExplorationEvent studyExplorationEvent;
+
+    // Transition.
+    private ExitTransitionEvent exitTransitionEvent;
+    private SettlementTransitionEvent settlementTransitionEvent;
 
     public DungeonEventHandler(final App app) {
         super(app);
+
+        // Exploration.
+        studyExplorationEvent = new StudyExplorationEvent(app);
+
+        // Interaction.
         bookOneInteractionEvent = new BookOneInteractionEvent(app);
         chestInteractionEvent = new ChestInteractionEvent(app);
-        exitTransitionEvent = new ExitTransitionEvent(app);
         harpsichordInteractionEvent = new HarpsichordInteractionEvent(app);
         roomFourDoorInteractionEvent = new RoomFourDoorInteractionEvent(app);
         roomOneGateInteractionEvent = new RoomOneGateInteractionEvent(app);
@@ -40,9 +49,11 @@ public class DungeonEventHandler extends LevelEventHandler {
         rudolfInteractionEvent = new RudolfInteractionEvent(app);
         runeInteractionEvent = new RuneInteractionEvent(app);
         scrollInteractionEvent = new ScrollInteractionEvent(app);
-        settlementTransitionEvent = new SettlementTransitionEvent(app);
         slaveInteractionEvent = new SlaveInteractionEvent(app);
-        studyExplorationEvent = new StudyExplorationEvent(app);
+
+        // Transition.
+        exitTransitionEvent = new ExitTransitionEvent(app);
+        settlementTransitionEvent = new SettlementTransitionEvent(app);
     }
 
     public BookOneInteractionEvent getBookOneInteractionEvent() {

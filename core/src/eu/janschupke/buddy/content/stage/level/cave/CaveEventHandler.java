@@ -14,19 +14,30 @@ import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class CaveEventHandler extends LevelEventHandler {
+    // Exploration.
     private CorpsecExplorationEvent corpsecExplorationEvent;
+
+    // Interaction.
     private CorpsecInteractionEvent corpsecInteractionEvent;
-    private OutskirtsTransitionEvent outskirtsTransitionEvent;
     private SpringInteractionEvent springInteractionEvent;
     private VilleInteractionEvent villeInteractionEvent;
 
+    // Transition.
+    private OutskirtsTransitionEvent outskirtsTransitionEvent;
+
     public CaveEventHandler(final App app) {
         super(app);
+
+        // Exploration.
         corpsecExplorationEvent = new CorpsecExplorationEvent(app);
+
+        // Interaction.
         corpsecInteractionEvent = new CorpsecInteractionEvent(app);
-        outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
         springInteractionEvent = new SpringInteractionEvent(app);
         villeInteractionEvent = new VilleInteractionEvent(app);
+
+        // Transition.
+        outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
     }
 
     public CorpsecExplorationEvent getCorpsecExplorationEvent() {

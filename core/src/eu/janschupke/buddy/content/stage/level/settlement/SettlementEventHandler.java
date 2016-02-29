@@ -1,6 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.settlement;
 
-import eu.janschupke.buddy.content.stage.level.settlement.event.*;
+import eu.janschupke.buddy.content.stage.level.settlement.event.exploration.ChoboExplorationEvent;
+import eu.janschupke.buddy.content.stage.level.settlement.event.exploration.DungeonExplorationEvent;
+import eu.janschupke.buddy.content.stage.level.settlement.event.interaction.*;
+import eu.janschupke.buddy.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
+import eu.janschupke.buddy.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
+import eu.janschupke.buddy.content.stage.level.settlement.event.transition.SmithHouseTransitionEvent;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 
@@ -10,37 +15,48 @@ import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class SettlementEventHandler extends LevelEventHandler {
+    // Exploration.
     private ChoboExplorationEvent choboExplorationEvent;
+    private DungeonExplorationEvent dungeonExplorationEvent;
+
+    // Interaction.
     private ChoboHouseInteractionEvent choboHouseInteractionEvent;
     private ChoboInteractionEvent choboInteractionEvent;
-    private DungeonTransitionEvent dungeonTransitionEvent;
-    private DungeonExplorationEvent dungeonExplorationEvent;
     private DungeonInteractionEvent dungeonInteractionEvent;
     private FarmInteractionEvent farmInteractionEvent;
     private FountainInteractionEvent fountainInteractionEvent;
-    private OutskirtsTransitionEvent outskirtsTransitionEvent;
     private RoadSignInteractionEvent roadSignInteractionEvent;
-    private SmithHouseTransitionEvent smithHouseTransitionEvent;
     private SmithHouseInteractionEvent smithHouseInteractionEvent;
     private SmithInteractionEvent smithInteractionEvent;
     private TavernInteractionEvent tavernInteractionEvent;
 
+    // Transition.
+    private DungeonTransitionEvent dungeonTransitionEvent;
+    private OutskirtsTransitionEvent outskirtsTransitionEvent;
+    private SmithHouseTransitionEvent smithHouseTransitionEvent;
+
     public SettlementEventHandler(final App app) {
         super(app);
+
+        // Exploration.
         choboExplorationEvent = new ChoboExplorationEvent(app);
+        dungeonExplorationEvent = new DungeonExplorationEvent(app);
+
+        // Interaction.
         choboHouseInteractionEvent = new ChoboHouseInteractionEvent(app);
         choboInteractionEvent = new ChoboInteractionEvent(app);
-        dungeonTransitionEvent = new DungeonTransitionEvent(app);
-        dungeonExplorationEvent = new DungeonExplorationEvent(app);
         dungeonInteractionEvent = new DungeonInteractionEvent(app);
         farmInteractionEvent = new FarmInteractionEvent(app);
         fountainInteractionEvent = new FountainInteractionEvent(app);
-        outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
         roadSignInteractionEvent = new RoadSignInteractionEvent(app);
-        smithHouseTransitionEvent = new SmithHouseTransitionEvent(app);
         smithHouseInteractionEvent = new SmithHouseInteractionEvent(app);
         smithInteractionEvent = new SmithInteractionEvent(app);
         tavernInteractionEvent = new TavernInteractionEvent(app);
+
+        // Transition.
+        dungeonTransitionEvent = new DungeonTransitionEvent(app);
+        outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
+        smithHouseTransitionEvent = new SmithHouseTransitionEvent(app);
     }
 
     public ChoboExplorationEvent getChoboExplorationEvent() {
