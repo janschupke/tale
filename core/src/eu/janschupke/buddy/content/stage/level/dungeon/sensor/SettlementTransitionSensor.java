@@ -1,9 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.dungeon.sensor;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.buddy.content.stage.level.dungeon.DungeonEventHandler;
 import eu.janschupke.buddy.framework.base.entity.Sensor;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
+import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 
 /**
@@ -18,6 +20,7 @@ public class SettlementTransitionSensor extends Sensor implements Triggerable {
 
     @Override
     public void engage() {
+        ((DungeonEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getSettlementTransitionEvent().trigger();
     }
 
     @Override
