@@ -10,7 +10,9 @@ import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.PickupEvent;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Event that picks up the coin from the ground.
@@ -53,6 +55,7 @@ public class CoinPickupEvent extends PickupEvent {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinPickedUp(true);
         removeInitialWall();
         app.getGameState().getGlobalLevelState().clearCurrentHint();
+        app.getGameLog().addEntry(GameEventTags.FOREST_COIN_PICKUP, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

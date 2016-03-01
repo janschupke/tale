@@ -2,7 +2,9 @@ package eu.janschupke.buddy.content.stage.level.forest.event.exploration;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.ExplorationEvent;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Exploration event for the north optional area.
@@ -37,7 +39,7 @@ public class NorthExplorationEvent extends ExplorationEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.FOREST_NORTH_EXPLORATION, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

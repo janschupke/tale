@@ -10,8 +10,10 @@ import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
 import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
@@ -41,6 +43,7 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
         ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);
         app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
         removeQuestWall();
+        app.getGameLog().addEntry(GameEventTags.FOREST_UKKO_DELIVERY_INTERACTION, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

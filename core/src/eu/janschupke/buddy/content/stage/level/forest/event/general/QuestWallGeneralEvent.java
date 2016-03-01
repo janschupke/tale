@@ -2,7 +2,9 @@ package eu.janschupke.buddy.content.stage.level.forest.event.general;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Wall event triggered when engaging contact with quest wall
@@ -21,7 +23,8 @@ public class QuestWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateMessages() {
-
+        showDialog(questWallDialog);
+        addEventMessage();
     }
 
     @Override
@@ -31,8 +34,7 @@ public class QuestWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        showDialog(questWallDialog);
-        addEventMessage();
+        app.getGameLog().addEntry(GameEventTags.FOREST_QUEST_WALL_CONTACT, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

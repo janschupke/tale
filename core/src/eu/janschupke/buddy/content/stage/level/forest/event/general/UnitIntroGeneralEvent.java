@@ -2,7 +2,9 @@ package eu.janschupke.buddy.content.stage.level.forest.event.general;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Introductory event for unit interactions.
@@ -30,7 +32,7 @@ public class UnitIntroGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.FOREST_UNIT_INTRO_CONTACT, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

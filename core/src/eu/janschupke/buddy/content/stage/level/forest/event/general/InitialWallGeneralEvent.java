@@ -2,7 +2,9 @@ package eu.janschupke.buddy.content.stage.level.forest.event.general;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
+import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * An event triggered by trying to proceed to the next part of the world
@@ -32,7 +34,7 @@ public class InitialWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.FOREST_INITIAL_WALL_CONTACT, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override
