@@ -16,6 +16,7 @@ import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
 import eu.janschupke.buddy.framework.config.enumeration.Huds;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
@@ -38,8 +39,8 @@ public abstract class GameScreen extends BaseScreen {
     private float step = 1.0f / 60.0f;
     private double accumulator;
 
-    public GameScreen(final App app) {
-        super(app);
+    public GameScreen(final App app, final Screens tag) {
+        super(app, tag);
         Gdx.app.debug("GameScreen#<init>", "Constructing");
     }
 

@@ -2,6 +2,7 @@ package eu.janschupke.buddy.framework.base.screen;
 
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Base class for all pure UI screens.
@@ -13,8 +14,8 @@ import eu.janschupke.buddy.framework.App;
 public abstract class UIScreen extends BaseScreen {
     protected Texture backgroundTexture;
 
-    public UIScreen(final App app) {
-        super(app);
+    public UIScreen(final App app, final Screens tag) {
+        super(app, tag);
     }
 
     @Override

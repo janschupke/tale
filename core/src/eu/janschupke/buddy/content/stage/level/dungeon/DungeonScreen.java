@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Screen for the dungeon level.
@@ -13,7 +14,7 @@ import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
  */
 public class DungeonScreen extends TopDownScreen {
     public DungeonScreen(final App app) {
-        super(app);
+        super(app, Screens.DUNGEON);
 
         screenHud = Huds.STANDARD;
         levelInputProcessor = app.getInputProcessor(InputProcessors.TOPDOWN);

@@ -1,11 +1,15 @@
 package eu.janschupke.buddy.logging;
 
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Main personality model, consisting of a list of entries,
- * each of which influences a number of personality traits by a configured values.
+ * Main log model, consisting of a list of entries,
+ * each of which influences a number of personality traits.
+ * Exported log will be used for personality analysis.
  *
  * @author jan.schupke@gmail.com
  */
@@ -16,12 +20,14 @@ public class GameLog {
         entries = new ArrayList<>();
     }
 
-    public void addEntry(GameLogEntry entry) {
+    /**
+     * Adds game log entry.
+     * @param eventTag Event identifier.
+     * @param screenTag Current screen identifier.
+     */
+    public void addEntry(GameEventTags eventTag, Screens screenTag) {
+        GameLogEntry entry = new GameLogEntry(eventTag, screenTag);
         entries.add(entry);
-    }
-
-    public void addEntry(String description) {
-        entries.add(new GameLogEntry(description));
     }
 
     public List<GameLogEntry> getEntries() {

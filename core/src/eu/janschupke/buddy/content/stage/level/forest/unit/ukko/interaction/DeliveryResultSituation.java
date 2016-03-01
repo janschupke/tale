@@ -3,8 +3,8 @@ package eu.janschupke.buddy.content.stage.level.forest.unit.ukko.interaction;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Situation that occurs right after the coin delivery.

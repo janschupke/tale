@@ -5,6 +5,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
 import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Outskirts (Level 1) screen.
@@ -13,7 +14,7 @@ import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
  */
 public class OutskirtsScreen extends TopDownScreen {
     public OutskirtsScreen(final App app) {
-        super(app);
+        super(app, Screens.OUTSKIRTS);
 
         screenHud = Huds.STANDARD;
         levelInputProcessor = app.getInputProcessor(InputProcessors.TOPDOWN);

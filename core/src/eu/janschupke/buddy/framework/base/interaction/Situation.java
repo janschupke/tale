@@ -1,8 +1,8 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 import java.util.ArrayList;
 import java.util.List;

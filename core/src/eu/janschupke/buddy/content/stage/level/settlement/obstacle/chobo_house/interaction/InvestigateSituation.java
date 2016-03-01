@@ -3,8 +3,8 @@ package eu.janschupke.buddy.content.stage.level.settlement.obstacle.chobo_house.
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Initial Chobo's house interaction situation.

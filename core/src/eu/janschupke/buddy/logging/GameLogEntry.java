@@ -1,5 +1,11 @@
 package eu.janschupke.buddy.logging;
 
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
+
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * One personality entry, consisting of a description
  * and a number of metrics.
@@ -8,14 +14,35 @@ package eu.janschupke.buddy.logging;
  */
 public class GameLogEntry {
     /**
-     * Text description that will be shown during the personality analysis.
-     * Taken from the text of the decision tied to this entry etc.
+     * Date of the log entry occurrence.
      */
-    private String description;
+    private Date date;
 
-    // TODO: some tag
+    /**
+     * Game screen at which the entry was logged.
+     */
+    private Screens level;
 
-    public GameLogEntry(String description) {
-        this.description = description;
+    /**
+     * Unique tag for the event
+     */
+    private GameEventTags tag;
+
+    public GameLogEntry(final GameEventTags tag, final Screens level) {
+        date = Calendar.getInstance().getTime();
+        this.level = level;
+        this.tag = tag;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Screens getLevel() {
+        return level;
+    }
+
+    public GameEventTags getTag() {
+        return tag;
     }
 }

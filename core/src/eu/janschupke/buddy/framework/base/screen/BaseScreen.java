@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.View;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**
@@ -17,13 +18,15 @@ import eu.janschupke.buddy.framework.input.BaseInputProcessor;
  * @author jan.schupke@gmail.com
  */
 public abstract class BaseScreen extends ScreenAdapter {
+    protected final Screens tag;
     protected final App app;
     protected View view;
     protected Music backgroundMusic;
     protected InputMultiplexer inputMultiplexer;
 
-    public BaseScreen(final App app) {
+    public BaseScreen(final App app, final Screens tag) {
         this.app = app;
+        this.tag = tag;
 
         inputMultiplexer = new InputMultiplexer();
         Gdx.input.setInputProcessor(inputMultiplexer);
@@ -115,5 +118,9 @@ public abstract class BaseScreen extends ScreenAdapter {
 
     public View getView() {
         return view;
+    }
+
+    public Screens getTag() {
+        return tag;
     }
 }

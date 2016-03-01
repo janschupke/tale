@@ -11,9 +11,9 @@ import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Event for the coin delivery to the Ukko unit.

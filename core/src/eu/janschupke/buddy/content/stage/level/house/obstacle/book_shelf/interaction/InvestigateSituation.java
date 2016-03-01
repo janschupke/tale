@@ -3,8 +3,8 @@ package eu.janschupke.buddy.content.stage.level.house.obstacle.book_shelf.intera
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.SituationTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Initial house bookshelf interaction situation.

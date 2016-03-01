@@ -6,5 +6,14 @@ package eu.janschupke.buddy.framework.config.enumeration;
  * @author jan.schupke@gmail.com
  */
 public enum Screens {
-    SPLASH, MENU, FOREST, OUTSKIRTS, CAVE, SETTLEMENT, HOUSE, DUNGEON
+    SPLASH,
+    MENU,
+    INTRO,
+    FOREST,
+    OUTSKIRTS,
+    CAVE,
+    SETTLEMENT,
+    HOUSE,
+    DUNGEON,
+    OUTRO
 }

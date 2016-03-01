@@ -12,7 +12,7 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
  */
 public class SplashScreen extends CinematicScreen {
     public SplashScreen(final App app) {
-        super(app);
+        super(app, Screens.SPLASH);
     }
 
     @Override

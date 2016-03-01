@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.UIScreen;
 import eu.janschupke.buddy.framework.config.Config;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Main menu screen.
@@ -15,7 +16,7 @@ public class MenuScreen extends UIScreen {
     private GlyphLayout titleLayout;
 
     public MenuScreen(final App app) {
-        super(app);
+        super(app, Screens.MENU);
         Gdx.app.debug("MenuScreen", "Constructing");
         backgroundMusic = app.getResourceManager().getMusicHandler().getMenuMusic();
         titleLayout = new GlyphLayout(app.getFont(), Config.GAME_TITLE);

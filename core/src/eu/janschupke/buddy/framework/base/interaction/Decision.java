@@ -1,6 +1,6 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
-import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
 
 /**
  * One decision within a set of decisions for each situation.

@@ -30,7 +30,7 @@ import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
 import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
-import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
+import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 import eu.janschupke.buddy.framework.resources.ResourceManager;
 import eu.janschupke.buddy.logging.GameLog;

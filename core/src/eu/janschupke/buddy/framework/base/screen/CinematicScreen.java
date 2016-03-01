@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.framework.base.screen;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Base class for cinematic and splash screens.
@@ -11,7 +12,7 @@ import eu.janschupke.buddy.framework.App;
  * @author jan.schupke@gmail.com
  */
 public abstract class CinematicScreen extends BaseScreen {
-    public CinematicScreen(final App app) {
-        super(app);
+    public CinematicScreen(final App app, final Screens tag) {
+        super(app, tag);
     }
 }
