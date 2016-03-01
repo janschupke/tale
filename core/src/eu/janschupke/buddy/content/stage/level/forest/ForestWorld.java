@@ -5,12 +5,10 @@ import eu.janschupke.buddy.content.entity.PlayerUnit;
 import eu.janschupke.buddy.content.stage.level.forest.item.coin.GoldCoinItem;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.QuestWall;
+import eu.janschupke.buddy.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
 import eu.janschupke.buddy.content.stage.level.forest.sensor.*;
 import eu.janschupke.buddy.content.stage.level.forest.unit.ukko.UkkoUnit;
-import eu.janschupke.buddy.framework.base.entity.Item;
-import eu.janschupke.buddy.framework.base.entity.Sensor;
-import eu.janschupke.buddy.framework.base.entity.Unit;
-import eu.janschupke.buddy.framework.base.entity.Wall;
+import eu.janschupke.buddy.framework.base.entity.*;
 import eu.janschupke.buddy.framework.base.world.TopDownWorld;
 
 /**
@@ -53,6 +51,10 @@ public class ForestWorld extends TopDownWorld {
         Wall questWall = new QuestWall(this, new Vector2(5, 0.5f));
         questWall.setPosition(47, 36);
         getObstacles().add(questWall);
+
+        Obstacle caravanObstacle = new CaravanObstacle(this, new Vector2(4, 4));
+        caravanObstacle.setPosition(46, 19);
+        getObstacles().add(caravanObstacle);
     }
 
     @Override
@@ -77,7 +79,7 @@ public class ForestWorld extends TopDownWorld {
         southExplorationSensor.setPosition(18, 12);
 
         Sensor northExplorationSensor = new NorthExplorationSensor(this, new Vector2(5, 0.5f));
-        northExplorationSensor.setPosition(16, 42);
+        northExplorationSensor.setPosition(12, 45);
 
         Sensor eastExplorationSensor = new EastExplorationSensor(this, new Vector2(5, 0.5f));
         eastExplorationSensor.setPosition(47, 25);

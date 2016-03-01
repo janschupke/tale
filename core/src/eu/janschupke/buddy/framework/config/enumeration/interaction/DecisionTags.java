@@ -12,6 +12,7 @@ public enum DecisionTags {
     // Forest.
     FOREST_COIN_PICKUP,
     FOREST_COIN_IGNORE,
+    FOREST_UKKO_DISCUSS,
     FOREST_UKKO_DELIVERY,
 
     // Outskirts.

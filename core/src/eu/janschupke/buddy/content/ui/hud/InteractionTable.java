@@ -65,7 +65,7 @@ public class InteractionTable extends UITable {
             optionTable.add(button).pad(Config.HUD_BUTTON_PADDING).row();
         }
 
-        contentTable.add(titleLabel).row();
+        contentTable.add(titleLabel).padBottom(Config.HUD_INNER_PADDING).row();
         contentTable.add(descriptionLabel).row();
         contentTable.add(optionTable);
 

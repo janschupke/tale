@@ -25,6 +25,7 @@ public class EventLog extends DataContainer {
         for (EventLogEntry e : events) {
             result.append(e.toString());
             result.append(System.getProperty("line.separator"));
+            result.append(System.getProperty("line.separator"));
         }
 
         return result.toString();

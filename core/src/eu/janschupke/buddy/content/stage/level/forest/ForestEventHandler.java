@@ -4,6 +4,7 @@ import eu.janschupke.buddy.content.stage.level.forest.event.exploration.EastExpl
 import eu.janschupke.buddy.content.stage.level.forest.event.exploration.NorthExplorationEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.exploration.SouthExplorationEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.general.*;
+import eu.janschupke.buddy.content.stage.level.forest.event.interaction.CaravanInteractionEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.interaction.CoinInteractionEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.interaction.UkkoDeliveryInteractionEvent;
 import eu.janschupke.buddy.content.stage.level.forest.event.interaction.UkkoInteractionEvent;
@@ -31,6 +32,7 @@ public class ForestEventHandler extends LevelEventHandler {
     private UnitIntroGeneralEvent unitIntroGeneralEvent;
 
     // Interaction.
+    private CaravanInteractionEvent caravanInteractionEvent;
     private CoinInteractionEvent coinInteractionEvent;
     private UkkoDeliveryInteractionEvent ukkoDeliveryInteractionEvent;
     private UkkoInteractionEvent ukkoInteractionEvent;
@@ -57,6 +59,7 @@ public class ForestEventHandler extends LevelEventHandler {
         unitIntroGeneralEvent = new UnitIntroGeneralEvent(app);
 
         // Interaction.
+        caravanInteractionEvent = new CaravanInteractionEvent(app);
         coinInteractionEvent = new CoinInteractionEvent(app);
         ukkoDeliveryInteractionEvent = new UkkoDeliveryInteractionEvent(app);
         ukkoInteractionEvent = new UkkoInteractionEvent(app);
@@ -106,6 +109,10 @@ public class ForestEventHandler extends LevelEventHandler {
 
     public SouthExplorationEvent getSouthExplorationEvent() {
         return southExplorationEvent;
+    }
+
+    public CaravanInteractionEvent getCaravanInteractionEvent() {
+        return caravanInteractionEvent;
     }
 
     public UkkoDeliveryInteractionEvent getUkkoDeliveryInteractionEvent() {

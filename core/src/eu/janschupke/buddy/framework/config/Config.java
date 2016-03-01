@@ -10,8 +10,8 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
  */
 public class Config {
     // Global untranslated strings.
-    public static final String GAME_PREFIX = "buddy";
-    public static final String GAME_TITLE = "Buddy the Yellow Geezer";
+    public static final String GAME_PREFIX = "tale";
+    public static final String GAME_TITLE = "Tale of the Yellow Wanderer";
     public static final String PREFERENCES_SETTINGS = "settings";
 
     // Filesystem values.

@@ -59,7 +59,7 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
         widgetTable.align(Align.topLeft);
 
         label = new Label("", app.getSkin());
-        label.setAlignment(Align.center);
+        label.setAlignment(Align.topLeft);
 
     }
 

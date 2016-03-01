@@ -15,6 +15,8 @@ public class DeliveryResultSituation extends Situation {
     public DeliveryResultSituation(final App app) {
         super(app, app.getLang().get("level.forest.interaction.ukko.delivery-result.description"),
                 SituationTags.FOREST_UKKO_DELIVERY_RESULT);
-        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
+
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
+                DecisionTags.GLOBAL_END));
     }
 }

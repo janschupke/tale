@@ -8,9 +8,11 @@ package eu.janschupke.buddy.framework.config.enumeration.interaction;
 public enum SituationTags {
     // Forest.
     FOREST_COIN_INVESTIGATE,
-    FOREST_UKKO_DELIVERY_RESULT,
+    FOREST_CARAVAN_INVESTIGATE,
 
     FOREST_UKKO_TALK,
+    FOREST_UKKO_DISCUSS,
+    FOREST_UKKO_DELIVERY_RESULT,
 
     // Outskirts.
     OUTSKIRTS_LUMBER_INVESTIGATE,

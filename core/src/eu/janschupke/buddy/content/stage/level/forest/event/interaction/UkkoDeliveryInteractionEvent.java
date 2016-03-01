@@ -9,6 +9,7 @@ import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
+import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
@@ -44,7 +45,10 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
 
     @Override
     protected void updateInteractions() {
-        app.getInteraction(InteractionTags.FOREST_UKKO).getSituation(SituationTags.FOREST_UKKO_TALK)
+        Interaction ukkoInteraction = app.getInteraction(InteractionTags.FOREST_UKKO);
+        ukkoInteraction.getSituation(SituationTags.FOREST_UKKO_TALK)
+                .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(false);
+        ukkoInteraction.getSituation(SituationTags.FOREST_UKKO_DISCUSS)
                 .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(false);
     }
 

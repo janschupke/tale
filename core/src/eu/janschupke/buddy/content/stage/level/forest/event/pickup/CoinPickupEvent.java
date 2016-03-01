@@ -18,6 +18,17 @@ import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
  * @author jan.schupke@gmail.com
  */
 public class CoinPickupEvent extends PickupEvent {
+    /**
+     * Shows after player's first item pickup.
+     * Contains additional intro text.
+     */
+    private class PickupDialog extends InfoDialog {
+        public PickupDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.pickup.title"));
+            label.setText(app.getLang().get("level.forest.event.pickup.text"));
+        }
+    }
+
     private PickupDialog pickupDialog;
 
     public CoinPickupEvent(final App app) {
@@ -57,17 +68,6 @@ public class CoinPickupEvent extends PickupEvent {
                 ((ForestScreen) app.getScreen()).getWorld().removeWall((Wall) obstacle);
                 break;
             }
-        }
-    }
-
-    /**
-     * Shows after player's first item pickup.
-     * Contains additional intro text.
-     */
-    private class PickupDialog extends InfoDialog {
-        public PickupDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.pickup.title"));
-            label.setText(app.getLang().get("level.forest.event.pickup.text"));
         }
     }
 }

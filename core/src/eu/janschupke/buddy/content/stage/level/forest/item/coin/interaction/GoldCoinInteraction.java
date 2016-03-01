@@ -6,7 +6,6 @@ import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
-import eu.janschupke.buddy.framework.base.interaction.Situation;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.DecisionTags;
 import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionTags;
@@ -17,6 +16,8 @@ import eu.janschupke.buddy.framework.config.enumeration.interaction.InteractionT
  * @author jan.schupke@gmail.com
  */
 public class GoldCoinInteraction extends Interaction {
+    private InvestigateSituation investigateSituation;
+
     public GoldCoinInteraction(final App app, final Triggerable triggerable) {
         super(app, triggerable, InteractionTags.FOREST_COIN);
     }
@@ -24,10 +25,10 @@ public class GoldCoinInteraction extends Interaction {
     @Override
     protected void configure() {
         title = app.getLang().get("level.forest.interaction.coin.title");
-        Situation pickupSituation = new InvestigateSituation(app);
-        situations.add(pickupSituation);
-        currentSituation = pickupSituation;
-        fallbackSituation = pickupSituation;
+        investigateSituation = new InvestigateSituation(app);
+        situations.add(investigateSituation);
+        currentSituation = investigateSituation;
+        fallbackSituation = investigateSituation;
     }
 
     @Override
