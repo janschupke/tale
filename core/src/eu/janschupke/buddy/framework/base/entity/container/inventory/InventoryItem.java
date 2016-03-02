@@ -1,7 +1,8 @@
-package eu.janschupke.buddy.framework.base.entity.container;
+package eu.janschupke.buddy.framework.base.entity.container.inventory;
 
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Item;
+import eu.janschupke.buddy.framework.base.entity.container.DataContainer;
 
 /**
  * Single inventory item.

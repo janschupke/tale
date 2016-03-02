@@ -5,7 +5,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.ui.PreferenceMenu;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
 import eu.janschupke.buddy.framework.config.Config;
 
@@ -14,7 +13,7 @@ import eu.janschupke.buddy.framework.config.Config;
  *
  * @author jan.schupke@gmail.com
  */
-public class HotkeysMenu extends MenuTable implements PreferenceMenu {
+public class HotkeysMenu extends MenuTable {
     private Label titleLabel;
     private Label invokeMenuLabel;
     private Label invokeMenuHotkey;
@@ -43,7 +42,6 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
         initWidgets();
         addWidgets();
         setListeners();
-        configureWidgets();
     }
 
     @Override
@@ -109,24 +107,5 @@ public class HotkeysMenu extends MenuTable implements PreferenceMenu {
                 app.getEventHandler().showMainMenu();
             }
         });
-    }
-
-    @Override
-    public void configureWidgets() {
-    }
-
-    @Override
-    public void updateRunningConfig() {
-    }
-
-    @Override
-    public void updateGameState() {
-    }
-
-    @Override
-    public void applyChanges() {
-        updateRunningConfig();
-        updateGameState();
-        app.getSettingsManager().persist();
     }
 }

@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.base.ui.table.UiTable;
 import eu.janschupke.buddy.framework.config.Config;
 
 /**
@@ -13,7 +13,7 @@ import eu.janschupke.buddy.framework.config.Config;
  *
  * @author jan.schupke@gmail.com
  */
-public class HudMenuTable extends UITable {
+public class HudMenuTable extends UiTable {
     private TextButton menuButton;
     private TextButton eventLogButton;
     private TextButton questLogButton;

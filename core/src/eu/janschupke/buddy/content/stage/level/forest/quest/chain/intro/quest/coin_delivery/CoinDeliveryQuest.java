@@ -3,7 +3,7 @@ package eu.janschupke.buddy.content.stage.level.forest.quest.chain.intro.quest.c
 import eu.janschupke.buddy.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task.CoinDeliveryTask;
 import eu.janschupke.buddy.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task.CoinPickupTask;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.entity.container.Quest;
+import eu.janschupke.buddy.framework.base.entity.container.quest.Quest;
 
 /**
  * Part of the intro quest chain.

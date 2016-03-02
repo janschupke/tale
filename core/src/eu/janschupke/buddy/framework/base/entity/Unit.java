@@ -22,6 +22,10 @@ import java.util.Map;
  * @author jan.schupke@gmail.com
  */
 public abstract class Unit extends WorldObject {
+    protected enum Direction {
+        UP, DOWN, RIGHT, LEFT
+    }
+
     protected final float defaultAcceleration = Config.OBJECT_ACCELERATION;
     protected final float maxSpeed = Config.OBJECT_MAX_SPEED;
     protected boolean movingRight;
@@ -277,10 +281,6 @@ public abstract class Unit extends WorldObject {
         } catch (NullPointerException e) {
             Gdx.app.log("Unit#dispose", "Null texture");
         }
-    }
-
-    protected enum Direction {
-        UP, DOWN, RIGHT, LEFT
     }
 
     public boolean isMovingUp() {

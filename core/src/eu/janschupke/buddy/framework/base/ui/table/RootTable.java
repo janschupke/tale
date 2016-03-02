@@ -8,7 +8,7 @@ import eu.janschupke.buddy.framework.App;
  *
  * @author jan.schupke@gmail.com
  */
-public abstract class RootTable extends UITable {
+public abstract class RootTable extends UiTable {
     public RootTable(final App app) {
         super(app);
         setFillParent(true);

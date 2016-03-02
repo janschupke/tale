@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.base.screen;
+package eu.janschupke.buddy.framework.base.entity.state;
 
 import java.util.Observable;
 

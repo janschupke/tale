@@ -1,14 +1,13 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.pickup;
 
 import com.badlogic.gdx.Gdx;
-import eu.janschupke.buddy.content.stage.level.forest.ForestLevelState;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
-import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 import eu.janschupke.buddy.framework.base.event.PickupEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
@@ -52,7 +51,6 @@ public class CoinPickupEvent extends PickupEvent {
 
     @Override
     protected void updateGameState() {
-        ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinPickedUp(true);
         removeInitialWall();
         app.getGameState().getGlobalLevelState().clearCurrentHint();
         app.getGameLog().addEntry(GameEventTags.FOREST_COIN_PICKUP, ((BaseScreen) app.getScreen()).getTag());

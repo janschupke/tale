@@ -10,18 +10,18 @@ import eu.janschupke.buddy.framework.App;
  * @author jan.schupke@gmail.com
  */
 public abstract class HudTable extends RootTable {
-    protected Table topHudTable;
-    protected Table bottomHudTable;
+    protected Table topHudPanel;
+    protected Table bottomHudPanel;
 
     public HudTable(final App app) {
         super(app);
 
         align(Align.top | Align.center);
 
-        topHudTable = new Table();
-        bottomHudTable = new Table();
+        topHudPanel = new Table();
+        bottomHudPanel = new Table();
 
-        add(topHudTable).expandX().expandY().fillY().top().row();
-        add(bottomHudTable).fillX();
+        add(topHudPanel).expandX().expandY().fillY().top().row();
+        add(bottomHudPanel).fillX();
     }
 }

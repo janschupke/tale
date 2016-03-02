@@ -3,7 +3,7 @@ package eu.janschupke.buddy.content.stage.menu;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.screen.UIScreen;
+import eu.janschupke.buddy.framework.base.screen.UiScreen;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
@@ -12,7 +12,7 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
  *
  * @author jan.schupke@gmail.com
  */
-public class MenuScreen extends UIScreen {
+public class MenuScreen extends UiScreen {
     private GlyphLayout titleLayout;
 
     public MenuScreen(final App app) {

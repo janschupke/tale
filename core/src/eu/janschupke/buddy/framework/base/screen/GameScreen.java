@@ -11,6 +11,7 @@ import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
+import eu.janschupke.buddy.framework.base.entity.state.LevelState;
 import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;

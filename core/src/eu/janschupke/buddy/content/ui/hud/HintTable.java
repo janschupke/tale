@@ -8,7 +8,7 @@ import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.base.ui.table.UiTable;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -19,7 +19,7 @@ import java.util.Observer;
  *
  * @author jan.schupke@gmail.com
  */
-public class HintTable extends UITable implements Observer {
+public class HintTable extends UiTable implements Observer {
     private Label hintLabel;
     private Table messageTable;
 

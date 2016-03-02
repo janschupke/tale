@@ -1,6 +1,7 @@
-package eu.janschupke.buddy.framework.base.entity.container;
+package eu.janschupke.buddy.framework.base.entity.container.quest;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.container.DataContainer;
 import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.ArrayList;

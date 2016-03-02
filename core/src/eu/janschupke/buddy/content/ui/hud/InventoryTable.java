@@ -9,10 +9,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.entity.container.Inventory;
-import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
+import eu.janschupke.buddy.framework.base.entity.container.inventory.Inventory;
+import eu.janschupke.buddy.framework.base.entity.container.inventory.InventoryItem;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
-import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.base.ui.table.UiTable;
 import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.Observable;
@@ -23,7 +23,7 @@ import java.util.Observer;
  *
  * @author jan.schupke@gmail.com
  */
-public class InventoryTable extends UITable implements Observer {
+public class InventoryTable extends UiTable implements Observer {
     private Label titleLabel;
     private Table itemTable;
     private ScrollPane itemScrollPane;

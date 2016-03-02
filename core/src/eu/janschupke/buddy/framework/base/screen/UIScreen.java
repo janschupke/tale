@@ -11,10 +11,10 @@ import eu.janschupke.buddy.framework.config.enumeration.Screens;
  *
  * @author jan.schupke@gmail.com
  */
-public abstract class UIScreen extends BaseScreen {
+public abstract class UiScreen extends BaseScreen {
     protected Texture backgroundTexture;
 
-    public UIScreen(final App app, final Screens tag) {
+    public UiScreen(final App app, final Screens tag) {
         super(app, tag);
     }
 

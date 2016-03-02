@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.base.screen;
+package eu.janschupke.buddy.framework.base.entity.state;
 
 /**
  * State that applies for all levels in general.

@@ -1,13 +1,12 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.interaction;
 
-import eu.janschupke.buddy.content.stage.level.forest.ForestLevelState;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
-import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
@@ -40,7 +39,6 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        ((ForestLevelState) ((ForestScreen) app.getScreen()).getLevelState()).setCoinDelivered(true);
         app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
         removeQuestWall();
         app.getGameLog().addEntry(GameEventTags.FOREST_UKKO_DELIVERY_INTERACTION, ((BaseScreen) app.getScreen()).getTag());

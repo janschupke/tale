@@ -54,21 +54,21 @@ public class StandardHud extends HudTable {
      * Adds gameplay widgets to the HUD.
      */
     private void addHud() {
-        topHudTable.add(topMenuTable).row();
-        topHudTable.add(hintTable).expandY().fillY().padTop(Config.HUD_HINT_TOP_PADDING);
-        bottomHudTable.add(indicatorTable).bottom();
-        bottomHudTable.add(interactionTable).expandX().fillX();
+        topHudPanel.add(topMenuTable).row();
+        topHudPanel.add(hintTable).expandY().fillY().padTop(Config.HUD_HINT_TOP_PADDING);
+        bottomHudPanel.add(indicatorTable).bottom();
+        bottomHudPanel.add(interactionTable).expandX().fillX();
     }
 
     /**
      * Toggle between event log table and gameplay HUD.
      */
     public void toggleEventLog() {
-        topHudTable.clear();
-        bottomHudTable.clear();
+        topHudPanel.clear();
+        bottomHudPanel.clear();
 
         if (state != State.EVENTS) {
-            topHudTable.add(eventLogTable);
+            topHudPanel.add(eventLogTable);
             state = State.EVENTS;
             app.getGameState().getGlobalLevelState().setNewEvent(false);
         } else {
@@ -81,11 +81,11 @@ public class StandardHud extends HudTable {
      * Toggle between quest log table and gameplay HUD.
      */
     public void toggleQuestLog() {
-        topHudTable.clear();
-        bottomHudTable.clear();
+        topHudPanel.clear();
+        bottomHudPanel.clear();
 
         if (state != State.QUESTS) {
-            topHudTable.add(questLogTable);
+            topHudPanel.add(questLogTable);
             state = State.QUESTS;
             app.getGameState().getGlobalLevelState().setNewQuest(false);
         } else {
@@ -98,11 +98,11 @@ public class StandardHud extends HudTable {
      * Toggle between inventory table and gameplay HUD.
      */
     public void toggleInventory() {
-        topHudTable.clear();
-        bottomHudTable.clear();
+        topHudPanel.clear();
+        bottomHudPanel.clear();
 
         if (state != State.INVENTORY) {
-            topHudTable.add(inventoryTable);
+            topHudPanel.add(inventoryTable);
             state = State.INVENTORY;
             app.getGameState().getGlobalLevelState().setNewItem(false);
         } else {
@@ -125,8 +125,8 @@ public class StandardHud extends HudTable {
      * and renders the gameplay HUD.
      */
     public void closeTabs() {
-        topHudTable.clear();
-        bottomHudTable.clear();
+        topHudPanel.clear();
+        bottomHudPanel.clear();
         addHud();
         state = State.HUD;
     }

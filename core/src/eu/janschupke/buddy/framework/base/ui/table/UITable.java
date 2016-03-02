@@ -9,10 +9,10 @@ import eu.janschupke.buddy.framework.base.ui.UserInterface;
  *
  * @author jan.schupke@gmail.com
  */
-public abstract class UITable extends Table implements UserInterface {
+public abstract class UiTable extends Table implements UserInterface {
     protected final App app;
 
-    public UITable(final App app) {
+    public UiTable(final App app) {
         this.app = app;
         setDebug(app.getSettingsManager().getConfig().isUiDebugRendering());
     }

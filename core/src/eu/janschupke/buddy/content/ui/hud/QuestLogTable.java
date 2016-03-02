@@ -9,12 +9,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.entity.container.Quest;
-import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
-import eu.janschupke.buddy.framework.base.entity.container.QuestLog;
-import eu.janschupke.buddy.framework.base.entity.container.Task;
+import eu.janschupke.buddy.framework.base.entity.container.quest.Quest;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestLog;
+import eu.janschupke.buddy.framework.base.entity.container.quest.Task;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
-import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.base.ui.table.UiTable;
 import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
@@ -26,7 +26,7 @@ import java.util.Observer;
  *
  * @author jan.schupke@gmail.com
  */
-public class QuestLogTable extends UITable implements Observer {
+public class QuestLogTable extends UiTable implements Observer {
     private Label titleLabel;
 
     private ScrollPane questScrollPane;

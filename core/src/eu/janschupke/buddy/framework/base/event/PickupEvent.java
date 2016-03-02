@@ -4,7 +4,7 @@ import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.ui.dialog.InventoryFullDialog;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Item;
-import eu.janschupke.buddy.framework.base.entity.container.InventoryItem;
+import eu.janschupke.buddy.framework.base.entity.container.inventory.InventoryItem;
 import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
 import eu.janschupke.buddy.framework.base.exception.InventoryFullException;
 

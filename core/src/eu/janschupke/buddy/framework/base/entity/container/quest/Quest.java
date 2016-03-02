@@ -1,6 +1,7 @@
-package eu.janschupke.buddy.framework.base.entity.container;
+package eu.janschupke.buddy.framework.base.entity.container.quest;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.container.DataContainer;
 import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ public class Quest extends DataContainer {
     protected List<Task> tasks;
     protected List<Quest> transitions;
     private TaskStatus status;
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
 
     public Quest(final App app, String name, String description) {
         super(app);

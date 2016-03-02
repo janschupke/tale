@@ -2,7 +2,7 @@ package eu.janschupke.buddy.content.stage.level.forest.quest.chain.intro;
 
 import eu.janschupke.buddy.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.CoinDeliveryQuest;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 
 /**
  * First tutorial quest chain.

@@ -2,7 +2,7 @@ package eu.janschupke.buddy.framework.base.quest;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.base.entity.container.QuestChain;
+import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 
 /**
  * Base quest manager for quest handling.

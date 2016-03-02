@@ -5,9 +5,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.state.GlobalLevelState;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.base.screen.GlobalLevelState;
-import eu.janschupke.buddy.framework.base.ui.table.UITable;
+import eu.janschupke.buddy.framework.base.ui.table.UiTable;
 import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.Observable;
@@ -19,7 +19,7 @@ import java.util.Observer;
  *
  * @author jan.schupke@gmail.com
  */
-public class IndicatorTable extends UITable implements Observer {
+public class IndicatorTable extends UiTable implements Observer {
     private TextButton newEventButton;
     private TextButton newQuestButton;
     private TextButton newItemButton;

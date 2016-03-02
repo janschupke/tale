@@ -1,6 +1,7 @@
-package eu.janschupke.buddy.framework.base.entity.container;
+package eu.janschupke.buddy.framework.base.entity.container.event;
 
 import eu.janschupke.buddy.framework.App;
+import eu.janschupke.buddy.framework.base.entity.container.DataContainer;
 
 /**
  * Entry of each event that has occurred.
