@@ -2,7 +2,7 @@ apply plugin: "java"
 
 sourceSets.main.java.srcDirs = [ "src/" ]
 
-project.ext.mainClassName = "eu.janschupke.buddy.desktop.DesktopLauncher"
+project.ext.mainClassName = "eu.janschupke.tale.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../core/assets");
 
 task run(dependsOn: classes, type: JavaExec) {

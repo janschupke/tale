@@ -1,0 +1,53 @@
+package eu.janschupke.tale.content.stage.level.outskirts.item.lumber;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import eu.janschupke.tale.content.config.enumeration.ItemTags;
+import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.interaction.LumberInteraction;
+import eu.janschupke.tale.framework.base.entity.Item;
+import eu.janschupke.tale.framework.base.entity.Triggerable;
+import eu.janschupke.tale.framework.base.event.handling.InteractionSwitch;
+import eu.janschupke.tale.framework.base.exception.NoHudException;
+import eu.janschupke.tale.framework.base.interaction.Interaction;
+import eu.janschupke.tale.framework.base.screen.GameScreen;
+import eu.janschupke.tale.framework.base.world.BaseWorld;
+
+/**
+ * Lumber quest item.
+ *
+ * @author jan.schupke@gmail.com
+ */
+public class LumberItem extends Item implements Triggerable {
+    private Interaction interaction;
+
+    public LumberItem(BaseWorld world) {
+        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/items/lumber.png")), ItemTags.OUTSKIRTS_LUMBER);
+        interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
+        name = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.name");
+        description = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.description");
+        interaction = new LumberInteraction(world.getScreen().getApp(), this);
+    }
+
+    @Override
+    public void engage() {
+        InteractionSwitch.enable(this,
+                ((OutskirtsEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getLumberInteractionEvent(),
+                world.getScreen().getApp());
+    }
+
+    @Override
+    public void disengage() {
+        try {
+            endInteraction(world.getScreen().getApp());
+            InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
+        } catch (NoHudException e) {
+            Gdx.app.log("LumberItem#disengage", "Could not get HUD instance");
+        }
+    }
+
+    @Override
+    public Interaction getInteraction() {
+        return interaction;
+    }
+}
