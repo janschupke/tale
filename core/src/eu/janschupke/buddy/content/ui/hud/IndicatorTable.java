@@ -4,11 +4,11 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.state.GlobalLevelState;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.UiTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.Observable;
 import java.util.Observer;

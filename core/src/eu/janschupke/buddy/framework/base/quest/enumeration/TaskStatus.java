@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config.enumeration;
+package eu.janschupke.buddy.framework.base.quest.enumeration;
 
 /**
  * Enumeration of all possible task statuses.

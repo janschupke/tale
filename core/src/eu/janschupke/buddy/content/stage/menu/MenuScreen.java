@@ -2,10 +2,10 @@ package eu.janschupke.buddy.content.stage.menu;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import eu.janschupke.buddy.content.config.Config;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.UiScreen;
-import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Main menu screen.

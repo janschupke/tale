@@ -5,11 +5,11 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
+import eu.janschupke.buddy.content.config.Config;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.View;
-import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 
 /**

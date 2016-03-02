@@ -1,11 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.cave;
 
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.content.stage.level.cave.quest.CaveQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Screen for the cave level.

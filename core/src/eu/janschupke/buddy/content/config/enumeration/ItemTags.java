@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config.enumeration;
+package eu.janschupke.buddy.content.config.enumeration;
 
 /**
  * Enumeration of tags for all items in the game.

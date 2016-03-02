@@ -2,6 +2,7 @@ package eu.janschupke.buddy.content.stage.level.house.item.mead;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import eu.janschupke.buddy.content.config.enumeration.ItemTags;
 import eu.janschupke.buddy.content.stage.level.house.HouseEventHandler;
 import eu.janschupke.buddy.content.stage.level.house.item.mead.interaction.MeadInteraction;
 import eu.janschupke.buddy.framework.base.entity.Item;
@@ -11,7 +12,6 @@ import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 /**
  * House mead item.

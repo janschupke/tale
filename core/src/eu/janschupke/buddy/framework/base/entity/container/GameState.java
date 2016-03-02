@@ -1,12 +1,12 @@
 package eu.janschupke.buddy.framework.base.entity.container;
 
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.event.EventLog;
 import eu.janschupke.buddy.framework.base.entity.container.inventory.Inventory;
 import eu.janschupke.buddy.framework.base.entity.container.quest.QuestLog;
 import eu.janschupke.buddy.framework.base.entity.state.GlobalLevelState;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Encapsulation of all player-relevant data containers.

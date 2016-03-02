@@ -8,15 +8,15 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.quest.Quest;
 import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 import eu.janschupke.buddy.framework.base.entity.container.quest.QuestLog;
 import eu.janschupke.buddy.framework.base.entity.container.quest.Task;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
+import eu.janschupke.buddy.framework.base.quest.enumeration.TaskStatus;
 import eu.janschupke.buddy.framework.base.ui.table.UiTable;
-import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.config.enumeration.TaskStatus;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config;
+package eu.janschupke.buddy.content.config;
 
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 

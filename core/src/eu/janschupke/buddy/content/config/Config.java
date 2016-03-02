@@ -1,7 +1,7 @@
-package eu.janschupke.buddy.framework.config;
+package eu.janschupke.buddy.content.config;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 
 /**
  * Default configuration and global constants.

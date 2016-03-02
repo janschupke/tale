@@ -1,8 +1,8 @@
 package eu.janschupke.buddy.framework.base.world;
 
 import com.badlogic.gdx.physics.box2d.World;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
-import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**

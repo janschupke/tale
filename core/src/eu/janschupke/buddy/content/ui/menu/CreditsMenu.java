@@ -4,9 +4,9 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.MenuTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Credits table UI.

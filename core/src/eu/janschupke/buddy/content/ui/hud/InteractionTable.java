@@ -11,11 +11,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.ui.table.UiTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * GUI table structure for the interaction pane.

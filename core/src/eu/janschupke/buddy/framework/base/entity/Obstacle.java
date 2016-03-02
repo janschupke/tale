@@ -4,8 +4,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**

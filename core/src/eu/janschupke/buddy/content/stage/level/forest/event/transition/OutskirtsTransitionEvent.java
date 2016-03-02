@@ -1,11 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.transition;
 
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.TransitionEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.framework.util.Utility;
 
 /**

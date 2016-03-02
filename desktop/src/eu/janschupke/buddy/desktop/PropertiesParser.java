@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.desktop;
 
-import eu.janschupke.buddy.framework.config.DefaultSettings;
-import eu.janschupke.buddy.framework.config.SettingsKeys;
+import eu.janschupke.buddy.content.config.DefaultSettings;
+import eu.janschupke.buddy.content.config.SettingsKeys;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

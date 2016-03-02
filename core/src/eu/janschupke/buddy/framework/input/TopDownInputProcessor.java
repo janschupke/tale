@@ -1,9 +1,9 @@
 package eu.janschupke.buddy.framework.input;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.config.Hotkeys;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Base input processor for all top-down levels.

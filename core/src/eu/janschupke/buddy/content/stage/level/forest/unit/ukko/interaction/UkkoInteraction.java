@@ -1,13 +1,13 @@
 package eu.janschupke.buddy.content.stage.level.forest.unit.ukko.interaction;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.buddy.content.stage.level.forest.ForestEventHandler;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
 
 /**
  * Ukko interaction object.

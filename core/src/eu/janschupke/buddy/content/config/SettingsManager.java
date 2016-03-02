@@ -1,7 +1,8 @@
-package eu.janschupke.buddy.framework.config;
+package eu.janschupke.buddy.content.config;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import eu.janschupke.buddy.framework.config.ConfigManager;
 
 /**
  * Configuration manager class that handles loading, saving and resetting the configuration.

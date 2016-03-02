@@ -15,12 +15,12 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.entity.Wall;
 import eu.janschupke.buddy.framework.base.entity.WorldEntity;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.ParticleEffectContainer;
 
 import java.util.*;

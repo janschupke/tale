@@ -1,9 +1,9 @@
 package eu.janschupke.buddy.content.event;
 
+import eu.janschupke.buddy.content.config.enumeration.Huds;
 import eu.janschupke.buddy.content.ui.menu.AudioMenu;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
 
 /**
  * Message event for music toggle.

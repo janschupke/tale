@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.logging;
 
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
 
 import java.util.ArrayList;
 import java.util.List;

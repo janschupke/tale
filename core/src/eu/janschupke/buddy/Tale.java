@@ -1,6 +1,8 @@
 package eu.janschupke.buddy;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.content.stage.level.cave.CaveScreen;
 import eu.janschupke.buddy.content.stage.level.dungeon.DungeonScreen;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
@@ -12,9 +14,7 @@ import eu.janschupke.buddy.content.stage.splash.SplashScreen;
 import eu.janschupke.buddy.content.ui.hud.StandardHud;
 import eu.janschupke.buddy.content.ui.menu.*;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.input.GlobalInputProcessor;
 import eu.janschupke.buddy.framework.input.PlatformInputProcessor;
 import eu.janschupke.buddy.framework.input.TopDownInputProcessor;

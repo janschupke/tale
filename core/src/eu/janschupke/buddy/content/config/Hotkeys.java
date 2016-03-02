@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config;
+package eu.janschupke.buddy.content.config;
 
 import com.badlogic.gdx.Input;
 

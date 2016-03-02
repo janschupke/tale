@@ -1,10 +1,10 @@
 package eu.janschupke.buddy.content.stage.level.outskirts.obstacle.cave.interaction;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Initial cave interaction situation.

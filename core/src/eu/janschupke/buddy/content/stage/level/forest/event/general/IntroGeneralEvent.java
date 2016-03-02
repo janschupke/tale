@@ -1,10 +1,10 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.general;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * An event that is triggered shortly after the game starts.

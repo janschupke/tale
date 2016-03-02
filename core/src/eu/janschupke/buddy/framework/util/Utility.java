@@ -1,11 +1,11 @@
 package eu.janschupke.buddy.framework.util;
 
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Unit;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.ui.table.RootTable;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * General utility class.

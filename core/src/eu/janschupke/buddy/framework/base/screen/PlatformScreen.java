@@ -1,7 +1,7 @@
 package eu.janschupke.buddy.framework.base.screen;
 
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Base class for platform style screens (levels),

@@ -1,8 +1,8 @@
 package eu.janschupke.buddy.content.ui.hud;
 
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.ui.table.HudTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 /**
  * Standard level HUD.

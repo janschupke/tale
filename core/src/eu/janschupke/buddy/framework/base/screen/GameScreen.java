@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Item;
 import eu.janschupke.buddy.framework.base.entity.Obstacle;
@@ -16,8 +18,6 @@ import eu.janschupke.buddy.framework.base.event.handling.LevelEventHandler;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.quest.QuestManager;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.config.enumeration.WorldDebugRendering;
 import eu.janschupke.buddy.framework.input.BaseInputProcessor;
 

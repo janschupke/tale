@@ -1,6 +1,7 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.pickup;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
@@ -11,7 +12,6 @@ import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 import eu.janschupke.buddy.framework.base.event.PickupEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
 import eu.janschupke.buddy.framework.base.ui.dialog.InfoDialog;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Event that picks up the coin from the ground.

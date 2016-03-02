@@ -1,8 +1,8 @@
 package eu.janschupke.buddy.framework.base.entity;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.Config;
 import eu.janschupke.buddy.framework.util.WorldObjectFactory;
 
 /**

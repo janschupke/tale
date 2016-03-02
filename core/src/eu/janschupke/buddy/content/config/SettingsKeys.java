@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config;
+package eu.janschupke.buddy.content.config;
 
 /**
  * Preference item names as they appear in the preference file.

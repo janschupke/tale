@@ -1,12 +1,12 @@
 package eu.janschupke.buddy.content.stage.level.forest;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.TopDownScreen;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
 import eu.janschupke.buddy.framework.config.enumeration.InputProcessors;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Forest (Tutorial) screen.

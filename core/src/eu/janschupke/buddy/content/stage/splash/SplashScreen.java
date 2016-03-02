@@ -1,9 +1,9 @@
 package eu.janschupke.buddy.content.stage.splash;
 
+import eu.janschupke.buddy.content.config.enumeration.Huds;
+import eu.janschupke.buddy.content.config.enumeration.Screens;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.CinematicScreen;
-import eu.janschupke.buddy.framework.config.enumeration.Huds;
-import eu.janschupke.buddy.framework.config.enumeration.Screens;
 
 /**
  * Splash screen class.

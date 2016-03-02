@@ -2,6 +2,7 @@ package eu.janschupke.buddy.content.stage.level.forest.item.coin;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import eu.janschupke.buddy.content.config.enumeration.ItemTags;
 import eu.janschupke.buddy.content.stage.level.forest.ForestEventHandler;
 import eu.janschupke.buddy.content.stage.level.forest.item.coin.interaction.GoldCoinInteraction;
 import eu.janschupke.buddy.framework.base.entity.Item;
@@ -11,7 +12,6 @@ import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
 import eu.janschupke.buddy.framework.base.world.BaseWorld;
-import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
 
 /**
  * Gold coin item entity.

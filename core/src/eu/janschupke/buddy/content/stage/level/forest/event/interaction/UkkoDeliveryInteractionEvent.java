@@ -1,5 +1,10 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.interaction;
 
+import eu.janschupke.buddy.content.config.enumeration.ItemTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.DecisionTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.buddy.content.stage.level.forest.ForestScreen;
 import eu.janschupke.buddy.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.buddy.content.stage.level.forest.quest.ForestQuestManager;
@@ -10,11 +15,6 @@ import eu.janschupke.buddy.framework.base.entity.container.quest.QuestChain;
 import eu.janschupke.buddy.framework.base.event.GeneralEvent;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.config.enumeration.ItemTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.DecisionTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 /**
  * Event for the coin delivery to the Ukko unit.

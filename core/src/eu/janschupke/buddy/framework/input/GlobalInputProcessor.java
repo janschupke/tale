@@ -2,9 +2,9 @@ package eu.janschupke.buddy.framework.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import eu.janschupke.buddy.content.config.Config;
+import eu.janschupke.buddy.content.config.Hotkeys;
 import eu.janschupke.buddy.framework.App;
-import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Input processor for application-wide input processing.

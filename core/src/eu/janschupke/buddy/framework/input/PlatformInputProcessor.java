@@ -1,8 +1,8 @@
 package eu.janschupke.buddy.framework.input;
 
+import eu.janschupke.buddy.content.config.Hotkeys;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.screen.GameScreen;
-import eu.janschupke.buddy.framework.config.Hotkeys;
 
 /**
  * Base input processor for all platform levels.

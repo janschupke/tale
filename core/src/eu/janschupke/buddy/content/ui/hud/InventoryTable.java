@@ -8,12 +8,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import eu.janschupke.buddy.content.config.Config;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.container.inventory.Inventory;
 import eu.janschupke.buddy.framework.base.entity.container.inventory.InventoryItem;
 import eu.janschupke.buddy.framework.base.exception.NoHudException;
 import eu.janschupke.buddy.framework.base.ui.table.UiTable;
-import eu.janschupke.buddy.framework.config.Config;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -4,8 +4,8 @@ import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import eu.janschupke.buddy.Tale;
-import eu.janschupke.buddy.framework.config.Config;
-import eu.janschupke.buddy.framework.config.DefaultSettings;
+import eu.janschupke.buddy.content.config.Config;
+import eu.janschupke.buddy.content.config.DefaultSettings;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

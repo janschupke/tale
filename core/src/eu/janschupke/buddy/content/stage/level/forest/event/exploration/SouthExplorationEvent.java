@@ -1,9 +1,9 @@
 package eu.janschupke.buddy.content.stage.level.forest.event.exploration;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.event.ExplorationEvent;
 import eu.janschupke.buddy.framework.base.screen.BaseScreen;
-import eu.janschupke.buddy.framework.config.enumeration.tags.GameEventTags;
 
 /**
  * Exploration event for the south optional area.

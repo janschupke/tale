@@ -1,10 +1,10 @@
 package eu.janschupke.buddy.framework.base.interaction;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.buddy.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.event.handling.InteractionSwitch;
-import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
-import eu.janschupke.buddy.framework.config.enumeration.tags.SituationTags;
 
 import java.util.ArrayList;
 import java.util.List;

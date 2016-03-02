@@ -1,4 +1,4 @@
-package eu.janschupke.buddy.framework.config.enumeration;
+package eu.janschupke.buddy.content.config.enumeration;
 
 /**
  * Enumeration of all HUDs.

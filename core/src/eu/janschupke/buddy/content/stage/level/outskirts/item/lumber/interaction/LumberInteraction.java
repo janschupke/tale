@@ -1,11 +1,11 @@
 package eu.janschupke.buddy.content.stage.level.outskirts.item.lumber.interaction;
 
+import eu.janschupke.buddy.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.buddy.framework.App;
 import eu.janschupke.buddy.framework.base.entity.Triggerable;
 import eu.janschupke.buddy.framework.base.interaction.Decision;
 import eu.janschupke.buddy.framework.base.interaction.Interaction;
 import eu.janschupke.buddy.framework.base.interaction.Situation;
-import eu.janschupke.buddy.framework.config.enumeration.tags.InteractionTags;
 
 /**
  * Lumber item interaction class.
