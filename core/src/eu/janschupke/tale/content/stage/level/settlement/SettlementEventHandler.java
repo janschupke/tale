@@ -7,7 +7,7 @@ import eu.janschupke.tale.content.stage.level.settlement.event.transition.Dungeo
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.SmithHouseTransitionEvent;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.handling.LevelEventHandler;
+import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the settlement level.

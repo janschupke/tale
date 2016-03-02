@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.screen.UiScreen;
+import eu.janschupke.tale.framework.screen.UiScreen;
 
 /**
  * Main menu screen.

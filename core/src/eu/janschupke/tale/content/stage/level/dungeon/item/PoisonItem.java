@@ -3,8 +3,8 @@ package eu.janschupke.tale.content.stage.level.dungeon.item;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
-import eu.janschupke.tale.framework.base.entity.Item;
-import eu.janschupke.tale.framework.base.world.BaseWorld;
+import eu.janschupke.tale.framework.entity.Item;
+import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Dungeon poison item.

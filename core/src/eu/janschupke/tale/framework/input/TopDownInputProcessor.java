@@ -3,7 +3,7 @@ package eu.janschupke.tale.framework.input;
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.content.config.Hotkeys;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
+import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Base input processor for all top-down levels.

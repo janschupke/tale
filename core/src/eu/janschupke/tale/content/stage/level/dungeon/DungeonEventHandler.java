@@ -5,7 +5,7 @@ import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.*;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.ExitTransitionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.SettlementTransitionEvent;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.handling.LevelEventHandler;
+import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the dungeon level.

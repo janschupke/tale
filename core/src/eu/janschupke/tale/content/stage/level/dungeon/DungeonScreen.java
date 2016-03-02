@@ -4,8 +4,8 @@ import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.stage.level.dungeon.quest.DungeonQuestManager;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.screen.TopDownScreen;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;
+import eu.janschupke.tale.framework.screen.TopDownScreen;
 
 /**
  * Screen for the dungeon level.

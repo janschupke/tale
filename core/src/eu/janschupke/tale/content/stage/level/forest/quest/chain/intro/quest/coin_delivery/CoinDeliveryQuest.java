@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.co
 import eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task.CoinDeliveryTask;
 import eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task.CoinPickupTask;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.container.quest.Quest;
+import eu.janschupke.tale.framework.entity.container.quest.Quest;
 
 /**
  * Part of the intro quest chain.

@@ -3,10 +3,10 @@ package eu.janschupke.tale.content.stage.level.dungeon.obstacle;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.world.BaseWorld;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Dungeon study table.

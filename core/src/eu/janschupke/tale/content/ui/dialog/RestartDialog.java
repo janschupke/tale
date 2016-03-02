@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.ui.dialog;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.tale.framework.ui.dialog.InfoDialog;
 
 /**
  * Notification dialog that indicated that an application restart is required.

@@ -1,6 +1,6 @@
 package eu.janschupke.tale.content.stage.level.outskirts;
 
-import eu.janschupke.tale.framework.base.entity.state.LevelState;
+import eu.janschupke.tale.framework.entity.state.LevelState;
 
 /**
  * Level state for the Outskirts level.

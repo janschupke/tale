@@ -11,10 +11,10 @@ import eu.janschupke.tale.content.stage.level.house.obstacle.cauldron.CauldronOb
 import eu.janschupke.tale.content.stage.level.house.sensor.FarExplorationSensor;
 import eu.janschupke.tale.content.stage.level.house.sensor.RoomExplorationSensor;
 import eu.janschupke.tale.content.stage.level.house.sensor.SettlementTransitionSensor;
-import eu.janschupke.tale.framework.base.entity.Item;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Sensor;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.Item;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Sensor;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the house level.

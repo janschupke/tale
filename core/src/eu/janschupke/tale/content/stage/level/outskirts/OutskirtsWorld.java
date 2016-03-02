@@ -11,11 +11,11 @@ import eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign.RoadS
 import eu.janschupke.tale.content.stage.level.outskirts.sensor.*;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.CroneUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.JackUnit;
-import eu.janschupke.tale.framework.base.entity.Item;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Sensor;
-import eu.janschupke.tale.framework.base.entity.Unit;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.Item;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Sensor;
+import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * Outskirts (Level 1) world.

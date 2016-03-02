@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.ui.hud;
 
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.ui.table.HudTable;
+import eu.janschupke.tale.framework.ui.table.HudTable;
 
 /**
  * Standard level HUD.

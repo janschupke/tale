@@ -2,10 +2,10 @@ package eu.janschupke.tale.content.stage.level.dungeon.unit.rudolf.interaction;
 
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.interaction.Decision;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.interaction.Situation;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.interaction.Decision;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.interaction.Situation;
 
 /**
  * Interaction class for the Rudolf unit.

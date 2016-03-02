@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.house.event.pickup;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.PickupEvent;
+import eu.janschupke.tale.framework.event.PickupEvent;
 
 /**
  * Pickup event for the book.

@@ -11,7 +11,7 @@ import eu.janschupke.tale.content.stage.level.forest.event.interaction.UkkoInter
 import eu.janschupke.tale.content.stage.level.forest.event.pickup.CoinPickupEvent;
 import eu.janschupke.tale.content.stage.level.forest.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.handling.LevelEventHandler;
+import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the forest level.

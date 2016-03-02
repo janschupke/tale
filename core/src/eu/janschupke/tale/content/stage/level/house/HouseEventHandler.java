@@ -7,7 +7,7 @@ import eu.janschupke.tale.content.stage.level.house.event.pickup.BookPickupEvent
 import eu.janschupke.tale.content.stage.level.house.event.pickup.MeadPickupEvent;
 import eu.janschupke.tale.content.stage.level.house.event.transition.SettlementTransitionEvent;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.handling.LevelEventHandler;
+import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the house level.

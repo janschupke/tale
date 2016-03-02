@@ -5,13 +5,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.cave.CaveEventHandler;
 import eu.janschupke.tale.content.stage.level.cave.obstacle.spring.interaction.SpringInteraction;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.event.handling.InteractionSwitch;
-import eu.janschupke.tale.framework.base.exception.NoHudException;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
-import eu.janschupke.tale.framework.base.world.BaseWorld;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
+import eu.janschupke.tale.framework.exception.NoHudException;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.screen.GameScreen;
+import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Cave spring obstacle.

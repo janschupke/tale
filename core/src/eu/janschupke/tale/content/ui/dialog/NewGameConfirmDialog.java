@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.ui.dialog;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.ui.dialog.ConfirmDialog;
+import eu.janschupke.tale.framework.ui.dialog.ConfirmDialog;
 
 /**
  * A confirmation dialog for deleting an existing game state

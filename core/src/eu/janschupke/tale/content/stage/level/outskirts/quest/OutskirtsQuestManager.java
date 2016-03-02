@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.outskirts.quest;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.quest.QuestManager;
+import eu.janschupke.tale.framework.quest.QuestManager;
 
 /**
  * Quest manager for the Outskirts level.

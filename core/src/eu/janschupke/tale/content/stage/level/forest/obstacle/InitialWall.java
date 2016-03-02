@@ -2,11 +2,11 @@ package eu.janschupke.tale.content.stage.level.forest.obstacle;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.entity.Wall;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
-import eu.janschupke.tale.framework.base.world.BaseWorld;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.entity.Wall;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.screen.GameScreen;
+import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * A wall obstacle that doesn't let the player continue

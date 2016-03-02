@@ -5,8 +5,8 @@ import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.screen.TopDownScreen;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;
+import eu.janschupke.tale.framework.screen.TopDownScreen;
 
 /**
  * Forest (Tutorial) screen.

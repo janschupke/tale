@@ -9,12 +9,12 @@ import eu.janschupke.tale.content.stage.level.forest.ForestScreen;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.Wall;
-import eu.janschupke.tale.framework.base.entity.WorldEntity;
-import eu.janschupke.tale.framework.base.entity.container.quest.QuestChain;
-import eu.janschupke.tale.framework.base.event.GeneralEvent;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.screen.BaseScreen;
+import eu.janschupke.tale.framework.entity.Wall;
+import eu.janschupke.tale.framework.entity.WorldEntity;
+import eu.janschupke.tale.framework.entity.container.quest.QuestChain;
+import eu.janschupke.tale.framework.event.GeneralEvent;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Event for the coin delivery to the Ukko unit.

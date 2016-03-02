@@ -6,12 +6,12 @@ import eu.janschupke.tale.content.stage.level.forest.ForestScreen;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.Wall;
-import eu.janschupke.tale.framework.base.entity.WorldEntity;
-import eu.janschupke.tale.framework.base.entity.container.quest.QuestChain;
-import eu.janschupke.tale.framework.base.event.PickupEvent;
-import eu.janschupke.tale.framework.base.screen.BaseScreen;
-import eu.janschupke.tale.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.tale.framework.entity.Wall;
+import eu.janschupke.tale.framework.entity.WorldEntity;
+import eu.janschupke.tale.framework.entity.container.quest.QuestChain;
+import eu.janschupke.tale.framework.event.PickupEvent;
+import eu.janschupke.tale.framework.screen.BaseScreen;
+import eu.janschupke.tale.framework.ui.dialog.InfoDialog;
 
 /**
  * Event that picks up the coin from the ground.

@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.ui.dialog;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.ui.dialog.InfoDialog;
+import eu.janschupke.tale.framework.ui.dialog.InfoDialog;
 
 /**
  * Dialog that informs the player that an item cannot be picked up,

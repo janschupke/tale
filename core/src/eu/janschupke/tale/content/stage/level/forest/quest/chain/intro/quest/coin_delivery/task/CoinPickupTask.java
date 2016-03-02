@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.container.quest.Task;
+import eu.janschupke.tale.framework.entity.container.quest.Task;
 
 /**
  * Part of the coin delivary quest.

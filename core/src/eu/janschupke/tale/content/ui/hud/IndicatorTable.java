@@ -6,9 +6,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.state.GlobalLevelState;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
-import eu.janschupke.tale.framework.base.ui.table.UiTable;
+import eu.janschupke.tale.framework.entity.state.GlobalLevelState;
+import eu.janschupke.tale.framework.screen.GameScreen;
+import eu.janschupke.tale.framework.ui.table.UiTable;
 
 import java.util.Observable;
 import java.util.Observer;

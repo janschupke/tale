@@ -16,11 +16,11 @@ import eu.janschupke.tale.content.stage.level.dungeon.sensor.SettlementTransitio
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.StudyExplorationSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.unit.rudolf.RudolfUnit;
 import eu.janschupke.tale.content.stage.level.dungeon.unit.slave.SlaveUnit;
-import eu.janschupke.tale.framework.base.entity.Item;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Sensor;
-import eu.janschupke.tale.framework.base.entity.Unit;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.Item;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Sensor;
+import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the dungeon level.

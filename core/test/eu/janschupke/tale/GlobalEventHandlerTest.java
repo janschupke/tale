@@ -12,7 +12,7 @@ public class GlobalEventHandlerTest extends TestCase {
 //    public static void init() {
 //        final HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
 //        config.renderInterval = 1f/60;
-//        app = new Buddy();
+//        app = new Tale();
 //        HeadlessApplication h = new HeadlessApplication(app, config);
 //    }
 
@@ -23,7 +23,7 @@ public class GlobalEventHandlerTest extends TestCase {
 ////        fail();
 //        final HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
 //        config.renderInterval = 1f/60;
-//        app = new Buddy();
+//        app = new Tale();
 //        HeadlessApplication h = new HeadlessApplication(app, config);
 //
 //        if (app == null) {
@@ -45,7 +45,7 @@ public class GlobalEventHandlerTest extends TestCase {
 ////            }
 ////        }
 //
-////        app = new Buddy();
+////        app = new Tale();
 //
 //        for(Map.Entry<Config.Huds, UITable> entry : app.getHuds().entrySet()) {
 //            if (entry.getValue().getDebug() != true) {

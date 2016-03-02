@@ -8,8 +8,8 @@ import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
 import eu.janschupke.tale.content.stage.level.forest.sensor.*;
 import eu.janschupke.tale.content.stage.level.forest.unit.ukko.UkkoUnit;
-import eu.janschupke.tale.framework.base.entity.*;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.*;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * Forest (Tutorial) world.

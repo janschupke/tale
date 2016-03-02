@@ -3,8 +3,8 @@ package eu.janschupke.tale.content.stage.level.outskirts.event.transition;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.TransitionEvent;
-import eu.janschupke.tale.framework.util.Utility;
+import eu.janschupke.tale.framework.event.TransitionEvent;
+import eu.janschupke.tale.framework.utility.Utility;
 
 /**
  * Event for screen transition from Outskirts to Cave.

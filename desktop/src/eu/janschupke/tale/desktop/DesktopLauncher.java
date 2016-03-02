@@ -42,7 +42,7 @@ public class DesktopLauncher {
 		}
 	}
 
-	public static void main (String[] arg) {
+	public static void main (String[] args) {
 		// Platform specific parsing for window resolution.
 		PropertiesParser propertiesParser = new PropertiesParser();
 		parseWindowConfig(propertiesParser);

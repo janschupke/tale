@@ -17,22 +17,22 @@ import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.ui.hud.StandardHud;
-import eu.janschupke.tale.framework.base.entity.Item;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.entity.Unit;
-import eu.janschupke.tale.framework.base.entity.WorldEntity;
-import eu.janschupke.tale.framework.base.entity.container.GameState;
-import eu.janschupke.tale.framework.base.event.handling.GlobalEventHandler;
-import eu.janschupke.tale.framework.base.exception.NoHudException;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.screen.BaseScreen;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
-import eu.janschupke.tale.framework.base.ui.PreferenceMenu;
-import eu.janschupke.tale.framework.base.ui.table.RootTable;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;
 import eu.janschupke.tale.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.tale.framework.entity.Item;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.entity.WorldEntity;
+import eu.janschupke.tale.framework.entity.container.GameState;
+import eu.janschupke.tale.framework.event.handling.GlobalEventHandler;
+import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.input.BaseInputProcessor;
-import eu.janschupke.tale.framework.resources.ResourceManager;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.resource.ResourceManager;
+import eu.janschupke.tale.framework.screen.BaseScreen;
+import eu.janschupke.tale.framework.screen.GameScreen;
+import eu.janschupke.tale.framework.ui.PreferenceMenu;
+import eu.janschupke.tale.framework.ui.table.RootTable;
 import eu.janschupke.tale.logging.GameLog;
 
 import java.util.HashMap;
@@ -163,7 +163,7 @@ public abstract class App extends Game {
      * Resets the current game state in order to start a new one.
      */
     public void resetState() {
-        // TODO: reset measuring model state.
+        gameLog.clear();
         gameState = new GameState(this);
         huds = new HashMap<>();
         ui = new Stage();
@@ -171,19 +171,6 @@ public abstract class App extends Game {
         screens = new HashMap<>();
         initScreens();
         configureObservers();
-    }
-
-    /**
-     * Loads the persisted game state that has been previously serialized.
-     *
-     * @param app Deserialized game state from which to load.
-     */
-    public void loadState(App app) {
-        // TODO: load measuring model state.
-        gameState = app.getGameState();
-        ui = app.getUi();
-        screens = app.getScreens();
-        huds = app.getHuds();
     }
 
     /**

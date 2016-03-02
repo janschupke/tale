@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.settlement.event.transition;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.TransitionEvent;
+import eu.janschupke.tale.framework.event.TransitionEvent;
 
 /**
  * Event for the Smith's house entry.

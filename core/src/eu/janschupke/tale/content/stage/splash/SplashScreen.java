@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.splash;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.screen.CinematicScreen;
+import eu.janschupke.tale.framework.screen.CinematicScreen;
 
 /**
  * Splash screen class.

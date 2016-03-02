@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.event;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.ui.menu.AudioMenu;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.GeneralEvent;
+import eu.janschupke.tale.framework.event.GeneralEvent;
 
 /**
  * Message event for music toggle.

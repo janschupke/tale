@@ -4,10 +4,10 @@ import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.entity.Triggerable;
-import eu.janschupke.tale.framework.base.interaction.Decision;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.screen.GameScreen;
+import eu.janschupke.tale.framework.entity.Triggerable;
+import eu.janschupke.tale.framework.interaction.Decision;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Ukko interaction object.

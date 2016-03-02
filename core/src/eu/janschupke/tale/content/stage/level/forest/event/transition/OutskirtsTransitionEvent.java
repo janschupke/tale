@@ -4,9 +4,9 @@ import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.TransitionEvent;
-import eu.janschupke.tale.framework.base.screen.BaseScreen;
-import eu.janschupke.tale.framework.util.Utility;
+import eu.janschupke.tale.framework.event.TransitionEvent;
+import eu.janschupke.tale.framework.screen.BaseScreen;
+import eu.janschupke.tale.framework.utility.Utility;
 
 /**
  * Event for screen transition from Forest to Outskirts.

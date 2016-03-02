@@ -7,10 +7,10 @@ import eu.janschupke.tale.content.stage.level.cave.sensor.CorpsecExplorationSens
 import eu.janschupke.tale.content.stage.level.cave.sensor.OutskirtsTransitionSensor;
 import eu.janschupke.tale.content.stage.level.cave.unit.corpsec.CorpsecUnit;
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.VilleUnit;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Sensor;
-import eu.janschupke.tale.framework.base.entity.Unit;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Sensor;
+import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the cave level.

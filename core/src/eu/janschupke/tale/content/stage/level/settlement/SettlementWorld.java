@@ -14,10 +14,10 @@ import eu.janschupke.tale.content.stage.level.settlement.sensor.DungeonExplorati
 import eu.janschupke.tale.content.stage.level.settlement.sensor.OutskirtsTransitionSensor;
 import eu.janschupke.tale.content.stage.level.settlement.unit.chobo.ChoboUnit;
 import eu.janschupke.tale.content.stage.level.settlement.unit.smith.SmithUnit;
-import eu.janschupke.tale.framework.base.entity.Obstacle;
-import eu.janschupke.tale.framework.base.entity.Sensor;
-import eu.janschupke.tale.framework.base.entity.Unit;
-import eu.janschupke.tale.framework.base.world.TopDownWorld;
+import eu.janschupke.tale.framework.entity.Obstacle;
+import eu.janschupke.tale.framework.entity.Sensor;
+import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the settlement level.

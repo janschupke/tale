@@ -10,7 +10,7 @@ import eu.janschupke.tale.content.stage.level.outskirts.event.transition.CaveTra
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.ForestTransitionEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.SettlementTransitionEvent;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.event.handling.LevelEventHandler;
+import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the outskirts level.

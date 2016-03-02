@@ -13,9 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.base.interaction.Decision;
-import eu.janschupke.tale.framework.base.interaction.Interaction;
-import eu.janschupke.tale.framework.base.ui.table.UiTable;
+import eu.janschupke.tale.framework.interaction.Decision;
+import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.ui.table.UiTable;
 
 /**
  * GUI table structure for the interaction pane.
