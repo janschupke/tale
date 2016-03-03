@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.dungeon.quest;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.quest.QuestManager;
+import eu.janschupke.tale.framework.container.quest.QuestManager;
 
 /**
  * Quest manager for the Dungeon level.

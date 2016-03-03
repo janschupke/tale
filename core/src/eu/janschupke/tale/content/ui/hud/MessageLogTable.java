@@ -71,7 +71,6 @@ public class MessageLogTable extends UiTable implements Observer {
         });
     }
 
-
     @Override
     public void update(Observable o, Object arg) {
         String log = o.toString();

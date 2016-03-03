@@ -2,7 +2,7 @@ package eu.janschupke.tale.framework.container.quest;
 
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.DataContainer;
-import eu.janschupke.tale.framework.quest.enumeration.TaskStatus;
+import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package eu.janschupke.tale.framework.quest.enumeration;
+package eu.janschupke.tale.framework.container.quest.enumeration;
 
 /**
  * Enumeration of all possible task statuses.

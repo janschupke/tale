@@ -10,6 +10,7 @@ import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.tale.framework.container.quest.QuestManager;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Unit;
@@ -17,7 +18,6 @@ import eu.janschupke.tale.framework.entity.WorldEntity;
 import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.input.BaseInputProcessor;
-import eu.janschupke.tale.framework.quest.QuestManager;
 import eu.janschupke.tale.framework.state.LevelState;
 import eu.janschupke.tale.framework.world.BaseWorld;
 

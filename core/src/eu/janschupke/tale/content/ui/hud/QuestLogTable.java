@@ -14,8 +14,8 @@ import eu.janschupke.tale.framework.container.quest.Quest;
 import eu.janschupke.tale.framework.container.quest.QuestChain;
 import eu.janschupke.tale.framework.container.quest.QuestLog;
 import eu.janschupke.tale.framework.container.quest.Task;
+import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.exception.NoHudException;
-import eu.janschupke.tale.framework.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.ui.table.UiTable;
 
 import java.util.Observable;
