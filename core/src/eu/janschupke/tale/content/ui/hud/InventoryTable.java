@@ -10,8 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.inventory.Inventory;
-import eu.janschupke.tale.framework.entity.container.inventory.InventoryItem;
+import eu.janschupke.tale.framework.container.inventory.Inventory;
+import eu.janschupke.tale.framework.container.inventory.InventoryItem;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.ui.table.UiTable;
 

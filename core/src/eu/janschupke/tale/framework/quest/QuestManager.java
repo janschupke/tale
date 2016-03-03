@@ -2,7 +2,7 @@ package eu.janschupke.tale.framework.quest;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.quest.QuestChain;
+import eu.janschupke.tale.framework.container.quest.QuestChain;
 
 /**
  * Base quest manager for quest handling.

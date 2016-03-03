@@ -17,18 +17,18 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * GUI table structure for event log.
+ * GUI table structure for message log.
  *
  * @author jan.schupke@gmail.com
  */
-public class EventLogTable extends UiTable implements Observer {
+public class MessageLogTable extends UiTable implements Observer {
     private Label titleLabel;
-    private Table eventTable;
+    private Table messageTable;
     private Label eventArea;
-    private ScrollPane eventScrollPane;
+    private ScrollPane messageScrollPane;
     private TextButton closeButton;
 
-    public EventLogTable(final App app) {
+    public MessageLogTable(final App app) {
         super(app);
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         align(Align.top);
@@ -42,18 +42,18 @@ public class EventLogTable extends UiTable implements Observer {
     @Override
     public void initWidgets() {
         titleLabel = new Label(app.getLang().get("hud.event.label.title"), app.getSkin());
-        eventTable = new Table();
-        eventTable.align(Align.topLeft);
+        messageTable = new Table();
+        messageTable.align(Align.topLeft);
         eventArea = new Label("", app.getSkin());
-        eventScrollPane = new ScrollPane(eventTable, app.getSkin());
+        messageScrollPane = new ScrollPane(messageTable, app.getSkin());
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        eventTable.add(eventArea);
-        add(eventScrollPane).width(Config.HUD_LOG_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        messageTable.add(eventArea);
+        add(messageScrollPane).width(Config.HUD_LOG_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton);
     }
 
@@ -76,7 +76,7 @@ public class EventLogTable extends UiTable implements Observer {
     public void update(Observable o, Object arg) {
         String log = o.toString();
         eventArea.setText(log);
-        eventScrollPane.layout();
+        messageScrollPane.layout();
 
         // If dialogs are disabled, indicator about the new event is displayed on the screen.
         if (!app.getSettingsManager().getConfig().isEnableDialogs()) {

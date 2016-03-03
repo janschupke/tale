@@ -1,7 +1,7 @@
-package eu.janschupke.tale.framework.entity.container.quest;
+package eu.janschupke.tale.framework.container.quest;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.DataContainer;
+import eu.janschupke.tale.framework.container.DataContainer;
 
 import java.util.ArrayList;
 import java.util.List;

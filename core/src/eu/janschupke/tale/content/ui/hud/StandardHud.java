@@ -17,7 +17,7 @@ public class StandardHud extends HudTable {
     private IndicatorTable indicatorTable;
     // Fullscreen tables.
     private InventoryTable inventoryTable;
-    private EventLogTable eventLogTable;
+    private MessageLogTable messageLogTable;
     private QuestLogTable questLogTable;
     private State state;
 
@@ -37,7 +37,7 @@ public class StandardHud extends HudTable {
         indicatorTable = new IndicatorTable(app);
 
         inventoryTable = new InventoryTable(app);
-        eventLogTable = new EventLogTable(app);
+        messageLogTable = new MessageLogTable(app);
         questLogTable = new QuestLogTable(app);
     }
 
@@ -68,7 +68,7 @@ public class StandardHud extends HudTable {
         bottomHudPanel.clear();
 
         if (state != State.EVENTS) {
-            topHudPanel.add(eventLogTable);
+            topHudPanel.add(messageLogTable);
             state = State.EVENTS;
             app.getGameState().getGlobalLevelState().setNewEvent(false);
         } else {
@@ -135,8 +135,8 @@ public class StandardHud extends HudTable {
         return inventoryTable;
     }
 
-    public EventLogTable getEventLogTable() {
-        return eventLogTable;
+    public MessageLogTable getMessageLogTable() {
+        return messageLogTable;
     }
 
     public QuestLogTable getQuestLogTable() {

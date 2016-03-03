@@ -1,4 +1,4 @@
-package eu.janschupke.tale.framework.entity.container;
+package eu.janschupke.tale.framework.container;
 
 import eu.janschupke.tale.framework.App;
 

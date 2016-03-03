@@ -81,6 +81,6 @@ public abstract class BaseEvent {
      */
     protected void addEventMessage() {
         if (eventMessage.isEmpty()) return;
-        app.getGameState().getEventLog().addEvent(this);
+        app.getGameState().getMessageLog().addEvent(this);
     }
 }

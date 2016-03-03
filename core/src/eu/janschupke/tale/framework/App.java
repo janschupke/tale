@@ -19,11 +19,11 @@ import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.ui.hud.StandardHud;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;
 import eu.janschupke.tale.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.tale.framework.container.GameState;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.entity.Unit;
 import eu.janschupke.tale.framework.entity.WorldEntity;
-import eu.janschupke.tale.framework.entity.container.GameState;
 import eu.janschupke.tale.framework.event.handling.GlobalEventHandler;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.input.BaseInputProcessor;
@@ -48,8 +48,8 @@ public abstract class App extends Game {
     protected Map<Huds, RootTable> huds;
     protected Map<Screens, BaseScreen> screens;
     protected Map<InputProcessors, BaseInputProcessor> inputProcessors;
-    protected Skin skin;
-    protected Stage ui;
+    private Skin skin;
+    private Stage ui;
     private GlobalEventHandler eventHandler;
     private SpriteBatch batch;
     private BitmapFont font;
@@ -149,7 +149,7 @@ public abstract class App extends Game {
      */
     private void configureObservers() {
         try {
-            gameState.getEventLog().addObserver(getHud().getEventLogTable());
+            gameState.getMessageLog().addObserver(getHud().getMessageLogTable());
             gameState.getInventory().addObserver(getHud().getInventoryTable());
             gameState.getQuestLog().addObserver(getHud().getQuestLogTable());
             gameState.getGlobalLevelState().addObserver(getHud().getIndicatorTable());

@@ -1,8 +1,8 @@
-package eu.janschupke.tale.framework.entity.container.inventory;
+package eu.janschupke.tale.framework.container.inventory;
 
 import eu.janschupke.tale.framework.App;
+import eu.janschupke.tale.framework.container.DataContainer;
 import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.entity.container.DataContainer;
 
 /**
  * Single inventory item.

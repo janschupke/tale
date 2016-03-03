@@ -1,7 +1,7 @@
-package eu.janschupke.tale.framework.entity.container.event;
+package eu.janschupke.tale.framework.container.message;
 
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.DataContainer;
+import eu.janschupke.tale.framework.container.DataContainer;
 import eu.janschupke.tale.framework.event.BaseEvent;
 
 import java.util.ArrayList;
@@ -12,10 +12,10 @@ import java.util.List;
  *
  * @author jan.schupke@gmail.com
  */
-public class EventLog extends DataContainer {
-    private List<EventLogEntry> events;
+public class MessageLog extends DataContainer {
+    private List<MessageLogEntry> events;
 
-    public EventLog(final App app) {
+    public MessageLog(final App app) {
         super(app);
         events = new ArrayList<>();
     }
@@ -23,7 +23,7 @@ public class EventLog extends DataContainer {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        for (EventLogEntry e : events) {
+        for (MessageLogEntry e : events) {
             result.append(e.toString());
             result.append(System.getProperty("line.separator"));
             result.append(System.getProperty("line.separator"));
@@ -38,7 +38,7 @@ public class EventLog extends DataContainer {
      * @param event Provided event.
      */
     public void addEvent(BaseEvent event) {
-        EventLogEntry entry = new EventLogEntry(app, event.getEventMessage());
+        MessageLogEntry entry = new MessageLogEntry(app, event.getEventMessage());
         events.add(entry);
         setChanged();
         notifyObservers();

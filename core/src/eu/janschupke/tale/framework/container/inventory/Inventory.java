@@ -1,8 +1,8 @@
-package eu.janschupke.tale.framework.entity.container.inventory;
+package eu.janschupke.tale.framework.container.inventory;
 
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.DataContainer;
+import eu.janschupke.tale.framework.container.DataContainer;
 import eu.janschupke.tale.framework.exception.InventoryFullException;
 
 import java.util.ArrayList;

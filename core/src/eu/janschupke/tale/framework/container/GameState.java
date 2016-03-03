@@ -1,10 +1,10 @@
-package eu.janschupke.tale.framework.entity.container;
+package eu.janschupke.tale.framework.container;
 
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.container.event.EventLog;
-import eu.janschupke.tale.framework.entity.container.inventory.Inventory;
-import eu.janschupke.tale.framework.entity.container.quest.QuestLog;
+import eu.janschupke.tale.framework.container.inventory.Inventory;
+import eu.janschupke.tale.framework.container.message.MessageLog;
+import eu.janschupke.tale.framework.container.quest.QuestLog;
 import eu.janschupke.tale.framework.entity.state.GlobalLevelState;
 import eu.janschupke.tale.framework.screen.GameScreen;
 
@@ -18,14 +18,14 @@ public class GameState extends DataContainer {
     private GlobalLevelState globalLevelState;
     private Inventory inventory;
     private QuestLog questLog;
-    private EventLog eventLog;
+    private MessageLog messageLog;
 
     public GameState(final App app) {
         super(app);
         globalLevelState = new GlobalLevelState();
         inventory = new Inventory(app, Config.INVENTORY_CAPACITY);
         questLog = new QuestLog(app);
-        eventLog = new EventLog(app);
+        messageLog = new MessageLog(app);
     }
 
     public GameScreen getCurrentLevel() {
@@ -48,7 +48,7 @@ public class GameState extends DataContainer {
         return questLog;
     }
 
-    public EventLog getEventLog() {
-        return eventLog;
+    public MessageLog getMessageLog() {
+        return messageLog;
     }
 }
