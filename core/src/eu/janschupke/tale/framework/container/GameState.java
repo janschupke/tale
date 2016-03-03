@@ -5,8 +5,8 @@ import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.inventory.Inventory;
 import eu.janschupke.tale.framework.container.message.MessageLog;
 import eu.janschupke.tale.framework.container.quest.QuestLog;
-import eu.janschupke.tale.framework.entity.state.GlobalLevelState;
 import eu.janschupke.tale.framework.screen.GameScreen;
+import eu.janschupke.tale.framework.state.GlobalLevelState;
 
 /**
  * Encapsulation of all player-relevant data containers.

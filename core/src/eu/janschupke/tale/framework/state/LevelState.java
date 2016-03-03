@@ -1,4 +1,4 @@
-package eu.janschupke.tale.framework.entity.state;
+package eu.janschupke.tale.framework.state;
 
 import java.util.Observable;
 

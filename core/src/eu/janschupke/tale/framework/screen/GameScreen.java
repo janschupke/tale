@@ -14,11 +14,11 @@ import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Unit;
 import eu.janschupke.tale.framework.entity.WorldEntity;
-import eu.janschupke.tale.framework.entity.state.LevelState;
 import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.input.BaseInputProcessor;
 import eu.janschupke.tale.framework.quest.QuestManager;
+import eu.janschupke.tale.framework.state.LevelState;
 import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**

@@ -24,7 +24,7 @@ import java.util.Observer;
 public class MessageLogTable extends UiTable implements Observer {
     private Label titleLabel;
     private Table messageTable;
-    private Label eventArea;
+    private Label messageArea;
     private ScrollPane messageScrollPane;
     private TextButton closeButton;
 
@@ -44,7 +44,7 @@ public class MessageLogTable extends UiTable implements Observer {
         titleLabel = new Label(app.getLang().get("hud.event.label.title"), app.getSkin());
         messageTable = new Table();
         messageTable.align(Align.topLeft);
-        eventArea = new Label("", app.getSkin());
+        messageArea = new Label("", app.getSkin());
         messageScrollPane = new ScrollPane(messageTable, app.getSkin());
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
@@ -52,7 +52,7 @@ public class MessageLogTable extends UiTable implements Observer {
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        messageTable.add(eventArea);
+        messageTable.add(messageArea);
         add(messageScrollPane).width(Config.HUD_LOG_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton);
     }
@@ -75,7 +75,7 @@ public class MessageLogTable extends UiTable implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         String log = o.toString();
-        eventArea.setText(log);
+        messageArea.setText(log);
         messageScrollPane.layout();
 
         // If dialogs are disabled, indicator about the new event is displayed on the screen.

@@ -1,4 +1,4 @@
-package eu.janschupke.tale.framework.entity.state;
+package eu.janschupke.tale.framework.state;
 
 /**
  * State that applies for all levels in general.
