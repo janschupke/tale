@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.GameScreen;
 import eu.janschupke.tale.framework.ui.table.UiTable;
 

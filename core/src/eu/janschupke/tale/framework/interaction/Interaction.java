@@ -4,7 +4,6 @@ import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
 
 import java.util.ArrayList;
 import java.util.List;

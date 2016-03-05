@@ -7,9 +7,9 @@ import eu.janschupke.tale.content.stage.level.settlement.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.fountain.interaction.FountainInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.GameScreen;
 import eu.janschupke.tale.framework.world.BaseWorld;
 

@@ -1,4 +1,4 @@
-package eu.janschupke.tale.framework.event.handling;
+package eu.janschupke.tale.framework.interaction;
 
 import eu.janschupke.tale.content.ui.hud.HintTable;
 import eu.janschupke.tale.framework.App;

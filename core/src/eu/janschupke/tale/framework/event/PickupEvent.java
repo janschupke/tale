@@ -5,8 +5,8 @@ import eu.janschupke.tale.content.ui.dialog.InventoryFullDialog;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.inventory.InventoryItem;
 import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
 import eu.janschupke.tale.framework.exception.InventoryFullException;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 
 /**
  * Event for item pickups.

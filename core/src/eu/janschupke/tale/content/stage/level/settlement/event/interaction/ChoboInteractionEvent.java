@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.stage.level.settlement.event.interaction;
 
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.InteractionEvent;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 
 /**
  * Interaction event for Chobo unit.

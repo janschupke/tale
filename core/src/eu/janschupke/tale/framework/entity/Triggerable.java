@@ -2,9 +2,9 @@ package eu.janschupke.tale.framework.entity;
 
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.interaction.Interaction;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 
 /**
  * Interface for all world entities that trigger an event upon contact.

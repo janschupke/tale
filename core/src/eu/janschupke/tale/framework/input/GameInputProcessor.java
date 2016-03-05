@@ -5,8 +5,8 @@ import com.badlogic.gdx.math.Vector3;
 import eu.janschupke.tale.content.config.Hotkeys;
 import eu.janschupke.tale.content.ui.hud.StandardHud;
 import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.InteractionSwitch;
 import eu.janschupke.tale.framework.exception.NoHudException;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 import eu.janschupke.tale.framework.screen.GameScreen;
 
