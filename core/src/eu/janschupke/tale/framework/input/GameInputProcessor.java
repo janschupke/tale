@@ -54,7 +54,7 @@ public class GameInputProcessor extends BaseInputProcessor {
                 }
             }
         }
-        if (keycode == Hotkeys.EVENTS) {
+        if (keycode == Hotkeys.MESSAGES) {
             ((GameScreen) app.getScreen()).toggleEventLog();
         }
         if (keycode == Hotkeys.QUESTS) {

@@ -66,11 +66,11 @@ public class StandardHud extends HudTable {
     public void toggleEventLog() {
         topHudPanel.clear();
         bottomHudPanel.clear();
+        app.getGameState().getGlobalLevelState().setNewEvent(false);
 
         if (state != State.EVENTS) {
             topHudPanel.add(messageLogTable);
             state = State.EVENTS;
-            app.getGameState().getGlobalLevelState().setNewEvent(false);
         } else {
             addHud();
             state = State.HUD;
@@ -83,11 +83,11 @@ public class StandardHud extends HudTable {
     public void toggleQuestLog() {
         topHudPanel.clear();
         bottomHudPanel.clear();
+        app.getGameState().getGlobalLevelState().setNewQuest(false);
 
         if (state != State.QUESTS) {
             topHudPanel.add(questLogTable);
             state = State.QUESTS;
-            app.getGameState().getGlobalLevelState().setNewQuest(false);
         } else {
             addHud();
             state = State.HUD;
@@ -100,11 +100,11 @@ public class StandardHud extends HudTable {
     public void toggleInventory() {
         topHudPanel.clear();
         bottomHudPanel.clear();
+        app.getGameState().getGlobalLevelState().setNewItem(false);
 
         if (state != State.INVENTORY) {
             topHudPanel.add(inventoryTable);
             state = State.INVENTORY;
-            app.getGameState().getGlobalLevelState().setNewItem(false);
         } else {
             addHud();
             state = State.HUD;

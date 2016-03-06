@@ -28,6 +28,9 @@ public class MessageLogTable extends UiTable implements Observer {
     private ScrollPane messageScrollPane;
     private TextButton closeButton;
 
+    private float width = Gdx.graphics.getWidth() * 0.6f;
+    private float height = Gdx.graphics.getHeight() * 0.5f;
+
     public MessageLogTable(final App app) {
         super(app);
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
@@ -45,8 +48,9 @@ public class MessageLogTable extends UiTable implements Observer {
         messageTable = new Table();
         messageTable.align(Align.topLeft);
         messageArea = new Label("", app.getSkin());
+        messageArea.setWrap(true);
+        messageArea.setWidth(width - Config.HUD_INNER_PADDING * 2);
         messageScrollPane = new ScrollPane(messageTable, app.getSkin());
-        messageScrollPane.setFadeScrollBars(false);
         messageScrollPane.setScrollingDisabled(true, false);
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
@@ -54,8 +58,8 @@ public class MessageLogTable extends UiTable implements Observer {
     @Override
     public void addWidgets() {
         add(titleLabel).row();
-        messageTable.add(messageArea);
-        add(messageScrollPane).width(Config.HUD_LOG_WIDTH).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        messageTable.add(messageArea).width(width - Config.HUD_INNER_PADDING * 2).pad(Config.HUD_INNER_PADDING);
+        add(messageScrollPane).width(width).height(height).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton);
     }
 

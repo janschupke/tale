@@ -29,7 +29,7 @@ public class Hotkeys {
     public static final int LEFT_ALTERNATIVE = Input.Keys.A;
     public static final int INTERACT = Input.Keys.SPACE;
     public static final int DIALOGS = Input.Keys.H;
-    public static final int EVENTS = Input.Keys.E;
+    public static final int MESSAGES = Input.Keys.E;
     public static final int QUESTS = Input.Keys.Q;
     public static final int INVENTORY = Input.Keys.I;
 }

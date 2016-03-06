@@ -33,6 +33,9 @@ public class InventoryTable extends UiTable implements Observer {
     private Label itemDescriptionLabel;
     private TextButton closeButton;
 
+    private float width = Gdx.graphics.getWidth() * 0.5f;
+    private float height = Gdx.graphics.getHeight() * 0.5f;
+
     public InventoryTable(final App app) {
         super(app);
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
@@ -119,19 +122,25 @@ public class InventoryTable extends UiTable implements Observer {
         descriptionTable.align(Align.top);
         descriptionTable.padTop(Config.HUD_INNER_PADDING);
         descriptionScrollPane = new ScrollPane(descriptionTable, app.getSkin());
+        descriptionScrollPane.setScrollingDisabled(true, false);
         itemNameLabel = new Label(app.getLang().get("hud.inventory.label.empty"), app.getSkin());
         itemDescriptionLabel = new Label("", app.getSkin());
+        itemDescriptionLabel.setWrap(true);
+        itemDescriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
-        add(titleLabel).row();
-        descriptionTable.add(itemNameLabel).row();
-        descriptionTable.add(itemDescriptionLabel).row();
-        add(itemScrollPane).height(Config.HUD_LOG_HEIGHT).padLeft(Config.HUD_INNER_PADDING).fill();
-        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH)
-                .height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        add(titleLabel).colspan(2).row();
+
+        descriptionTable.add(itemNameLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        descriptionTable.add(itemDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
+                .pad(Config.HUD_INNER_PADDING).row();
+
+        add(itemScrollPane).height(height).padLeft(Config.HUD_INNER_PADDING).fill();
+        add(descriptionScrollPane).width(width)
+                .height(height).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton).colspan(2);
     }
 

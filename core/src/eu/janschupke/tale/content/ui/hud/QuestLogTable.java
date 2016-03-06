@@ -44,6 +44,9 @@ public class QuestLogTable extends UiTable implements Observer {
 
     private TextButton closeButton;
 
+    private float width = Gdx.graphics.getWidth() * 0.5f;
+    private float height = Gdx.graphics.getHeight() * 0.5f;
+
     public QuestLogTable(final App app) {
         super(app);
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
@@ -140,10 +143,17 @@ public class QuestLogTable extends UiTable implements Observer {
         descriptionTable = new Table();
         descriptionTable.align(Align.top);
         descriptionScrollPane = new ScrollPane(descriptionTable, app.getSkin());
+        descriptionScrollPane.setScrollingDisabled(true, false);
 
         descriptionTitleLabel = new Label(app.getLang().get("hud.quest.label.empty"), app.getSkin());
+
         questDescriptionLabel = new Label("", app.getSkin());
+        questDescriptionLabel.setWrap(true);
+        questDescriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
+
         taskDescriptionLabel = new Label("", app.getSkin());
+        taskDescriptionLabel.setWrap(true);
+        taskDescriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
 
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
@@ -155,14 +165,16 @@ public class QuestLogTable extends UiTable implements Observer {
         questListTable.add(finishedQuestsLabel).pad(Config.HUD_INNER_PADDING).row();
         questListTable.add(finishedQuestsList).pad(Config.HUD_INNER_PADDING).row();
 
-        descriptionTable.add(descriptionTitleLabel).pad(Config.HUD_INNER_PADDING).row();
-        descriptionTable.add(questDescriptionLabel).pad(Config.HUD_INNER_PADDING).row();
-        descriptionTable.add(taskDescriptionLabel).pad(Config.HUD_INNER_PADDING);
+        descriptionTable.add(descriptionTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        descriptionTable.add(questDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
+                .pad(Config.HUD_INNER_PADDING).row();
+        descriptionTable.add(taskDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
+                .pad(Config.HUD_INNER_PADDING);
 
-        add(titleLabel).row();
-        add(questScrollPane).height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING);
-        add(descriptionScrollPane).width(Config.HUD_LOG_DIMINISHED_WIDTH)
-                .height(Config.HUD_LOG_HEIGHT).fill().pad(Config.HUD_INNER_PADDING).row();
+        add(titleLabel).colspan(2).row();
+        add(questScrollPane).height(height).fill().pad(Config.HUD_INNER_PADDING);
+        add(descriptionScrollPane).width(width)
+                .height(height).fill().pad(Config.HUD_INNER_PADDING).row();
         add(closeButton).colspan(2);
     }
 
