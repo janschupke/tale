@@ -110,22 +110,50 @@ public abstract class App extends Game {
             GameScreen screen = (GameScreen) entry.getValue();
 
             for (Item item : screen.getWorld().getItems()) {
-                if (item instanceof Triggerable && ((Triggerable) item).getInteraction().getTag().equals(tag)) {
-                    return ((Triggerable) item).getInteraction();
+                Interaction interaction = extractInteraction(item, tag);
+                if (interaction != null) {
+                    return interaction;
                 }
             }
 
             for (Unit unit : screen.getWorld().getUnits()) {
-                if (unit instanceof Triggerable && ((Triggerable) unit).getInteraction().getTag().equals(tag)) {
-                    return ((Triggerable) unit).getInteraction();
+                Interaction interaction = extractInteraction(unit, tag);
+                if (interaction != null) {
+                    return interaction;
                 }
             }
 
             for (WorldEntity obstacle : screen.getWorld().getObstacles()) {
-                if (obstacle instanceof Triggerable && ((Triggerable) obstacle).getInteraction().getTag().equals(tag)) {
-                    return ((Triggerable) obstacle).getInteraction();
+                Interaction interaction = extractInteraction(obstacle, tag);
+                if (interaction != null) {
+                    return interaction;
                 }
             }
+        }
+
+        Gdx.app.debug("App#getInteraction", "Returning null");
+
+        return null;
+    }
+
+    /**
+     * Scans the world entity, returns its interaction, it its tag is the same
+     * as the requested tag.
+     * @param entity Provided world entity.
+     * @param tag Requested interaction tag.
+     * @return Interaction with provided tag.
+     */
+    private Interaction extractInteraction(WorldEntity entity, InteractionTags tag) {
+        if (!(entity instanceof Triggerable)) {
+            return null;
+        }
+
+        try {
+            if (((Triggerable) entity).getInteraction().getTag().equals(tag)) {
+                return ((Triggerable) entity).getInteraction();
+            }
+        } catch (NullPointerException e) {
+            // Triggerable with no interaction.
         }
 
         return null;

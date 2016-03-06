@@ -1,5 +1,6 @@
 package eu.janschupke.tale.framework.interaction;
 
+import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.framework.App;
@@ -93,6 +94,8 @@ public abstract class Interaction {
                 return situation;
             }
         }
+
+        Gdx.app.debug("Interaction#getSituation", "Returning null");
 
         return null;
     }
