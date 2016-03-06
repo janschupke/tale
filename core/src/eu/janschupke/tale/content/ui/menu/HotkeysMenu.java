@@ -27,8 +27,8 @@ public class HotkeysMenu extends MenuTable {
     private Label interactHotkey;
     private Label dialogLabel;
     private Label dialogsHotkey;
-    private Label eventsLabel;
-    private Label eventsHotkey;
+    private Label messagesLabel;
+    private Label messagesHotkey;
     private Label questsLabel;
     private Label questsHotkey;
     private Label inventoryLabel;
@@ -59,8 +59,8 @@ public class HotkeysMenu extends MenuTable {
         interactHotkey = new Label(app.getLang().get("menu.hotkeys.label.interact.hotkey"), app.getSkin());
         dialogLabel = new Label(app.getLang().get("menu.hotkeys.label.dialog.label"), app.getSkin());
         dialogsHotkey = new Label(app.getLang().get("menu.hotkeys.label.dialog.hotkey"), app.getSkin());
-        eventsLabel = new Label(app.getLang().get("menu.hotkeys.label.events.label"), app.getSkin());
-        eventsHotkey = new Label(app.getLang().get("menu.hotkeys.label.events.hotkey"), app.getSkin());
+        messagesLabel = new Label(app.getLang().get("menu.hotkeys.label.messages.label"), app.getSkin());
+        messagesHotkey = new Label(app.getLang().get("menu.hotkeys.label.messages.hotkey"), app.getSkin());
         questsLabel = new Label(app.getLang().get("menu.hotkeys.label.quests.label"), app.getSkin());
         questsHotkey = new Label(app.getLang().get("menu.hotkeys.label.quests.hotkey"), app.getSkin());
         inventoryLabel = new Label(app.getLang().get("menu.hotkeys.label.inventory.label"), app.getSkin());
@@ -86,8 +86,8 @@ public class HotkeysMenu extends MenuTable {
         add(interactHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(dialogLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
         add(dialogsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(eventsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(eventsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(messagesLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
+        add(messagesHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(questsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
         add(questsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(inventoryLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);

@@ -41,7 +41,7 @@ public class MessageLogTable extends UiTable implements Observer {
 
     @Override
     public void initWidgets() {
-        titleLabel = new Label(app.getLang().get("hud.event.label.title"), app.getSkin());
+        titleLabel = new Label(app.getLang().get("hud.message.label.title"), app.getSkin());
         messageTable = new Table();
         messageTable.align(Align.topLeft);
         messageArea = new Label("", app.getSkin());
@@ -65,7 +65,7 @@ public class MessageLogTable extends UiTable implements Observer {
                 try {
                     app.getHud().toggleEventLog();
                 } catch (NoHudException e) {
-                    Gdx.app.debug("EventLogTable#setListeners", "Could not get HUD instance");
+                    Gdx.app.debug("MessageLogTable#setListeners", "Could not get HUD instance");
                 }
             }
         });

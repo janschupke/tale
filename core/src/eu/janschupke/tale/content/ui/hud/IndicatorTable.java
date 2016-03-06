@@ -20,7 +20,7 @@ import java.util.Observer;
  * @author jan.schupke@gmail.com
  */
 public class IndicatorTable extends UiTable implements Observer {
-    private TextButton newEventButton;
+    private TextButton mewMessageButton;
     private TextButton newQuestButton;
     private TextButton newItemButton;
 
@@ -37,7 +37,7 @@ public class IndicatorTable extends UiTable implements Observer {
 
     @Override
     public void initWidgets() {
-        newEventButton = new TextButton(app.getLang().get("hud.indicator.event"), app.getSkin());
+        mewMessageButton = new TextButton(app.getLang().get("hud.indicator.message"), app.getSkin());
         newQuestButton = new TextButton(app.getLang().get("hud.indicator.quest"), app.getSkin());
         newItemButton = new TextButton(app.getLang().get("hud.indicator.item"), app.getSkin());
     }
@@ -62,7 +62,7 @@ public class IndicatorTable extends UiTable implements Observer {
         add(contentTable);
 
         if (state.isNewEvent()) {
-            contentTable.add(newEventButton).pad(Config.HUD_BUTTON_PADDING)
+            contentTable.add(mewMessageButton).pad(Config.HUD_BUTTON_PADDING)
                     .width(Config.HUD_INDICATOR_WIDTH).row();
         }
         if (state.isNewQuest()) {
@@ -77,7 +77,7 @@ public class IndicatorTable extends UiTable implements Observer {
 
     @Override
     public void setListeners() {
-        newEventButton.addListener(new ClickListener() {
+        mewMessageButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 ((GameScreen) app.getScreen()).toggleEventLog();

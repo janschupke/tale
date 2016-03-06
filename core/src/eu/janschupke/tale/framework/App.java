@@ -84,6 +84,8 @@ public abstract class App extends Game {
         settingsManager = new SettingsManager();
         resourceManager = new ResourceManager(this);
 
+        gameLog = new GameLog();
+
         // UI initialization.
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas"));
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
@@ -91,8 +93,6 @@ public abstract class App extends Game {
 
         initInputProcessors();
         resetState();
-
-        gameLog = new GameLog();
     }
 
     /**
