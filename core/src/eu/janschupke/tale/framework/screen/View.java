@@ -68,9 +68,10 @@ public class View {
     public void updateCameraPosition(WorldObject o) {
         final float factor = 0.1f;
         Vector3 position = camera.position;
-        Vector2 target = new Vector2(o.getX() + o.getWidth() / 2.0f, o.getY() + o.getHeight() / 2.0f);
+        Vector2 target = new Vector2(o.getX(), o.getY());
         position.x = position.x + (target.x - position.x) * factor;
         position.y = position.y + (target.y - position.y) * factor;
+
         camera.position.set(position);
     }
 
@@ -80,7 +81,7 @@ public class View {
      * @param o Target object.
      */
     public void setCameraPosition(WorldObject o) {
-        Vector3 target = new Vector3(o.getX() + o.getWidth() / 2.0f, o.getY() + o.getHeight() / 2.0f, 0);
+        Vector3 target = new Vector3(o.getX(), o.getY(), 0);
         camera.position.set(target);
     }
 
