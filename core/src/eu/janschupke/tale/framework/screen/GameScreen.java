@@ -48,6 +48,7 @@ public abstract class GameScreen extends BaseScreen {
         super.show();
         paused = false;
         inMenu = false;
+        app.getEventHandler().handleHintMessage();
     }
 
     @Override
@@ -65,9 +66,8 @@ public abstract class GameScreen extends BaseScreen {
 
         Gdx.app.debug("GameScreen#pause", "Pausing");
         super.pause();
-        app.getGameState().getGlobalLevelState().cacheCurrentHint();
-        app.getGameState().getGlobalLevelState().setCurrentHint(app.getLang().get("hint.global.paused"));
         paused = true;
+        app.getEventHandler().handleHintMessage();
     }
 
     @Override
@@ -78,8 +78,8 @@ public abstract class GameScreen extends BaseScreen {
 
         Gdx.app.debug("GameScreen#resume", "Resuming");
         super.resume();
-        app.getGameState().getGlobalLevelState().activateCachedHint();
         if (!inMenu) paused = false;
+        app.getEventHandler().handleHintMessage();
     }
 
     /**

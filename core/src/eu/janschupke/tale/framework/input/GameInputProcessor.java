@@ -83,7 +83,9 @@ public class GameInputProcessor extends BaseInputProcessor {
         }
         if (keycode == Hotkeys.INTERACT) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Firing interact");
-            if (InteractionSwitch.isInteractionPossible()) {
+            if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
+                InteractionSwitch.getTriggerable().endInteraction(app);
+            } else if (InteractionSwitch.isInteractionPossible()) {
                 InteractionSwitch.getInteractionEvent().trigger();
             }
         }

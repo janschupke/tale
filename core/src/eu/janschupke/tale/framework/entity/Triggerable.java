@@ -29,10 +29,9 @@ public interface Triggerable {
      */
     default void startInteraction(final App app) {
         try {
-            app.getGameState().getGlobalLevelState().cacheCurrentHint();
-            app.getGameState().getGlobalLevelState().setCurrentHint("");
             app.getHud().getInteractionTable().update(InteractionSwitch.getTriggerable().getInteraction());
             app.getGameState().getGlobalLevelState().setInteractionActive(true);
+            app.getEventHandler().handleHintMessage();
         } catch (NoHudException e) {
             Gdx.app.log("Triggerable#startInteraction", "Could not get HUD instance");
         }
@@ -47,8 +46,8 @@ public interface Triggerable {
         try {
             InteractionSwitch.getTriggerable().getInteraction().fallback();
             app.getHud().getInteractionTable().free();
-            app.getGameState().getGlobalLevelState().activateCachedHint();
             app.getGameState().getGlobalLevelState().setInteractionActive(false);
+            app.getEventHandler().handleHintMessage();
         } catch (NoHudException e) {
             Gdx.app.log("Triggerable#endInteraction", "Could not get HUD instance");
         }

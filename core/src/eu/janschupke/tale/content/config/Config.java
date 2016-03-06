@@ -60,7 +60,6 @@ public class Config {
     public static final String MAP_LAYER_OBJECT = "objects";
     // TMX attribute configuration.
     public static final String MAP_TILESET_MAIN = "default-tiles";
-    public static final String MAP_TILESET_UTUMNO = "utumno-tiles";
     public static final String MAP_PROPERTY_ANIMATION = "animation";
     public static final String MAP_PROPERTY_SPEED = "speed";
     public static final float MAP_DEFAULT_SPEED = 1.0f;

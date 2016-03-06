@@ -16,6 +16,7 @@ import eu.janschupke.tale.content.ui.dialog.NewGameConfirmDialog;
 import eu.janschupke.tale.content.ui.menu.MainMenu;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 import eu.janschupke.tale.framework.screen.GameScreen;
 import eu.janschupke.tale.framework.ui.table.RootTable;
@@ -54,6 +55,40 @@ public class GlobalEventHandler {
         toggleMusicEvent = new ToggleMusicEvent(app);
         toggleSoundEvent = new ToggleSoundEvent(app);
         toggleDialogsEvent = new ToggleDialogsEvent(app);
+    }
+
+    /**
+     * TODO
+     */
+    public void handleHintMessage() {
+        // Hint is available only in game screens.
+        if (!(app.getScreen() instanceof GameScreen)) {
+            return;
+        }
+
+        GameScreen screen = (GameScreen) app.getScreen();
+
+        // Paused notification when game is paused.
+        if (screen.isPaused()) {
+            app.getGameState().getGlobalLevelState().setCurrentHint(app.getLang().get("hint.global.paused"));
+            return;
+        }
+
+        // No hint during interactions.
+        if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
+            app.getGameState().getGlobalLevelState().clearCurrentHint();
+            return;
+        }
+
+        // Interaction hint when available.
+        if (InteractionSwitch.isInteractionPossible()) {
+            app.getGameState().getGlobalLevelState().setCurrentHint(
+                    InteractionSwitch.getTriggerable().getInteractionHint());
+            return;
+        }
+
+        // Nothing otherwise.
+        app.getGameState().getGlobalLevelState().clearCurrentHint();
     }
 
     /**

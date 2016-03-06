@@ -5,7 +5,6 @@ package eu.janschupke.tale.framework.state;
  */
 public class GlobalLevelState extends LevelState {
     protected String currentHint;
-    protected String hintCache;
 
     protected boolean interactionActive;
 
@@ -25,21 +24,6 @@ public class GlobalLevelState extends LevelState {
 
     public void clearCurrentHint() {
         currentHint = "";
-        setChanged();
-        notifyObservers();
-    }
-
-    public String getHintCache() {
-        return hintCache;
-    }
-
-    public void cacheCurrentHint() {
-        hintCache = currentHint;
-    }
-
-    public void activateCachedHint() {
-        currentHint = hintCache;
-        hintCache = "";
         setChanged();
         notifyObservers();
     }

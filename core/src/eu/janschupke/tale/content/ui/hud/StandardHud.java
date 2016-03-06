@@ -74,6 +74,7 @@ public class StandardHud extends HudTable {
         } else {
             addHud();
             state = State.HUD;
+            app.getEventHandler().handleHintMessage();
         }
     }
 
@@ -91,6 +92,7 @@ public class StandardHud extends HudTable {
         } else {
             addHud();
             state = State.HUD;
+            app.getEventHandler().handleHintMessage();
         }
     }
 
@@ -108,6 +110,7 @@ public class StandardHud extends HudTable {
         } else {
             addHud();
             state = State.HUD;
+            app.getEventHandler().handleHintMessage();
         }
     }
 
