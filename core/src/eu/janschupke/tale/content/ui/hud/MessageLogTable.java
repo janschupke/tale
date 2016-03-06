@@ -46,6 +46,8 @@ public class MessageLogTable extends UiTable implements Observer {
         messageTable.align(Align.topLeft);
         messageArea = new Label("", app.getSkin());
         messageScrollPane = new ScrollPane(messageTable, app.getSkin());
+        messageScrollPane.setFadeScrollBars(false);
+        messageScrollPane.setScrollingDisabled(true, false);
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
 
@@ -76,6 +78,8 @@ public class MessageLogTable extends UiTable implements Observer {
         String log = o.toString();
         messageArea.setText(log);
         messageScrollPane.layout();
+        messageScrollPane.layout();
+        messageScrollPane.setScrollY(messageArea.getHeight());
 
         // If dialogs are disabled, indicator about the new event is displayed on the screen.
         if (!app.getSettingsManager().getConfig().isEnableDialogs()) {

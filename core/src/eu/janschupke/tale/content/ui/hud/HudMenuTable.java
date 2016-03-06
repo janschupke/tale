@@ -30,7 +30,7 @@ public class HudMenuTable extends UiTable {
     @Override
     public void initWidgets() {
         menuButton = new TextButton(app.getLang().get("hud.menu.menu"), app.getSkin());
-        eventLogButton = new TextButton(app.getLang().get("hud.menu.events"), app.getSkin());
+        eventLogButton = new TextButton(app.getLang().get("hud.menu.messages"), app.getSkin());
         questLogButton = new TextButton(app.getLang().get("hud.menu.quests"), app.getSkin());
         inventoryButton = new TextButton(app.getLang().get("hud.menu.inventory"), app.getSkin());
     }
