@@ -40,12 +40,16 @@ public class QuestLogTable extends UiTable implements Observer {
     private Table descriptionTable;
     private Label descriptionTitleLabel;
     private Label questDescriptionLabel;
+    private Label taskTitleLabel;
     private Label taskDescriptionLabel;
 
     private TextButton closeButton;
 
     private float width = Gdx.graphics.getWidth() * 0.5f;
     private float height = Gdx.graphics.getHeight() * 0.5f;
+
+    // TODO: use
+    private Quest selectedQuest;
 
     public QuestLogTable(final App app) {
         super(app);
@@ -64,10 +68,12 @@ public class QuestLogTable extends UiTable implements Observer {
      */
     @Override
     public void update(Observable o, Object arg) {
+        Gdx.app.debug("QuestLogTable#update", "Updating quest log UI");
         QuestLog questLog = app.getGameState().getQuestLog();
         Array<String> activeQuests = new Array<>();
         Array<String> finishedQuests = new Array<>();
 
+        // Quest list updating.
         for (QuestChain chain : questLog.getQuestChains()) {
             for (Quest quest : chain.getQuests()) {
                 TaskStatus status = quest.getStatus();
@@ -89,7 +95,7 @@ public class QuestLogTable extends UiTable implements Observer {
         finishedQuestsList.setItems(finishedQuests);
 
         app.getGameState().getGlobalLevelState().setNewQuest(true);
-        setDefaultActiveQuest();
+        refreshActiveQuest();
     }
 
     /**
@@ -99,11 +105,22 @@ public class QuestLogTable extends UiTable implements Observer {
      */
     private void setActiveQuest(Quest quest) {
         descriptionTitleLabel.setText(quest.getName());
+        if (quest.getStatus().equals(TaskStatus.DONE)) {
+            descriptionTitleLabel.setText(descriptionTitleLabel.getText() + " " + app.getLang().get("hud.quest.status.done"));
+        }
+
         questDescriptionLabel.setText(quest.getDescription());
+        taskTitleLabel.setText(app.getLang().get("hud.quest.description.label.tasks"));
 
         // Tasks are printed out as text.
         StringBuilder taskDescriptions = new StringBuilder();
         for (Task task : quest.getTasks()) {
+            if (task.getStatus().equals(TaskStatus.DONE)) {
+                Gdx.app.debug("QuestLogTable#setActiveQuest", "Is done");
+                taskDescriptions.append(app.getLang().get("hud.quest.status.done"));
+                taskDescriptions.append(" ");
+            }
+
             taskDescriptions.append(task.getDescription());
             taskDescriptions.append("\n");
         }
@@ -126,6 +143,23 @@ public class QuestLogTable extends UiTable implements Observer {
         }
     }
 
+    /**
+     * TODO
+     */
+    private void clearActiveQuest() {
+        descriptionTitleLabel.setText(app.getLang().get("hud.quest.label.empty"));
+        questDescriptionLabel.setText("");
+        taskTitleLabel.setText("");
+    }
+
+    /**
+     * TODO
+     */
+    private void refreshActiveQuest() {
+        clearActiveQuest();
+        setDefaultActiveQuest();
+    }
+
     @Override
     public void initWidgets() {
         titleLabel = new Label(app.getLang().get("hud.quest.label.title"), app.getSkin());
@@ -134,10 +168,10 @@ public class QuestLogTable extends UiTable implements Observer {
         questListTable.align(Align.top);
         questScrollPane = new ScrollPane(questListTable, app.getSkin());
 
-        activeQuestsLabel = new Label(app.getLang().get("hud.quest.list.label.active"), app.getSkin());
+        activeQuestsLabel = new Label("", app.getSkin());
         activeQuestsList = new List(app.getSkin());
 
-        finishedQuestsLabel = new Label(app.getLang().get("hud.quest.list.label.finished"), app.getSkin());
+        finishedQuestsLabel = new Label("", app.getSkin());
         finishedQuestsList = new List(app.getSkin());
 
         descriptionTable = new Table();
@@ -151,6 +185,8 @@ public class QuestLogTable extends UiTable implements Observer {
         questDescriptionLabel.setWrap(true);
         questDescriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
 
+        taskTitleLabel = new Label("", app.getSkin());
+
         taskDescriptionLabel = new Label("", app.getSkin());
         taskDescriptionLabel.setWrap(true);
         taskDescriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
@@ -160,14 +196,15 @@ public class QuestLogTable extends UiTable implements Observer {
 
     @Override
     public void addWidgets() {
-        questListTable.add(activeQuestsLabel).pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(activeQuestsList).pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(finishedQuestsLabel).pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(finishedQuestsList).pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(activeQuestsLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(activeQuestsList).left().pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(finishedQuestsLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(finishedQuestsList).left().pad(Config.HUD_INNER_PADDING).row();
 
         descriptionTable.add(descriptionTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
         descriptionTable.add(questDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
                 .pad(Config.HUD_INNER_PADDING).row();
+        descriptionTable.add(taskTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
         descriptionTable.add(taskDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
                 .pad(Config.HUD_INNER_PADDING);
 
@@ -175,7 +212,7 @@ public class QuestLogTable extends UiTable implements Observer {
         add(questScrollPane).height(height).fill().pad(Config.HUD_INNER_PADDING);
         add(descriptionScrollPane).width(width)
                 .height(height).fill().pad(Config.HUD_INNER_PADDING).row();
-        add(closeButton).colspan(2);
+        add(closeButton).width(Config.HUD_LOG_BUTTON_WIDTH).colspan(2);
     }
 
     @Override
@@ -194,10 +231,32 @@ public class QuestLogTable extends UiTable implements Observer {
         activeQuestsList.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                Gdx.app.debug("QuestLogTable#changed", "List changed");
-                int index = activeQuestsList.getSelectedIndex();
-                Quest quest = app.getGameState().getQuestLog().getQuestChains().get(index).getActiveQuest();
-                setActiveQuest(quest);
+                Gdx.app.debug("QuestLogTable#activeQuestsList#changed", "List changed");
+
+                // Title should not be displayed if no relevant quests exist.
+                if (activeQuestsList.getItems().size == 0) {
+                    activeQuestsLabel.setText("");
+                } else {
+                    activeQuestsLabel.setText(app.getLang().get("hud.quest.list.label.active"));
+                }
+
+                // TODO: updating
+            }
+        });
+
+        finishedQuestsList.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Gdx.app.debug("QuestLogTable#finishedQuestsList#changed", "List changed");
+
+                // Title should not be displayed if no relevant quests exist.
+                if (finishedQuestsList.getItems().size == 0) {
+                    finishedQuestsLabel.setText("");
+                } else {
+                    finishedQuestsLabel.setText(app.getLang().get("hud.quest.list.label.finished"));
+                }
+
+                // TODO: updating
             }
         });
     }

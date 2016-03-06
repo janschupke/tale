@@ -35,8 +35,7 @@ public class Inventory extends DataContainer {
         if (usedSlots == capacity) throw new InventoryFullException("Inventory is full.");
         items.add(item);
         usedSlots++;
-        setChanged();
-        notifyObservers();
+        update();
     }
 
     public void removeItem(int index) throws IllegalArgumentException {
@@ -44,8 +43,7 @@ public class Inventory extends DataContainer {
             throw new IllegalArgumentException("Requesting inventory item removal out of bounds.");
         items.remove(index);
         usedSlots--;
-        setChanged();
-        notifyObservers();
+        update();
     }
 
     /**
@@ -57,8 +55,7 @@ public class Inventory extends DataContainer {
             if (item.getItem().getTag() == tag) {
                 items.remove(item);
                 usedSlots--;
-                setChanged();
-                notifyObservers();
+                update();
                 return;
             }
         }

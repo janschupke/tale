@@ -10,6 +10,7 @@ import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.quest.QuestChain;
+import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.entity.Wall;
 import eu.janschupke.tale.framework.entity.WorldEntity;
 import eu.janschupke.tale.framework.event.GeneralEvent;
@@ -34,6 +35,11 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
     @Override
     protected void updateQuests() {
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
+
+        // Delivery task is completed.
+        chain.getActiveQuest().getTasks().get(1).setStatus(TaskStatus.DONE);
+
+        // Quest is done.
         chain.transition();
     }
 

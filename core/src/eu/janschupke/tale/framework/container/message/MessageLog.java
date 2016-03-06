@@ -40,7 +40,6 @@ public class MessageLog extends DataContainer {
     public void addEvent(BaseEvent event) {
         MessageLogEntry entry = new MessageLogEntry(app, event.getEventMessage());
         events.add(entry);
-        setChanged();
-        notifyObservers();
+        update();
     }
 }

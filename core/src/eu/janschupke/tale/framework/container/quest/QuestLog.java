@@ -25,8 +25,7 @@ public class QuestLog extends DataContainer {
 
     public void addQuestChain(QuestChain chain) {
         questChains.add(chain);
-        setChanged();
-        notifyObservers();
+        update();
     }
 
     public boolean isEmpty() {

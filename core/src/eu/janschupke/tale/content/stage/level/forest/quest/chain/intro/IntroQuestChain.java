@@ -19,6 +19,5 @@ public class IntroQuestChain extends QuestChain {
     @Override
     protected void configure() {
         super.configure();
-//        quests.get(0).addTransition(quests.get(1));
     }
 }

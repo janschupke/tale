@@ -15,4 +15,12 @@ public abstract class DataContainer extends Observable {
     public DataContainer(final App app) {
         this.app = app;
     }
+
+    /**
+     * Informs observers that the state of this object has changed.
+     */
+    public final void update() {
+        setChanged();
+        notifyObservers();
+    }
 }

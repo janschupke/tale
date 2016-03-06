@@ -7,6 +7,7 @@ import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.quest.QuestChain;
+import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.entity.Wall;
 import eu.janschupke.tale.framework.entity.WorldEntity;
 import eu.janschupke.tale.framework.event.PickupEvent;
@@ -47,6 +48,9 @@ public class CoinPickupEvent extends PickupEvent {
     protected void updateQuests() {
         QuestChain chain = ((ForestQuestManager) ((ForestScreen) app.getScreen()).getQuestManager()).getIntroQuestChain();
         ((ForestScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
+
+        // Task to pick up the coin is already done.
+        chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
     }
 
     @Override

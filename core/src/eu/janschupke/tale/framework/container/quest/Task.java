@@ -25,6 +25,7 @@ public class Task extends DataContainer {
 
     public void setStatus(TaskStatus status) {
         this.status = status;
+        app.getGameState().getQuestLog().update();
     }
 
     public String getDescription() {

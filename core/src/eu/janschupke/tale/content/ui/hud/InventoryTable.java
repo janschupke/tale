@@ -141,7 +141,7 @@ public class InventoryTable extends UiTable implements Observer {
         add(itemScrollPane).height(height).padLeft(Config.HUD_INNER_PADDING).fill();
         add(descriptionScrollPane).width(width)
                 .height(height).fill().pad(Config.HUD_INNER_PADDING).row();
-        add(closeButton).colspan(2);
+        add(closeButton).width(Config.HUD_LOG_BUTTON_WIDTH).colspan(2);
     }
 
     @Override

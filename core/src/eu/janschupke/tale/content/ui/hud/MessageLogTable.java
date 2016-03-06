@@ -60,7 +60,7 @@ public class MessageLogTable extends UiTable implements Observer {
         add(titleLabel).row();
         messageTable.add(messageArea).width(width - Config.HUD_INNER_PADDING * 2).pad(Config.HUD_INNER_PADDING);
         add(messageScrollPane).width(width).height(height).fill().pad(Config.HUD_INNER_PADDING).row();
-        add(closeButton);
+        add(closeButton).width(Config.HUD_LOG_BUTTON_WIDTH);
     }
 
     @Override

@@ -34,8 +34,7 @@ public class Quest extends DataContainer {
 
     public void setStatus(TaskStatus status) {
         this.status = status;
-        setChanged();
-        notifyObservers();
+        app.getGameState().getQuestLog().update();
     }
 
     public List<Task> getTasks() {
