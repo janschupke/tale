@@ -1,6 +1,7 @@
 package eu.janschupke.tale.framework.input;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector3;
 import eu.janschupke.tale.content.config.Hotkeys;
 import eu.janschupke.tale.content.ui.hud.StandardHud;
@@ -52,6 +53,19 @@ public class GameInputProcessor extends BaseInputProcessor {
                 } catch (ClassCastException e2) {
                     Gdx.app.debug("GameInputProcessor#keyDown", "Not in game, cannot toggle menu");
                 }
+            }
+        }
+        if (keycode == Input.Keys.ENTER) {
+            try {
+                // Enter serves as a hotkey for tab closing.
+                if (app.getHud().getState() != StandardHud.State.HUD) {
+                    app.getHud().closeTabs();
+                // It also selects the first decision, if interaction is in progress.
+                } else if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
+                    InteractionSwitch.getTriggerable().getInteraction().handle();
+                }
+            } catch (NoHudException e) {
+                Gdx.app.debug("GameInputProcessor#closeButton#keyDown", "Could not get HUD instance");
             }
         }
         if (keycode == Hotkeys.MESSAGES) {

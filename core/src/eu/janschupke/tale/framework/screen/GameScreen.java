@@ -36,9 +36,6 @@ public abstract class GameScreen extends BaseScreen {
     protected LevelState levelState;
 
     private boolean paused = false;
-    // For world step calculations.
-    private float step = 1.0f / 60.0f;
-    private double accumulator;
 
     public GameScreen(final App app, final Screens tag) {
         super(app, tag);
@@ -210,6 +207,10 @@ public abstract class GameScreen extends BaseScreen {
         }
     }
 
+    // For world step calculations.
+    private float step = 1.0f / 60.0f;
+    private double accumulator;
+
     /**
      * Performs the Box2D world step.
      *
@@ -218,7 +219,8 @@ public abstract class GameScreen extends BaseScreen {
     @Override
     public void update(float delta) {
         if (!paused) {
-            accumulator += delta;
+            float frameTime = Math.min(delta, 0.25f);
+            accumulator += frameTime;
             while (accumulator >= step) {
                 world.getBoxWorld().step(step, 6, 2);
                 accumulator -= step;

@@ -27,7 +27,7 @@ public interface Triggerable {
      *
      * @param app Current application.
      */
-    default void startInteraction(App app) {
+    default void startInteraction(final App app) {
         try {
             app.getGameState().getGlobalLevelState().cacheCurrentHint();
             app.getGameState().getGlobalLevelState().setCurrentHint("");
@@ -43,7 +43,7 @@ public interface Triggerable {
      *
      * @param app Current application.
      */
-    default void endInteraction(App app) {
+    default void endInteraction(final App app) {
         try {
             InteractionSwitch.getTriggerable().getInteraction().fallback();
             app.getHud().getInteractionTable().free();

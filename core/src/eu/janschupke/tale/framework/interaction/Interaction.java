@@ -67,6 +67,13 @@ public abstract class Interaction {
      */
     public abstract void handle(Decision decision);
 
+    /**
+     * Default handling. Selectes the first available decision.
+     */
+    public void handle() {
+        handle(currentSituation.getDecisions().get(0));
+    }
+
     public void fallback() {
         currentSituation = fallbackSituation;
     }

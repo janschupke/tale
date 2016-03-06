@@ -47,7 +47,7 @@ public class MessageLogTable extends UiTable implements Observer {
         titleLabel = new Label(app.getLang().get("hud.message.label.title"), app.getSkin());
         messageTable = new Table();
         messageTable.align(Align.topLeft);
-        messageArea = new Label("", app.getSkin());
+        messageArea = new Label(app.getLang().get("hud.message.label.empty"), app.getSkin());
         messageArea.setWrap(true);
         messageArea.setWidth(width - Config.HUD_INNER_PADDING * 2);
         messageScrollPane = new ScrollPane(messageTable, app.getSkin());
