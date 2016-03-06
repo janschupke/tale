@@ -25,7 +25,6 @@ public class SettlementTransitionSensor extends Sensor implements Triggerable {
 
     @Override
     public void disengage() {
-
     }
 
     @Override

@@ -25,7 +25,6 @@ public class OutskirtsTransitionSensor extends Sensor implements Triggerable {
 
     @Override
     public void disengage() {
-
     }
 
     @Override

@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.settlement;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
+import eu.janschupke.tale.content.stage.level.settlement.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.blacksmith.BlacksmithObstacle;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.chobo_house.ChoboHouseObstacle;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.dungeon.DungeonObstacle;
@@ -17,6 +18,7 @@ import eu.janschupke.tale.content.stage.level.settlement.unit.smith.SmithUnit;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Sensor;
 import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.entity.Wall;
 import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
@@ -80,6 +82,10 @@ public class SettlementWorld extends TopDownWorld {
         Obstacle tavernObstacle = new TavernObstacle(this, new Vector2(5, 5));
         tavernObstacle.setPosition(50, 38);
         getObstacles().add(tavernObstacle);
+
+        Wall outskirtsTransitionWall = new OutskirtsTransitionWall(this, new Vector2(0.5f, 10));
+        outskirtsTransitionWall.setPosition(2, 40);
+        getObstacles().add(outskirtsTransitionWall);
     }
 
     @Override

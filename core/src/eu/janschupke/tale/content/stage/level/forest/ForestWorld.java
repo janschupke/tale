@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.GoldCoinItem;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
+import eu.janschupke.tale.content.stage.level.forest.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
 import eu.janschupke.tale.content.stage.level.forest.sensor.*;
@@ -55,6 +56,10 @@ public class ForestWorld extends TopDownWorld {
         Obstacle caravanObstacle = new CaravanObstacle(this, new Vector2(4, 4));
         caravanObstacle.setPosition(46, 19);
         getObstacles().add(caravanObstacle);
+
+        Wall outskirtsTransitionWall = new OutskirtsTransitionWall(this, new Vector2(5, 0.5f));
+        outskirtsTransitionWall.setPosition(47, 43);
+        getObstacles().add(outskirtsTransitionWall);
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.LumberItem;
 import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.VarpunenNoteItem;
+import eu.janschupke.tale.content.stage.level.outskirts.obstacle.ForestTransitionWall;
+import eu.janschupke.tale.content.stage.level.outskirts.obstacle.SettlementTransitionWall;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.cave.CaveObstacle;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.crone_shack.CroneShackObstacle;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.jack_house.JackHouseObstacle;
@@ -11,10 +13,7 @@ import eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign.RoadS
 import eu.janschupke.tale.content.stage.level.outskirts.sensor.*;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.CroneUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.JackUnit;
-import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.entity.Obstacle;
-import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.entity.Unit;
+import eu.janschupke.tale.framework.entity.*;
 import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
@@ -73,6 +72,14 @@ public class OutskirtsWorld extends TopDownWorld {
         Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(3, 3));
         roadSignObstacle.setPosition(30, 38);
         getObstacles().add(roadSignObstacle);
+
+        Wall settlementTransitionWall = new SettlementTransitionWall(this, new Vector2(0.5f, 5));
+        settlementTransitionWall.setPosition(59, 41);
+        getObstacles().add(settlementTransitionWall);
+
+        Wall forestTransitionWall = new ForestTransitionWall(this, new Vector2(5, 0.5f));
+        forestTransitionWall.setPosition(16, 7);
+        getObstacles().add(forestTransitionWall);
     }
 
     @Override
