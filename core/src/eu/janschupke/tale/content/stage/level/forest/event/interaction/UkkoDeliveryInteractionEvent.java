@@ -59,7 +59,9 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
                 .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(false);
     }
 
-    // TODO: class passing
+    /**
+     * Removes the quest wall from the world.
+     */
     private void removeQuestWall() {
         for (WorldEntity obstacle : ((ForestScreen) app.getScreen()).getWorld().getObstacles()) {
             if (obstacle instanceof QuestWall) {

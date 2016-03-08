@@ -30,9 +30,6 @@ public class GameInputProcessor extends BaseInputProcessor {
 
         super.keyDown(keycode);
 
-        if (keycode == Hotkeys.DEBUG_COLLISION_BYPASS) {
-            app.getEventHandler().toggleCollisionBypass();
-        }
         if (keycode == Hotkeys.PAUSE) {
             app.getEventHandler().togglePause();
         }
@@ -97,7 +94,7 @@ public class GameInputProcessor extends BaseInputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        // FIXME: black magic of unknown origin...
+        // This is a mystery. :3
         return (!(app.getScreen() instanceof GameScreen)) ? false : super.keyUp(keycode);
     }
 

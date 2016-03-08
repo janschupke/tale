@@ -2,13 +2,11 @@ package eu.janschupke.tale.framework.event.handling;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
-import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.event.ToggleDialogsEvent;
 import eu.janschupke.tale.content.event.ToggleMusicEvent;
 import eu.janschupke.tale.content.event.ToggleSoundEvent;
@@ -21,7 +19,6 @@ import eu.janschupke.tale.framework.screen.BaseScreen;
 import eu.janschupke.tale.framework.screen.GameScreen;
 import eu.janschupke.tale.framework.ui.table.RootTable;
 import eu.janschupke.tale.framework.utility.Utility;
-import eu.janschupke.tale.framework.utility.WorldObjectFactory;
 import eu.janschupke.tale.logging.utility.GameLogParser;
 
 import java.util.Map;
@@ -58,7 +55,7 @@ public class GlobalEventHandler {
     }
 
     /**
-     * TODO
+     * Handles the display of the hint message according to the current game state.
      */
     public void handleHintMessage() {
         // Hint is available only in game screens.
@@ -96,48 +93,6 @@ public class GlobalEventHandler {
      */
     public void dumpData() {
         GameLogParser.parseToXml(app.getGameLog());
-    }
-
-    /**
-     * TODO: not working.
-     */
-    public void toggleCollisionBypass() {
-        if (!Config.DEBUG_MODE) {
-            return;
-        }
-
-        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Toggling collision bypass");
-
-        Body playerBody = app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody();
-        short collisionMask = (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY);
-        short playerMask = playerBody.getFixtureList().get(0).getFilterData().maskBits;
-
-        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", String.format("mask: %d", collisionMask));
-        Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", String.format("player: %d", playerMask));
-
-        if (((GameScreen)app.getScreen()).getWorld().getPlayerUnit() instanceof PlayerUnit) {
-            System.out.println("sdffds");
-        }
-        WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
-//        if (playerMask != collisionMask) {
-//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Enabling collisions");
-//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_UNIT_ANY, collisionMask);
-//        } else {
-//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Disabling collisions");
-//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
-//        }
-
-//        if (app.getSettingsManager().getConfig().isCollisionBypass()) {
-//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Enabling collisions");
-//            app.getSettingsManager().getConfig().setCollisionBypass(false);
-//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_UNIT_ANY, collisionMask);
-//            playerBody.getFixtureList().get(0).getFilterData().groupIndex = 0;
-//        } else {
-//            Gdx.app.debug("GlobalEventHandler#toggleCollisionBypass", "Disabling collisions");
-//            app.getSettingsManager().getConfig().setCollisionBypass(true);
-//            WorldObjectFactory.setCollisions(playerBody, Config.BIT_NOTHING, Config.BIT_NOTHING);
-//            playerBody.getFixtureList().get(0).getFilterData().groupIndex = 2;
-//        }
     }
 
     /**

@@ -43,18 +43,6 @@ public class Utility {
      * @param newHud New hud reference.
      */
     public static void transitionHuds(final App app, final RootTable newHud) {
-        // TODO
-//        final float duration = Config.SCREEN_TRANSITION_DURATION;
-//
-//        app.getUi().getRoot().getColor().a = 1;
-//        SequenceAction sequenceAction = new SequenceAction();
-//        sequenceAction.addAction(Actions.fadeOut(duration));
-//        sequenceAction.addAction(Actions.run(() -> {
-//            app.swapHuds(newHud);
-//            app.getUi().getRoot().addAction(Actions.fadeIn(duration));
-//        }));
-//        app.getUi().getRoot().addAction(sequenceAction);
-
         app.swapHuds(newHud);
     }
 }

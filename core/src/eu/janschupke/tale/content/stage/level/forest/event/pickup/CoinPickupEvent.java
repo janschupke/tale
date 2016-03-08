@@ -66,7 +66,9 @@ public class CoinPickupEvent extends PickupEvent {
 
     }
 
-    // TODO: class passing
+    /**
+     * Removes the initial invisible wall from the world.
+     */
     private void removeInitialWall() {
         for (WorldEntity obstacle : ((ForestScreen) app.getScreen()).getWorld().getObstacles()) {
             if (obstacle instanceof InitialWall) {
