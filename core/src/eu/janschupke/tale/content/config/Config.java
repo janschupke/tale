@@ -22,7 +22,6 @@ public class Config {
 
     // Screen configuration.
     public static final boolean SCREEN_RESIZABLE = false;
-    public static final float SCREEN_TRANSITION_DURATION = 0.1f;
 
     public static final String[] AVAILABLE_RESOLUTIONS = {
             "1024x576 (16:9)", "1280x720 (16:9)", "1600x900 (16:9)", "1920x1080 (16:9)",
@@ -90,7 +89,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 6;
-    public static final Screens FIRST_LEVEL = Screens.FOREST;
+    public static final Screens FIRST_LEVEL = Screens.OUTSKIRTS;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;

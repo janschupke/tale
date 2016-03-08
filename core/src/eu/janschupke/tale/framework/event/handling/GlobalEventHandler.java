@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.event.NewGameGeneralEvent;
 import eu.janschupke.tale.content.event.ToggleDialogsEvent;
 import eu.janschupke.tale.content.event.ToggleMusicEvent;
 import eu.janschupke.tale.content.event.ToggleSoundEvent;
@@ -46,12 +47,18 @@ public class GlobalEventHandler {
      */
     private ToggleDialogsEvent toggleDialogsEvent;
 
+    /**
+     * Logs an entry whenever a new game is requested.
+     */
+    private NewGameGeneralEvent newGameGeneralEvent;
+
     public GlobalEventHandler(final App app) {
         this.app = app;
 
         toggleMusicEvent = new ToggleMusicEvent(app);
         toggleSoundEvent = new ToggleSoundEvent(app);
         toggleDialogsEvent = new ToggleDialogsEvent(app);
+        newGameGeneralEvent = new NewGameGeneralEvent(app);
     }
 
     /**
@@ -272,6 +279,7 @@ public class GlobalEventHandler {
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Huds.STANDARD));
         // Add continue game button.
         ((MainMenu) app.getHud(Huds.MAINMENU)).setupWidgets(true);
+        newGameGeneralEvent.trigger();
     }
 
     /**
