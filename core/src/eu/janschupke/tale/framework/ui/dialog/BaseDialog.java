@@ -20,9 +20,8 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;
     protected Table widgetTable;
     protected Label label;
-    protected int dialogWidth = Config.UI_DIALOG_WIDTH;
-    protected int dialogHeight = Config.UI_DIALOG_HEIGHT;
-    private boolean shown;
+
+    private float width = Gdx.graphics.getWidth() * 0.4f;
 
     public BaseDialog(final App app, String title) {
         super(title, app.getSkin());
@@ -45,8 +44,8 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
 
         getButtonTable().padTop(Config.DIALOG_BUTTON_TOP_PADDING);
 
-        getBackground().setMinWidth(dialogWidth);
-        getBackground().setMinHeight(dialogHeight);
+        getBackground().setMinWidth(Config.UI_DIALOG_WIDTH);
+        getBackground().setMinHeight(Config.UI_DIALOG_HEIGHT);
 
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         setMovable(false);
@@ -60,17 +59,15 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
 
         label = new Label("", app.getSkin());
         label.setAlignment(Align.topLeft);
+        label.setWrap(true);
+        label.setWidth(width - Config.HUD_INNER_PADDING * 2);
 
     }
 
     @Override
     public void addWidgets() {
         getContentTable().add(widgetTable).expand().fill();
-        widgetTable.add(label).top().left();
-    }
-
-    public boolean isShown() {
-        return shown;
+        widgetTable.add(label).width(width - Config.HUD_INNER_PADDING * 2).top().left();
     }
 
     @Override
@@ -84,7 +81,6 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
 
     @Override
     public Dialog show(Stage stage) {
-        shown = true;
         return super.show(stage);
     }
 
@@ -96,7 +92,6 @@ public abstract class BaseDialog extends Dialog implements UserInterface {
     @Override
     public void hide() {
         Gdx.app.debug("BaseDialog#hide", "Hiding a dialog");
-        shown = false;
         super.hide();
     }
 }

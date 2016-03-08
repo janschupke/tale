@@ -75,6 +75,11 @@ public abstract class Unit extends WorldObject {
      */
     protected float loopDuration = 2.0f;
 
+    /**
+     * False by default, set to true if animations are instantiated.
+     */
+    protected boolean animated;
+
     public Unit(BaseWorld world, Texture texture, Vector2 size) {
         super(world, texture, size);
 
@@ -97,6 +102,7 @@ public abstract class Unit extends WorldObject {
      * Initiates all required animation instances from the texture.
      */
     protected void initAnimations() {
+        animated = true;
         animatedBoxSpriteUp = initAnimation(animationFrames[1]);
         animatedBoxSpriteDown = initAnimation(animationFrames[2]);
 
@@ -154,6 +160,11 @@ public abstract class Unit extends WorldObject {
 
     @Override
     public void draw(Batch batch) {
+        if (!animated) {
+            sprite.draw(batch, body);
+            return;
+        }
+
         if (movingUp && animatedBoxSpriteUp != null) {
             animatedBoxSpriteUp.draw(batch, body);
         } else if (movingDown && animatedBoxSpriteDown != null) {

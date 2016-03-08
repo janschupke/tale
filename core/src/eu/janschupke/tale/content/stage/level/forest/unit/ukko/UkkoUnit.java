@@ -23,10 +23,6 @@ public class UkkoUnit extends Unit implements Triggerable {
 
     public UkkoUnit(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/levels/forest/units/ukko.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/forest/units/ukko.png"));
-        animationFrames = TextureRegion.split(animationTexture, 100, 100);
-        initAnimations();
-        initIdleSprites();
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
         interaction = new UkkoInteraction(world.getScreen().getApp(), this);
     }
