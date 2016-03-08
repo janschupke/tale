@@ -36,6 +36,7 @@ public class CoinPickupEvent extends PickupEvent {
     public CoinPickupEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.pickup.text"));
         pickupDialog = new PickupDialog(app);
+        withDialog = true;
     }
 
     @Override

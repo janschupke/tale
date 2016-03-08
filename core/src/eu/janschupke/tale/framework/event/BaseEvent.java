@@ -15,6 +15,11 @@ public abstract class BaseEvent {
     protected boolean repeatable;
     protected String eventMessage;
 
+    /**
+     * Indicates that this event will show dialog upon trigger.
+     */
+    protected boolean withDialog;
+
     public BaseEvent(final App app, String eventMessage) {
         this.app = app;
         this.eventMessage = eventMessage;
@@ -26,7 +31,7 @@ public abstract class BaseEvent {
      */
     public void trigger() {
         triggered = true;
-        if (app.getSettingsManager().getConfig().isEnableDialogs()) {
+        if (app.getSettingsManager().getConfig().isEnableDialogs() && withDialog) {
             ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stop();
         }
     }

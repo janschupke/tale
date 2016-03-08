@@ -17,6 +17,7 @@ public class ItemIntroGeneralEvent extends GeneralEvent {
     public ItemIntroGeneralEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.item.text"));
         itemHintDialog = new ItemHintDialog(app);
+        withDialog = true;
     }
 
     @Override

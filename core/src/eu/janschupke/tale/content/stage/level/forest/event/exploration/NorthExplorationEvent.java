@@ -24,6 +24,7 @@ public class NorthExplorationEvent extends ExplorationEvent {
     public NorthExplorationEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.exploration-north.text"));
         explorationDialog = new ExplorationDialog(app);
+        withDialog = true;
     }
 
     @Override

@@ -19,6 +19,7 @@ public class InitialWallGeneralEvent extends GeneralEvent {
         super(app, app.getLang().get("level.forest.event.wall.init.text"));
         repeatable = true;
         initialWallDialog = new InitialWallDialog(app);
+        withDialog = true;
     }
 
     @Override

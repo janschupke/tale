@@ -17,6 +17,7 @@ public class IntroGeneralEvent extends GeneralEvent {
     public IntroGeneralEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.intro.text"));
         introDialog = new IntroDialog(app);
+        withDialog = true;
     }
 
     @Override

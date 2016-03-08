@@ -19,6 +19,7 @@ public class QuestWallGeneralEvent extends GeneralEvent {
         super(app, app.getLang().get("level.forest.event.wall.quest.text"));
         repeatable = true;
         questWallDialog = new QuestWallDialog(app);
+        withDialog = true;
     }
 
     @Override

@@ -14,6 +14,7 @@ public abstract class InteractionEvent extends BaseEvent {
 
     public InteractionEvent(final App app, final String eventMessage) {
         super(app, eventMessage);
+        withDialog = true;
     }
 
     @Override
