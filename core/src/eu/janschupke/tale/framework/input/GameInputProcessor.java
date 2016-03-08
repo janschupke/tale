@@ -63,6 +63,8 @@ public class GameInputProcessor extends BaseInputProcessor {
                 // It also selects the first decision, if interaction is in progress.
                 } else if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
                     InteractionSwitch.getTriggerable().getInteraction().handle();
+                } else if (InteractionSwitch.isInteractionPossible()) {
+                    InteractionSwitch.getInteractionEvent().trigger();
                 }
             } catch (NoHudException e) {
                 Gdx.app.debug("GameInputProcessor#closeButton#keyDown", "Could not get HUD instance");

@@ -7,6 +7,7 @@ package eu.janschupke.tale.content.config.enumeration.tags;
  */
 public enum GameEventTags {
     // Global.
+    GLOBAL_NEW_GAME,
 
     // Forest.
     FOREST_EAST_EXPLORATION,

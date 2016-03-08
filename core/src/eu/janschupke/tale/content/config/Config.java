@@ -81,7 +81,7 @@ public class Config {
     public static final int HUD_LOG_BUTTON_WIDTH = 100;
     public static final int HUD_HINT_TOP_PADDING = 200;
     public static final int HUD_INDICATOR_WIDTH = 220;
-    public static final int HUD_TOP_BUTTON_WIDTH = 80;
+    public static final int HUD_TOP_BUTTON_WIDTH = 100;
     public static final int DIALOG_TOP_PADDING = 35;
     public static final int DIALOG_BOTTOM_PADDING = 10;
     public static final int DIALOG_SIDE_PADDING = 10;
@@ -90,7 +90,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 6;
-    public static final Screens FIRST_LEVEL = Screens.FOREST;
+    public static final Screens FIRST_LEVEL = Screens.OUTSKIRTS;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;
