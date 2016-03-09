@@ -33,6 +33,7 @@ public class Utility {
     public static void preservePlayerMovement(final App app, Screens newScreen) {
         Unit previousScreenUnit = app.getGameState().getCurrentLevel().getWorld().getPlayerUnit();
         Unit nextScreenUnit = ((GameScreen)app.getScreenInstance(newScreen)).getWorld().getPlayerUnit();
+
         nextScreenUnit.preserveMovement(previousScreenUnit);
     }
 

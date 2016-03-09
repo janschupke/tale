@@ -44,12 +44,14 @@ public interface Triggerable {
      */
     default void endInteraction(final App app) {
         try {
-            InteractionSwitch.getTriggerable().getInteraction().fallback();
             app.getHud().getInteractionTable().free();
             app.getGameState().getGlobalLevelState().setInteractionActive(false);
             app.getEventHandler().handleHintMessage();
+            InteractionSwitch.getTriggerable().getInteraction().fallback();
         } catch (NoHudException e) {
             Gdx.app.log("Triggerable#endInteraction", "Could not get HUD instance");
+        } catch (NullPointerException e) {
+            // No triggerable, happens during triggered screen transitions.
         }
     }
 

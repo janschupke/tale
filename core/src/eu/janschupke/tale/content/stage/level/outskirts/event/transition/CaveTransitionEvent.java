@@ -1,5 +1,6 @@
 package eu.janschupke.tale.content.stage.level.outskirts.event.transition;
 
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
@@ -31,25 +32,27 @@ public class CaveTransitionEvent extends TransitionEvent {
 
     @Override
     protected void updateQuests() {
-        QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
-        chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+        if (app.getGameState().getGlobalLevelState().isDisputeAccepted()) {
+            QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
+            chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+        }
     }
 
     @Override
     protected void updateGameState() {
         app.getGameState().getGlobalLevelState().setCaveExplored(true);
 
-        // TODO: transition NPE
-        // Pushes down by 1 tile so that the body is not in contact with the cave.
-        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().setPosition(
-                app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().getPosition().x,
-                app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().getPosition().y - 1
-        );
         InteractionSwitch.getTriggerable().endInteraction(app);
         InteractionSwitch.disable(app);
 
-//        Utility.preservePlayerMovement(app, Screens.CAVE);
+        Utility.preservePlayerMovement(app, Screens.CAVE);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.CAVE), app.getHud(Huds.STANDARD));
+
+        // FIXME: rather blasphemous, though deadlines are real.
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().setLinearVelocity(0, Config.OBJECT_MAX_SPEED);
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveUp();
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();
+
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_TRANSITION_CAVE, ((BaseScreen) app.getScreen()).getTag());
     }
 
