@@ -33,10 +33,13 @@ public class OutskirtsEventHandler extends LevelEventHandler {
     private CroneShackInteractionEvent croneShackInteractionEvent;
     private JackHouseInteractionEvent jackHouseInteractionEvent;
     private JackInteractionEvent jackInteractionEvent;
+    private JackCroneInteractionEvent jackCroneInteractionEvent;
     private JackLumberAcceptInteractionEvent jackLumberAcceptInteractionEvent;
     private JackLumberGiveInteractionEvent jackLumberGiveInteractionEvent;
     private JackDisputeAcceptInteractionEvent jackDisputeAcceptInteractionEvent;
     private JackDisputeSolveInteractionEvent jackDisputeSolveInteractionEvent;
+    private JackDisputeRequestInteractionEvent jackDisputeRequestInteractionEvent;
+    private JackLumberRequestInteractionEvent jackLumberRequestInteractionEvent;
     private LumberInteractionEvent lumberInteractionEvent;
     private RoadSignInteractionEvent roadSignInteractionEvent;
     private VarpunenInteractionEvent varpunenInteractionEvent;
@@ -66,6 +69,7 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         croneShackInteractionEvent = new CroneShackInteractionEvent(app);
         jackHouseInteractionEvent = new JackHouseInteractionEvent(app);
         jackInteractionEvent = new JackInteractionEvent(app);
+        jackCroneInteractionEvent = new JackCroneInteractionEvent(app);
         jackLumberAcceptInteractionEvent = new JackLumberAcceptInteractionEvent(app);
         jackLumberGiveInteractionEvent = new JackLumberGiveInteractionEvent(app);
         jackDisputeAcceptInteractionEvent = new JackDisputeAcceptInteractionEvent(app);
@@ -75,6 +79,8 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         varpunenInteractionEvent = new VarpunenInteractionEvent(app);
         varpunenShowInteractionEvent = new VarpunenShowInteractionEvent(app);
         varpunenGiveInteractionEvent = new VarpunenGiveInteractionEvent(app);
+        jackDisputeRequestInteractionEvent = new JackDisputeRequestInteractionEvent(app);
+        jackLumberRequestInteractionEvent = new JackLumberRequestInteractionEvent(app);
 
         // Pickup.
         lumberPickupEvent = new LumberPickupEvent(app);
@@ -84,6 +90,18 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         caveTransitionEvent = new CaveTransitionEvent(app);
         forestTransitionEvent = new ForestTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
+    }
+
+    public JackCroneInteractionEvent getJackCroneInteractionEvent() {
+        return jackCroneInteractionEvent;
+    }
+
+    public JackDisputeRequestInteractionEvent getJackDisputeRequestInteractionEvent() {
+        return jackDisputeRequestInteractionEvent;
+    }
+
+    public JackLumberRequestInteractionEvent getJackLumberRequestInteractionEvent() {
+        return jackLumberRequestInteractionEvent;
     }
 
     public JackDisputeAcceptInteractionEvent getJackDisputeAcceptInteractionEvent() {
