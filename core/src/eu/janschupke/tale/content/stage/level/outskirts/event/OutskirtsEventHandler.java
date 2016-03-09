@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.outskirts;
+package eu.janschupke.tale.content.stage.level.outskirts.event;
 
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.CaveExplorationEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.JackExplorationEvent;

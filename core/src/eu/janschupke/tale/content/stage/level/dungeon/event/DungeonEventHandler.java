@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.dungeon;
+package eu.janschupke.tale.content.stage.level.dungeon.event;
 
 import eu.janschupke.tale.content.stage.level.dungeon.event.exploration.StudyExplorationEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.*;

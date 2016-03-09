@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.settlement;
+package eu.janschupke.tale.content.stage.level.settlement.event;
 
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.ChoboExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.DungeonExplorationEvent;

@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.outskirts.item.varpunen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.interaction.VarpunenInteraction;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Triggerable;

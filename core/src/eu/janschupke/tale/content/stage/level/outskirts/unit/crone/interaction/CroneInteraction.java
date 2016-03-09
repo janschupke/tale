@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction;
 
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction.situation.NoteGiveSituation;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction.situation.NoteShowSituation;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction.situation.TalkSituation;

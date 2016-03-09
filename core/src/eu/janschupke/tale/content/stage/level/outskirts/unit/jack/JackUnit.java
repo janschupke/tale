@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.outskirts.unit.jack;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.JackInteraction;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.entity.Unit;

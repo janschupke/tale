@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.outskirts.obstacle.cave;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.cave.interaction.CaveInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;

@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.house;
 
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.stage.level.house.event.HouseEventHandler;
 import eu.janschupke.tale.content.stage.level.house.quest.HouseQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;

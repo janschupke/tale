@@ -3,6 +3,7 @@ package eu.janschupke.tale.content.stage.level.forest;
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;

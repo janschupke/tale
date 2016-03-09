@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.forest.obstacle.caravan;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
+import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.interaction.CaravanInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;

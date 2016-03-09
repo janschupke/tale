@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.settlement.obstacle.chobo_house;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.content.stage.level.settlement.SettlementEventHandler;
+import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.chobo_house.interaction.ChoboHouseInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;

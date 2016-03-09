@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.house.obstacle.book_shelf;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.content.stage.level.house.HouseEventHandler;
+import eu.janschupke.tale.content.stage.level.house.event.HouseEventHandler;
 import eu.janschupke.tale.content.stage.level.house.obstacle.book_shelf.interaction.BookShelfInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;

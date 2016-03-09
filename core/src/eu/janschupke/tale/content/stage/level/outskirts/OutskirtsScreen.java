@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.outskirts;
 
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;

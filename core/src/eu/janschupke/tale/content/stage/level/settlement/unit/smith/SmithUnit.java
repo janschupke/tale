@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.settlement.unit.smith;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import eu.janschupke.tale.content.stage.level.settlement.SettlementEventHandler;
+import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction.SmithInteraction;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.entity.Unit;

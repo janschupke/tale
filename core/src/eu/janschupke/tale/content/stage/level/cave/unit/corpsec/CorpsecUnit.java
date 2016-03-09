@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.cave.unit.corpsec;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import eu.janschupke.tale.content.stage.level.cave.CaveEventHandler;
+import eu.janschupke.tale.content.stage.level.cave.event.CaveEventHandler;
 import eu.janschupke.tale.content.stage.level.cave.unit.corpsec.interaction.CorpsecInteraction;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.entity.Unit;

@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.dungeon.item.scroll;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
-import eu.janschupke.tale.content.stage.level.dungeon.DungeonEventHandler;
+import eu.janschupke.tale.content.stage.level.dungeon.event.DungeonEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.item.scroll.interaction.ScrollInteraction;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Triggerable;

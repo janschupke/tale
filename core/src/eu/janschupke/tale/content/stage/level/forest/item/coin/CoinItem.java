@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.forest.item.coin;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
-import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
+import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.interaction.CoinInteraction;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Triggerable;

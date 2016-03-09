@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.forest;
+package eu.janschupke.tale.content.stage.level.forest.event;
 
 import eu.janschupke.tale.content.stage.level.forest.event.exploration.EastExplorationEvent;
 import eu.janschupke.tale.content.stage.level.forest.event.exploration.NorthExplorationEvent;

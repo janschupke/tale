@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.house;
+package eu.janschupke.tale.content.stage.level.house.event;
 
 import eu.janschupke.tale.content.stage.level.house.event.exploration.FarExplorationEvent;
 import eu.janschupke.tale.content.stage.level.house.event.exploration.RoomExplorationEvent;

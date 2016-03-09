@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.outskirts.sensor;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.framework.entity.Sensor;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.interaction.Interaction;

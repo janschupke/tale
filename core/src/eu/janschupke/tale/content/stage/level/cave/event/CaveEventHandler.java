@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.cave;
+package eu.janschupke.tale.content.stage.level.cave.event;
 
 import eu.janschupke.tale.content.stage.level.cave.event.exploration.CorpsecExplorationEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.CorpsecInteractionEvent;

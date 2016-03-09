@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.forest.unit.ukko;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
+import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.unit.ukko.interaction.UkkoInteraction;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.entity.Unit;

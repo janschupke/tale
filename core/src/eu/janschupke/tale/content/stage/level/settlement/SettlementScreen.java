@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.settlement;
 
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.quest.SettlementQuestManager;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.config.enumeration.InputProcessors;

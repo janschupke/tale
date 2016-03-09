@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction;
 
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
-import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsEventHandler;
+import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.*;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
@@ -56,10 +56,10 @@ public class JackInteraction extends Interaction {
     @Override
     public void handle(Decision decision) {
         if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_CRONE)) {
-            // TODO: log?
+            ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackCroneInteractionEvent().trigger();
             transition(croneRamblingSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_FOREST)) {
-            // TODO: log?
+            ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackLumberRequestInteractionEvent().trigger();
             transition(lumberRequestSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_LUMBER_ACCEPT)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackLumberAcceptInteractionEvent().trigger();
@@ -68,7 +68,7 @@ public class JackInteraction extends Interaction {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackLumberGiveInteractionEvent().trigger();
             transition(initialDisputeSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_DISPUTE)) {
-            // TODO: log?
+            ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeRequestInteractionEvent().trigger();
             transition(repeatedDisputeSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_DISPUTE_ACCEPT)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeAcceptInteractionEvent().trigger();
