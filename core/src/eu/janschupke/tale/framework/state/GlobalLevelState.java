@@ -12,6 +12,9 @@ public class GlobalLevelState extends LevelState {
     protected boolean newQuest;
     protected boolean newItem;
 
+    private boolean lumberPicked;
+    private boolean bookPicked;
+
     public String getCurrentHint() {
         return currentHint;
     }
@@ -68,5 +71,21 @@ public class GlobalLevelState extends LevelState {
 
     public boolean isIndicatorEmpty() {
         return (!newEvent && !newQuest && !newItem);
+    }
+
+    public boolean isLumberPicked() {
+        return lumberPicked;
+    }
+
+    public void setLumberPicked(boolean lumberPicked) {
+        this.lumberPicked = lumberPicked;
+    }
+
+    public boolean isBookPicked() {
+        return bookPicked;
+    }
+
+    public void setBookPicked(boolean bookPicked) {
+        this.bookPicked = bookPicked;
     }
 }

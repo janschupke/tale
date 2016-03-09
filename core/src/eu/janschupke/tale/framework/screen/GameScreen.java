@@ -18,7 +18,6 @@ import eu.janschupke.tale.framework.entity.WorldEntity;
 import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.input.BaseInputProcessor;
-import eu.janschupke.tale.framework.state.LevelState;
 import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
@@ -33,7 +32,6 @@ public abstract class GameScreen extends BaseScreen {
     protected BaseInputProcessor levelInputProcessor;
     protected LevelEventHandler levelEventHandler;
     protected QuestManager questManager;
-    protected LevelState levelState;
 
     private boolean paused = false;
 
@@ -328,9 +326,5 @@ public abstract class GameScreen extends BaseScreen {
 
     public boolean isPaused() {
         return paused;
-    }
-
-    public LevelState getLevelState() {
-        return levelState;
     }
 }

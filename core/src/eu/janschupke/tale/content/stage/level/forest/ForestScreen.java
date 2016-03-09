@@ -25,7 +25,6 @@ public class ForestScreen extends TopDownScreen {
         levelEventHandler = new ForestEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getForestMusic();
         questManager = new ForestQuestManager(app);
-        levelState = new ForestLevelState();
         app.swapHuds(app.getHud(Huds.STANDARD));
         world = new ForestWorld(this);
         initView(world.getWidth(), world.getHeight());

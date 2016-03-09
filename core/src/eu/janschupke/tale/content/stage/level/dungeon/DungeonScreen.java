@@ -22,7 +22,6 @@ public class DungeonScreen extends TopDownScreen {
         levelEventHandler = new DungeonEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getDungeonMusic();
         questManager = new DungeonQuestManager(app);
-        levelState = new DungeonLevelState();
         app.swapHuds(app.getHud(Huds.STANDARD));
         world = new DungeonWorld(this);
         initView(world.getWidth(), world.getHeight());

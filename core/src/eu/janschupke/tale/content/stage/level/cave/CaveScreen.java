@@ -22,7 +22,6 @@ public class CaveScreen extends TopDownScreen {
         levelEventHandler = new CaveEventHandler(app);
         backgroundMusic = app.getResourceManager().getMusicHandler().getCaveMusic();
         questManager = new CaveQuestManager(app);
-        levelState = new CaveLevelState();
         app.swapHuds(app.getHud(Huds.STANDARD));
         world = new CaveWorld(this);
         initView(world.getWidth(), world.getHeight());
