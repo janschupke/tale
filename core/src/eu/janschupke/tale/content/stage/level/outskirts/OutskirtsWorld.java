@@ -43,7 +43,7 @@ public class OutskirtsWorld extends TopDownWorld {
         varpunenNoteItem.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 1);
         jackUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 3);
         lumberItem.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 3);
-        caveObstacle.setPosition(getPlayerUnit().getX(), getPlayerUnit().getY() + 5);
+        caveObstacle.setPosition(getPlayerUnit().getX(), getPlayerUnit().getY() + 6);
     }
 
     @Override

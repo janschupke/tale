@@ -5,6 +5,7 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.TransitionEvent;
+import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 import eu.janschupke.tale.framework.utility.Utility;
 
@@ -31,7 +32,16 @@ public class CaveTransitionEvent extends TransitionEvent {
 
     @Override
     protected void updateGameState() {
-        Utility.preservePlayerMovement(app, Screens.CAVE);
+        // TODO: transition NPE
+        // Pushes down by 1 tile so that the body is not in contact with the cave.
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().setPosition(
+                app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().getPosition().x,
+                app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().getPosition().y - 1
+        );
+        InteractionSwitch.getTriggerable().endInteraction(app);
+        InteractionSwitch.disable(app);
+
+//        Utility.preservePlayerMovement(app, Screens.CAVE);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.CAVE), app.getHud(Huds.STANDARD));
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_TRANSITION_CAVE, ((BaseScreen) app.getScreen()).getTag());
     }
