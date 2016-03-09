@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
-import eu.janschupke.tale.content.stage.level.forest.item.coin.GoldCoinItem;
+import eu.janschupke.tale.content.stage.level.forest.item.coin.CoinItem;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
@@ -38,7 +38,7 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initItems() {
-        Item goldCoinItem = new GoldCoinItem(this);
+        Item goldCoinItem = new CoinItem(this);
         goldCoinItem.setPosition(19, 17);
         getItems().add(goldCoinItem);
     }

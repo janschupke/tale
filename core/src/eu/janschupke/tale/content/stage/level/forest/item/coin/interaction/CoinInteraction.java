@@ -15,10 +15,10 @@ import eu.janschupke.tale.framework.screen.GameScreen;
  *
  * @author jan.schupke@gmail.com
  */
-public class GoldCoinInteraction extends Interaction {
+public class CoinInteraction extends Interaction {
     private InvestigateSituation investigateSituation;
 
-    public GoldCoinInteraction(final App app, final Triggerable triggerable) {
+    public CoinInteraction(final App app, final Triggerable triggerable) {
         super(app, triggerable, InteractionTags.FOREST_COIN);
     }
 
@@ -33,7 +33,7 @@ public class GoldCoinInteraction extends Interaction {
 
     @Override
     public void handle(Decision decision) {
-        Gdx.app.debug("Interaction#handle", "Handling gold coin pickup");
+        Gdx.app.debug("Interaction#handle", "Handling coin pickup");
         if (decision.getTag().equals(DecisionTags.FOREST_COIN_PICKUP)) {
             ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getCoinPickupEvent().trigger();
         } else {

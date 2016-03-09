@@ -63,7 +63,7 @@ public class SettlementWorld extends TopDownWorld {
         choboHouseObstacle.setPosition(34, 5);
         getObstacles().add(choboHouseObstacle);
 
-        Obstacle dungeonObstacle = new DungeonObstacle(this, new Vector2(4, 10));
+        Obstacle dungeonObstacle = new DungeonObstacle(this, new Vector2(3, 8));
         dungeonObstacle.setPosition(17, 8);
         getObstacles().add(dungeonObstacle);
 
