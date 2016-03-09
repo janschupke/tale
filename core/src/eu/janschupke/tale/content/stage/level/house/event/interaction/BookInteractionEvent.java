@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class BookInteractionEvent extends InteractionEvent {
     public BookInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

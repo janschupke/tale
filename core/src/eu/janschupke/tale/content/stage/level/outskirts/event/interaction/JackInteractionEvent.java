@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class JackInteractionEvent extends InteractionEvent {
     public JackInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

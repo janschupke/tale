@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class ChoboInteractionEvent extends InteractionEvent {
     public ChoboInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

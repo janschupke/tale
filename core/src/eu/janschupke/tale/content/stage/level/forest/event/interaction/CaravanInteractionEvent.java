@@ -14,7 +14,6 @@ import eu.janschupke.tale.framework.screen.BaseScreen;
 public class CaravanInteractionEvent extends InteractionEvent {
     public CaravanInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

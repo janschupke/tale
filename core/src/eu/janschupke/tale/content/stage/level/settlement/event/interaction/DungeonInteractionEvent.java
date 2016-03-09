@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class DungeonInteractionEvent extends InteractionEvent {
     public DungeonInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

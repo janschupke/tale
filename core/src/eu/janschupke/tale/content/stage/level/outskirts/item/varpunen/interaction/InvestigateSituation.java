@@ -13,8 +13,11 @@ import eu.janschupke.tale.framework.interaction.Situation;
  */
 public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
-        super(app, app.getLang().get("level.outskirts.interaction.varpunen-note.investigate.description"),
+        super(app, app.getLang().get("level.outskirts.interaction.varpunen.investigate.description"),
                 SituationTags.OUTSKIRTS_VARPUNEN_INVESTIGATE);
-        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.varpunen.pickup.decision.pickup"),
+                DecisionTags.OUTSKIRTS_VARPUNEN_PICKUP));
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.varpunen.pickup.decision.ignore"),
+                DecisionTags.OUTSKIRTS_VARPUNEN_IGNORE));
     }
 }

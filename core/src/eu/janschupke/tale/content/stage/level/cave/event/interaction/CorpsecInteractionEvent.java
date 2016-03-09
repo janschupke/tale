@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class CorpsecInteractionEvent extends InteractionEvent {
     public CorpsecInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

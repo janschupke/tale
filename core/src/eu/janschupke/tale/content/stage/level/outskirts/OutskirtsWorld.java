@@ -3,7 +3,7 @@ package eu.janschupke.tale.content.stage.level.outskirts;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.LumberItem;
-import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.VarpunenNoteItem;
+import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.VarpunenItem;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.ForestTransitionWall;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.SettlementTransitionWall;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.cave.CaveObstacle;
@@ -50,7 +50,7 @@ public class OutskirtsWorld extends TopDownWorld {
         lumberItem.setPosition(38, 57);
         getItems().add(lumberItem);
 
-        Item varpunenNoteItem = new VarpunenNoteItem(this);
+        Item varpunenNoteItem = new VarpunenItem(this);
         varpunenNoteItem.setPosition(7, 15);
         getItems().add(varpunenNoteItem);
     }

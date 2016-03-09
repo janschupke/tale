@@ -25,6 +25,7 @@ import eu.janschupke.tale.framework.screen.BaseScreen;
 public class UkkoDeliveryInteractionEvent extends GeneralEvent {
     public UkkoDeliveryInteractionEvent(final App app) {
         super(app);
+        repeatable = false;
     }
 
     @Override

@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class VilleInteractionEvent extends InteractionEvent {
     public VilleInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

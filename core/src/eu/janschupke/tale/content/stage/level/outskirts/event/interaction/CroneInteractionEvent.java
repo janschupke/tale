@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class CroneInteractionEvent extends InteractionEvent {
     public CroneInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class CaveInteractionEvent extends InteractionEvent {
     public CaveInteractionEvent(App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

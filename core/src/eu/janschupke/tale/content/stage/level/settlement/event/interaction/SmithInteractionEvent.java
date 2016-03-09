@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class SmithInteractionEvent extends InteractionEvent {
     public SmithInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

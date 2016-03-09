@@ -16,7 +16,10 @@ public enum DecisionTags {
     FOREST_UKKO_DELIVERY,
 
     // Outskirts.
-    // Nothing yet.
+    OUTSKIRTS_LUMBER_PICKUP,
+    OUTSKIRTS_LUMBER_IGNORE,
+    OUTSKIRTS_VARPUNEN_IGNORE,
+    OUTSKIRTS_VARPUNEN_PICKUP,
 
     // Cave.
     // Nothing yet.

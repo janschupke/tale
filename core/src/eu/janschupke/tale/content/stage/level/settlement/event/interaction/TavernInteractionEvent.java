@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class TavernInteractionEvent extends InteractionEvent {
     public TavernInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

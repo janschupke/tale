@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class LumberInteractionEvent extends InteractionEvent {
     public LumberInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

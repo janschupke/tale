@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class RoadSignInteractionEvent extends InteractionEvent {
     public RoadSignInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

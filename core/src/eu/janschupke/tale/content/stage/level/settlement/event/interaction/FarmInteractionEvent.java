@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class FarmInteractionEvent extends InteractionEvent {
     public FarmInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

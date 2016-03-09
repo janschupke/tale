@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class FountainInteractionEvent extends InteractionEvent {
     public FountainInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

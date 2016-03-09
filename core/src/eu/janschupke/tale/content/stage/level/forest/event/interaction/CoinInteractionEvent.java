@@ -14,7 +14,6 @@ import eu.janschupke.tale.framework.screen.BaseScreen;
 public class CoinInteractionEvent extends InteractionEvent {
     public CoinInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

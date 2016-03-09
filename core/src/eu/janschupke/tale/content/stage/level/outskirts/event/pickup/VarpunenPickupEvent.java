@@ -10,8 +10,7 @@ import eu.janschupke.tale.framework.event.PickupEvent;
  */
 public class VarpunenPickupEvent extends PickupEvent {
     public VarpunenPickupEvent(final App app) {
-        // TODO
-        super(app, "TODO");
+        super(app);
     }
 
     @Override

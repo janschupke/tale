@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class MeadInteractionEvent extends InteractionEvent {
     public MeadInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

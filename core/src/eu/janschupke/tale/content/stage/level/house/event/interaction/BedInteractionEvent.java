@@ -12,7 +12,6 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 public class BedInteractionEvent extends InteractionEvent {
     public BedInteractionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override
