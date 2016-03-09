@@ -35,7 +35,7 @@ public class InitialWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameLog().addEntry(GameEventTags.FOREST_INITIAL_WALL_CONTACT, ((BaseScreen)app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_GENERAL_INITIAL_WALL_CONTACT, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

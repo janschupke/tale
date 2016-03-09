@@ -33,7 +33,7 @@ public class OutskirtsTransitionEvent extends TransitionEvent {
     protected void updateGameState() {
         Utility.preservePlayerMovement(app, Screens.OUTSKIRTS);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTSKIRTS), app.getHud(Huds.STANDARD));
-        app.getGameLog().addEntry(GameEventTags.FOREST_OUTSKIRTS_TRANSITION, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_TRANSITION_OUTSKIRTS, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

@@ -1,7 +1,9 @@
 package eu.janschupke.tale.content.stage.level.outskirts.event.exploration;
 
+import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.ExplorationEvent;
+import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Event for the Varpunen note area exploration.
@@ -25,7 +27,7 @@ public class VarpunenExplorationEvent extends ExplorationEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_EXPLORATION_VARPUNEN, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

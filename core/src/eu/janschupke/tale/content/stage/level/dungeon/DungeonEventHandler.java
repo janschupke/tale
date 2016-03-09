@@ -20,9 +20,8 @@ public class DungeonEventHandler extends LevelEventHandler {
     private BookInteractionEvent bookInteractionEvent;
     private ChestInteractionEvent chestInteractionEvent;
     private HarpsichordInteractionEvent harpsichordInteractionEvent;
-    private RoomFourDoorInteractionEvent roomFourDoorInteractionEvent;
-    private RoomOneGateInteractionEvent roomOneGateInteractionEvent;
-    private RoomTwoDoorInteractionEvent roomTwoDoorInteractionEvent;
+    private DoorInteractionEvent doorInteractionEvent;
+    private GateInteractionEvent gateInteractionEvent;
     private ScrollInteractionEvent scrollInteractionEvent;
 
     // Transition.
@@ -39,10 +38,8 @@ public class DungeonEventHandler extends LevelEventHandler {
         bookInteractionEvent = new BookInteractionEvent(app);
         chestInteractionEvent = new ChestInteractionEvent(app);
         harpsichordInteractionEvent = new HarpsichordInteractionEvent(app);
-        roomFourDoorInteractionEvent = new RoomFourDoorInteractionEvent(app);
-        roomOneGateInteractionEvent = new RoomOneGateInteractionEvent(app);
-        roomOneGateInteractionEvent = new RoomOneGateInteractionEvent(app);
-        roomTwoDoorInteractionEvent = new RoomTwoDoorInteractionEvent(app);
+        doorInteractionEvent = new DoorInteractionEvent(app);
+        gateInteractionEvent = new GateInteractionEvent(app);
         scrollInteractionEvent = new ScrollInteractionEvent(app);
 
         // Transition.
@@ -66,16 +63,12 @@ public class DungeonEventHandler extends LevelEventHandler {
         return harpsichordInteractionEvent;
     }
 
-    public RoomFourDoorInteractionEvent getRoomFourDoorInteractionEvent() {
-        return roomFourDoorInteractionEvent;
+    public DoorInteractionEvent getDoorInteractionEvent() {
+        return doorInteractionEvent;
     }
 
-    public RoomOneGateInteractionEvent getRoomOneGateInteractionEvent() {
-        return roomOneGateInteractionEvent;
-    }
-
-    public RoomTwoDoorInteractionEvent getRoomTwoDoorInteractionEvent() {
-        return roomTwoDoorInteractionEvent;
+    public GateInteractionEvent getGateInteractionEvent() {
+        return gateInteractionEvent;
     }
 
     public ScrollInteractionEvent getScrollInteractionEvent() {

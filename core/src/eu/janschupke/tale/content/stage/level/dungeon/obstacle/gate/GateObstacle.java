@@ -34,7 +34,7 @@ public class GateObstacle extends Obstacle implements Triggerable {
     @Override
     public void engage() {
         InteractionSwitch.enable(this,
-                ((DungeonEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getRoomOneGateInteractionEvent(),
+                ((DungeonEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getGateInteractionEvent(),
                 world.getScreen().getApp());
     }
 

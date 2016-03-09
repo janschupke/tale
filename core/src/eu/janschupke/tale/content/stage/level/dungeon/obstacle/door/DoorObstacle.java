@@ -34,7 +34,7 @@ public class DoorObstacle extends Obstacle implements Triggerable {
     @Override
     public void engage() {
         InteractionSwitch.enable(this,
-                ((DungeonEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getRoomFourDoorInteractionEvent(),
+                ((DungeonEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getDoorInteractionEvent(),
                 world.getScreen().getApp());
     }
 

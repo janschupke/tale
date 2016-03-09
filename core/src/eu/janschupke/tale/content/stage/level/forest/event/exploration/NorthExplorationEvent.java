@@ -40,7 +40,7 @@ public class NorthExplorationEvent extends ExplorationEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameLog().addEntry(GameEventTags.FOREST_NORTH_EXPLORATION, ((BaseScreen)app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_EXPLORATION_NORTH, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

@@ -1,7 +1,9 @@
 package eu.janschupke.tale.content.stage.level.house.event.pickup;
 
+import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.PickupEvent;
+import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Pickup event for the mead item.
@@ -26,7 +28,7 @@ public class MeadPickupEvent extends PickupEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.HOUSE_PICKUP_MEAD, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

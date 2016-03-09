@@ -29,7 +29,7 @@ public class CaravanInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.FOREST_CARAVAN_INTERACTION, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_CARAVAN, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

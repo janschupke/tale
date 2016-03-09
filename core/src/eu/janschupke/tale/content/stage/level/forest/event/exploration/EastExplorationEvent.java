@@ -27,7 +27,7 @@ public class EastExplorationEvent extends ExplorationEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameLog().addEntry(GameEventTags.FOREST_EAST_EXPLORATION, ((BaseScreen)app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_EXPLORATION_EAST, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

@@ -33,7 +33,7 @@ public class ItemIntroGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameLog().addEntry(GameEventTags.FOREST_ITEM_INTRO_CONTACT, ((BaseScreen)app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_GENERAL_ITEM_INTRO_CONTACT, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

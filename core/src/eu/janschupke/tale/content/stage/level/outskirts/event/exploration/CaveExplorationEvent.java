@@ -1,7 +1,9 @@
 package eu.janschupke.tale.content.stage.level.outskirts.event.exploration;
 
+import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.ExplorationEvent;
+import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Exploration event for the cave area.
@@ -25,7 +27,7 @@ public class CaveExplorationEvent extends ExplorationEvent {
 
     @Override
     protected void updateGameState() {
-
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_EXPLORATION_CAVE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

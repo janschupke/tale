@@ -35,7 +35,7 @@ public class QuestWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameLog().addEntry(GameEventTags.FOREST_QUEST_WALL_CONTACT, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_GENERAL_QUEST_WALL_CONTACT, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override
