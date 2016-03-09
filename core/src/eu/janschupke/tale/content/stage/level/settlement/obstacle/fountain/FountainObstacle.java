@@ -7,7 +7,6 @@ import eu.janschupke.tale.content.stage.level.settlement.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.fountain.interaction.FountainInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.GameScreen;
@@ -41,12 +40,8 @@ public class FountainObstacle extends Obstacle implements Triggerable {
 
     @Override
     public void disengage() {
-        try {
-            endInteraction(world.getScreen().getApp());
-            InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
-        } catch (NoHudException e) {
-            Gdx.app.log("FountainObstacle#disengage", "Could not get HUD instance");
-        }
+        endInteraction(world.getScreen().getApp());
+        InteractionSwitch.disable(world.getScreen().getApp());
     }
 
     @Override

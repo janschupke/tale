@@ -1,6 +1,5 @@
 package eu.janschupke.tale.framework.interaction;
 
-import eu.janschupke.tale.content.ui.hud.HintTable;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.event.BaseEvent;
@@ -19,23 +18,23 @@ public class InteractionSwitch {
      *
      * @param triggerable      Object that can be triggered.
      * @param interactionEvent Event that should take place after that object is triggered.
-     * @param app              Application instance
+     * @param app              Application instance.
      */
     public static void enable(Triggerable triggerable, BaseEvent interactionEvent, App app) {
         InteractionSwitch.triggerable = triggerable;
         InteractionSwitch.interactionEvent = interactionEvent;
-        app.getGameState().getGlobalLevelState().setCurrentHint(triggerable.getInteractionHint());
+        app.getEventHandler().handleHintMessage();
     }
 
     /**
      * Disables triggerable interaction.
      *
-     * @param hintTable GUI table that shows hints.
+     * @param app Application instance.
      */
-    public static void disable(HintTable hintTable) {
+    public static void disable(App app) {
         triggerable = null;
         interactionEvent = null;
-        hintTable.clear();
+        app.getEventHandler().handleHintMessage();
     }
 
     public static boolean isInteractionPossible() {

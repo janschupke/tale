@@ -85,7 +85,7 @@ public class GlobalEventHandler {
         }
 
         // Interaction hint when available.
-        if (InteractionSwitch.isInteractionPossible()) {
+        if (InteractionSwitch.isInteractionPossible() && InteractionSwitch.getTriggerable().getInteraction() != null) {
             app.getGameState().getGlobalLevelState().setCurrentHint(
                     InteractionSwitch.getTriggerable().getInteractionHint());
             return;

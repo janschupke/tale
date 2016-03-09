@@ -7,7 +7,6 @@ import eu.janschupke.tale.content.stage.level.forest.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.interaction.GoldCoinInteraction;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.GameScreen;
@@ -38,12 +37,8 @@ public class GoldCoinItem extends Item implements Triggerable {
 
     @Override
     public void disengage() {
-        try {
-            endInteraction(world.getScreen().getApp());
-            InteractionSwitch.disable(world.getScreen().getApp().getHud().getHintTable());
-        } catch (NoHudException e) {
-            Gdx.app.log("GoldCoinItem#disengage", "Could not get HUD instance");
-        }
+        endInteraction(world.getScreen().getApp());
+        InteractionSwitch.disable(world.getScreen().getApp());
     }
 
     @Override
