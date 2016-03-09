@@ -29,7 +29,7 @@ public class ChestInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_CHEST, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_CHEST_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

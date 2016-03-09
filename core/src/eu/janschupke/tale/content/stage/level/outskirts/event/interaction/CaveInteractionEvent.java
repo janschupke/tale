@@ -29,7 +29,7 @@ public class CaveInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CAVE, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CAVE_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

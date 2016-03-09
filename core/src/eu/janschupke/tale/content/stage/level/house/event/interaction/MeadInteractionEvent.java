@@ -29,7 +29,7 @@ public class MeadInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_MEAD, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_MEAD_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

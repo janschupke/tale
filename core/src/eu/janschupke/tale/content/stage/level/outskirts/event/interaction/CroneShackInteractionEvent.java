@@ -29,7 +29,7 @@ public class CroneShackInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CRONE_SHACK, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CRONE_SHACK_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

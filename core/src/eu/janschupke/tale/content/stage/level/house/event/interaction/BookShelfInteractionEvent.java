@@ -29,7 +29,7 @@ public class BookShelfInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_BOOKSHELF, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_BOOKSHELF_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

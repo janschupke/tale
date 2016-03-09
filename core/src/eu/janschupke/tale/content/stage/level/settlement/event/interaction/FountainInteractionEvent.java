@@ -29,7 +29,7 @@ public class FountainInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_FOUNTAIN, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_FOUNTAIN_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

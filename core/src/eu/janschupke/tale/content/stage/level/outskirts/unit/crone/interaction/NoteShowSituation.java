@@ -7,18 +7,16 @@ import eu.janschupke.tale.framework.interaction.Decision;
 import eu.janschupke.tale.framework.interaction.Situation;
 
 /**
- * Initial crone interaction situation.
+ * Crone interaction situation after note reveal.
  *
  * @author jan.schupke@gmail.com
  */
-public class TalkSituation extends Situation {
-    public TalkSituation(final App app) {
-        super(app, app.getLang().get("level.outskirts.interaction.crone.talk.description"),
-                SituationTags.OUTSKIRTS_CRONE_TALK);
+public class NoteShowSituation extends Situation {
+    public NoteShowSituation(final App app) {
+        super(app, app.getLang().get("level.outskirts.interaction.crone.varpunen-show.description"),
+                SituationTags.OUTSKIRTS_CRONE_VARPUNEN_SHOW);
 
-        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.crone.talk.decision.show"),
-                DecisionTags.OUTSKIRTS_CRONE_VARPUNEN_SHOW, false));
-        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.crone.talk.decision.give"),
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.crone.varpunen-show.decision.give"),
                 DecisionTags.OUTSKIRTS_CRONE_VARPUNEN_GIVE, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));

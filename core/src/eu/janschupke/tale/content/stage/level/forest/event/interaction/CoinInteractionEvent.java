@@ -29,7 +29,7 @@ public class CoinInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_COIN, ((BaseScreen)app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_COIN_INVESTIGATE, ((BaseScreen)app.getScreen()).getTag());
     }
 
     @Override

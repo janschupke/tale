@@ -29,7 +29,7 @@ public class VilleInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.CAVE_INTERACTION_VILLE, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.CAVE_INTERACTION_VILLE_TALK, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

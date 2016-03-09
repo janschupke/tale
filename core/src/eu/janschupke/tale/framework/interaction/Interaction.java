@@ -72,7 +72,12 @@ public abstract class Interaction {
      * Default handling. Selectes the first available decision.
      */
     public void handle() {
-        handle(currentSituation.getDecisions().get(0));
+        for (Decision decision : currentSituation.getDecisions()) {
+            if (decision.isAvailable()) {
+                handle(decision);
+                return;
+            }
+        }
     }
 
     public void fallback() {

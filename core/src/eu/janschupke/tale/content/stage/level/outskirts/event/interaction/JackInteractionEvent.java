@@ -29,7 +29,7 @@ public class JackInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_TALK, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

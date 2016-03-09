@@ -36,7 +36,8 @@ public class OutskirtsWorld extends TopDownWorld {
     @Override
     protected void initCreatures() {
         Unit croneUnit = new CroneUnit(this);
-        croneUnit.setPosition(35, 36);
+//        croneUnit.setPosition(35, 36);
+        croneUnit.setPosition(18, 12);
         getUnits().add(croneUnit);
 
         Unit jackUnit = new JackUnit(this);
@@ -51,7 +52,8 @@ public class OutskirtsWorld extends TopDownWorld {
         getItems().add(lumberItem);
 
         Item varpunenNoteItem = new VarpunenItem(this);
-        varpunenNoteItem.setPosition(7, 15);
+//        varpunenNoteItem.setPosition(7, 15);
+        varpunenNoteItem.setPosition(22, 12);
         getItems().add(varpunenNoteItem);
     }
 

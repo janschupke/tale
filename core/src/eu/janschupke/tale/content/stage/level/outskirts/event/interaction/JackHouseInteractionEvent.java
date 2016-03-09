@@ -29,7 +29,7 @@ public class JackHouseInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_HOUSE, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_HOUSE_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

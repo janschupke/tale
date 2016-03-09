@@ -29,7 +29,7 @@ public class BedInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_BED, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.HOUSE_INTERACTION_BED_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

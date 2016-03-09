@@ -32,6 +32,8 @@ public class OutskirtsEventHandler extends LevelEventHandler {
     private LumberInteractionEvent lumberInteractionEvent;
     private RoadSignInteractionEvent roadSignInteractionEvent;
     private VarpunenInteractionEvent varpunenInteractionEvent;
+    private VarpunenShowInteractionEvent varpunenShowInteractionEvent;
+    private VarpunenGiveInteractionEvent varpunenGiveInteractionEvent;
 
     // Pickup.
     private LumberPickupEvent lumberPickupEvent;
@@ -59,6 +61,8 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         lumberInteractionEvent = new LumberInteractionEvent(app);
         roadSignInteractionEvent = new RoadSignInteractionEvent(app);
         varpunenInteractionEvent = new VarpunenInteractionEvent(app);
+        varpunenShowInteractionEvent = new VarpunenShowInteractionEvent(app);
+        varpunenGiveInteractionEvent = new VarpunenGiveInteractionEvent(app);
 
         // Pickup.
         lumberPickupEvent = new LumberPickupEvent(app);
@@ -68,6 +72,14 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         caveTransitionEvent = new CaveTransitionEvent(app);
         forestTransitionEvent = new ForestTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
+    }
+
+    public VarpunenShowInteractionEvent getVarpunenShowInteractionEvent() {
+        return varpunenShowInteractionEvent;
+    }
+
+    public VarpunenGiveInteractionEvent getVarpunenGiveInteractionEvent() {
+        return varpunenGiveInteractionEvent;
     }
 
     public CaveTransitionEvent getCaveTransitionEvent() {

@@ -29,7 +29,7 @@ public class VarpunenInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_VARPUNEN, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_VARPUNEN_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

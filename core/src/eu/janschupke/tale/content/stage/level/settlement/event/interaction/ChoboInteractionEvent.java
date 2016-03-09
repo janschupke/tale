@@ -29,7 +29,7 @@ public class ChoboInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_CHOBO, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_CHOBO_TALK, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

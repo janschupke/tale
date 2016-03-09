@@ -29,7 +29,7 @@ public class DoorInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_DOOR, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_DOOR_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

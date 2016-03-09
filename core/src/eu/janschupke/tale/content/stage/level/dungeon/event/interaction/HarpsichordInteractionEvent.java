@@ -29,7 +29,7 @@ public class HarpsichordInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_HARPSICHORD, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_HARPSICHORD_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

@@ -29,7 +29,7 @@ public class SmithInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_SMITH, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_SMITH_TALK, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

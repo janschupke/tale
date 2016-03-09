@@ -29,7 +29,7 @@ public class UkkoInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_UKKO, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_UKKO_TALK, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

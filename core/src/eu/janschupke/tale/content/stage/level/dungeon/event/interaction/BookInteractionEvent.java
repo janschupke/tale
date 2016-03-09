@@ -29,7 +29,7 @@ public class BookInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_BOOK, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_BOOK_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

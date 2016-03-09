@@ -29,7 +29,7 @@ public class LumberInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_LUMBER, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_LUMBER_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

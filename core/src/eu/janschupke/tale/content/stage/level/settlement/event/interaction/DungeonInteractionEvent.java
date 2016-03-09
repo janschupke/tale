@@ -29,7 +29,7 @@ public class DungeonInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_DUNGEON, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_DUNGEON_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

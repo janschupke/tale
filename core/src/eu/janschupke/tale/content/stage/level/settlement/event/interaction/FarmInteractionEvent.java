@@ -29,7 +29,7 @@ public class FarmInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_FARM, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_FARM_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

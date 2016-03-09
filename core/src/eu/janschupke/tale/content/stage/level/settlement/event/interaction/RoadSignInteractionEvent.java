@@ -29,7 +29,7 @@ public class RoadSignInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_ROAD_SIGN, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_ROAD_SIGN_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override
