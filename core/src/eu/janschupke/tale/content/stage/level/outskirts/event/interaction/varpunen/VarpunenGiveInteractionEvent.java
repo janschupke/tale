@@ -38,7 +38,7 @@ public class VarpunenGiveInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameState().getInventory().removeItem(ItemTags.OUTSKIRTS_VARPUNEN_NOTE);
+        app.getGameState().getInventory().removeItem(ItemTags.OUTSKIRTS_VARPUNEN);
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CRONE_VARPUNEN_SHOW, ((BaseScreen) app.getScreen()).getTag());
     }
 

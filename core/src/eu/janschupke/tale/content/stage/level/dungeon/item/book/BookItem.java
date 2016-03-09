@@ -21,7 +21,7 @@ public class BookItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public BookItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/book.png")), ItemTags.DUNGEON_BOOK_ONE);
+        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/book.png")), ItemTags.DUNGEON_BOOK);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.dungeon.item.book-one.name");
         description = world.getScreen().getApp().getLang().get("level.dungeon.item.book-one.description");

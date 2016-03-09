@@ -46,7 +46,7 @@ public class UkkoDeliveryInteractionEvent extends GeneralEvent {
 
     @Override
     protected void updateGameState() {
-        app.getGameState().getInventory().removeItem(ItemTags.FOREST_GOLD_COIN);
+        app.getGameState().getInventory().removeItem(ItemTags.FOREST_COIN);
         removeQuestWall();
         app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_UKKO_DELIVERY, ((BaseScreen) app.getScreen()).getTag());
     }

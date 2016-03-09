@@ -21,7 +21,7 @@ public class CoinItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public CoinItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin.png")), ItemTags.FOREST_GOLD_COIN);
+        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin.png")), ItemTags.FOREST_COIN);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
         description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");

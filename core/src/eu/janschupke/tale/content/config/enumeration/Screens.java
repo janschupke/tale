@@ -13,7 +13,6 @@ public enum Screens {
     OUTSKIRTS,
     CAVE,
     SETTLEMENT,
-    HOUSE,
     DUNGEON,
     OUTRO
 }
