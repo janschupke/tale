@@ -8,4 +8,13 @@ import eu.janschupke.tale.framework.state.LevelState;
  * @author jan.schupke@gmail.com
  */
 public class OutskirtsLevelState extends LevelState {
+    private boolean disputeQuestOffered;
+
+    public boolean isDisputeQuestOffered() {
+        return disputeQuestOffered;
+    }
+
+    public void setDisputeQuestOffered(boolean disputeQuestOffered) {
+        this.disputeQuestOffered = disputeQuestOffered;
+    }
 }

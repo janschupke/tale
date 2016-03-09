@@ -4,6 +4,10 @@ import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.CaveEx
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.JackExplorationEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.VarpunenExplorationEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.interaction.*;
+import eu.janschupke.tale.content.stage.level.outskirts.event.interaction.jack.*;
+import eu.janschupke.tale.content.stage.level.outskirts.event.interaction.varpunen.VarpunenGiveInteractionEvent;
+import eu.janschupke.tale.content.stage.level.outskirts.event.interaction.varpunen.VarpunenInteractionEvent;
+import eu.janschupke.tale.content.stage.level.outskirts.event.interaction.varpunen.VarpunenShowInteractionEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.pickup.LumberPickupEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.pickup.VarpunenPickupEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.CaveTransitionEvent;
@@ -29,6 +33,10 @@ public class OutskirtsEventHandler extends LevelEventHandler {
     private CroneShackInteractionEvent croneShackInteractionEvent;
     private JackHouseInteractionEvent jackHouseInteractionEvent;
     private JackInteractionEvent jackInteractionEvent;
+    private JackLumberAcceptInteractionEvent jackLumberAcceptInteractionEvent;
+    private JackLumberGiveInteractionEvent jackLumberGiveInteractionEvent;
+    private JackDisputeAcceptInteractionEvent jackDisputeAcceptInteractionEvent;
+    private JackDisputeSolveInteractionEvent jackDisputeSolveInteractionEvent;
     private LumberInteractionEvent lumberInteractionEvent;
     private RoadSignInteractionEvent roadSignInteractionEvent;
     private VarpunenInteractionEvent varpunenInteractionEvent;
@@ -58,6 +66,10 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         croneShackInteractionEvent = new CroneShackInteractionEvent(app);
         jackHouseInteractionEvent = new JackHouseInteractionEvent(app);
         jackInteractionEvent = new JackInteractionEvent(app);
+        jackLumberAcceptInteractionEvent = new JackLumberAcceptInteractionEvent(app);
+        jackLumberGiveInteractionEvent = new JackLumberGiveInteractionEvent(app);
+        jackDisputeAcceptInteractionEvent = new JackDisputeAcceptInteractionEvent(app);
+        jackDisputeSolveInteractionEvent = new JackDisputeSolveInteractionEvent(app);
         lumberInteractionEvent = new LumberInteractionEvent(app);
         roadSignInteractionEvent = new RoadSignInteractionEvent(app);
         varpunenInteractionEvent = new VarpunenInteractionEvent(app);
@@ -72,6 +84,22 @@ public class OutskirtsEventHandler extends LevelEventHandler {
         caveTransitionEvent = new CaveTransitionEvent(app);
         forestTransitionEvent = new ForestTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
+    }
+
+    public JackDisputeAcceptInteractionEvent getJackDisputeAcceptInteractionEvent() {
+        return jackDisputeAcceptInteractionEvent;
+    }
+
+    public JackDisputeSolveInteractionEvent getJackDisputeSolveInteractionEvent() {
+        return jackDisputeSolveInteractionEvent;
+    }
+
+    public JackLumberAcceptInteractionEvent getJackLumberAcceptInteractionEvent() {
+        return jackLumberAcceptInteractionEvent;
+    }
+
+    public JackLumberGiveInteractionEvent getJackLumberGiveInteractionEvent() {
+        return jackLumberGiveInteractionEvent;
     }
 
     public VarpunenShowInteractionEvent getVarpunenShowInteractionEvent() {

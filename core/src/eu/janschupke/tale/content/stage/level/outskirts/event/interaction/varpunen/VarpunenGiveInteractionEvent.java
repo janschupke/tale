@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.outskirts.event.interaction;
+package eu.janschupke.tale.content.stage.level.outskirts.event.interaction.varpunen;
 
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;

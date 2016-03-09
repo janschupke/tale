@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction;
+package eu.janschupke.tale.content.stage.level.outskirts.unit.crone.interaction.situation;
 
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
