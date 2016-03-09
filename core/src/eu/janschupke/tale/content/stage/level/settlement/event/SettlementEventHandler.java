@@ -5,7 +5,6 @@ import eu.janschupke.tale.content.stage.level.settlement.event.exploration.Dunge
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.*;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
-import eu.janschupke.tale.content.stage.level.settlement.event.transition.SmithHouseTransitionEvent;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
@@ -33,7 +32,6 @@ public class SettlementEventHandler extends LevelEventHandler {
     // Transition.
     private DungeonTransitionEvent dungeonTransitionEvent;
     private OutskirtsTransitionEvent outskirtsTransitionEvent;
-    private SmithHouseTransitionEvent smithHouseTransitionEvent;
 
     public SettlementEventHandler(final App app) {
         super(app);
@@ -56,7 +54,6 @@ public class SettlementEventHandler extends LevelEventHandler {
         // Transition.
         dungeonTransitionEvent = new DungeonTransitionEvent(app);
         outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
-        smithHouseTransitionEvent = new SmithHouseTransitionEvent(app);
     }
 
     public ChoboExplorationEvent getChoboExplorationEvent() {
@@ -97,10 +94,6 @@ public class SettlementEventHandler extends LevelEventHandler {
 
     public RoadSignInteractionEvent getRoadSignInteractionEvent() {
         return roadSignInteractionEvent;
-    }
-
-    public SmithHouseTransitionEvent getSmithHouseTransitionEvent() {
-        return smithHouseTransitionEvent;
     }
 
     public SmithHouseInteractionEvent getSmithHouseInteractionEvent() {
