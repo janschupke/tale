@@ -6,7 +6,6 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
 import eu.janschupke.tale.content.stage.level.dungeon.DungeonScreen;
 import eu.janschupke.tale.content.stage.level.forest.ForestScreen;
-import eu.janschupke.tale.content.stage.level.house.HouseScreen;
 import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.tale.content.stage.level.settlement.SettlementScreen;
 import eu.janschupke.tale.content.stage.menu.MenuScreen;
@@ -104,9 +103,6 @@ public class Tale extends App {
 
 		SettlementScreen settlementScreen = new SettlementScreen(this);
 		screens.put(Screens.SETTLEMENT, settlementScreen);
-
-		HouseScreen houseScreen = new HouseScreen(this);
-		screens.put(Screens.HOUSE, houseScreen);
 
 		DungeonScreen dungeonScreen = new DungeonScreen(this);
 		screens.put(Screens.DUNGEON, dungeonScreen);
