@@ -2,7 +2,6 @@ package eu.janschupke.tale.content.stage.level.cave;
 
 import eu.janschupke.tale.content.stage.level.cave.event.exploration.CorpsecExplorationEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.CorpsecInteractionEvent;
-import eu.janschupke.tale.content.stage.level.cave.event.interaction.SpringInteractionEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.VilleInteractionEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.framework.App;
@@ -19,7 +18,6 @@ public class CaveEventHandler extends LevelEventHandler {
 
     // Interaction.
     private CorpsecInteractionEvent corpsecInteractionEvent;
-    private SpringInteractionEvent springInteractionEvent;
     private VilleInteractionEvent villeInteractionEvent;
 
     // Transition.
@@ -33,7 +31,6 @@ public class CaveEventHandler extends LevelEventHandler {
 
         // Interaction.
         corpsecInteractionEvent = new CorpsecInteractionEvent(app);
-        springInteractionEvent = new SpringInteractionEvent(app);
         villeInteractionEvent = new VilleInteractionEvent(app);
 
         // Transition.
@@ -50,10 +47,6 @@ public class CaveEventHandler extends LevelEventHandler {
 
     public OutskirtsTransitionEvent getOutskirtsTransitionEvent() {
         return outskirtsTransitionEvent;
-    }
-
-    public SpringInteractionEvent getSpringInteractionEvent() {
-        return springInteractionEvent;
     }
 
     public VilleInteractionEvent getVilleInteractionEvent() {

@@ -4,10 +4,8 @@ import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.house.item.book.BookItem;
 import eu.janschupke.tale.content.stage.level.house.item.mead.MeadItem;
-import eu.janschupke.tale.content.stage.level.house.obstacle.TableObstacle;
 import eu.janschupke.tale.content.stage.level.house.obstacle.bed.BedObstacle;
 import eu.janschupke.tale.content.stage.level.house.obstacle.book_shelf.BookShelfObstacle;
-import eu.janschupke.tale.content.stage.level.house.obstacle.cauldron.CauldronObstacle;
 import eu.janschupke.tale.content.stage.level.house.sensor.FarExplorationSensor;
 import eu.janschupke.tale.content.stage.level.house.sensor.RoomExplorationSensor;
 import eu.janschupke.tale.content.stage.level.house.sensor.SettlementTransitionSensor;
@@ -58,14 +56,6 @@ public class HouseWorld extends TopDownWorld {
         Obstacle bookShelfObstacle = new BookShelfObstacle(this, new Vector2(2, 2));
         bookShelfObstacle.setPosition(1, 1);
         getObstacles().add(bookShelfObstacle);
-
-        Obstacle cauldronObstacle = new CauldronObstacle(this, new Vector2(2, 2));
-        cauldronObstacle.setPosition(1, 1);
-        getObstacles().add(cauldronObstacle);
-
-        Obstacle tableObstacle = new TableObstacle(this, new Vector2(2, 2));
-        tableObstacle.setPosition(1, 1);
-        getObstacles().add(tableObstacle);
     }
 
     @Override

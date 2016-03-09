@@ -62,7 +62,7 @@ public class InteractionTable extends UiTable {
                 }
             });
 
-            optionTable.add(button).pad(Config.HUD_BUTTON_PADDING).row();
+            optionTable.add(button).left().pad(Config.HUD_BUTTON_PADDING).row();
         }
 
         contentTable.add(titleLabel).padBottom(Config.HUD_INNER_PADDING).row();

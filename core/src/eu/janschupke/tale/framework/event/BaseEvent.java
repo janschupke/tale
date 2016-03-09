@@ -26,14 +26,11 @@ public abstract class BaseEvent {
     }
 
     /**
-     * Sets the event as triggered and stops player movement.
+     * Sets the event as triggered.
      * Specific logic is specified in subclasses.
      */
     public void trigger() {
         triggered = true;
-        if (app.getSettingsManager().getConfig().isEnableDialogs() && withDialog) {
-            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stop();
-        }
     }
 
     /**
@@ -71,8 +68,19 @@ public abstract class BaseEvent {
      * @param dialog Dialog to be shown.
      */
     protected void showDialog(InfoDialog dialog) {
-        if (app.getSettingsManager().getConfig().isEnableDialogs()) {
+        showDialog(dialog, false);
+    }
+
+    /**
+     * Handles dialog display, allows to force bypass the settings
+     * flag that disables dialog display.
+     * @param dialog Dialog to be shown.
+     * @param force Forces dialog disable bypass if true.
+     */
+    protected void showDialog(InfoDialog dialog, boolean force) {
+        if (app.getSettingsManager().getConfig().isEnableDialogs() || force) {
             dialog.show(app.getUi());
+            ((GameScreen) app.getScreen()).getWorld().getPlayerUnit().stop();
         }
     }
 

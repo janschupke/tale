@@ -2,7 +2,10 @@ package eu.janschupke.tale.content.stage.level.house;
 
 import eu.janschupke.tale.content.stage.level.house.event.exploration.FarExplorationEvent;
 import eu.janschupke.tale.content.stage.level.house.event.exploration.RoomExplorationEvent;
-import eu.janschupke.tale.content.stage.level.house.event.interaction.*;
+import eu.janschupke.tale.content.stage.level.house.event.interaction.BedInteractionEvent;
+import eu.janschupke.tale.content.stage.level.house.event.interaction.BookInteractionEvent;
+import eu.janschupke.tale.content.stage.level.house.event.interaction.BookShelfInteractionEvent;
+import eu.janschupke.tale.content.stage.level.house.event.interaction.MeadInteractionEvent;
 import eu.janschupke.tale.content.stage.level.house.event.pickup.BookPickupEvent;
 import eu.janschupke.tale.content.stage.level.house.event.pickup.MeadPickupEvent;
 import eu.janschupke.tale.content.stage.level.house.event.transition.SettlementTransitionEvent;
@@ -23,7 +26,6 @@ public class HouseEventHandler extends LevelEventHandler {
     private BedInteractionEvent bedInteractionEvent;
     private BookInteractionEvent bookInteractionEvent;
     private BookShelfInteractionEvent bookShelfInteractionEvent;
-    private CauldronInteractionEvent cauldronInteractionEvent;
     private MeadInteractionEvent meadInteractionEvent;
 
     // Pickup.
@@ -44,7 +46,6 @@ public class HouseEventHandler extends LevelEventHandler {
         bedInteractionEvent = new BedInteractionEvent(app);
         bookInteractionEvent = new BookInteractionEvent(app);
         bookShelfInteractionEvent = new BookShelfInteractionEvent(app);
-        cauldronInteractionEvent = new CauldronInteractionEvent(app);
         meadInteractionEvent = new MeadInteractionEvent(app);
 
         // Pickup.
@@ -69,10 +70,6 @@ public class HouseEventHandler extends LevelEventHandler {
 
     public BookShelfInteractionEvent getBookShelfInteractionEvent() {
         return bookShelfInteractionEvent;
-    }
-
-    public CauldronInteractionEvent getCauldronInteractionEvent() {
-        return cauldronInteractionEvent;
     }
 
     public FarExplorationEvent getFarExplorationEvent() {

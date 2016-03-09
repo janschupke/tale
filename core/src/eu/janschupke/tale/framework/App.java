@@ -275,6 +275,7 @@ public abstract class App extends Game {
 
     @Override
     public void dispose() {
+        eventHandler.dumpData();
         batch.dispose();
         font.dispose();
         skin.dispose();

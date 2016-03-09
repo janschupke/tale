@@ -2,24 +2,18 @@ package eu.janschupke.tale.content.stage.level.dungeon;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
-import eu.janschupke.tale.content.stage.level.dungeon.item.book_one.BookOneItem;
+import eu.janschupke.tale.content.stage.level.dungeon.item.book.BookItem;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.ChestItem;
-import eu.janschupke.tale.content.stage.level.dungeon.item.rune.RuneItem;
 import eu.janschupke.tale.content.stage.level.dungeon.item.scroll.ScrollItem;
-import eu.janschupke.tale.content.stage.level.dungeon.obstacle.TableObstacle;
+import eu.janschupke.tale.content.stage.level.dungeon.obstacle.door.DoorObstacle;
+import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.GateObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.harpsichord.HarpsichordObstacle;
-import eu.janschupke.tale.content.stage.level.dungeon.obstacle.room_four_door.RoomFourDoorObstacle;
-import eu.janschupke.tale.content.stage.level.dungeon.obstacle.room_one_gate.RoomOneGateObstacle;
-import eu.janschupke.tale.content.stage.level.dungeon.obstacle.room_two_door.RoomTwoDoorObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.ExitTransitionSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.SettlementTransitionSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.StudyExplorationSensor;
-import eu.janschupke.tale.content.stage.level.dungeon.unit.rudolf.RudolfUnit;
-import eu.janschupke.tale.content.stage.level.dungeon.unit.slave.SlaveUnit;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.entity.Unit;
 import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
@@ -41,28 +35,18 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initCreatures() {
-        Unit rudolfUnit = new RudolfUnit(this);
-        rudolfUnit.setPosition(40, 25);
-        getUnits().add(rudolfUnit);
 
-        Unit slaveUnit = new SlaveUnit(this);
-        slaveUnit.setPosition(10, 40);
-        getUnits().add(slaveUnit);
     }
 
     @Override
     protected void initItems() {
-        Item bookOneItem = new BookOneItem(this);
+        Item bookOneItem = new BookItem(this);
         bookOneItem.setPosition(20, 20);
         getItems().add(bookOneItem);
 
         Item chestItem = new ChestItem(this);
         chestItem.setPosition(15, 25);
         getItems().add(chestItem);
-
-        Item runeItem = new RuneItem(this);
-        runeItem.setPosition(10, 50);
-        getItems().add(runeItem);
 
         Item scrollItem = new ScrollItem(this);
         scrollItem.setPosition(10, 20);
@@ -75,21 +59,13 @@ public class DungeonWorld extends TopDownWorld {
         harpsichordObstacle.setPosition(37, 53);
         getObstacles().add(harpsichordObstacle);
 
-        Obstacle roomFourDoorObstacle = new RoomFourDoorObstacle(this, new Vector2(2, 2));
+        Obstacle roomFourDoorObstacle = new DoorObstacle(this, new Vector2(2, 2));
         roomFourDoorObstacle.setPosition(13, 30);
         getObstacles().add(roomFourDoorObstacle);
 
-        Obstacle roomOneGateObstacle = new RoomOneGateObstacle(this, new Vector2(2, 2));
+        Obstacle roomOneGateObstacle = new GateObstacle(this, new Vector2(2, 2));
         roomOneGateObstacle.setPosition(18, 42);
         getObstacles().add(roomOneGateObstacle);
-
-        Obstacle roomTwoDoorObstacle = new RoomTwoDoorObstacle(this, new Vector2(2, 2));
-        roomTwoDoorObstacle.setPosition(31, 47);
-        getObstacles().add(roomTwoDoorObstacle);
-
-        Obstacle tableObstacle = new TableObstacle(this, new Vector2(2, 2));
-        tableObstacle.setPosition(20, 20);
-        getObstacles().add(tableObstacle);
     }
 
     @Override

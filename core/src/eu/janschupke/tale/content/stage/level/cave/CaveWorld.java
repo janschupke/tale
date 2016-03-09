@@ -2,12 +2,10 @@ package eu.janschupke.tale.content.stage.level.cave;
 
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.entity.PlayerUnit;
-import eu.janschupke.tale.content.stage.level.cave.obstacle.spring.SpringObstacle;
 import eu.janschupke.tale.content.stage.level.cave.sensor.CorpsecExplorationSensor;
 import eu.janschupke.tale.content.stage.level.cave.sensor.OutskirtsTransitionSensor;
 import eu.janschupke.tale.content.stage.level.cave.unit.corpsec.CorpsecUnit;
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.VilleUnit;
-import eu.janschupke.tale.framework.entity.Obstacle;
 import eu.janschupke.tale.framework.entity.Sensor;
 import eu.janschupke.tale.framework.entity.Unit;
 import eu.janschupke.tale.framework.world.TopDownWorld;
@@ -46,9 +44,7 @@ public class CaveWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        Obstacle springObstacle = new SpringObstacle(this, new Vector2(2, 2));
-        springObstacle.setPosition(7, 20);
-        getObstacles().add(springObstacle);
+
     }
 
     @Override

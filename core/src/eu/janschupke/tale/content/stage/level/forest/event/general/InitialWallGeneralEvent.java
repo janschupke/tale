@@ -24,7 +24,7 @@ public class InitialWallGeneralEvent extends GeneralEvent {
 
     @Override
     protected void updateMessages() {
-        showDialog(initialWallDialog);
+        showDialog(initialWallDialog, true);
         addEventMessage();
     }
 

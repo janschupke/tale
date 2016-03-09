@@ -17,16 +17,13 @@ public class DungeonEventHandler extends LevelEventHandler {
     private StudyExplorationEvent studyExplorationEvent;
 
     // Interaction.
-    private BookOneInteractionEvent bookOneInteractionEvent;
+    private BookInteractionEvent bookInteractionEvent;
     private ChestInteractionEvent chestInteractionEvent;
     private HarpsichordInteractionEvent harpsichordInteractionEvent;
     private RoomFourDoorInteractionEvent roomFourDoorInteractionEvent;
     private RoomOneGateInteractionEvent roomOneGateInteractionEvent;
     private RoomTwoDoorInteractionEvent roomTwoDoorInteractionEvent;
-    private RudolfInteractionEvent rudolfInteractionEvent;
-    private RuneInteractionEvent runeInteractionEvent;
     private ScrollInteractionEvent scrollInteractionEvent;
-    private SlaveInteractionEvent slaveInteractionEvent;
 
     // Transition.
     private ExitTransitionEvent exitTransitionEvent;
@@ -39,25 +36,22 @@ public class DungeonEventHandler extends LevelEventHandler {
         studyExplorationEvent = new StudyExplorationEvent(app);
 
         // Interaction.
-        bookOneInteractionEvent = new BookOneInteractionEvent(app);
+        bookInteractionEvent = new BookInteractionEvent(app);
         chestInteractionEvent = new ChestInteractionEvent(app);
         harpsichordInteractionEvent = new HarpsichordInteractionEvent(app);
         roomFourDoorInteractionEvent = new RoomFourDoorInteractionEvent(app);
         roomOneGateInteractionEvent = new RoomOneGateInteractionEvent(app);
         roomOneGateInteractionEvent = new RoomOneGateInteractionEvent(app);
         roomTwoDoorInteractionEvent = new RoomTwoDoorInteractionEvent(app);
-        rudolfInteractionEvent = new RudolfInteractionEvent(app);
-        runeInteractionEvent = new RuneInteractionEvent(app);
         scrollInteractionEvent = new ScrollInteractionEvent(app);
-        slaveInteractionEvent = new SlaveInteractionEvent(app);
 
         // Transition.
         exitTransitionEvent = new ExitTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
     }
 
-    public BookOneInteractionEvent getBookOneInteractionEvent() {
-        return bookOneInteractionEvent;
+    public BookInteractionEvent getBookInteractionEvent() {
+        return bookInteractionEvent;
     }
 
     public ChestInteractionEvent getChestInteractionEvent() {
@@ -84,24 +78,12 @@ public class DungeonEventHandler extends LevelEventHandler {
         return roomTwoDoorInteractionEvent;
     }
 
-    public RudolfInteractionEvent getRudolfInteractionEvent() {
-        return rudolfInteractionEvent;
-    }
-
-    public RuneInteractionEvent getRuneInteractionEvent() {
-        return runeInteractionEvent;
-    }
-
     public ScrollInteractionEvent getScrollInteractionEvent() {
         return scrollInteractionEvent;
     }
 
     public SettlementTransitionEvent getSettlementTransitionEvent() {
         return settlementTransitionEvent;
-    }
-
-    public SlaveInteractionEvent getSlaveInteractionEvent() {
-        return slaveInteractionEvent;
     }
 
     public StudyExplorationEvent getStudyExplorationEvent() {
