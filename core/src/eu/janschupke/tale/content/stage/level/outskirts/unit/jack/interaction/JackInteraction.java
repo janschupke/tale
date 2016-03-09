@@ -55,10 +55,10 @@ public class JackInteraction extends Interaction {
 
     @Override
     public void handle(Decision decision) {
-        if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_CRONE)) {
+        if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_CRONE)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackCroneInteractionEvent().trigger();
             transition(croneRamblingSituation, app);
-        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_FOREST)) {
+        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_FOREST)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackLumberRequestInteractionEvent().trigger();
             transition(lumberRequestSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_LUMBER_ACCEPT)) {
@@ -67,13 +67,13 @@ public class JackInteraction extends Interaction {
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackLumberGiveInteractionEvent().trigger();
             transition(initialDisputeSituation, app);
-        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_DISPUTE)) {
+        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_DISPUTE)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeRequestInteractionEvent().trigger();
             transition(repeatedDisputeSituation, app);
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_DISPUTE_ACCEPT)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeAcceptInteractionEvent().trigger();
             transition(disputeAcceptedSituation, app);
-        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_BOOK_GIVE)) {
+        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_BOOK_GIVE)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeSolveInteractionEvent().trigger();
             transition(disputeDoneSituation, app);
         } else {

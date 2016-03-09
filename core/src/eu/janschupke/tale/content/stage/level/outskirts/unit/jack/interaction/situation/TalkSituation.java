@@ -17,15 +17,15 @@ public class TalkSituation extends Situation {
                 SituationTags.OUTSKIRTS_JACK_TALK);
 
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.crone"),
-                DecisionTags.OUTSKIRTS_JACK_CRONE));
+                DecisionTags.OUTSKIRTS_JACK_TALK_CRONE));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.forest"),
-                DecisionTags.OUTSKIRTS_JACK_FOREST));
+                DecisionTags.OUTSKIRTS_JACK_TALK_FOREST));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.dispute"),
-                DecisionTags.OUTSKIRTS_JACK_DISPUTE, false));
+                DecisionTags.OUTSKIRTS_JACK_TALK_DISPUTE, false));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.lumber-give"),
                 DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE, false));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.book-give"),
-                DecisionTags.OUTSKIRTS_JACK_BOOK_GIVE, false));
+                DecisionTags.OUTSKIRTS_JACK_TALK_BOOK_GIVE, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

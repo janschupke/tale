@@ -13,6 +13,7 @@ public class GlobalLevelState extends LevelState {
     protected boolean newItem;
 
     private boolean lumberPicked;
+    private boolean lumberQuestAccepted;
     private boolean bookPicked;
 
     public String getCurrentHint() {
@@ -79,6 +80,14 @@ public class GlobalLevelState extends LevelState {
 
     public void setLumberPicked(boolean lumberPicked) {
         this.lumberPicked = lumberPicked;
+    }
+
+    public boolean isLumberQuestAccepted() {
+        return lumberQuestAccepted;
+    }
+
+    public void setLumberQuestAccepted(boolean lumberQuestAccepted) {
+        this.lumberQuestAccepted = lumberQuestAccepted;
     }
 
     public boolean isBookPicked() {

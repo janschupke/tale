@@ -16,6 +16,8 @@ public class LumberAcceptedSituation extends Situation {
         super(app, app.getLang().get("level.outskirts.interaction.jack.lumber-accept.description"),
                 SituationTags.OUTSKIRTS_JACK_LUMBER_ACCEPT);
 
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.lumber-accept.decision.lumber-give"),
+                DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

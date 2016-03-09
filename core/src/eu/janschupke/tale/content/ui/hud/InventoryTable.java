@@ -2,7 +2,6 @@ package eu.janschupke.tale.content.ui.hud;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -51,7 +50,8 @@ public class InventoryTable extends UiTable implements Observer {
      */
     @Override
     public void update(Observable o, Object arg) {
-        itemTable.getChildren().forEach(Actor::remove);
+//        itemTable.getChildren().forEach(Actor::remove);
+        itemTable.clear();
 
         Inventory inventory = app.getGameState().getInventory();
         for (int i = 0; i < inventory.getUsedSlots(); i++) {
@@ -97,8 +97,7 @@ public class InventoryTable extends UiTable implements Observer {
         }
 
         // Default state so that the description area is not empty.
-        if (inventory.getUsedSlots() > 0 && itemNameLabel.getText().toString()
-                .equals(app.getLang().get("hud.inventory.label.empty"))) {
+        if (inventory.getUsedSlots() > 0) {
             Gdx.app.debug("InventoryTable#setDefaultActiveItem", "Setting default selection");
             setActiveItem(inventory.getItem(0));
         }

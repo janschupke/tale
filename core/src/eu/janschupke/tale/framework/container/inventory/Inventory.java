@@ -1,5 +1,6 @@
 package eu.janschupke.tale.framework.container.inventory;
 
+import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.DataContainer;
@@ -38,14 +39,6 @@ public class Inventory extends DataContainer {
         update();
     }
 
-    public void removeItem(int index) throws IllegalArgumentException {
-        if (index >= capacity || index < 0)
-            throw new IllegalArgumentException("Requesting inventory item removal out of bounds.");
-        items.remove(index);
-        usedSlots--;
-        update();
-    }
-
     /**
      * Removes an inventory item based on the provided tag.
      * @param tag Identification tag of the item to be removed.
@@ -56,6 +49,8 @@ public class Inventory extends DataContainer {
                 items.remove(item);
                 usedSlots--;
                 update();
+                Gdx.app.debug("Inventory#removeItem", String.format("Removing: %s", tag));
+                Gdx.app.debug("Inventory#removeItem", String.format("Current items: %d", usedSlots));
                 return;
             }
         }
