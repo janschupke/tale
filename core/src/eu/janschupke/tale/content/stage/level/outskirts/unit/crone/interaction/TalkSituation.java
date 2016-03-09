@@ -15,6 +15,9 @@ public class TalkSituation extends Situation {
     public TalkSituation(final App app) {
         super(app, app.getLang().get("level.outskirts.interaction.crone.talk.description"),
                 SituationTags.OUTSKIRTS_CRONE_TALK);
-        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.crone.talk.decision.varpunen-show"),
+                DecisionTags.OUTSKIRTS_CRONE_VARPUNEN_SHOW));
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
+                DecisionTags.GLOBAL_END));
     }
 }

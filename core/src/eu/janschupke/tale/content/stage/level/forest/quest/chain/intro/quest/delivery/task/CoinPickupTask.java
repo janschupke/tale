@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.coin_delivery.task;
+package eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.delivery.task;
 
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.container.quest.Task;
@@ -10,6 +10,6 @@ import eu.janschupke.tale.framework.container.quest.Task;
  */
 public class CoinPickupTask extends Task {
     public CoinPickupTask(final App app) {
-        super(app, app.getLang().get("level.forest.quest.coin-delivery.task.pickup"));
+        super(app, app.getLang().get("level.forest.quest.intro.delivery.task.pickup"));
     }
 }

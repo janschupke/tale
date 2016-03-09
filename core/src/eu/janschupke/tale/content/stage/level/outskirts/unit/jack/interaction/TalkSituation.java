@@ -15,6 +15,7 @@ public class TalkSituation extends Situation {
     public TalkSituation(final App app) {
         super(app, app.getLang().get("level.outskirts.interaction.jack.talk.description"),
                 SituationTags.OUTSKIRTS_JACK_TALK);
-        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
+                DecisionTags.GLOBAL_END));
     }
 }

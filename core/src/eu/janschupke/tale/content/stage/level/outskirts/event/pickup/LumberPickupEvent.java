@@ -28,6 +28,8 @@ public class LumberPickupEvent extends PickupEvent {
     @Override
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_PICKUP_LUMBER, ((BaseScreen) app.getScreen()).getTag());
+        // TODO: enable lumber decision
+        // TODO: if quest exists, set task status
     }
 
     @Override

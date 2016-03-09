@@ -20,6 +20,7 @@ public enum DecisionTags {
     OUTSKIRTS_LUMBER_IGNORE,
     OUTSKIRTS_VARPUNEN_IGNORE,
     OUTSKIRTS_VARPUNEN_PICKUP,
+    OUTSKIRTS_CRONE_VARPUNEN_SHOW,
 
     // Cave.
     // Nothing yet.

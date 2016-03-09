@@ -26,9 +26,13 @@ public class Decision {
     protected DecisionTags tag;
 
     public Decision(String description, DecisionTags tag) {
+        this(description, tag, true);
+    }
+
+    public Decision(String description, DecisionTags tag, boolean available) {
         this.description = description;
         this.tag = tag;
-        available = true;
+        this.available = available;
     }
 
     public String getDescription() {

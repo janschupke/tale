@@ -28,6 +28,8 @@ public class VarpunenPickupEvent extends PickupEvent {
     @Override
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_PICKUP_VARPUNEN, ((BaseScreen) app.getScreen()).getTag());
+        // TODO: enable note decision
+        // TODO: start quest
     }
 
     @Override
