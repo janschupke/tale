@@ -50,7 +50,6 @@ public class InventoryTable extends UiTable implements Observer {
      */
     @Override
     public void update(Observable o, Object arg) {
-//        itemTable.getChildren().forEach(Actor::remove);
         itemTable.clear();
 
         Inventory inventory = app.getGameState().getInventory();

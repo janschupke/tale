@@ -15,6 +15,8 @@ public class GlobalLevelState extends LevelState {
     private boolean lumberPicked;
     private boolean lumberQuestAccepted;
     private boolean bookPicked;
+    private boolean caveExplored;
+    private boolean disputeAccepted;
 
     public String getCurrentHint() {
         return currentHint;
@@ -96,5 +98,21 @@ public class GlobalLevelState extends LevelState {
 
     public void setBookPicked(boolean bookPicked) {
         this.bookPicked = bookPicked;
+    }
+
+    public boolean isCaveExplored() {
+        return caveExplored;
+    }
+
+    public void setCaveExplored(boolean caveExplored) {
+        this.caveExplored = caveExplored;
+    }
+
+    public boolean isDisputeAccepted() {
+        return disputeAccepted;
+    }
+
+    public void setDisputeAccepted(boolean disputeAccepted) {
+        this.disputeAccepted = disputeAccepted;
     }
 }

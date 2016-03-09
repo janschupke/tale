@@ -7,7 +7,9 @@ import eu.janschupke.tale.framework.interaction.Decision;
 import eu.janschupke.tale.framework.interaction.Situation;
 
 /**
- * Created by uzivatel on 09/03/2016.
+ * Dispute quest is solved.
+ *
+ * @author jan.schupke@gmail.com
  */
 public class DisputeDoneSituation extends Situation {
     public DisputeDoneSituation(final App app) {

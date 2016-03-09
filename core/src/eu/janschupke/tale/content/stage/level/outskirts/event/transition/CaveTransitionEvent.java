@@ -3,7 +3,11 @@ package eu.janschupke.tale.content.stage.level.outskirts.event.transition;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
+import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsScreen;
+import eu.janschupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
 import eu.janschupke.tale.framework.App;
+import eu.janschupke.tale.framework.container.quest.QuestChain;
+import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.event.TransitionEvent;
 import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
@@ -27,11 +31,14 @@ public class CaveTransitionEvent extends TransitionEvent {
 
     @Override
     protected void updateQuests() {
-
+        QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
+        chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
     }
 
     @Override
     protected void updateGameState() {
+        app.getGameState().getGlobalLevelState().setCaveExplored(true);
+
         // TODO: transition NPE
         // Pushes down by 1 tile so that the body is not in contact with the cave.
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().setPosition(
