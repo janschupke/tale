@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.CoinItem;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
@@ -18,8 +19,21 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
  * @author jan.schupke@gmail.com
  */
 public class ForestWorld extends TopDownWorld {
+    private Unit ukkoUnit;
+    private Item goldCoinItem;
+
     public ForestWorld(ForestScreen screen) {
         super("maps/forest.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
+
+        goldCoinItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 1);
+        ukkoUnit.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() + 1);
     }
 
     @Override
@@ -31,14 +45,14 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initCreatures() {
-        Unit u = new UkkoUnit(this);
-        u.setPosition(28, 36);
-        getUnits().add(u);
+        ukkoUnit = new UkkoUnit(this);
+        ukkoUnit.setPosition(28, 36);
+        getUnits().add(ukkoUnit);
     }
 
     @Override
     protected void initItems() {
-        Item goldCoinItem = new CoinItem(this);
+        goldCoinItem = new CoinItem(this);
         goldCoinItem.setPosition(19, 17);
         getItems().add(goldCoinItem);
     }

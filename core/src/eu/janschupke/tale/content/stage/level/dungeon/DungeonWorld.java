@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.dungeon;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.dungeon.item.book.BookItem;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.ChestItem;
@@ -24,6 +25,13 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
 public class DungeonWorld extends TopDownWorld {
     public DungeonWorld(DungeonScreen screen) {
         super("maps/dungeon.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.settlement;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.blacksmith.BlacksmithObstacle;
@@ -27,8 +28,25 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
  * @author jan.schupke@gmail.com
  */
 public class SettlementWorld extends TopDownWorld {
+    private Unit smithUnit;
+    private Obstacle blacksmithObstacle;
+    private Unit choboUnit;
+    private Obstacle dungeonObstacle;
+
     public SettlementWorld(SettlementScreen screen) {
         super("maps/settlement.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
+
+        smithUnit.setPosition(getPlayerUnit().getX() + 2, getPlayerUnit().getY() - 2);
+        blacksmithObstacle.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() - 8);
+        choboUnit.setPosition(getPlayerUnit().getX(), getPlayerUnit().getY() - 2);
+        dungeonObstacle.setPosition(getPlayerUnit().getX() + 6, getPlayerUnit().getY() - 4);
     }
 
     @Override
@@ -40,11 +58,11 @@ public class SettlementWorld extends TopDownWorld {
 
     @Override
     protected void initCreatures() {
-        Unit choboUnit = new ChoboUnit(this);
+        choboUnit = new ChoboUnit(this);
         choboUnit.setPosition(42, 6);
         getUnits().add(choboUnit);
 
-        Unit smithUnit = new SmithUnit(this);
+        smithUnit = new SmithUnit(this);
         smithUnit.setPosition(30, 42);
         getUnits().add(smithUnit);
     }
@@ -55,7 +73,7 @@ public class SettlementWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        Obstacle blacksmithObstacle = new BlacksmithObstacle(this, new Vector2(5, 5));
+        blacksmithObstacle = new BlacksmithObstacle(this, new Vector2(5, 5));
         blacksmithObstacle.setPosition(42, 48);
         getObstacles().add(blacksmithObstacle);
 
@@ -63,7 +81,7 @@ public class SettlementWorld extends TopDownWorld {
         choboHouseObstacle.setPosition(34, 5);
         getObstacles().add(choboHouseObstacle);
 
-        Obstacle dungeonObstacle = new DungeonObstacle(this, new Vector2(3, 8));
+        dungeonObstacle = new DungeonObstacle(this, new Vector2(3, 8));
         dungeonObstacle.setPosition(17, 8);
         getObstacles().add(dungeonObstacle);
 

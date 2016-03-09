@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.house;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.house.item.book.BookItem;
 import eu.janschupke.tale.content.stage.level.house.item.mead.MeadItem;
@@ -22,6 +23,13 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
 public class HouseWorld extends TopDownWorld {
     public HouseWorld(HouseScreen screen) {
         super("maps/house.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
     }
 
     @Override

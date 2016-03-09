@@ -78,8 +78,6 @@ public abstract class App extends Game {
             Gdx.app.setLogLevel(com.badlogic.gdx.Application.LOG_DEBUG);
         }
 
-        toggleStartupDebugRendering();
-
         // Preference configuration.
         settingsManager = new SettingsManager();
         resourceManager = new ResourceManager(this);
@@ -93,6 +91,7 @@ public abstract class App extends Game {
 
         initInputProcessors();
         resetState();
+        toggleStartupDebugRendering();
     }
 
     /**

@@ -1,7 +1,10 @@
 package eu.janschupke.tale.content.stage.level.forest.event.pickup;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
+import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.content.stage.level.forest.ForestScreen;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.tale.content.stage.level.forest.quest.ForestQuestManager;
@@ -11,6 +14,7 @@ import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.entity.Wall;
 import eu.janschupke.tale.framework.entity.WorldEntity;
 import eu.janschupke.tale.framework.event.PickupEvent;
+import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 import eu.janschupke.tale.framework.ui.dialog.InfoDialog;
 
@@ -63,7 +67,9 @@ public class CoinPickupEvent extends PickupEvent {
 
     @Override
     protected void updateInteractions() {
-
+        Interaction ukkoInteraction = app.getInteraction(InteractionTags.FOREST_UKKO);
+        ukkoInteraction.getSituation(SituationTags.FOREST_UKKO_TALK)
+                .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(true);
     }
 
     /**

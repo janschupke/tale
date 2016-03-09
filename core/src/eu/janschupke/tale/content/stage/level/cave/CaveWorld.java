@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.cave;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.cave.sensor.CorpsecExplorationSensor;
 import eu.janschupke.tale.content.stage.level.cave.sensor.OutskirtsTransitionSensor;
@@ -16,8 +17,21 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
  * @author jan.schupke@gmail.com
  */
 public class CaveWorld extends TopDownWorld {
+    private Unit villeUnit;
+    private Unit corpsecUnit;
+
     public CaveWorld(CaveScreen screen) {
         super("maps/cave.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
+
+        villeUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 1);
+        corpsecUnit.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 1);
     }
 
     @Override
@@ -29,11 +43,11 @@ public class CaveWorld extends TopDownWorld {
 
     @Override
     protected void initCreatures() {
-        Unit villeUnit = new VilleUnit(this);
+        villeUnit = new VilleUnit(this);
         villeUnit.setPosition(39, 39);
         getUnits().add(villeUnit);
 
-        Unit corpsecUnit = new CorpsecUnit(this);
+        corpsecUnit = new CorpsecUnit(this);
         corpsecUnit.setPosition(11, 22);
         getUnits().add(corpsecUnit);
     }

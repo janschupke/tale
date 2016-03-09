@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.outskirts;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.LumberItem;
 import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.VarpunenItem;
@@ -22,8 +23,27 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
  * @author jan.schupke@gmail.com
  */
 public class OutskirtsWorld extends TopDownWorld {
+    private Unit croneUnit;
+    private Unit jackUnit;
+    private Item lumberItem;
+    private Item varpunenNoteItem;
+    private Obstacle caveObstacle;
+
     public OutskirtsWorld(OutskirtsScreen screen) {
         super("maps/outskirts.tmx", 32f, screen);
+    }
+
+    @Override
+    protected void debugReposition() {
+        if (!Config.DEBUG_MODE) {
+            return;
+        }
+
+        croneUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 1);
+        varpunenNoteItem.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 1);
+        jackUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 3);
+        lumberItem.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 3);
+        caveObstacle.setPosition(getPlayerUnit().getX(), getPlayerUnit().getY() + 5);
     }
 
     @Override
@@ -35,31 +55,29 @@ public class OutskirtsWorld extends TopDownWorld {
 
     @Override
     protected void initCreatures() {
-        Unit croneUnit = new CroneUnit(this);
-//        croneUnit.setPosition(35, 36);
-        croneUnit.setPosition(18, 12);
+        croneUnit = new CroneUnit(this);
+        croneUnit.setPosition(35, 36);
         getUnits().add(croneUnit);
 
-        Unit jackUnit = new JackUnit(this);
+        jackUnit = new JackUnit(this);
         jackUnit.setPosition(9, 53);
         getUnits().add(jackUnit);
     }
 
     @Override
     protected void initItems() {
-        Item lumberItem = new LumberItem(this);
+        lumberItem = new LumberItem(this);
         lumberItem.setPosition(38, 57);
         getItems().add(lumberItem);
 
-        Item varpunenNoteItem = new VarpunenItem(this);
-//        varpunenNoteItem.setPosition(7, 15);
-        varpunenNoteItem.setPosition(22, 12);
+        varpunenNoteItem = new VarpunenItem(this);
+        varpunenNoteItem.setPosition(7, 15);
         getItems().add(varpunenNoteItem);
     }
 
     @Override
     protected void initObstacles() {
-        Obstacle caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
+        caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
         caveObstacle.setPosition(40, 10);
         getObstacles().add(caveObstacle);
 

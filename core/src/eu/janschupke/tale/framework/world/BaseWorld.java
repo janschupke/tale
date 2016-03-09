@@ -76,7 +76,14 @@ public abstract class BaseWorld {
         initObstacles();
         initEffects();
         initSensors();
+        debugReposition();
     }
+
+    /**
+     * Adjusts world objects positioning'so that they are close to the player
+     * for easier testing. Does nothing in production mode.
+     */
+    protected abstract void debugReposition();
 
     protected abstract void initPlayer();
 

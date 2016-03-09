@@ -19,7 +19,7 @@ public class TalkSituation extends Situation {
         decisions.add(new Decision(app.getLang().get("level.forest.interaction.ukko.talk.decision.purpose"),
                 DecisionTags.FOREST_UKKO_DISCUSS));
         decisions.add(new Decision(app.getLang().get("level.forest.interaction.ukko.talk.decision.delivery"),
-                DecisionTags.FOREST_UKKO_DELIVERY));
+                DecisionTags.FOREST_UKKO_DELIVERY, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }
