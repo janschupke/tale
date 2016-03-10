@@ -1,7 +1,10 @@
 package eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith;
 
 import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
+import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.content.stage.level.settlement.SettlementScreen;
 import eu.janschupke.tale.content.stage.level.settlement.item.HouseKeyItem;
 import eu.janschupke.tale.content.stage.level.settlement.quest.SettlementQuestManager;
@@ -12,6 +15,7 @@ import eu.janschupke.tale.framework.container.quest.QuestChain;
 import eu.janschupke.tale.framework.entity.Item;
 import eu.janschupke.tale.framework.event.InteractionEvent;
 import eu.janschupke.tale.framework.exception.InventoryFullException;
+import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
@@ -53,6 +57,10 @@ public class SmithKeyAcceptInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateInteractions() {
-        // TODO: enable chobo decisions.
+        Interaction choboInteraction = app.getInteraction(InteractionTags.SETTLEMENT_CHOBO);
+        choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_TALK)
+                .getDecision(DecisionTags.SETTLEMENT_CHOBO_KEY).setAvailable(true);
+        choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_HOUSE)
+                .getDecision(DecisionTags.SETTLEMENT_CHOBO_KEY).setAvailable(true);
     }
 }

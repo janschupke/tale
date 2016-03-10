@@ -1,7 +1,9 @@
 package eu.janschupke.tale.content.stage.level.cave.event.interaction.corpsec;
 
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
 import eu.janschupke.tale.content.stage.level.cave.item.JournalItem;
 import eu.janschupke.tale.content.stage.level.cave.quest.CaveQuestManager;
@@ -54,8 +56,7 @@ public class CorpsecLootInteractionEvent extends InteractionEvent {
     @Override
     protected void updateInteractions() {
         Interaction choboInteraction = app.getInteraction(InteractionTags.SETTLEMENT_CHOBO);
-        // TODO: enable chobo journal decisions
-//        choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_TALK)
-//                .getDecision(DecisionTags.)
+        choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_TALK)
+                .getDecision(DecisionTags.SETTLEMENT_CHOBO_JOURNAL).setAvailable(true);
     }
 }
