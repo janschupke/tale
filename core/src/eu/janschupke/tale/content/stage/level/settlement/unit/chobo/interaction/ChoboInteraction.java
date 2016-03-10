@@ -21,6 +21,7 @@ public class ChoboInteraction extends Interaction {
     private Situation houseSituation;
     private Situation journalDeliveredSituation;
     private Situation keyDeliveredSituation;
+    private Situation dungeonSituation;
 
     public ChoboInteraction(final App app, final Triggerable triggerable) {
         super(app, triggerable, InteractionTags.SETTLEMENT_CHOBO);
@@ -34,11 +35,13 @@ public class ChoboInteraction extends Interaction {
         houseSituation = new HouseSituation(app);
         journalDeliveredSituation = new JournalDeliveredSituation(app);
         keyDeliveredSituation = new KeyDeliveredSituation(app);
+        dungeonSituation = new DungeonSituation(app);
         situations.add(talkSituation);
         situations.add(journalSituation);
         situations.add(houseSituation);
         situations.add(journalDeliveredSituation);
         situations.add(keyDeliveredSituation);
+        situations.add(dungeonSituation);
         currentSituation = talkSituation;
         fallbackSituation = talkSituation;
     }
@@ -50,6 +53,11 @@ public class ChoboInteraction extends Interaction {
                     .getChoboDiscussHouseInteractionEvent().trigger();
 
             transition(houseSituation, app);
+        } else if (decision.getTag().equals(DecisionTags.SETTLEMENT_CHOBO_DUNGEON)) {
+            ((SettlementEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler())
+                    .getChoboDungeonInteractionEvent().trigger();
+
+            transition(dungeonSituation, app);
         } else if (decision.getTag().equals(DecisionTags.SETTLEMENT_CHOBO_KEY)) {
             ((SettlementEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler())
                     .getChoboKeyInteractionEvent().trigger();

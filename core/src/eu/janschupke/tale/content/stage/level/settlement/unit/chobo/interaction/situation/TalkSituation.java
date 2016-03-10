@@ -16,6 +16,8 @@ public class TalkSituation extends Situation {
         super(app, app.getLang().get("level.settlement.interaction.chobo.talk.description"),
                 SituationTags.SETTLEMENT_CHOBO_TALK);
 
+        decisions.add(new Decision(app.getLang().get("level.settlement.interaction.chobo.talk.decision.dungeon"),
+                DecisionTags.SETTLEMENT_CHOBO_DUNGEON));
         decisions.add(new Decision(app.getLang().get("level.settlement.interaction.chobo.talk.decision.journal"),
                 DecisionTags.SETTLEMENT_CHOBO_JOURNAL, false));
         decisions.add(new Decision(app.getLang().get("level.settlement.interaction.chobo.talk.decision.house"),

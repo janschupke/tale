@@ -7,6 +7,7 @@ import eu.janschupke.tale.content.stage.level.settlement.event.interaction.chobo
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithAssistanceInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithKeyAcceptInteractionEvent;
+import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithRamblingInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.framework.App;
@@ -26,6 +27,7 @@ public class SettlementEventHandler extends LevelEventHandler {
     private ChoboHouseInteractionEvent choboHouseInteractionEvent;
     private ChoboInteractionEvent choboInteractionEvent;
     private ChoboDiscussHouseInteractionEvent choboDiscussHouseInteractionEvent;
+    private ChoboDungeonInteractionEvent choboDungeonInteractionEvent;
     private ChoboJournalGiveInteractionEvent choboJournalGiveInteractionEvent;
     private ChoboJournalInteractionEvent choboJournalInteractionEvent;
     private ChoboKeyInteractionEvent choboKeyInteractionEvent;
@@ -37,6 +39,7 @@ public class SettlementEventHandler extends LevelEventHandler {
     private SmithInteractionEvent smithInteractionEvent;
     private SmithAssistanceInteractionEvent smithAssistanceInteractionEvent;
     private SmithKeyAcceptInteractionEvent smithKeyAcceptInteractionEvent;
+    private SmithRamblingInteractionEvent smithRamblingInteractionEvent;
     private TavernInteractionEvent tavernInteractionEvent;
 
     // Transition.
@@ -54,6 +57,7 @@ public class SettlementEventHandler extends LevelEventHandler {
         choboHouseInteractionEvent = new ChoboHouseInteractionEvent(app);
         choboInteractionEvent = new ChoboInteractionEvent(app);
         choboDiscussHouseInteractionEvent = new ChoboDiscussHouseInteractionEvent(app);
+        choboDungeonInteractionEvent = new ChoboDungeonInteractionEvent(app);
         choboJournalGiveInteractionEvent = new ChoboJournalGiveInteractionEvent(app);
         choboJournalInteractionEvent = new ChoboJournalInteractionEvent(app);
         choboKeyInteractionEvent = new ChoboKeyInteractionEvent(app);
@@ -65,11 +69,20 @@ public class SettlementEventHandler extends LevelEventHandler {
         smithInteractionEvent = new SmithInteractionEvent(app);
         smithAssistanceInteractionEvent = new SmithAssistanceInteractionEvent(app);
         smithKeyAcceptInteractionEvent = new SmithKeyAcceptInteractionEvent(app);
+        smithRamblingInteractionEvent = new SmithRamblingInteractionEvent(app);
         tavernInteractionEvent = new TavernInteractionEvent(app);
 
         // Transition.
         dungeonTransitionEvent = new DungeonTransitionEvent(app);
         outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
+    }
+
+    public ChoboDungeonInteractionEvent getChoboDungeonInteractionEvent() {
+        return choboDungeonInteractionEvent;
+    }
+
+    public SmithRamblingInteractionEvent getSmithRamblingInteractionEvent() {
+        return smithRamblingInteractionEvent;
     }
 
     public ChoboDiscussHouseInteractionEvent getChoboDiscussHouseInteractionEvent() {

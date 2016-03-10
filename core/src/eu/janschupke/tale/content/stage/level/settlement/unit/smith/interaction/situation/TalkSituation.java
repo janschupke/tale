@@ -16,6 +16,8 @@ public class TalkSituation extends Situation {
         super(app, app.getLang().get("level.settlement.interaction.smith.talk.description"),
                 SituationTags.SETTLEMENT_SMITH_TALK);
 
+        decisions.add(new Decision(app.getLang().get("level.settlement.interaction.smith.talk.decision.rambling"),
+                DecisionTags.SETTLEMENT_SMITH_RAMBLING));
         decisions.add(new Decision(app.getLang().get("level.settlement.interaction.smith.talk.decision.assistance"),
                 DecisionTags.SETTLEMENT_SMITH_ASSISTANCE));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
