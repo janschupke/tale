@@ -39,11 +39,9 @@ public class DungeonTransitionEvent extends TransitionEvent {
         Utility.transitionScreens(app, app.getScreenInstance(Screens.DUNGEON), app.getHud(Huds.STANDARD));
 
         // FIXME: rather blasphemous, though deadlines are real.
-        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().setLinearVelocity(0, Config.OBJECT_MAX_SPEED);
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().setLinearVelocity(0, -Config.OBJECT_MAX_SPEED);
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveDown();
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();
-
-        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_TRANSITION_CAVE, ((BaseScreen) app.getScreen()).getTag());
 
         app.getGameLog().addEntry(GameEventTags.SETTLEMENT_TRANSITION_DUNGEON, ((BaseScreen) app.getScreen()).getTag());
     }

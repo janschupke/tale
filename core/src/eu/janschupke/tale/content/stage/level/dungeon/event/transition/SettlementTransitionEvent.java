@@ -1,5 +1,6 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event.transition;
 
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
@@ -32,6 +33,13 @@ public class SettlementTransitionEvent extends TransitionEvent {
     protected void updateGameState() {
         Utility.preservePlayerMovement(app, Screens.SETTLEMENT);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.SETTLEMENT), app.getHud(Huds.STANDARD));
+
+        // FIXME: rather blasphemous, though deadlines are real.
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody()
+                .setLinearVelocity(-Config.OBJECT_MAX_SPEED, Config.OBJECT_MAX_SPEED);
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveUp();
+        app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();
+
         app.getGameLog().addEntry(GameEventTags.DUNGEON_TRANSITION_SETTLEMENT, ((BaseScreen) app.getScreen()).getTag());
     }
 
