@@ -120,18 +120,22 @@ public class GlobalLevelState extends LevelState {
         this.disputeAccepted = disputeAccepted;
     }
 
+    // TODO: needed?
     public boolean isJournalPicked() {
         return journalPicked;
     }
 
+    // TODO: needed?
     public void setJournalPicked(boolean journalPicked) {
         this.journalPicked = journalPicked;
     }
 
+    // TODO: needed?
     public boolean isSettlementKeyAcquired() {
         return settlementKeyAcquired;
     }
 
+    // TODO: needed?
     public void setSettlementKeyAcquired(boolean settlementKeyAcquired) {
         this.settlementKeyAcquired = settlementKeyAcquired;
     }

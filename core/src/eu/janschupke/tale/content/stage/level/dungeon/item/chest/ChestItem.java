@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.dungeon.item.chest;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.dungeon.event.DungeonEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.interaction.ChestInteraction;
@@ -21,7 +22,8 @@ public class ChestItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public ChestItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/chest.png")), ItemTags.DUNGEON_CHEST);
+        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/chest.png")),
+                new Vector2(1, 1), ItemTags.DUNGEON_CHEST);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.dungeon.item.chest.name");
         description = world.getScreen().getApp().getLang().get("level.dungeon.item.chest.description");

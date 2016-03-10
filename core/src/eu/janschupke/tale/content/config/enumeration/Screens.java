@@ -8,11 +8,10 @@ package eu.janschupke.tale.content.config.enumeration;
 public enum Screens {
     SPLASH,
     MENU,
-    INTRO,
     FOREST,
     OUTSKIRTS,
     CAVE,
     SETTLEMENT,
     DUNGEON,
-    OUTRO
+    OUTRO,
 }

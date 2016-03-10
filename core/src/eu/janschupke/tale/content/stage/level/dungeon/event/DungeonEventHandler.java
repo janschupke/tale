@@ -1,7 +1,13 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event;
 
 import eu.janschupke.tale.content.stage.level.dungeon.event.exploration.StudyExplorationEvent;
-import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.*;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestCollectInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestSearchInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.gate.GateInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.gate.GateOpenInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.harpsichord.HarpsichordInteractionEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.harpsichord.HarpsichordPlayInteractionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.ExitTransitionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.SettlementTransitionEvent;
 import eu.janschupke.tale.framework.App;
@@ -17,12 +23,13 @@ public class DungeonEventHandler extends LevelEventHandler {
     private StudyExplorationEvent studyExplorationEvent;
 
     // Interaction.
-    private BookInteractionEvent bookInteractionEvent;
     private ChestInteractionEvent chestInteractionEvent;
+    private ChestSearchInteractionEvent chestSearchInteractionEvent;
+    private ChestCollectInteractionEvent chestCollectInteractionEvent;
     private HarpsichordInteractionEvent harpsichordInteractionEvent;
-    private DoorInteractionEvent doorInteractionEvent;
+    private HarpsichordPlayInteractionEvent harpsichordPlayInteractionEvent;
     private GateInteractionEvent gateInteractionEvent;
-    private ScrollInteractionEvent scrollInteractionEvent;
+    private GateOpenInteractionEvent gateOpenInteractionEvent;
 
     // Transition.
     private ExitTransitionEvent exitTransitionEvent;
@@ -35,20 +42,33 @@ public class DungeonEventHandler extends LevelEventHandler {
         studyExplorationEvent = new StudyExplorationEvent(app);
 
         // Interaction.
-        bookInteractionEvent = new BookInteractionEvent(app);
         chestInteractionEvent = new ChestInteractionEvent(app);
+        chestSearchInteractionEvent = new ChestSearchInteractionEvent(app);
+        chestCollectInteractionEvent = new ChestCollectInteractionEvent(app);
         harpsichordInteractionEvent = new HarpsichordInteractionEvent(app);
-        doorInteractionEvent = new DoorInteractionEvent(app);
+        harpsichordPlayInteractionEvent = new HarpsichordPlayInteractionEvent(app);
         gateInteractionEvent = new GateInteractionEvent(app);
-        scrollInteractionEvent = new ScrollInteractionEvent(app);
+        gateOpenInteractionEvent = new GateOpenInteractionEvent(app);
 
         // Transition.
         exitTransitionEvent = new ExitTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
     }
 
-    public BookInteractionEvent getBookInteractionEvent() {
-        return bookInteractionEvent;
+    public ChestCollectInteractionEvent getChestCollectInteractionEvent() {
+        return chestCollectInteractionEvent;
+    }
+
+    public ChestSearchInteractionEvent getChestSearchInteractionEvent() {
+        return chestSearchInteractionEvent;
+    }
+
+    public GateOpenInteractionEvent getGateOpenInteractionEvent() {
+        return gateOpenInteractionEvent;
+    }
+
+    public HarpsichordPlayInteractionEvent getHarpsichordPlayInteractionEvent() {
+        return harpsichordPlayInteractionEvent;
     }
 
     public ChestInteractionEvent getChestInteractionEvent() {
@@ -63,16 +83,8 @@ public class DungeonEventHandler extends LevelEventHandler {
         return harpsichordInteractionEvent;
     }
 
-    public DoorInteractionEvent getDoorInteractionEvent() {
-        return doorInteractionEvent;
-    }
-
     public GateInteractionEvent getGateInteractionEvent() {
         return gateInteractionEvent;
-    }
-
-    public ScrollInteractionEvent getScrollInteractionEvent() {
-        return scrollInteractionEvent;
     }
 
     public SettlementTransitionEvent getSettlementTransitionEvent() {

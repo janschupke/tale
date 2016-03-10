@@ -21,7 +21,7 @@ public class GateObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
     public GateObstacle(BaseWorld world, Vector2 size) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/terrain/gate.png")), size);
+        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/terrain/gate-closed.png")), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new GateInteraction(world.getScreen().getApp(), this);
     }

@@ -1,18 +1,17 @@
-package eu.janschupke.tale.content.stage.level.dungeon.event.interaction;
+package eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest;
 
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.InteractionEvent;
-import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
- * Interaction event for the door of the first dungeon room.
+ * Searching the chest.
  *
  * @author jan.schupke@gmail.com
  */
-public class GateInteractionEvent extends InteractionEvent {
-    public GateInteractionEvent(final App app) {
+public class ChestSearchInteractionEvent extends InteractionEvent {
+    public ChestSearchInteractionEvent(final App app) {
         super(app);
     }
 
@@ -28,8 +27,7 @@ public class GateInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateGameState() {
-        InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_GATE_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_CHEST_SEARCH, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

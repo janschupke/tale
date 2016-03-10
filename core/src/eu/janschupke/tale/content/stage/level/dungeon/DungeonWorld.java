@@ -20,6 +20,10 @@ import eu.janschupke.tale.framework.world.TopDownWorld;
  * @author jan.schupke@gmail.com
  */
 public class DungeonWorld extends TopDownWorld {
+    private Item chestItem;
+    private Obstacle harpsichordObstacle;
+    private Obstacle gateObstacle;
+
     public DungeonWorld(DungeonScreen screen) {
         super("maps/dungeon.tmx", 32f, screen);
     }
@@ -29,6 +33,10 @@ public class DungeonWorld extends TopDownWorld {
         if (!Config.DEBUG_MODE) {
             return;
         }
+
+        chestItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 2);
+        harpsichordObstacle.setPosition(getPlayerUnit().getX() - 5, getPlayerUnit().getY() - 2);
+        gateObstacle.setPosition(getPlayerUnit().getX() + 2, getPlayerUnit().getY() - 2);
     }
 
     @Override
@@ -45,20 +53,20 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initItems() {
-        Item chestItem = new ChestItem(this);
+        chestItem = new ChestItem(this);
         chestItem.setPosition(15, 25);
         getItems().add(chestItem);
     }
 
     @Override
     protected void initObstacles() {
-        Obstacle harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(2, 2));
+        harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(2, 2));
         harpsichordObstacle.setPosition(37, 53);
         getObstacles().add(harpsichordObstacle);
 
-        Obstacle roomOneGateObstacle = new GateObstacle(this, new Vector2(2, 2));
-        roomOneGateObstacle.setPosition(18, 42);
-        getObstacles().add(roomOneGateObstacle);
+        gateObstacle = new GateObstacle(this, new Vector2(1, 2));
+        gateObstacle.setPosition(18, 42);
+        getObstacles().add(gateObstacle);
     }
 
     @Override
