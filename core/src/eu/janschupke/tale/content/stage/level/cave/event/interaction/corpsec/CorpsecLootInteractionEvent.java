@@ -49,8 +49,6 @@ public class CorpsecLootInteractionEvent extends InteractionEvent {
         } catch (InventoryFullException e) {
             new InventoryFullDialog(app).show(app.getUi());
         }
-
-        app.getGameState().getGlobalLevelState().setJournalPicked(true);
     }
 
     @Override

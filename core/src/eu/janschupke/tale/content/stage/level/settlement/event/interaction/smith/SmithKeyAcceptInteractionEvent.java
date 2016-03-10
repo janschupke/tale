@@ -51,8 +51,6 @@ public class SmithKeyAcceptInteractionEvent extends InteractionEvent {
         } catch (InventoryFullException e) {
             new InventoryFullDialog(app).show(app.getUi());
         }
-
-        app.getGameState().getGlobalLevelState().setSettlementKeyAcquired(true);
     }
 
     @Override

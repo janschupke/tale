@@ -53,6 +53,8 @@ public class VilleAggroInteractionEvent extends InteractionEvent {
             new InventoryFullDialog(app).show(app.getUi());
         }
 
+        app.getGameState().getGlobalLevelState().setBookPicked(true);
+
         // TODO: change ville texture.
     }
 

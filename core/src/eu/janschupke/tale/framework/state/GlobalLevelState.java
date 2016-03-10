@@ -18,9 +18,6 @@ public class GlobalLevelState extends LevelState {
     private boolean caveExplored;
     private boolean disputeAccepted;
 
-    private boolean journalPicked;
-    private boolean settlementKeyAcquired;
-
     public String getCurrentHint() {
         return currentHint;
     }
@@ -99,7 +96,6 @@ public class GlobalLevelState extends LevelState {
         return bookPicked;
     }
 
-    // TODO: test, debug, remove, prolly not needed to keep here
     public void setBookPicked(boolean bookPicked) {
         this.bookPicked = bookPicked;
     }
@@ -118,25 +114,5 @@ public class GlobalLevelState extends LevelState {
 
     public void setDisputeAccepted(boolean disputeAccepted) {
         this.disputeAccepted = disputeAccepted;
-    }
-
-    // TODO: needed?
-    public boolean isJournalPicked() {
-        return journalPicked;
-    }
-
-    // TODO: needed?
-    public void setJournalPicked(boolean journalPicked) {
-        this.journalPicked = journalPicked;
-    }
-
-    // TODO: needed?
-    public boolean isSettlementKeyAcquired() {
-        return settlementKeyAcquired;
-    }
-
-    // TODO: needed?
-    public void setSettlementKeyAcquired(boolean settlementKeyAcquired) {
-        this.settlementKeyAcquired = settlementKeyAcquired;
     }
 }
