@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.settlement.unit.chobo.interaction;
 
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.stage.level.settlement.unit.chobo.interaction.situation.TalkSituation;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.interaction.Decision;

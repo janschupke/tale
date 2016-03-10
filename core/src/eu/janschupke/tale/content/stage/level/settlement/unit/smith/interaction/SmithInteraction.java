@@ -1,11 +1,17 @@
 package eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction;
 
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
+import eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction.situation.AssistanceInquirySituation;
+import eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction.situation.KeyAcceptSituation;
+import eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction.situation.TalkSituation;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.interaction.Decision;
 import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.interaction.Situation;
+import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Interaction class for the Smith unit.
@@ -13,6 +19,9 @@ import eu.janschupke.tale.framework.interaction.Situation;
  * @author jan.schupke@gmail.com
  */
 public class SmithInteraction extends Interaction {
+    private Situation assistanceInquirySituation;
+    private Situation keyAcceptSituation;
+
     public SmithInteraction(final App app, final Triggerable triggerable) {
         super(app, triggerable, InteractionTags.SETTLEMENT_SMITH);
     }
@@ -21,13 +30,27 @@ public class SmithInteraction extends Interaction {
     protected void configure() {
         title = app.getLang().get("level.settlement.interaction.smith.title");
         Situation talkSituation = new TalkSituation(app);
+        assistanceInquirySituation = new AssistanceInquirySituation(app);
+        keyAcceptSituation = new KeyAcceptSituation(app);
         situations.add(talkSituation);
+        situations.add(assistanceInquirySituation);
+        situations.add(keyAcceptSituation);
         currentSituation = talkSituation;
         fallbackSituation = talkSituation;
     }
 
     @Override
     public void handle(Decision decision) {
-        triggerable.endInteraction(app);
+        if (decision.getTag().equals(DecisionTags.SETTLEMENT_SMITH_ASSISTANCE)) {
+            ((SettlementEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler())
+                    .getSmithAssistanceInteractionEvent().trigger();
+            transition(assistanceInquirySituation,app);
+        } else if (decision.getTag().equals(DecisionTags.SETTLEMENT_SMITH_ACCEPT)) {
+            ((SettlementEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler())
+                    .getSmithKeyAcceptInteractionEvent().trigger();
+            transition(keyAcceptSituation, app);
+        } else {
+            triggerable.endInteraction(app);
+        }
     }
 }

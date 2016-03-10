@@ -4,7 +4,9 @@ import eu.janschupke.tale.content.stage.level.settlement.event.exploration.Chobo
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.DungeonExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.*;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.chobo.ChoboInteractionEvent;
+import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithAssistanceInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithInteractionEvent;
+import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithKeyAcceptInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.framework.App;
@@ -29,6 +31,8 @@ public class SettlementEventHandler extends LevelEventHandler {
     private RoadSignInteractionEvent roadSignInteractionEvent;
     private SmithHouseInteractionEvent smithHouseInteractionEvent;
     private SmithInteractionEvent smithInteractionEvent;
+    private SmithAssistanceInteractionEvent smithAssistanceInteractionEvent;
+    private SmithKeyAcceptInteractionEvent smithKeyAcceptInteractionEvent;
     private TavernInteractionEvent tavernInteractionEvent;
 
     // Transition.
@@ -51,11 +55,21 @@ public class SettlementEventHandler extends LevelEventHandler {
         roadSignInteractionEvent = new RoadSignInteractionEvent(app);
         smithHouseInteractionEvent = new SmithHouseInteractionEvent(app);
         smithInteractionEvent = new SmithInteractionEvent(app);
+        smithAssistanceInteractionEvent = new SmithAssistanceInteractionEvent(app);
+        smithKeyAcceptInteractionEvent = new SmithKeyAcceptInteractionEvent(app);
         tavernInteractionEvent = new TavernInteractionEvent(app);
 
         // Transition.
         dungeonTransitionEvent = new DungeonTransitionEvent(app);
         outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
+    }
+
+    public SmithAssistanceInteractionEvent getSmithAssistanceInteractionEvent() {
+        return smithAssistanceInteractionEvent;
+    }
+
+    public SmithKeyAcceptInteractionEvent getSmithKeyAcceptInteractionEvent() {
+        return smithKeyAcceptInteractionEvent;
     }
 
     public ChoboExplorationEvent getChoboExplorationEvent() {

@@ -41,4 +41,6 @@ public enum DecisionTags {
 
     // Dungeon.
     SETTLEMENT_DUNGEON_ENTER,
+    SETTLEMENT_SMITH_ASSISTANCE,
+    SETTLEMENT_SMITH_ACCEPT,
 }
