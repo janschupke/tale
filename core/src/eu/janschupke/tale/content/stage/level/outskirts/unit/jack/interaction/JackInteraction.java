@@ -25,6 +25,7 @@ public class JackInteraction extends Interaction {
     private Situation repeatedDisputeSituation;
     private Situation disputeAcceptedSituation;
     private Situation disputeDoneSituation;
+    private Situation failSituation;
 
     public JackInteraction(final App app, final Triggerable triggerable) {
         super(app, triggerable, InteractionTags.OUTSKIRTS_JACK);
@@ -41,6 +42,7 @@ public class JackInteraction extends Interaction {
         repeatedDisputeSituation = new RepeatedDisputeSituation(app);
         disputeAcceptedSituation = new DisputeAcceptedSituation(app);
         disputeDoneSituation = new DisputeDoneSituation(app);
+        failSituation = new FailSituation(app);
         situations.add(talkSituation);
         situations.add(croneRamblingSituation);
         situations.add(lumberRequestSituation);
@@ -49,6 +51,7 @@ public class JackInteraction extends Interaction {
         situations.add(repeatedDisputeSituation);
         situations.add(disputeAcceptedSituation);
         situations.add(disputeDoneSituation);
+        situations.add(failSituation);
         currentSituation = talkSituation;
         fallbackSituation = talkSituation;
     }
@@ -76,6 +79,9 @@ public class JackInteraction extends Interaction {
         } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_BOOK_GIVE)) {
             ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackDisputeSolveInteractionEvent().trigger();
             transition(disputeDoneSituation, app);
+        } else if (decision.getTag().equals(DecisionTags.OUTSKIRTS_JACK_TALK_FAIL)) {
+            ((OutskirtsEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getJackFailInteractionEvent().trigger();
+            transition(failSituation, app);
         } else {
             triggerable.endInteraction(app);
         }

@@ -26,6 +26,8 @@ public class TalkSituation extends Situation {
                 DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE, false));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.book-give"),
                 DecisionTags.OUTSKIRTS_JACK_TALK_BOOK_GIVE, false));
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.fail"),
+                DecisionTags.OUTSKIRTS_JACK_TALK_FAIL, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

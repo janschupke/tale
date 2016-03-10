@@ -16,7 +16,7 @@ public class TalkSituation extends Situation {
         super(app, app.getLang().get("level.cave.interaction.ville.talk.description"), SituationTags.CAVE_VILLE_TALK);
 
         decisions.add(new Decision(app.getLang().get("level.cave.interaction.ville.talk.decision.inquiry"),
-                DecisionTags.CAVE_VILLE_TALK_INQUIRY));
+                DecisionTags.CAVE_VILLE_TALK_INQUIRY, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

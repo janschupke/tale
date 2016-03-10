@@ -1,8 +1,12 @@
 package eu.janschupke.tale.content.stage.level.cave.event.interaction.ville;
 
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
+import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.event.InteractionEvent;
+import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
@@ -32,6 +36,8 @@ public class VilleLeaveInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateInteractions() {
-
+        Interaction jackInteraction = app.getInteraction(InteractionTags.OUTSKIRTS_JACK);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_FAIL).setAvailable(true);
     }
 }

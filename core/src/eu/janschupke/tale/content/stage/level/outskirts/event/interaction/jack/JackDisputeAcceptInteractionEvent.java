@@ -52,5 +52,10 @@ public class JackDisputeAcceptInteractionEvent extends InteractionEvent {
         Interaction jackInteraction = app.getInteraction(InteractionTags.OUTSKIRTS_JACK);
         jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
                 .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_DISPUTE).setAvailable(false);
+
+        // Enabling cave book inquiry.
+        Interaction villeInteraction = app.getInteraction(InteractionTags.CAVE_VILLE);
+        villeInteraction.getSituation(SituationTags.CAVE_VILLE_TALK)
+                .getDecision(DecisionTags.CAVE_VILLE_TALK_INQUIRY).setAvailable(true);
     }
 }
