@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.cave.event.interaction;
+package eu.janschupke.tale.content.stage.level.cave.event.interaction.corpsec;
 
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
@@ -7,12 +7,12 @@ import eu.janschupke.tale.framework.interaction.InteractionSwitch;
 import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
- * Event for the interaction with the Ville unit.
+ * Event for the Corpsec unit interaction.
  *
  * @author jan.schupke@gmail.com
  */
-public class VilleInteractionEvent extends InteractionEvent {
-    public VilleInteractionEvent(final App app) {
+public class CorpsecInteractionEvent extends InteractionEvent {
+    public CorpsecInteractionEvent(final App app) {
         super(app);
     }
 
@@ -29,7 +29,7 @@ public class VilleInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
-        app.getGameLog().addEntry(GameEventTags.CAVE_INTERACTION_VILLE_TALK, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameLog().addEntry(GameEventTags.CAVE_INTERACTION_CORPSEC_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
     }
 
     @Override

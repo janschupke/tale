@@ -32,10 +32,11 @@ public enum DecisionTags {
     OUTSKIRTS_JACK_TALK_BOOK_GIVE,
 
     // Cave.
-    // Nothing yet.
-
-    // House.
-    // Nothing yet.
+    CAVE_CORPSEC_INVESTIGATE_SEARCH,
+    CAVE_CORPSEC_SEARCH_LOOT,
+    CAVE_VILLE_TALK_INQUIRY,
+    CAVE_VILLE_INQUIRY_AGGRO,
+    CAVE_VILLE_INQUIRY_LEAVE,
 
     // Dungeon.
     // Nothing yet.

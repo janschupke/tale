@@ -14,7 +14,7 @@ import eu.janschupke.tale.framework.interaction.Situation;
 public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
         super(app, app.getLang().get("level.dungeon.interaction.gate.investigate.description"),
-                SituationTags.DUNGEON_ROOM_ONE_GATE_INVESTIGATE);
+                SituationTags.DUNGEON_GATE_INVESTIGATE);
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
     }
 }

@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction;
+package eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction.situation;
 
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
@@ -14,6 +14,10 @@ import eu.janschupke.tale.framework.interaction.Situation;
 public class TalkSituation extends Situation {
     public TalkSituation(final App app) {
         super(app, app.getLang().get("level.cave.interaction.ville.talk.description"), SituationTags.CAVE_VILLE_TALK);
-        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"), DecisionTags.GLOBAL_END));
+
+        decisions.add(new Decision(app.getLang().get("level.cave.interaction.ville.talk.decision.inquiry"),
+                DecisionTags.CAVE_VILLE_TALK_INQUIRY));
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
+                DecisionTags.GLOBAL_END));
     }
 }
