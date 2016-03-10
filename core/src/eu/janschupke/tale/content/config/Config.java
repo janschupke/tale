@@ -89,7 +89,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 6;
-    public static final Screens FIRST_LEVEL = Screens.SETTLEMENT;
+    public static final Screens FIRST_LEVEL = Screens.DUNGEON;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;

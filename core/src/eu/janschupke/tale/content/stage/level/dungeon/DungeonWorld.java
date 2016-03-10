@@ -3,10 +3,7 @@ package eu.janschupke.tale.content.stage.level.dungeon;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
-import eu.janschupke.tale.content.stage.level.dungeon.item.book.BookItem;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.ChestItem;
-import eu.janschupke.tale.content.stage.level.dungeon.item.scroll.ScrollItem;
-import eu.janschupke.tale.content.stage.level.dungeon.obstacle.door.DoorObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.GateObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.harpsichord.HarpsichordObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.ExitTransitionSensor;
@@ -48,17 +45,9 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initItems() {
-        Item bookOneItem = new BookItem(this);
-        bookOneItem.setPosition(20, 20);
-        getItems().add(bookOneItem);
-
         Item chestItem = new ChestItem(this);
         chestItem.setPosition(15, 25);
         getItems().add(chestItem);
-
-        Item scrollItem = new ScrollItem(this);
-        scrollItem.setPosition(10, 20);
-        getItems().add(scrollItem);
     }
 
     @Override
@@ -66,10 +55,6 @@ public class DungeonWorld extends TopDownWorld {
         Obstacle harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(2, 2));
         harpsichordObstacle.setPosition(37, 53);
         getObstacles().add(harpsichordObstacle);
-
-        Obstacle roomFourDoorObstacle = new DoorObstacle(this, new Vector2(2, 2));
-        roomFourDoorObstacle.setPosition(13, 30);
-        getObstacles().add(roomFourDoorObstacle);
 
         Obstacle roomOneGateObstacle = new GateObstacle(this, new Vector2(2, 2));
         roomOneGateObstacle.setPosition(18, 42);
