@@ -44,7 +44,7 @@ public class SmithKeyAcceptInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_SMITH_ACCEPT, ((BaseScreen) app.getScreen()).getTag());
 
-        // Adding key to inventory.
+        // Adding house key to inventory.
         try {
             Item keyItem = new HouseKeyItem(app.getGameState().getCurrentLevel().getWorld());
             app.getGameState().getInventory().addItem(new InventoryItem(app, keyItem));
@@ -57,10 +57,18 @@ public class SmithKeyAcceptInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateInteractions() {
+        // Enabling quest completion decisions.
         Interaction choboInteraction = app.getInteraction(InteractionTags.SETTLEMENT_CHOBO);
         choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_TALK)
                 .getDecision(DecisionTags.SETTLEMENT_CHOBO_KEY).setAvailable(true);
         choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_HOUSE)
                 .getDecision(DecisionTags.SETTLEMENT_CHOBO_KEY).setAvailable(true);
+
+        // Disabling quest init decisions.
+        Interaction smithInteraction = app.getInteraction(InteractionTags.SETTLEMENT_SMITH);
+        smithInteraction.getSituation(SituationTags.SETTLEMENT_SMITH_TALK)
+                .getDecision(DecisionTags.SETTLEMENT_SMITH_ASSISTANCE).setAvailable(false);
+        smithInteraction.getSituation(SituationTags.SETTLEMENT_SMITH_RAMBLE)
+                .getDecision(DecisionTags.SETTLEMENT_SMITH_ASSISTANCE).setAvailable(false);
     }
 }

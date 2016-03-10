@@ -16,6 +16,8 @@ public class RamblingSituation extends Situation {
         super(app, app.getLang().get("level.settlement.interaction.smith.ramble.description"),
                 SituationTags.SETTLEMENT_SMITH_RAMBLE);
 
+        decisions.add(new Decision(app.getLang().get("level.settlement.interaction.smith.ramble.decision.assistance"),
+                DecisionTags.SETTLEMENT_SMITH_ASSISTANCE));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

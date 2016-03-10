@@ -29,6 +29,16 @@ public class MusicHandler extends BaseResourceContainer {
         dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
     }
 
+    /**
+     * Plays random harpsichord track over background music.
+     * Does not loop. On repeated calls stop the previous harpsichord track,
+     * if it is still playing.
+     */
+    public void playHarpsichord() {
+        Gdx.app.debug("MusicHandler#playHarpsichord", "Playing harpsichord");
+        // TODO: implement.
+    }
+
     public Music getMenuMusic() {
         return menuMusic;
     }

@@ -17,7 +17,7 @@ import eu.janschupke.tale.framework.screen.GameScreen;
  */
 public class GateInteraction extends Interaction {
     public GateInteraction(final App app, final Triggerable triggerable) {
-        super(app, triggerable, InteractionTags.DUNGEON_ROOM_ONE_GATE);
+        super(app, triggerable, InteractionTags.DUNGEON_GATE);
     }
 
     @Override

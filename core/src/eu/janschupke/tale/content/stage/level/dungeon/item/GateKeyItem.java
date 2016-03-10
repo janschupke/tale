@@ -13,7 +13,7 @@ import eu.janschupke.tale.framework.world.BaseWorld;
  */
 public class GateKeyItem extends Item {
     public GateKeyItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/key.png")), ItemTags.DUNGEON_KEY);
+        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/items/key.png")), ItemTags.DUNGEON_GATE_KEY);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.dungeon.item.key.name");
         description = world.getScreen().getApp().getLang().get("level.dungeon.item.key.description");
