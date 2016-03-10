@@ -39,6 +39,9 @@ public class OutskirtsWorld extends TopDownWorld {
             return;
         }
 
+        setSpawnPoint(55, 40);
+        positionPlayerUnit();
+
         croneUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 1);
         varpunenNoteItem.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() + 1);
         jackUnit.setPosition(getPlayerUnit().getX() - 1, getPlayerUnit().getY() + 3);

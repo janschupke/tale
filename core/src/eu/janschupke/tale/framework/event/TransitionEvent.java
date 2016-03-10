@@ -14,6 +14,7 @@ public abstract class TransitionEvent extends BaseEvent {
 
     public TransitionEvent(final App app, final String eventMessage) {
         super(app, eventMessage);
+        repeatable = true;
     }
 
     @Override

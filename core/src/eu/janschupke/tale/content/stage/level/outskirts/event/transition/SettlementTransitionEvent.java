@@ -16,7 +16,6 @@ import eu.janschupke.tale.framework.utility.Utility;
 public class SettlementTransitionEvent extends TransitionEvent {
     public SettlementTransitionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

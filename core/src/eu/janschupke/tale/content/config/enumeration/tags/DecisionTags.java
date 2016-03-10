@@ -40,5 +40,5 @@ public enum DecisionTags {
     CAVE_VILLE_INQUIRY_LEAVE,
 
     // Dungeon.
-    // Nothing yet.
+    SETTLEMENT_DUNGEON_ENTER,
 }

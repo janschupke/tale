@@ -3,6 +3,8 @@ package eu.janschupke.tale.content.stage.level.settlement.event;
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.ChoboExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.DungeonExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.*;
+import eu.janschupke.tale.content.stage.level.settlement.event.interaction.chobo.ChoboInteractionEvent;
+import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
 import eu.janschupke.tale.framework.App;

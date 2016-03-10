@@ -1,11 +1,14 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.dungeon.interaction;
 
+import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
+import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.framework.App;
 import eu.janschupke.tale.framework.entity.Triggerable;
 import eu.janschupke.tale.framework.interaction.Decision;
 import eu.janschupke.tale.framework.interaction.Interaction;
 import eu.janschupke.tale.framework.interaction.Situation;
+import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Interaction class for the dungeon structure.
@@ -28,6 +31,10 @@ public class DungeonInteraction extends Interaction {
 
     @Override
     public void handle(Decision decision) {
-        triggerable.endInteraction(app);
+        if (decision.getTag().equals(DecisionTags.SETTLEMENT_DUNGEON_ENTER)) {
+            ((SettlementEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getDungeonTransitionEvent().trigger();
+        } else {
+            triggerable.endInteraction(app);
+        }
     }
 }

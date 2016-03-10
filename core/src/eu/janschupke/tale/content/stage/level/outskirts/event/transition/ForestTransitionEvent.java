@@ -16,7 +16,6 @@ import eu.janschupke.tale.framework.utility.Utility;
 public class ForestTransitionEvent extends TransitionEvent {
     public ForestTransitionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

@@ -22,7 +22,6 @@ import eu.janschupke.tale.framework.utility.Utility;
 public class CaveTransitionEvent extends TransitionEvent {
     public CaveTransitionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

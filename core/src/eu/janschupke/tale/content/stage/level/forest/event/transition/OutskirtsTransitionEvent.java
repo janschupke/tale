@@ -16,7 +16,6 @@ import eu.janschupke.tale.framework.utility.Utility;
 public class OutskirtsTransitionEvent extends TransitionEvent {
     public OutskirtsTransitionEvent(final App app) {
         super(app);
-        repeatable = true;
     }
 
     @Override

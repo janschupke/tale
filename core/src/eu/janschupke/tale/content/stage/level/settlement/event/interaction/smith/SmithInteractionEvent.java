@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.stage.level.settlement.event.interaction;
+package eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith;
 
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.framework.App;
