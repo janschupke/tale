@@ -9,7 +9,7 @@ import eu.janschupke.tale.base.interaction.InteractionSwitch;
 import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.Hotkeys;
-import eu.janschupke.tale.content.ui.hud.StandardHud;
+import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 
 /**
  * Generic processor for all level type game states.

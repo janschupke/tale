@@ -14,8 +14,10 @@ import eu.janschupke.tale.content.stage.level.forest.ForestScreen;
 import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.tale.content.stage.level.settlement.SettlementScreen;
 import eu.janschupke.tale.content.stage.menu.MenuScreen;
+import eu.janschupke.tale.content.stage.outro.OutroScreen;
 import eu.janschupke.tale.content.stage.splash.SplashScreen;
-import eu.janschupke.tale.content.ui.hud.StandardHud;
+import eu.janschupke.tale.content.ui.hud.OutroHud;
+import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 import eu.janschupke.tale.content.ui.menu.*;
 
 /**
@@ -45,6 +47,10 @@ public class Tale extends App {
 		// Standard in-game overlay.
 		StandardHud standardHud = new StandardHud(this);
 		huds.put(Huds.STANDARD, standardHud);
+
+		// Outro text and exit button.
+		OutroHud outroHud = new OutroHud(this);
+		huds.put(Huds.OUTRO, outroHud);
 
 		// Main menu UI.
 		MainMenu mainMenu = new MainMenu(this);
@@ -91,6 +97,9 @@ public class Tale extends App {
 
 		MenuScreen menuScreen = new MenuScreen(this);
 		screens.put(Screens.MENU, menuScreen);
+
+		OutroScreen outroScreen = new OutroScreen(this);
+		screens.put(Screens.OUTRO, outroScreen);
 
 		ForestScreen forestScreen = new ForestScreen(this);
 		screens.put(Screens.FOREST, forestScreen);

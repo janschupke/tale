@@ -7,5 +7,5 @@ package eu.janschupke.tale.content.config.enumeration;
  */
 public enum Huds {
     STANDARD, MAINMENU, GAMEMENU, HOTKEYSMENU, SETTINGSMENU,
-    GRAPHICSMENU, AUDIOMENU, CREDITSMENU
+    GRAPHICSMENU, AUDIOMENU, CREDITSMENU, OUTRO,
 }

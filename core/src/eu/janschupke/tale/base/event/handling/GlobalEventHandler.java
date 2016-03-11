@@ -258,6 +258,14 @@ public class GlobalEventHandler {
     }
 
     /**
+     * Called when game is finished and player needs to exit the outro screen.
+     */
+    public void endGame() {
+        Gdx.app.debug("GlobalEventHandler#endGame", "Ending Game");
+        // TODO: implement.
+    }
+
+    /**
      * Starts a new game, discards old state
      * if exists and the action is confirmed by the user.
      */

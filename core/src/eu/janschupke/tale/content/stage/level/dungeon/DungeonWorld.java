@@ -23,6 +23,7 @@ public class DungeonWorld extends TopDownWorld {
     private Item chestItem;
     private Obstacle harpsichordObstacle;
     private Obstacle gateObstacle;
+    private Sensor exitTransitionSensor;
 
     public DungeonWorld(DungeonScreen screen) {
         super("maps/dungeon.tmx", 32f, screen);
@@ -37,6 +38,7 @@ public class DungeonWorld extends TopDownWorld {
         chestItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 2);
         harpsichordObstacle.setPosition(getPlayerUnit().getX() - 5, getPlayerUnit().getY() - 2);
         gateObstacle.setPosition(getPlayerUnit().getX() + 2, getPlayerUnit().getY() - 2);
+        exitTransitionSensor.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() - 3);
     }
 
     @Override
@@ -75,7 +77,8 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initSensors() {
-        Sensor exitTransitionSensor = new ExitTransitionSensor(this, new Vector2(0.5f, 5));
+        exitTransitionSensor = new ExitTransitionSensor(this, new Vector2(0.5f, 5));
+        // TODO
         exitTransitionSensor.setPosition(1, 1);
 
         Sensor settlementTransitionSensor = new SettlementTransitionSensor(this, new Vector2(5, 0.5f));

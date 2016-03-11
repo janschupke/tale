@@ -32,7 +32,7 @@ import eu.janschupke.tale.content.config.SettingsManager;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
-import eu.janschupke.tale.content.ui.hud.StandardHud;
+import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 import eu.janschupke.tale.logging.GameLog;
 
 import java.util.HashMap;

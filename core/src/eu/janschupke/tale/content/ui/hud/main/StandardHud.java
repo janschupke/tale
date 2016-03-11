@@ -1,8 +1,11 @@
-package eu.janschupke.tale.content.ui.hud;
+package eu.janschupke.tale.content.ui.hud.main;
 
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.ui.table.HudTable;
 import eu.janschupke.tale.content.config.Config;
+import eu.janschupke.tale.content.ui.hud.tab.InventoryTable;
+import eu.janschupke.tale.content.ui.hud.tab.MessageLogTable;
+import eu.janschupke.tale.content.ui.hud.tab.QuestLogTable;
 
 /**
  * Standard level HUD.
@@ -10,11 +13,37 @@ import eu.janschupke.tale.content.config.Config;
  * @author jan.schupke@gmail.com
  */
 public class StandardHud extends HudTable {
+    /**
+     * States in which the HUD can be.
+     */
+    public enum State {
+        /**
+         * Standard control GUI is visible.
+         */
+        HUD,
+
+        /**
+         * Inventory tab is visible.
+         */
+        INVENTORY,
+
+        /**
+         * Event log is visible.
+         */
+        EVENTS,
+
+        /**
+         * Quest log is visible.
+         */
+        QUESTS
+    }
+
     // Gameplay HUD tables.
     private HudMenuTable topMenuTable;
     private HintTable hintTable;
     private InteractionTable interactionTable;
     private IndicatorTable indicatorTable;
+
     // Fullscreen tables.
     private InventoryTable inventoryTable;
     private MessageLogTable messageLogTable;
@@ -156,30 +185,5 @@ public class StandardHud extends HudTable {
 
     public HintTable getHintTable() {
         return hintTable;
-    }
-
-    /**
-     * States in which the HUD can be.
-     */
-    public enum State {
-        /**
-         * Standard control GUI is visible.
-         */
-        HUD,
-
-        /**
-         * Inventory tab is visible.
-         */
-        INVENTORY,
-
-        /**
-         * Event log is visible.
-         */
-        EVENTS,
-
-        /**
-         * Quest log is visible.
-         */
-        QUESTS
     }
 }

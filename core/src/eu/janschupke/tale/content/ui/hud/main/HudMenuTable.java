@@ -1,4 +1,4 @@
-package eu.janschupke.tale.content.ui.hud;
+package eu.janschupke.tale.content.ui.hud.main;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
