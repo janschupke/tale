@@ -26,7 +26,7 @@ public class CaveWorld extends TopDownWorld {
 
     @Override
     protected void debugReposition() {
-        if (!Config.DEBUG_MODE) {
+        if (!Config.DEBUG_OBJECT_POSITION) {
             return;
         }
 

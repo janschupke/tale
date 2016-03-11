@@ -64,6 +64,7 @@ public class Config {
     public static final float MAP_DEFAULT_SPEED = 1.0f;
     // Development variables.
     public static final boolean DEBUG_MODE = true;
+    public static final boolean DEBUG_OBJECT_POSITION = false;
     // UI values.
     public static final int SLIDER_MIN = 0;
     public static final int SLIDER_MAX = 100;
@@ -88,8 +89,8 @@ public class Config {
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
-    public static final int INVENTORY_CAPACITY = 6;
-    public static final Screens FIRST_LEVEL = Screens.OUTSKIRTS;
+    public static final int INVENTORY_CAPACITY = 8;
+    public static final Screens FIRST_LEVEL = Screens.FOREST;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;
