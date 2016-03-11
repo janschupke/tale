@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.chobo_house;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.chobo_house.interaction.ChoboHouseInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class ChoboHouseObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public ChoboHouseObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementChoboHouseTexture(), size);
+    public ChoboHouseObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementChoboHouseTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new ChoboHouseInteraction(world.getScreen().getApp(), this);
     }

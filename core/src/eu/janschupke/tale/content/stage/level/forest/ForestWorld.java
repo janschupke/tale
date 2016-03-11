@@ -32,6 +32,8 @@ public class ForestWorld extends TopDownWorld {
             return;
         }
 
+        setSpawnPoint(45, 32);
+        positionPlayerUnit();
         goldCoinItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 1);
         ukkoUnit.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() + 1);
     }
@@ -67,7 +69,7 @@ public class ForestWorld extends TopDownWorld {
         questWall.setPosition(47, 36);
         getObstacles().add(questWall);
 
-        Obstacle caravanObstacle = new CaravanObstacle(this, new Vector2(4, 4));
+        Obstacle caravanObstacle = new CaravanObstacle(this, 4);
         caravanObstacle.setPosition(46, 19);
         getObstacles().add(caravanObstacle);
 

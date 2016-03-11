@@ -14,9 +14,17 @@ import eu.janschupke.tale.framework.world.BaseWorld;
  * @author jan.schupke@gmail.com
  */
 public abstract class Obstacle extends WorldObject {
+    public Obstacle(BaseWorld world, Texture texture, int radius) {
+        super(world, texture, radius);
+        initCollisions();
+    }
+
     public Obstacle(BaseWorld world, Texture texture, Vector2 size) {
         super(world, texture, size);
+        initCollisions();
+    }
 
+    private void initCollisions() {
         WorldObjectFactory.setCollisions(body, Config.BIT_OBSTACLE_ANY, (short) (Config.BIT_OBSTACLE_ANY | Config.BIT_UNIT_ANY));
         body.setType(BodyDef.BodyType.StaticBody);
     }

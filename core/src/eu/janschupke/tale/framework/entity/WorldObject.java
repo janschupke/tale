@@ -16,9 +16,17 @@ public abstract class WorldObject extends WorldEntity {
     protected String name;
     protected Box2DSprite sprite;
 
+    public WorldObject(BaseWorld world, Texture texture, int radius) {
+        super(world, radius);
+        initSprite(texture);
+    }
+
     public WorldObject(BaseWorld world, Texture texture, Vector2 size) {
         super(world, size);
+        initSprite(texture);
+    }
 
+    private void initSprite(Texture texture) {
         sprite = new Box2DSprite();
         sprite.setSize(size.x, size.y);
         sprite.setPosition(defaultPosition.x, defaultPosition.y);

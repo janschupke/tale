@@ -18,6 +18,24 @@ public abstract class WorldEntity {
     protected Vector2 defaultPosition = new Vector2(0, 0);
     protected Vector2 size;
 
+    /**
+     * Creates the entity with circular Box2D body.
+     * @param world Box2D world instance.
+     * @param radius Body radius.
+     */
+    public WorldEntity(BaseWorld world, int radius) {
+        this.world = world;
+        this.size = new Vector2(radius, radius);
+        this.interactionHint = world.getScreen().getApp().getLang().get("hint.global.interact");
+        body = WorldObjectFactory.createCircle(world.getBoxWorld(), radius, defaultPosition, BodyDef.BodyType.DynamicBody, true);
+        body.setUserData(this);
+    }
+
+    /**
+     * Creates the entity with box-shaped Box2D body.
+     * @param world Box2D world instance.
+     * @param size Body size.
+     */
     public WorldEntity(BaseWorld world, Vector2 size) {
         this.world = world;
         this.size = size;

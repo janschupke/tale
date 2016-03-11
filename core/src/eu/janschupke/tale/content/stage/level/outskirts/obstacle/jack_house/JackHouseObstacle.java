@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.obstacle.jack_house;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.jack_house.interaction.JackHouseInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class JackHouseObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public JackHouseObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsJackHouseTexture(), size);
+    public JackHouseObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsJackHouseTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new JackHouseInteraction(world.getScreen().getApp(), this);
     }

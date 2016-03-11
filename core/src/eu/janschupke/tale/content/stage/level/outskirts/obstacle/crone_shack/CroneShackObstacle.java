@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.obstacle.crone_shack;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.crone_shack.interaction.CroneShackInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class CroneShackObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public CroneShackObstacle(BaseWorld world,  Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsCroneShackTexture(), size);
+    public CroneShackObstacle(BaseWorld world,  int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsCroneShackTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new CroneShackInteraction(world.getScreen().getApp(), this);
     }

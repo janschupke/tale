@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.tavern;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.tavern.interaction.TavernInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class TavernObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public TavernObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementTavernTexture(), size);
+    public TavernObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementTavernTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new TavernInteraction(world.getScreen().getApp(), this);
     }

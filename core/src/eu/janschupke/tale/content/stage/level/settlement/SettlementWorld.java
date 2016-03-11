@@ -73,11 +73,11 @@ public class SettlementWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        blacksmithObstacle = new BlacksmithObstacle(this, new Vector2(5, 5));
+        blacksmithObstacle = new BlacksmithObstacle(this, 5);
         blacksmithObstacle.setPosition(42, 48);
         getObstacles().add(blacksmithObstacle);
 
-        Obstacle choboHouseObstacle = new ChoboHouseObstacle(this, new Vector2(7, 7));
+        Obstacle choboHouseObstacle = new ChoboHouseObstacle(this, 7);
         choboHouseObstacle.setPosition(34, 5);
         getObstacles().add(choboHouseObstacle);
 
@@ -85,19 +85,19 @@ public class SettlementWorld extends TopDownWorld {
         dungeonObstacle.setPosition(17, 8);
         getObstacles().add(dungeonObstacle);
 
-        Obstacle farmObstacle = new FarmObstacle(this, new Vector2(5, 5));
+        Obstacle farmObstacle = new FarmObstacle(this, 5);
         farmObstacle.setPosition(27, 36);
         getObstacles().add(farmObstacle);
 
-        Obstacle fountainObstacle = new FountainObstacle(this, new Vector2(3, 3));
+        Obstacle fountainObstacle = new FountainObstacle(this, 3);
         fountainObstacle.setPosition(35, 41);
         getObstacles().add(fountainObstacle);
 
-        Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(2, 2));
+        Obstacle roadSignObstacle = new RoadSignObstacle(this, 2);
         roadSignObstacle.setPosition(8, 46);
         getObstacles().add(roadSignObstacle);
 
-        Obstacle tavernObstacle = new TavernObstacle(this, new Vector2(5, 5));
+        Obstacle tavernObstacle = new TavernObstacle(this, 5);
         tavernObstacle.setPosition(50, 38);
         getObstacles().add(tavernObstacle);
 

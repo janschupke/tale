@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.blacksmith;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.blacksmith.interaction.BlacksmithInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class BlacksmithObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public BlacksmithObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementBlacksmithObstacleTexture(), size);
+    public BlacksmithObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementBlacksmithObstacleTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new BlacksmithInteraction(world.getScreen().getApp(), this);
     }

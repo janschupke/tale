@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.forest.obstacle.caravan;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.interaction.CaravanInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class CaravanObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public CaravanObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaravanObstacleTexture(), size);
+    public CaravanObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaravanObstacleTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new CaravanInteraction(world.getScreen().getApp(), this);
     }

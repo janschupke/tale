@@ -80,19 +80,19 @@ public class OutskirtsWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        caveObstacle = new CaveObstacle(this, new Vector2(3, 3));
+        caveObstacle = new CaveObstacle(this, 3);
         caveObstacle.setPosition(40, 10);
         getObstacles().add(caveObstacle);
 
-        Obstacle croneShackObstacle = new CroneShackObstacle(this, new Vector2(3, 3));
+        Obstacle croneShackObstacle = new CroneShackObstacle(this, 3);
         croneShackObstacle.setPosition(38, 35);
         getObstacles().add(croneShackObstacle);
 
-        Obstacle jackHouseObstacle = new JackHouseObstacle(this, new Vector2(3, 3));
+        Obstacle jackHouseObstacle = new JackHouseObstacle(this, 3);
         jackHouseObstacle.setPosition(8, 56);
         getObstacles().add(jackHouseObstacle);
 
-        Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(3, 3));
+        Obstacle roadSignObstacle = new RoadSignObstacle(this, 3);
         roadSignObstacle.setPosition(30, 38);
         getObstacles().add(roadSignObstacle);
 

@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.farm;
 
-import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.farm.interaction.FarmInteraction;
 import eu.janschupke.tale.framework.entity.Obstacle;
@@ -18,8 +17,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
 public class FarmObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public FarmObstacle(BaseWorld world, Vector2 size) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementFarmTexture(), size);
+    public FarmObstacle(BaseWorld world, int radius) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementFarmTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new FarmInteraction(world.getScreen().getApp(), this);
     }
