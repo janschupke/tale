@@ -1,8 +1,8 @@
 package eu.janschupke.tale.content.stage.level.forest.quest.chain.intro;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.QuestChain;
 import eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.quest.delivery.DeliveryQuest;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.QuestChain;
 
 /**
  * First tutorial quest chain.

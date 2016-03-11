@@ -7,12 +7,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.inventory.Inventory;
+import eu.janschupke.tale.base.container.inventory.InventoryItem;
+import eu.janschupke.tale.base.exception.NoHudException;
+import eu.janschupke.tale.base.ui.table.UiTable;
 import eu.janschupke.tale.content.config.Config;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.inventory.Inventory;
-import eu.janschupke.tale.framework.container.inventory.InventoryItem;
-import eu.janschupke.tale.framework.exception.NoHudException;
-import eu.janschupke.tale.framework.ui.table.UiTable;
 
 import java.util.Observable;
 import java.util.Observer;

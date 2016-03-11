@@ -2,10 +2,10 @@ package eu.janschupke.tale.content.stage.menu;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.screen.UiScreen;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Screens;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.screen.UiScreen;
 
 /**
  * Main menu screen.

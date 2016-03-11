@@ -1,6 +1,8 @@
 package eu.janschupke.tale.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.*;
+import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.CoinItem;
@@ -10,8 +12,6 @@ import eu.janschupke.tale.content.stage.level.forest.obstacle.QuestWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
 import eu.janschupke.tale.content.stage.level.forest.sensor.*;
 import eu.janschupke.tale.content.stage.level.forest.unit.ukko.UkkoUnit;
-import eu.janschupke.tale.framework.entity.*;
-import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * Forest (Tutorial) world.

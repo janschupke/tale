@@ -1,9 +1,9 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event.transition;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.TransitionEvent;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.TransitionEvent;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Transition event that ends the game.

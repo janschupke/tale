@@ -1,9 +1,9 @@
 package eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.QuestChain;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.dispute.DisputeQuest;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.lumber.LumberQuest;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.QuestChain;
 
 /**
  * Jack's quest chain.

@@ -1,9 +1,9 @@
 package eu.janschupke.tale.content.stage.level.settlement.event.exploration;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.ExplorationEvent;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.ExplorationEvent;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Exploration event for the Chobo's house area.

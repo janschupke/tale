@@ -1,10 +1,10 @@
 package eu.janschupke.tale.content.stage.level.forest.event.general;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.GeneralEvent;
+import eu.janschupke.tale.base.screen.BaseScreen;
+import eu.janschupke.tale.base.ui.dialog.InfoDialog;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.GeneralEvent;
-import eu.janschupke.tale.framework.screen.BaseScreen;
-import eu.janschupke.tale.framework.ui.dialog.InfoDialog;
 
 /**
  * Wall event triggered when engaging contact with quest wall

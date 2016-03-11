@@ -1,8 +1,8 @@
 package eu.janschupke.tale.content.stage.level.settlement.quest.chain.key.quest;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.Quest;
 import eu.janschupke.tale.content.stage.level.settlement.quest.chain.key.quest.task.KeyDeliveryTask;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.Quest;
 
 /**
  * Settlement key delivery quest.

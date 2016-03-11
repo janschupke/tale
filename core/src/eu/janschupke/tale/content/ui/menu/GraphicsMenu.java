@@ -4,11 +4,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.ui.PreferenceMenu;
+import eu.janschupke.tale.base.ui.table.MenuTable;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.ui.dialog.RestartDialog;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.ui.PreferenceMenu;
-import eu.janschupke.tale.framework.ui.table.MenuTable;
 
 /**
  * Graphics settings UI.

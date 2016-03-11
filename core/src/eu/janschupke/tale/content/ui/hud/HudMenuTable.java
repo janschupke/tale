@@ -3,10 +3,10 @@ package eu.janschupke.tale.content.ui.hud;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.ui.table.UiTable;
 import eu.janschupke.tale.content.config.Config;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.ui.table.UiTable;
 
 /**
  * GUI table structure for on-screen level menu.

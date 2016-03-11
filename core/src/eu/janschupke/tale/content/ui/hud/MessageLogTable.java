@@ -8,10 +8,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.exception.NoHudException;
+import eu.janschupke.tale.base.ui.table.UiTable;
 import eu.janschupke.tale.content.config.Config;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.exception.NoHudException;
-import eu.janschupke.tale.framework.ui.table.UiTable;
 
 import java.util.Observable;
 import java.util.Observer;

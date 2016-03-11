@@ -1,9 +1,9 @@
 package eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.lumber;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.Quest;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.lumber.task.LumberDeliveryTask;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.lumber.task.LumberPickupTask;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.Quest;
 
 /**
  * Jack's lumber retrieval quest.

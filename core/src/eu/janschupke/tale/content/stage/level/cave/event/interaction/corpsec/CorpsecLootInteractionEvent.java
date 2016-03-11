@@ -1,5 +1,13 @@
 package eu.janschupke.tale.content.stage.level.cave.event.interaction.corpsec;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.inventory.InventoryItem;
+import eu.janschupke.tale.base.container.quest.QuestChain;
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.event.InteractionEvent;
+import eu.janschupke.tale.base.exception.InventoryFullException;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
@@ -8,14 +16,6 @@ import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
 import eu.janschupke.tale.content.stage.level.cave.item.JournalItem;
 import eu.janschupke.tale.content.stage.level.cave.quest.CaveQuestManager;
 import eu.janschupke.tale.content.ui.dialog.InventoryFullDialog;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.inventory.InventoryItem;
-import eu.janschupke.tale.framework.container.quest.QuestChain;
-import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.event.InteractionEvent;
-import eu.janschupke.tale.framework.exception.InventoryFullException;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Journal looting event.

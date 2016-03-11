@@ -1,5 +1,10 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event.interaction.gate;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.entity.WorldEntity;
+import eu.janschupke.tale.base.event.InteractionEvent;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
@@ -7,11 +12,6 @@ import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.content.stage.level.dungeon.DungeonScreen;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.GateObstacle;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.WorldEntity;
-import eu.janschupke.tale.framework.event.InteractionEvent;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Opening the gate.

@@ -1,6 +1,8 @@
 package eu.janschupke.tale.content.stage.level.outskirts;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.*;
+import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.LumberItem;
@@ -14,8 +16,6 @@ import eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign.RoadS
 import eu.janschupke.tale.content.stage.level.outskirts.sensor.*;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.CroneUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.JackUnit;
-import eu.janschupke.tale.framework.entity.*;
-import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * Outskirts (Level 1) world.

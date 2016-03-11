@@ -1,5 +1,11 @@
 package eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Decision;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.interaction.Situation;
+import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.stage.level.cave.event.CaveEventHandler;
@@ -7,12 +13,6 @@ import eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction.situat
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction.situation.BookInquirySituation;
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction.situation.BookLeaveSituation;
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.interaction.situation.TalkSituation;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Decision;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.interaction.Situation;
-import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Interaction class for the Ville unit.

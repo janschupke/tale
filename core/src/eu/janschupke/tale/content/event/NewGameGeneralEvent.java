@@ -1,9 +1,9 @@
 package eu.janschupke.tale.content.event;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.GeneralEvent;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.GeneralEvent;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Triggered when new game is requested. Log the action.

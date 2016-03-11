@@ -1,6 +1,11 @@
 package eu.janschupke.tale.content.stage.level.settlement;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Obstacle;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.entity.Wall;
+import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.OutskirtsTransitionWall;
@@ -16,11 +21,6 @@ import eu.janschupke.tale.content.stage.level.settlement.sensor.DungeonExplorati
 import eu.janschupke.tale.content.stage.level.settlement.sensor.OutskirtsTransitionSensor;
 import eu.janschupke.tale.content.stage.level.settlement.unit.chobo.ChoboUnit;
 import eu.janschupke.tale.content.stage.level.settlement.unit.smith.SmithUnit;
-import eu.janschupke.tale.framework.entity.Obstacle;
-import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.entity.Unit;
-import eu.janschupke.tale.framework.entity.Wall;
-import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the settlement level.

@@ -1,7 +1,7 @@
 package eu.janschupke.tale.content.stage.level.outskirts.quest.chain.crone.quest.delivery.task;
 
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.Task;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.Task;
 
 /**
  * Varpunen note delivery task.

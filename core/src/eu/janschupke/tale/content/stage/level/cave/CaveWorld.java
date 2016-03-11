@@ -1,15 +1,15 @@
 package eu.janschupke.tale.content.stage.level.cave;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.cave.sensor.CorpsecExplorationSensor;
 import eu.janschupke.tale.content.stage.level.cave.sensor.OutskirtsTransitionSensor;
 import eu.janschupke.tale.content.stage.level.cave.unit.corpsec.CorpsecUnit;
 import eu.janschupke.tale.content.stage.level.cave.unit.ville.VilleUnit;
-import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.entity.Unit;
-import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the cave level.

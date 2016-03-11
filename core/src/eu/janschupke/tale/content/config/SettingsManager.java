@@ -2,7 +2,7 @@ package eu.janschupke.tale.content.config;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
-import eu.janschupke.tale.framework.config.ConfigManager;
+import eu.janschupke.tale.base.config.ConfigManager;
 
 /**
  * Configuration manager class that handles loading, saving and resetting the configuration.

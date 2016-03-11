@@ -1,8 +1,8 @@
 package eu.janschupke.tale.content.stage.level.forest.quest;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.QuestManager;
 import eu.janschupke.tale.content.stage.level.forest.quest.chain.intro.IntroQuestChain;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.QuestManager;
 
 /**
  * Quest manager for the forest level.

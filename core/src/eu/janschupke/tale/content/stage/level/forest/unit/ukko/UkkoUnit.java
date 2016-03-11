@@ -2,14 +2,14 @@ package eu.janschupke.tale.content.stage.level.forest.unit.ukko;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.interaction.InteractionSwitch;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.unit.ukko.interaction.UkkoInteraction;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.entity.Unit;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.interaction.InteractionSwitch;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Ukko unit class.

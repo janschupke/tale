@@ -1,12 +1,12 @@
 package eu.janschupke.tale.content.stage.level.settlement.sensor;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
-import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Exploration sensor for the Chobo's area.

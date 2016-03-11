@@ -1,6 +1,10 @@
 package eu.janschupke.tale.content.stage.level.dungeon;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.entity.Obstacle;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.ChestItem;
@@ -9,10 +13,6 @@ import eu.janschupke.tale.content.stage.level.dungeon.obstacle.harpsichord.Harps
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.ExitTransitionSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.SettlementTransitionSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.StudyExplorationSensor;
-import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.entity.Obstacle;
-import eu.janschupke.tale.framework.entity.Sensor;
-import eu.janschupke.tale.framework.world.TopDownWorld;
 
 /**
  * World for the dungeon level.

@@ -1,5 +1,7 @@
 package eu.janschupke.tale.content.stage.level.settlement.event;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.handling.LevelEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.ChoboExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.exploration.DungeonExplorationEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.*;
@@ -10,8 +12,6 @@ import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith
 import eu.janschupke.tale.content.stage.level.settlement.event.interaction.smith.SmithRamblingInteractionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.DungeonTransitionEvent;
 import eu.janschupke.tale.content.stage.level.settlement.event.transition.OutskirtsTransitionEvent;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the settlement level.

@@ -1,10 +1,10 @@
 package eu.janschupke.tale.content.stage.level.forest.obstacle;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.entity.Wall;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.world.BaseWorld;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.entity.Wall;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.world.BaseWorld;
 
 /**
  * A wall obstacle that prevents passing through transition sensor.

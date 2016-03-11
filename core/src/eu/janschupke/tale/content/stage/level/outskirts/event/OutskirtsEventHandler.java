@@ -1,5 +1,7 @@
 package eu.janschupke.tale.content.stage.level.outskirts.event;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.handling.LevelEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.CaveExplorationEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.JackExplorationEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.exploration.VarpunenExplorationEvent;
@@ -13,8 +15,6 @@ import eu.janschupke.tale.content.stage.level.outskirts.event.pickup.VarpunenPic
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.CaveTransitionEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.ForestTransitionEvent;
 import eu.janschupke.tale.content.stage.level.outskirts.event.transition.SettlementTransitionEvent;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the outskirts level.

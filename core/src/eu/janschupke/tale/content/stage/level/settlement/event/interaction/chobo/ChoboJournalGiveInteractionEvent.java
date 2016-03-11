@@ -1,5 +1,11 @@
 package eu.janschupke.tale.content.stage.level.settlement.event.interaction.chobo;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.QuestChain;
+import eu.janschupke.tale.base.container.quest.enumeration.TaskStatus;
+import eu.janschupke.tale.base.event.InteractionEvent;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
@@ -8,12 +14,6 @@ import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
 import eu.janschupke.tale.content.stage.level.cave.quest.CaveQuestManager;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.QuestChain;
-import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
-import eu.janschupke.tale.framework.event.InteractionEvent;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.screen.BaseScreen;
 
 /**
  * Journal was offered.

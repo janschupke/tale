@@ -1,14 +1,14 @@
 package eu.janschupke.tale.content.stage.level.forest.item.coin.interaction;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Decision;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Decision;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.screen.GameScreen;
 
 /**
  * Gold coin interaction class.

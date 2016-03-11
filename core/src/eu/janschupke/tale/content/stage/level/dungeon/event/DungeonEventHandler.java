@@ -1,5 +1,7 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.handling.LevelEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.event.exploration.StudyExplorationEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestCollectInteractionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestInteractionEvent;
@@ -10,8 +12,6 @@ import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.harpsich
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.harpsichord.HarpsichordPlayInteractionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.ExitTransitionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.SettlementTransitionEvent;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the dungeon level.

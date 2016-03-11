@@ -1,14 +1,14 @@
 package eu.janschupke.tale.content.stage.level.forest.item.coin;
 
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.interaction.InteractionSwitch;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.interaction.CoinInteraction;
-import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.interaction.InteractionSwitch;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Gold coin item entity.

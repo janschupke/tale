@@ -1,14 +1,14 @@
 package eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Obstacle;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.interaction.InteractionSwitch;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.stage.level.dungeon.event.DungeonEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.interaction.GateInteraction;
-import eu.janschupke.tale.framework.entity.Obstacle;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.interaction.InteractionSwitch;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Gate of the first dungeon room.

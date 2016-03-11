@@ -1,15 +1,15 @@
 package eu.janschupke.tale.content.stage.level.dungeon.item.chest;
 
 import com.badlogic.gdx.math.Vector2;
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.entity.Triggerable;
+import eu.janschupke.tale.base.interaction.Interaction;
+import eu.janschupke.tale.base.interaction.InteractionSwitch;
+import eu.janschupke.tale.base.screen.GameScreen;
+import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.dungeon.event.DungeonEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.item.chest.interaction.ChestInteraction;
-import eu.janschupke.tale.framework.entity.Item;
-import eu.janschupke.tale.framework.entity.Triggerable;
-import eu.janschupke.tale.framework.interaction.Interaction;
-import eu.janschupke.tale.framework.interaction.InteractionSwitch;
-import eu.janschupke.tale.framework.screen.GameScreen;
-import eu.janschupke.tale.framework.world.BaseWorld;
 
 /**
  * Dungeon chest item.

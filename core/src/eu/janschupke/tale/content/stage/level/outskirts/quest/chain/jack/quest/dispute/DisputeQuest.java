@@ -1,10 +1,10 @@
 package eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.dispute;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.quest.Quest;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.dispute.task.BookAcquirementTask;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.dispute.task.BookRetrievalTask;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.chain.jack.quest.dispute.task.CaveDiscoveryTask;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.container.quest.Quest;
 
 /**
  * Jack's dispute quest.

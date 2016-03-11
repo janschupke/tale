@@ -1,6 +1,6 @@
 package eu.janschupke.tale.content.config;
 
-import eu.janschupke.tale.framework.config.enumeration.WorldDebugRendering;
+import eu.janschupke.tale.base.config.enumeration.WorldDebugRendering;
 
 /**
  * Default settings values.

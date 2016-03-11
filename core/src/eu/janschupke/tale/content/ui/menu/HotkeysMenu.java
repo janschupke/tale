@@ -4,9 +4,9 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.ui.table.MenuTable;
 import eu.janschupke.tale.content.config.Config;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.ui.table.MenuTable;
 
 /**
  * Hotkey overview UI.

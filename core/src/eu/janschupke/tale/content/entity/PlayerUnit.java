@@ -3,8 +3,8 @@ package eu.janschupke.tale.content.entity;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import eu.janschupke.tale.framework.entity.Unit;
-import eu.janschupke.tale.framework.world.BaseWorld;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.world.BaseWorld;
 
 /**
  * Player unit class.

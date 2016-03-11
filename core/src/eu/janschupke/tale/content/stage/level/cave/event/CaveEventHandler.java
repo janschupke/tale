@@ -1,5 +1,7 @@
 package eu.janschupke.tale.content.stage.level.cave.event;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.event.handling.LevelEventHandler;
 import eu.janschupke.tale.content.stage.level.cave.event.exploration.CorpsecExplorationEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.corpsec.CorpsecInteractionEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.corpsec.CorpsecLootInteractionEvent;
@@ -9,8 +11,6 @@ import eu.janschupke.tale.content.stage.level.cave.event.interaction.ville.Ville
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.ville.VilleInteractionEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.interaction.ville.VilleLeaveInteractionEvent;
 import eu.janschupke.tale.content.stage.level.cave.event.transition.OutskirtsTransitionEvent;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.event.handling.LevelEventHandler;
 
 /**
  * Event handler for the cave level.

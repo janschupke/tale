@@ -1,6 +1,11 @@
 package eu.janschupke.tale;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.config.enumeration.InputProcessors;
+import eu.janschupke.tale.base.input.GlobalInputProcessor;
+import eu.janschupke.tale.base.input.PlatformInputProcessor;
+import eu.janschupke.tale.base.input.TopDownInputProcessor;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
@@ -12,11 +17,6 @@ import eu.janschupke.tale.content.stage.menu.MenuScreen;
 import eu.janschupke.tale.content.stage.splash.SplashScreen;
 import eu.janschupke.tale.content.ui.hud.StandardHud;
 import eu.janschupke.tale.content.ui.menu.*;
-import eu.janschupke.tale.framework.App;
-import eu.janschupke.tale.framework.config.enumeration.InputProcessors;
-import eu.janschupke.tale.framework.input.GlobalInputProcessor;
-import eu.janschupke.tale.framework.input.PlatformInputProcessor;
-import eu.janschupke.tale.framework.input.TopDownInputProcessor;
 
 /**
  * Main game entry point.
