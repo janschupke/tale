@@ -243,17 +243,9 @@ public class TextureHandler extends BaseResourceContainer {
         return gameCursorPixmap;
     }
 
-    public Texture getMenuBackgroundTexture() {
-        return menuBackgroundTexture;
-    }
-
     public Drawable getMenuBackgroundDrawable() {
         TextureRegion backgroundRegion = new TextureRegion(menuBackgroundTexture);
         return new TextureRegionDrawable(backgroundRegion);
-    }
-
-    public Texture getHudBackgroundTexture() {
-        return hudBackgroundTexture;
     }
 
     public Drawable getHudBackgroundDrawable() {
@@ -263,7 +255,40 @@ public class TextureHandler extends BaseResourceContainer {
 
     @Override
     public void dispose() {
+        gameCursorPixmap.dispose();
         menuBackgroundTexture.dispose();
         hudBackgroundTexture.dispose();
+        playerTexture.dispose();
+        caveBookItemTexture.dispose();
+        caveJournalItemTexture.dispose();
+        caveCorpsecUnitTexture.dispose();
+        caveVilleUnitTexture.dispose();
+        caveVilleSadTexture.dispose();
+        dungeonChestItemTexture.dispose();
+        dungeonGateKeyItemTexture.dispose();
+        dungeonGateObstacleTexture.dispose();
+        dungeonGateOpenTexture.dispose();
+        dungeonHarpsichordTexture.dispose();
+        forestCoinTexture.dispose();
+        caravanObstacleTexture.dispose();
+        ukkoUnitTexture.dispose();
+        outskirtsLumberItemTexture.dispose();
+        outskirtsVarpunenItemTexture.dispose();
+        outskirtsCaveTexture.dispose();
+        outskirtsCroneShackTexture.dispose();
+        outskirtsJackHouseTexture.dispose();
+        outskirtsRoadSignTexture.dispose();
+        outskirtsCroneUnitTexture.dispose();
+        outskirtsJackUnitTexture.dispose();
+        settlementHouseKeyTexture.dispose();
+        settlementBlacksmithObstacleTexture.dispose();
+        settlementChoboHouseTexture.dispose();
+        settlementDungeonTexture.dispose();
+        settlementFarmTexture.dispose();
+        settlementFountainTexture.dispose();
+        settlementRoadSignTexture.dispose();
+        settlementTavernTexture.dispose();
+        settlementChoboTexture.dispose();
+        settlementSmithTexture.dispose();
     }
 }

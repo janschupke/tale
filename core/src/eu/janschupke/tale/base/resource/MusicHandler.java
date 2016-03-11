@@ -15,7 +15,6 @@ public class MusicHandler extends BaseResourceContainer {
     private Music outskirtsMusic;
     private Music caveMusic;
     private Music settlementMusic;
-    private Music houseMusic;
     private Music dungeonMusic;
 
     public MusicHandler(final App app) {
@@ -25,7 +24,6 @@ public class MusicHandler extends BaseResourceContainer {
         outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
         caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
         settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
-        houseMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
         dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
     }
 
@@ -59,10 +57,6 @@ public class MusicHandler extends BaseResourceContainer {
         return settlementMusic;
     }
 
-    public Music getHouseMusic() {
-        return houseMusic;
-    }
-
     public Music getDungeonMusic() {
         return dungeonMusic;
     }
@@ -74,7 +68,6 @@ public class MusicHandler extends BaseResourceContainer {
         outskirtsMusic.dispose();
         caveMusic.dispose();
         settlementMusic.dispose();
-        houseMusic.dispose();
         dungeonMusic.dispose();
     }
 }
