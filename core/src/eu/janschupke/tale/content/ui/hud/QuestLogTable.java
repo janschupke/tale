@@ -18,6 +18,7 @@ import eu.janschupke.tale.framework.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.framework.exception.NoHudException;
 import eu.janschupke.tale.framework.ui.table.UiTable;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -31,10 +32,8 @@ public class QuestLogTable extends UiTable implements Observer {
 
     private ScrollPane questScrollPane;
     private Table questListTable;
-    private Label activeQuestsLabel;
-    private List activeQuestsList;
-    private Label finishedQuestsLabel;
-    private List finishedQuestsList;
+    private Label questsLabel;
+    private List questsList;
 
     private ScrollPane descriptionScrollPane;
     private Table descriptionTable;
@@ -48,14 +47,15 @@ public class QuestLogTable extends UiTable implements Observer {
     private float width = Gdx.graphics.getWidth() * 0.5f;
     private float height = Gdx.graphics.getHeight() * 0.5f;
 
-    // TODO: use
-    private Quest selectedQuest;
+    private java.util.List<Quest> questReferences;
 
     public QuestLogTable(final App app) {
         super(app);
         setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         align(Align.top);
         pad(Config.HUD_INNER_PADDING);
+
+        questReferences = new ArrayList<>();
 
         initWidgets();
         addWidgets();
@@ -70,29 +70,37 @@ public class QuestLogTable extends UiTable implements Observer {
     public void update(Observable o, Object arg) {
         Gdx.app.debug("QuestLogTable#update", "Updating quest log UI");
         QuestLog questLog = app.getGameState().getQuestLog();
-        Array<String> activeQuests = new Array<>();
-        Array<String> finishedQuests = new Array<>();
+        Array<String> quests = new Array<>();
 
-        // Quest list updating.
+        questReferences.clear();
+
+        // Quest list updating - active quests first.
         for (QuestChain chain : questLog.getQuestChains()) {
             for (Quest quest : chain.getQuests()) {
                 TaskStatus status = quest.getStatus();
 
-                // The one active quest from the chain goes to the list of active quests.
                 if (status == TaskStatus.ACTIVE) {
-                    activeQuests.add(quest.toString());
-                    continue;
-                }
-
-                // All finished quests go to the finished list.
-                if (status == TaskStatus.DONE) {
-                    finishedQuests.add(quest.toString());
+                    quests.add(quest.toString());
+                    questReferences.add(quest);
                 }
             }
         }
 
-        activeQuestsList.setItems(activeQuests);
-        finishedQuestsList.setItems(finishedQuests);
+        // Quest list updating - finished quests after.
+        for (QuestChain chain : questLog.getQuestChains()) {
+            for (Quest quest : chain.getQuests()) {
+                TaskStatus status = quest.getStatus();
+
+                if (status == TaskStatus.DONE) {
+                    String questLabel = app.getLang().get("hud.quest.status.done");
+                    questLabel += " " + quest.toString();
+                    quests.add(questLabel);
+                    questReferences.add(quest);
+                }
+            }
+        }
+
+        questsList.setItems(quests);
 
         app.getGameState().getGlobalLevelState().setNewQuest(true);
         refreshActiveQuest();
@@ -144,7 +152,7 @@ public class QuestLogTable extends UiTable implements Observer {
     }
 
     /**
-     * TODO
+     * Clears the information strings about the active quest.
      */
     private void clearActiveQuest() {
         descriptionTitleLabel.setText(app.getLang().get("hud.quest.label.empty"));
@@ -153,11 +161,17 @@ public class QuestLogTable extends UiTable implements Observer {
     }
 
     /**
-     * TODO
+     * Refreshes active quest according to the selected list item.
      */
     private void refreshActiveQuest() {
-        clearActiveQuest();
-        setDefaultActiveQuest();
+        if (questsList.getSelectedIndex() == -1) {
+            clearActiveQuest();
+            setDefaultActiveQuest();
+        } else {
+            clearActiveQuest();
+            int index = questsList.getSelectedIndex();
+            setActiveQuest(questReferences.get(index));
+        }
     }
 
     @Override
@@ -168,11 +182,8 @@ public class QuestLogTable extends UiTable implements Observer {
         questListTable.align(Align.top);
         questScrollPane = new ScrollPane(questListTable, app.getSkin());
 
-        activeQuestsLabel = new Label("", app.getSkin());
-        activeQuestsList = new List(app.getSkin());
-
-        finishedQuestsLabel = new Label("", app.getSkin());
-        finishedQuestsList = new List(app.getSkin());
+        questsLabel = new Label(app.getLang().get("hud.quest.list.label"), app.getSkin());
+        questsList = new List(app.getSkin());
 
         descriptionTable = new Table();
         descriptionTable.align(Align.top);
@@ -196,10 +207,8 @@ public class QuestLogTable extends UiTable implements Observer {
 
     @Override
     public void addWidgets() {
-        questListTable.add(activeQuestsLabel).left().pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(activeQuestsList).left().pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(finishedQuestsLabel).left().pad(Config.HUD_INNER_PADDING).row();
-        questListTable.add(finishedQuestsList).left().pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(questsLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        questListTable.add(questsList).left().pad(Config.HUD_INNER_PADDING).row();
 
         descriptionTable.add(descriptionTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
         descriptionTable.add(questDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
@@ -228,35 +237,13 @@ public class QuestLogTable extends UiTable implements Observer {
             }
         });
 
-        activeQuestsList.addListener(new ChangeListener() {
+        questsList.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                Gdx.app.debug("QuestLogTable#activeQuestsList#changed", "List changed");
+                Gdx.app.debug("QuestLogTable#questsList#changed", "List changed");
 
-                // Title should not be displayed if no relevant quests exist.
-                if (activeQuestsList.getItems().size == 0) {
-                    activeQuestsLabel.setText("");
-                } else {
-                    activeQuestsLabel.setText(app.getLang().get("hud.quest.list.label.active"));
-                }
-
-                // TODO: updating
-            }
-        });
-
-        finishedQuestsList.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                Gdx.app.debug("QuestLogTable#finishedQuestsList#changed", "List changed");
-
-                // Title should not be displayed if no relevant quests exist.
-                if (finishedQuestsList.getItems().size == 0) {
-                    finishedQuestsLabel.setText("");
-                } else {
-                    finishedQuestsLabel.setText(app.getLang().get("hud.quest.list.label.finished"));
-                }
-
-                // TODO: updating
+                Quest quest = questReferences.get(questsList.getSelectedIndex());
+                setActiveQuest(quest);
             }
         });
     }
