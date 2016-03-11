@@ -26,16 +26,16 @@ public class MusicHandler extends BaseResourceContainer {
         super(app);
         menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3"));
         forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3"));
-        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
-        caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
-        settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
-        dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
-        outroMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
+        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3"));
+        caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/cave.mp3"));
+        settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/settlement.mp3"));
+        dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/dungeon.mp3"));
+        outroMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/outro.mp3"));
 
         harpsichordMusic = new ArrayList<>();
         harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3")));
-        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3")));
-        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/cave.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/dungeon.mp3")));
     }
 
     /**
