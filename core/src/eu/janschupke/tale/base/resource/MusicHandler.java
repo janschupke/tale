@@ -4,6 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import eu.janschupke.tale.base.App;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Resource handler for all music files.
  *
@@ -16,6 +19,8 @@ public class MusicHandler extends BaseResourceContainer {
     private Music caveMusic;
     private Music settlementMusic;
     private Music dungeonMusic;
+    private Music outroMusic;
+    private List<Music> harpsichordMusic;
 
     public MusicHandler(final App app) {
         super(app);
@@ -25,6 +30,12 @@ public class MusicHandler extends BaseResourceContainer {
         caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
         settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
         dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
+        outroMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3"));
+
+        harpsichordMusic = new ArrayList<>();
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-smooth.mp3")));
     }
 
     /**
@@ -34,7 +45,18 @@ public class MusicHandler extends BaseResourceContainer {
      */
     public void playHarpsichord() {
         Gdx.app.debug("MusicHandler#playHarpsichord", "Playing harpsichord");
-        // TODO: implement.
+        harpsichordMusic.forEach(Music::stop);
+
+        float volume = app.getSettingsManager().getConfig().getMasterVolume()
+                * app.getSettingsManager().getConfig().getMusicVolume();
+
+        int min = 0;
+        int max = harpsichordMusic.size() - 1;
+        int trackNumber = min + (int)(Math.random() * ((max - min) + 1));
+
+        harpsichordMusic.get(trackNumber).setVolume(volume);
+        harpsichordMusic.get(trackNumber).setLooping(false);
+        harpsichordMusic.get(trackNumber).play();
     }
 
     public Music getMenuMusic() {
@@ -61,6 +83,10 @@ public class MusicHandler extends BaseResourceContainer {
         return dungeonMusic;
     }
 
+    public Music getOutroMusic() {
+        return outroMusic;
+    }
+
     @Override
     public void dispose() {
         menuMusic.dispose();
@@ -69,5 +95,8 @@ public class MusicHandler extends BaseResourceContainer {
         caveMusic.dispose();
         settlementMusic.dispose();
         dungeonMusic.dispose();
+        outroMusic.dispose();
+
+        harpsichordMusic.forEach(Music::dispose);
     }
 }
