@@ -262,7 +262,9 @@ public class GlobalEventHandler {
      */
     public void endGame() {
         Gdx.app.debug("GlobalEventHandler#endGame", "Ending Game");
-        // TODO: implement.
+        app.resetState();
+        app.getScreen().resume();
+        Utility.transitionScreens(app, app.getScreenInstance(Screens.MENU), app.getHud(Huds.MAINMENU));
     }
 
     /**

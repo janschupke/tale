@@ -78,7 +78,7 @@ public class DungeonWorld extends TopDownWorld {
     @Override
     protected void initSensors() {
         exitTransitionSensor = new ExitTransitionSensor(this, new Vector2(0.5f, 5));
-        // TODO
+        // TODO: position
         exitTransitionSensor.setPosition(1, 1);
 
         Sensor settlementTransitionSensor = new SettlementTransitionSensor(this, new Vector2(5, 0.5f));

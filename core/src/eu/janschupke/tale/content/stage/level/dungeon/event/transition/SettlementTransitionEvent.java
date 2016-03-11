@@ -34,7 +34,6 @@ public class SettlementTransitionEvent extends TransitionEvent {
         Utility.preservePlayerMovement(app, Screens.SETTLEMENT);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.SETTLEMENT), app.getHud(Huds.STANDARD));
 
-        // FIXME: rather blasphemous, though deadlines are real.
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody()
                 .setLinearVelocity(-Config.OBJECT_MAX_SPEED, Config.OBJECT_MAX_SPEED);
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveUp();

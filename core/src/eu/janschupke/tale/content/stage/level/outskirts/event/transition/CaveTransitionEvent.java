@@ -47,7 +47,6 @@ public class CaveTransitionEvent extends TransitionEvent {
         Utility.preservePlayerMovement(app, Screens.CAVE);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.CAVE), app.getHud(Huds.STANDARD));
 
-        // FIXME: rather blasphemous, though deadlines are real.
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().setLinearVelocity(0, Config.OBJECT_MAX_SPEED);
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveUp();
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();

@@ -38,7 +38,6 @@ public class DungeonTransitionEvent extends TransitionEvent {
         Utility.preservePlayerMovement(app, Screens.DUNGEON);
         Utility.transitionScreens(app, app.getScreenInstance(Screens.DUNGEON), app.getHud(Huds.STANDARD));
 
-        // FIXME: rather blasphemous, though deadlines are real.
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().getBody().setLinearVelocity(0, -Config.OBJECT_MAX_SPEED);
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveDown();
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();
