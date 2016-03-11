@@ -12,6 +12,16 @@ import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
  * @author jan.schupke@gmail.com
  */
 public class UnitIntroGeneralEvent extends GeneralEvent {
+    /**
+     * Unit introduction dialog.
+     */
+    class UnitIntroDialog extends InfoDialog {
+        public UnitIntroDialog(final App app) {
+            super(app, app.getLang().get("level.forest.dialog.unit-intro.title"));
+            label.setText(app.getLang().get("level.forest.event.unit-intro.text"));
+        }
+    }
+
     private UnitIntroDialog unitIntroDialog;
 
     public UnitIntroGeneralEvent(final App app) {
@@ -39,15 +49,5 @@ public class UnitIntroGeneralEvent extends GeneralEvent {
     @Override
     protected void updateInteractions() {
 
-    }
-
-    /**
-     * Unit introduction dialog.
-     */
-    class UnitIntroDialog extends InfoDialog {
-        public UnitIntroDialog(final App app) {
-            super(app, app.getLang().get("level.forest.dialog.unit-intro.title"));
-            label.setText(app.getLang().get("level.forest.event.unit-intro.text"));
-        }
     }
 }

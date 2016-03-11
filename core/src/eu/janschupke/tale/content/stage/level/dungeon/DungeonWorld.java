@@ -38,7 +38,7 @@ public class DungeonWorld extends TopDownWorld {
         chestItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 2);
         harpsichordObstacle.setPosition(getPlayerUnit().getX() - 5, getPlayerUnit().getY() - 2);
         gateObstacle.setPosition(getPlayerUnit().getX() + 2, getPlayerUnit().getY() - 2);
-        exitTransitionSensor.setPosition(getPlayerUnit().getX() + 1, getPlayerUnit().getY() - 3);
+        exitTransitionSensor.setPosition(getPlayerUnit().getX() + 4, getPlayerUnit().getY() - 3);
     }
 
     @Override
