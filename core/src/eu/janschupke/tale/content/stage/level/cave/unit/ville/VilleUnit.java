@@ -22,10 +22,6 @@ public class VilleUnit extends Unit implements Triggerable {
 
     public VilleUnit(BaseWorld world) {
         super(world, new Texture(Gdx.files.internal("textures/levels/cave/units/ville.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/cave/units/ville.png"));
-        animationFrames = TextureRegion.split(animationTexture, 100, 100);
-        initAnimations();
-        initIdleSprites();
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
         interaction = new VilleInteraction(world.getScreen().getApp(), this);
     }
