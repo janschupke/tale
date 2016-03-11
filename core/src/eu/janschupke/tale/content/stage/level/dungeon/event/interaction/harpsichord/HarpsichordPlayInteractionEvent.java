@@ -28,7 +28,9 @@ public class HarpsichordPlayInteractionEvent extends InteractionEvent {
     @Override
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_HARPSICHORD_PLAY, ((BaseScreen) app.getScreen()).getTag());
-        app.getResourceManager().getMusicHandler().playHarpsichord();
+        if (app.getSettingsManager().getConfig().isEnableSound()) {
+            app.getResourceManager().getMusicHandler().playHarpsichord();
+        }
     }
 
     @Override

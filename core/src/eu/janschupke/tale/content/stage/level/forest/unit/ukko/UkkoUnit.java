@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.forest.unit.ukko;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.base.entity.Unit;
 import eu.janschupke.tale.base.interaction.Interaction;
@@ -20,7 +21,8 @@ public class UkkoUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public UkkoUnit(BaseWorld world) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getUkkoUnitTexture());
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getUkkoUnitTexture(),
+                new Vector2(0.5f, 0.8f));
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
         interaction = new UkkoInteraction(world.getScreen().getApp(), this);
     }

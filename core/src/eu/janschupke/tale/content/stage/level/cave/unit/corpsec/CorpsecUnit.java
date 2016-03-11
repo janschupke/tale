@@ -2,6 +2,7 @@ package eu.janschupke.tale.content.stage.level.cave.unit.corpsec;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.base.entity.Unit;
 import eu.janschupke.tale.base.interaction.Interaction;
@@ -20,11 +21,9 @@ public class CorpsecUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public CorpsecUnit(BaseWorld world) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture());
-        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture();
-        animationFrames = TextureRegion.split(animationTexture, 100, 100);
-        initAnimations();
-        initIdleSprites();
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture(),
+                new Vector2(1.0f, 0.8f));
+        body.setTransform(body.getPosition(), -0.3f);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
         interaction = new CorpsecInteraction(world.getScreen().getApp(), this);
     }

@@ -92,7 +92,7 @@ public class OutskirtsWorld extends TopDownWorld {
         jackHouseObstacle.setPosition(8, 56);
         getObstacles().add(jackHouseObstacle);
 
-        Obstacle roadSignObstacle = new RoadSignObstacle(this, 3);
+        Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(1.2f, 1.5f));
         roadSignObstacle.setPosition(30, 38);
         getObstacles().add(roadSignObstacle);
 

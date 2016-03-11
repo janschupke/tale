@@ -1,5 +1,6 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.road_sign;
 
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.base.entity.Obstacle;
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.base.interaction.Interaction;
@@ -17,8 +18,8 @@ import eu.janschupke.tale.content.stage.level.settlement.obstacle.road_sign.inte
 public class RoadSignObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
-    public RoadSignObstacle(BaseWorld world, int radius) {
-        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementRoadSignTexture(), radius);
+    public RoadSignObstacle(BaseWorld world, Vector2 size) {
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementRoadSignTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new RoadSignInteraction(world.getScreen().getApp(), this);
     }

@@ -81,7 +81,7 @@ public class SettlementWorld extends TopDownWorld {
         choboHouseObstacle.setPosition(34, 5);
         getObstacles().add(choboHouseObstacle);
 
-        dungeonObstacle = new DungeonObstacle(this, new Vector2(3, 8));
+        dungeonObstacle = new DungeonObstacle(this, new Vector2(2.5f, 5));
         dungeonObstacle.setPosition(17, 8);
         getObstacles().add(dungeonObstacle);
 
@@ -93,7 +93,7 @@ public class SettlementWorld extends TopDownWorld {
         fountainObstacle.setPosition(35, 41);
         getObstacles().add(fountainObstacle);
 
-        Obstacle roadSignObstacle = new RoadSignObstacle(this, 2);
+        Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(1.2f, 1.5f));
         roadSignObstacle.setPosition(8, 46);
         getObstacles().add(roadSignObstacle);
 

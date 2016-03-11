@@ -1,5 +1,6 @@
 package eu.janschupke.tale.content.stage.level.outskirts.item.lumber;
 
+import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.base.entity.Item;
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.base.interaction.Interaction;
@@ -20,7 +21,7 @@ public class LumberItem extends Item implements Triggerable {
 
     public LumberItem(BaseWorld world) {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsLumberItemTexture(),
-                ItemTags.OUTSKIRTS_LUMBER);
+                new Vector2(0.8f, 0.4f), ItemTags.OUTSKIRTS_LUMBER);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.name");
         description = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.description");

@@ -1,5 +1,6 @@
 package eu.janschupke.tale.content.ui.hud;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -20,6 +21,8 @@ public class OutroHud extends RootTable {
     private Label outroLabel;
     private TextButton outroButton;
 
+    private float width = Gdx.graphics.getWidth() * 0.5f;
+
     public OutroHud(App app) {
         super(app);
         align(Align.top);
@@ -34,13 +37,16 @@ public class OutroHud extends RootTable {
         outroTable = new Table();
         outroTable.align(Align.top | Align.center);
         outroLabel = new Label(app.getLang().get("level.outro.text"), app.getSkin());
+        outroLabel.setWrap(true);
+        outroLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
+        outroLabel.setAlignment(Align.center);
         outroButton = new TextButton(app.getLang().get("level.outro.exit"), app.getSkin());
     }
 
     @Override
     public void addWidgets() {
-        outroTable.add(outroLabel).pad(Config.HUD_INNER_PADDING).row();
-        outroTable.add(outroButton).width(Config.HUD_LOG_BUTTON_WIDTH);
+        outroTable.add(outroLabel).pad(Config.HUD_INNER_PADDING).width(width).row();
+        outroTable.add(outroButton).pad(Config.HUD_INNER_PADDING).width(Config.UI_BUTTON_WIDTH);
         add(outroTable).top().center();
     }
 
