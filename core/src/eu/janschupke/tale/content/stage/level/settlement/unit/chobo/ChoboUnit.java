@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.unit.chobo;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
@@ -21,8 +20,8 @@ public class ChoboUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public ChoboUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/settlement/units/chobo.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/settlement/units/chobo.png"));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementChoboTexture());
+        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementChoboTexture();
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

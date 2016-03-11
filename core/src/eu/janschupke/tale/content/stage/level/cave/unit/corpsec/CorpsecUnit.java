@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.cave.unit.corpsec;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.tale.content.stage.level.cave.event.CaveEventHandler;
@@ -21,8 +20,8 @@ public class CorpsecUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public CorpsecUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/cave/units/corpsec.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/cave/units/corpsec.png"));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture());
+        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture();
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

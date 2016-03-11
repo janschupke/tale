@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign.interaction.RoadSignInteraction;
@@ -21,7 +19,7 @@ public class RoadSignObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
     public RoadSignObstacle(BaseWorld world, Vector2 size) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/terrain/road-sign.png")), size);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsRoadSignTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new RoadSignInteraction(world.getScreen().getApp(), this);
     }

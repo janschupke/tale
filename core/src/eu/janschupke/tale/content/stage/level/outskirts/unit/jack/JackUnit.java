@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.unit.jack;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
@@ -21,8 +20,8 @@ public class JackUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public JackUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/units/jack.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/outskirts/units/jack.png"));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsJackUnitTexture());
+        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsJackUnitTexture();
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

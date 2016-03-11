@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.item.varpunen;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.item.varpunen.interaction.VarpunenInteraction;
@@ -21,7 +19,8 @@ public class VarpunenItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public VarpunenItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/items/varpunen.png")), ItemTags.OUTSKIRTS_VARPUNEN);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsVarpunenItemTexture(),
+                ItemTags.OUTSKIRTS_VARPUNEN);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.outskirts.item.varpunen.name");
         description = world.getScreen().getApp().getLang().get("level.outskirts.item.varpunen.description");

@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.forest.item.coin;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.interaction.CoinInteraction;
@@ -21,7 +19,7 @@ public class CoinItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public CoinItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/forest/items/coin.png")), ItemTags.FOREST_COIN);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getForestCoinTexture(), ItemTags.FOREST_COIN);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.forest.item.coin.name");
         description = world.getScreen().getApp().getLang().get("level.forest.item.coin.description");

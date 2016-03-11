@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.settlement.obstacle.fountain;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.settlement.event.SettlementEventHandler;
 import eu.janschupke.tale.content.stage.level.settlement.obstacle.fountain.interaction.FountainInteraction;
@@ -21,7 +19,7 @@ public class FountainObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
     public FountainObstacle(BaseWorld world, Vector2 size) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/settlement/terrain/fountain.png")), size);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementFountainTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new FountainInteraction(world.getScreen().getApp(), this);
     }

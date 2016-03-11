@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import eu.janschupke.tale.content.stage.level.dungeon.event.DungeonEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.interaction.GateInteraction;
@@ -21,7 +19,7 @@ public class GateObstacle extends Obstacle implements Triggerable {
     private Interaction interaction;
 
     public GateObstacle(BaseWorld world, Vector2 size) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/dungeon/terrain/gate-closed.png")), size);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getDungeonGateObstacleTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new GateInteraction(world.getScreen().getApp(), this);
     }

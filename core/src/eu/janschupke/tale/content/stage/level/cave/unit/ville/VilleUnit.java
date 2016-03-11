@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.cave.unit.ville;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.tale.content.stage.level.cave.event.CaveEventHandler;
@@ -21,7 +20,7 @@ public class VilleUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public VilleUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/cave/units/ville.png")));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveVilleUnitTexture());
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
         interaction = new VilleInteraction(world.getScreen().getApp(), this);
     }

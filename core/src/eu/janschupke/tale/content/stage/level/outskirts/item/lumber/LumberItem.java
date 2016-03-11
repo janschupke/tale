@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.item.lumber;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
 import eu.janschupke.tale.content.stage.level.outskirts.item.lumber.interaction.LumberInteraction;
@@ -21,7 +19,8 @@ public class LumberItem extends Item implements Triggerable {
     private Interaction interaction;
 
     public LumberItem(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/items/lumber.png")), ItemTags.OUTSKIRTS_LUMBER);
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsLumberItemTexture(),
+                ItemTags.OUTSKIRTS_LUMBER);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         name = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.name");
         description = world.getScreen().getApp().getLang().get("level.outskirts.item.lumber.description");

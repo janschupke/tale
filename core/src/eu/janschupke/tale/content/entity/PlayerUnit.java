@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.entity;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -12,8 +11,8 @@ import eu.janschupke.tale.framework.world.BaseWorld;
  */
 public class PlayerUnit extends Unit {
     public PlayerUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/sprites/player.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/sprites/player.png"));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getPlayerTexture());
+        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getPlayerTexture();
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

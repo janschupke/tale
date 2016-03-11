@@ -1,6 +1,5 @@
 package eu.janschupke.tale.content.stage.level.outskirts.unit.crone;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
@@ -21,8 +20,8 @@ public class CroneUnit extends Unit implements Triggerable {
     private Interaction interaction;
 
     public CroneUnit(BaseWorld world) {
-        super(world, new Texture(Gdx.files.internal("textures/levels/outskirts/units/crone.png")));
-        animationTexture = new Texture(Gdx.files.internal("textures/levels/outskirts/units/crone.png"));
+        super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsCroneUnitTexture());
+        animationTexture = world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsCroneUnitTexture();
         animationFrames = TextureRegion.split(animationTexture, 100, 100);
         initAnimations();
         initIdleSprites();

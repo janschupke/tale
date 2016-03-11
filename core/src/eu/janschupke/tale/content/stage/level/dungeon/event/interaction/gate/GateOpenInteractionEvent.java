@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event.interaction.gate;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
@@ -52,7 +50,7 @@ public class GateOpenInteractionEvent extends InteractionEvent {
     private void updateGateObject() {
         for (WorldEntity obstacle : ((DungeonScreen) app.getScreen()).getWorld().getObstacles()) {
             if (obstacle instanceof GateObstacle) {
-                ((GateObstacle) obstacle).setTexture(new Texture(Gdx.files.internal("textures/levels/dungeon/terrain/gate-open.png")));
+                ((GateObstacle) obstacle).setTexture(app.getResourceManager().getTextureHandler().getDungeonGateOpenTexture());
                 // For collision removal.
                 obstacle.getBody().getFixtureList().get(0).setSensor(true);
                 break;

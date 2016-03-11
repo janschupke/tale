@@ -1,7 +1,5 @@
 package eu.janschupke.tale.content.stage.level.cave.event.interaction.ville;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
@@ -78,7 +76,7 @@ public class VilleAggroInteractionEvent extends InteractionEvent {
     private void updateVilleObject() {
         for (Unit unit : ((CaveScreen) app.getScreen()).getWorld().getUnits()) {
             if (unit  instanceof VilleUnit) {
-                ((VilleUnit) unit).setTexture(new Texture(Gdx.files.internal("textures/levels/cave/units/ville-sad.png")));
+                unit.setTexture(app.getResourceManager().getTextureHandler().getCaveVilleSadTexture());
                 break;
             }
         }
