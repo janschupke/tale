@@ -35,7 +35,7 @@ public class CreditsMenu extends MenuTable {
     @Override
     public void addWidgets() {
         add(titleLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
-        add(creditsLabel).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(creditsLabel).padBottom(Config.UI_SEPARATOR_SPACE).row();
         add(backButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
     }
 

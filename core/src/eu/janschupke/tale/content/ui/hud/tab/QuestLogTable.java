@@ -214,9 +214,9 @@ public class QuestLogTable extends UiTable implements Observer {
         descriptionTable.add(descriptionTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
         descriptionTable.add(questDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
                 .pad(Config.HUD_INNER_PADDING).row();
-        descriptionTable.add(taskTitleLabel).left().pad(Config.HUD_INNER_PADDING).row();
+        descriptionTable.add(taskTitleLabel).left().pad(Config.HUD_INNER_PADDING).padBottom(0).row();
         descriptionTable.add(taskDescriptionLabel).width(width - Config.HUD_INNER_PADDING * 2)
-                .pad(Config.HUD_INNER_PADDING);
+                .pad(Config.HUD_INNER_PADDING).padTop(0);
 
         add(titleLabel).colspan(2).row();
         add(questScrollPane).height(height).fill().pad(Config.HUD_INNER_PADDING);
