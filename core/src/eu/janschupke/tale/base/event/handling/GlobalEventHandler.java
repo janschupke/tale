@@ -266,6 +266,7 @@ public class GlobalEventHandler {
         app.resetState();
         app.getScreen().resume();
         Utility.transitionScreens(app, app.getScreenInstance(Screens.MENU), app.getHud(Huds.MAINMENU));
+        dumpData();
     }
 
     /**

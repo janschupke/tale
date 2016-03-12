@@ -79,6 +79,7 @@ public class Config {
     public static final int UI_INDENT_TOP = 50;
     public static final int HUD_INNER_PADDING = 10;
     public static final int HUD_BUTTON_PADDING = 5;
+    public static final int HUD_BUTTON_PADDING_DIM = 3;
     public static final int HUD_LOG_BUTTON_WIDTH = 100;
     public static final int HUD_HINT_TOP_PADDING = 200;
     public static final int HUD_INDICATOR_WIDTH = 220;

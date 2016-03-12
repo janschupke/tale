@@ -28,7 +28,7 @@ public class InteractionTable extends UiTable {
     private Label descriptionLabel;
     private Table optionTable;
 
-    private float width = Gdx.graphics.getWidth() * 0.8f;
+    private float width = Gdx.graphics.getWidth() * 0.75f;
 
     public InteractionTable(final App app) {
         super(app);
@@ -69,7 +69,7 @@ public class InteractionTable extends UiTable {
                 }
             });
 
-            optionTable.add(button).left().pad(Config.HUD_BUTTON_PADDING).row();
+            optionTable.add(button).left().pad(Config.HUD_BUTTON_PADDING_DIM).row();
         }
 
         contentTable.add(titleLabel).padBottom(Config.HUD_INNER_PADDING).row();
