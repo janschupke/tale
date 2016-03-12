@@ -32,6 +32,8 @@ public class ExitTransitionEvent extends TransitionEvent {
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.DUNGEON_TRANSITION_EXIT, ((BaseScreen) app.getScreen()).getTag());
         Utility.transitionScreens(app, app.getScreenInstance(Screens.OUTRO), app.getHud(Huds.OUTRO));
+        // Stop any harpsi music, if playing.
+        app.getResourceManager().getMusicHandler().stopHarpsichord();
     }
 
     @Override

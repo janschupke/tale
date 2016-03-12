@@ -160,7 +160,7 @@ public abstract class GameScreen extends BaseScreen {
     public void toggleMenu() {
         Gdx.app.debug("GameScreen#toggleMenu", "Toggling menu");
         app.getResourceManager().getSoundHandler()
-                .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
         if (inMenu) {
             inMenu = false;
             app.swapHuds(app.getHud(screenHud));
@@ -177,7 +177,7 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleEventLog() {
         app.getResourceManager().getSoundHandler()
-                .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
         try {
             app.getHud().toggleEventLog();
         } catch (NoHudException e) {
@@ -190,7 +190,7 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleQuestLog() {
         app.getResourceManager().getSoundHandler()
-                .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
         try {
             app.getHud().toggleQuestLog();
         } catch (NoHudException e) {
@@ -203,7 +203,7 @@ public abstract class GameScreen extends BaseScreen {
      */
     public void toggleInventory() {
         app.getResourceManager().getSoundHandler()
-                .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
         try {
             app.getHud().toggleInventory();
         } catch (NoHudException e) {

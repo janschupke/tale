@@ -20,6 +20,7 @@ public class MusicHandler extends BaseResourceContainer {
     private Music settlementMusic;
     private Music dungeonMusic;
     private Music outroMusic;
+
     private List<Music> harpsichordMusic;
 
     public MusicHandler(final App app) {
@@ -33,9 +34,10 @@ public class MusicHandler extends BaseResourceContainer {
         outroMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/outro.mp3"));
 
         harpsichordMusic = new ArrayList<>();
-        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3")));
-        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/cave.mp3")));
-        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/dungeon.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/harpsi/bwv847.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/harpsi/bwv857.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/harpsi/bwv996.mp3")));
+        harpsichordMusic.add(Gdx.audio.newMusic(Gdx.files.internal("audio/music/harpsi/sonata14.mp3")));
     }
 
     /**
@@ -45,7 +47,7 @@ public class MusicHandler extends BaseResourceContainer {
      */
     public void playHarpsichord() {
         Gdx.app.debug("MusicHandler#playHarpsichord", "Playing harpsichord");
-        harpsichordMusic.forEach(Music::stop);
+        stopHarpsichord();
 
         float volume = app.getSettingsManager().getConfig().getMasterVolume()
                 * app.getSettingsManager().getConfig().getMusicVolume();
@@ -57,6 +59,10 @@ public class MusicHandler extends BaseResourceContainer {
         harpsichordMusic.get(trackNumber).setVolume(volume);
         harpsichordMusic.get(trackNumber).setLooping(false);
         harpsichordMusic.get(trackNumber).play();
+    }
+
+    public void stopHarpsichord() {
+        harpsichordMusic.forEach(Music::stop);
     }
 
     public Music getMenuMusic() {

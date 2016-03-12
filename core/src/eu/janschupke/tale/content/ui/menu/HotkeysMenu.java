@@ -73,28 +73,28 @@ public class HotkeysMenu extends MenuTable {
     @Override
     public void addWidgets() {
         add(titleLabel).colspan(2).padBottom(Config.UI_SEPARATOR_SPACE).row();
-        add(invokeMenuLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(invokeMenuHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(toggleMusicLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(toggleMusicHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(invokeMenuLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(invokeMenuHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(toggleMusicLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(toggleMusicHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
 
-        add(toggleSoundLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(toggleSoundHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(movementLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(movementHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(interactLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(interactHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(dialogLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(dialogsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(messagesLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(messagesHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(questsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(questsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(inventoryLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(inventoryHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(pauseLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING);
-        add(pauseHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(backButton).colspan(2).width(Config.UI_BUTTON_WIDTH).padTop(Config.UI_SEPARATOR_SPACE).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(toggleSoundLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(toggleSoundHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(movementLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(movementHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(interactLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(interactHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(dialogLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(dialogsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(messagesLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(messagesHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(questsLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(questsHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(inventoryLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(inventoryHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(pauseLabel).right().padRight(Config.UI_MENU_ITEM_PADDING).padBottom(Config.UI_MENU_ITEM_PADDING_DIM);
+        add(pauseHotkey).left().padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
+        add(backButton).colspan(2).width(Config.UI_BUTTON_WIDTH).padTop(Config.UI_SEPARATOR_SPACE).padBottom(Config.UI_MENU_ITEM_PADDING_DIM).row();
     }
 
     @Override

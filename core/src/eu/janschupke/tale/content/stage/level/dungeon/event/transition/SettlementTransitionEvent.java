@@ -39,6 +39,9 @@ public class SettlementTransitionEvent extends TransitionEvent {
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().moveUp();
         app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stop();
 
+        // Stop any harpsi music, if playing.
+        app.getResourceManager().getMusicHandler().stopHarpsichord();
+
         app.getGameLog().addEntry(GameEventTags.DUNGEON_TRANSITION_SETTLEMENT, ((BaseScreen) app.getScreen()).getTag());
     }
 

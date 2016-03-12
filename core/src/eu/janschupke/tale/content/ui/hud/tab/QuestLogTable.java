@@ -232,7 +232,7 @@ public class QuestLogTable extends UiTable implements Observer {
                 try {
                     app.getHud().toggleQuestLog();
                     app.getResourceManager().getSoundHandler()
-                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                            .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 } catch (NoHudException e) {
                     Gdx.app.debug("QuestLogTable#closeButton#clicked", "Could not get HUD instance");
                 }

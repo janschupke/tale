@@ -71,7 +71,7 @@ public class MessageLogTable extends UiTable implements Observer {
                 try {
                     app.getHud().toggleEventLog();
                     app.getResourceManager().getSoundHandler()
-                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                            .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 } catch (NoHudException e) {
                     Gdx.app.debug("MessageLogTable#setListeners", "Could not get HUD instance");
                 }

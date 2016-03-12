@@ -119,6 +119,7 @@ public class InventoryTable extends UiTable implements Observer {
         itemTable.align(Align.top);
         itemTable.padTop(Config.HUD_INNER_PADDING);
         itemScrollPane = new ScrollPane(itemTable, app.getSkin());
+        itemScrollPane.setScrollingDisabled(true, false);
         descriptionTable = new Table();
         descriptionTable.align(Align.top);
         descriptionTable.padTop(Config.HUD_INNER_PADDING);
@@ -153,7 +154,7 @@ public class InventoryTable extends UiTable implements Observer {
                 try {
                     app.getHud().toggleInventory();
                     app.getResourceManager().getSoundHandler()
-                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
+                            .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
                 } catch (NoHudException e) {
                     Gdx.app.debug("InventoryTable#closeButton#clicked", "Could not get HUD instance");
                 }
