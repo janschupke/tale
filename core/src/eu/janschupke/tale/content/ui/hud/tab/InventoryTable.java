@@ -150,6 +150,8 @@ public class InventoryTable extends UiTable implements Observer {
             public void clicked(InputEvent event, float x, float y) {
                 try {
                     app.getHud().toggleInventory();
+                    app.getResourceManager().getSoundHandler()
+                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
                 } catch (NoHudException e) {
                     Gdx.app.debug("InventoryTable#closeButton#clicked", "Could not get HUD instance");
                 }

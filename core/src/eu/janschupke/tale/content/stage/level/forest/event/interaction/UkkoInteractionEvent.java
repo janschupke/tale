@@ -30,6 +30,8 @@ public class UkkoInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.FOREST_INTERACTION_UKKO_TALK, ((BaseScreen) app.getScreen()).getTag());
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getUkkoSound());
     }
 
     @Override

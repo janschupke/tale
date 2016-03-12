@@ -38,6 +38,8 @@ public class GateOpenInteractionEvent extends InteractionEvent {
         app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_GATE_OPEN, ((BaseScreen) app.getScreen()).getTag());
         app.getGameState().getInventory().removeItem(ItemTags.DUNGEON_GATE_KEY);
         updateGateObject();
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getGateSound());
     }
 
     @Override

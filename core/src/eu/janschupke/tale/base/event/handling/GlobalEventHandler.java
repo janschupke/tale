@@ -137,7 +137,8 @@ public class GlobalEventHandler {
      *
      * @param state Attempts to play if true, stop otherwise.
      */
-    public void triggerMusic(boolean state) {
+    public void triggerMusic(boolean state, boolean loop) {
+        Gdx.app.debug("GlobalEventHandler#triggerMusic", "Triggering");
         Music backgroundMusic = ((BaseScreen) app.getScreen()).getBackgroundMusic();
 
         // Music might not be set at all.
@@ -152,7 +153,7 @@ public class GlobalEventHandler {
         }
 
         adjustMusicVolume();
-        backgroundMusic.setLooping(true);
+        backgroundMusic.setLooping(loop);
 
         // Toggle based on the current playback state.
         if (state) {
@@ -180,7 +181,7 @@ public class GlobalEventHandler {
     public void toggleMusic() {
         toggleMusicEvent.trigger();
         // Toggle the playback itself.
-        triggerMusic(app.getSettingsManager().getConfig().isEnableMusic());
+        triggerMusic(app.getSettingsManager().getConfig().isEnableMusic(), true);
     }
 
     /**

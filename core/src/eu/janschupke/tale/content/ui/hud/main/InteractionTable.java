@@ -59,6 +59,8 @@ public class InteractionTable extends UiTable {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     interaction.handle(decision);
+                    app.getResourceManager().getSoundHandler()
+                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
                 }
             });
 

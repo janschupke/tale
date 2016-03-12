@@ -16,6 +16,13 @@ public class OutroScreen extends UiScreen {
     }
 
     @Override
+    public void show() {
+        super.show();
+        app.getEventHandler().triggerMusic(false, false);
+        app.getEventHandler().triggerMusic(true, false);
+    }
+
+    @Override
     public void update(float delta) {
 
     }

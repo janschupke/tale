@@ -30,6 +30,8 @@ public class ChestInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.DUNGEON_INTERACTION_CHEST_INVESTIGATE, ((BaseScreen) app.getScreen()).getTag());
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getChestSound());
     }
 
     @Override

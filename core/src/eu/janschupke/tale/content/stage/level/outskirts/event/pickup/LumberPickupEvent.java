@@ -41,6 +41,8 @@ public class LumberPickupEvent extends PickupEvent {
     protected void updateGameState() {
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_PICKUP_LUMBER, ((BaseScreen) app.getScreen()).getTag());
         app.getGameState().getGlobalLevelState().setLumberPicked(true);
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getLumberSound());
     }
 
     @Override

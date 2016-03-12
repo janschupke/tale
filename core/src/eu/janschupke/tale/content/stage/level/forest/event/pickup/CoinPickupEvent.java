@@ -63,6 +63,8 @@ public class CoinPickupEvent extends PickupEvent {
         removeInitialWall();
         app.getGameState().getGlobalLevelState().clearCurrentHint();
         app.getGameLog().addEntry(GameEventTags.FOREST_PICKUP_COIN, ((BaseScreen) app.getScreen()).getTag());
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getCoinSound());
     }
 
     @Override

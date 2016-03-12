@@ -30,6 +30,8 @@ public class JackInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_TALK, ((BaseScreen) app.getScreen()).getTag());
+        app.getResourceManager().getSoundHandler().playSound(
+                app.getResourceManager().getSoundHandler().getJackSound());
     }
 
     @Override

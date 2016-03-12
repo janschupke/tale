@@ -7,7 +7,6 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.config.enumeration.InputProcessors;
-import eu.janschupke.tale.base.input.BaseInputProcessor;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
@@ -52,26 +51,15 @@ public abstract class BaseScreen extends ScreenAdapter {
         view = new View(viewportWidth, viewportHeight, width, height);
     }
 
-    /**
-     * Safely removes an input processor from the multiplexer.
-     *
-     * @param processor Processor to be removed.
-     */
-    public void removeInputProcessor(BaseInputProcessor processor) {
-        Gdx.app.postRunnable(() -> {
-            inputMultiplexer.removeProcessor(processor);
-        });
-    }
-
     @Override
     public void show() {
         Gdx.gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        app.getEventHandler().triggerMusic(true);
+        app.getEventHandler().triggerMusic(true, true);
     }
 
     @Override
     public void hide() {
-        app.getEventHandler().triggerMusic(false);
+        app.getEventHandler().triggerMusic(false, true);
     }
 
     /**
