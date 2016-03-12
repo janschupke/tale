@@ -56,6 +56,8 @@ public class OutroHud extends RootTable {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 app.getEventHandler().endGame();
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getHeavyButtonSound());
             }
         });
     }
