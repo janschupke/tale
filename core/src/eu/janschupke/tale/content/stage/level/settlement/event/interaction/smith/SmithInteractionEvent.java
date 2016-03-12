@@ -30,7 +30,7 @@ public class SmithInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.SETTLEMENT_INTERACTION_SMITH_TALK, ((BaseScreen) app.getScreen()).getTag());
-        app.getResourceManager().getSoundHandler().playSound(
+        app.getResourceManager().getSoundHandler().playSpeech(
                 app.getResourceManager().getSoundHandler().getSmithSound());
     }
 

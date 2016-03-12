@@ -30,7 +30,7 @@ public class VilleInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.CAVE_INTERACTION_VILLE_TALK, ((BaseScreen) app.getScreen()).getTag());
-        app.getResourceManager().getSoundHandler().playSound(
+        app.getResourceManager().getSoundHandler().playSpeech(
                 app.getResourceManager().getSoundHandler().getVilleSound());
     }
 

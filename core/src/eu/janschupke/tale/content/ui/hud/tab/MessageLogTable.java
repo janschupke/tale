@@ -91,5 +91,8 @@ public class MessageLogTable extends UiTable implements Observer {
         if (!app.getSettingsManager().getConfig().isEnableDialogs()) {
             app.getGameState().getGlobalLevelState().setNewEvent(true);
         }
+
+        app.getResourceManager().getSoundHandler()
+                .playSound(app.getResourceManager().getSoundHandler().getEventSound());
     }
 }

@@ -58,7 +58,7 @@ public class VilleAggroInteractionEvent extends InteractionEvent {
 
         app.getGameState().getGlobalLevelState().setBookPicked(true);
         updateVilleObject();
-        app.getResourceManager().getSoundHandler().playSound(
+        app.getResourceManager().getSoundHandler().playSpeech(
                 app.getResourceManager().getSoundHandler().getVilleSadSound());
     }
 

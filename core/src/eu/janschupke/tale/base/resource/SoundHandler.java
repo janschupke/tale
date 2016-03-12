@@ -13,6 +13,7 @@ public class SoundHandler extends BaseResourceContainer {
     private Sound heavyButtonSound;
     private Sound lightButtonSound;
     private Sound menuCheckboxSounds;
+    private Sound eventSound;
 
     // Forest.
     private Sound coinSound;
@@ -41,6 +42,7 @@ public class SoundHandler extends BaseResourceContainer {
         heavyButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-heavy.mp3"));
         lightButtonSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/button-light.mp3"));
         menuCheckboxSounds = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/checkbox.mp3"));
+        eventSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/gui/event.mp3"));
 
         // Forest.
         coinSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/level/forest/coin.mp3"));
@@ -63,6 +65,10 @@ public class SoundHandler extends BaseResourceContainer {
         // Dungeon.
         gateSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/level/dungeon/gate.mp3"));
         chestSound = Gdx.audio.newSound(Gdx.files.internal("audio/sfx/level/dungeon/chest.mp3"));
+    }
+
+    public Sound getEventSound() {
+        return eventSound;
     }
 
     public Sound getVilleSadSound() {
@@ -111,6 +117,13 @@ public class SoundHandler extends BaseResourceContainer {
 
     public Sound getChestSound() {
         return chestSound;
+    }
+
+    public void playSpeech(Sound sound) {
+        if (!app.getSettingsManager().getConfig().isEnableSound()) {
+            return;
+        }
+        sound.play(app.getSettingsManager().getConfig().getMasterVolume() * app.getSettingsManager().getConfig().getSpeechVolume());
     }
 
     public void playSound(Sound sound) {

@@ -66,6 +66,8 @@ public class InventoryTable extends UiTable implements Observer {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     setActiveItem(inventoryItem);
+                    app.getResourceManager().getSoundHandler()
+                            .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
                 }
             });
         }

@@ -246,6 +246,8 @@ public class QuestLogTable extends UiTable implements Observer {
 
                 Quest quest = questReferences.get(questsList.getSelectedIndex());
                 setActiveQuest(quest);
+                app.getResourceManager().getSoundHandler()
+                        .playSound(app.getResourceManager().getSoundHandler().getLightButtonSound());
             }
         });
     }

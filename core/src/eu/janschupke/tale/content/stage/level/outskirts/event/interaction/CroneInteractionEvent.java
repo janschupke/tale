@@ -30,7 +30,7 @@ public class CroneInteractionEvent extends InteractionEvent {
     protected void updateGameState() {
         InteractionSwitch.getTriggerable().startInteraction(app);
         app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_CRONE_TALK, ((BaseScreen) app.getScreen()).getTag());
-        app.getResourceManager().getSoundHandler().playSound(
+        app.getResourceManager().getSoundHandler().playSpeech(
                 app.getResourceManager().getSoundHandler().getCroneSound());
     }
 
