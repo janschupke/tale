@@ -74,7 +74,7 @@ public class Config {
     public static final int UI_BUTTON_WIDTH = 270;
     public static final int UI_SMALL_BUTTON_WIDTH = 135;
     public static final int UI_MENU_ITEM_PADDING = 5;
-    public static final int UI_MENU_ITEM_PADDING_DIM = 1;
+    public static final int UI_MENU_ITEM_PADDING_DIM = 2;
     public static final int UI_SEPARATOR_SPACE = 20;
     public static final int UI_INDENT_TOP = 50;
     public static final int HUD_INNER_PADDING = 10;
@@ -91,7 +91,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 8;
-    public static final Screens FIRST_LEVEL = Screens.DUNGEON;
+    public static final Screens FIRST_LEVEL = Screens.OUTSKIRTS;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;

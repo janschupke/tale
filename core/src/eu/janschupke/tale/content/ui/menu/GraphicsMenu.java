@@ -53,13 +53,14 @@ public class GraphicsMenu extends MenuTable implements PreferenceMenu {
     public void addWidgets() {
         add(titleLabel).colspan(2).padBottom(Config.UI_SEPARATOR_SPACE).row();
         add(resolutionLabel).right().padRight(Config.UI_MENU_ITEM_PADDING);
-        add(resolutionCombo).left().colspan(2).padBottom(Config.UI_MENU_ITEM_PADDING).row();
-        add(fullscreenCheckbox).colspan(3).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(resolutionCombo).left().padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        // Disabled due to time limitations. Not optimized for use.
+//        add(fullscreenCheckbox).padBottom(Config.UI_MENU_ITEM_PADDING).row();
 
         Table buttons = new Table();
         buttons.add(cancelButton).width(Config.UI_SMALL_BUTTON_WIDTH).left();
         buttons.add(applyButton).width(Config.UI_SMALL_BUTTON_WIDTH).right();
-        add(buttons).colspan(3).padTop(Config.UI_SEPARATOR_SPACE).row();
+        add(buttons).colspan(2).padTop(Config.UI_SEPARATOR_SPACE).row();
     }
 
     @Override

@@ -29,14 +29,13 @@ public class MenuScreen extends UiScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
+        renderStage();
 
         app.getBatch().begin();
         app.getFont().draw(app.getBatch(), titleLayout,
                 app.getUi().getWidth() / 2 - titleLayout.width / 2,
-                app.getUi().getHeight() - 10);
+                app.getUi().getHeight() - 30);
         app.getBatch().end();
-
-        renderStage();
     }
 
     @Override

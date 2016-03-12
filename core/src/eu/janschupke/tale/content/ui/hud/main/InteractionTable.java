@@ -28,6 +28,8 @@ public class InteractionTable extends UiTable {
     private Label descriptionLabel;
     private Table optionTable;
 
+    private float width = Gdx.graphics.getWidth() * 0.8f;
+
     public InteractionTable(final App app) {
         super(app);
         align(Align.topLeft);
@@ -47,6 +49,9 @@ public class InteractionTable extends UiTable {
 
         titleLabel.setText(interaction.getTitle());
         descriptionLabel.setText(interaction.getDescription());
+        descriptionLabel.setWrap(true);
+        descriptionLabel.setWidth(width - Config.HUD_INNER_PADDING * 2);
+        descriptionLabel.setAlignment(Align.center);
 
         // All available decisions get a button.
         for (Decision decision : interaction.getCurrentSituation().getDecisions()) {
@@ -68,7 +73,7 @@ public class InteractionTable extends UiTable {
         }
 
         contentTable.add(titleLabel).padBottom(Config.HUD_INNER_PADDING).row();
-        contentTable.add(descriptionLabel).row();
+        contentTable.add(descriptionLabel).width(width - Config.HUD_INNER_PADDING * 2).row();
         contentTable.add(optionTable);
 
         add(contentTable).expand().fill();

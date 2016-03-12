@@ -189,6 +189,7 @@ public class QuestLogTable extends UiTable implements Observer {
         descriptionTable.align(Align.top);
         descriptionScrollPane = new ScrollPane(descriptionTable, app.getSkin());
         descriptionScrollPane.setScrollingDisabled(true, false);
+        descriptionScrollPane.setFadeScrollBars(false);
 
         descriptionTitleLabel = new Label(app.getLang().get("hud.quest.label.empty"), app.getSkin());
 

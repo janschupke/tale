@@ -52,6 +52,7 @@ public class MessageLogTable extends UiTable implements Observer {
         messageArea.setWidth(width - Config.HUD_INNER_PADDING * 2);
         messageScrollPane = new ScrollPane(messageTable, app.getSkin());
         messageScrollPane.setScrollingDisabled(true, false);
+        messageScrollPane.setFadeScrollBars(false);
         closeButton = new TextButton(app.getLang().get("menu.global.button.close"), app.getSkin());
     }
 
