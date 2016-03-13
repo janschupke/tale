@@ -15,9 +15,9 @@ public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
         super(app, app.getLang().get("level.outskirts.interaction.varpunen.investigate.description"),
                 SituationTags.OUTSKIRTS_VARPUNEN_INVESTIGATE);
-        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.varpunen.pickup.decision.pickup"),
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.pickup"),
                 DecisionTags.OUTSKIRTS_VARPUNEN_PICKUP));
-        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.varpunen.pickup.decision.ignore"),
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.ignore"),
                 DecisionTags.OUTSKIRTS_VARPUNEN_IGNORE));
     }
 }

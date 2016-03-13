@@ -16,8 +16,6 @@ public class TalkSituation extends Situation {
         super(app, app.getLang().get("level.outskirts.interaction.jack.talk.description"),
                 SituationTags.OUTSKIRTS_JACK_TALK);
 
-        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.crone"),
-                DecisionTags.OUTSKIRTS_JACK_TALK_CRONE));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.forest"),
                 DecisionTags.OUTSKIRTS_JACK_TALK_FOREST));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.dispute"),
@@ -28,6 +26,8 @@ public class TalkSituation extends Situation {
                 DecisionTags.OUTSKIRTS_JACK_TALK_BOOK_GIVE, false));
         decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.fail"),
                 DecisionTags.OUTSKIRTS_JACK_TALK_FAIL, false));
+        decisions.add(new Decision(app.getLang().get("level.outskirts.interaction.jack.talk.decision.crone"),
+                DecisionTags.OUTSKIRTS_JACK_TALK_CRONE));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

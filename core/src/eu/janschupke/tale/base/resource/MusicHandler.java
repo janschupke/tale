@@ -27,7 +27,7 @@ public class MusicHandler extends BaseResourceContainer {
         super(app);
         menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3"));
         forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3"));
-        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3"));
+        outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/outskirts.mp3"));
         caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/cave.mp3"));
         settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/settlement.mp3"));
         dungeonMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/dungeon.mp3"));

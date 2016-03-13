@@ -23,8 +23,6 @@ public class ChestItem extends Item implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getDungeonChestItemTexture(),
                 new Vector2(1, 1), ItemTags.DUNGEON_CHEST);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
-        name = world.getScreen().getApp().getLang().get("level.dungeon.item.chest.name");
-        description = world.getScreen().getApp().getLang().get("level.dungeon.item.chest.description");
         interaction = new ChestInteraction(world.getScreen().getApp(), this);
     }
 

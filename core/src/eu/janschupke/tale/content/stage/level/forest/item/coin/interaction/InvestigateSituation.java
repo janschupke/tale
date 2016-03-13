@@ -15,9 +15,9 @@ public class InvestigateSituation extends Situation {
     public InvestigateSituation(final App app) {
         super(app, app.getLang().get("level.forest.interaction.coin.pickup.description"),
                 SituationTags.FOREST_COIN_INVESTIGATE);
-        decisions.add(new Decision(app.getLang().get("level.forest.interaction.coin.pickup.decision.pickup"),
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.pickup"),
                 DecisionTags.FOREST_COIN_PICKUP));
-        decisions.add(new Decision(app.getLang().get("level.forest.interaction.coin.pickup.decision.ignore"),
+        decisions.add(new Decision(app.getLang().get("global.interaction.decision.ignore"),
                 DecisionTags.FOREST_COIN_IGNORE));
     }
 }
