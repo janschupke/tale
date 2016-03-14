@@ -24,7 +24,7 @@ public class CorpsecUnit extends Unit implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getCaveCorpsecUnitTexture(),
                 new Vector2(1.0f, 0.8f));
         body.setTransform(body.getPosition(), -0.3f);
-        interactionHint = world.getScreen().getApp().getLang().get("hint.global.talk");
+        interactionHint = world.getScreen().getApp().getLang().get("hint.global.interact");
         interaction = new CorpsecInteraction(world.getScreen().getApp(), this);
     }
 

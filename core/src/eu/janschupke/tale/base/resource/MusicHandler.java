@@ -22,11 +22,12 @@ public class MusicHandler extends BaseResourceContainer {
     private Music outroMusic;
 
     private List<Music> harpsichordMusic;
+    private int lastHarpsi;
 
     public MusicHandler(final App app) {
         super(app);
         menuMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/menu.mp3"));
-        forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/natural-001-rumbling.mp3"));
+        forestMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/forest.mp3"));
         outskirtsMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/outskirts.mp3"));
         caveMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/cave.mp3"));
         settlementMusic = Gdx.audio.newMusic(Gdx.files.internal("audio/music/settlement.mp3"));
@@ -52,9 +53,15 @@ public class MusicHandler extends BaseResourceContainer {
         float volume = app.getSettingsManager().getConfig().getMasterVolume()
                 * app.getSettingsManager().getConfig().getMusicVolume();
 
-        int min = 0;
-        int max = harpsichordMusic.size() - 1;
-        int trackNumber = min + (int)(Math.random() * ((max - min) + 1));
+        int trackNumber;
+
+        do {
+            int min = 0;
+            int max = harpsichordMusic.size() - 1;
+            trackNumber = min + (int) (Math.random() * ((max - min) + 1));
+        } while (trackNumber == lastHarpsi);
+
+        lastHarpsi = trackNumber;
 
         harpsichordMusic.get(trackNumber).setVolume(volume);
         harpsichordMusic.get(trackNumber).setLooping(false);
