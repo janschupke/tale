@@ -6,10 +6,7 @@ import eu.janschupke.tale.content.stage.level.forest.event.exploration.EastExplo
 import eu.janschupke.tale.content.stage.level.forest.event.exploration.NorthExplorationEvent;
 import eu.janschupke.tale.content.stage.level.forest.event.exploration.SouthExplorationEvent;
 import eu.janschupke.tale.content.stage.level.forest.event.general.*;
-import eu.janschupke.tale.content.stage.level.forest.event.interaction.CaravanInteractionEvent;
-import eu.janschupke.tale.content.stage.level.forest.event.interaction.CoinInteractionEvent;
-import eu.janschupke.tale.content.stage.level.forest.event.interaction.UkkoDeliveryInteractionEvent;
-import eu.janschupke.tale.content.stage.level.forest.event.interaction.UkkoInteractionEvent;
+import eu.janschupke.tale.content.stage.level.forest.event.interaction.*;
 import eu.janschupke.tale.content.stage.level.forest.event.pickup.CoinPickupEvent;
 import eu.janschupke.tale.content.stage.level.forest.event.transition.OutskirtsTransitionEvent;
 
@@ -36,6 +33,7 @@ public class ForestEventHandler extends LevelEventHandler {
     private CoinInteractionEvent coinInteractionEvent;
     private UkkoDeliveryInteractionEvent ukkoDeliveryInteractionEvent;
     private UkkoInteractionEvent ukkoInteractionEvent;
+    private UkkoDiscussInteractionEvent ukkoDiscussInteractionEvent;
 
     // Pickup.
     private CoinPickupEvent coinPickupEvent;
@@ -63,12 +61,17 @@ public class ForestEventHandler extends LevelEventHandler {
         coinInteractionEvent = new CoinInteractionEvent(app);
         ukkoDeliveryInteractionEvent = new UkkoDeliveryInteractionEvent(app);
         ukkoInteractionEvent = new UkkoInteractionEvent(app);
+        ukkoDiscussInteractionEvent = new UkkoDiscussInteractionEvent(app);
 
         // Pickup.
         coinPickupEvent = new CoinPickupEvent(app);
 
         // Transition.
         outskirtsTransitionEvent = new OutskirtsTransitionEvent(app);
+    }
+
+    public UkkoDiscussInteractionEvent getUkkoDiscussInteractionEvent() {
+        return ukkoDiscussInteractionEvent;
     }
 
     public CoinInteractionEvent getCoinInteractionEvent() {

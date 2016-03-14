@@ -15,7 +15,6 @@ import eu.janschupke.tale.content.stage.level.forest.event.ForestEventHandler;
  * @author jan.schupke@gmail.com
  */
 public class UkkoInteraction extends Interaction {
-    private TalkSituation talkSituation;
     private DiscussSituation discussSituation;
     private DeliveryResultSituation deliveryResultSituation;
 
@@ -26,7 +25,7 @@ public class UkkoInteraction extends Interaction {
     @Override
     protected void configure() {
         title = app.getLang().get("level.forest.interaction.ukko.title");
-        talkSituation = new TalkSituation(app);
+        TalkSituation talkSituation = new TalkSituation(app);
         discussSituation = new DiscussSituation(app);
         deliveryResultSituation = new DeliveryResultSituation(app);
         situations.add(talkSituation);
@@ -42,6 +41,7 @@ public class UkkoInteraction extends Interaction {
             ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getUkkoDeliveryInteractionEvent().trigger();
             transition(deliveryResultSituation, app);
         } else if (decision.getTag().equals(DecisionTags.FOREST_UKKO_DISCUSS)) {
+            ((ForestEventHandler) ((GameScreen) app.getScreen()).getLevelEventHandler()).getUkkoDiscussInteractionEvent().trigger();
             transition(discussSituation, app);
         } else {
             triggerable.endInteraction(app);

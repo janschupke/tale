@@ -11,6 +11,7 @@ import eu.janschupke.tale.base.event.GeneralEvent;
 public class ToggleDialogsEvent extends GeneralEvent {
     public ToggleDialogsEvent(final App app) {
         super(app, app.getLang().get("event.global.toggle.dialogs"));
+        repeatable = true;
     }
 
     @Override

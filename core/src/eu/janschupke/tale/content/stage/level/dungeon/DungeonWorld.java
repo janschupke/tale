@@ -62,7 +62,7 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(2, 2));
+        harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(1.7f, 2));
         harpsichordObstacle.setPosition(37, 53);
         getObstacles().add(harpsichordObstacle);
 

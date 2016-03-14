@@ -12,12 +12,15 @@ import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
  */
 public class HarpsichordPlayInteractionEvent extends InteractionEvent {
     public HarpsichordPlayInteractionEvent(final App app) {
-        super(app);
+        super(app, app.getLang().get("level.dungeon.event.harpsichord-play.text"));
     }
 
     @Override
     protected void updateMessages() {
-
+        if (!app.getSettingsManager().getConfig().isEnableSound()) {
+            addEventMessage();
+            app.getGameState().getGlobalLevelState().setNewEvent(true);
+        }
     }
 
     @Override

@@ -13,6 +13,7 @@ import eu.janschupke.tale.content.ui.menu.AudioMenu;
 public class ToggleSoundEvent extends GeneralEvent {
     public ToggleSoundEvent(final App app) {
         super(app, app.getLang().get("event.global.toggle.sound"));
+        repeatable = true;
     }
 
     @Override
@@ -31,6 +32,10 @@ public class ToggleSoundEvent extends GeneralEvent {
         ((AudioMenu) app.getHud(Huds.AUDIOMENU)).getEnableSoundCheckbox()
                 .setChecked(app.getSettingsManager().getConfig().isEnableSound());
         app.getSettingsManager().persist();
+
+        if (!app.getSettingsManager().getConfig().isEnableSound()) {
+            app.getResourceManager().getMusicHandler().stopHarpsichord();
+        }
     }
 
     @Override

@@ -13,6 +13,7 @@ import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 public class NewGameGeneralEvent extends GeneralEvent {
     public NewGameGeneralEvent(final App app) {
         super(app);
+        repeatable = true;
     }
 
     @Override

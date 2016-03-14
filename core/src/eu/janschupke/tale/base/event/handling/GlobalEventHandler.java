@@ -148,6 +148,7 @@ public class GlobalEventHandler {
 
         // Relevant only if music is enabled in configuration.
         if (!app.getSettingsManager().getConfig().isEnableMusic()) {
+            Gdx.app.debug("GlobalEventHandler#triggerMusic", "Stopping");
             backgroundMusic.stop();
             return;
         }
@@ -288,6 +289,7 @@ public class GlobalEventHandler {
      * Transitions to the beginning screen.
      */
     public void fireNewGame() {
+        InteractionSwitch.disable(app);
         Utility.transitionScreens(app, app.getScreenInstance(Config.FIRST_LEVEL), app.getHud(Huds.STANDARD));
         // Add continue game button.
         ((MainMenu) app.getHud(Huds.MAINMENU)).setupWidgets(true);
