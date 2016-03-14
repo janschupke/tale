@@ -51,7 +51,7 @@ public class SettlementWorld extends TopDownWorld {
 
     @Override
     protected void initPlayer() {
-        setSpawnPoint(5, 45);
+        setSpawnPoint(10, 45);
         setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
@@ -59,7 +59,7 @@ public class SettlementWorld extends TopDownWorld {
     @Override
     protected void initCreatures() {
         choboUnit = new ChoboUnit(this);
-        choboUnit.setPosition(42, 6);
+        choboUnit.setPosition(44, 21);
         getUnits().add(choboUnit);
 
         smithUnit = new SmithUnit(this);
@@ -74,35 +74,35 @@ public class SettlementWorld extends TopDownWorld {
     @Override
     protected void initObstacles() {
         blacksmithObstacle = new BlacksmithObstacle(this, 5);
-        blacksmithObstacle.setPosition(42, 48);
+        blacksmithObstacle.setPosition(33, 46);
         getObstacles().add(blacksmithObstacle);
 
         Obstacle choboHouseObstacle = new ChoboHouseObstacle(this, 7);
-        choboHouseObstacle.setPosition(34, 5);
+        choboHouseObstacle.setPosition(36, 16);
         getObstacles().add(choboHouseObstacle);
 
-        dungeonObstacle = new DungeonObstacle(this, new Vector2(2.5f, 5));
-        dungeonObstacle.setPosition(17, 8);
+        dungeonObstacle = new DungeonObstacle(this, new Vector2(3.0f, 7));
+        dungeonObstacle.setPosition(17, 11);
         getObstacles().add(dungeonObstacle);
 
         Obstacle farmObstacle = new FarmObstacle(this, 5);
-        farmObstacle.setPosition(27, 36);
+        farmObstacle.setPosition(25, 34);
         getObstacles().add(farmObstacle);
 
         Obstacle fountainObstacle = new FountainObstacle(this, 3);
-        fountainObstacle.setPosition(35, 41);
+        fountainObstacle.setPosition(33, 40);
         getObstacles().add(fountainObstacle);
 
         Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(1.2f, 1.5f));
-        roadSignObstacle.setPosition(8, 46);
+        roadSignObstacle.setPosition(12, 46);
         getObstacles().add(roadSignObstacle);
 
         Obstacle tavernObstacle = new TavernObstacle(this, 5);
-        tavernObstacle.setPosition(50, 38);
+        tavernObstacle.setPosition(42, 38);
         getObstacles().add(tavernObstacle);
 
         Wall outskirtsTransitionWall = new OutskirtsTransitionWall(this, new Vector2(0.5f, 10));
-        outskirtsTransitionWall.setPosition(2, 40);
+        outskirtsTransitionWall.setPosition(7, 40);
         getObstacles().add(outskirtsTransitionWall);
     }
 
@@ -113,12 +113,12 @@ public class SettlementWorld extends TopDownWorld {
     @Override
     protected void initSensors() {
         Sensor choboExplorationSensor = new ChoboExplorationSensor(this, new Vector2(10, 0.5f));
-        choboExplorationSensor.setPosition(46, 18);
+        choboExplorationSensor.setPosition(42, 25);
 
         Sensor dungeonExplorationSensor = new DungeonExplorationSensor(this, new Vector2(10, 0.5f));
         dungeonExplorationSensor.setPosition(10, 20);
 
         Sensor outskirtsTransitionSensor = new OutskirtsTransitionSensor(this, new Vector2(0.5f, 10));
-        outskirtsTransitionSensor.setPosition(3, 40);
+        outskirtsTransitionSensor.setPosition(8, 40);
     }
 }

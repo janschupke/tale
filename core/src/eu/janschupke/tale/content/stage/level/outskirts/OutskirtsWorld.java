@@ -63,25 +63,25 @@ public class OutskirtsWorld extends TopDownWorld {
         getUnits().add(croneUnit);
 
         jackUnit = new JackUnit(this);
-        jackUnit.setPosition(9, 53);
+        jackUnit.setPosition(9, 51);
         getUnits().add(jackUnit);
     }
 
     @Override
     protected void initItems() {
         lumberItem = new LumberItem(this);
-        lumberItem.setPosition(38, 57);
+        lumberItem.setPosition(32, 52);
         getItems().add(lumberItem);
 
         varpunenNoteItem = new VarpunenItem(this);
-        varpunenNoteItem.setPosition(7, 15);
+        varpunenNoteItem.setPosition(11, 29);
         getItems().add(varpunenNoteItem);
     }
 
     @Override
     protected void initObstacles() {
         caveObstacle = new CaveObstacle(this, 3);
-        caveObstacle.setPosition(40, 10);
+        caveObstacle.setPosition(40, 14);
         getObstacles().add(caveObstacle);
 
         Obstacle croneShackObstacle = new CroneShackObstacle(this, 3);
@@ -89,15 +89,15 @@ public class OutskirtsWorld extends TopDownWorld {
         getObstacles().add(croneShackObstacle);
 
         Obstacle jackHouseObstacle = new JackHouseObstacle(this, 3);
-        jackHouseObstacle.setPosition(8, 56);
+        jackHouseObstacle.setPosition(11, 53);
         getObstacles().add(jackHouseObstacle);
 
         Obstacle roadSignObstacle = new RoadSignObstacle(this, new Vector2(1.2f, 1.5f));
-        roadSignObstacle.setPosition(30, 38);
+        roadSignObstacle.setPosition(32, 38);
         getObstacles().add(roadSignObstacle);
 
         Wall settlementTransitionWall = new SettlementTransitionWall(this, new Vector2(0.5f, 5));
-        settlementTransitionWall.setPosition(59, 41);
+        settlementTransitionWall.setPosition(55, 41);
         getObstacles().add(settlementTransitionWall);
 
         Wall forestTransitionWall = new ForestTransitionWall(this, new Vector2(5, 0.5f));
@@ -112,18 +112,18 @@ public class OutskirtsWorld extends TopDownWorld {
     @Override
     protected void initSensors() {
         Sensor caveExplorationSensor = new CaveExplorationSensor(this, new Vector2(5, 0.5f));
-        caveExplorationSensor.setPosition(54, 18);
+        caveExplorationSensor.setPosition(49, 25);
 
         Sensor forestTransitionSensor = new ForestTransitionSensor(this, new Vector2(5, 0.5f));
         forestTransitionSensor.setPosition(16, 8);
 
-        Sensor jackExplorationSensor = new JackExplorationSensor(this, new Vector2(5, 0.5f));
-        jackExplorationSensor.setPosition(14, 40);
+        Sensor jackExplorationSensor = new JackExplorationSensor(this, new Vector2(7, 0.5f));
+        jackExplorationSensor.setPosition(12, 44);
 
         Sensor settlementTransitionSensor = new SettlementTransitionSensor(this, new Vector2(0.5f, 5));
-        settlementTransitionSensor.setPosition(58, 41);
+        settlementTransitionSensor.setPosition(54, 41);
 
         Sensor varpunenExplorationSensor = new VarpunenExplorationSensor(this, new Vector2(5, 0.5f));
-        varpunenExplorationSensor.setPosition(5, 30);
+        varpunenExplorationSensor.setPosition(6, 40);
     }
 }

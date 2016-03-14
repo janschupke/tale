@@ -21,6 +21,7 @@ public class CaveObstacle extends Obstacle implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsCaveTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new CaveInteraction(world.getScreen().getApp(), this);
+        sprite.flip(true, false);
     }
 
     @Override

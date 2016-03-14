@@ -22,6 +22,7 @@ public class RoadSignObstacle extends Obstacle implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementRoadSignTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new RoadSignInteraction(world.getScreen().getApp(), this);
+        sprite.flip(true, false);
     }
 
     @Override

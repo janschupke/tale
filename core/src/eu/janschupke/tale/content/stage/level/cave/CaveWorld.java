@@ -36,7 +36,7 @@ public class CaveWorld extends TopDownWorld {
 
     @Override
     protected void initPlayer() {
-        setSpawnPoint(32, 8);
+        setSpawnPoint(36, 11);
         setPlayerUnit(new PlayerUnit(this));
         positionPlayerUnit();
     }
@@ -44,11 +44,11 @@ public class CaveWorld extends TopDownWorld {
     @Override
     protected void initCreatures() {
         villeUnit = new VilleUnit(this);
-        villeUnit.setPosition(39, 39);
+        villeUnit.setPosition(42, 26);
         getUnits().add(villeUnit);
 
         corpsecUnit = new CorpsecUnit(this);
-        corpsecUnit.setPosition(11, 22);
+        corpsecUnit.setPosition(16, 15);
         getUnits().add(corpsecUnit);
     }
 
@@ -67,10 +67,10 @@ public class CaveWorld extends TopDownWorld {
 
     @Override
     protected void initSensors() {
-        Sensor corpsecExplorationSensor = new CorpsecExplorationSensor(this, new Vector2(12, 0.5f));
-        corpsecExplorationSensor.setPosition(4, 30);
+        Sensor corpsecExplorationSensor = new CorpsecExplorationSensor(this, new Vector2(0.5f, 12));
+        corpsecExplorationSensor.setPosition(23, 21);
 
         Sensor outskirtsTransitionSensor = new OutskirtsTransitionSensor(this, new Vector2(5, 0.5f));
-        outskirtsTransitionSensor.setPosition(30, 5);
+        outskirtsTransitionSensor.setPosition(34, 8);
     }
 }

@@ -34,7 +34,7 @@ public class MenuScreen extends UiScreen {
         app.getBatch().begin();
         app.getFont().draw(app.getBatch(), titleLayout,
                 app.getUi().getWidth() / 2 - titleLayout.width / 2,
-                app.getUi().getHeight() - 30);
+                app.getUi().getHeight() - Config.UI_INDENT_TITLE);
         app.getBatch().end();
     }
 

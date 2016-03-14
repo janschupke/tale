@@ -64,19 +64,20 @@ public class Config {
     public static final float MAP_DEFAULT_SPEED = 1.0f;
     // Development variables.
     public static final boolean DEBUG_MODE = true;
-    public static final boolean DEBUG_OBJECT_POSITION = true;
+    public static final boolean DEBUG_OBJECT_POSITION = false;
     // UI values.
     public static final int SLIDER_MIN = 0;
     public static final int SLIDER_MAX = 100;
     public static final int SLIDER_STEP = 10;
     // Default widget dimensions.
+    public static final int UI_INDENT_TITLE = 45;
     public static final int UI_PERCENT_WIDTH = 40;
     public static final int UI_BUTTON_WIDTH = 270;
     public static final int UI_SMALL_BUTTON_WIDTH = 135;
     public static final int UI_MENU_ITEM_PADDING = 5;
     public static final int UI_MENU_ITEM_PADDING_DIM = 2;
-    public static final int UI_SEPARATOR_SPACE = 20;
-    public static final int UI_INDENT_TOP = 50;
+    public static final int UI_SEPARATOR_SPACE = 15;
+    public static final int UI_INDENT_TOP = 60;
     public static final int HUD_INNER_PADDING = 10;
     public static final int HUD_BUTTON_PADDING = 5;
     public static final int HUD_BUTTON_PADDING_DIM = 3;
@@ -92,7 +93,7 @@ public class Config {
     public static final int UI_DIALOG_HEIGHT = 200;
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 8;
-    public static final Screens FIRST_LEVEL = Screens.DUNGEON;
+    public static final Screens FIRST_LEVEL = Screens.SETTLEMENT;
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;

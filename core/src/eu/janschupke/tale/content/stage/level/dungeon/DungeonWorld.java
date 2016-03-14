@@ -56,18 +56,18 @@ public class DungeonWorld extends TopDownWorld {
     @Override
     protected void initItems() {
         chestItem = new ChestItem(this);
-        chestItem.setPosition(15, 25);
+        chestItem.setPosition(36, 49);
         getItems().add(chestItem);
     }
 
     @Override
     protected void initObstacles() {
         harpsichordObstacle = new HarpsichordObstacle(this, new Vector2(1.7f, 2));
-        harpsichordObstacle.setPosition(37, 53);
+        harpsichordObstacle.setPosition(18, 23);
         getObstacles().add(harpsichordObstacle);
 
         gateObstacle = new GateObstacle(this, new Vector2(1, 2));
-        gateObstacle.setPosition(18, 42);
+        gateObstacle.setPosition(40, 45);
         getObstacles().add(gateObstacle);
     }
 
@@ -78,11 +78,10 @@ public class DungeonWorld extends TopDownWorld {
     @Override
     protected void initSensors() {
         exitTransitionSensor = new ExitTransitionSensor(this, new Vector2(0.5f, 5));
-        // TODO: position
-        exitTransitionSensor.setPosition(1, 1);
+        exitTransitionSensor.setPosition(45, 43);
 
         Sensor settlementTransitionSensor = new SettlementTransitionSensor(this, new Vector2(5, 0.5f));
-        settlementTransitionSensor.setPosition(12, 53);
+        settlementTransitionSensor.setPosition(12, 55);
 
         Sensor studyExplorationSensor = new StudyExplorationSensor(this, new Vector2(5, 0.5f));
         studyExplorationSensor.setPosition(23, 38);

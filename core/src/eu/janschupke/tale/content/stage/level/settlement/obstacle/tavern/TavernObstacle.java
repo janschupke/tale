@@ -21,6 +21,7 @@ public class TavernObstacle extends Obstacle implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getSettlementTavernTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new TavernInteraction(world.getScreen().getApp(), this);
+        sprite.flip(true, false);
     }
 
     @Override

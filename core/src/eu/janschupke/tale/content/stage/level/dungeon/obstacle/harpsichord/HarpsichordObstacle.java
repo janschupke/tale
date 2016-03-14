@@ -22,6 +22,8 @@ public class HarpsichordObstacle extends Obstacle implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getDungeonHarpsichordTexture(), size);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new HarpsichordInteraction(world.getScreen().getApp(), this);
+        // Facing left.
+        sprite.flip(true, false);
     }
 
     @Override

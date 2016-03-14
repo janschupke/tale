@@ -21,6 +21,7 @@ public class JackHouseObstacle extends Obstacle implements Triggerable {
         super(world, world.getScreen().getApp().getResourceManager().getTextureHandler().getOutskirtsJackHouseTexture(), radius);
         interactionHint = world.getScreen().getApp().getLang().get("hint.global.investigate");
         interaction = new JackHouseInteraction(world.getScreen().getApp(), this);
+        sprite.flip(true, false);
     }
 
     @Override
