@@ -9,6 +9,7 @@ import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.interaction.InteractionSwitch;
 import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.base.ui.table.UiTable;
+import eu.janschupke.tale.content.config.Config;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -37,11 +38,13 @@ public class HintTable extends UiTable implements Observer {
         messageTable = new Table();
         messageTable.setBackground(app.getResourceManager().getTextureHandler().getHudBackgroundDrawable());
         hintLabel = new Label("", app.getSkin());
+        hintLabel.setWidth(Config.HUD_HINT_WIDTH);
+        hintLabel.setAlignment(Align.center);
     }
 
     @Override
     public void addWidgets() {
-        messageTable.add(hintLabel);
+        messageTable.add(hintLabel).width(Config.HUD_HINT_WIDTH);
     }
 
     @Override

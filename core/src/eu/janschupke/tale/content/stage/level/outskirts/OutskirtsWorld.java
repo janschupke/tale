@@ -74,7 +74,7 @@ public class OutskirtsWorld extends TopDownWorld {
         getItems().add(lumberItem);
 
         varpunenNoteItem = new VarpunenItem(this);
-        varpunenNoteItem.setPosition(11, 29);
+        varpunenNoteItem.setPosition(10, 27);
         getItems().add(varpunenNoteItem);
     }
 

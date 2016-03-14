@@ -24,13 +24,13 @@ public class StudyExplorationEvent extends ExplorationEvent {
     public StudyExplorationEvent(final App app) {
         super(app, app.getLang().get("level.dungeon.event.study-exploration.text"));
         studyExplorationDialog = new StudyExplorationDialog(app);
-        withDialog = true;
+//        withDialog = true;
     }
 
     @Override
     protected void updateMessages() {
-        showDialog(studyExplorationDialog);
-        addEventMessage();
+//        showDialog(studyExplorationDialog);
+//        addEventMessage();
     }
 
     @Override
