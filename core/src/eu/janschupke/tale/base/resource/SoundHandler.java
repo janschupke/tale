@@ -149,5 +149,18 @@ public class SoundHandler extends BaseResourceContainer {
         heavyButtonSound.dispose();
         lightButtonSound.dispose();
         menuCheckboxSounds.dispose();
+        eventSound.dispose();
+        coinSound.dispose();
+        ukkoSound.dispose();
+        villeSound.dispose();
+        villeSadSound.dispose();
+        varpunenSound.dispose();
+        lumberSound.dispose();
+        jackSound.dispose();
+        croneSound.dispose();
+        smithSound.dispose();
+        choboSound.dispose();
+        gateSound.dispose();
+        chestSound.dispose();
     }
 }
