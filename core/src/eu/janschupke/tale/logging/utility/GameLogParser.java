@@ -1,6 +1,7 @@
 package eu.janschupke.tale.logging.utility;
 
 import com.badlogic.gdx.Gdx;
+import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.logging.GameLog;
 import eu.janschupke.tale.logging.GameLogEntry;
 
@@ -14,9 +15,12 @@ public class GameLogParser {
     public static void parseToXml(final GameLog gameLog) {
         Gdx.app.debug("GameLogParser#parseToXml", "Dumping game log");
 
-        // TODO
-        for (GameLogEntry entry : gameLog.getEntries()) {
-            System.out.println(entry.getTag());
+        if (Config.DEBUG_MODE) {
+            for (GameLogEntry entry : gameLog.getEntries()) {
+                System.out.println(entry.getTag());
+            }
         }
+
+        // TODO: xml parsing, saving to file
     }
 }

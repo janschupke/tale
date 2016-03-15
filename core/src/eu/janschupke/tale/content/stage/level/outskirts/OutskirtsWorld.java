@@ -63,7 +63,7 @@ public class OutskirtsWorld extends TopDownWorld {
         getUnits().add(croneUnit);
 
         jackUnit = new JackUnit(this);
-        jackUnit.setPosition(9, 51);
+        jackUnit.setPosition(8, 53);
         getUnits().add(jackUnit);
     }
 
@@ -88,7 +88,7 @@ public class OutskirtsWorld extends TopDownWorld {
         croneShackObstacle.setPosition(38, 35);
         getObstacles().add(croneShackObstacle);
 
-        Obstacle jackHouseObstacle = new JackHouseObstacle(this, 3);
+        Obstacle jackHouseObstacle = new JackHouseObstacle(this, new Vector2(3, 3));
         jackHouseObstacle.setPosition(11, 53);
         getObstacles().add(jackHouseObstacle);
 

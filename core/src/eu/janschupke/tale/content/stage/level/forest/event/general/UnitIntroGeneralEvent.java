@@ -27,13 +27,13 @@ public class UnitIntroGeneralEvent extends GeneralEvent {
     public UnitIntroGeneralEvent(final App app) {
         super(app, app.getLang().get("level.forest.event.unit-intro.text"));
         unitIntroDialog = new UnitIntroDialog(app);
-        withDialog = true;
+//        withDialog = true;
     }
 
     @Override
     protected void updateMessages() {
-        showDialog(unitIntroDialog);
-        addEventMessage();
+//        showDialog(unitIntroDialog);
+//        addEventMessage();
     }
 
     @Override

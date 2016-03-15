@@ -20,6 +20,7 @@ public class ToggleMusicEvent extends GeneralEvent {
     @Override
     protected void updateMessages() {
         addEventMessage();
+        app.getGameState().getGlobalLevelState().setNewEvent(true);
     }
 
     @Override

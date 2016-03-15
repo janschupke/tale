@@ -13,8 +13,8 @@ public class DefaultSettings {
     public static final int SCREEN_HEIGHT = Config.AVAILABLE_HEIGHTS[0];
     public static final boolean FULLSCREEN = false;
 
-    public static final float MASTER_VOLUME = 0.7f;
-    public static final float MUSIC_VOLUME = 0.3f;
+    public static final float MASTER_VOLUME = 0.5f;
+    public static final float MUSIC_VOLUME = 0.1f;
     public static final float SOUND_VOLUME = 0.4f;
     public static final float SPEECH_VOLUME = 0.4f;
     public static final boolean ENABLE_MUSIC = true;
