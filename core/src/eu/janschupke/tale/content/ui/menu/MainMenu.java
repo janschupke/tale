@@ -22,6 +22,7 @@ public class MainMenu extends MenuTable {
     private TextButton hotkeysButton;
     private TextButton creditsButton;
     private TextButton exitButton;
+    private Label pathLabel;
 
     public MainMenu(final App app) {
         super(app);
@@ -40,6 +41,8 @@ public class MainMenu extends MenuTable {
         hotkeysButton = new TextButton(app.getLang().get("menu.main.button.hotkeys"), app.getSkin());
         creditsButton = new TextButton(app.getLang().get("menu.main.button.credits"), app.getSkin());
         exitButton = new TextButton(app.getLang().get("menu.main.button.exit"), app.getSkin());
+        String path = app.getLang().get("menu.main.label.path") + "\n" + Config.FILE_PATH;
+        pathLabel = new Label(path, app.getSkin());
     }
 
     @Override
@@ -59,6 +62,7 @@ public class MainMenu extends MenuTable {
         add(hotkeysButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(creditsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(exitButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(pathLabel).padTop(Config.UI_SEPARATOR_SPACE).row();
     }
 
     @Override
