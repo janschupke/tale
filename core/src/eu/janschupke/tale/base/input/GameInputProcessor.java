@@ -33,6 +33,19 @@ public class GameInputProcessor extends BaseInputProcessor {
         if (keycode == Hotkeys.PAUSE) {
             app.getEventHandler().togglePause();
         }
+
+        handleMenu(keycode);
+        handleEnter(keycode);
+        handleHud(keycode);
+
+        return false;
+    }
+
+    /**
+     * Handles hotkey menu toggling.
+     * @param keycode Code of the pressed key.
+     */
+    private void handleMenu(int keycode) {
         // Close tabs, if any are open. Toggle menu if no tabs are active.
         if (keycode == Hotkeys.MENU || keycode == Hotkeys.MENU_ALTERNATIVE) {
             Gdx.app.debug("GameInputProcessor#keyDown", "Toggling menu");
@@ -52,12 +65,19 @@ public class GameInputProcessor extends BaseInputProcessor {
                 }
             }
         }
+    }
+
+    /**
+     * Handles all events that need to happen after an enter press.
+     * @param keycode Code of the pressed key.
+     */
+    private void handleEnter(int keycode) {
         if (keycode == Input.Keys.ENTER) {
             try {
                 // Enter serves as a hotkey for tab closing.
                 if (app.getHud().getState() != StandardHud.State.HUD) {
                     app.getHud().closeTabs();
-                // It also selects the first decision, if interaction is in progress.
+                    // It also selects the first decision, if interaction is in progress.
                 } else if (app.getGameState().getGlobalLevelState().isInteractionActive()) {
                     InteractionSwitch.getTriggerable().getInteraction().handle();
                 } else if (InteractionSwitch.isInteractionPossible()) {
@@ -67,6 +87,13 @@ public class GameInputProcessor extends BaseInputProcessor {
                 Gdx.app.debug("GameInputProcessor#closeButton#keyDown", "Could not get HUD instance");
             }
         }
+    }
+
+    /**
+     * Handles the toggling of HUD panels.
+     * @param keycode Code of the pressed key.
+     */
+    private void handleHud(int keycode) {
         if (keycode == Hotkeys.MESSAGES) {
             ((GameScreen) app.getScreen()).toggleEventLog();
         }
@@ -88,8 +115,6 @@ public class GameInputProcessor extends BaseInputProcessor {
                 InteractionSwitch.getInteractionEvent().trigger();
             }
         }
-
-        return false;
     }
 
     @Override
