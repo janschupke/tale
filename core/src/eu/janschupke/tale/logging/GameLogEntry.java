@@ -4,7 +4,6 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * One personality entry, consisting of a description
@@ -14,9 +13,9 @@ import java.util.Date;
  */
 public class GameLogEntry {
     /**
-     * Date of the log entry occurrence.
+     * Timestamp of the log entry occurrence.
      */
-    private Date date;
+    private Long timestamp;
 
     /**
      * Game screen at which the entry was logged.
@@ -29,13 +28,13 @@ public class GameLogEntry {
     private GameEventTags tag;
 
     public GameLogEntry(final GameEventTags tag, final Screens level) {
-        date = Calendar.getInstance().getTime();
+        timestamp = Calendar.getInstance().getTimeInMillis();
         this.level = level;
         this.tag = tag;
     }
 
-    public Date getDate() {
-        return date;
+    public Long getTimestamp() {
+        return timestamp;
     }
 
     public Screens getLevel() {
