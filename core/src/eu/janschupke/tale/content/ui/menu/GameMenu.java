@@ -16,11 +16,12 @@ import eu.janschupke.tale.content.config.Config;
  */
 public class GameMenu extends MenuTable {
     private Label titleLabel;
-    ;
+
     private TextButton resumeButton;
     private TextButton settingsButton;
     private TextButton hotkeysButton;
     private TextButton exitButton;
+    private Label pathLabel;
 
     public GameMenu(final App app) {
         super(app);
@@ -36,6 +37,8 @@ public class GameMenu extends MenuTable {
         settingsButton = new TextButton(app.getLang().get("menu.game.button.settings"), app.getSkin());
         hotkeysButton = new TextButton(app.getLang().get("menu.game.button.hotkeys"), app.getSkin());
         exitButton = new TextButton(app.getLang().get("menu.game.button.exit"), app.getSkin());
+        String path = app.getLang().get("menu.main.label.path") + "\n" + Config.FILE_PATH;
+        pathLabel = new Label(path, app.getSkin());
     }
 
     @Override
@@ -45,6 +48,7 @@ public class GameMenu extends MenuTable {
         add(settingsButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(hotkeysButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
         add(exitButton).width(Config.UI_BUTTON_WIDTH).padBottom(Config.UI_MENU_ITEM_PADDING).row();
+        add(pathLabel).padTop(Config.UI_SEPARATOR_SPACE).row();
     }
 
     @Override
