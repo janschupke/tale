@@ -23,6 +23,7 @@ public class MusicHandler extends BaseResourceContainer {
 
     private List<Music> harpsichordMusic;
     private int lastHarpsi;
+    private int plays = 0;
 
     public MusicHandler(final App app) {
         super(app);
@@ -55,12 +56,19 @@ public class MusicHandler extends BaseResourceContainer {
 
         int trackNumber;
 
-        do {
-            int min = 0;
-            int max = harpsichordMusic.size() - 1;
-            trackNumber = min + (int) (Math.random() * ((max - min) + 1));
-        } while (trackNumber == lastHarpsi);
+        // Cycle through all at first.
+        if (plays < harpsichordMusic.size()) {
+            trackNumber = plays;
+        // Random pick after.
+        } else {
+            do {
+                int min = 0;
+                int max = harpsichordMusic.size() - 1;
+                trackNumber = min + (int) (Math.random() * ((max - min) + 1));
+            } while (trackNumber == lastHarpsi);
+        }
 
+        plays++;
         lastHarpsi = trackNumber;
 
         harpsichordMusic.get(trackNumber).setVolume(volume);

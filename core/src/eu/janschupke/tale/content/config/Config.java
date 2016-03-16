@@ -65,7 +65,7 @@ public class Config {
     public static final String MAP_PROPERTY_SPEED = "speed";
     public static final float MAP_DEFAULT_SPEED = 1.0f;
     // Development variables.
-    public static final boolean DEBUG_MODE = true;
+    public static final boolean DEBUG_MODE = false;
     public static final boolean DEBUG_OBJECT_POSITION = false;
     // UI values.
     public static final int SLIDER_MIN = 0;
