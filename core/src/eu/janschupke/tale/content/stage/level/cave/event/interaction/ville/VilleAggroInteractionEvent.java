@@ -73,11 +73,15 @@ public class VilleAggroInteractionEvent extends InteractionEvent {
         // Disabling fail decision, since the book is acquired.
         jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
                 .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_FAIL).setAvailable(false);
+
+        Interaction villeInteraction = app.getInteraction(InteractionTags.CAVE_VILLE);
+        villeInteraction.getSituation(SituationTags.CAVE_VILLE_TALK)
+                .getDecision(DecisionTags.CAVE_VILLE_TALK_INQUIRY).setAvailable(false);
     }
 
     private void updateVilleObject() {
         for (Unit unit : ((CaveScreen) app.getScreen()).getWorld().getUnits()) {
-            if (unit  instanceof VilleUnit) {
+            if (unit instanceof VilleUnit) {
                 unit.setTexture(app.getResourceManager().getTextureHandler().getCaveVilleSadTexture());
                 break;
             }

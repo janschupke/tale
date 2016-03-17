@@ -42,6 +42,7 @@ public class HarpsichordObstacle extends Obstacle implements Triggerable {
     public void disengage() {
         endInteraction(world.getScreen().getApp());
         InteractionSwitch.disable(world.getScreen().getApp());
+        world.getScreen().getApp().getResourceManager().getMusicHandler().stopHarpsichord();
     }
 
     @Override

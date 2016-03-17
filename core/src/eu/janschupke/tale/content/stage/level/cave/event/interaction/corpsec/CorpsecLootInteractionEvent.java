@@ -56,5 +56,9 @@ public class CorpsecLootInteractionEvent extends InteractionEvent {
         Interaction choboInteraction = app.getInteraction(InteractionTags.SETTLEMENT_CHOBO);
         choboInteraction.getSituation(SituationTags.SETTLEMENT_CHOBO_TALK)
                 .getDecision(DecisionTags.SETTLEMENT_CHOBO_JOURNAL).setAvailable(true);
+
+        Interaction corpsecInteraction = app.getInteraction(InteractionTags.CAVE_CORPSEC);
+        corpsecInteraction.getSituation(SituationTags.CAVE_CORPSEC_INVESTIGATE)
+                .getDecision(DecisionTags.CAVE_CORPSEC_INVESTIGATE_SEARCH).setAvailable(false);
     }
 }
