@@ -11,6 +11,7 @@ import eu.janschupke.tale.content.stage.level.dungeon.item.chest.ChestItem;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.gate.GateObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.obstacle.harpsichord.HarpsichordObstacle;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.ExitTransitionSensor;
+import eu.janschupke.tale.content.stage.level.dungeon.sensor.ExitWarningSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.SettlementTransitionSensor;
 import eu.janschupke.tale.content.stage.level.dungeon.sensor.StudyExplorationSensor;
 
@@ -24,6 +25,7 @@ public class DungeonWorld extends TopDownWorld {
     private Obstacle harpsichordObstacle;
     private Obstacle gateObstacle;
     private Sensor exitTransitionSensor;
+    private Sensor exitWarningSensor;
 
     public DungeonWorld(DungeonScreen screen) {
         super("maps/dungeon.tmx", 32f, screen);
@@ -38,7 +40,8 @@ public class DungeonWorld extends TopDownWorld {
         chestItem.setPosition(getPlayerUnit().getX() - 2, getPlayerUnit().getY() - 2);
         harpsichordObstacle.setPosition(getPlayerUnit().getX() - 5, getPlayerUnit().getY() - 2);
         gateObstacle.setPosition(getPlayerUnit().getX() + 2, getPlayerUnit().getY() - 2);
-        exitTransitionSensor.setPosition(getPlayerUnit().getX() + 4, getPlayerUnit().getY() - 3);
+        exitTransitionSensor.setPosition(getPlayerUnit().getX() + 8, getPlayerUnit().getY() - 3);
+        exitWarningSensor.setPosition(getPlayerUnit().getX() + 5, getPlayerUnit().getY() - 3);
     }
 
     @Override
@@ -77,8 +80,11 @@ public class DungeonWorld extends TopDownWorld {
 
     @Override
     protected void initSensors() {
+        exitWarningSensor = new ExitWarningSensor(this, new Vector2(0.5f, 5));
+        exitWarningSensor.setPosition(44, 43);
+
         exitTransitionSensor = new ExitTransitionSensor(this, new Vector2(0.5f, 5));
-        exitTransitionSensor.setPosition(45, 43);
+        exitTransitionSensor.setPosition(47, 43);
 
         Sensor settlementTransitionSensor = new SettlementTransitionSensor(this, new Vector2(5, 0.5f));
         settlementTransitionSensor.setPosition(12, 55);

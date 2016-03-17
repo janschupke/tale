@@ -3,6 +3,7 @@ package eu.janschupke.tale.content.stage.level.dungeon.event;
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.event.handling.LevelEventHandler;
 import eu.janschupke.tale.content.stage.level.dungeon.event.exploration.StudyExplorationEvent;
+import eu.janschupke.tale.content.stage.level.dungeon.event.general.ExitWarningEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestCollectInteractionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestInteractionEvent;
 import eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest.ChestSearchInteractionEvent;
@@ -21,6 +22,9 @@ import eu.janschupke.tale.content.stage.level.dungeon.event.transition.Settlemen
 public class DungeonEventHandler extends LevelEventHandler {
     // Exploration.
     private StudyExplorationEvent studyExplorationEvent;
+
+    // General.
+    private ExitWarningEvent exitWarningEvent;
 
     // Interaction.
     private ChestInteractionEvent chestInteractionEvent;
@@ -41,6 +45,9 @@ public class DungeonEventHandler extends LevelEventHandler {
         // Exploration.
         studyExplorationEvent = new StudyExplorationEvent(app);
 
+        // General.
+        exitWarningEvent = new ExitWarningEvent(app);
+
         // Interaction.
         chestInteractionEvent = new ChestInteractionEvent(app);
         chestSearchInteractionEvent = new ChestSearchInteractionEvent(app);
@@ -53,6 +60,10 @@ public class DungeonEventHandler extends LevelEventHandler {
         // Transition.
         exitTransitionEvent = new ExitTransitionEvent(app);
         settlementTransitionEvent = new SettlementTransitionEvent(app);
+    }
+
+    public ExitWarningEvent getExitWarningEvent() {
+        return exitWarningEvent;
     }
 
     public ChestCollectInteractionEvent getChestCollectInteractionEvent() {
