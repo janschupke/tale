@@ -85,11 +85,11 @@ public class SettlementWorld extends TopDownWorld {
         dungeonObstacle.setPosition(17, 11);
         getObstacles().add(dungeonObstacle);
 
-        Obstacle farmObstacle = new FarmObstacle(this, 5);
+        Obstacle farmObstacle = new FarmObstacle(this, new Vector2(4, 3.5f));
         farmObstacle.setPosition(25, 34);
         getObstacles().add(farmObstacle);
 
-        Obstacle fountainObstacle = new FountainObstacle(this, 3);
+        Obstacle fountainObstacle = new FountainObstacle(this, 2);
         fountainObstacle.setPosition(33, 40);
         getObstacles().add(fountainObstacle);
 

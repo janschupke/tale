@@ -96,7 +96,7 @@ public class ForestWorld extends TopDownWorld {
         outskirtsTransitionSensor.setPosition(47, 42);
 
         Sensor southExplorationSensor = new SouthExplorationSensor(this, new Vector2(5, 0.5f));
-        southExplorationSensor.setPosition(18, 12);
+        southExplorationSensor.setPosition(17, 12);
 
         Sensor northExplorationSensor = new NorthExplorationSensor(this, new Vector2(5, 0.5f));
         northExplorationSensor.setPosition(12, 45);

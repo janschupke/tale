@@ -15,7 +15,10 @@ public abstract class TopDownWorld extends BaseWorld {
         super(tiledMap, tileSize, screen);
 
         boxWorld = new World(Config.TOPDOWN_GRAVITY, false);
-        WorldObjectFactory.parseMapObjects(boxWorld, map.getLayers().get(Config.MAP_LAYER_OBJECT).getObjects(), tileSize);
+        if (!Config.DEBUG_MODE) {
+            WorldObjectFactory.parseMapObjects(boxWorld, map.getLayers()
+                    .get(Config.MAP_LAYER_OBJECT).getObjects(), tileSize);
+        }
         boxWorld.setContactListener(new BodyContactListener());
 
         init();
