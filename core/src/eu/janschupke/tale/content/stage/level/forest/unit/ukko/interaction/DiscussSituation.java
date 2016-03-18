@@ -17,7 +17,7 @@ public class DiscussSituation extends Situation {
                 SituationTags.FOREST_UKKO_DISCUSS);
 
         decisions.add(new Decision(app.getLang().get("level.forest.interaction.ukko.discuss.decision.delivery"),
-                DecisionTags.FOREST_UKKO_DELIVERY));
+                DecisionTags.FOREST_UKKO_DELIVERY, false));
         decisions.add(new Decision(app.getLang().get("global.interaction.decision.end"),
                 DecisionTags.GLOBAL_END));
     }

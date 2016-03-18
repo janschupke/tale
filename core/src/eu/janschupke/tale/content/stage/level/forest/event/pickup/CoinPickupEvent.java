@@ -72,6 +72,8 @@ public class CoinPickupEvent extends PickupEvent {
         Interaction ukkoInteraction = app.getInteraction(InteractionTags.FOREST_UKKO);
         ukkoInteraction.getSituation(SituationTags.FOREST_UKKO_TALK)
                 .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(true);
+        ukkoInteraction.getSituation(SituationTags.FOREST_UKKO_DISCUSS)
+                .getDecision(DecisionTags.FOREST_UKKO_DELIVERY).setAvailable(true);
     }
 
     /**

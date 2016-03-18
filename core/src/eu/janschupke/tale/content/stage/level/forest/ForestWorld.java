@@ -6,7 +6,6 @@ import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.CoinItem;
-import eu.janschupke.tale.content.stage.level.forest.obstacle.InitialWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
 import eu.janschupke.tale.content.stage.level.forest.sensor.*;
@@ -60,9 +59,9 @@ public class ForestWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        Wall initialWall = new InitialWall(this, new Vector2(7, 0.5f));
-        initialWall.setPosition(15, 25);
-        getObstacles().add(initialWall);
+//        Wall initialWall = new InitialWall(this, new Vector2(7, 0.5f));
+//        initialWall.setPosition(15, 25);
+//        getObstacles().add(initialWall);
 
 //        Wall questWall = new QuestWall(this, new Vector2(5, 0.5f));
 //        questWall.setPosition(47, 36);

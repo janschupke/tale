@@ -33,7 +33,9 @@ public class CaveTransitionEvent extends TransitionEvent {
     protected void updateQuests() {
         if (app.getGameState().getGlobalLevelState().isDisputeAccepted()) {
             QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
-            chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+            if (!chain.getActiveQuest().getTasks().get(0).getStatus().equals(TaskStatus.DONE)) {
+                chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+            }
         }
     }
 
