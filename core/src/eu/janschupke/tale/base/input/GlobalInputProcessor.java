@@ -32,6 +32,11 @@ public class GlobalInputProcessor extends BaseInputProcessor {
         if (keycode == Hotkeys.SOUND && app.getSettingsManager().getConfig().isCtrlDown()) {
             Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling sound");
             app.getEventHandler().toggleSound();
+            try {
+                app.getGameState().getCurrentLevel().getWorld().getPlayerUnit().stopDown();
+            } catch (Exception e) {
+                // Might not be in game at the moment.
+            }
         }
 
         if (keycode == Hotkeys.DEBUG_LOG_DUMP) {

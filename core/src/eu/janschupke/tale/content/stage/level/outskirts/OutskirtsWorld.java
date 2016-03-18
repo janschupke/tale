@@ -80,7 +80,7 @@ public class OutskirtsWorld extends TopDownWorld {
 
     @Override
     protected void initObstacles() {
-        caveObstacle = new CaveObstacle(this, new Vector2(3, 2.4f));
+        caveObstacle = new CaveObstacle(this, new Vector2(3, 2.3f));
         caveObstacle.setPosition(40, 14);
         getObstacles().add(caveObstacle);
 

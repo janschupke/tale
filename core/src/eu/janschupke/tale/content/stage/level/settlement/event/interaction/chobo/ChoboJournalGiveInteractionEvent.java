@@ -1,19 +1,14 @@
 package eu.janschupke.tale.content.stage.level.settlement.event.interaction.chobo;
 
 import eu.janschupke.tale.base.App;
-import eu.janschupke.tale.base.container.quest.QuestChain;
-import eu.janschupke.tale.base.container.quest.enumeration.TaskStatus;
 import eu.janschupke.tale.base.event.InteractionEvent;
 import eu.janschupke.tale.base.interaction.Interaction;
 import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
-import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
-import eu.janschupke.tale.content.stage.level.cave.CaveScreen;
-import eu.janschupke.tale.content.stage.level.cave.quest.CaveQuestManager;
 
 /**
  * Journal was offered.
@@ -32,10 +27,7 @@ public class ChoboJournalGiveInteractionEvent extends InteractionEvent {
 
     @Override
     protected void updateQuests() {
-        QuestChain chain = ((CaveQuestManager)((CaveScreen) app.getScreenInstance(Screens.CAVE))
-                .getQuestManager()).getCorpsecQuestChain();
-        chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
-        chain.transition();
+
     }
 
     @Override
