@@ -22,6 +22,7 @@ public class DefaultSettingDialog extends ConfirmDialog {
         if (result) {
             Gdx.app.debug("DefaultSettingsDialog#result", "True");
             app.getSettingsManager().reset();
+            app.getEventHandler().triggerMusic(app.getSettingsManager().getConfig().isEnableMusic(), true);
         } else {
             remove();
         }
