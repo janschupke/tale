@@ -46,6 +46,11 @@ public class GameLogParser {
     public static void parseToXml(final GameLog gameLog) {
         Gdx.app.debug("GameLogParser#parseToXml", "Dumping game log");
 
+        // No events.
+        if (gameLog.getEntries().size() == 0) {
+            return;
+        }
+
         if (Config.DEBUG_MODE) {
             for (GameLogEntry entry : gameLog.getEntries()) {
                 System.out.println(entry.getTag());

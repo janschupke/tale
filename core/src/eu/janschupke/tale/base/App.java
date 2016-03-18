@@ -34,6 +34,7 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 import eu.janschupke.tale.logging.GameLog;
+import eu.janschupke.tale.logging.utility.GameLogParser;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -274,7 +275,7 @@ public abstract class App extends Game {
 
     @Override
     public void dispose() {
-        eventHandler.dumpData();
+        GameLogParser.parseToXml(getGameLog());
         batch.dispose();
         font.dispose();
         skin.dispose();

@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.Hotkeys;
+import eu.janschupke.tale.logging.utility.GameLogParser;
 
 /**
  * Input processor for application-wide input processing.
@@ -43,7 +44,7 @@ public class GlobalInputProcessor extends BaseInputProcessor {
             // Manual dump is only available in debug mode.
             // Dump gets called automatically upon the game completion.
             if (Config.DEBUG_MODE) {
-                app.getEventHandler().dumpData();
+                GameLogParser.parseToXml(app.getGameLog());
             }
         }
 

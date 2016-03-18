@@ -3,6 +3,7 @@ package eu.janschupke.tale.content.ui.dialog;
 import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.ui.dialog.ConfirmDialog;
+import eu.janschupke.tale.logging.utility.GameLogParser;
 
 /**
  * A confirmation dialog for deleting an existing game state
@@ -22,6 +23,7 @@ public class NewGameConfirmDialog extends ConfirmDialog {
 
         if (result) {
             Gdx.app.debug("NewGameConfirmDialog#result", "True");
+            GameLogParser.parseToXml(app.getGameLog());
             app.resetState();
             app.getScreen().resume();
             app.getEventHandler().fireNewGame();

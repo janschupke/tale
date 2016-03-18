@@ -96,13 +96,6 @@ public class GlobalEventHandler {
     }
 
     /**
-     * Dumps the current state of the game action log into XML file.
-     */
-    public void dumpData() {
-        GameLogParser.parseToXml(app.getGameLog());
-    }
-
-    /**
      * Toggles debug rendering for all Scene2D tables in the game.
      *
      * @param state Requested debug state.
@@ -264,7 +257,7 @@ public class GlobalEventHandler {
      */
     public void endGame() {
         Gdx.app.debug("GlobalEventHandler#endGame", "Ending Game");
-        dumpData();
+        GameLogParser.parseToXml(app.getGameLog());
         app.resetState();
         app.getScreen().resume();
         Utility.transitionScreens(app, app.getScreenInstance(Screens.MENU), app.getHud(Huds.MAINMENU));
@@ -281,6 +274,7 @@ public class GlobalEventHandler {
             Gdx.app.debug("GlobalEventHandler#startNewGame", "Reset confirm");
             new NewGameConfirmDialog(app).show(app.getUi());
         } else {
+            GameLogParser.parseToXml(app.getGameLog());
             fireNewGame();
         }
     }
