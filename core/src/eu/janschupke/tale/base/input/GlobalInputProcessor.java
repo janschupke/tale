@@ -48,6 +48,12 @@ public class GlobalInputProcessor extends BaseInputProcessor {
             }
         }
 
+        if (keycode == Hotkeys.DEBUG_MODEL_DUMP) {
+            if (Config.DEBUG_MODE) {
+                GameLogParser.exportEventModel();
+            }
+        }
+
         if (keycode == Hotkeys.DEBUG_UI) {
             Gdx.app.debug("GlobalInputProcessor#keyDown", "Toggling UI debug rendering");
             app.getEventHandler().toggleUiDebugRendering();
