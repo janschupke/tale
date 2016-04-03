@@ -129,6 +129,7 @@ public class GlobalEventHandler {
      * Triggers background music playback based on current configuration.
      *
      * @param state Attempts to play if true, stop otherwise.
+     * @param loop If true, music will be looped. If false, music will only play once.
      */
     public void triggerMusic(boolean state, boolean loop) {
         Gdx.app.debug("GlobalEventHandler#triggerMusic", "Triggering");

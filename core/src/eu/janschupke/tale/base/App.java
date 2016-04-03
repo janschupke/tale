@@ -163,6 +163,7 @@ public abstract class App extends Game {
      * Retrieves the in-game hud instance.
      *
      * @return In-game hud instance.
+     * @throws NoHudException If the hud instance is not found.
      */
     public StandardHud getHud() throws NoHudException {
         Actor actor = ui.getActors().get(0);

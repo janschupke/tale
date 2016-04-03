@@ -1,6 +1,5 @@
 package eu.janschupke.tale.logging.utility;
 
-import com.badlogic.gdx.Gdx;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import eu.janschupke.tale.logging.GameLog;
@@ -50,8 +49,6 @@ public class GameLogParser {
      * @param gameLog Provided game log object.
      */
     public static void parseToXml(final GameLog gameLog) {
-        Gdx.app.debug("GameLogParser#parseToXml", "Dumping game log");
-
         // No events.
         if (gameLog.getEntries().size() == 0) {
             return;
