@@ -17,7 +17,7 @@ public class Config {
     // Filesystem values.
     public static final String FILE_PATH = System.getProperty("user.home") +
             System.getProperty("file.separator") +
-            "schupke" +
+            ".schupke" +
             System.getProperty("file.separator") +
             "tale" +
             System.getProperty("file.separator");
