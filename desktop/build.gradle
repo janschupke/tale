@@ -1,5 +1,8 @@
 apply plugin: "java"
 
+import groovy.xml.XmlParser
+import groovy.xml.XmlNodePrinter
+
 sourceSets.main.java.srcDirs = [ "src/" ]
 
 project.ext.mainClassName = "eu.janschupke.tale.desktop.DesktopLauncher"
@@ -14,9 +17,9 @@ task run(dependsOn: classes, type: JavaExec) {
 }
 
 task dist(type: Jar) {
-    from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.classesDirs)
     from files(sourceSets.main.output.resourcesDir)
-    from {configurations.compile.collect {zipTree(it)}}
+    from {configurations.runtimeClasspath.collect {zipTree(it)}}
     from files(project.assetsDir);
 
     manifest {

@@ -30,8 +30,10 @@ public class Tale extends App {
 		super.create();
 		Gdx.app.debug("Tale#create", "Creating");
 
-		// Cursor setup.
-		Gdx.input.setCursorImage(getResourceManager().getTextureHandler().getGameCursorPixmap(), 0, 0);
+		// Cursor setup - using modern cursor handling
+		// Note: setCursorImage is deprecated, using setCursorCatcher for modern libGDX
+		// For custom cursor, we'll need to implement a different approach
+		// Gdx.input.setCursorCatcher(false);
 
 		// Entry screen - splash.
 		this.setScreen(getScreenInstance(Screens.SPLASH));

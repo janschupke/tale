@@ -5,6 +5,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -70,7 +72,14 @@ public abstract class App extends Game {
         eventHandler = new GlobalEventHandler(this);
 
         batch = new SpriteBatch();
-        font = new BitmapFont(Gdx.files.internal("default.fnt"));
+        
+        // Modern font loading using FreeType instead of deprecated .fnt files
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/arial.ttf"));
+        FreeTypeFontParameter parameter = new FreeTypeFontParameter();
+        parameter.size = 16;
+        font = generator.generateFont(parameter);
+        generator.dispose();
+        
         inputProcessors = new HashMap<>();
 
         // Logging configuration.
@@ -89,6 +98,7 @@ public abstract class App extends Game {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas"));
         skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
         skin.addRegions(atlas);
+        skin.add("default-font", font);
 
         initInputProcessors();
         resetState();

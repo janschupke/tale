@@ -1,8 +1,8 @@
 package eu.janschupke.tale.desktop;
 
 import com.badlogic.gdx.Files;
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import eu.janschupke.tale.Tale;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.DefaultSettings;
@@ -47,18 +47,22 @@ public class DesktopLauncher {
 		PropertiesParser propertiesParser = new PropertiesParser();
 		parseWindowConfig(propertiesParser);
 
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		Tale tale = new Tale();
-		config.fullscreen = propertiesParser.isFullscreen();
+		
+		config.setFullscreenMode(propertiesParser.isFullscreen() ? 
+			Lwjgl3ApplicationConfiguration.getDisplayMode() : null);
+		
 		if (!propertiesParser.isFullscreen()) {
-			config.width = propertiesParser.getWidth();
-			config.height = propertiesParser.getHeight();
+			config.setWindowedMode(propertiesParser.getWidth(), propertiesParser.getHeight());
 		}
-		config.resizable = Config.SCREEN_RESIZABLE;
-		config.foregroundFPS = DefaultSettings.FOREGROUND_FPS;
-		config.backgroundFPS = DefaultSettings.BACKGROUND_FPS;
-		config.title = Config.GAME_TITLE;
-		config.addIcon("textures/gui/application-icon.png", Files.FileType.Internal);
-		new LwjglApplication(tale, config);
+		
+		config.setResizable(Config.SCREEN_RESIZABLE);
+		config.setForegroundFPS(DefaultSettings.FOREGROUND_FPS);
+		config.setIdleFPS(DefaultSettings.BACKGROUND_FPS);
+		config.setTitle(Config.GAME_TITLE);
+		config.setWindowIcon("textures/gui/application-icon.png");
+		
+		new Lwjgl3Application(tale, config);
 	}
 }
