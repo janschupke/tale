@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="30">
+ <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
+  <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
+ </tileset>
+ <layer name="background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztWcuOhDAMmxv//z1wQPBjo5UmUtZyS8q2TYbNwdLOUprYddMH6/J6rYlEIpFIJBKJRCIxAAf5/YMtQG6jgNxQA2mzF55Fwd0xYu8xnnvlWQS0+PSKAz7fP31v6vn5gTfvbfmdW4teLXqe8Psw9OGhwUbywrxlTK/6O0jf2HY39DfbA5gr428ZO+TLdBAf7IE00DowPazeZX5ifd6Zf3/BCX+jX2t5og/YODOU9gKeOjCvou8xN13DWzWQduh3pomnBuILrNnS5lzqNdKqwap0EGg/evJnHsD/leZ2Szx8p+QJT7A1keV4J+dj4XPJsxbUeMreTeawrgdWDUptLPuFmdBeLNV+HC/rPpq1YXUlIliOUrdq65zFA9Fxtfdh+4haDfXm02Ps2biy/USt7Tdqwfho6PV81PoREcKjVD8t7z5Jj2/QYEacOxo8if9IvXpqEKkez84jEnevfLw10PHZGfy/aBBB/546tN6ReN4DjYpt7fvp/rs6J3jfAcg930gPWOZYpLvAntxZHIw58y4Uv7+MiCkxkHNNA/x2OnK85cyK57YesXE9L81/3a53DtYcS/zvfp9juWPfep/DauJsDUp59PZbLZ7H/QirySO0Z/PtiuPMs/BoH+g6EO3Op1aDe+bH6mAEMO+XxqtnvEgalPIbyd+bp5V75HxH8bY+ewqi1WSPsffOI5FIJBKJRDve8OokpA==
+  </data>
+ </layer>
+ <layer name="terrain" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt2VuuwiAQBmB86jp0/2vwWW2tWzImkhACFuaOzCTzorHD91vQ47mcQrhM3ucwZ7vf/e7XX4f73e9+97vf/bP605rNX6t/9veUFT/FuqCl6adaK6Y4/dK1LiHcv/1Y2l/H5b8vsn3LOn3uKA8Of74eCy2RQ/RvC29bzUBq/+9GM0j90GuMnAH2+09vQTO4GvTHWhveH2wGlvxprd/1PTv8kAyOrq/hL9l79sXe8PmwMdoh/l/2fC09lWaxNbql/T12SAbQkvCn9SqcR62vhVbtjMXYqfw986AVz8sHcC6Xn2INrXM5MoDsf0l/Pp86g5H8HBmM5q9lIOGPs19EszH+/H2ArgPij9lr3wNa/nz2TH7K2Ri7Bb/WGWDBn58B1BnkVXpc01+aT5VBa83s7/kbVNKPzQBjn8Vfm6vhr/02reGHzIP+/vup0mcA1n+UAeW9j/V/SnIPUJ151v21DHZiu2X/r/uAcoZlfy0DqmuP4OdurL+0J2fwpxmManc//f//tT3S/tHb/e53v/463O9+Tf/M/QZiYaES
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="32" y="32">
+   <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
+  </object>
+  <object id="19" x="402" y="1476.67">
+   <polyline points="0,0 8,10 6.66667,221.333 30.6667,227.333 41.3333,238.667 37.3333,288.667 59.3333,290.667 71.3333,300.667 70.6667,321.333 207.333,320.667 209.333,303.333 221.333,290.667 237.333,288 244.667,242 253.333,227.333 272,224 281.333,-46"/>
+  </object>
+  <object id="20" x="401.333" y="1479.33">
+   <polyline points="0,0 -24,0.666667 -26,-252 -36,-258.667 -52.6667,-260 -56,-345.333 -63.3333,-356 -87.3333,-352 -86,-438 -98,-450 -124,-449.333 -119.333,-558"/>
+  </object>
+  <object id="21" x="282.667" y="921.333">
+   <polyline points="0,0 24.6667,-0.666667 33.3333,-20 41.3333,-30 64,-31.3333 65.3333,-62 88.6667,-63.3333 94.6667,-74.6667 94,-128 150,-128 163.333,-138.667 160.667,-159.333 182.667,-160 194.667,-170 192.667,-190 214.667,-189.333 225.333,-199.333 224.667,-207.333 217.333,-210 -209.333,-210 -215.333,-202 -215.333,-184 -249.333,-180"/>
+  </object>
+  <object id="22" x="683.333" y="1431.33">
+   <polyline points="0,0 -32.6667,2.66667 -40,-9.33333 -36,-60.6667 -63.3333,-60 -72,-70 -68,-125.333 -96,-123.333 -104,-134 -102.667,-154 -128.667,-155.333 -138,-166 -134,-219.333 -158,-220 -169.333,-234.667 -166,-314"/>
+  </object>
+  <object id="23" x="852.667" y="537.333">
+   <polyline points="0,0 -169.333,1.33333 -179.333,-9.33333 -177.333,-29.3333 -360,-32 -369.333,-36.6667 -365.333,-62 -498.667,-64 -508,-54 -505.333,-42 -511.333,-34 -567.333,-33.3333 -567.333,-14.6667 -576,-2.66667 -820.667,0.666667"/>
+  </object>
+  <object id="24" x="517" y="1113.5">
+   <polyline points="0,0 -25,1.5 -35.5,-7 -33,-102 -24.5,-114.5 -5,-115 -3,-135.5 9.5,-146.5 28,-146.5 28.5,-167 40,-176.5 59,-178.5 60.5,-199.5 71,-208.5 95,-209 93.5,-264 105.5,-273 140.5,-275.5 151.5,-268 147,-241.5 171.5,-243 180,-237 179,-214 207.5,-211.5 217.5,-205 214,-180 237,-180 247,-174 244.5,-149.5 332,-147 342,-140.5 342,-118"/>
+  </object>
+  <object id="25" x="1316.67" y="1275.33">
+   <polyline points="0,0 -0.666667,17.3333 6,30 49.3333,30.6667 58,18.6667 56,0.666667 78,-2.66667 87.3333,-12 88,-64.6667 110.667,-66 118.667,-74.6667 120,-108 110,-116.667 84.6667,-116.667 86,-167.333 78,-179.333 54,-180.667 56,-203.333 45.3333,-210.667 23.3333,-210.667 24,-238.667 15.3333,-244.667 -72,-244.667 -70,-267.333 -79.3333,-276.667 -456,-276.667"/>
+  </object>
+  <object id="26" x="1317.5" y="1274.5">
+   <polyline points="0,0 -136.5,-1 -136.5,18.5 -142.5,29 -170.5,28.5 -170.5,79 -176,93.5 -203,94.5 -205.5,203.5 -180,203 -170,210 -173.5,268 -145.5,266.5 -137.5,273 -140,300 -115.5,298.5 -104,304.5 -107,331 -84,333 -73.5,336.5 -75,363 94,363.5 94.5,342 102,331.5 156.5,331 157,310 162.5,301 190,299 190,277 196,268.5 222,269"/>
+  </object>
+  <object id="27" x="1542" y="1542">
+   <polyline points="0,0 -0.5,-16.5 4.5,-28 61.5,-30.5 62,-83 71.5,-93.5 93.5,-95.5 98.5,-204.5 70,-201 61.5,-215 65,-429.5 37,-426.5 29.5,-435 32.5,-490.5 6.5,-489.5 -5.5,-497.5 -1.5,-522.5 -25.5,-522.5 -36,-528.5 -33.5,-555.5"/>
+  </object>
+  <object id="28" x="1508" y="986">
+   <polyline points="0,0 -24.5,0.5 -33.5,-8 -33.5,-14 -28,-18 -0.5,-20.5 -2,-40 9.5,-51.5 32.5,-51.5 31,-133.5 38.5,-145.5 64.5,-147 65,-286.5 42,-285 29.5,-294.5 32.5,-321.5 9.5,-318.5 -2,-328 1,-350.5 -22.5,-350.5 -33.5,-359 -31,-383.5 -87.5,-382 -97.5,-391.5 -94.5,-414.5 -120.5,-414 -131,-423 -126.5,-448.5 -152,-447 -161.5,-454.5 -158,-512 -184,-511.5 -194,-518.5 -192.5,-543.5 -249,-543 -260,-553.5 -257.5,-576"/>
+  </object>
+  <object id="29" x="852" y="537.667">
+   <polyline points="0,0 7.66667,-6.33333 9,-33.3333 32,-32.3333 39,-39 40,-63.6667 93.3333,-62.6667 105,-68.3333 104.333,-95 189.667,-94 202,-101.667 200.667,-127.333 228.667,-127.333 231.667,-158 337.667,-160 335.333,-138.667 343,-128 398.333,-127"/>
+  </object>
+ </objectgroup>
+</map>

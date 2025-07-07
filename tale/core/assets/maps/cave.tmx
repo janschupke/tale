@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="32">
+ <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
+  <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
+ </tileset>
+ <layer name="background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6B+s1n/KipjDyT0kqqqqqqqqqqqqqqqqqqqqqqvB8NocFs=
+  </data>
+ </layer>
+ <layer name="terrain" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt0LENwzAMBEC7yh4uXWT/8bKAEQQKSYvWPcD28cdj37Zj8Ttfax4/P//9O/j5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fl7+b/lif6IdPRn5N3AX5EZ/dWZyR9luPMH1f6Irhn8kfYV/FGdkfZR/0gieqPtVf6I3gx7hT+iN8vewZ9p55/Lf9Xd2T+yh7/OPur/5Qeje57g/2dPF//VDyL2dPJnHD8/Pz8/Pz8/Pz9/vn/l+wB6bbgX
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="32" y="32">
+   <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
+  </object>
+  <object id="20" x="1220" y="2016.5">
+   <polyline points="0,0 -0.5,-499.5 7,-510 31,-510 30.5,-630 38,-639 60.5,-639.5 61.5,-660.5 69,-671 91.5,-670.5 92,-695 102.5,-704 123,-704"/>
+  </object>
+  <object id="27" x="1113" y="2013">
+   <polyline points="0,0 5,-564 -1,-574 -25.5,-574 -27,-756 -34,-765.5 -57,-766 -58,-820.5 -68.5,-827 -89.5,-829.5 -91,-853.5 -100.5,-860 -208,-859 -214.5,-854.5 -216,-834.5"/>
+  </object>
+  <object id="28" x="1344" y="1311">
+   <polyline points="0,0 0.5,-22 6.5,-30 33,-31.5 32,-56 41.5,-63 63,-63 63.5,-159 40.5,-159.5 32.5,-169.5 33,-191.5 7,-192 -0.5,-201.5 0.5,-222.5 -55.5,-224 -64,-231 -64.5,-255 -119.5,-256.5 -127.5,-263.5 -127.5,-289 -311,-289 -319.5,-296.5 -319.5,-318"/>
+  </object>
+  <object id="29" x="1024" y="991.5">
+   <polyline points="0,0 -223.5,-0.5 -224.5,18 -233,27.5 -351,29.5 -352.5,48.5 -360,61.5 -415.5,63 -416.5,83.5 -424.5,94 -480,95 -479.5,112.5 -487,124 -544.5,126"/>
+  </object>
+  <object id="30" x="575.5" y="1629.5">
+   <polyline points="0,0 -1.5,-22.5 7.5,-29.5 64,-30.5 63,-54 71,-61 95,-62.5 96.5,-85 104,-93 128,-92.5 129,-148.5 138.5,-157.5 159.5,-157.5 160.5,-277 170,-284 192.5,-284.5 192.5,-308.5 203.5,-318 225,-319 227,-374.5 234.5,-379 254,-379 257.5,-404 266.5,-413.5 288.5,-412.5 290,-436 299,-445 320.5,-446.5 320.5,-451.5"/>
+  </object>
+  <object id="31" x="575" y="1630.5">
+   <polyline points="0,0 -129.5,3 -127.5,-21.5 -133.5,-30.5 -159.5,-31 -159.5,-87.5 -169.5,-93.5 -194,-94 -192,-349 -170,-352.5 -162.5,-362 -160,-415 -137,-415 -130.5,-426.5 -128.5,-479.5 -105.5,-479.5 -96,-488.5 -95.5,-512.5"/>
+  </object>
+ </objectgroup>
+</map>

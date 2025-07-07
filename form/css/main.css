@@ -1,0 +1,26 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    padding: 10px 0px 20px 0px;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #cccccc;
+}
+
+.errorMessage {
+    display: none;
+    position: relative;
+    left: -12px;
+    top: 0px;
+}
+
+img {
+    height: 220px;
+}

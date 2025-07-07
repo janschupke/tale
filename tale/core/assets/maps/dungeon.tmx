@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="43">
+ <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
+  <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
+ </tileset>
+ <layer name="background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwzEJAAAMA7Ay/0IqszL2JJBeUlVVVVVVVVVVVVVVVVVVVfX1AE5noJc=
+  </data>
+ </layer>
+ <layer name="terrain" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEKgCAYhuGauodj9z9BJ2uIliCoLH/NZ3hX+R4QMY3DkDpv6TR+/if+edqK3s/Pz8/Pz9+ifz/nGH9d/rOdd+Jv15/TFX8pL3+cPzL+eH/UHa/l/kdb+fn5+fn5+flz/G/+Qfnb9Ufv5+fn5y/lb/Wd5+fn58/1/y1+fv74Hfz8/Pz8/Pz8/Pz8/Pz8/Pz83/p7bgV4UwQA
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="32" y="32">
+   <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
+  </object>
+  <object id="34" x="416" y="1088">
+   <polyline points="0,0 0,-160 352,-160 352,-608 -128,-608 -128,-672 0,-672"/>
+  </object>
+  <object id="35" x="480" y="1088">
+   <polyline points="0,0 0,-96 352,-96 352,-480"/>
+  </object>
+  <object id="37" x="480" y="416">
+   <polyline points="0,0 352,0 352,128 512,128"/>
+  </object>
+  <object id="39" x="480" y="416">
+   <polyline points="0,0 0,-288 -64,-288 -64,0"/>
+  </object>
+  <object id="40" x="480" y="1088">
+   <polyline points="0,0 0,64 160,64 160,224 -128,224 -128,64 -64,64 -64,0"/>
+  </object>
+  <object id="41" x="832" y="608">
+   <polyline points="0,0 992,0 992,-64 224,-64"/>
+  </object>
+  <object id="42" x="1056" y="544">
+   <polyline points="0,0 0,-64 128,-64 128,-192 -64,-192 -64,0"/>
+  </object>
+ </objectgroup>
+</map>

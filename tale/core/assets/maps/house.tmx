@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="64" height="64" tilewidth="32" tileheight="32" nextobjectid="19">
+ <tileset firstgid="1" name="default-tiles" tilewidth="32" tileheight="32" tilecount="1024">
+  <image source="tiles/default-tiles.png" trans="000000" width="1024" height="1024"/>
+  <tile id="195">
+   <properties>
+    <property name="spawn-point" value="spawn-point"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1025" name="utumno-project" tilewidth="32" tileheight="32" tilecount="3072">
+  <image source="tiles/utumno-project.png" trans="000000" width="2048" height="1536"/>
+ </tileset>
+ <layer name="background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6B+86+n5ipjDyT0kqqqqqqqqqqqqqqqqqqqqqqvB86yILU=
+  </data>
+ </layer>
+ <layer name="terrain" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt2lEOwjAMA9BxlO3+h+QLCSE6oja2E+pI/UNLnlcxxnY9juPafJ3Hnst+++3Xz2G//fbbb7/99ttf1f8q9dwK/2epZ884J1H/qNR2lh+ZQaQq+JX74K4P06/MYGRdmWHl+qfwv/fO2AMZ139WBnd5z86Q9fsHncGvY6v9zH1Q1R+dA5FRFf+3eSKV2Uvtz6iVXko/onb3j1yRzzD90blRWc3MrPRnZjI7M8M/Ox/azvBnHBd5/E7+Ub+qfqQ9K4Pu/nOxF+L+j2lf3QPZ9/+7+UfFtttvfyU/I4OMfqjvP4V/pifSj84goyfaH6nu51+ZweqyX+9X2RF+paWCv1sG//L8q5q/Sw6s///VTpa/Ww6M9x8rZ+D3P+23Xz+H/fbbb7/Kv/N6AmMl2Eg=
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="32" y="32">
+   <polyline points="0,0 1984,0 1984,1984 0,1984 0,0"/>
+  </object>
+ </objectgroup>
+</map>
