@@ -67,18 +67,21 @@ public abstract class App extends Game {
         // Language bundle initialization.
         FileHandle baseFileHandle = Gdx.files.internal("languages/language");
         Locale locale = new Locale("en", "GB");
+        // Debug: List all files in the languages directory before loading the bundle
+        FileHandle langDir = Gdx.files.internal("languages");
+        if (langDir.exists() && langDir.isDirectory()) {
+            for (FileHandle f : langDir.list()) {
+                Gdx.app.log("LANG-ASSET", "Found: " + f.path());
+            }
+        } else {
+            Gdx.app.log("LANG-ASSET", "languages directory not found");
+        }
         lang = I18NBundle.createBundle(baseFileHandle, locale);
 
         eventHandler = new GlobalEventHandler(this);
 
         batch = new SpriteBatch();
-        
-        // Modern font loading using FreeType instead of deprecated .fnt files
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/arial.ttf"));
-        FreeTypeFontParameter parameter = new FreeTypeFontParameter();
-        parameter.size = 16;
-        font = generator.generateFont(parameter);
-        generator.dispose();
+        font = new BitmapFont(Gdx.files.internal("default.fnt"));
         
         inputProcessors = new HashMap<>();
 
@@ -96,9 +99,10 @@ public abstract class App extends Game {
 
         // UI initialization.
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("skins/uiskin.atlas"));
-        skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
-        skin.addRegions(atlas);
+        skin = new Skin();
         skin.add("default-font", font);
+        skin.addRegions(atlas);
+        skin.load(Gdx.files.internal("skins/uiskin.json"));
 
         initInputProcessors();
         resetState();
