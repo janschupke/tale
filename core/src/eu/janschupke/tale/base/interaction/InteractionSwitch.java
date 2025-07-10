@@ -5,9 +5,8 @@ import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.base.event.BaseEvent;
 
 /**
- * A switch class that toggles possible interaction based on Triggerable contact.
- *
- * @author jan.schupke@gmail.com
+ * Manages interaction state and transitions.
+ * Controls the flow of conversations and interactions.
  */
 public class InteractionSwitch {
     private static Triggerable triggerable;

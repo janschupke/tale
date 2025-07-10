@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.state;
 import java.util.Observable;
 
 /**
- * Container for variables describing level state.
- *
- * @author jan.schupke@gmail.com
+ * Manages the state of a specific game level.
+ * Tracks level-specific data and progress.
  */
 public abstract class LevelState extends Observable {
 }

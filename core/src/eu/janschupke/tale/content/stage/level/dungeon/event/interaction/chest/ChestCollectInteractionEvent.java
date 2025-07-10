@@ -1,6 +1,7 @@
 package eu.janschupke.tale.content.stage.level.dungeon.event.interaction.chest;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.inventory.InventoryItem;
 import eu.janschupke.tale.base.entity.Item;
@@ -16,9 +17,8 @@ import eu.janschupke.tale.content.stage.level.dungeon.item.GateKeyItem;
 import eu.janschupke.tale.content.ui.dialog.InventoryFullDialog;
 
 /**
- * Collecting the key from the chest.
- *
- * @author jan.schupke@gmail.com
+ * Event for collecting items from chests in the dungeon.
+ * Handles item collection and inventory management.
  */
 public class ChestCollectInteractionEvent extends InteractionEvent {
     public ChestCollectInteractionEvent(final App app) {

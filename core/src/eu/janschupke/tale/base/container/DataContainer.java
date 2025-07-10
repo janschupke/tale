@@ -1,13 +1,12 @@
 package eu.janschupke.tale.base.container;
 
-import eu.janschupke.tale.base.App;
-
 import java.util.Observable;
 
+import eu.janschupke.tale.base.App;
+
 /**
- * Base superclass for all data containers.
- *
- * @author jan.schupke@gmail.com
+ * Base class for data containers.
+ * Provides common functionality for data management and storage.
  */
 public abstract class DataContainer extends Observable {
     protected App app;

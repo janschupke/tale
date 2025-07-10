@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.ui.dialog.InfoDialog;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Exploration event for the study area.
- *
- * @author jan.schupke@gmail.com
+ * Event for studying objects in the dungeon.
+ * Handles exploration and discovery mechanics.
  */
 public class StudyExplorationEvent extends ExplorationEvent {
     class StudyExplorationDialog extends InfoDialog {

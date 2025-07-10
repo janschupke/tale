@@ -10,9 +10,8 @@ import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 
 /**
- * Crone chat invocation.
- *
- * @author jan.schupke@gmail.com
+ * Event for Jack-Crone interactions in the outskirts.
+ * Handles conversations between Jack and the Crone characters.
  */
 public class JackCroneInteractionEvent extends InteractionEvent {
     public JackCroneInteractionEvent(final App app) {

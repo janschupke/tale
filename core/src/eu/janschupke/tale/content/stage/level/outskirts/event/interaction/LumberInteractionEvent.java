@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Event for interaction with the lumber item.
- *
- * @author jan.schupke@gmail.com
+ * Event for lumber interactions in the outskirts.
+ * Handles lumber collection and quest progression.
  */
 public class LumberInteractionEvent extends InteractionEvent {
     public LumberInteractionEvent(final App app) {

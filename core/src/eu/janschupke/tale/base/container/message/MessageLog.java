@@ -1,16 +1,15 @@
 package eu.janschupke.tale.base.container.message;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.DataContainer;
 import eu.janschupke.tale.base.event.BaseEvent;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Container of all occurred events' messages.
- *
- * @author jan.schupke@gmail.com
+ * Manages the game's message log system.
+ * Tracks and displays game messages and notifications.
  */
 public class MessageLog extends DataContainer {
     private List<MessageLogEntry> events;

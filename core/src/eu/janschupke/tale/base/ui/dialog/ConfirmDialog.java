@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.ui.dialog;
 import eu.janschupke.tale.base.App;
 
 /**
- * Confirmation dialog, containing buttons for accepting or declining.
- *
- * @author jan.schupke@gmail.com
+ * Dialog for confirmation prompts.
+ * Displays yes/no options for user confirmation.
  */
 public abstract class ConfirmDialog extends BaseDialog {
     public ConfirmDialog(final App app, String title) {

@@ -5,9 +5,8 @@ import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.base.ui.dialog.InfoDialog;
 
 /**
- * Base class for all in-game events.
- *
- * @author jan.schupke@gmail.com
+ * Base class for all game events.
+ * Provides common functionality for event handling and processing.
  */
 public abstract class BaseEvent {
     protected App app;

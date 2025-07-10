@@ -2,14 +2,14 @@ package eu.janschupke.tale.base.entity;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Base class for invisible walls.
- *
- * @author jan.schupke@gmail.com
+ * Represents a wall or barrier in the game world.
+ * Provides collision detection for level boundaries and obstacles.
  */
 public abstract class Wall extends WorldEntity {
     public Wall(BaseWorld world, Vector2 size) {

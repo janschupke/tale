@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Interaction event for the chest item.
- *
- * @author jan.schupke@gmail.com
+ * Event for chest interactions in the dungeon.
+ * Handles chest opening and item discovery.
  */
 public class ChestInteractionEvent extends InteractionEvent {
     public ChestInteractionEvent(final App app) {

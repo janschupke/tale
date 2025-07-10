@@ -1,12 +1,11 @@
 package eu.janschupke.tale.content.config;
 
 import com.badlogic.gdx.math.Vector2;
+
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
 /**
  * Default configuration and global constants.
- *
- * @author jan.schupke@gmail.com
  */
 public class Config {
     // Global untranslated strings.
@@ -38,6 +37,7 @@ public class Config {
     // Entity configuration
     public static final Vector2 DEFAULT_UNIT_SIZE = new Vector2(0.8f, 0.8f);
     public static final Vector2 DEFAULT_ITEM_SIZE = new Vector2(0.4f, 0.4f);
+    
     // Physics configuration.
     public static final Vector2 PLATFORM_GRAVITY = new Vector2(0, -5.0f);
     public static final Vector2 TOPDOWN_GRAVITY = new Vector2(0f, 0f);
@@ -48,6 +48,7 @@ public class Config {
     public static final float RESTITUTION = 0.0f;
     public static final float OBJECT_ACCELERATION = 2.0f;
     public static final float OBJECT_MAX_SPEED = 2.8f;
+    
     // Collision class configuration.
     public static final short BIT_NOTHING = 0;
     public static final short BIT_UNIT_ANY = 3;
@@ -56,21 +57,26 @@ public class Config {
     public static final short BIT_OBSTACLE_ANY = 12;
     public static final short BIT_OBSTACLE_OBJECT = 4;
     public static final short BIT_OBSTACLE_TERRAIN = 8;
+    
     // TMX layer configuration.
     public static final String MAP_LAYER_TERRAIN = "terrain";
     public static final String MAP_LAYER_OBJECT = "objects";
+    
     // TMX attribute configuration.
     public static final String MAP_TILESET_MAIN = "default-tiles";
     public static final String MAP_PROPERTY_ANIMATION = "animation";
     public static final String MAP_PROPERTY_SPEED = "speed";
     public static final float MAP_DEFAULT_SPEED = 1.0f;
+    
     // Development variables.
     public static final boolean DEBUG_MODE = false;
     public static final boolean DEBUG_OBJECT_POSITION = false;
+    
     // UI values.
     public static final int SLIDER_MIN = 0;
     public static final int SLIDER_MAX = 100;
     public static final int SLIDER_STEP = 10;
+    
     // Default widget dimensions.
     public static final int UI_INDENT_TITLE = 45;
     public static final int UI_PERCENT_WIDTH = 40;
@@ -94,9 +100,11 @@ public class Config {
     public static final int DIALOG_BUTTON_TOP_PADDING = 10;
     public static final int UI_DIALOG_WIDTH = 300;
     public static final int UI_DIALOG_HEIGHT = 200;
+    
     // Gameplay configuration.
     public static final int INVENTORY_CAPACITY = 8;
     public static final Screens FIRST_LEVEL = Screens.FOREST;
+    
     // Viewport configuration.
     private static final int VIEWPORT_WIDE_MULTIPLIER = 1;
     public static final int VIEWPORT_WIDE_WIDTH = 16 * VIEWPORT_WIDE_MULTIPLIER;

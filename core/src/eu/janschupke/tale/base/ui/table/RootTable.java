@@ -1,12 +1,12 @@
 package eu.janschupke.tale.base.ui.table;
 
 import com.badlogic.gdx.utils.Align;
+
 import eu.janschupke.tale.base.App;
 
 /**
- * Generic Table extension, serving as a base for all HUDs and UIs.
- *
- * @author jan.schupke@gmail.com
+ * Root table that serves as the main container for UI elements.
+ * Provides the foundation for all UI layouts.
  */
 public abstract class RootTable extends UiTable {
     public RootTable(final App app) {

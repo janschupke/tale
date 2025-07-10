@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.event;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base event for all interactions.
- *
- * @author jan.schupke@gmail.com
+ * Represents an interaction event.
+ * Handles events related to player interactions with game objects.
  */
 public abstract class InteractionEvent extends BaseEvent {
     public InteractionEvent(final App app) {

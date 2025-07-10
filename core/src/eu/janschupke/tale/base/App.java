@@ -1,18 +1,21 @@
 package eu.janschupke.tale.base;
 
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.I18NBundle;
+
 import eu.janschupke.tale.base.config.enumeration.InputProcessors;
 import eu.janschupke.tale.base.config.enumeration.WorldDebugRendering;
 import eu.janschupke.tale.base.container.GameState;
@@ -38,14 +41,9 @@ import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 import eu.janschupke.tale.logging.GameLog;
 import eu.janschupke.tale.logging.utility.GameLogParser;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
 /**
- * Extension of the base Game class, with some additional boilerplate.
- *
- * @author jan.schupke@gmail.com
+ * Main application class that extends libGDX Game.
+ * Manages screens, input processors, and game state.
  */
 public abstract class App extends Game {
     protected Map<Huds, RootTable> huds;

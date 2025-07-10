@@ -1,15 +1,14 @@
 package eu.janschupke.tale.base.container.quest;
 
-import eu.janschupke.tale.base.App;
-import eu.janschupke.tale.base.container.DataContainer;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.janschupke.tale.base.App;
+import eu.janschupke.tale.base.container.DataContainer;
+
 /**
- * Log of all currently active or completed quests.
- *
- * @author jan.schupke@gmail.com
+ * Manages the player's quest log.
+ * Tracks active and completed quests.
  */
 public class QuestLog extends DataContainer {
     private List<QuestChain> questChains;

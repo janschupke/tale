@@ -4,9 +4,8 @@ import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.DataContainer;
 
 /**
- * Entry of each event message that has occurred.
- *
- * @author jan.schupke@gmail.com
+ * Represents a single entry in the message log.
+ * Contains message data and metadata.
  */
 public class MessageLogEntry extends DataContainer {
     private String eventMessage;

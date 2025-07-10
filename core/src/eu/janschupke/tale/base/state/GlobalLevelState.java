@@ -1,7 +1,8 @@
 package eu.janschupke.tale.base.state;
 
 /**
- * State that applies for all levels in general.
+ * Manages global level state across all game levels.
+ * Tracks cross-level data and persistent state.
  */
 public class GlobalLevelState extends LevelState {
     protected String currentHint;

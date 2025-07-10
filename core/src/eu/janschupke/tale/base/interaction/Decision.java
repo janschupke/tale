@@ -4,8 +4,6 @@ import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 
 /**
  * One decision within a set of decisions for each situation.
- *
- * @author jan.schupke@gmail.com
  */
 public class Decision {
     /**

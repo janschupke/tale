@@ -1,9 +1,8 @@
 package eu.janschupke.tale.base.exception;
 
 /**
- * Thrown when trying to add an item to a full inventory.
- *
- * @author jan.schupke@gmail.com
+ * Exception thrown when the inventory is full.
+ * Indicates that no more items can be added to the inventory.
  */
 public class InventoryFullException extends Exception {
     public InventoryFullException() {

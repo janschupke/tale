@@ -1,7 +1,12 @@
 package eu.janschupke.tale.content.stage.level.outskirts;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.base.entity.*;
+
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.entity.Obstacle;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.entity.Wall;
 import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
@@ -13,14 +18,17 @@ import eu.janschupke.tale.content.stage.level.outskirts.obstacle.cave.CaveObstac
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.crone_shack.CroneShackObstacle;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.jack_house.JackHouseObstacle;
 import eu.janschupke.tale.content.stage.level.outskirts.obstacle.road_sign.RoadSignObstacle;
-import eu.janschupke.tale.content.stage.level.outskirts.sensor.*;
+import eu.janschupke.tale.content.stage.level.outskirts.sensor.CaveExplorationSensor;
+import eu.janschupke.tale.content.stage.level.outskirts.sensor.ForestTransitionSensor;
+import eu.janschupke.tale.content.stage.level.outskirts.sensor.JackExplorationSensor;
+import eu.janschupke.tale.content.stage.level.outskirts.sensor.SettlementTransitionSensor;
+import eu.janschupke.tale.content.stage.level.outskirts.sensor.VarpunenExplorationSensor;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.crone.CroneUnit;
 import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.JackUnit;
 
 /**
  * Outskirts (Level 1) world.
- *
- * @author jan.schupke@gmail.com
+ * Implements the first main level with exploration and quests.
  */
 public class OutskirtsWorld extends TopDownWorld {
     private Unit croneUnit;

@@ -3,13 +3,13 @@ package eu.janschupke.tale.base.entity;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.base.world.BaseWorld;
 
 /**
- * Basic world entity, encapsulating everything that is represented through any sort of Box2D body.
- *
- * @author jan.schupke@gmail.com
+ * Base class for all entities in the game world.
+ * Provides common functionality for physics bodies and positioning.
  */
 public abstract class WorldEntity {
     protected String interactionHint;

@@ -1,17 +1,15 @@
 package eu.janschupke.tale.logging;
 
-import eu.janschupke.tale.content.config.enumeration.Screens;
-import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import eu.janschupke.tale.content.config.enumeration.Screens;
+import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
  * Main log model, consisting of a list of entries,
  * each of which influences a number of personality traits.
  * Exported log will be used for personality analysis.
- *
- * @author jan.schupke@gmail.com
  */
 public class GameLog {
     private List<GameLogEntry> entries;

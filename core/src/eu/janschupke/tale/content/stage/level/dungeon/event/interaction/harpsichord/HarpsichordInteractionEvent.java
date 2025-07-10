@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Interaction event for the harpsichord.
- *
- * @author jan.schupke@gmail.com
+ * Event for harpsichord interactions in the dungeon.
+ * Handles musical instrument interactions and audio playback.
  */
 public class HarpsichordInteractionEvent extends InteractionEvent {
     public HarpsichordInteractionEvent(final App app) {

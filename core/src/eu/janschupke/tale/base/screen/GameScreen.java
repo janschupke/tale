@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.config.enumeration.WorldDebugRendering;
 import eu.janschupke.tale.base.container.quest.QuestManager;
@@ -22,8 +23,6 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 
 /**
  * Base class for all in-game screens (levels).
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class GameScreen extends BaseScreen {
     protected BaseWorld world;

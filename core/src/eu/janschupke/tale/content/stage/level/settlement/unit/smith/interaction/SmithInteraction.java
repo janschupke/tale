@@ -16,8 +16,7 @@ import eu.janschupke.tale.content.stage.level.settlement.unit.smith.interaction.
 
 /**
  * Interaction class for the Smith unit.
- *
- * @author jan.schupke@gmail.com
+ * Manages conversations and interactions with the blacksmith character.
  */
 public class SmithInteraction extends Interaction {
     private Situation assistanceInquirySituation;

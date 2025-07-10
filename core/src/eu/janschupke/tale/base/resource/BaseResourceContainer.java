@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.resource;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base class for all resource containers.
- *
- * @author jan.schupke@gmail.com
+ * Base class for resource containers.
+ * Provides common functionality for resource management.
  */
 public abstract class BaseResourceContainer {
     protected final App app;

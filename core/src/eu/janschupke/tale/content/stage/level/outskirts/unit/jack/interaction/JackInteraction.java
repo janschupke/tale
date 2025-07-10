@@ -9,12 +9,19 @@ import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.stage.level.outskirts.event.OutskirtsEventHandler;
-import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.*;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.CroneRamblingSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.DisputeAcceptedSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.DisputeDoneSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.FailSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.InitialDisputeSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.LumberAcceptedSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.LumberRequestSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.RepeatedDisputeSituation;
+import eu.janschupke.tale.content.stage.level.outskirts.unit.jack.interaction.situation.TalkSituation;
 
 /**
  * Jack unit interaction class.
- *
- * @author jan.schupke@gmail.com
+ * Manages conversations and interactions with the Jack character.
  */
 public class JackInteraction extends Interaction {
     private Situation talkSituation;

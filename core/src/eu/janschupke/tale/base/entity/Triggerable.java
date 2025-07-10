@@ -1,24 +1,24 @@
 package eu.janschupke.tale.base.entity;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.exception.NoHudException;
 import eu.janschupke.tale.base.interaction.Interaction;
 import eu.janschupke.tale.base.interaction.InteractionSwitch;
 
 /**
- * Interface for all world entities that trigger an event upon contact.
- *
- * @author jan.schupke@gmail.com
+ * Interface for objects that can be triggered by player interaction.
+ * Defines the contract for interactive game objects.
  */
 public interface Triggerable {
     /**
-     * Called when the body contact begins.
+     * Called when the object is engaged (player enters trigger area).
      */
     void engage();
 
     /**
-     * Called when the body contact ends.
+     * Called when the object is disengaged (player leaves trigger area).
      */
     void disengage();
 

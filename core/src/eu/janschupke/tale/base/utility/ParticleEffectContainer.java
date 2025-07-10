@@ -5,8 +5,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 
 /**
  * Helper class for particle effects.
- *
- * @author jan.schupke@gmail.com
+ * Manages particle effect instances and pools.
  */
 public class ParticleEffectContainer {
     ParticleEffect particleEffect;

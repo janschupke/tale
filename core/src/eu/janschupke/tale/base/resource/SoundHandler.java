@@ -2,12 +2,12 @@ package eu.janschupke.tale.base.resource;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
+
 import eu.janschupke.tale.base.App;
 
 /**
- * Resource handler for all sound files.
- *
- * @author jan.schupke@gmail.com
+ * Handles sound effects and audio playback.
+ * Controls sound effects and audio settings.
  */
 public class SoundHandler extends BaseResourceContainer {
     private Sound heavyButtonSound;

@@ -5,9 +5,8 @@ import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 import junit.framework.TestCase;
 
 /**
- * Unit test for game log functionality.
- *
- * @author jan.schupke@gmail.com
+ * Unit test for GameLog functionality.
+ * Tests the game logging system and entry management.
  */
 public class TestGameLog extends TestCase {
     public void testAddEntry() {

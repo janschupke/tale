@@ -1,14 +1,14 @@
 package eu.janschupke.tale.base.world;
 
 import com.badlogic.gdx.physics.box2d.World;
+
 import eu.janschupke.tale.base.screen.TopDownScreen;
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Base class for all top-down type worlds.
- *
- * @author jan.schupke@gmail.com
+ * Base class for top-down world implementations.
+ * Provides no gravity physics for 2D top-down gameplay.
  */
 public abstract class TopDownWorld extends BaseWorld {
     public TopDownWorld(String tiledMap, float tileSize, TopDownScreen screen) {

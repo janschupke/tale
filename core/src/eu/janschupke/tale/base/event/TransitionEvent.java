@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.event;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base event for screen transitioning.
- *
- * @author jan.schupke@gmail.com
+ * Represents a transition event.
+ * Handles events related to screen transitions and level changes.
  */
 public abstract class TransitionEvent extends BaseEvent {
     public TransitionEvent(final App app) {

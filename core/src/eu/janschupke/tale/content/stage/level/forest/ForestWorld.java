@@ -1,20 +1,30 @@
 package eu.janschupke.tale.content.stage.level.forest;
 
 import com.badlogic.gdx.math.Vector2;
-import eu.janschupke.tale.base.entity.*;
+
+import eu.janschupke.tale.base.entity.Item;
+import eu.janschupke.tale.base.entity.Obstacle;
+import eu.janschupke.tale.base.entity.Sensor;
+import eu.janschupke.tale.base.entity.Unit;
+import eu.janschupke.tale.base.entity.Wall;
 import eu.janschupke.tale.base.world.TopDownWorld;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 import eu.janschupke.tale.content.stage.level.forest.item.coin.CoinItem;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.OutskirtsTransitionWall;
 import eu.janschupke.tale.content.stage.level.forest.obstacle.caravan.CaravanObstacle;
-import eu.janschupke.tale.content.stage.level.forest.sensor.*;
+import eu.janschupke.tale.content.stage.level.forest.sensor.EastExplorationSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.IntroSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.ItemIntroSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.NorthExplorationSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.OutskirtsTransitionSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.SouthExplorationSensor;
+import eu.janschupke.tale.content.stage.level.forest.sensor.UnitIntroSensor;
 import eu.janschupke.tale.content.stage.level.forest.unit.ukko.UkkoUnit;
 
 /**
  * Forest (Tutorial) world.
- *
- * @author jan.schupke@gmail.com
+ * Implements the tutorial level with basic game mechanics.
  */
 public class ForestWorld extends TopDownWorld {
     private Unit ukkoUnit;

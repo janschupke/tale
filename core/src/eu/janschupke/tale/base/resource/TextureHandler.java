@@ -6,12 +6,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+
 import eu.janschupke.tale.base.App;
 
 /**
- * Resource handler for all texture.
- *
- * @author jan.schupke@gmail.com
+ * Handles texture loading and management.
+ * Controls texture resources and rendering.
  */
 public class TextureHandler extends BaseResourceContainer {
     private Pixmap gameCursorPixmap;

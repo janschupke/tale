@@ -1,12 +1,12 @@
 package eu.janschupke.tale.base.container.quest;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 
 /**
- * Base quest manager for quest handling.
- *
- * @author jan.schupke@gmail.com
+ * Manages all quest-related functionality.
+ * Handles quest creation, tracking, and completion.
  */
 public abstract class QuestManager {
     protected App app;

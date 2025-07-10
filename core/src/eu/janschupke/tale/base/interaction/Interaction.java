@@ -1,18 +1,18 @@
 package eu.janschupke.tale.base.interaction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.content.config.enumeration.tags.InteractionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Contains interaction logic, decisions etc.
- *
- * @author jan.schupke@gmail.com
+ * Represents an interaction between the player and a game object.
+ * Manages conversation trees and decision-making in the game.
  */
 public abstract class Interaction {
     protected App app;

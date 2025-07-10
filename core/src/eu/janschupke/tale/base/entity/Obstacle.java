@@ -4,14 +4,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Non-movable colliding world object.
- *
- * @author jan.schupke@gmail.com
+ * Represents an obstacle in the game world.
+ * Provides collision detection for level obstacles and barriers.
  */
 public abstract class Obstacle extends WorldObject {
     public Obstacle(BaseWorld world, Texture texture, int radius) {

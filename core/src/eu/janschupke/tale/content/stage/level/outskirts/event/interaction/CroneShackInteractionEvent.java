@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Event for the interaction with Crone's shack.
- *
- * @author jan.schupke@gmail.com
+ * Event for crone shack interactions in the outskirts.
+ * Handles interactions with the crone's dwelling.
  */
 public class CroneShackInteractionEvent extends InteractionEvent {
     public CroneShackInteractionEvent(final App app) {

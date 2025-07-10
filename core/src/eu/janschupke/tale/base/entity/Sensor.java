@@ -1,15 +1,14 @@
 package eu.janschupke.tale.base.entity;
 
 import com.badlogic.gdx.math.Vector2;
+
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Base class for all in-game world sensors.
- * Detects contacts, but does not collide.
- *
- * @author jan.schupke@gmail.com
+ * Represents a sensor in the game world.
+ * Provides trigger detection without physical collision.
  */
 public abstract class Sensor extends WorldEntity {
     public Sensor(BaseWorld world, Vector2 size) {

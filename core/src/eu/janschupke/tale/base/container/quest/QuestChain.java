@@ -1,17 +1,15 @@
 package eu.janschupke.tale.base.container.quest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.DataContainer;
 import eu.janschupke.tale.base.container.quest.enumeration.TaskStatus;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Sequence of quests that come up after each other
- * and make up a logical quest line.
- *
- * @author jan.schupke@gmail.com
+ * Represents a chain of related quests.
+ * Manages quest dependencies and progression.
  */
 public abstract class QuestChain extends DataContainer {
     protected List<Quest> quests;

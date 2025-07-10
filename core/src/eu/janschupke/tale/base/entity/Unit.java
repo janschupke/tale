@@ -18,8 +18,6 @@ import java.util.Map;
 
 /**
  * Base class for all in-game units.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class Unit extends WorldObject {
     protected enum Direction {
@@ -34,50 +32,16 @@ public abstract class Unit extends WorldObject {
     protected boolean movingDown;
     protected boolean climbingUp;
     protected boolean climbingDown;
-    /**
-     * Last issued movement direction.
-     */
     protected Direction lastDirection;
-    /**
-     * Texture that contains all animation frames.
-     */
     protected Texture animationTexture;
-    /**
-     * 2D array of animation frames
-     */
     protected TextureRegion[][] animationFrames;
-    /**
-     * Sprite used for upward movement.
-     */
     protected AnimatedBox2DSprite animatedBoxSpriteUp;
-    /**
-     * Sprite used for downward movement.
-     */
     protected AnimatedBox2DSprite animatedBoxSpriteDown;
-    /**
-     * Sprite used for right movement.
-     */
     protected AnimatedBox2DSprite animatedBoxSpriteRight;
-    /**
-     * Sprite used for left movement.
-     */
     protected AnimatedBox2DSprite animatedBoxSpriteLeft;
-    /**
-     * Directional textures used for idle sprite (not moving).
-     */
     protected Map<Direction, TextureRegion> idleTextures;
-    /**
-     * Amount of frames per animation cycle.
-     */
     protected int frameAmount = 6;
-    /**
-     * Duration of one animation cycle.
-     */
     protected float loopDuration = 2.0f;
-
-    /**
-     * False by default, set to true if animations are instantiated.
-     */
     protected boolean animated;
 
     public Unit(BaseWorld world, Texture texture, Vector2 size) {
@@ -100,15 +64,17 @@ public abstract class Unit extends WorldObject {
 
     /**
      * Initiates all required animation instances from the texture.
+     * Creates directional sprites for movement animations.
      */
     protected void initAnimations() {
         animated = true;
         animatedBoxSpriteUp = initAnimation(animationFrames[1]);
         animatedBoxSpriteDown = initAnimation(animationFrames[2]);
 
+        // Create right-facing animation by flipping left-facing frames horizontally
         TextureRegion[] animationFramesRight = new TextureRegion[6];
         for (int i = 0; i < 6; i++) {
-            // Deep copy before flipping.
+            // Deep copy before flipping to avoid modifying original frames
             animationFramesRight[i] = new TextureRegion(animationFrames[0][i]);
             animationFramesRight[i].flip(true, false);
         }
@@ -165,6 +131,7 @@ public abstract class Unit extends WorldObject {
             return;
         }
 
+        // Draw appropriate animated sprite based on movement direction
         if (movingUp && animatedBoxSpriteUp != null) {
             animatedBoxSpriteUp.draw(batch, body);
         } else if (movingDown && animatedBoxSpriteDown != null) {
@@ -174,7 +141,7 @@ public abstract class Unit extends WorldObject {
         } else if (movingLeft && animatedBoxSpriteLeft != null) {
             animatedBoxSpriteLeft.draw(batch, body);
         } else {
-            // Not moving, drawing idle sprite facing the last movement direction.
+            // Not moving, draw idle sprite facing the last movement direction
             sprite.setRegion(idleTextures.get(lastDirection));
             sprite.draw(batch, body);
         }

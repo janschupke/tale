@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Event for the interaction with Jack's house.
- *
- * @author jan.schupke@gmail.com
+ * Event for Jack house interactions in the outskirts.
+ * Handles interactions with Jack's dwelling.
  */
 public class JackHouseInteractionEvent extends InteractionEvent {
     public JackHouseInteractionEvent(final App app) {

@@ -1,18 +1,18 @@
 package eu.janschupke.tale.base.container.inventory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.DataContainer;
 import eu.janschupke.tale.base.exception.InventoryFullException;
 import eu.janschupke.tale.content.config.enumeration.ItemTags;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Container of inventory items.
- *
- * @author jan.schupke@gmail.com
+ * Manages the player's inventory system.
+ * Handles item collection, storage, and management.
  */
 public class Inventory extends DataContainer {
     private List<InventoryItem> items;

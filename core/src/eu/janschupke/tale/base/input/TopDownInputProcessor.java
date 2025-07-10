@@ -1,14 +1,14 @@
 package eu.janschupke.tale.base.input;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.Hotkeys;
 
 /**
- * Base input processor for all top-down levels.
- *
- * @author jan.schupke@gmail.com
+ * Input processor for top-down game screens.
+ * Handles 4-directional movement and interactions.
  */
 public class TopDownInputProcessor extends GameInputProcessor {
     public TopDownInputProcessor(final App app) {

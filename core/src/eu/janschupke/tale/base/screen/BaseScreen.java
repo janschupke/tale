@@ -5,15 +5,15 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.config.enumeration.InputProcessors;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
 /**
- * Base class for all game states / screens.
- *
- * @author jan.schupke@gmail.com
+ * Base class for all game screens.
+ * Provides common functionality for screen management.
  */
 public abstract class BaseScreen extends ScreenAdapter {
     protected final Screens tag;

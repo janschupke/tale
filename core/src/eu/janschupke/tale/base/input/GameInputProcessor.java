@@ -3,6 +3,7 @@ package eu.janschupke.tale.base.input;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector3;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.exception.NoHudException;
 import eu.janschupke.tale.base.interaction.InteractionSwitch;
@@ -12,9 +13,8 @@ import eu.janschupke.tale.content.config.Hotkeys;
 import eu.janschupke.tale.content.ui.hud.main.StandardHud;
 
 /**
- * Generic processor for all level type game states.
- *
- * @author jan.schupke@gmail.com
+ * Base class for game-specific input processors.
+ * Handles in-game input events and interactions.
  */
 public class GameInputProcessor extends BaseInputProcessor {
     public GameInputProcessor(final App app) {

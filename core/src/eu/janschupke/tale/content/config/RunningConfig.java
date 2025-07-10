@@ -4,8 +4,6 @@ import eu.janschupke.tale.base.config.enumeration.WorldDebugRendering;
 
 /**
  * All global configuration values loaded from the preferences.
- *
- * @author jan.schupke@gmail.com
  */
 public class RunningConfig {
     // Meta variables.

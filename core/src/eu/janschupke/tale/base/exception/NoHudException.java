@@ -1,10 +1,8 @@
 package eu.janschupke.tale.base.exception;
 
 /**
- * Thrown when trying to access the in-game hud
- * while being outside any level.
- *
- * @author jan.schupke@gmail.com
+ * Exception thrown when no HUD is available.
+ * Indicates that a required HUD component is missing.
  */
 public class NoHudException extends Exception {
     public NoHudException() {

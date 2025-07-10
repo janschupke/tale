@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Interaction event for the door of the first dungeon room.
- *
- * @author jan.schupke@gmail.com
+ * Event for gate interactions in the dungeon.
+ * Handles gate opening and closing mechanics.
  */
 public class GateInteractionEvent extends InteractionEvent {
     public GateInteractionEvent(final App app) {

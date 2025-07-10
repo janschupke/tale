@@ -15,9 +15,8 @@ import eu.janschupke.tale.content.stage.level.dungeon.event.transition.ExitTrans
 import eu.janschupke.tale.content.stage.level.dungeon.event.transition.SettlementTransitionEvent;
 
 /**
- * Event handler for the dungeon level.
- *
- * @author jan.schupke@gmail.com
+ * Event handler for dungeon-specific events.
+ * Manages all events that occur within the dungeon level.
  */
 public class DungeonEventHandler extends LevelEventHandler {
     // Exploration.

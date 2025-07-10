@@ -2,15 +2,15 @@ package eu.janschupke.tale.base.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.content.config.Config;
 import eu.janschupke.tale.content.config.Hotkeys;
 import eu.janschupke.tale.logging.utility.GameLogParser;
 
 /**
- * Input processor for application-wide input processing.
- *
- * @author jan.schupke@gmail.com
+ * Global input processor that handles system-wide input events.
+ * Manages global hotkeys and system interactions.
  */
 public class GlobalInputProcessor extends BaseInputProcessor {
     public GlobalInputProcessor(final App app) {

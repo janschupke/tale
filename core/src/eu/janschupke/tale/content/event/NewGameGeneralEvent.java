@@ -6,9 +6,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Triggered when new game is requested. Log the action.
- *
- * @author jan.schupke@gmail.com
+ * Event for starting a new game.
+ * Handles game initialization and reset functionality.
  */
 public class NewGameGeneralEvent extends GeneralEvent {
     public NewGameGeneralEvent(final App app) {

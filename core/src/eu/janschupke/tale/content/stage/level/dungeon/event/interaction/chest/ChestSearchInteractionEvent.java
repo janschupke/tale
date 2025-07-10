@@ -6,9 +6,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Searching the chest.
- *
- * @author jan.schupke@gmail.com
+ * Event for searching chests in the dungeon.
+ * Handles chest search mechanics and item discovery.
  */
 public class ChestSearchInteractionEvent extends InteractionEvent {
     public ChestSearchInteractionEvent(final App app) {

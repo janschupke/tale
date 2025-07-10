@@ -1,9 +1,8 @@
 package eu.janschupke.tale.base.config;
 
 /**
- * Common interface for configuration manager classes.
- *
- * @author jan.schupke@gmail.com
+ * Manages application configuration and settings.
+ * Handles loading, saving, and accessing configuration data.
  */
 public interface ConfigManager {
     /**

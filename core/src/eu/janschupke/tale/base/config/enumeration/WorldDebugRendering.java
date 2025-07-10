@@ -1,9 +1,8 @@
 package eu.janschupke.tale.base.config.enumeration;
 
 /**
- * Enumeration for world debug rendering modes.
- *
- * @author jan.schupke@gmail.com
+ * Enumeration of world debug rendering options.
+ * Defines different debug visualization modes.
  */
 public enum WorldDebugRendering {
     ALL, DEBUG, GRAPHICS

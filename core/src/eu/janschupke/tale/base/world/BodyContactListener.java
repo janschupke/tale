@@ -1,14 +1,18 @@
 package eu.janschupke.tale.base.world;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.Manifold;
+
 import eu.janschupke.tale.base.entity.Triggerable;
 import eu.janschupke.tale.content.entity.PlayerUnit;
 
 /**
- * Base contact listener for Box2D bodies.
- *
- * @author jan.schupke@gmail.com
+ * Handles collision detection between Box2D bodies.
+ * Manages contact events and interaction triggers.
  */
 public class BodyContactListener implements ContactListener {
     @Override

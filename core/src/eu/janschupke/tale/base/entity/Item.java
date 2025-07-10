@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.base.world.BaseWorld;
 import eu.janschupke.tale.content.config.Config;
@@ -11,8 +12,6 @@ import eu.janschupke.tale.content.config.enumeration.ItemTags;
 
 /**
  * Base class for all in-game items.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class Item extends WorldObject {
     private ItemTags tag;
@@ -47,4 +46,3 @@ public abstract class Item extends WorldObject {
         return tag;
     }
 }
-

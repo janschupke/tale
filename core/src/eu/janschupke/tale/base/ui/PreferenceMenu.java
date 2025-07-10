@@ -2,8 +2,6 @@ package eu.janschupke.tale.base.ui;
 
 /**
  * Interface for all menu tables that contain configurable widgets.
- *
- * @author jan.schupke@gmail.com
  */
 public interface PreferenceMenu {
     /**

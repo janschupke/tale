@@ -1,9 +1,12 @@
 package eu.janschupke.tale.base.event.handling;
 
+import java.util.Map;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.config.enumeration.WorldDebugRendering;
 import eu.janschupke.tale.base.interaction.InteractionSwitch;
@@ -22,12 +25,9 @@ import eu.janschupke.tale.content.ui.dialog.NewGameConfirmDialog;
 import eu.janschupke.tale.content.ui.menu.MainMenu;
 import eu.janschupke.tale.logging.utility.GameLogParser;
 
-import java.util.Map;
-
 /**
- * Handler for all global events, such as the main menu actions.
- *
- * @author jan.schupke@gmail.com
+ * Handles global game events.
+ * Manages system-wide events and notifications.
  */
 public class GlobalEventHandler {
     private final App app;

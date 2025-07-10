@@ -5,9 +5,8 @@ import eu.janschupke.tale.base.screen.UiScreen;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
 /**
- * Last screen before the game jumps back into menu at the end of the game.
- *
- * @author jan.schupke@gmail.com
+ * Screen displayed at the end of the game.
+ * Shows credits and game completion information.
  */
 public class OutroScreen extends UiScreen {
     public OutroScreen(final App app) {

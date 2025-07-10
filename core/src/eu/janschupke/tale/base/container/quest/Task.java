@@ -5,9 +5,8 @@ import eu.janschupke.tale.base.container.DataContainer;
 import eu.janschupke.tale.base.container.quest.enumeration.TaskStatus;
 
 /**
- * Specific task within a quest.
- *
- * @author jan.schupke@gmail.com
+ * Represents a task within a quest.
+ * Manages individual quest objectives and completion criteria.
  */
 public class Task extends DataContainer {
     private TaskStatus status;

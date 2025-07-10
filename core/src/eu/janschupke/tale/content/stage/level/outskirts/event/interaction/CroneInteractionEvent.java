@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Event for interaction with the Crone unit.
- *
- * @author jan.schupke@gmail.com
+ * Event for Crone interactions in the outskirts.
+ * Handles conversations with the Crone character.
  */
 public class CroneInteractionEvent extends InteractionEvent {
     public CroneInteractionEvent(final App app) {

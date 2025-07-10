@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.event.handling;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base class for event handlers that are instantiated per game level.
- *
- * @author jan.schupke@gmail.com
+ * Handles level-specific events.
+ * Manages events that occur within individual game levels.
  */
 public abstract class LevelEventHandler {
     protected App app;

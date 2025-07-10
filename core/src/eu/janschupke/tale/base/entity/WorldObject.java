@@ -3,13 +3,12 @@ package eu.janschupke.tale.base.entity;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
+
 import eu.janschupke.tale.base.world.BaseWorld;
 import net.dermetfan.gdx.graphics.g2d.Box2DSprite;
 
 /**
  * Base class for every object in the world, including units.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class WorldObject extends WorldEntity {
     protected String description;

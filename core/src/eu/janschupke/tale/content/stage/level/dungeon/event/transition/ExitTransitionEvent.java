@@ -9,9 +9,8 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Transition event that ends the game.
- *
- * @author jan.schupke@gmail.com
+ * Event for exiting the dungeon.
+ * Handles dungeon exit transitions and level completion.
  */
 public class ExitTransitionEvent extends TransitionEvent {
     public ExitTransitionEvent(final App app) {

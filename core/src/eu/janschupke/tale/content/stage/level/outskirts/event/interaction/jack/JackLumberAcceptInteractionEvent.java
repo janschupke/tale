@@ -14,9 +14,8 @@ import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
 
 /**
- * Jack's lumber quest was accepted.
- *
- * @author jan.schupke@gmail.com
+ * Event for Jack accepting lumber quest in the outskirts.
+ * Handles quest acceptance and progression.
  */
 public class JackLumberAcceptInteractionEvent extends InteractionEvent {
     public JackLumberAcceptInteractionEvent(final App app) {

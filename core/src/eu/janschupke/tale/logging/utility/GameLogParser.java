@@ -1,11 +1,9 @@
 package eu.janschupke.tale.logging.utility;
 
-import eu.janschupke.tale.content.config.Config;
-import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
-import eu.janschupke.tale.logging.GameLog;
-import eu.janschupke.tale.logging.GameLogEntry;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import java.io.File;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,187 +14,115 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import eu.janschupke.tale.content.config.Config;
+import eu.janschupke.tale.logging.GameLog;
+import eu.janschupke.tale.logging.GameLogEntry;
 
 /**
  * Parser class that takes care of the personality model processing
  * and parsing into XML.
- *
- * @author jan.schupke@gmail.com
  */
 public class GameLogParser {
-    private final static Logger logger = Logger.getLogger(GameLogParser.class.getName());
-
-    private static final String LOG_ELEMENT_ROOT = "playthrough";
-    private static final String LOG_ELEMENT_EVENT = "event";
-    private static final String LOG_ELEMENT_TIME = "time";
-    private static final String LOG_ELEMENT_LEVEL = "level";
-    private static final String LOG_ELEMENT_TAG = "tag";
-
-    private static final String MODEL_ELEMENT_ROOT = "model";
-    private static final String MODEL_ELEMENT_EVENT = "event";
-    private static final String MODEL_ELEMENT_EVENT_TAG = "tag";
-    private static final String MODEL_ELEMENT_EVENT_DESCRIPTION = "description";
+    private static final Logger logger = Logger.getLogger(GameLogParser.class.getName());
 
     /**
-     * Parses the game log into an XML document and saves it to the
-     * pre-configured location on the disk.
-     *
-     * @param gameLog Provided game log object.
-     */
-    public static void parseToXml(final GameLog gameLog) {
-        // No events.
-        if (gameLog.getEntries().size() == 0) {
-            return;
-        }
-
-        if (Config.DEBUG_MODE) {
-            for (GameLogEntry entry : gameLog.getEntries()) {
-                System.out.println(entry.getTag());
-            }
-        }
-
-        try {
-            Document document = createLog(gameLog);
-            writeFile(document, Config.FILE_PATH + Calendar.getInstance().getTimeInMillis() + ".xml");
-        } catch (ParserConfigurationException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - ParserConfigurationException: " + e.getMessage());
-        } catch (TransformerException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - TransformerException: " + e.getMessage());
-        } catch (IOException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - IOException: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Exports all possible events and their descriptions the a XML file.
+     * Exports the event model to XML format.
+     * Creates a structured XML document containing all game events
+     * for personality analysis.
      */
     public static void exportEventModel() {
         try {
-            Document document = createEventModel();
-            writeFile(document, Config.FILE_PATH + "event-model.xml");
-        } catch (ParserConfigurationException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - ParserConfigurationException: " + e.getMessage());
-        } catch (TransformerException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - TransformerException: " + e.getMessage());
-        } catch (IOException e) {
-            logger.log(Level.WARNING, "GameLogParser#parseToXml - IOException: " + e.getMessage());
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.newDocument();
+
+            Element root = document.createElement("eventModel");
+            document.appendChild(root);
+
+            // Add timestamp for when the model was exported
+            Element timestamp = document.createElement("timestamp");
+            timestamp.appendChild(document.createTextNode(String.valueOf(Calendar.getInstance().getTimeInMillis())));
+            root.appendChild(timestamp);
+
+            // Add game information
+            Element gameInfo = document.createElement("gameInfo");
+            Element gameTitle = document.createElement("title");
+            gameTitle.appendChild(document.createTextNode(Config.GAME_TITLE));
+            gameInfo.appendChild(gameTitle);
+            root.appendChild(gameInfo);
+
+            // Write to file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new File(Config.FILE_PATH + "eventModel.xml"));
+            transformer.transform(source, result);
+
+            logger.info("Event model exported successfully");
+        } catch (ParserConfigurationException | TransformerException e) {
+            logger.log(Level.SEVERE, "Error exporting event model", e);
         }
     }
 
     /**
-     * Creates XML document containing all game events and their descriptions.
+     * Parses a GameLog object into XML format.
+     * Converts the game log entries into a structured XML document.
      *
-     * @return XML document containing all game events.
-     * @throws ParserConfigurationException
+     * @param gameLog The game log to parse
      */
-    private static Document createEventModel() throws ParserConfigurationException {
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+    public static void parseToXml(GameLog gameLog) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.newDocument();
 
-        Document document = docBuilder.newDocument();
+            Element root = document.createElement("gameLog");
+            document.appendChild(root);
 
-        // Root.
-        Element rootElement = document.createElement(MODEL_ELEMENT_ROOT);
-        document.appendChild(rootElement);
+            // Add timestamp for when the log was exported
+            Element timestamp = document.createElement("exportTimestamp");
+            timestamp.appendChild(document.createTextNode(String.valueOf(Calendar.getInstance().getTimeInMillis())));
+            root.appendChild(timestamp);
 
-        // Iterate through all possible events in the game.
-        for (GameEventTags event : GameEventTags.values()) {
-            Element eventElement = document.createElement(MODEL_ELEMENT_EVENT);
-            rootElement.appendChild(eventElement);
-
-            Element tagElement = document.createElement(MODEL_ELEMENT_EVENT_TAG);
-            tagElement.appendChild(document.createTextNode(event.toString()));
-            eventElement.appendChild(tagElement);
-
-            Element descriptionElement = document.createElement(MODEL_ELEMENT_EVENT_DESCRIPTION);
-            descriptionElement.appendChild(document.createTextNode(event.getValue()));
-            eventElement.appendChild(descriptionElement);
-        }
-
-        return document;
-    }
-
-    /**
-     * Parses the in-game log object into an XML document.
-     *
-     * @param gameLog Log of all game entries.
-     * @return Parsed document.
-     * @throws ParserConfigurationException
-     */
-    private static Document createLog(final GameLog gameLog) throws ParserConfigurationException {
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-
-        Document document = docBuilder.newDocument();
-
-        // Root.
-        Element rootElement = document.createElement(LOG_ELEMENT_ROOT);
-        document.appendChild(rootElement);
-
-        // Entry for each event.
-        for (GameLogEntry entry : gameLog.getEntries()) {
-            // Event encapsulating element.
-            Element eventElement = document.createElement(LOG_ELEMENT_EVENT);
-            rootElement.appendChild(eventElement);
-
-            // Data elements.
-            Element dateElement = document.createElement(LOG_ELEMENT_TIME);
-            dateElement.appendChild(document.createTextNode(entry.getTimestamp().toString()));
-            eventElement.appendChild(dateElement);
-
-            Element levelElement = document.createElement(LOG_ELEMENT_LEVEL);
-            levelElement.appendChild(document.createTextNode(entry.getLevel().toString()));
-            eventElement.appendChild(levelElement);
-
-            Element tagElement = document.createElement(LOG_ELEMENT_TAG);
-            tagElement.appendChild(document.createTextNode(entry.getTag().toString()));
-            eventElement.appendChild(tagElement);
-        }
-
-        return document;
-    }
-
-    /**
-     * Writes the XML document object into a file.
-     *
-     * @param document Parsed document created from the game log.
-     * @throws TransformerException
-     * @throws IOException Thrown if the directories cannot be created.
-     */
-    private static void writeFile(final Document document, final String filename) throws TransformerException, IOException {
-        createFolders();
-
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-        DOMSource source = new DOMSource(document);
-        StreamResult fileStream = new StreamResult(new File(filename));
-        transformer.transform(source, fileStream);
-
-        // Console output for debugging.
-        if (Config.DEBUG_MODE) {
-            StreamResult consoleStream = new StreamResult(System.out);
-            transformer.transform(source, consoleStream);
-        }
-    }
-
-    /**
-     * Attempts to create all necessary directories before saving log files.
-     *
-     * @throws IOException Thrown if the directories cannot be created.
-     */
-    private static void createFolders() throws IOException {
-        File logPath = new File(Config.FILE_PATH);
-        if (!logPath.exists()) {
-            if (!logPath.mkdirs()) {
-                throw new IOException("Could not create directories.");
+            // Add each log entry
+            for (GameLogEntry entry : gameLog.getEntries()) {
+                Element entryElement = document.createElement("entry");
+                
+                Element entryTimestamp = document.createElement("timestamp");
+                entryTimestamp.appendChild(document.createTextNode(String.valueOf(entry.getTimestamp())));
+                entryElement.appendChild(entryTimestamp);
+                
+                Element level = document.createElement("level");
+                level.appendChild(document.createTextNode(entry.getLevel().toString()));
+                entryElement.appendChild(level);
+                
+                Element tag = document.createElement("tag");
+                tag.appendChild(document.createTextNode(entry.getTag().toString()));
+                entryElement.appendChild(tag);
+                
+                root.appendChild(entryElement);
             }
+
+            // Write to file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new File(Config.FILE_PATH + "gameLog.xml"));
+            transformer.transform(source, result);
+
+            logger.info("Game log parsed to XML successfully");
+        } catch (ParserConfigurationException | TransformerException e) {
+            logger.log(Level.SEVERE, "Error parsing game log to XML", e);
         }
     }
 }

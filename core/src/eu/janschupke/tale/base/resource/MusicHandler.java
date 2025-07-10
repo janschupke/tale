@@ -1,16 +1,16 @@
 package eu.janschupke.tale.base.resource;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-import eu.janschupke.tale.base.App;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+
+import eu.janschupke.tale.base.App;
+
 /**
- * Resource handler for all music files.
- *
- * @author jan.schupke@gmail.com
+ * Handles music playback and management.
+ * Controls background music and audio settings.
  */
 public class MusicHandler extends BaseResourceContainer {
     private Music menuMusic;

@@ -1,5 +1,11 @@
 package eu.janschupke.tale.base.world;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
@@ -15,6 +21,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+
 import eu.janschupke.tale.base.entity.Item;
 import eu.janschupke.tale.base.entity.Unit;
 import eu.janschupke.tale.base.entity.Wall;
@@ -23,12 +30,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.base.utility.ParticleEffectContainer;
 import eu.janschupke.tale.content.config.Config;
 
-import java.util.*;
-
 /**
  * Base class for levels' world representations.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class BaseWorld {
     protected BaseScreen screen;
@@ -43,7 +46,6 @@ public abstract class BaseWorld {
     private Unit playerUnit;
     private List<Unit> units;
     private List<Item> items;
-    // Contains Obstacles and (invisible) Walls, must be superclass type.
     private List<WorldEntity> obstacles;
 
     private Map<String, ParticleEffectContainer> particleEffects;
@@ -136,13 +138,15 @@ public abstract class BaseWorld {
 
     /**
      * Configures all animated tiles so that they animate.
+     * This method processes the tilemap to find tiles with animation properties
+     * and creates AnimatedTiledMapTile instances for them.
      */
     private void handleAnimatedTiles() {
-        // name : amount of animationFrames.
+        // Map animation names to their frame counts
         Map<String, Integer> animations = new HashMap<>();
         Iterator<TiledMapTile> tiles;
 
-        // Get animation names.
+        // Count frames for each animation name
         tiles = map.getTileSets().getTileSet(Config.MAP_TILESET_MAIN).iterator();
         while (tiles.hasNext()) {
             TiledMapTile tile = tiles.next();
@@ -158,24 +162,25 @@ public abstract class BaseWorld {
             }
         }
 
-        // Swap tiles for each animation name.
+        // Create animated tiles for each animation sequence
         for (Map.Entry<String, Integer> entry : animations.entrySet()) {
             String name = entry.getKey();
             int frames = entry.getValue();
 
-            // Default speed.
+            // Default animation speed
             float speed = Config.MAP_DEFAULT_SPEED;
 
             tiles = map.getTileSets().getTileSet(Config.MAP_TILESET_MAIN).iterator();
             Array<StaticTiledMapTile> tileAnimationFrames = new Array<>(frames);
 
-            // Add tiles with this animation name.
+            // Collect all tiles with this animation name
             while (tiles.hasNext()) {
                 TiledMapTile tile = tiles.next();
                 if (tile.getProperties().containsKey(Config.MAP_PROPERTY_ANIMATION)
                         && tile.getProperties().get(Config.MAP_PROPERTY_ANIMATION, String.class).equals(name)) {
                     tileAnimationFrames.add((StaticTiledMapTile) tile);
 
+                    // Override default speed if specified
                     if (tile.getProperties().containsKey(Config.MAP_PROPERTY_SPEED)) {
                         try {
                             speed = Integer.parseInt(tile.getProperties().get(Config.MAP_PROPERTY_SPEED, String.class));
@@ -186,10 +191,11 @@ public abstract class BaseWorld {
                 }
             }
 
+            // Create animated tile and replace static tiles in the map
             AnimatedTiledMapTile animatedTile = new AnimatedTiledMapTile(1f / speed, tileAnimationFrames);
             TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(Config.MAP_LAYER_TERRAIN);
 
-            // Spawn found tiles with animations.
+            // Replace all instances of this animation sequence with the animated version
             for (int x = 0; x < layer.getWidth(); x++) {
                 for (int y = 0; y < layer.getHeight(); y++) {
                     TiledMapTileLayer.Cell cell = layer.getCell(x, y);

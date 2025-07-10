@@ -9,9 +9,8 @@ import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.ui.dialog.InventoryFullDialog;
 
 /**
- * Event for item pickups.
- *
- * @author jan.schupke@gmail.com
+ * Represents a pickup event.
+ * Handles events related to item collection and inventory management.
  */
 public abstract class PickupEvent extends BaseEvent {
     protected Item item;

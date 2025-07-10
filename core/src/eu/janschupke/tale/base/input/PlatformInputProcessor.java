@@ -5,9 +5,8 @@ import eu.janschupke.tale.base.screen.GameScreen;
 import eu.janschupke.tale.content.config.Hotkeys;
 
 /**
- * Base input processor for all platform levels.
- *
- * @author jan.schupke@gmail.com
+ * Input processor for platform-style game screens.
+ * Handles 2D platformer movement with gravity and jumping.
  */
 public class PlatformInputProcessor extends GameInputProcessor {
     public PlatformInputProcessor(final App app) {
@@ -45,4 +44,3 @@ public class PlatformInputProcessor extends GameInputProcessor {
         return false;
     }
 }
-

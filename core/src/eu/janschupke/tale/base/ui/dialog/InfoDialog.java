@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.ui.dialog;
 import eu.janschupke.tale.base.App;
 
 /**
- * Simple dialog with one button to dismiss it.
- *
- * @author jan.schupke@gmail.com
+ * Dialog for displaying information to the user.
+ * Shows informational messages with an OK button.
  */
 public abstract class InfoDialog extends BaseDialog {
     public InfoDialog(final App app, String title) {

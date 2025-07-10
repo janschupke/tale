@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.screen.BaseScreen;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Interaction event for the crossroad sign.
- *
- * @author jan.schupke@gmail.com
+ * Event for road sign interactions in the outskirts.
+ * Handles interactions with directional signs and markers.
  */
 public class RoadSignInteractionEvent extends InteractionEvent {
     public RoadSignInteractionEvent(final App app) {

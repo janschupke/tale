@@ -2,8 +2,6 @@ package eu.janschupke.tale.content.config;
 
 /**
  * Preference item names as they appear in the preference file.
- *
- * @author jan.schupke@gmail.com
  */
 public class SettingsKeys {
     // Graphics variables.

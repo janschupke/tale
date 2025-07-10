@@ -15,9 +15,8 @@ import eu.janschupke.tale.content.stage.level.outskirts.OutskirtsScreen;
 import eu.janschupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
 
 /**
- * Jack's lumber quest was finished.
- *
- * @author jan.schupke@gmail.com
+ * Event for Jack giving lumber in the outskirts.
+ * Handles quest completion and item exchange.
  */
 public class JackLumberGiveInteractionEvent extends InteractionEvent {
     public JackLumberGiveInteractionEvent(final App app) {

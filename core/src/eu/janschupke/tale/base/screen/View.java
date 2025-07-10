@@ -7,12 +7,12 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+
 import eu.janschupke.tale.base.entity.WorldObject;
 
 /**
- * Encapsulation of a camera, a viewport, and some helper methods.
- *
- * @author jan.schupke@gmail.com
+ * Represents a view component for rendering.
+ * Provides camera and viewport management for game screens.
  */
 public class View {
     private float borderTop;

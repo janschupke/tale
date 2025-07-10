@@ -9,9 +9,8 @@ import eu.janschupke.tale.base.state.GlobalLevelState;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Encapsulation of all player-relevant data containers.
- *
- * @author jan.schupke@gmail.com
+ * Manages the current game state and progress.
+ * Tracks player progress, settings, and game data.
  */
 public class GameState extends DataContainer {
     private GameScreen currentLevel;

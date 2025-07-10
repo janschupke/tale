@@ -8,9 +8,8 @@ import eu.janschupke.tale.base.ui.table.RootTable;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
 /**
- * General utility class.
- *
- * @author jan.schupke@gmail.com
+ * Utility class providing common helper methods.
+ * Contains static utility functions for various operations.
  */
 public class Utility {
     /**

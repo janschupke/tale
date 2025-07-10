@@ -4,9 +4,8 @@ import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.event.GeneralEvent;
 
 /**
- * Message event for hint dialog toggle.
- *
- * @author jan.schupke@gmail.com
+ * Event for toggling dialog visibility.
+ * Controls the display of dialog boxes and UI elements.
  */
 public class ToggleDialogsEvent extends GeneralEvent {
     public ToggleDialogsEvent(final App app) {

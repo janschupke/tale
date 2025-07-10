@@ -1,16 +1,14 @@
 package eu.janschupke.tale.base.interaction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.content.config.enumeration.tags.DecisionTags;
 import eu.janschupke.tale.content.config.enumeration.tags.SituationTags;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Represents one conversational state within the interaction.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class Situation {
     protected App app;

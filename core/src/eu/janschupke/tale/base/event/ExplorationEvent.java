@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.event;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base event for exploration.
- *
- * @author jan.schupke@gmail.com
+ * Represents an exploration event.
+ * Handles events related to player exploration and discovery.
  */
 public abstract class ExplorationEvent extends BaseEvent {
     public ExplorationEvent(final App app) {

@@ -1,6 +1,7 @@
 package eu.janschupke.tale;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.config.enumeration.InputProcessors;
 import eu.janschupke.tale.base.input.GlobalInputProcessor;
@@ -18,22 +19,22 @@ import eu.janschupke.tale.content.stage.outro.OutroScreen;
 import eu.janschupke.tale.content.stage.splash.SplashScreen;
 import eu.janschupke.tale.content.ui.hud.OutroHud;
 import eu.janschupke.tale.content.ui.hud.main.StandardHud;
-import eu.janschupke.tale.content.ui.menu.*;
+import eu.janschupke.tale.content.ui.menu.AudioMenu;
+import eu.janschupke.tale.content.ui.menu.CreditsMenu;
+import eu.janschupke.tale.content.ui.menu.GameMenu;
+import eu.janschupke.tale.content.ui.menu.GraphicsMenu;
+import eu.janschupke.tale.content.ui.menu.HotkeysMenu;
+import eu.janschupke.tale.content.ui.menu.MainMenu;
+import eu.janschupke.tale.content.ui.menu.SettingsMenu;
 
 /**
  * Main game entry point.
- * @author jan.schupke@gmail.com
  */
 public class Tale extends App {
 	@Override
 	public void create () {
 		super.create();
 		Gdx.app.debug("Tale#create", "Creating");
-
-		// Cursor setup - using modern cursor handling
-		// Note: setCursorImage is deprecated, using setCursorCatcher for modern libGDX
-		// For custom cursor, we'll need to implement a different approach
-		// Gdx.input.setCursorCatcher(false);
 
 		// Entry screen - splash.
 		this.setScreen(getScreenInstance(Screens.SPLASH));

@@ -10,9 +10,8 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Interaction event for the transition from Dungeon to Settlement.
- *
- * @author jan.schupke@gmail.com
+ * Event for transitioning from dungeon to settlement.
+ * Handles level transitions and player movement between areas.
  */
 public class SettlementTransitionEvent extends TransitionEvent {
     public SettlementTransitionEvent(final App app) {

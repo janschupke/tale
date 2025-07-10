@@ -1,15 +1,15 @@
 package eu.janschupke.tale.content.event;
 
 import com.badlogic.gdx.Gdx;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.event.GeneralEvent;
 import eu.janschupke.tale.content.config.enumeration.Huds;
 import eu.janschupke.tale.content.ui.menu.AudioMenu;
 
 /**
- * Message event for music toggle.
- *
- * @author jan.schupke@gmail.com
+ * Event for toggling music playback.
+ * Controls background music on/off state.
  */
 public class ToggleMusicEvent extends GeneralEvent {
     public ToggleMusicEvent(final App app) {

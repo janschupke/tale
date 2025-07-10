@@ -1,6 +1,7 @@
 package eu.janschupke.tale.base.screen;
 
 import com.badlogic.gdx.graphics.Texture;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.content.config.enumeration.Screens;
 
@@ -8,8 +9,6 @@ import eu.janschupke.tale.content.config.enumeration.Screens;
  * Base class for all pure UI screens.
  * These screens do not feature any game logic
  * and only display menus.
- *
- * @author jan.schupke@gmail.com
  */
 public abstract class UiScreen extends BaseScreen {
     protected Texture backgroundTexture;

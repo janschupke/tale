@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.resource;
 import eu.janschupke.tale.base.App;
 
 /**
- * Resource manager that provides access to all resource handlers.
- *
- * @author jan.schupke@gmail.com
+ * Manages game resources including textures, sounds, and other assets.
+ * Provides centralized resource loading and management.
  */
 public class ResourceManager extends BaseResourceContainer {
     private MusicHandler musicHandler;

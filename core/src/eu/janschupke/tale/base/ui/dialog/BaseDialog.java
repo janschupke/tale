@@ -7,14 +7,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.ui.UserInterface;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Base class for all GUI dialogs.
- *
- * @author jan.schupke@gmail.com
+ * Base class for all dialog windows.
+ * Provides common functionality for modal dialogs and popups.
  */
 public abstract class BaseDialog extends Dialog implements UserInterface {
     protected App app;

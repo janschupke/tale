@@ -1,14 +1,14 @@
 package eu.janschupke.tale.base.world;
 
 import com.badlogic.gdx.physics.box2d.World;
+
 import eu.janschupke.tale.base.screen.PlatformScreen;
 import eu.janschupke.tale.base.utility.WorldObjectFactory;
 import eu.janschupke.tale.content.config.Config;
 
 /**
- * Base class for all platform type worlds.
- *
- * @author jan.schupke@gmail.com
+ * Base class for platform-style world implementations.
+ * Provides gravity physics for 2D platformer gameplay.
  */
 public abstract class PlatformWorld extends BaseWorld {
     public PlatformWorld(String tiledMap, float tileSize, PlatformScreen screen) {

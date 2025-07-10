@@ -1,16 +1,15 @@
 package eu.janschupke.tale.base.container.quest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eu.janschupke.tale.base.App;
 import eu.janschupke.tale.base.container.DataContainer;
 import eu.janschupke.tale.base.container.quest.enumeration.TaskStatus;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Quest entry.
- *
- * @author jan.schupke@gmail.com
+ * Represents a quest in the game.
+ * Manages quest objectives, progress, and completion.
  */
 public class Quest extends DataContainer {
     protected List<Task> tasks;

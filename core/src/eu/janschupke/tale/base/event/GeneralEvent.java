@@ -3,9 +3,8 @@ package eu.janschupke.tale.base.event;
 import eu.janschupke.tale.base.App;
 
 /**
- * Base event for any generic actions that might not fit into other event types.
- *
- * @author jan.schupke@gmail.com
+ * Represents a general game event.
+ * Handles miscellaneous game state changes and notifications.
  */
 public abstract class GeneralEvent extends BaseEvent {
     public GeneralEvent(final App app) {

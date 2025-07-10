@@ -7,9 +7,8 @@ import eu.janschupke.tale.base.ui.dialog.InfoDialog;
 import eu.janschupke.tale.content.config.enumeration.tags.GameEventTags;
 
 /**
- * Game end approaching warning event.
- *
- * @author jan.schupke@gmail.com
+ * Event for warning about dungeon exit.
+ * Handles exit warnings and confirmation dialogs.
  */
 public class ExitWarningEvent extends GeneralEvent {
     private WarningDialog warningDialog;
