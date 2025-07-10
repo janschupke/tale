@@ -1,0 +1,36 @@
+package io.schupke.tale.content.stage.level.forest.obstacle;
+
+import com.badlogic.gdx.math.Vector2;
+import io.schupke.tale.base.entity.Triggerable;
+import io.schupke.tale.base.entity.Wall;
+import io.schupke.tale.base.interaction.Interaction;
+import io.schupke.tale.base.screen.GameScreen;
+import io.schupke.tale.base.world.BaseWorld;
+import io.schupke.tale.content.stage.level.forest.event.ForestEventHandler;
+
+/**
+ * Invisible wall that prevents advancement
+ * before the initial quest is completed.
+ *
+ * @author jan.schupke@gmail.com
+ */
+public class QuestWall extends Wall implements Triggerable {
+    public QuestWall(BaseWorld world, Vector2 size) {
+        super(world, size);
+    }
+
+    @Override
+    public void engage() {
+        ((ForestEventHandler) ((GameScreen) world.getScreen()).getLevelEventHandler()).getQuestWallGeneralEvent().trigger();
+    }
+
+    @Override
+    public void disengage() {
+
+    }
+
+    @Override
+    public Interaction getInteraction() {
+        return null;
+    }
+}

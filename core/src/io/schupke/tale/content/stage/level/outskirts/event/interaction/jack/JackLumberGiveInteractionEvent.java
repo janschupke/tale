@@ -1,0 +1,57 @@
+package io.schupke.tale.content.stage.level.outskirts.event.interaction.jack;
+
+import io.schupke.tale.base.App;
+import io.schupke.tale.base.container.quest.QuestChain;
+import io.schupke.tale.base.container.quest.enumeration.TaskStatus;
+import io.schupke.tale.base.event.InteractionEvent;
+import io.schupke.tale.base.interaction.Interaction;
+import io.schupke.tale.base.screen.BaseScreen;
+import io.schupke.tale.content.config.enumeration.ItemTags;
+import io.schupke.tale.content.config.enumeration.tags.DecisionTags;
+import io.schupke.tale.content.config.enumeration.tags.GameEventTags;
+import io.schupke.tale.content.config.enumeration.tags.InteractionTags;
+import io.schupke.tale.content.config.enumeration.tags.SituationTags;
+import io.schupke.tale.content.stage.level.outskirts.OutskirtsScreen;
+import io.schupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
+
+/**
+ * Event for Jack giving lumber in the outskirts.
+ * Handles quest completion and item exchange.
+ */
+public class JackLumberGiveInteractionEvent extends InteractionEvent {
+    public JackLumberGiveInteractionEvent(final App app) {
+        super(app);
+    }
+
+    @Override
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+        QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
+        chain.getActiveQuest().getTasks().get(1).setStatus(TaskStatus.DONE);
+        chain.getActiveQuest().setStatus(TaskStatus.DONE);
+    }
+
+    @Override
+    protected void updateGameState() {
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_LUMBER_GIVE, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameState().getInventory().removeItem(ItemTags.OUTSKIRTS_LUMBER);
+    }
+
+    @Override
+    protected void updateInteractions() {
+        Interaction jackInteraction = app.getInteraction(InteractionTags.OUTSKIRTS_JACK);
+
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(false);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_CRONE)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(false);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_LUMBER_ACCEPT)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(false);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_DISPUTE).setAvailable(true);
+    }
+}

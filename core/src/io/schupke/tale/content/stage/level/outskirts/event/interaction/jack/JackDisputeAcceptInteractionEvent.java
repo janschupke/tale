@@ -1,0 +1,60 @@
+package io.schupke.tale.content.stage.level.outskirts.event.interaction.jack;
+
+import io.schupke.tale.base.App;
+import io.schupke.tale.base.container.quest.QuestChain;
+import io.schupke.tale.base.container.quest.enumeration.TaskStatus;
+import io.schupke.tale.base.event.InteractionEvent;
+import io.schupke.tale.base.interaction.Interaction;
+import io.schupke.tale.base.screen.BaseScreen;
+import io.schupke.tale.content.config.enumeration.tags.DecisionTags;
+import io.schupke.tale.content.config.enumeration.tags.GameEventTags;
+import io.schupke.tale.content.config.enumeration.tags.InteractionTags;
+import io.schupke.tale.content.config.enumeration.tags.SituationTags;
+import io.schupke.tale.content.stage.level.outskirts.OutskirtsScreen;
+import io.schupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
+
+/**
+ * Event for Jack accepting dispute quest in the outskirts.
+ * Handles quest acceptance and progression.
+ */
+public class JackDisputeAcceptInteractionEvent extends InteractionEvent {
+    public JackDisputeAcceptInteractionEvent(final App app) {
+        super(app);
+    }
+
+    @Override
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+        QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
+        chain.transition(0);
+
+        if (app.getGameState().getGlobalLevelState().isCaveExplored()) {
+            chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+        }
+        if (app.getGameState().getGlobalLevelState().isBookPicked()) {
+            chain.getActiveQuest().getTasks().get(1).setStatus(TaskStatus.DONE);
+        }
+    }
+
+    @Override
+    protected void updateGameState() {
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_DISPUTE_ACCEPT, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameState().getGlobalLevelState().setDisputeAccepted(true);
+    }
+
+    @Override
+    protected void updateInteractions() {
+        Interaction jackInteraction = app.getInteraction(InteractionTags.OUTSKIRTS_JACK);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_DISPUTE).setAvailable(false);
+
+        // Enabling cave book inquiry.
+        Interaction villeInteraction = app.getInteraction(InteractionTags.CAVE_VILLE);
+        villeInteraction.getSituation(SituationTags.CAVE_VILLE_TALK)
+                .getDecision(DecisionTags.CAVE_VILLE_TALK_INQUIRY).setAvailable(true);
+    }
+}

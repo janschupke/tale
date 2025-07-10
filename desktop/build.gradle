@@ -5,7 +5,7 @@ import groovy.xml.XmlNodePrinter
 
 sourceSets.main.java.srcDirs = [ "src/" ]
 
-project.ext.mainClassName = "eu.janschupke.tale.desktop.DesktopLauncher"
+project.ext.mainClassName = "io.schupke.tale.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../core/assets");
 
 task run(dependsOn: classes, type: JavaExec) {

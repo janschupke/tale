@@ -1,0 +1,65 @@
+package io.schupke.tale.content.stage.level.outskirts.event.interaction.jack;
+
+import io.schupke.tale.base.App;
+import io.schupke.tale.base.container.quest.QuestChain;
+import io.schupke.tale.base.container.quest.enumeration.TaskStatus;
+import io.schupke.tale.base.event.InteractionEvent;
+import io.schupke.tale.base.interaction.Interaction;
+import io.schupke.tale.base.screen.BaseScreen;
+import io.schupke.tale.content.config.enumeration.tags.DecisionTags;
+import io.schupke.tale.content.config.enumeration.tags.GameEventTags;
+import io.schupke.tale.content.config.enumeration.tags.InteractionTags;
+import io.schupke.tale.content.config.enumeration.tags.SituationTags;
+import io.schupke.tale.content.stage.level.outskirts.OutskirtsScreen;
+import io.schupke.tale.content.stage.level.outskirts.quest.OutskirtsQuestManager;
+
+/**
+ * Event for Jack accepting lumber quest in the outskirts.
+ * Handles quest acceptance and progression.
+ */
+public class JackLumberAcceptInteractionEvent extends InteractionEvent {
+    public JackLumberAcceptInteractionEvent(final App app) {
+        super(app);
+    }
+
+    @Override
+    protected void updateMessages() {
+
+    }
+
+    @Override
+    protected void updateQuests() {
+        QuestChain chain = ((OutskirtsQuestManager) ((OutskirtsScreen) app.getScreen()).getQuestManager()).getJackQuestChain();
+        ((OutskirtsScreen) app.getScreen()).getQuestManager().initQuestChain(chain);
+
+        // If already picked, set task to done.
+        if (app.getGameState().getGlobalLevelState().isLumberPicked()) {
+            chain.getActiveQuest().getTasks().get(0).setStatus(TaskStatus.DONE);
+        }
+    }
+
+    @Override
+    protected void updateGameState() {
+        app.getGameLog().addEntry(GameEventTags.OUTSKIRTS_INTERACTION_JACK_LUMBER_ACCEPT, ((BaseScreen) app.getScreen()).getTag());
+        app.getGameState().getGlobalLevelState().setLumberQuestAccepted(true);
+    }
+
+    @Override
+    protected void updateInteractions() {
+        Interaction jackInteraction = app.getInteraction(InteractionTags.OUTSKIRTS_JACK);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_FOREST).setAvailable(false);
+        jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_CRONE)
+                .getDecision(DecisionTags.OUTSKIRTS_JACK_TALK_FOREST).setAvailable(false);
+
+        // If already picked, allow to give.
+        if (app.getGameState().getGlobalLevelState().isLumberPicked()) {
+            jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_TALK)
+                    .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(true);
+            jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_CRONE)
+                    .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(true);
+            jackInteraction.getSituation(SituationTags.OUTSKIRTS_JACK_LUMBER_ACCEPT)
+                    .getDecision(DecisionTags.OUTSKIRTS_JACK_LUMBER_GIVE).setAvailable(true);
+        }
+    }
+}

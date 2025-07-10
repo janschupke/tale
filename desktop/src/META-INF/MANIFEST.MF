@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: eu.janschupke.tale.desktop.DesktopLauncher
+Main-Class: io.schupke.tale.desktop.DesktopLauncher
