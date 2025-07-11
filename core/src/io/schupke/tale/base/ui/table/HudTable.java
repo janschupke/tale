@@ -6,8 +6,8 @@ import com.badlogic.gdx.utils.Align;
 import io.schupke.tale.base.App;
 
 /**
- * Table specifically designed for HUD (Heads-Up Display) elements.
- * Provides specialized layout for in-game UI overlays.
+ * Base HUD table that provides the standard layout structure.
+ * Follows the HUD.md specifications for top and bottom panels.
  */
 public abstract class HudTable extends RootTable {
     protected Table topHudPanel;
@@ -15,13 +15,18 @@ public abstract class HudTable extends RootTable {
 
     public HudTable(final App app) {
         super(app);
-
+        
+        // Setup the main HUD layout as specified in HUD.md
         align(Align.top | Align.center);
-
+        
+        // Create the two main panels
         topHudPanel = new Table();
         bottomHudPanel = new Table();
-
+        
+        // Add panels to the layout
+        // Top panel takes up most of the screen
         add(topHudPanel).expandX().expandY().fillY().top().row();
+        // Bottom panel takes the bottom portion
         add(bottomHudPanel).fillX();
     }
-}
+} 

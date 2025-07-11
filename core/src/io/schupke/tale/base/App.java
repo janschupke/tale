@@ -184,6 +184,8 @@ public abstract class App extends Game {
         }
         return ((StandardHud) actor);
     }
+    
+
 
     /**
      * Ties together all observable objects and their observers.
@@ -267,6 +269,12 @@ public abstract class App extends Game {
         }
 
         ui.addActor(hud);
+        
+        // If it's a StandardHud, set up the HUD manager
+        if (hud instanceof StandardHud) {
+            StandardHud standardHud = (StandardHud) hud;
+            // The HUD manager is already set up in the StandardHud constructor
+        }
     }
 
     public Map<Screens, BaseScreen> getScreens() {
